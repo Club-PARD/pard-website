@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/pard-website/static/css/main.2b8b37b2.css",
-    "main.js": "/pard-website/static/js/main.cef8f33c.js",
+    "main.js": "/pard-website/static/js/main.77fcaa8d.js",
     "static/media/NanumSquareNeo-bRg.ttf": "/pard-website/static/media/NanumSquareNeo-bRg.dc621da24afcf6c33e03.ttf",
     "static/media/NanumSquareNeo-cBd.ttf": "/pard-website/static/media/NanumSquareNeo-cBd.2bf6888760d6cd8ba7c1.ttf",
     "static/media/NanumSquareNeo-dEb.ttf": "/pard-website/static/media/NanumSquareNeo-dEb.f7379c1cf24d7c08b6ee.ttf",
     "index.html": "/pard-website/index.html",
     "main.2b8b37b2.css.map": "/pard-website/static/css/main.2b8b37b2.css.map",
-    "main.cef8f33c.js.map": "/pard-website/static/js/main.cef8f33c.js.map"
+    "main.77fcaa8d.js.map": "/pard-website/static/js/main.77fcaa8d.js.map"
   },
   "entrypoints": [
     "static/css/main.2b8b37b2.css",
-    "static/js/main.cef8f33c.js"
+    "static/js/main.77fcaa8d.js"
   ]
 }
