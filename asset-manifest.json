@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Club-PARD/pard-website.git/static/css/main.e354b61e.css",
-    "main.js": "/Club-PARD/pard-website.git/static/js/main.12413592.js",
-    "static/media/NanumSquareNeo-bRg.ttf": "/Club-PARD/pard-website.git/static/media/NanumSquareNeo-bRg.dc621da24afcf6c33e03.ttf",
-    "static/media/NanumSquareNeo-cBd.ttf": "/Club-PARD/pard-website.git/static/media/NanumSquareNeo-cBd.2bf6888760d6cd8ba7c1.ttf",
-    "static/media/NanumSquareNeo-dEb.ttf": "/Club-PARD/pard-website.git/static/media/NanumSquareNeo-dEb.f7379c1cf24d7c08b6ee.ttf",
-    "index.html": "/Club-PARD/pard-website.git/index.html",
-    "main.e354b61e.css.map": "/Club-PARD/pard-website.git/static/css/main.e354b61e.css.map",
-    "main.12413592.js.map": "/Club-PARD/pard-website.git/static/js/main.12413592.js.map"
+    "main.css": "/pard-website/static/css/main.2b8b37b2.css",
+    "main.js": "/pard-website/static/js/main.cef8f33c.js",
+    "static/media/NanumSquareNeo-bRg.ttf": "/pard-website/static/media/NanumSquareNeo-bRg.dc621da24afcf6c33e03.ttf",
+    "static/media/NanumSquareNeo-cBd.ttf": "/pard-website/static/media/NanumSquareNeo-cBd.2bf6888760d6cd8ba7c1.ttf",
+    "static/media/NanumSquareNeo-dEb.ttf": "/pard-website/static/media/NanumSquareNeo-dEb.f7379c1cf24d7c08b6ee.ttf",
+    "index.html": "/pard-website/index.html",
+    "main.2b8b37b2.css.map": "/pard-website/static/css/main.2b8b37b2.css.map",
+    "main.cef8f33c.js.map": "/pard-website/static/js/main.cef8f33c.js.map"
   },
   "entrypoints": [
-    "static/css/main.e354b61e.css",
-    "static/js/main.12413592.js"
+    "static/css/main.2b8b37b2.css",
+    "static/js/main.cef8f33c.js"
   ]
 }
