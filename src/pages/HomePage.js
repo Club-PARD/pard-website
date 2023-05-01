@@ -18,7 +18,6 @@ import HomePartnerMob from "../components/Mobile/Mob-HomePage/HomePartner_Mob";
 
 function HomePage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
-
     const HomePageComponent = styled.div`
            background-color: 'black';
     `;

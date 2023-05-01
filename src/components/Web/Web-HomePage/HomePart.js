@@ -1,10 +1,10 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
-import DesignerImage from '../../../assets/img/Designer_part.png'; 
-import PlanerImage from '../../../assets/img/Planner_parts.png'; 
-import APPImage from '../../../assets/img/App_part.png'; 
-import WEBImage from '../../../assets/img/Web_part.png'; 
-import SERVERImage from '../../../assets/img/Server_part.png'; 
+import DesignerImage from '../../../assets/img/Designer_part.png';
+import PlanerImage from '../../../assets/img/Planner_parts.png';
+import APPImage from '../../../assets/img/App_part.png';
+import WEBImage from '../../../assets/img/Web_part.png';
+import SERVERImage from '../../../assets/img/Server_part.png';
 
 const Header2 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header2};
@@ -14,6 +14,7 @@ const Header2 = styled.div`
   margin-bottom: 3vw;
   white-space: pre-line;
 `;
+
 
 const Header5 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Header5};
@@ -106,7 +107,7 @@ function HomePart() {
             imageSrc: PlanerImage,
             title: '서비스 기획',
             description: '문제 정의부터, 산출물 작성까지\n사용자 중심으로 문제를\n해결하고 프로젝트를 관리합니다.',
-        }, 
+        },
         {
             id: 2,
             imageSrc: DesignerImage,
@@ -135,29 +136,29 @@ function HomePart() {
 
     return (
         <div>
-        <PartDiv>
-            <ThemeProvider theme={theme}>
-                <Header2>PARTS</Header2> 
-                <PartContents>
-                    {contentsData.map(content => (
-                        <PartWrapper >
-                        <ContentWrapper key={content.id}>
-                        <Image src={content.imageSrc} alt={`Image ${content.id}`} marginTop={content.id === 2 || content.id === 4} /> 
-                            <Header5>{content.title}</Header5>
-                            <Body2>{content.description}</Body2>
-                        </ContentWrapper>
-                        </PartWrapper>
-                    ))}
-                </PartContents>
-                <ButtonDiv>
-                <div style={{width:'25vw', }}>
-                <LearnMoreButton>
-                    <Header5>더 알아보기</Header5>
-                </LearnMoreButton>
-                </div>
-                </ButtonDiv>
-            </ThemeProvider>
-        </PartDiv>
+            <PartDiv>
+                <ThemeProvider theme={theme}>
+                    <Header2>PARTS</Header2>
+                    <PartContents>
+                        {contentsData.map(content => (
+                            <PartWrapper key={content.id}>
+                                <ContentWrapper key={content.id}>
+                                    <Image src={content.imageSrc} alt={`Image ${content.id}`} marginTop={content.id === 2 || content.id === 4} />
+                                    <Header5>{content.title}</Header5>
+                                    <Body2>{content.description}</Body2>
+                                </ContentWrapper>
+                            </PartWrapper>
+                        ))}
+                    </PartContents>
+                    <ButtonDiv>
+                        <div style={{ width: '25vw', }}>
+                            <LearnMoreButton>
+                                <Header5>더 알아보기</Header5>
+                            </LearnMoreButton>
+                        </div>
+                    </ButtonDiv>
+                </ThemeProvider>
+            </PartDiv>
         </div>
     );
 }

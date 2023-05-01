@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
-const HomeVideo = () => {
+function HomeVideo() {
+
   const videoRef = useRef(null); // 비디오 요소를 참조하기 위한 useRef
   const blueScreenRef = useRef(null); // 파란 배경 요소를 참조하기 위한 useRef
   const isPlayingRef = useRef(false); // 비디오 재생 여부를 저장하기 위한 useRef
@@ -78,8 +79,8 @@ const HomeVideo = () => {
 
   return (
     <div >
-      <div style={{ height: '39000px' }}> 
-      {/* 33800px' */}
+      <div style={{ height: '39000px' }}>
+        {/* 33800px' */}
       </div>
       <video
         ref={videoRef}
