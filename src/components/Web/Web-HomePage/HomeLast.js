@@ -54,14 +54,13 @@ const Button1 = styled.button`
     margin-top: 1.0417vw;
     color: #FFFFFF;
     border-radius: 10px;
+    border : none;
 `;
 
 const Shape1 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.header3};
   font-weight: ${props => props.theme.fontWeights.header3};
   font-family: 'NanumSquare Neo';
-  font-weight: 400;
-  font-size: 48px;
   line-height: 53px;
   width:1.2500vw;
   height:1.8056vw;
@@ -76,8 +75,6 @@ const Shape2 = styled.div`
   font-family: 'NanumSquare Neo';
   width:1.2500vw;
   height:1.8056vw;
-  font-weight: 400;
-  font-size: 48px;
   line-height: 53px;
   display: flex;
   color: #5262F5;
