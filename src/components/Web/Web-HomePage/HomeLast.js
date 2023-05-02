@@ -27,7 +27,7 @@ const PartDiv = styled.div`
     padding-left:24.7222vw;
     padding-right: 22.7222vw;
     padding-top: 15.0694vw;
-    height: 62vw;
+    height: 850px;
 `;
 
 const Subtitle2 = styled.div`
