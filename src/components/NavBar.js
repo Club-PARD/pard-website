@@ -20,6 +20,7 @@ const Subtitle1 = styled.p`
  font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
   font-weight: ${props => props.theme.fontWeights.Subtitle1};
   color: #FFFFFF;
+  font-family: 'NanumSquare Neo';
 `;
 
 const Logo = styled.div`
