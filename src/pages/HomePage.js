@@ -6,6 +6,7 @@ import HomeProgramWeb from "../components/Web/Web-HomePage/HomeProgram";
 import HomePartnerWeb from "../components/Web/Web-HomePage/HomePartner";
 import HomeLastWeb from "../components/Web/Web-HomePage/HomeLast";
 import HomeMentorWeb from "../components/Web/Web-HomePage/HomeMentor";
+import HomeBigTextWeb from "../components/Web/Web-HomePage/HomeBigText";
 import { useMediaQuery } from 'react-responsive'
 import HomeMentorMob from "../components/Mobile/Mob-HomePage/HomeMentor_Mob";
 import HomeVideoMob from "../components/Mobile/Mob-HomePage/HomeVideo_Mob";
@@ -27,7 +28,8 @@ function HomePage() {
             <Navbar />
             {isDesktopOrMobile !== true ?
                 <div>
-                    <HomeVideoWeb />
+                    {/* <HomeVideoWeb /> */}
+                    <HomeBigTextWeb/>
                     <HomePartWeb />
                     <HomeProgramWeb />
                     <HomeMentorWeb />
