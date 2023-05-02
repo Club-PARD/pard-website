@@ -32,12 +32,14 @@ const Subtitle3 = styled.div`
     text-align: center;
 
 `;
-const Text_wrap = styled.div`
+const TextWrap = styled.div`
     position: absolute;
     width: 17.3611vw;
     height: 22%;
     top: 78%;
     background-color : rgba(221,2,34,0.5);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 `
 const Subtitle1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
@@ -90,11 +92,6 @@ const Column = styled.div`
     position: relative;
     max-width: 17.3611vw;
     background-color: white; // 연습용 
-    /* &:hover {
-    background: #000000;
-    box-shadow: 0px 0px 30px #CAF580;
-    border-radius: 30px;
-}   */
     ${props => props.hover && css` //props.hover 값이 true일때 css값을 넣어라
     background-color: black; //운영진의 간단한 소개
   `}
@@ -197,10 +194,10 @@ function InquiryManagement() {
                     <Column key={content.id} hover = {content.id===isHovering} onMouseEnter={()=> handleMouseEnter(content.id)} onMouseLeave={handleMouseLeave} 
                     className={isHovering ? "hover":""} >
                         <Image src={content.imgsrc} alt={`Image ${content.id}`} ></Image>
-                        <Text_wrap>
+                        <TextWrap>
                         <Subtitle1>{content.name}</Subtitle1>
                         <Caption>{content.position}</Caption>
-                        </Text_wrap>
+                        </TextWrap>
                     </Column>
                 ))}
 
