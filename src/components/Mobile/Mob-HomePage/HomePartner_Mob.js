@@ -13,7 +13,6 @@ const Header7 = styled.div`
   padding-top: 8.0000vw;
   white-space: pre-line;
 `;
-
 const Subtitle3 = styled.div`
     font-size: ${props => props.theme.Mob_fontSizes.Subtitle3};
     font-weight: ${props => props.theme.fontWeights.Subtitle3};
@@ -22,36 +21,30 @@ const Subtitle3 = styled.div`
     white-space: pre-line;
     padding-top: 8.0000vw;
 `;
-
 const DisquietImage1 = styled.img`
     width: 51.5173vw;
     height: 10.6667vw;
     padding-top: 22.1333vw;
 `;
-
 const LincImage2 = styled.img`
     width: 32.0000vw;
     height: 10.6667vw;
     padding-top: 16.0000vw;
 `;
-
 const ImpactCampusImage3 = styled.img`
     width: 78.0880vw;
     height: 10.6667vw;
     padding-top: 16.0000vw;
 `;
-
 const SImage4 = styled.img`
     width: 18.6667vw;
     height: 18.6667vw;
     padding-top: 16.0000vw;
 `;
-
 const PartDiv = styled.div`
     padding-left:1.1111vw;
     height: 197.8667vw;
 `;
-
 const ContentWrapper = styled.div`
     flex: 1;
     display: flex;
