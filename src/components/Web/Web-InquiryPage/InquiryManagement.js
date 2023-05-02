@@ -18,7 +18,7 @@ const PartDiv = styled.div`
     height: 62vw;
 `;
 
-function AboutManagement() {
+function InquiryManagement() {
 
     return (
         <PartDiv>
@@ -29,4 +29,4 @@ function AboutManagement() {
     );
 }
 
-export default AboutManagement;
+export default InquiryManagement;

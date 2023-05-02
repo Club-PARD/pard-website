@@ -17,7 +17,7 @@ const PartDiv = styled.div`
     height: 62vw;
 `;
 
-function AboutContact() {
+function InquiryContact() {
 
     return (
         <PartDiv>
@@ -28,4 +28,4 @@ function AboutContact() {
     );
 }
 
-export default AboutContact;
+export default InquiryContact;
