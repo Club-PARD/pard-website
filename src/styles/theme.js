@@ -103,7 +103,7 @@ export const theme = {
     Body2: '400',
     ButtonText1: '700',
     Caption1: '400',
-    Captiom: '400'
+    Caption: '400'
   },
   Mob_fontSizes: {
     Header0: '25.6000vw',
