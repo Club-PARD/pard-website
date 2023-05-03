@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const Nav = styled.nav`
-  background-color: black;
+  background-color: #1A1A1A;
   color: white;
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@ const Menu = styled.div`
   left: 0;
   right: 0;
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  background-color: black;
+  background-color: #1A1A1A;
   padding: 1rem;
   text-align: center;
 `;
