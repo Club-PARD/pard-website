@@ -38,7 +38,7 @@ const PartDiv = styled.div`
 
 const Header6 = styled.div`
   font-size: ${props => props.theme.Mob_fontSizes.Header6};
-  font-weight: ${props => props.theme.fontWeights.Header3};
+  font-weight: ${props => props.theme.fontWeights.Header6};
   line-height : 7.4667vw;
   margin-left : 5vw;
   margin-right : 6.6667vw;
