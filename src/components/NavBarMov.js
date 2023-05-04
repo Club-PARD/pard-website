@@ -11,16 +11,16 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  height: 70px;
 `;
 
 const Logo = styled.div`
 img {
-    height: 25px;
+    height: 40px;
     width: 120px;
   }
   margin-right: auto; 
