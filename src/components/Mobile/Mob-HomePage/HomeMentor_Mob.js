@@ -13,8 +13,8 @@ const Header7 = styled.div`
 `;
 
 const Sub3 = styled.div`
-  font-size: ${props => props.theme.Mob_fontSizes.Sub3};
-  font-weight: ${props => props.theme.fontWeights.Sub3};
+  font-size: ${props => props.theme.Mob_fontSizes.Subtitle3};
+  font-weight: ${props => props.theme.fontWeights.Subtitle3};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   margin-bottom: 3.7500vw;
