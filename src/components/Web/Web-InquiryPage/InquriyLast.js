@@ -64,7 +64,7 @@ const Header5 = styled.div`
 `
 
 function InquiryLast() {
-        const handleFrameClick = () => {
+        const handleClick = () => {
           window.location.href = "https://pard.channel.io/lounge";
         };
 
@@ -73,7 +73,7 @@ function InquiryLast() {
             <ThemeProvider theme={theme}>
                 <Header7>더 궁금하신 내용이 있거나<br></br>문의사항이 있으신가요?</Header7>
                 <Subtitle3>동아리 관련, 프로젝트, 후원 등 언제든지 문의해 주세요.</Subtitle3>
-                <Frame15 onClick={handleFrameClick}>
+                <Frame15 onClick={handleClick}>
                     <Header5>문의하기</Header5>
                 </Frame15>
             </ThemeProvider>
