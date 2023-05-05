@@ -11,16 +11,27 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+<<<<<<< HEAD
   padding: 1rem;
+=======
+>>>>>>> 83eb0a791b4a6b0020c53490d758f5668c3f7c77
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+<<<<<<< HEAD
+=======
+  height: 70px;
+>>>>>>> 83eb0a791b4a6b0020c53490d758f5668c3f7c77
 `;
 
 const Logo = styled.div`
 img {
+<<<<<<< HEAD
     height: 25px;
+=======
+    height: 40px;
+>>>>>>> 83eb0a791b4a6b0020c53490d758f5668c3f7c77
     width: 120px;
   }
   margin-right: auto; 
