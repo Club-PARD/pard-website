@@ -7,7 +7,7 @@ const Header7 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 25px;
+  margin-bottom: 6.667vw;
   white-space: pre-line;
 `;
 
@@ -29,8 +29,8 @@ const Header6 = styled.div`
     text-align: center;
     line-height: 140%;
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin-top: 5.333vw;
+    margin-bottom: 4vw;
 `;
 const Header3 = styled.div`
     font-size: ${props => props.theme.Mob_fontSizes.Header3};
@@ -49,8 +49,8 @@ const Body2 = styled.div`
     display: flex;
     text-align:right;
     position: absolute;
-    bottom: ${props => props.isname ? '35px' : '20px'}; 
-    right: 20px;
+    bottom: ${props => props.isname ? '9vw' : '4.267vw'}; 
+    right: 5.333vw;
 `;
 
 
@@ -59,35 +59,35 @@ const PartContents = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap: 100px;
+    gap: 26.667vw;
     align-items: flex-start;
-    margin-top: 110px;
+    margin-top: 29.333vw;
 `;
 
 const PartWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-    margin-top: 45px;
+    margin-top: 12vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    width: 250px;
-    height: 270px;
+    width: 66.667vw;
+    height: 72vw;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     position: relative;
 `;
 
 const TextWrapper = styled.div`
-    padding: 0px 42px;
+    padding: 0px 11.200vw;
     word-break: keep-all;
     align-items: center;
 `;
 
 const TextWrapper2 = styled.div`
-    margin-top: 15px;
+    margin-top: 6.133vw;
     height: 0;
     display: flex;
     flex-direction: row;
@@ -96,9 +96,9 @@ const TextWrapper2 = styled.div`
 `;
 
 const Image = styled.img`
-    margin-top: -60px;
-    width: 120px;
-    height: 120px;
+    margin-top: -16vw;
+    width: 32vw;
+    height: 32vw;
     border: 2px solid ${props => (props.color)};
     border-radius: 50%;
     
