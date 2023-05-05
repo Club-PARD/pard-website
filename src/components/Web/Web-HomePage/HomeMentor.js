@@ -1,7 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import PlanerImage from '../../../assets/img/Planner_parts.png';
-import { color } from 'framer-motion';
 
 const Header2 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header2};
@@ -99,10 +98,6 @@ margin-top: 15px;
     justify-content: space-between;
 `;
 
-const TextWrapper3 = styled.div`
-    align-items: center;
-    height: 100%;
-`;
 
 const Image = styled.img`
     margin-top: -60px;
