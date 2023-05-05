@@ -2,6 +2,7 @@ import styled ,{ ThemeProvider } from "styled-components";
 import { Link } from "react-router-dom";
 import {theme} from "../../../styles/theme";
 import Vec from '../../../assets/img/vector.png';
+import { useState } from "react";
 
 const Margin=styled.div`
 display: flex;
@@ -146,6 +147,8 @@ line-height: 140%;
 
 
 color: #FFFFFF;
+
+
 `
 const Here=styled(Link)`
 font-family: 'NanumSquare Neo';
@@ -153,7 +156,9 @@ font-style: normal;
 font-weight: ${props=>props.theme.fontWeights.Header6};
 font-size: ${props=>props.theme.Mob_fontSizes.Header6};
 line-height: 140%;
-color:#5262F5;
+color:#FFFFFF;
+&:hover{color:#5262F5;}
+
 
 `
 const Vector=styled.img`
@@ -176,6 +181,7 @@ margin-left: 84.2667vw;
 `
 
 const Askmobile =()=>{
+   
     return(
         
         <ThemeProvider theme={theme}>
@@ -192,7 +198,8 @@ const Askmobile =()=>{
             <Instaid>@official_pard_</Instaid>
             </Informbox>
             <Linedown/>
-            <Business>비즈니스 문의는 &nbsp;<Here to='/'>여기로!</Here></Business>
+            <Business >비즈니스 문의는 &nbsp;
+            <Here to='/'>여기로</Here></Business>
             </Margin>
             </ThemeProvider>
           

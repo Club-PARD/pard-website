@@ -175,6 +175,7 @@ line-height: 27px;
 /* Text/White */
 
 color: #FFFFFF;
+
 `
 const Here= styled(Link)`
 
@@ -183,7 +184,8 @@ font-style: normal;
 font-weight: ${(props)=>props.theme.fontWeights.Header5};
 font-size: ${(props)=>props.theme.Web_fontSizes.Header5};
 line-height: 27px;
-color:#5262F5;
+color: #FFFFFF;
+&:hover{color:#5262F5;}
 `
 
 const Vectorbox1=styled.div`
