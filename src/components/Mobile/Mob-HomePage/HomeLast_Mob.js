@@ -55,6 +55,7 @@ font-weight : 106.6667 vw;
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 25.6000vw;
+    margin-top: 10vw;
 `;
 
 const Button1 = styled.button`
