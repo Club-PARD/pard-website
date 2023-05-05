@@ -54,26 +54,22 @@ const Body2 = styled.div`
     right: 20px;
 `;
 
-
+//margin-top: 110px = 60(image radius) + 50 px
 const PartContents = styled.div`
     display: flex;
-    height:30.6250vw;
-    justify-content: space-between;
-    padding: 55px 130px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
     align-items: flex-start;
-    width: 70%;
+    margin-top: 110px;
 `;
 
 const PartWrapper = styled.div`
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-
 `;
 
 const ContentWrapper = styled.div`
     margin-top: ${props => (props.marginTop ? '5.4861vw' : '0')};
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,18 +88,15 @@ const TextWrapper = styled.div`
 `;
 
 const TextWrapper2 = styled.div`
-margin-top: 15px;
+    margin-top: 15px;
     height: 0;
     display: flex;
+    flex-direction: row;
     width: 80%;
     justify-content: space-between;
 `;
 
-const TextWrapper3 = styled.div`
-    align-items: center;
-    height: 100%;
-`;
-
+//margin-top: -60px (image radius)
 const Image = styled.img`
     margin-top: -60px;
     width: 120px;
@@ -118,13 +111,11 @@ const PartDiv = styled.div`
     padding-right: 5.5556vw;
     padding-top: 7.9861vw;
     height: 62vw;
-    width: 100%;
-    justify-content: center;
 `;
 
 function MentorCard(props){
     return (
-        <ContentWrapper key={props.content.id} marginTop={props.content.id % 2 !== 0}>
+        <ContentWrapper key={props.content.id} marginTop={props.content.id % 2 !== 0 }>
             <Image src={props.content.imageSrc} alt={`Image ${props.content.id}`} color={props.content.color}/>
             <TextWrapper2>
                 <Header7 color = {props.content.color}>"</Header7>
