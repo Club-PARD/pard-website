@@ -1,6 +1,7 @@
-import styled, { ThemeProvider, css } from 'styled-components';
+import styled, { ThemeProvider} from 'styled-components';
+import {FaInstagram, FaGithub, FaInvision} from 'react-icons/fa';
+import {SiNotion} from 'react-icons/si';
 import { theme } from '../../../styles/theme';
-import { useState } from 'react';
 import CHJ from '../../../assets/img/최현종(회장).png';
 import SYC from '../../../assets/img/송예찬(부회장).png';
 import KYG from '../../../assets/img/김유진.png';
@@ -30,16 +31,28 @@ const Subtitle3 = styled.div`
     margin-bottom: 3.7500vw;
     white-space: pre-line;
     text-align: center;
-
 `;
 const TextWrap = styled.div`
     position: absolute;
     width: 17.3611vw;
     height: 22%;
     top: 78%;
-    background-color : rgba(221,2,34,0.5);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 1.3889vw;
+    border-bottom-right-radius: 1.3889vw;
+    background-color :  ${({position}) => position === 'Developer' ? "rgba(255,92,0,0.5)" 
+    : position === 'Designer'
+    ?"rgba(123,63,239,0.5)": position === 'Operator'
+    ?"rgba(100,194,254,0.5)":"rgba(82,98,245,0.5)"};
+    transition: 0.3s;
+    &:hover{
+        top: 0%;
+        height: 100%;
+        border-top-left-radius: 1.3889vw;
+        border-top-right-radius: 1.3889vw;
+        background-color: ${({position}) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)' 
+        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)' 
+        : position === 'Operator' ? 'rgba(100, 194, 254, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
+    }   
 `
 const Subtitle1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
@@ -47,14 +60,13 @@ const Subtitle1 = styled.div`
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
     position: absolute;
-        top: 35%;
+        bottom: 2vw;
         left: 58%;
         width: 100%;
         transform: translate(-50%,-50%);
     margin-bottom: 0.2788w;
     white-space: pre-line;
     text-align: left;
-
 `;
 const Caption = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Caption};
@@ -62,28 +74,25 @@ const Caption = styled.div`
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
         position: absolute;
-        top: 64%;
+        bottom: 0%;
         left: 58%;
         width: 100%;
         transform: translate(-50%,-50%);
     margin-bottom: 0.7500vw;
     white-space: pre-line;
     text-align: left;
-
 `;
 
 const PartDiv = styled.div`
     padding-left:5.5556vw;
-    padding-right: 112px;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-right: 7.7778vw;
+    padding-bottom: 6.9444vw;
     height: 100%;
-    background-color: blue;//연습용
 `;
 const GridContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4,1fr); //4개씩 넣고 각 넓이는 1fr이다
-    grid-gap: 20px;//서로 20px의 차이가 있도록
+    grid-gap: 1.3889vw;//서로 20px의 차이가 있도록
     grid-auto-rows: 1fr;
     
 `
@@ -91,10 +100,6 @@ const Column = styled.div`
     //나중에 이미지 넣을 공간
     position: relative;
     max-width: 17.3611vw;
-    background-color: white; // 연습용 
-    ${props => props.hover && css` //props.hover 값이 true일때 css값을 넣어라
-    background-color: black; //운영진의 간단한 소개
-  `}
 `
 const Image = styled.img`
     max-width: 17.3611vw;;
@@ -102,8 +107,36 @@ const Image = styled.img`
     height: 20.8333vw;
     display: block; margin: 0px auto;
 `
-
-
+const IconWrapper = styled.div`
+    display: none;
+    position: absolute;
+    right: 0;
+    ${TextWrap}:hover & {
+    display: flex;
+    justify-content: flex-end;
+    }
+`
+const IconBackground = styled.div`
+  position: relative;
+  width: 2.7778vw;
+  height: 2.7778vw;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 0.6944vw;
+  margin-top: 1.0417vw;
+  text-align: center;
+`;
+const Icon = styled.a`
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+transform: translate(-50%, -50%);
+display: flex;
+align-items: center;
+justify-content: center;
+`;
 
 function InquiryManagement() {
     const managerData=[
@@ -112,77 +145,87 @@ function InquiryManagement() {
             imgsrc : CHJ,
             name : '최현종(회장)',
             position : 'Product Manager',
+    site: [
+      { name: 'github', link: 'https://www.github.com' },
+      { name: 'instagram', link: 'https://www.instagram.com' },
+      { name: 'notion', link: 'https://www.notion.com' },
+            ]
         },
         {
             id : 2,
             imgsrc : SYC,
             name : '송예찬(회장)',
             position : 'Operator',
+            site :[],
         },
         {
             id : 3,
             imgsrc : LSY,
             name : '이신영',
             position : 'Operator',
+            site :[],
         },
         {
             id : 4,
             imgsrc : PJG,
             name : '박정규',
             position : 'Developer',
+            site :[{name: 'notion', link: 'https://www.notion.com'},
+            { name: 'github', link: 'https://www.github.com' },
+        ],
         },
         {
             id : 5,
             imgsrc : KGS,
             name : '김진서',
             position : 'Developer',
+            site :[   { name: 'github', link: 'https://www.github.com' },],
         },
         {
             id : 6,
             imgsrc : KYG,
             name : '김유진',
             position : 'Developer',
+            site :[   { name: 'github', link: 'https://www.github.com' },],
         },
         {
             id : 7,
             imgsrc : KHR,
             name : '김하람',
             position : 'Developer',
+            site :[   { name: 'github', link: 'https://www.github.com' },],
         },
         {
             id : 8,
             imgsrc : JSH,
             name : '조세희',
             position : 'Designer',
+            site :[],
         },
         {
             id : 9,
             imgsrc : SGS,
             name : '신지수',
             position : 'Designer',
+            site :[],
         },
         {
             id : 10,
             imgsrc : JH,
             name : '조환',
             position : 'Product Manager',
+            site :[],
         },
         {
             id : 11,
             imgsrc : PSG,
             name : '백승균',
             position : 'Product Manager',
+            site :[],
         },
 
 
     ] //ARRAY 값 운영진의 정보를 넣을 예정
-    const [isHovering, setIsHovering]=useState(-1);
-    const handleMouseEnter=(index)=>{
-        setIsHovering(index);
-    }
-    const handleMouseLeave=()=>{
-        setIsHovering(-1);
-    }
     return (
         <PartDiv>
              <ThemeProvider theme={theme}>
@@ -191,12 +234,27 @@ function InquiryManagement() {
             <Subtitle3>함께 했을 때 더 큰 일을 <br></br> 이룰 수 있음을 강하게 믿고 있어요</Subtitle3>
             <GridContainer>
                 {managerData.map(content =>(
-                    <Column key={content.id} hover = {content.id===isHovering} onMouseEnter={()=> handleMouseEnter(content.id)} onMouseLeave={handleMouseLeave} 
-                    className={isHovering ? "hover":""} >
+                    <Column key={content.id}>
                         <Image src={content.imgsrc} alt={`Image ${content.id}`} ></Image>
-                        <TextWrap>
+
+                        <TextWrap position={content.position}>
                         <Subtitle1>{content.name}</Subtitle1>
                         <Caption>{content.position}</Caption>
+                        <IconWrapper>
+                            {content.site.map(site=>(
+                            <IconBackground  key={site.name}>
+                            <Icon href={site.link}>
+                                {site.name === "instagram" ? <FaInstagram  style={{ color: "black" }} /> 
+                                :site.name ==="notion" ? <SiNotion style={{color : "black"}}/> 
+                                :site.name === "github" ? <FaGithub style={{color : "black"}}/>
+                                :<FaInvision style={{color : "black"}}/>
+                                //in 도 넣어야 하고 위에 in은 아닌듯 그리고 디스콰이엇도 넣어야함
+                                }
+                            </Icon>
+                            </IconBackground>
+                            ))}
+                        </IconWrapper>
+                            
                         </TextWrap>
                     </Column>
                 ))}

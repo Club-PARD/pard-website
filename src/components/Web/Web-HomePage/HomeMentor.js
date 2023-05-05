@@ -95,7 +95,6 @@ const TextWrapper2 = styled.div`
     justify-content: space-between;
 `;
 
-//margin-top: -60px (image radius)
 const Image = styled.img`
     margin-top: -60px;
     width: 120px;

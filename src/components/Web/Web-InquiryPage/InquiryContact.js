@@ -1,5 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
+import Ask from './InquiryContact_Web_Asked';
 
 const Header2 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header2};
@@ -16,13 +17,13 @@ const PartDiv = styled.div`
     padding-top: 100px;
     height: 62vw;
 `;
-
+//<Header2>PARD에 대해<br></br>무엇이든 물어보세요!</Header2>
 function InquiryContact() {
 
     return (
         <PartDiv>
              <ThemeProvider theme={theme}>
-            <Header2>PARD에 대해<br></br>무엇이든 물어보세요!</Header2>
+             <Ask/>
             </ThemeProvider>
         </PartDiv>
     );

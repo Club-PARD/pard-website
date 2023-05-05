@@ -1,5 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
+import Askmobile from './InquiryContact_Mob_ASked';
 
 const Header7 = styled.div`
   font-size: ${props => props.theme.Mob_fontSizes.Header7};
@@ -15,13 +16,13 @@ const PartDiv = styled.div`
     padding-top: 45px;
     height: 2445px;
 `;
-
+//<Header7>문의하세요! 모바일</Header7>
 function InquiryContactMob() {
 
     return (
         <PartDiv>
              <ThemeProvider theme={theme}>
-            <Header7>문의하세요! 모바일</Header7>
+            <Askmobile/>
             </ThemeProvider>
         </PartDiv>
     );
