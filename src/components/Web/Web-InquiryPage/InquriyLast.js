@@ -14,7 +14,7 @@ const Header7 = styled.div`
   `;
 
 const PartDiv = styled.div`
-  padding-left:5.5556vw;
+  padding-left:7.5556vw;
   padding-right: 112px;
   padding-top: 100px;
   height: 62vw;
@@ -44,7 +44,7 @@ const Frame15 = styled.button`
   width: 23.0556vw;
   height: 4.4444vw;
   /* left: calc(50% - 23.0556vw/2); */
-  margin-left: 31.0722vw;
+  margin-left: 29.0722vw;
   margin-top: 7.9306vw;
   border:none;
   background: #5262F5;
