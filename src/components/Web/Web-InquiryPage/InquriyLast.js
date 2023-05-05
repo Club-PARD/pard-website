@@ -1,13 +1,14 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 
-const Header2 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header2};
-  font-weight: ${props => props.theme.fontWeights.Header2};
+const Header7 = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Header7};
+  font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   margin-bottom: 3.7500vw;
   white-space: pre-line;
+  text-align : center;
 `;
 
 const PartDiv = styled.div`
@@ -17,15 +18,15 @@ const PartDiv = styled.div`
     height: 62vw;
 `;
 
-function AboutContact() {
+function InquiryLast() {
 
     return (
         <PartDiv>
              <ThemeProvider theme={theme}>
-            <Header2>PARD에 대해<br></br>무엇이든 물어보세요!</Header2>
+            <Header7>더 궁금하신 내용이 있거나<br></br>문의사항이 있으신가요?</Header7>
             </ThemeProvider>
         </PartDiv>
     );
 }
 
-export default AboutContact;
+export default InquiryLast;

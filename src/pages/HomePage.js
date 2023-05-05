@@ -13,6 +13,7 @@ import HomeProgramMob from "../components/Mobile/Mob-HomePage/HomeProgram_Mob";
 import HomePartsMob from "../components/Mobile/Mob-HomePage/HomePart_Mob";
 import HomeLastsMob from "../components/Mobile/Mob-HomePage/HomeLast_Mob";
 import HomePartnerMob from "../components/Mobile/Mob-HomePage/HomePartner_Mob";
+import NavBarMov from "../components/NavBarMov";
 
 
 
@@ -24,9 +25,9 @@ function HomePage() {
 
     return (
         <HomePageComponent>
-            <Navbar />
             {isDesktopOrMobile !== true ?
                 <div>
+                     <Navbar />
                     <HomeVideoWeb />
                     <HomePartWeb />
                     <HomeProgramWeb />
@@ -36,6 +37,7 @@ function HomePage() {
                 </div>
                 :
                 <div>
+                    <NavBarMov/>
                     <HomeVideoMob/>
                     <HomePartsMob/>
                     <HomeProgramMob/>
