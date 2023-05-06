@@ -16,8 +16,8 @@ const Header7 = styled.div`
 const PartDiv = styled.div`
   padding-left:7.5556vw;
   padding-right: 112px;
-  padding-top: 100px;
-  height: 62vw;
+  padding-top: 30vw;
+  height: 40vw;
   position: relative;
 `;
 
