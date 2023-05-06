@@ -1,6 +1,7 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 
+
 const Header2 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header2};
   font-weight: ${props => props.theme.fontWeights.Header2};
@@ -22,7 +23,7 @@ function HomeProgram() {
     return (
         <PartDiv>
              <ThemeProvider theme={theme}>
-            <Header2>Program</Header2>
+             <Header2>Program</Header2>
             </ThemeProvider>
         </PartDiv>
     );
