@@ -86,7 +86,6 @@ const Caption = styled.div`
 const PartDiv = styled.div`
     padding-left:5.5556vw;
     padding-right: 7.7778vw;
-    padding-top: 6.9444vw;
     padding-bottom: 6.9444vw;
     height: 100%;
 `;
