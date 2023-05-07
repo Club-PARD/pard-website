@@ -105,7 +105,9 @@ const Image = styled.img`
     max-width: 17.3611vw;;
     width: 17.3611vw;
     height: 20.8333vw;
-    display: block; margin: 0px auto;
+    
+    display: block;
+    margin: 0px auto;
 `
 const IconWrapper = styled.div`
     display: none;

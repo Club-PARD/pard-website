@@ -7,7 +7,7 @@ const Header2 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header2};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 25px;
+  margin-bottom: 1.736vw;
   white-space: pre-line;
 `;
 
@@ -29,8 +29,8 @@ const Header6 = styled.div`
     text-align: center;
     line-height: 140%;
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin-top: 1.389vw;
+    margin-bottom: 1.042vw;
 `;
 const Header7 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Header3};
@@ -49,8 +49,8 @@ const Body2 = styled.div`
     display: flex;
     text-align:right;
     position: absolute;
-    bottom: ${props => props.isname ? '35px' : '20px'}; 
-    right: 20px;
+    bottom: ${props => props.isname ? '2.631vw' : '1.189vw'}; 
+    right: 1.389vw;
 `;
 
 //margin-top: 110px = 60(image radius) + 50 px
@@ -59,9 +59,9 @@ const PartContents = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap: 100px;
+    gap: 5vw;
     align-items: flex-start;
-    margin-top: 110px;
+    margin-top: 7.639vw;
 `;
 
 const PartWrapper = styled.div`
@@ -73,21 +73,23 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     align-items: center;
 
-    width: 250px;
-    height: 270px;
+    width: 17.361vw;
+    height: 18.750vw;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     position: relative;
 `;
 
 const TextWrapper = styled.div`
-    padding: 0px 42px;
+    padding: 0px 2.917vw;
     word-break: keep-all;
     align-items: center;
+    width: 11.597vw;
+    height: 5.833vw;
 `;
 
 const TextWrapper2 = styled.div`
-    margin-top: 15px;
+    margin-top: 1.042vw;
     height: 0;
     display: flex;
     flex-direction: row;
@@ -96,10 +98,10 @@ const TextWrapper2 = styled.div`
 `;
 
 const Image = styled.img`
-    margin-top: -60px;
-    width: 120px;
-    height: 120px;
-    border: 2px solid ${props => (props.color)};
+    margin-top: -4.167vw;
+    width: 8.333vw;
+    height: 8.333vw;
+    border: 0.139vw solid ${props => (props.color)};
     border-radius: 50%;
     
 `;
@@ -148,6 +150,14 @@ function HomeMentor() {
         },
         {
             id: 3,
+            imageSrc: PlanerImage,
+            title: '배워서 남주는 가치를 제대로 실천하는 후배들',
+            mentor_name: '이즌쉬러블리',
+            mentor_from: '-메타코미디클럽 개발자',
+            color: '#64C59A'
+        },
+        {
+            id: 4,
             imageSrc: PlanerImage,
             title: '배워서 남주는 가치를 제대로 실천하는 후배들',
             mentor_name: '이즌쉬러블리',

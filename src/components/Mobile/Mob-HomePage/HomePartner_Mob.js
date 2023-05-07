@@ -49,7 +49,8 @@ const SImage4 = styled.img`
 
 const PartDiv = styled.div`
     padding-left:1.1111vw;
-    height: 197.8667vw;
+    padding-top: 35vw;
+    height: 200vw;
 `;
 
 const ContentWrapper = styled.div`
