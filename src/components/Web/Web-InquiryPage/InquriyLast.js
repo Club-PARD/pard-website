@@ -17,7 +17,7 @@ const PartDiv = styled.div`
   padding-left:9.0556vw;
   padding-right: 7.7778vw;
   padding-top: 6.9444vw;
-  height: 62vw;
+  height: 42vw;
   position: relative;
 `;
 
