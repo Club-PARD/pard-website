@@ -8,15 +8,15 @@ const Header7 = styled.div`
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
     line-height: 1.45;
-    margin-bottom: 5.500vw;
+    margin-bottom: 8.000vw;
     white-space: pre-line;
     text-align : center;
   `;
 
 const PartDiv = styled.div`
-    padding-left:12.0556vw;
-    padding-right: 112px;
-    padding-top: 100px;
+    padding-left:6.5556vw;
+    padding-right: 7.7778vw;
+    padding-top: 67.9444vw;
     padding-bottom: 65vw; // 원하는 만큼 값을 조절
     height: 62vw;
     position: relative;
@@ -45,11 +45,11 @@ const Frame15 = styled.button`
     height: 13.8667vw;
     /* left: calc(50% - 23.0556vw/2); */
     /* left: 8.8194vw; */
-    margin-left: 20vw;
-    margin-top: 13.8667vw;
+    margin-left: 25.5vw;
+    margin-top: 28.8667vw;
     border:none;
     background: #5262F5;
-    border-radius: 10px;
+    border-radius: 2.6667vw;
 `
 
 const Header5 = styled.div`

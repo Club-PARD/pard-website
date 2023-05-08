@@ -8,16 +8,16 @@ const Header7 = styled.div`
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   line-height: 1.45;
-  margin-bottom: 2.500vw;
+  margin-bottom: 3.000vw;
   white-space: pre-line;
   text-align : center;
   `;
 
 const PartDiv = styled.div`
-  padding-left:7.5556vw;
-  padding-right: 112px;
-  padding-top: 30vw;
-  height: 40vw;
+  padding-left:9.0556vw;
+  padding-right: 7.7778vw;
+  padding-top: 6.9444vw;
+  height: 42vw;
   position: relative;
 `;
 
@@ -26,6 +26,7 @@ const Subtitle3 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Subtitle3};
   color : #FFFFFF;
   font-family: 'NanumSquare Neo';
+  margin-left: 0.5vw;
   margin-bottom: 3.7500vw;
   white-space: pre-line;
   text-align: center;
@@ -44,8 +45,8 @@ const Frame15 = styled.button`
   width: 23.0556vw;
   height: 4.4444vw;
   /* left: calc(50% - 23.0556vw/2); */
-  margin-left: 29.0722vw;
-  margin-top: 7.9306vw;
+  margin-left: 29.5722vw;
+  margin-top: 6.4306vw;
   border:none;
   background: #5262F5;
   border-radius: 0.6944vw;

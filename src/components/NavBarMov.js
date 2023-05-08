@@ -16,6 +16,7 @@ const Nav = styled.nav`
   left: 0;
   right: 0;
   height: 18.5vw;
+  z-index: 2;
 `;
 
 const Logo = styled.div`
@@ -41,9 +42,10 @@ const Menu = styled.div`
   left: 0;
   right: 0;
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  background-color: #1A1A1A;
+  background-color: rgba(26, 26, 26, 0.6); // 여기가 NavBar 투명도
   padding: 1rem;
   text-align: center;
+  height: 100%;
 `;
 
 const Subtitle2 = styled.div`
