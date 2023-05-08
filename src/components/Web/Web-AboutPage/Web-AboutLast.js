@@ -4,7 +4,7 @@ import { theme } from '../../../styles/theme';
 
 const PartDiv = styled.div`
     padding-top: 15.0694vw;
-    height: 850px;
+    height: 59vw;
     background-color: #FFFFFF;
 `;
 
