@@ -1,6 +1,4 @@
-import Navbar from "../components/NavBar";
 import styled from "styled-components";
-import HomeVideoWeb from "../components/Web/Web-HomePage/HomeVideo";
 import HomePartWeb from "../components/Web/Web-HomePage/HomePart";
 import HomeProgramWeb from "../components/Web/Web-HomePage/HomeProgram";
 import HomePartnerWeb from "../components/Web/Web-HomePage/HomePartner";
@@ -8,12 +6,14 @@ import HomeLastWeb from "../components/Web/Web-HomePage/HomeLast";
 import HomeMentorWeb from "../components/Web/Web-HomePage/HomeMentor";
 import { useMediaQuery } from 'react-responsive'
 import HomeMentorMob from "../components/Mobile/Mob-HomePage/HomeMentor_Mob";
-import HomeVideoMob from "../components/Mobile/Mob-HomePage/HomeVideo_Mob";
+import HomeVideoMob from "../components/Mobile/Mob-HomePage/HomeFirst_Mob";
 import HomeProgramMob from "../components/Mobile/Mob-HomePage/HomeProgram_Mob";
 import HomePartsMob from "../components/Mobile/Mob-HomePage/HomePart_Mob";
 import HomeLastsMob from "../components/Mobile/Mob-HomePage/HomeLast_Mob";
 import HomePartnerMob from "../components/Mobile/Mob-HomePage/HomePartner_Mob";
 import NavBarMov from "../components/NavBarMov";
+import HomeFirst from "../components/Web/Web-HomePage/HomeFirst";
+import NavBarHome from "../components/Navbar_Home";
 
 
 
@@ -27,8 +27,8 @@ function HomePage() {
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
                 <div>
-                     <Navbar />
-                    <HomeVideoWeb />
+                     <NavBarHome/>
+                    <HomeFirst/>
                     <HomePartWeb />
                     <HomeProgramWeb />
                     <HomeMentorWeb />

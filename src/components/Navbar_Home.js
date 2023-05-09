@@ -13,6 +13,8 @@ const NavBarWrapper = styled.nav`
   top: 0;
   width: 100%;
   z-index: 999;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(${props => props.isScrolled ? '0' : '-100%'});
 `;
 
 const Subtitle1 = styled.p`
@@ -45,7 +47,7 @@ const NavItem = styled.li`
   margin-right: 50px;
 `;
 
-const NavBar = () => {
+const NavBar_Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { pathname } = useLocation(); // 현재 페이지의 URL을 가져옴
 
@@ -98,4 +100,4 @@ const NavBar = () => {
 };
 
 
-export default NavBar;
+export default NavBar_Home;
