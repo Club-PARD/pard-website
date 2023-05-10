@@ -32,7 +32,7 @@ const Body3 = styled.div`
     position: absolute;
     font-family: 'NanumSquare Neo';
     color: #000000;
-    Weight: Regular;
+    font-weight: ${props => props.theme.fontWeights.Body1};
     font-size: 1.3889vw;
     width : 31.8889vw;
     line-height: 140%;

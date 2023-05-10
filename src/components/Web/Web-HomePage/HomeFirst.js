@@ -16,17 +16,23 @@ const PartDiv = styled.div`
     padding-left:24.7222vw;
     padding-right: 22.7222vw;
     padding-top: 15.0694vw;
-    height: 850px;
-    background-color: #1A1A1A;
+    height: 1000px;
+    position: relative;
 `;
+
+const Div = styled.div`
+`;
+
 
 function HomeFirst() {
     return (
-        <PartDiv>
+        <Div>
             <ThemeProvider theme={theme}>
-            <Header2>asdf</Header2>
+                <PartDiv>
+                    <Header2>asdf</Header2>
+                </PartDiv>
             </ThemeProvider>
-        </PartDiv>
+        </Div>
     );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { theme } from '../styles/theme';
 import styled, { ThemeProvider } from 'styled-components';
 import { useState, useEffect } from 'react';
@@ -20,7 +20,7 @@ const NavBarWrapper = styled.nav`
 const Subtitle1 = styled.p`
   font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
   font-weight: ${props => props.theme.fontWeights.Subtitle1};
-  color: ${props => props.active ? '#FFFFFF' : 'rgba(255, 255, 255, 0.2)'};
+  color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   &:hover{
     color: #FFFFFF;
@@ -49,7 +49,6 @@ const NavItem = styled.li`
 
 const NavBar_Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { pathname } = useLocation(); // 현재 페이지의 URL을 가져옴
 
   useEffect(() => {
     function handleScroll() {
@@ -75,22 +74,22 @@ const NavBar_Home = () => {
         <NavLinks>
           <NavItem>
             <Link to="/About" style={{ textDecoration: "none" }}>
-              <Subtitle1 active={pathname === '/About'}>소개</Subtitle1>
+              <Subtitle1 >소개</Subtitle1>
             </Link>
           </NavItem>
           <NavItem>
             <Link to="/Project" style={{ textDecoration: "none" }}>
-              <Subtitle1 active={pathname === '/Project'}>프로젝트</Subtitle1>
+              <Subtitle1 >프로젝트</Subtitle1>
             </Link>
           </NavItem>
           <NavItem>
             <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-              <Subtitle1 active={pathname === '/Inquiry'}>문의</Subtitle1>
+              <Subtitle1 >문의</Subtitle1>
             </Link>
           </NavItem>
           <NavItem>
             <Link to="/Recruting" style={{ textDecoration: "none" }}>
-              <Subtitle1 active={pathname === '/Recruting'}>리쿠르팅</Subtitle1>
+              <Subtitle1 >리쿠르팅</Subtitle1>
             </Link>
           </NavItem>
         </NavLinks>
