@@ -27,11 +27,11 @@ const Subtitle1 = styled.p`
 
 const Logo = styled.div`
   img {
-    height: 3.1250vw;
-    width: 9.7222vw;
+    height: 45px;
+    width: 140px;
   }
   margin-right: auto;
-  margin-left: 5.5556vw;
+  margin-left: 80px;
 `;
 
 const NavLinks = styled.ul`

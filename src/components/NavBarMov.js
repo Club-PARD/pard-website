@@ -15,17 +15,17 @@ const Nav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  height: 18.5vw;
+  height: 69px;
   z-index: 2;
 `;
 
 const Logo = styled.div`
 img {
-    height: 9vw;
-    width: 32vw;
+    height: 51px;// 로고 크기가 px로 바꾸니 너무 작아서 1.5배늘림
+    width: 180px;
   }
   margin-right: auto; 
-  margin-left: 1.8056vw;
+  margin-left: 7px;
 `;
 
 const MenuButton = styled.button`
@@ -53,14 +53,14 @@ const Subtitle2 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Subtitle2};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 5.3333vw;
-  margin-top: 5.3333vw;
+  margin-bottom: 20px;
+  margin-top: 20px;
   white-space: pre-line;
 `;
 
 
 const Hr = styled.hr`
-width: 133px;
+width: 499px;
 color: white;
 `;
 
@@ -75,7 +75,7 @@ const NavBarMov = () => {
           <img src={require("../assets/img/Logo.png")} alt="Logo" />
         </Logo>
         <MenuButton onClick={toggleMenu}><FaBars /></MenuButton>
-        <Menu isOpen={isOpen}>
+        <Menu  isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>
             <Subtitle2>소개</Subtitle2>
           </Link>
