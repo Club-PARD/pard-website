@@ -13,6 +13,7 @@ const Header2 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 43px;
   white-space: pre-line;
+  margin-left: 40px;
 `;
 
 
@@ -43,17 +44,10 @@ const Body2 = styled.div`
 
 ////////////////// 폰트 끝 /////////////////////////// 
 
-const PartDiv = styled.div`
-    padding-left:80px;
-    padding-right: 80px;
-    padding-top: 115px;
-    height: 893px;
-`;
-
 const PartContents = styled.div`
     display: flex;
     height:441px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     
 `;
@@ -63,6 +57,8 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-right: 40px;
+    margin-left: 40px;
 `;
 
 const PartWrapper = styled.div`
@@ -73,9 +69,9 @@ const PartWrapper = styled.div`
 `;
 
 const Image = styled.img`
-    max-width: 200px;;
+    max-width: 250px;;
     width: 200px;
-    height: 240px;
+    height: 242px;
     margin-top: ${props => (props.marginTop ? '79px' : '0')};
 `;
 
@@ -98,6 +94,8 @@ const ButtonDiv = styled.div`
 `;
 
 const Div = styled.div`
+    margin: 0px auto;
+    height: 893px;
 `;
 
 
@@ -137,13 +135,13 @@ function HomePart() {
 
     return (
         <Div>
-            <PartDiv>
+
                 <ThemeProvider theme={theme}>
                     <Header2>PARTS</Header2>
                     <PartContents>
                         {contentsData.map(content => (
                             <PartWrapper key={content.id}>
-                                <ContentWrapper key={content.id}>
+                                <ContentWrapper key={content.id} marginright={content.id === 5}>
                                     <Image src={content.imageSrc} alt={`Image ${content.id}`} marginTop={content.id === 2 || content.id === 4} />
                                     <Header5>{content.title}</Header5>
                                     <Body2>{content.description}</Body2>
@@ -159,7 +157,6 @@ function HomePart() {
                         </div>
                     </ButtonDiv>
                 </ThemeProvider>
-            </PartDiv>
         </Div>
     );
 }
