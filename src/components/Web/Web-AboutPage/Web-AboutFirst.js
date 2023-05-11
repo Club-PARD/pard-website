@@ -26,7 +26,7 @@ const PartDiv = styled.div`
     padding-right: 268px;
     padding-bottom: 274px;
     padding-top: 274px;
-    height: 717px;
+    height: 225px;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
@@ -53,7 +53,7 @@ const AboutFrame1 = styled.img`
 
 const TextContainer = styled.div`
     position: absolute;
-    top: 31%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 `;
