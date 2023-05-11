@@ -10,7 +10,6 @@ function ProjectPage() {
   `;
   return (
     <ProjectPageComponent>
-      <Navbar />
       {/* <ProHeader /> */}
       <ProgramsTrain />
     </ProjectPageComponent>
