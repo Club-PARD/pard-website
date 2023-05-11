@@ -9,13 +9,12 @@ display: flex;
 `
 const Askedstyled=styled.div`
 position: absolute;
-
-margin-left: 0vw; //padding한 만큼 원래 maring-left vw에서 값 뺴줌
-margin-right: 56.5278vw;
-margin-top:4.1667vw; //padding한 만큼 원래 maring-top vw에서 값 뺴줌
-margin-bottom: 27.9167vw;
-width:40.9167vw; // 원래보다 vw3높임
-height: 11.6667vw;
+padding-right: 40px;
+  padding-left: 105px;
+margin-top: 130px; //padding한 만큼 원래 maring-top0px에서 값 뺴줌
+margin-bottom: 402px;
+width:589px; // 원래보다0px3높임
+height: 168px;
 /* Header/H2 - EB 60 */
 
 font-family: 'NanumSquare Neo';
@@ -32,11 +31,11 @@ color: #FFFFFF;
 `
 const Informationstyle=styled.form`
 position: absolute;
-margin-left:52.7773vw; //padding한 만큼 원래 maring-left vw에서 값 뺴줌
-margin-right:7.7778vw;
-margin-top:4.1667vw; //padding한 만큼 원래 maring-top vw에서 값 뺴줌
-height:15.2778vw;
-width: 33.8889vw;
+margin-left:760px; //padding한 만큼 원래 maring-left0px에서 값 뺴줌
+margin-right:112px;
+margin-top:130px; //padding한 만큼 원래 maring-top0px에서 값 뺴줌
+height:220px;
+width: 488px;
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
@@ -49,11 +48,11 @@ gap: 40px;
 
 const Mail=styled.div`
 position: absolute;
-width: 4.1944vw; // 원래보다 1vw올림
-height:2.3611vw;
-margin-right:30.6250vw;
-margin-bottom:11.5278vw;
-margin-top: 1.3889vw;
+width: 60px; // 원래보다 14px올림
+height:34px;
+margin-right:441px;
+margin-bottom:166px;
+margin-top: 20px;
 /* Header/H5 - B 24 */
 
 font-family: 'NanumSquare Neo';
@@ -70,12 +69,12 @@ color: #FFFFFF;
 `
 const EMail=styled.div`
 position: absolute;
-width: 15.4167vw;
-height: 1.9444vw;
-margin-left:15.4167vw;
-margin-right:3.0556vw ;
-margin-top: 1.3889vw;
-margin-bottom:11.9444vw;
+width: 222px;
+height: 28px;
+margin-left:222px;
+margin-right:44px ;
+margin-top: 20px;
+margin-bottom:172px;
 /* Header/H6 - B 20 */
 
 font-family: 'NanumSquare Neo';
@@ -92,11 +91,11 @@ color: #FFFFFF;
 `
 const Instagram=styled.div`
 position: absolute;
-width: 8.9167vw;  // 원래보다 1vw올림
-height: 2.3611vw;
-margin-right:25.9028vw;   //margin은 박스 안에서 얼마나 띄어있는지 보기 위해
-margin-top: 6.5972vw;
-margin-bottom: 6.3194vw;
+width: 128px;  // 원래보다 14px올림
+height: 34px;
+margin-right:373px;   //margin은 박스 안에서 얼마나 띄어있는지 보기 위해
+margin-top: 95px;
+margin-bottom: 91px;
 /* Header/H5 - B 24 */
 
 /* Header/H5 - B 24 */
@@ -113,12 +112,12 @@ color: #FFFFFF;
 `
 const InstagramId=styled.div`
 position: absolute;
-height: 1.9444vw;
-width: 10.6944vw;
-margin-left:20.1389vw ;
-margin-right:3.0556vw;
-margin-top: 6.5278vw;
-margin-bottom: 6.8056vw;
+height: 28px;
+width: 154px;
+margin-left:290px ;
+margin-right:44px;
+margin-top: 94px;
+margin-bottom: 98px;
 /* Header/H5 - B 24 */
 font-family: 'NanumSquare Neo';
 font-style: normal;
@@ -134,22 +133,22 @@ color: #FFFFFF;
 `
 const Lineup=styled.div`
 position: absolute;
-width: 33.8889vw;
+width: 375px;
 height: 0px;
-left:0vw;
-margin-top: 0vw;
-margin-bottom:15.2778vw;
+left:0px;
+margin-top: 0px;
+margin-bottom:220px;
 /* Primary/Blue */
 
 border: 1px solid #5262F5;
 `
 const Linedown=styled.div`
 position: absolute;
-width: 33.8889vw;
-height: 0vw;
-margin-left:0vw;
-margin-top:11.5278vw;
-margin-bottom: 3.7500vw;
+width: 375px;
+height: 0px;
+margin-left:0px;
+margin-top:166px;
+margin-bottom: 54px;
 
 /* Primary/Blue */
 
@@ -158,12 +157,12 @@ border: 1px solid #5262F5;
 
 const Business=styled.div`
 position: absolute;
-width:20.1528vw; // 원래보다 vw 3높임
-height:2.3611vw;
-margin-left: 0vw;
-margin-right: 16.6667vw;
-margin-top: 12.9167vw;
-margin-bottom: 0vw;
+width:290px; // 원래보다0px 3높임
+height:34px;
+margin-left: 0px;
+margin-right: 240px;
+margin-top: 186px;
+margin-bottom: 0px;
 font-family: 'NanumSquare Neo';
 font-style: normal;
 font-weight: ${(props)=>props.theme.fontWeights.Header5};
@@ -190,22 +189,22 @@ color: #FFFFFF;
 
 const Vectorbox1=styled.div`
 position: absolute;
-margin-left: 32.9167vw;
-margin-right: 0vw;
-margin-top: 1.5972vw;
-margin-bottom: 12.2222vw;
+margin-left: 474px;
+margin-right: 0px;
+margin-top: 23px;
+margin-bottom: 176px;
 `
 const Vectorbox2=styled.div`
 position: absolute;
-margin-left: 32.9167vw;
-margin-right: 0vw;
-margin-top: 6.7361vw;
-margin-bottom: 7.0833vw;
+margin-left: 474px;
+margin-right: 0px;
+margin-top: 97px;
+margin-bottom: 102px;
 `
 const Vector= styled.img`
-max-width:0.9722vw;
-width: 0.9722vw;
-height: 0.9722vw;
+max-width:14px;
+width: 14px;
+height: 14px;
 
 `
 const Ask=()=>{
