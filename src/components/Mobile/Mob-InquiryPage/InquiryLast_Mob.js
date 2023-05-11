@@ -8,17 +8,17 @@ const Header7 = styled.div`
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
     line-height: 1.45;
-    margin-bottom: 8.000vw;
+    margin-bottom: 60px;
     white-space: pre-line;
     text-align : center;
   `;
 
 const PartDiv = styled.div`
-    padding-left:6.5556vw;
-    padding-right: 7.7778vw;
-    padding-top: 67.9444vw;
-    padding-bottom: 65vw; // 원하는 만큼 값을 조절
-    height: 62vw;
+    padding-left: 49px;
+    padding-right: 58px;
+    padding-top: 510px;
+    padding-bottom: 488px; // 원하는 만큼 값을 조절
+    height: 465px;
     position: relative;
 `;
 
@@ -27,7 +27,7 @@ const Subtitle3 = styled.div`
     font-weight: ${props => props.theme.fontWeights.Body1};
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-bottom: 3.7500vw;
+    margin-bottom: 28px;
     white-space: pre-line;
     text-align: center;
 `;
@@ -37,19 +37,19 @@ const Frame15 = styled.button`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 1.0417vw 8.3333vw;
-    gap: 0.6944vw;
-    margin-top: -1.3vw;
+    padding:8px 62px;
+    gap: 5px;
+    margin-top: -10px;
     /* position: absolute; */
-    width: 32.2667vw;
-    height: 13.8667vw;
+    width: 242px;
+    height: 104px;
     /* left: calc(50% - 23.0556vw/2); */
     /* left: 8.8194vw; */
-    margin-left: 25.5vw;
-    margin-top: 28.8667vw;
+    margin-left: 191px;
+    margin-top: 217px;
     border:none;
     background: #5262F5;
-    border-radius: 2.6667vw;
+    border-radius: 20px;
 `
 
 const Header5 = styled.div`
@@ -57,7 +57,7 @@ const Header5 = styled.div`
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-bottom: -0.6600vw;
+    margin-bottom: -5px;
     white-space: pre-line;
     text-align: center;
     white-space: nowrap;
