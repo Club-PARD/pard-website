@@ -96,9 +96,6 @@ height: 34px;
 margin-right:373px;   //margin은 박스 안에서 얼마나 띄어있는지 보기 위해
 margin-top: 95px;
 margin-bottom: 91px;
-/* Header/H5 - B 24 */
-
-/* Header/H5 - B 24 */
 
 font-family: 'NanumSquare Neo';
 font-style: normal;

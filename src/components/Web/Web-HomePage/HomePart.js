@@ -95,7 +95,7 @@ const ButtonDiv = styled.div`
 `;
 
 const Div = styled.div`
-    margin: 0px auto;
+    margin: 0px auto; // 가운데 정렬 하는 방법
     height: 893px;
     justify-content: center;
     width: 1330px;
