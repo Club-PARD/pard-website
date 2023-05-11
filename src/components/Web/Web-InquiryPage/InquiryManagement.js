@@ -1,6 +1,6 @@
-import styled, { ThemeProvider} from 'styled-components';
-import {FaInstagram, FaGithub, FaInvision} from 'react-icons/fa';
-import {SiNotion} from 'react-icons/si';
+import styled, { ThemeProvider } from 'styled-components';
+import { FaInstagram, FaGithub, FaInvision } from 'react-icons/fa';
+import { SiNotion } from 'react-icons/si';
 import { theme } from '../../../styles/theme';
 import CHJ from '../../../assets/img/최현종(회장).png';
 import SYC from '../../../assets/img/송예찬(부회장).png';
@@ -39,21 +39,27 @@ const TextWrap = styled.div`
     top: 78%;
     border-bottom-left-radius: 19.5px;
     border-bottom-right-radius: 19.5px;
-    background-color :  ${({position}) => position === 'Developer' ? "rgba(255,92,0,0.5)" 
-    : position === 'Designer'
-    ?"rgba(123,63,239,0.5)": position === 'Operator'
-    ?"rgba(100,194,254,0.5)":"rgba(82,98,245,0.5)"};
+    background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
+        : position === 'Designer'
+            ? "rgba(123,63,239,0.5)" : position === 'Operator'
+                ? "rgba(100,194,254,0.5)" : "rgba(82,98,245,0.5)"};
     transition: 0.3s;
     &:hover{
         top: 0%;
         height: 100%;
         border-top-left-radius: 19.5px;
         border-top-right-radius: 19.5px;
-        background-color: ${({position}) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)' 
-        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)' 
-        : position === 'Operator' ? 'rgba(100, 194, 254, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
-    }   
-`
+        background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
+        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
+            : position === 'Operator' ? 'rgba(100, 194, 254, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
+
+        width: ${({ position }) => position ? '253px' : 'initial'};
+        margin-left: ${({ position }) => position ? '-1.5px' : 'initial'};
+        height: ${({ position }) => position ? '303px' : 'initial'};
+        margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
+    }
+`;
+
 const Subtitle1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
     font-weight: ${props => props.theme.fontWeights.Subtitle1};
@@ -141,127 +147,127 @@ justify-content: center;
 `;
 
 function InquiryManagement() {
-    const managerData=[
+    const managerData = [
         {
-            id : 1,
-            imgsrc : CHJ,
-            name : '최현종(회장)',
-            position : 'Product Manager',
-    site: [
-      { name: 'github', link: 'https://www.github.com' },
-      { name: 'instagram', link: 'https://www.instagram.com' },
-      { name: 'notion', link: 'https://www.notion.com' },
+            id: 1,
+            imgsrc: CHJ,
+            name: '최현종(회장)',
+            position: 'Product Manager',
+            site: [
+                { name: 'github', link: 'https://www.github.com' },
+                { name: 'instagram', link: 'https://www.instagram.com' },
+                { name: 'notion', link: 'https://www.notion.com' },
             ]
         },
         {
-            id : 2,
-            imgsrc : SYC,
-            name : '송예찬(회장)',
-            position : 'Operator',
-            site :[],
+            id: 2,
+            imgsrc: SYC,
+            name: '송예찬(회장)',
+            position: 'Operator',
+            site: [],
         },
         {
-            id : 3,
-            imgsrc : LSY,
-            name : '이신영',
-            position : 'Operator',
-            site :[],
+            id: 3,
+            imgsrc: LSY,
+            name: '이신영',
+            position: 'Operator',
+            site: [],
         },
         {
-            id : 4,
-            imgsrc : PJG,
-            name : '박정규',
-            position : 'Developer',
-            site :[{name: 'notion', link: 'https://www.notion.com'},
+            id: 4,
+            imgsrc: PJG,
+            name: '박정규',
+            position: 'Developer',
+            site: [{ name: 'notion', link: 'https://www.notion.com' },
             { name: 'github', link: 'https://www.github.com' },
-        ],
+            ],
         },
         {
-            id : 5,
-            imgsrc : KGS,
-            name : '김진서',
-            position : 'Developer',
-            site :[   { name: 'github', link: 'https://www.github.com' },],
+            id: 5,
+            imgsrc: KGS,
+            name: '김진서',
+            position: 'Developer',
+            site: [{ name: 'github', link: 'https://www.github.com' },],
         },
         {
-            id : 6,
-            imgsrc : KYG,
-            name : '김유진',
-            position : 'Developer',
-            site :[   { name: 'github', link: 'https://www.github.com' },],
+            id: 6,
+            imgsrc: KYG,
+            name: '김유진',
+            position: 'Developer',
+            site: [{ name: 'github', link: 'https://www.github.com' },],
         },
         {
-            id : 7,
-            imgsrc : KHR,
-            name : '김하람',
-            position : 'Developer',
-            site :[   { name: 'github', link: 'https://www.github.com' },],
+            id: 7,
+            imgsrc: KHR,
+            name: '김하람',
+            position: 'Developer',
+            site: [{ name: 'github', link: 'https://www.github.com' },],
         },
         {
-            id : 8,
-            imgsrc : JSH,
-            name : '조세희',
-            position : 'Designer',
-            site :[],
+            id: 8,
+            imgsrc: JSH,
+            name: '조세희',
+            position: 'Designer',
+            site: [],
         },
         {
-            id : 9,
-            imgsrc : SGS,
-            name : '신지수',
-            position : 'Designer',
-            site :[],
+            id: 9,
+            imgsrc: SGS,
+            name: '신지수',
+            position: 'Designer',
+            site: [],
         },
         {
-            id : 10,
-            imgsrc : JH,
-            name : '조환',
-            position : 'Product Manager',
-            site :[],
+            id: 10,
+            imgsrc: JH,
+            name: '조환',
+            position: 'Product Manager',
+            site: [],
         },
         {
-            id : 11,
-            imgsrc : PSG,
-            name : '백승균',
-            position : 'Product Manager',
-            site :[],
+            id: 11,
+            imgsrc: PSG,
+            name: '백승균',
+            position: 'Product Manager',
+            site: [],
         },
 
 
     ] //ARRAY 값 운영진의 정보를 넣을 예정
     return (
         <PartDiv>
-             <ThemeProvider theme={theme}>
-                
-            <Header7>거친 파도를 뚫고 나가는<br></br>파드 1기 운영진을 소개합니다</Header7>            
-            <Subtitle3>함께 했을 때 더 큰 일을 <br></br> 이룰 수 있음을 강하게 믿고 있어요</Subtitle3>
-            <GridContainer>
-                {managerData.map(content =>(
-                    <Column key={content.id}>
-                        <Image src={content.imgsrc} alt={`Image ${content.id}`} ></Image>
+            <ThemeProvider theme={theme}>
 
-                        <TextWrap position={content.position}>
-                        <Subtitle1>{content.name}</Subtitle1>
-                        <Caption>{content.position}</Caption>
-                        <IconWrapper>
-                            {content.site.map(site=>(
-                            <IconBackground  key={site.name}>
-                            <Icon href={site.link}>
-                                {site.name === "instagram" ? <FaInstagram  style={{ color: "black" }} /> 
-                                :site.name ==="notion" ? <SiNotion style={{color : "black"}}/> 
-                                :site.name === "github" ? <FaGithub style={{color : "black"}}/>
-                                :<FaInvision style={{color : "black"}}/>
-                                //in 도 넣어야 하고 위에 in은 아닌듯 그리고 디스콰이엇도 넣어야함
-                                }
-                            </Icon>
-                            </IconBackground>
-                            ))}
-                        </IconWrapper>
-                            
-                        </TextWrap>
-                    </Column>
-                ))}
+                <Header7>거친 파도를 뚫고 나가는<br></br>파드 1기 운영진을 소개합니다</Header7>
+                <Subtitle3>함께 했을 때 더 큰 일을 <br></br> 이룰 수 있음을 강하게 믿고 있어요</Subtitle3>
+                <GridContainer>
+                    {managerData.map(content => (
+                        <Column key={content.id}>
+                            <Image src={content.imgsrc} alt={`Image ${content.id}`} ></Image>
 
-            </GridContainer>
+                            <TextWrap position={content.position}>
+                                <Subtitle1>{content.name}</Subtitle1>
+                                <Caption>{content.position}</Caption>
+                                <IconWrapper>
+                                    {content.site.map(site => (
+                                        <IconBackground key={site.name}>
+                                            <Icon href={site.link}>
+                                                {site.name === "instagram" ? <FaInstagram style={{ color: "black" }} />
+                                                    : site.name === "notion" ? <SiNotion style={{ color: "black" }} />
+                                                        : site.name === "github" ? <FaGithub style={{ color: "black" }} />
+                                                            : <FaInvision style={{ color: "black" }} />
+                                                    //in 도 넣어야 하고 위에 in은 아닌듯 그리고 디스콰이엇도 넣어야함
+                                                }
+                                            </Icon>
+                                        </IconBackground>
+                                    ))}
+                                </IconWrapper>
+
+                            </TextWrap>
+                        </Column>
+                    ))}
+
+                </GridContainer>
 
             </ThemeProvider>
         </PartDiv>
