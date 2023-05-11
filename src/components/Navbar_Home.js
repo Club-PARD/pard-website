@@ -4,17 +4,25 @@ import { theme } from '../styles/theme';
 import styled, { ThemeProvider } from 'styled-components';
 import { useState, useEffect } from 'react';
 
+
+const Div = styled.div`
+    margin: 0px auto;
+    padding-right: 80px;
+`;
+
 const NavBarWrapper = styled.nav`
  background-color: ${props => props.isScrolled ? (props.scrollPosition >= 1000 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'};
   height: 70px;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
   transition: transform 0.3s ease-in-out;
   transform: translateY(${props => props.isScrolled ? '0' : '-100%'});
+
 `;
 
 const Subtitle1 = styled.p`
@@ -32,19 +40,18 @@ const Logo = styled.div`
     height: 45px;
     width: 140px;
   }
-  margin-right: auto;
-  margin-left: 80px;
+  margin-right: 750px;
 `;
 
 const NavLinks = styled.ul`
   display: flex;
   align-items: center;
   list-style-type: none;
-  margin-right: 5rem;
+  margin-right: 25px;
 `;
 
 const NavItem = styled.li`
-  margin-right: 50px;
+  margin-left: 50px;
 `;
 
 const NavBar_Home = () => {
@@ -64,6 +71,7 @@ const NavBar_Home = () => {
   }, []);
 
   return (
+    <Div>
     <NavBarWrapper isScrolled={scrollPosition >= 30} scrollPosition={scrollPosition}>
       <ThemeProvider theme={theme}>
         <Logo>
@@ -95,6 +103,7 @@ const NavBar_Home = () => {
         </NavLinks>
         </ThemeProvider>
     </NavBarWrapper>
+    </Div>
     );
 };
 
