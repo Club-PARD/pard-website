@@ -40,7 +40,7 @@ const Logo = styled.div`
     height: 45px;
     width: 140px;
   }
-  
+  margin-right: 750px;
 `;
 
 const NavLinks = styled.ul`
