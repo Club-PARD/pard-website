@@ -1,5 +1,6 @@
-import Navbar from "../components/NavBar";
 import styled from "styled-components";
+import { useState } from "react";
+import Navbar from "../components/NavBar";
 import ProgramsTrain from "../components/Web/Web-ProjectPage/ProgramsTrain";
 import ProHeader from "../components/Web/Web-ProjectPage/ProHeader";
 
@@ -9,8 +10,7 @@ function ProjectPage() {
   `;
   return (
     <ProjectPageComponent>
-      <Navbar />
-      <ProHeader />
+      {/* <ProHeader /> */}
       <ProgramsTrain />
     </ProjectPageComponent>
   );

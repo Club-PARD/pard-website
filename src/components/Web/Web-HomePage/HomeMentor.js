@@ -9,6 +9,8 @@ const Header2 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 25px;
   white-space: pre-line;
+  padding-right: 40px;
+  padding-left: 125px;
 `;
 
 const Header4 = styled.div`
@@ -18,6 +20,8 @@ const Header4 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 54px;
   white-space: pre-line;
+  padding-right: 40px;
+  padding-left: 125px;
 `;
 
 const Header6 = styled.div`
