@@ -13,47 +13,67 @@ const Header7 = styled.div`
   color: #000000;
   font-family: 'NanumSquare Neo';
   line-height: 1.45;
-  margin-bottom: 6.9444vw;
+  margin-bottom: 50vw;
   text-align : left;
+  position: absolute;
+  bottom: 0;
   `;
 
 const Header5 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header5};
+  font-size: 1.6667vw;
   font-weight: ${props => props.theme.fontWeights.Header5};
   color: ${props=>props.color} ;
-  margin-top: 3.8889vw;
   opacity: ${props => props.selected ? '1' : '0'};
-  position: absolute;
   margin-left: 45vw;
+  position: absolute;
+  margin-bottom: 32vw;
+  bottom: 0;
+  white-space: pre-wrap;
 `;
 const Body1 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Body1};
+  font-size: 1.1111vw;
   font-weight: ${props => props.theme.fontWeights.Body1};
   font-family: 'NanumSquare Neo';
   opacity: ${props => props.selected ? '1' : '0'};
   position: absolute;
   margin-left: 45vw;
-  bottom: 0;
-  margin-bottom: 112px; // 바꿔야함
+  bottom : 0;
   white-space: pre-wrap;
-  
+  margin-bottom: 10vw;  
 `;
 
 const PartDiv = styled.div`
 padding-top: 10.4167vw;
 padding-left:5.5556vw;
 padding-right: 7.7778vw;
-padding-bottom: 6.9444vw;
-height: 114.45vh;
+padding-bottom: 7.9444vw;
+height: 50vw;
 background-color: #ffffff;
 position: relative;
+bottom: 0;
+display: block;
+align-items: stretch;
 `;
 
 const ListWrap = styled.ul`
 display: flex;
-width: 100%;
+width:87%;
 list-style: none;
 padding: 0  ;
+margin-bottom: 44.5vw;
+position: absolute;
+bottom: 0;
+`;
+const ImageBorder =styled.div`
+width: 38.1944vw;
+position: absolute;
+height: 2.0833vw;
+bottom: 0;
+border-radius: 0px 0px 21px 21px;
+opacity: ${props => props.selected ? '1' : '0'};
+background-color: ${props=> (props.selected) ? props.color:'#ff0'} ;
+margin-bottom: 10vw;
+margin-left: 0.1311vw;
 `;
 
 const List = styled.li`
@@ -76,10 +96,17 @@ const ListButton = styled.button`
 const Image =styled.img`
 width: 38.1944vw;
 height: 30.5556vw;
-margin-top: 3.8889vw;
 opacity: ${props => props.selected ? '1' : '0'};
 position: absolute;
 float: left;
+bottom: 0;
+border: 2px solid;
+border-color: ${props=> props.selected ? props.color:'#fff'};
+border-radius: 21px;
+margin-bottom: 10vw;
+`;
+const Down = styled.div`
+
 `;
 function AboutPart() {
     const [part, setPart] = useState([
@@ -101,13 +128,13 @@ function AboutPart() {
               },
       {
         id:2,
-        part:'디자인',
+        part:'UI/ UX 디자인',
         border_color:'#7B3FEF',
         imgsrc : Design,
         selected : false,
         partEng :'Designer',
         context : 
-        `${'\n'} UX/UI 디자인 이론을 배우며, 사용자 중심 사고를 기르고 개발 가능한 디자인을 
+        `${'\n'} ${'\n'} UX/UI 디자인 이론을 배우며, 사용자 중심 사고를 기르고 개발 가능한 디자인을 
          ${'\n'} 구현합니다. 1인당 1개의 App/Web Product를 선택해 배운 내용들을 적용해보고  
          ${'\n'} 다각도에서 분석하면서 다양한 역량을 키우고 동시에 유의미한 포트폴리오를 완성해요.  
          ${'\n'}  ${'\n'} 현업에 계시는 실무자 분들, 그리고 타 파트과의 협업을 통해 디자인 뿐 아니라 기획,  
@@ -116,7 +143,7 @@ function AboutPart() {
       },
       {
         id:3,
-        part:'App',
+        part:'앱(APP)',
         border_color:'#FF5C00',
         imgsrc : App,
         selected : false,
@@ -131,7 +158,7 @@ function AboutPart() {
       },
       {
         id:4,
-        part:'Web',
+        part:'웹(WEB)',
         border_color:'#FF5C00',
         imgsrc : Web,
         selected : false,
@@ -145,7 +172,7 @@ function AboutPart() {
       },
       {
         id:5,
-        part:'Server',
+        part:'서버(SERVER)',
         border_color:'#FF5C00',
         imgsrc : Server,
         selected : false,
@@ -189,21 +216,28 @@ function AboutPart() {
             selected = {content.selected}
             color={content.border_color}>
           <List  
+          key={content.id}
            selected = {content.selected}>{content.part}</List>
           </ListButton>
           ))}
         </ListWrap>
         {part.map(props=>(
-          <div>
+          <Down>
         <Image key={props.id}
         src={props.imgsrc} 
         alt={`Image ${props.id}`}
-        selected = {props.selected}/>
+        selected = {props.selected}
+        color={props.border_color}
+        />
+        <ImageBorder 
+            selected={props.selected}
+            color={props.border_color}
+            > </ImageBorder>
         <Header5 
         selected={props.selected}
         color={props.border_color}>{props.partEng} of Pard</Header5>
         <Body1 selected={props.selected}>{props.context}</Body1>
-        </div>
+        </Down>
         ))}
 
       </ThemeProvider>
