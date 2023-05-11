@@ -34,7 +34,7 @@ const Subtitle3 = styled.div`
 `;
 const TextWrap = styled.div`
     position: absolute;
-    width: 300px;
+    width: 250px;
     height: 22%;
     top: 78%;
     border-bottom-left-radius: 19.5px;
