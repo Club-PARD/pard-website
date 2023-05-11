@@ -23,22 +23,26 @@ const Body1 = styled.div`
     position: absolute;
     font-family: 'NanumSquare Neo';
     color: #000000;
-    width: 38.4722vw;
-    padding-top: 2.5694vw;
+    width: 448px;
+    margin-top: 30px;
     line-height: 160%;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 
 const StyledWrap = styled.ul`
+    padding-top : 53px;
     padding-left: 0;
-    padding-top: 6.9444vw;
-    padding-right: 808px;
-    padding-inline-start: 0vw;
+    padding-inline-start: 0px;
+`;
+
+const StyledWrap2 = styled.ul`
+    width : 448px;
+    padding-inline-start: 0px;
 `;
 
 const Button = styled.button`
-    width: 37.0833vw;
-    height: 2.7778vw;
+    width: 448px;
+    height: 40px;
     border-radius: 1.0417vw;
     margin-bottom: 0.6944vw;
     text-align: left;
@@ -65,23 +69,36 @@ const Header6 = styled.text`
 `;
 
 const Image = styled.img`
+    margin-top : -300px;
     position: absolute;
-    margin-top: -262px;
-    padding-left:72px;
-    width: 41.1111vw;
-    height: 37.9861vw;
+    margin-left: 520px;
+    margin-right : 184px;
+    width: 552px;
+    height: 511px;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 
 const PartDiv = styled.div`
     background-color: #FFFFFF;
-    height : 950px;
-    padding-top : 12.1528vw;
-    padding-left : 7.7778vw;
+    justify-content: center;
+    align-items: center;
+`;
+
+const Part2Div = styled.div`
+  background-color: #FFFFFF;
+  height : 950px;
+  padding-top : 175px;
+  padding-left : 184px;
+  padding-bottom : 155px;
+  padding-right : 184px;
+  position: relative;
+  width: 1440px;
+  display: block;
+  margin: 0 auto;
 `;
 
 function AboutProgram() {
-    const [part, setPart] = useState([
+    const [part, setPart] = useState([ //part배열 생성 후 setPart 함수로 상태값을 업데이트
         {
           id:1,
           listNum :'01',
@@ -164,11 +181,11 @@ function AboutProgram() {
           },
       ]);
     
-      const handleButtonClick = (id) => {
-        setPart(prevPart => prevPart.map(p=>{
+      const handleButtonClick = (id) => { //현재 id
+        setPart(prevPart => prevPart.map(p=>{ //prevPart는 이전에 저장해둔 배열 part정보, p는 각 요소
           if(p.id ===id){
             return{
-              ...p,
+              ...p, //배열의 spread operator (기존의 배열을 그대로 유지하면서 새로운 값을 추가하거나 기존 값을 수정할 때 사용)
               selected:true,
             };
           }else{
@@ -181,15 +198,18 @@ function AboutProgram() {
       }
     return (
         <PartDiv>
+          <Part2Div>
             <ThemeProvider theme={theme}>
                 <Header7>함께하는 여정</Header7>
                 <StyledWrap>
                     {part.map(content=>(
+                      <StyledWrap2>
                         <Button key={content.id} onClick={()=>handleButtonClick(content.id)}
                                 selected = {content.selected} color={content.border_color}>
                                   <Header6Number selected = {content.selected}>{content.listNum}</Header6Number>  
                                   <Header6 selected = {content.selected}>{content.listCon}</Header6>
                         </Button>
+                      </StyledWrap2>
                     ))}
                     {part.map(props=>(
                         <Image key={props.id} src={props.imgsrc} alt={`Image ${props.id}`} selected = {props.selected}/>
@@ -200,6 +220,7 @@ function AboutProgram() {
                     
                 </StyledWrap>
             </ThemeProvider>
+            </Part2Div>
         </PartDiv>
     );
 }
