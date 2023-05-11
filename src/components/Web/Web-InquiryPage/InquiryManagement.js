@@ -19,7 +19,7 @@ const Header7 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
+  margin-bottom: 72px;
   white-space: pre-line;
   text-align : center;
 `;
@@ -28,17 +28,17 @@ const Subtitle3 = styled.div`
     font-weight: ${props => props.theme.fontWeights.Subtitle3};
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-bottom: 3.7500vw;
+    margin-bottom: 72px;
     white-space: pre-line;
     text-align: center;
 `;
 const TextWrap = styled.div`
     position: absolute;
-    width: 17.3611vw;
+    width: 250px;
     height: 22%;
     top: 78%;
-    border-bottom-left-radius: 1.3889vw;
-    border-bottom-right-radius: 1.3889vw;
+    border-bottom-left-radius: 19.5px;
+    border-bottom-right-radius: 19.5px;
     background-color :  ${({position}) => position === 'Developer' ? "rgba(255,92,0,0.5)" 
     : position === 'Designer'
     ?"rgba(123,63,239,0.5)": position === 'Operator'
@@ -47,8 +47,8 @@ const TextWrap = styled.div`
     &:hover{
         top: 0%;
         height: 100%;
-        border-top-left-radius: 1.3889vw;
-        border-top-right-radius: 1.3889vw;
+        border-top-left-radius: 19.5px;
+        border-top-right-radius: 19.5px;
         background-color: ${({position}) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)' 
         : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)' 
         : position === 'Operator' ? 'rgba(100, 194, 254, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
@@ -60,11 +60,11 @@ const Subtitle1 = styled.div`
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
     position: absolute;
-        bottom: 2vw;
+        bottom: 38px;
         left: 58%;
         width: 100%;
         transform: translate(-50%,-50%);
-    margin-bottom: 0.2788w;
+    margin-bottom: -10px;
     white-space: pre-line;
     text-align: left;
 `;
@@ -78,33 +78,33 @@ const Caption = styled.div`
         left: 58%;
         width: 100%;
         transform: translate(-50%,-50%);
-    margin-bottom: 0.7500vw;
+    margin-bottom: 5px;
     white-space: pre-line;
     text-align: left;
 `;
 
 const PartDiv = styled.div`
-    padding-left:5.5556vw;
-    padding-right: 7.7778vw;
-    padding-bottom: 6.9444vw;
+    padding-left: 107px;
+    padding-right: 149px;
+    padding-bottom: 133px;
     height: 100%;
 `;
 const GridContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4,1fr); //4개씩 넣고 각 넓이는 1fr이다
-    grid-gap: 1.3889vw;//서로 20px의 차이가 있도록
+    grid-gap: 27px;//서로 20px의 차이가 있도록
     grid-auto-rows: 1fr;
     
 `
 const Column = styled.div`
     //나중에 이미지 넣을 공간
     position: relative;
-    max-width: 17.3611vw;
+    max-width: 333px;
 `
 const Image = styled.img`
-    max-width: 17.3611vw;;
-    width: 17.3611vw;
-    height: 20.8333vw;
+    max-width: 250px;
+    width: 250px;
+    height: 300px;
     
     display: block;
     margin: 0px auto;
@@ -120,12 +120,12 @@ const IconWrapper = styled.div`
 `
 const IconBackground = styled.div`
   position: relative;
-  width: 2.7778vw;
-  height: 2.7778vw;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background-color: #fff;
-  margin-right: 0.6944vw;
-  margin-top: 1.0417vw;
+  margin-right: 13px;
+  margin-top: 20px;
   text-align: center;
 `;
 const Icon = styled.a`
