@@ -7,7 +7,7 @@ const Header2 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header2};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 1.736vw;
+  margin-bottom: 25px;
   white-space: pre-line;
 `;
 
@@ -16,7 +16,7 @@ const Header4 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header4};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
+  margin-bottom: 54px;
   white-space: pre-line;
 `;
 
@@ -29,8 +29,8 @@ const Header6 = styled.div`
     text-align: center;
     line-height: 140%;
     display: flex;
-    margin-top: 1.389vw;
-    margin-bottom: 1.042vw;
+    margin-top: 20px;
+    margin-bottom: 15px;
 `;
 const Header7 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Header3};
@@ -50,7 +50,7 @@ const Body2 = styled.div`
     text-align:right;
     position: absolute;
     bottom: ${props => props.isname ? '2.631vw' : '1.189vw'}; 
-    right: 1.389vw;
+    right: 20px;
 `;
 
 //margin-top: 110px = 60(image radius) + 50 px
@@ -59,9 +59,9 @@ const PartContents = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap: 5vw;
+    gap: 72px;
     align-items: flex-start;
-    margin-top: 7.639vw;
+    margin-top: 110px;
 `;
 
 const PartWrapper = styled.div`
@@ -72,24 +72,23 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    width: 17.361vw;
-    height: 18.750vw;
+    width: 250px;
+    height: 270px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     position: relative;
 `;
 
 const TextWrapper = styled.div`
-    padding: 0px 2.917vw;
+    padding: 0px 42px;
     word-break: keep-all;
     align-items: center;
-    width: 11.597vw;
-    height: 5.833vw;
+    width: 167px;
+    height: 84px;
 `;
 
 const TextWrapper2 = styled.div`
-    margin-top: 1.042vw;
+    margin-top: 15px;
     height: 0;
     display: flex;
     flex-direction: row;
@@ -98,19 +97,19 @@ const TextWrapper2 = styled.div`
 `;
 
 const Image = styled.img`
-    margin-top: -4.167vw;
-    width: 8.333vw;
-    height: 8.333vw;
+    margin-top: -60px;
+    width: 120px;
+    height: 120px;
     border: 0.139vw solid ${props => (props.color)};
     border-radius: 50%;
     
 `;
 
-const PartDiv = styled.div`
-    padding-left:5.5556vw;
-    padding-right: 5.5556vw;
-    padding-top: 7.9861vw;
-    height: 62vw;
+const Div = styled.div`
+     margin: 0px auto;
+    height: 900px;
+    justify-content: center;
+    width: 1330px;
 `;
 
 function MentorCard(props){
@@ -138,7 +137,7 @@ function HomeMentor() {
             title: '솔직히 얘네가 교수보다 낫다',
             mentor_name: '이동영',
             mentor_from: '- 노을(주) 前 CEO',
-            color: '#5262F5'
+            color: '#7B3FEF'
         },
         {
             id: 2,
@@ -162,12 +161,12 @@ function HomeMentor() {
             title: '배워서 남주는 가치를 제대로 실천하는 후배들',
             mentor_name: '이즌쉬러블리',
             mentor_from: '-메타코미디클럽 개발자',
-            color: '#64C59A'
+            color: '#5262F5'
         },
     ];
 
     return (
-        <PartDiv>
+        <Div>
              <ThemeProvider theme={theme}>
             <Header2>멘토 추천사</Header2>
             <Header4>함께할 수 밖에 없는 이유</Header4>
@@ -179,7 +178,7 @@ function HomeMentor() {
                 ))}
             </PartContents>
             </ThemeProvider>
-        </PartDiv>
+        </Div>
     );
 }
 
