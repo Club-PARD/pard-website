@@ -34,7 +34,7 @@ const Subtitle3 = styled.div`
 `;
 const TextWrap = styled.div`
     position: absolute;
-    width: 250px;
+    width: 300px;
     height: 22%;
     top: 78%;
     border-bottom-left-radius: 19.5px;
@@ -58,6 +58,18 @@ const TextWrap = styled.div`
         height: ${({ position }) => position ? '303px' : 'initial'};
         margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
     }
+    /* 추가 스타일 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* 호버 시에 나타날 텍스트 스타일 */
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'NanumSquare Neo';
+
 `;
 
 const Subtitle1 = styled.div`
@@ -154,9 +166,9 @@ function InquiryManagement() {
             name: '최현종(회장)',
             position: 'Product Manager',
             site: [
-                { name: 'github', link: 'https://www.github.com' },
-                { name: 'instagram', link: 'https://www.instagram.com' },
-                { name: 'notion', link: 'https://www.notion.com' },
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/hyunjong-choi/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@owen' },
+                { name: 'instagram', link: 'https://www.instagram.com/hamjong_e/?hl=ko' },
             ]
         },
         {
@@ -164,22 +176,32 @@ function InquiryManagement() {
             imgsrc: SYC,
             name: '송예찬(회장)',
             position: 'Operator',
-            site: [],
+            site: [
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/hwan-jho-%EC%A1%B0%ED%99%98-70491b200' },
+                { name: 'disquiet', link: ' https://disquiet.io/@jhohwan' },
+                { name: 'instagram', link: 'https://instagram.com/hwanjho__75?igshid=NTc4MTIwNjQ2YQ==' },
+            ],
         },
         {
             id: 3,
             imgsrc: LSY,
             name: '이신영',
             position: 'Operator',
-            site: [],
+            site: [
+                { name: 'linkedin', link: 'hhttps://www.linkedin.com/in%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/' },
+                { name: 'disquiet', link: ' https://disquiet.io/@dltlsdud0319' },
+                { name: 'instagram', link: 'https://www.instagram.com/shinyoung0319/' },
+            ],
         },
         {
             id: 4,
             imgsrc: PJG,
             name: '박정규',
             position: 'Developer',
-            site: [{ name: 'notion', link: 'https://www.notion.com' },
-            { name: 'github', link: 'https://www.github.com' },
+            site: [
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/정규-바ᄀ-1223a8263/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@quddkflty' },
+                { name: 'github', link: 'https://github.com/dasdfadssda' },
             ],
         },
         {
@@ -187,49 +209,76 @@ function InquiryManagement() {
             imgsrc: KGS,
             name: '김진서',
             position: 'Developer',
-            site: [{ name: 'github', link: 'https://www.github.com' },],
+            site: [
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/학부생-김진서-51b575262/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@eunoia_' },
+                { name: 'github', link: 'https://github.com/jinseokim-hgu' },
+            ],
         },
         {
             id: 6,
             imgsrc: KYG,
             name: '김유진',
             position: 'Developer',
-            site: [{ name: 'github', link: 'https://www.github.com' },],
+            site: [
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/학부생-김유진-4bb385252' },
+                { name: 'disquiet', link: 'https://disquiet.io/@22100164' },
+                { name: 'github', link: 'https://github.com/YujinKim164' },
+            ],
         },
         {
             id: 7,
             imgsrc: KHR,
             name: '김하람',
             position: 'Developer',
-            site: [{ name: 'github', link: 'https://www.github.com' },],
+            site: [
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/%ED%95%98%EB%9E%8C-%EA%B9%80-482773263' },
+                { name: 'instagram', link: 'https://instagram.com/ram2__dev?igshid=NTc4MTIwNjQ2YQ==' },
+                { name: 'github', link: 'https://github.com/haram22 ' },
+                ,],
         },
         {
             id: 8,
             imgsrc: JSH,
             name: '조세희',
             position: 'Designer',
-            site: [],
+            site: [
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/sayjo2/' },
+                { name: 'instagram', link: 'https://instagram.com/say_chee2se/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@sehijo' },
+            ],
         },
         {
             id: 9,
             imgsrc: SGS,
             name: '신지수',
             position: 'Designer',
-            site: [],
+            site: [
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/%EC%A7%80%EC%88%98-%EC%8B%A0-a443b7219/' },
+                { name: 'instagram', link: 'https://www.instagram.com/s.jisu001/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@shinji0609' },
+            ],
         },
         {
             id: 10,
             imgsrc: JH,
             name: '조환',
             position: 'Product Manager',
-            site: [],
+            site: [
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/hwan-jho-%EC%A1%B0%ED%99%98-70491b200' },
+                { name: 'instagram', link: 'https://instagram.com/hwanjho__75?igshid=NTc4MTIwNjQ2YQ==' },
+                { name: 'disquiet', link: 'https://disquiet.io/@jhohwan' },
+            ],
         },
         {
             id: 11,
             imgsrc: PSG,
             name: '백승균',
             position: 'Product Manager',
-            site: [],
+            site: [
+                { name: 'instagram', link: 'https://www.instagram.com/winningvirus_baek/' },
+                { name: 'disquiet', link: 'disquiet.io/sign-up?ref=skbaek0716' },
+            ],
         },
 
 
