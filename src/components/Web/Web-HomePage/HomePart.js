@@ -13,7 +13,7 @@ const Header2 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 43px;
   white-space: pre-line;
-  margin-left: 40px;
+  padding-right: 40px;
 `;
 
 
@@ -49,7 +49,7 @@ const PartContents = styled.div`
     height:441px;
     justify-content: center;
     align-items: flex-start;
-    
+    margin-right: 10px;
 `;
 
 const ContentWrapper = styled.div`
@@ -96,10 +96,13 @@ const ButtonDiv = styled.div`
 const Div = styled.div`
     margin: 0px auto;
     height: 893px;
+    justify-content: center;
+    width: 1330px;
 `;
 
 
 function HomePart() {
+
     const contentsData = [
         {
             id: 1,
@@ -135,28 +138,27 @@ function HomePart() {
 
     return (
         <Div>
-
-                <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme}>
                     <Header2>PARTS</Header2>
-                    <PartContents>
-                        {contentsData.map(content => (
-                            <PartWrapper key={content.id}>
-                                <ContentWrapper key={content.id} marginright={content.id === 5}>
-                                    <Image src={content.imageSrc} alt={`Image ${content.id}`} marginTop={content.id === 2 || content.id === 4} />
-                                    <Header5>{content.title}</Header5>
-                                    <Body2>{content.description}</Body2>
-                                </ContentWrapper>
-                            </PartWrapper>
-                        ))}
-                    </PartContents>
-                    <ButtonDiv>
-                        <div style={{ width: '360px', }}>
-                            <LearnMoreButton>
-                                <Header5>더 알아보기</Header5>
-                            </LearnMoreButton>
-                        </div>
-                    </ButtonDiv>
-                </ThemeProvider>
+                <PartContents>
+                    {contentsData.map(content => (
+                        <PartWrapper key={content.id}>
+                            <ContentWrapper key={content.id} marginright={content.id === 5}>
+                                <Image src={content.imageSrc} alt={`Image ${content.id}`} marginTop={content.id === 2 || content.id === 4} />
+                                <Header5>{content.title}</Header5>
+                                <Body2>{content.description}</Body2>
+                            </ContentWrapper>
+                        </PartWrapper>
+                    ))}
+                </PartContents>
+                <ButtonDiv>
+                    <div style={{ width: '360px', }}>
+                        <LearnMoreButton>
+                            <Header5>더 알아보기</Header5>
+                        </LearnMoreButton>
+                    </div>
+                </ButtonDiv>
+            </ThemeProvider>
         </Div>
     );
 }
