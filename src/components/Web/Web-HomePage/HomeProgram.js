@@ -1,5 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
+import ProjectPage from '../../../pages/ProjectPage';
 
 
 const Header2 = styled.div`
@@ -21,11 +22,7 @@ const PartDiv = styled.div`
 function HomeProgram() {
 
     return (
-        <PartDiv>
-             <ThemeProvider theme={theme}>
-             <Header2>Program</Header2>
-            </ThemeProvider>
-        </PartDiv>
+        <ProjectPage/>
     );
 }
 
