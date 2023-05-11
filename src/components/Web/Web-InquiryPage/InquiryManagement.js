@@ -57,6 +57,7 @@ const TextWrap = styled.div`
         margin-left: ${({ position }) => position ? '-1.5px' : 'initial'};
         height: ${({ position }) => position ? '303px' : 'initial'};
         margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
+        margin-top: ${({ site }) => site ? '-px' : 'initial'};
     }
     /* 추가 스타일 */
     display: flex;
