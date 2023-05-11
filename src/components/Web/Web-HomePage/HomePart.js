@@ -84,9 +84,9 @@ const LearnMoreButton = styled.div`
  align-items: center;
  display: flex;
  background-color: #7B3FEF;
- height: '3.5625em';
+ height: '57px';
  justify-content: center;
- width: '22.5em';
+ width: '360px';
  border-radius: 10px;
  margin-top: 55px;
 `;
@@ -97,8 +97,7 @@ const ButtonDiv = styled.div`
     margin-top: '55px';
 `;
 
-const Div = styled`
-justify-content: center;
+const Div = styled.div`
 `;
 
 
@@ -153,7 +152,7 @@ function HomePart() {
                         ))}
                     </PartContents>
                     <ButtonDiv>
-                        <div style={{ width: '25vw', }}>
+                        <div style={{ width: '360px', }}>
                             <LearnMoreButton>
                                 <Header5>더 알아보기</Header5>
                             </LearnMoreButton>
