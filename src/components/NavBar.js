@@ -47,7 +47,7 @@ const NavLinks = styled.ul`
 `;
 
 const NavItem = styled.li`
-  margin-right: 50px;
+  margin-left: 50px;
 `;
 
 const NavBar = () => {
