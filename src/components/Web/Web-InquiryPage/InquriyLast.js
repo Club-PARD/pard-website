@@ -8,16 +8,16 @@ const Header7 = styled.div`
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   line-height: 1.45;
-  margin-bottom: 3.000vw;
+  margin-bottom: 58px;
   white-space: pre-line;
   text-align : center;
   `;
 
 const PartDiv = styled.div`
-  padding-left:9.0556vw;
-  padding-right: 7.7778vw;
-  padding-top: 6.9444vw;
-  height: 42vw;
+  padding-left:174px;
+  padding-right: 149px;
+  padding-top: 133px;
+  height: 806px;
   position: relative;
 `;
 
@@ -26,8 +26,8 @@ const Subtitle3 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Subtitle3};
   color : #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-left: 0.5vw;
-  margin-bottom: 3.7500vw;
+  margin-left: 10px;
+  margin-bottom: 72px;
   white-space: pre-line;
   text-align: center;
 `;
@@ -37,19 +37,19 @@ const Frame15 = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 1.0417vw 8.3333vw;
-  gap: 0.6944vw;
-  margin-top: -1.3vw;
+  padding: 20px 130px;
+  gap: 13;
+  margin-top: -25px;
 
   position: absolute;
-  width: 23.0556vw;
-  height: 4.4444vw;
+  width: 323px;
+  height: 85px;
   /* left: calc(50% - 23.0556vw/2); */
-  margin-left: 29.5722vw;
-  margin-top: 6.4306vw;
+  margin-left: 305px;
+  margin-top: 123px;
   border:none;
   background: #5262F5;
-  border-radius: 0.6944vw;
+  border-radius: 13px;
 `
 
 const Header5 = styled.div`
@@ -57,7 +57,7 @@ const Header5 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header5};
   color : #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 0.2600vw;
+  margin-bottom: 5px;
   white-space: pre-line;
   text-align: center;
   white-space: nowrap;
