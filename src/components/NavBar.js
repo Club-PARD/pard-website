@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 
 const Div = styled.div`
     margin: 0px auto;
-    padding-right: 80px;
 `;
 
 const NavBarWrapper = styled.nav`
@@ -36,14 +35,15 @@ const Logo = styled.div`
     height: 45px;
     width: 140px;
   }
-  margin-right: 750px;
+  margin-left: 165px;
+  margin-right: 500px;
 `;
 
 const NavLinks = styled.ul`
   display: flex;
   align-items: center;
   list-style-type: none;
-  margin-right: 25px;
+  margin-right: 184px;
 `;
 
 const NavItem = styled.li`
