@@ -13,46 +13,55 @@ const Header7 = styled.div`
   color: #000000;
   font-family: 'NanumSquare Neo';
   line-height: 1.45;
-  margin-bottom: 50vw;
+  margin-bottom: 720px;
   text-align : left;
   position: absolute;
   bottom: 0;
   `;
 
 const Header5 = styled.div`
-  font-size: 1.6667vw;
+  font-size: ${props => props.theme.Web_fontSizes.Header5};
   font-weight: ${props => props.theme.fontWeights.Header5};
   color: ${props=>props.color} ;
   opacity: ${props => props.selected ? '1' : '0'};
-  margin-left: 45vw;
+  margin-left: 648px;
   position: absolute;
   margin-bottom: 32vw;
   bottom: 0;
   white-space: pre-wrap;
 `;
+
+
 const Body1 = styled.div`
-  font-size: 1.1111vw;
+  font-size: ${props => props.theme.Web_fontSizes.Body1};
   font-weight: ${props => props.theme.fontWeights.Body1};
   font-family: 'NanumSquare Neo';
   opacity: ${props => props.selected ? '1' : '0'};
   position: absolute;
-  margin-left: 45vw;
+  margin-left: 648px;
   bottom : 0;
   white-space: pre-wrap;
-  margin-bottom: 10vw;  
+  margin-bottom: 144px;  
+`;
+
+const Div = styled.div`
+align-items: center;
+justify-content: center;
+background-color: #ffffff;
+
 `;
 
 const PartDiv = styled.div`
-padding-top: 10.4167vw;
-padding-left:5.5556vw;
-padding-right: 7.7778vw;
-padding-bottom: 7.9444vw;
-height: 50vw;
+padding-top: 150px;
+padding-left:80px;
+padding-right: 112px;
+padding-bottom: 114px;
+height: 720px;
 background-color: #ffffff;
 position: relative;
-bottom: 0;
 display: block;
-align-items: stretch;
+width: 1260px;
+margin: 0 auto;
 `;
 
 const ListWrap = styled.ul`
@@ -60,20 +69,20 @@ display: flex;
 width:87%;
 list-style: none;
 padding: 0  ;
-margin-bottom: 44.5vw;
+margin-bottom: 641px;
 position: absolute;
 bottom: 0;
 `;
 const ImageBorder =styled.div`
-width: 38.1944vw;
+width: 550px;
+height: 30px;
 position: absolute;
-height: 2.0833vw;
 bottom: 0;
 border-radius: 0px 0px 21px 21px;
 opacity: ${props => props.selected ? '1' : '0'};
 background-color: ${props=> (props.selected) ? props.color:'#ff0'} ;
-margin-bottom: 10vw;
-margin-left: 0.1311vw;
+margin-bottom: 144px;
+margin-left: 2px;
 `;
 
 const List = styled.li`
@@ -89,13 +98,13 @@ const ListButton = styled.button`
   width: 20%; 
   border: none;
   background-color: ${props=> (props.selected) ? props.color:'#fff'} ;
-  height: 2.7778vw;
-  border-radius: 1.0417vw;
+  height: 40px;
+  border-radius: 15px;
   cursor: pointer;
 `;
 const Image =styled.img`
-width: 38.1944vw;
-height: 30.5556vw;
+width: 550px;
+height: 440px;
 opacity: ${props => props.selected ? '1' : '0'};
 position: absolute;
 float: left;
@@ -103,7 +112,7 @@ bottom: 0;
 border: 2px solid;
 border-color: ${props=> props.selected ? props.color:'#fff'};
 border-radius: 21px;
-margin-bottom: 10vw;
+margin-bottom: 144px;
 `;
 const Down = styled.div`
 
@@ -206,6 +215,7 @@ function AboutPart() {
 
 
   return (
+    <Div>
     <PartDiv>
       <ThemeProvider theme={theme}>
         <Header7>파드를  구성하는 파트</Header7>
@@ -242,6 +252,7 @@ function AboutPart() {
 
       </ThemeProvider>
     </PartDiv>
+    </Div>
   );
 
 }
