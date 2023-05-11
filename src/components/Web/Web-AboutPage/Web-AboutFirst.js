@@ -36,15 +36,15 @@ const AboutLogo = styled.img`
     position: absolute;
     width: 1020.27px;
     height: 417px;
-    left: 209px;
-    top: 150px;
-
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0.5;
 `;
 const AboutFrame1 = styled.img`
     position: absolute;
     height: 40px;
-    width: 1440px;
+    width: 100%;
     bottom: 0px;
     border-radius: 0px;
     padding: 10px 30px 10px 30px;
@@ -53,7 +53,7 @@ const AboutFrame1 = styled.img`
 
 const TextContainer = styled.div`
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 `;
