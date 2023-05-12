@@ -10,6 +10,13 @@ import AboutPart from "../components/Web/Web-AboutPage/Web-AboutPart";
 import AboutProgram from "../components/Web/Web-AboutPage/Web-AboutProgram";
 import AboutMentor from "../components/Web/Web-AboutPage/Web-AboutMentor";
 import AboutLast from "../components/Web/Web-AboutPage/Web-AboutLast";
+import AboutFirst_Mob from "../components/Mobile/Mob-AboutPage/AboutFirst_Mob";
+import AboutVision_Mob from "../components/Mobile/Mob-AboutPage/AboutVision_Mob";
+import AboutPart_Mob from "../components/Mobile/Mob-AboutPage/AboutPart_Mob";
+import AboutProgram_Mob from "../components/Mobile/Mob-AboutPage/AboutProgram_Mob";
+import AboutMentor_Mob from "../components/Mobile/Mob-AboutPage/AboutMentor_Mob";
+import AboutLast_Mob from "../components/Mobile/Mob-AboutPage/AboutLast_Mob";
+
 function AboutPage(){
     const isDesktopOrMobile = useMediaQuery({query: '(max-width:768px)'}); // 758px 이하일 때는 모바일 뷰로 바뀐다.
 
@@ -31,7 +38,12 @@ function AboutPage(){
             :
             <div>
                 <NavBarMov/>
-                <h1>디자인 제작중</h1>
+                <AboutFirst_Mob/>
+                <AboutVision_Mob/>
+                <AboutPart_Mob/>
+                <AboutProgram_Mob/>
+                <AboutMentor_Mob/>
+                <AboutLast_Mob/>
             </div>
             }
         </AboutPageComponent>
