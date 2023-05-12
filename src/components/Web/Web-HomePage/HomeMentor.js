@@ -63,7 +63,7 @@ const PartContents = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap: 72px;
+    gap: 37px;
     align-items: flex-start;
     margin-top: 110px;
 `;
@@ -72,15 +72,14 @@ const PartWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-    margin-top: ${props => (props.marginTop ? '5.4861vw' : '0')};
+    margin-top: ${props => (props.marginTop ? '79px' : '0')};
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px;
-    height: 270px;
+    width: 240px;
+height: 270px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    position: relative;
 `;
 
 const TextWrapper = styled.div`
@@ -104,7 +103,7 @@ const Image = styled.img`
     margin-top: -60px;
     width: 120px;
     height: 120px;
-    border: 0.139vw solid ${props => (props.color)};
+    border: 2px solid ${props => (props.color)};
     border-radius: 50%;
     
 `;
@@ -116,13 +115,13 @@ const Div = styled.div`
     width: 1330px;
 `;
 
-function MentorCard(props){
+function MentorCard(props) {
     return (
-        <ContentWrapper key={props.content.id} marginTop={props.content.id % 2 !== 0 }>
-            <Image src={props.content.imageSrc} alt={`Image ${props.content.id}`} color={props.content.color}/>
+        <ContentWrapper key={props.content.id} marginTop={props.content.id % 2 !== 0}>
+            <Image src={props.content.imageSrc} alt={`Image ${props.content.id}`} color={props.content.color} />
             <TextWrapper2>
-                <Header7 color = {props.content.color}>"</Header7>
-                <Header7 color = {props.content.color}>"</Header7>
+                <Header7 color={props.content.color}>"</Header7>
+                <Header7 color={props.content.color}>"</Header7>
             </TextWrapper2>
             <TextWrapper>
                 <Header6>{props.content.title}</Header6>
@@ -171,16 +170,16 @@ function HomeMentor() {
 
     return (
         <Div>
-             <ThemeProvider theme={theme}>
-            <Header2>멘토 추천사</Header2>
-            <Header4>함께할 수 밖에 없는 이유</Header4>
-            <PartContents>
-                {contentsData.map(content => (
-                    <PartWrapper key={content.id}>
-                        <MentorCard content={content}></MentorCard>
-                    </PartWrapper>
-                ))}
-            </PartContents>
+            <ThemeProvider theme={theme}>
+                <Header2>멘토 추천사</Header2>
+                <Header4>함께할 수 밖에 없는 이유</Header4>
+                <PartContents>
+                    {contentsData.map(content => (
+                        <PartWrapper key={content.id}>
+                            <MentorCard content={content}></MentorCard>
+                        </PartWrapper>
+                    ))}
+                </PartContents>
             </ThemeProvider>
         </Div>
     );
