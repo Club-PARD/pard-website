@@ -34,7 +34,7 @@ const Subtitle3 = styled.div`
 `;
 const TextWrap = styled.div`
     position: absolute;
-    width: 300px;
+    width: 250px;
     height: 22%;
     top: 78%;
     border-bottom-left-radius: 19.5px;
@@ -57,6 +57,7 @@ const TextWrap = styled.div`
         margin-left: ${({ position }) => position ? '-1.5px' : 'initial'};
         height: ${({ position }) => position ? '303px' : 'initial'};
         margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
+        margin-top: ${({ site }) => site ? '-px' : 'initial'};
     }
     /* 추가 스타일 */
     display: flex;

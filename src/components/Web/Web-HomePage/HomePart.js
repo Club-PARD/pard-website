@@ -14,6 +14,7 @@ const Header2 = styled.div`
   margin-bottom: 43px;
   white-space: pre-line;
   padding-right: 40px;
+  padding-left: 125px;
 `;
 
 
@@ -57,8 +58,8 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 9px;
+    margin-left: 9px;
 `;
 
 const PartWrapper = styled.div`
@@ -69,7 +70,7 @@ const PartWrapper = styled.div`
 `;
 
 const Image = styled.img`
-    max-width: 250px;;
+    max-width: 250px;
     width: 200px;
     height: 242px;
     margin-top: ${props => (props.marginTop ? '79px' : '0')};
@@ -84,7 +85,7 @@ const LearnMoreButton = styled.div`
  justify-content: center;
  width: '360px';
  border-radius: 10px;
- margin-top: 55px;
+ margin-top: 70px;
 `;
 
 const ButtonDiv = styled.div`
@@ -94,7 +95,7 @@ const ButtonDiv = styled.div`
 `;
 
 const Div = styled.div`
-    margin: 0px auto;
+    margin: 0px auto; // 가운데 정렬 하는 방법
     height: 893px;
     justify-content: center;
     width: 1330px;
