@@ -13,151 +13,143 @@ import SGS from '../../../assets/img/신지수.png';
 import LSY from '../../../assets/img/이신영.png';
 import JSH from '../../../assets/img/조세희.png';
 import JH from '../../../assets/img/조환.png';
+import disquiet from '../../../assets/img/disquiet.png';
+
 
 const Header7 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
-  margin-bottom: 72px;
-  white-space: pre-line;
-  text-align : center;
-`;
-const Subtitle3 = styled.div`
-    font-size: ${props => props.theme.Web_fontSizes.Subtitle3};
-    font-weight: ${props => props.theme.fontWeights.Subtitle3};
-    color : #FFFFFF;
+    font-size: ${props => props.theme.Web_fontSizes.Header7};
+    font-weight: ${props => props.theme.fontWeights.Header7};
+    color: #FFFFFF;
     font-family: 'NanumSquare Neo';
+    margin-left: 100px;
     margin-bottom: 72px;
     white-space: pre-line;
-    text-align: center;
-`;
+    text-align : center;
+    `;
+const Subtitle3 = styled.div`
+        font-size: ${props => props.theme.Web_fontSizes.Subtitle3};
+        font-weight: ${props => props.theme.fontWeights.Subtitle3};
+        color : #FFFFFF;
+        font-family: 'NanumSquare Neo';
+        margin-left: 85px;
+        margin-bottom: 72px;
+        white-space: pre-line;
+        text-align: center;
+    `;
 const TextWrap = styled.div`
-    position: absolute;
-    width: 250px;
-    height: 22%;
-    top: 78%;
-    border-bottom-left-radius: 19.5px;
-    border-bottom-right-radius: 19.5px;
-    background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
+        position: absolute;
+        width: 250px;
+        height: 22%;
+        top: 78%;
+        margin-left: 10.6px;
+        border-bottom-left-radius: 19.5px;
+        border-bottom-right-radius: 19.5px;
+        background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
         : position === 'Designer'
             ? "rgba(123,63,239,0.5)" : position === 'Operator'
                 ? "rgba(100,194,254,0.5)" : "rgba(82,98,245,0.5)"};
-    transition: 0.3s;
-    &:hover{
-        top: 0%;
-        height: 100%;
-        border-top-left-radius: 19.5px;
-        border-top-right-radius: 19.5px;
-        background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
+        transition: 0.3s;
+        &:hover{
+            top: 0%;
+            height: 100%;
+            border-top-left-radius: 19.5px;
+            border-top-right-radius: 19.5px;
+            background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
         : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
             : position === 'Operator' ? 'rgba(100, 194, 254, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
 
-        width: ${({ position }) => position ? '253px' : 'initial'};
-        margin-left: ${({ position }) => position ? '-1.5px' : 'initial'};
-        height: ${({ position }) => position ? '303px' : 'initial'};
-        margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
-        margin-top: ${({ site }) => site ? '-px' : 'initial'};
-    }
-    /* 추가 스타일 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* 호버 시에 나타날 텍스트 스타일 */
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'NanumSquare Neo';
-
-`;
+            width: ${({ position }) => position ? '253px' : 'initial'};
+            margin-left: ${({ position }) => position ? '9px' : 'initial'};
+            height: ${({ position }) => position ? '303px' : 'initial'};
+            margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
+        }
+    `;
 
 const Subtitle1 = styled.div`
-    font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
-    font-weight: ${props => props.theme.fontWeights.Subtitle1};
-    color : #FFFFFF;
-    font-family: 'NanumSquare Neo';
-    position: absolute;
-        bottom: 38px;
-        left: 58%;
-        width: 100%;
-        transform: translate(-50%,-50%);
-    margin-bottom: -10px;
-    white-space: pre-line;
-    text-align: left;
-`;
-const Caption = styled.div`
-    font-size: ${props => props.theme.Web_fontSizes.Caption};
-    font-weight: ${props => props.theme.fontWeights.Caption};
-    color : #FFFFFF;
-    font-family: 'NanumSquare Neo';
+        font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
+        font-weight: ${props => props.theme.fontWeights.Subtitle1};
+        color : #FFFFFF;
+        font-family: 'NanumSquare Neo';
         position: absolute;
-        bottom: 0%;
-        left: 58%;
-        width: 100%;
-        transform: translate(-50%,-50%);
-    margin-bottom: 5px;
-    white-space: pre-line;
-    text-align: left;
-`;
+            bottom: 38px;
+            left: 58%;
+            width: 100%;
+            transform: translate(-50%,-50%);
+        margin-bottom: -10px;
+        white-space: pre-line;
+        text-align: left;
+    `;
+const Caption = styled.div`
+        font-size: ${props => props.theme.Web_fontSizes.Caption};
+        font-weight: ${props => props.theme.fontWeights.Caption};
+        color : #FFFFFF;
+        font-family: 'NanumSquare Neo';
+            position: absolute;
+            bottom: 0%;
+            left: 58%;
+            width: 100%;
+            transform: translate(-50%,-50%);
+        margin-bottom: 5px;
+        white-space: pre-line;
+        text-align: left;
+    `;
 
 const PartDiv = styled.div`
-    padding-left: 107px;
-    padding-right: 149px;
-    padding-bottom: 133px;
-    height: 100%;
-`;
+        padding-left: 107px;
+        padding-right: 149px;
+        padding-bottom: 133px;
+        height: 100%;
+    `;
 const GridContainer = styled.div`
-    display: grid;
-    grid-template-columns: repeat(4,1fr); //4개씩 넣고 각 넓이는 1fr이다
-    grid-gap: 27px;//서로 20px의 차이가 있도록
-    grid-auto-rows: 1fr;
-    
-`
+        display: grid;
+        grid-template-columns: repeat(4,1fr); //4개씩 넣고 각 넓이는 1fr이다
+        grid-gap: 27px;//서로 20px의 차이가 있도록
+        grid-auto-rows: 1fr;
+        
+    `
 const Column = styled.div`
-    //나중에 이미지 넣을 공간
-    position: relative;
-    max-width: 333px;
-`
+        //나중에 이미지 넣을 공간
+        position: relative;
+        max-width: 333px;
+    `
 const Image = styled.img`
-    max-width: 250px;
-    width: 250px;
-    height: 300px;
-    
-    display: block;
-    margin: 0px auto;
-`
+        max-width: 250px;
+        width: 250px;
+        height: 300px;
+        
+        display: block;
+        margin: 0px auto;
+    `
 const IconWrapper = styled.div`
-    display: none;
-    position: absolute;
-    right: 0;
-    ${TextWrap}:hover & {
-    display: flex;
-    justify-content: flex-end;
-    }
-`
+        display: none;
+        position: absolute;
+        right: 0;
+        ${TextWrap}:hover & {
+        display: flex;
+        justify-content: flex-end;
+        }
+    `
 const IconBackground = styled.div`
-  position: relative;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background-color: #fff;
-  margin-right: 13px;
-  margin-top: 20px;
-  text-align: center;
-`;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: 12px;
+    margin-top: 17.5px;
+    text-align: center;
+    `;
 const Icon = styled.a`
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  top: 50%;
-  left: 50%;
-transform: translate(-50%, -50%);
-display: flex;
-align-items: center;
-justify-content: center;
-`;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    `;
 
 function InquiryManagement() {
     const managerData = [
@@ -303,9 +295,10 @@ function InquiryManagement() {
                                         <IconBackground key={site.name}>
                                             <Icon href={site.link}>
                                                 {site.name === "instagram" ? <FaInstagram style={{ color: "black" }} />
-                                                    : site.name === "notion" ? <SiNotion style={{ color: "black" }} />
+                                                    : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
                                                         : site.name === "github" ? <FaGithub style={{ color: "black" }} />
-                                                            : <FaInvision style={{ color: "black" }} />
+                                                            // : <FaInvision style={{ color: "black" }} />
+                                                            : <img src={disquiet} alt="Disquiet Logo" style={{ width: '28px', height: '28px', marginLeft: '4.5px' }} />
                                                     //in 도 넣어야 하고 위에 in은 아닌듯 그리고 디스콰이엇도 넣어야함
                                                 }
                                             </Icon>
