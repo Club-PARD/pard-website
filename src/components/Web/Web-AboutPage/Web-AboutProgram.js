@@ -56,7 +56,7 @@ const Header6Number = styled.text`
     font-weight: ${props => props.theme.fontWeights.Header6};
     font-family: 'NanumSquare Neo';
     color: ${props=> (props.selected) ? '#fff':'#000'} ;
-    padding-left: 1.3889vw;
+    padding-left: 20px;
 `;
 
 const Header6 = styled.text`
@@ -77,11 +77,16 @@ const Image = styled.img`
     height: 511px;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
+const Div = styled.div`
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    width: 1440px;
+`;
 
 const PartDiv = styled.div`
     background-color: #FFFFFF;
-    justify-content: center;
-    align-items: center;
 `;
 
 const Part2Div = styled.div`
@@ -91,8 +96,6 @@ const Part2Div = styled.div`
   padding-left : 184px;
   padding-bottom : 155px;
   padding-right : 184px;
-  position: relative;
-  width: 1440px;
   display: block;
   margin: 0 auto;
 `;
@@ -197,6 +200,7 @@ function AboutProgram() {
         }));
       }
     return (
+      <Div>
         <PartDiv>
           <Part2Div>
             <ThemeProvider theme={theme}>
@@ -222,6 +226,7 @@ function AboutProgram() {
             </ThemeProvider>
             </Part2Div>
         </PartDiv>
+        </Div>
     );
 }
 
