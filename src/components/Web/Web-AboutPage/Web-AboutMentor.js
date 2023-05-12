@@ -1,29 +1,49 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
-import Carousel from 'react-carousel';
 
-const CardCarousel = ({ cards }) => (
-  <Carousel
-    autoPlay={true}
-    infiniteLoop={true}
-    showArrows={false}
-    showStatus={false}
-    showThumbs={false}
-    interval={5000}
-    transitionTime={1000}
-    emulateTouch={true}
-    stopOnHover={true}
-    swipeable={true}
-    dynamicHeight={true}
-    width={'100%'}
-    height={'fit-content'}
-  >
-    {cards.map((card) => (
+const Flickity = require('react-flickity-component');
+
+
+// Or for ES2015 module
+function getFlickityOptions(props){
+    
+    const align = props == null ? "center" : props;
+    console.log(align);
+    return {
+        initialIndex: 1,
+        wrapAround: true,
+        prevNextButtons: false,
+        autoPlay: 1500,
+        pageDots: false,
+        friction: 1,
+        pauseAutoPlayOnHover: false,
+        draggable: false,
+        on: {
+            ready: function() {
+                this.off( 'uiChange', this.stopPlayer );
+                this.off( 'pointerDown', this.stopPlayer );
+            }
+        }
+    }
+}
+
+function FlickityCarousel(props) {
+  return (
+    <Flickity
+      className={'carousel'} // default ''
+      elementType={'div'} // default 'div'
+      options={getFlickityOptions(props.cellAlign)} // takes flickity options {}
+      disableImagesLoaded={false} // default false
+      reloadOnUpdate // default false
+      static // default false
+    >
+        {props.cardInfos.map((card) => (
             <MentorCard key={card.id} content={card}></MentorCard>
           ))}
-  </Carousel>
-);
+    </Flickity>
+  )
+}
 
 const Header7 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header7};
@@ -45,6 +65,7 @@ line-height: 1.45;
 white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
+text-align : start;
 `
 const Title = styled(Header6)`
     margin-right: 5.555vw;
@@ -66,6 +87,7 @@ const Body1 = styled.div`
     text-overflow: ellipsis;
     margin-right: 5.555vw;
     margin-top: 0.347vw;
+    text-align : start;
 `
 
 const PartDiv = styled.div`
@@ -83,52 +105,31 @@ const ContentWrapper = styled.div`
     height: 9.028vw;
     padding: 1.250vw 1.389vw;
     background: ${props => props.color == null ? "rgba(255, 255, 255, 0)" : props.color};
+    margin-right: 3.472vw;
 `
-
-const CardsWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-`
-
-const CardRow = styled.div`
-    margin-left: ${props => props.hasMargin == null ? 0 : "10.764vw"};
-    gap: 3.472vw;
-    display: flex;
-`;
 
 const VerticalGap = styled.div`
     height: ${props=>props.height != null ? props.height : "0px"};
 `
-
 const CardsList = ({ cardsData }) => {
     const firstRow = cardsData.filter((card) => card.id % 2 !== 0);
     const secondRow = cardsData.filter((card) => card.id % 2 === 0);
   
     return (
-      <CardsWrapper>
-        <CardRow>
-          {firstRow.map((card) => (
-            <MentorCard content={card}></MentorCard>
-          ))}
-        </CardRow>
-        <VerticalGap height={"3.472vw"}/>
-        <CardRow hasMargin = {true}>
-          {secondRow.map((card) => (
-            <MentorCard content={card}></MentorCard>
-          ))}
-        </CardRow>
-      </CardsWrapper>
+        <>
+        <FlickityCarousel cardInfos={firstRow}></FlickityCarousel>
+        <VerticalGap height={'50px'}></VerticalGap>
+        <FlickityCarousel cardInfos={secondRow}></FlickityCarousel>
+        </>
+
+        
     );
   };
 
   function getColor(roleId){
     const defaultColor = "#FFFFFF";
-    var found = roleList.filter(role => (role.id == roleId));
-    return found.length == 0 ? defaultColor : found[0].theme;
+    var found = roleList.filter(role => (role.id === roleId));
+    return found.length === 0 ? defaultColor : found[0].theme;
   }
 
 function MentorCard(props){
