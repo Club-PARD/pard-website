@@ -1,11 +1,11 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React,{useState} from 'react';
-import PM from '../../../assets/img/최현종(회장).png';
-import Web from '../../../assets/img/김유진.png';
-import Design from '../../../assets/img/조세희.png';
-import App from '../../../assets/img/김진서.png';
-import Server from '../../../assets/img/박정규.png';
+import PM from '../../../assets/img/PMpart.png';
+import Web from '../../../assets/img/AppPart.png';
+import Design from '../../../assets/img/DesignPart.png';
+import App from '../../../assets/img/AppPart.png';
+import Server from '../../../assets/img/ServerPart.png';
 
 const Header7 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header7};
@@ -26,7 +26,7 @@ const Header5 = styled.div`
   opacity: ${props => props.selected ? '1' : '0'};
   margin-left: 648px;
   position: absolute;
-  margin-bottom: 32vw;
+  margin-bottom: 461px;
   bottom: 0;
   white-space: pre-wrap;
 `;
@@ -82,7 +82,7 @@ border-radius: 0px 0px 21px 21px;
 opacity: ${props => props.selected ? '1' : '0'};
 background-color: ${props=> (props.selected) ? props.color:'#ff0'} ;
 margin-bottom: 144px;
-margin-left: 2px;
+
 `;
 
 const List = styled.li`
@@ -109,9 +109,7 @@ opacity: ${props => props.selected ? '1' : '0'};
 position: absolute;
 float: left;
 bottom: 0;
-border: 2px solid;
-border-color: ${props=> props.selected ? props.color:'#fff'};
-border-radius: 21px;
+
 margin-bottom: 144px;
 `;
 const Down = styled.div`
