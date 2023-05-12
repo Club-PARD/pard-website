@@ -6,14 +6,18 @@ import Vec from '../../../assets/img/vector.png';
 
 const Margin= styled.div`
 display: flex;
+
+margin: 0px auto;
 `
 const Askedstyled=styled.div`
-position: absolute;
+white-space: nowrap;
+margin-left:40px ;
 padding-right: 40px;
-  padding-left: 105px;
-margin-top: 130px; //padding한 만큼 원래 maring-top0px에서 값 뺴줌
+padding-left: 105px;
+margin-top: 130px; 
+//padding한 만큼 원래 maring-top0px에서 값 뺴줌
 margin-bottom: 402px;
-width:589px; // 원래보다0px3높임
+width:300px; // 원래보다0px3높임
 height: 168px;
 /* Header/H2 - EB 60 */
 
@@ -30,29 +34,31 @@ color: #FFFFFF;
 
 `
 const Informationstyle=styled.form`
-position: absolute;
-margin-left:760px; //padding한 만큼 원래 maring-left0px에서 값 뺴줌
-margin-right:112px;
-margin-top:130px; //padding한 만큼 원래 maring-top0px에서 값 뺴줌
+margin-top: 130px; 
+ //padding한 만큼 원래 maring-left0px에서 값 뺴줌
+ margin-left:380px;
+ //padding한 만큼 원래 maring-top0px에서 값 뺴줌
+
 height:220px;
-width: 488px;
+width: 375px;
 display: flex;
 flex-direction: column;
-justify-content: flex-end;
+
+//justify-content: flex-end;
 align-items: flex-start;
-padding: 0px;
-gap: 40px;
+
+
 
 
 `
 
 const Mail=styled.div`
-position: absolute;
+white-space: nowrap;
 width: 60px; // 원래보다 14px올림
 height:34px;
-margin-right:441px;
-margin-bottom:166px;
-margin-top: 20px;
+margin-left: 0px;
+//margin-right:441px;
+margin-top: 0px;
 /* Header/H5 - B 24 */
 
 font-family: 'NanumSquare Neo';
@@ -68,13 +74,14 @@ line-height: 27px;
 color: #FFFFFF;
 `
 const EMail=styled.div`
-position: absolute;
+white-space: nowrap;
 width: 222px;
 height: 28px;
-margin-left:222px;
-margin-right:44px ;
-margin-top: 20px;
-margin-bottom:172px;
+margin-left:63px;
+margin-top: 0px;
+
+
+
 /* Header/H6 - B 20 */
 
 font-family: 'NanumSquare Neo';
@@ -90,10 +97,10 @@ text-align: right;
 color: #FFFFFF;
 `
 const Instagram=styled.div`
-position: absolute;
+white-space: nowrap;
 width: 128px;  // 원래보다 14px올림
 height: 34px;
-margin-right:373px;   //margin은 박스 안에서 얼마나 띄어있는지 보기 위해
+   //margin은 박스 안에서 얼마나 띄어있는지 보기 위해
 margin-top: 95px;
 margin-bottom: 91px;
 
@@ -108,11 +115,11 @@ line-height: 27px;
 color: #FFFFFF;
 `
 const InstagramId=styled.div`
-position: absolute;
+
 height: 28px;
 width: 154px;
-margin-left:290px ;
-margin-right:44px;
+margin-left:64px ;
+
 margin-top: 94px;
 margin-bottom: 98px;
 /* Header/H5 - B 24 */
@@ -129,23 +136,23 @@ color: #FFFFFF;
 
 `
 const Lineup=styled.div`
-position: absolute;
+
 width: 375px;
 height: 0px;
 left:0px;
 margin-top: 0px;
-margin-bottom:220px;
+
 /* Primary/Blue */
 
 border: 1px solid #5262F5;
 `
 const Linedown=styled.div`
-position: absolute;
+
 width: 375px;
 height: 0px;
 margin-left:0px;
-margin-top:166px;
-margin-bottom: 54px;
+margin-top: 30px;
+
 
 /* Primary/Blue */
 
@@ -153,13 +160,13 @@ border: 1px solid #5262F5;
 `
 
 const Business=styled.div`
-position: absolute;
+
 width:290px; // 원래보다0px 3높임
 height:34px;
 margin-left: 0px;
 margin-right: 240px;
-margin-top: 186px;
-margin-bottom: 0px;
+
+margin-top: 18px;
 font-family: 'NanumSquare Neo';
 font-style: normal;
 font-weight: ${(props)=>props.theme.fontWeights.Header5};
@@ -185,18 +192,18 @@ color: #FFFFFF;
 `
 
 const Vectorbox1=styled.div`
-position: absolute;
-margin-left: 474px;
-margin-right: 0px;
-margin-top: 23px;
-margin-bottom: 176px;
+
+margin-left: 30px;
+
+margin-top: 0px;
+
 `
 const Vectorbox2=styled.div`
-position: absolute;
-margin-left: 474px;
-margin-right: 0px;
-margin-top: 97px;
-margin-bottom: 102px;
+
+margin-left: 30px;
+
+margin-top: 0px;  //102px하면 돌아옴
+
 `
 const Vector= styled.img`
 max-width:14px;
@@ -204,6 +211,29 @@ width: 14px;
 height: 14px;
 
 `
+
+const InformBox1= styled.div`
+
+display: flex;
+
+margin-top:33px;
+width:361px;
+height:34px;
+align-items: center;
+
+`
+const InformBox2= styled.div`
+display: flex;
+margin-top:40px; // 위에 informbox1기준 margin-top
+margin-bottom: 20px; // 위에 informbox1기준 margin-bottom 30으로 하니까 간격이 너무 커서 20px로 줄임
+width:361px;
+height:34px;
+align-items: center;
+
+
+`
+
+
 const Ask=()=>{
 
     return(
@@ -216,13 +246,24 @@ const Ask=()=>{
 
         <Informationstyle>
         <Lineup/>
+        <InformBox1>
+        
         <Mail>메일</Mail>
-<Vectorbox1><Vector  src={Vec}/></Vectorbox1>
-<Vectorbox2><Vector  src={Vec}/></Vectorbox2>
-            <EMail>official@we-pard.com</EMail>
+        <EMail>official@we-pard.com</EMail>
+        <Vectorbox1><Vector  src={Vec}/></Vectorbox1>
+
+ </InformBox1>
+            
+
+           <InformBox2>
+
             <Instagram>인스타그램</Instagram>
             <InstagramId>@official_pard_</InstagramId>
-        <Linedown/>
+            <Vectorbox2><Vector  src={Vec}/></Vectorbox2>
+            </InformBox2>
+
+
+         <Linedown/>
        
         <Business>비지니스 문의는 &nbsp;
         <Here to='/'>여기로!</Here> 
