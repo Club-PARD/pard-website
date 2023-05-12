@@ -11,8 +11,8 @@ margin: 0px auto;
 `
 const Askedstyled=styled.div`
 white-space: nowrap;
-margin-left:40px ;
-padding-right: 40px;
+margin-left:70px ;
+padding-right: 10px;
 padding-left: 105px;
 margin-top: 130px; 
 //padding한 만큼 원래 maring-top0px에서 값 뺴줌
