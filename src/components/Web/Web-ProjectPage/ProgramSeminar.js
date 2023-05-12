@@ -50,10 +50,11 @@ const FirstCard = styled.div`
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  width: 320px;
+  width: 339px;
   height: 320px;
   border-radius: 20px 20px 20px 20px;
   margin-right: 60px;
+  margin-left: 110px; 
   background-color: #1a1a1a;
 `;
 
