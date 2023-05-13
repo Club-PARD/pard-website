@@ -48,7 +48,6 @@ const Div = styled.div`
 align-items: center;
 justify-content: center;
 background-color: #ffffff;
-
 `;
 
 const PartDiv = styled.div`
