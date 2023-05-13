@@ -95,10 +95,12 @@ const Caption = styled.div`
     `;
 
 const PartDiv = styled.div`
-        padding-left: 107px;
-        padding-right: 149px;
-        padding-bottom: 133px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
         height: 100%;
+        justify-items: center;
+        width: 1440px;
     `;
 const GridContainer = styled.div`
         display: grid;
