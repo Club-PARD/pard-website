@@ -42,20 +42,20 @@ const Frame15 = styled.button`
     align-items: center;
     gap: 5px;
     margin-top: 100px;
-    width: 242px;
-    height: 104px;
+    width: 121px;
+    height: 52px;
     justify-content: center;
     border:none;
     background: #5262F5;
-    border-radius: 20px;
+    border-radius: 10px;
 `
 
 const Header5 = styled.div`
-    font-size: ${props => props.theme.Mob_fontSizes.ButtonText1};
+    /* font-size: ${props => props.theme.Mob_fontSizes.ButtonText1}; */
+    font-size: 16px;
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-bottom: -5px;
     white-space: pre-line;
     text-align: center;
     white-space: nowrap;
