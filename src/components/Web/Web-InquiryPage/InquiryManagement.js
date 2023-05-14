@@ -21,7 +21,6 @@ const Header7 = styled.div`
     font-weight: ${props => props.theme.fontWeights.Header7};
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-left: 100px;
     margin-bottom: 72px;
     white-space: pre-line;
     text-align : center;
@@ -31,7 +30,6 @@ const Subtitle3 = styled.div`
         font-weight: ${props => props.theme.fontWeights.Subtitle3};
         color : #FFFFFF;
         font-family: 'NanumSquare Neo';
-        margin-left: 85px;
         margin-bottom: 72px;
         white-space: pre-line;
         text-align: center;
@@ -41,13 +39,13 @@ const TextWrap = styled.div`
         width: 250px;
         height: 22%;
         top: 78%;
-        margin-left: 10.6px;
+        /* margin-left: 41px; */
         border-bottom-left-radius: 19.5px;
         border-bottom-right-radius: 19.5px;
         background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
         : position === 'Designer'
             ? "rgba(123,63,239,0.5)" : position === 'Operator'
-                ? "rgba(100,194,254,0.5)" : "rgba(82,98,245,0.5)"};
+                ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
         transition: 0.3s;
         &:hover{
             top: 0%;
@@ -56,28 +54,27 @@ const TextWrap = styled.div`
             border-top-right-radius: 19.5px;
             background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
         : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 194, 254, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
-
-            width: ${({ position }) => position ? '253px' : 'initial'};
-            margin-left: ${({ position }) => position ? '9px' : 'initial'};
-            height: ${({ position }) => position ? '303px' : 'initial'};
+            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
+            width: ${({ position }) => position ? '251.5px' : 'initial'};
+            height: ${({ position }) => position ? '286.5px' : 'initial'};
             margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
+            padding-top: ${({ position }) => position ? '15px' : 'initial'};
         }
     `;
 
 const Subtitle1 = styled.div`
-        font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
-        font-weight: ${props => props.theme.fontWeights.Subtitle1};
-        color : #FFFFFF;
-        font-family: 'NanumSquare Neo';
-        position: absolute;
+            font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
+            font-weight: ${props => props.theme.fontWeights.Subtitle1};
+            color : #FFFFFF;
+            font-family: 'NanumSquare Neo';
+            position: absolute;
             bottom: 38px;
             left: 58%;
             width: 100%;
             transform: translate(-50%,-50%);
-        margin-bottom: -10px;
-        white-space: pre-line;
-        text-align: left;
+            margin-bottom: -10px;
+            white-space: pre-line;
+            text-align: left;
     `;
 const Caption = styled.div`
         font-size: ${props => props.theme.Web_fontSizes.Caption};
@@ -100,13 +97,14 @@ const PartDiv = styled.div`
         margin: 0 auto;
         height: 100%;
         justify-items: center;
-        width: 1440px;
+        width: 1050px;
     `;
 const GridContainer = styled.div`
         display: grid;
         grid-template-columns: repeat(4,1fr); //4개씩 넣고 각 넓이는 1fr이다
-        grid-gap: 27px;//서로 20px의 차이가 있도록
-        grid-auto-rows: 1fr;
+        row-gap: 27px;//서로 20px의 차이가 있도록
+        column-gap: 0px;
+        grid-auto-rows: 1.5fr;
         
     `
 const Column = styled.div`
@@ -118,14 +116,11 @@ const Image = styled.img`
         max-width: 250px;
         width: 250px;
         height: 300px;
-        
         display: block;
-        margin: 0px auto;
+        margin-right: 20px;
     `
 const IconWrapper = styled.div`
         display: none;
-        position: absolute;
-        right: 0;
         ${TextWrap}:hover & {
         display: flex;
         justify-content: flex-end;
@@ -137,8 +132,8 @@ const IconBackground = styled.div`
     height: 40px;
     border-radius: 50%;
     background-color: #fff;
-    margin-right: 12px;
-    margin-top: 17.5px;
+    margin-left: -5px;
+    margin-right: 15px;
     text-align: center;
     `;
 const Icon = styled.a`
@@ -147,6 +142,7 @@ const Icon = styled.a`
     height: 50%;
     top: 50%;
     left: 50%;
+    display: flex;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
@@ -159,7 +155,7 @@ function InquiryManagement() {
             id: 1,
             imgsrc: CHJ,
             name: '최현종(회장)',
-            position: 'Product Manager',
+            position: 'Operator',
             site: [
                 { name: 'linkedin', link: 'https://www.linkedin.com/in/hyunjong-choi/' },
                 { name: 'disquiet', link: 'https://disquiet.io/@owen' },
