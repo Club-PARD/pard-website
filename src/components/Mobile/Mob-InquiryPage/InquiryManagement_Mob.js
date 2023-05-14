@@ -22,7 +22,7 @@ const Header8 = styled.div`
     font-family: 'NanumSquare Neo';
     margin-bottom: 50px;
     white-space: pre-line;
-    stext-align: center;
+    text-align: center;
 `;
 const Body1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Body1};
