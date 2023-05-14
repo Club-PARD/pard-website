@@ -108,11 +108,14 @@ const Column = styled.div`
     //나중에 이미지 넣을 공간
     position: relative;
     max-width: 65px;
+    margin-left: 13.5px;
+    margin-top: 10px; 
 `
 const Image = styled.img`
     width: 150px;
     height: 190px;
-    display: block; margin: 0px auto;
+    display: block; 
+    margin: 0px auto;
 `
 const IconWrapper = styled.div`
     display: none;
