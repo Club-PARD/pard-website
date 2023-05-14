@@ -52,7 +52,6 @@ const Body2 = styled.div`
     line-height: 140%;
     display: flex;
     text-align:right;
-    position: absolute;
     bottom: ${props => props.isname ? '2.631vw' : '1.189vw'}; 
     right: 20px;
 `;
@@ -88,6 +87,7 @@ const TextWrapper = styled.div`
     align-items: center;
     width: 167px;
     height: 84px;
+    margin-bottom:27px;
 `;
 
 const TextWrapper2 = styled.div`
@@ -97,6 +97,15 @@ const TextWrapper2 = styled.div`
     flex-direction: row;
     width: 80%;
     justify-content: space-between;
+`;
+const TextWrapper3 = styled.div`
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 240px;
+    padding-right: 20px;
+    margin-top: 27px;
 `;
 
 const Image = styled.img`
@@ -126,8 +135,10 @@ function MentorCard(props) {
             <TextWrapper>
                 <Header6>{props.content.title}</Header6>
             </TextWrapper>
-            <Body2 isname={true}>{props.content.mentor_name}</Body2>
-            <Body2 isname={false}>{props.content.mentor_from}</Body2>
+            <TextWrapper3>
+                <Body2 isname={true}>{props.content.mentor_name}</Body2>
+                <Body2 isname={false}>{props.content.mentor_from}</Body2>
+            </TextWrapper3>
         </ContentWrapper>
     );
 }
@@ -154,16 +165,16 @@ function HomeMentor() {
             id: 3,
             imageSrc: PlanerImage,
             title: '배워서 남주는 가치를 제대로 실천하는 후배들',
-            mentor_name: '이즌쉬러블리',
-            mentor_from: '-메타코미디클럽 개발자',
+            mentor_name: '김강학',
+            mentor_from: '토스 Product Owner',
             color: '#64C59A'
         },
         {
             id: 4,
             imageSrc: PlanerImage,
             title: '배워서 남주는 가치를 제대로 실천하는 후배들',
-            mentor_name: '이즌쉬러블리',
-            mentor_from: '-메타코미디클럽 개발자',
+            mentor_name: '김',
+            mentor_from: 'Microsoft PM',
             color: '#5262F5'
         },
     ];
