@@ -13,15 +13,15 @@ const Header7 = styled.div`
     text-align : center;
   `;
 
-const PartDiv = styled.div`
+const PartDiv = styled.div` // width 정해주고 가운데 정렬 하기
     height: 900px;
     width: 375px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`;
-const Div = styled.div`
+`; 
+const Div = styled.div` //정해진 width를 또 가운데 정렬 
     display: flex;
     flex-direction: column;
     align-items: center;
