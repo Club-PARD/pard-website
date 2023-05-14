@@ -6,14 +6,20 @@ const PartDiv = styled.div`
     padding-top: 217px;
     height: 720px;
     background-color: #FFFFFF;
-    width: 1440px;
     display: flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
+width: 1440px;
+
 `;
 
 const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 `;
 
 const Header7 = styled.div`
