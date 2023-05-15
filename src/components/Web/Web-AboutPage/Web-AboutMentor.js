@@ -1,49 +1,8 @@
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, keyframes } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
-
-const Flickity = require('react-flickity-component');
-
-
-// Or for ES2015 module
-function getFlickityOptions(props){
-    
-    const align = props == null ? "center" : props;
-    console.log(align);
-    return {
-        initialIndex: 1,
-        wrapAround: true,
-        prevNextButtons: false,
-        autoPlay: 1500,
-        pageDots: false,
-        friction: 1,
-        pauseAutoPlayOnHover: false,
-        draggable: false,
-        on: {
-            ready: function() {
-                this.off( 'uiChange', this.stopPlayer );
-                this.off( 'pointerDown', this.stopPlayer );
-            }
-        }
-    }
-}
-
-function FlickityCarousel(props) {
-  return (
-    <Flickity
-      className={'carousel'} // default ''
-      elementType={'div'} // default 'div'
-      options={getFlickityOptions(props.cellAlign)} // takes flickity options {}
-      disableImagesLoaded={false} // default false
-      reloadOnUpdate // default false
-      static // default false
-    >
-        {props.cardInfos.map((card) => (
-            <MentorCard key={card.id} content={card}></MentorCard>
-          ))}
-    </Flickity>
-  )
-}
+import bandImage1 from '../../../assets/img/band1.svg';
+import bandImage2 from '../../../assets/img/band2.svg';
 
 const Header7 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header7};
@@ -56,40 +15,6 @@ const Header7 = styled.div`
   text-align : center;
   `;
 
-const Header6 = styled.div`
-font-size: ${props => props.theme.Web_fontSizes.Header6};
-font-weight: ${props => props.theme.fontWeights.Header6};
-color: #FFFFFF;
-font-family: 'NanumSquare Neo';
-line-height: 1.45;
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
-text-align : start;
-`
-const Title = styled(Header6)`
-    margin-right: 5.555vw;
-`
-const Name = styled(Header6)`
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 1.250vw 1.389vw;
-`
-const Body1 = styled.div`
-    font-size: ${props => props.theme.Web_fontSizes.Body1};
-    font-weight: ${props => props.theme.fontWeights.Body1};
-    color: #FFFFFF;
-    font-family: 'NanumSquare Neo';
-    line-height: 1.45;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-right: 5.555vw;
-    margin-top: 0.347vw;
-    text-align : start;
-`
-
 const PartDiv = styled.div`
     padding-top: 11.111vw;
     padding-bottom: 12.986vw;
@@ -97,16 +22,66 @@ const PartDiv = styled.div`
     background: rgba(255, 255, 255);
 `;
 
-const ContentWrapper = styled.div`
+const BandAnimation = keyframes`
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-3676px, 0);
+    }
+`;
+
+const BandContainer = styled.aside`
     position: relative;
-    min-width: 27.778vw;
-    width: fit-content;
-    border-radius: 20px;
-    height: 9.028vw;
-    padding: 1.250vw 1.389vw;
-    background: ${props => props.color == null ? "rgba(255, 255, 255, 0)" : props.color};
-    margin-right: 3.472vw;
-`
+    height: 132px;
+    margin-right: 50px;
+    overflow: hidden;
+
+    ::after {
+        content: '';
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 11028px;
+        height: 100%;
+        background: ${props => `url(${props.src}) repeat-x 0/3676px`};
+        animation: ${BandAnimation} 48s infinite linear;
+        will-change: transform;
+    }
+`;
+
+const BandList = styled.ul`
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    height: 100%;
+`;
+
+const BandItem = styled.li`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: transparent;
+`;
+
+const BandComponent = ({ mentorInfos, src }) => {
+    return (
+        <BandContainer src={src}>
+            <BandList >
+                {mentorInfos.map((info) => (
+                    <BandItem key={info.id}>
+                        {info.title}
+                    </BandItem>
+                ))}
+            </BandList>
+        </BandContainer>
+    );
+};
+
+
+
 
 const VerticalGap = styled.div`
     height: ${props=>props.height != null ? props.height : "0px"};
@@ -117,28 +92,13 @@ const CardsList = ({ cardsData }) => {
   
     return (
         <>
-        <FlickityCarousel cardInfos={firstRow}></FlickityCarousel>
+        <BandComponent mentorInfos={firstRow} src={bandImage1}></BandComponent>
         <VerticalGap height={'50px'}></VerticalGap>
-        <FlickityCarousel cardInfos={secondRow}></FlickityCarousel>
+        <BandComponent mentorInfos={secondRow} src={bandImage2}></BandComponent>
         </>
-
         
     );
   };
-
-  function getColor(roleId){
-    const defaultColor = "#FFFFFF";
-    var found = roleList.filter(role => (role.id === roleId));
-    return found.length === 0 ? defaultColor : found[0].theme;
-  }
-
-function MentorCard(props){
-    return <ContentWrapper key={props.id} color = {getColor(props.content.roleId)}>
-        <Title>{props.content.title}</Title>
-        <Body1>{props.content.sub_title}</Body1>
-        <Name>{props.content.name}</Name>
-    </ContentWrapper>
-}
 
 function AboutMentor() {
     return (
