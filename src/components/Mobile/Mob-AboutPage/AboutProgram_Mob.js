@@ -24,13 +24,13 @@ const Body2 = styled.div`
     font-family: 'NanumSquare Neo';
     color: #000000;
     width: 303px;
-    margin-top: 30px;
+    margin-top: 46px;
     line-height: 140%;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 
 const StyledWrap = styled.ul`
-    padding-top : 53px;
+    padding-top : 76px;
     padding-left: 0;
     padding-inline-start: 0px;
 `;
@@ -85,15 +85,16 @@ const Div = styled.div`
 const PartDiv = styled.div`
   background-color: #FFFFFF;
   width: 375px;
+  margin: 0 auto;
 `;
 
 const Part2Div = styled.div`
   background-color: #FFFFFF;
-  height: 1196px;
+  height: 1096px;
   padding-top : 150px;
-  padding-left : 36px;
+  padding-left : 37px;
   padding-bottom : 40px;
-  padding-right : 38px;
+  padding-right : 35px;
   display: block;
   margin: 0 auto;
 `;
@@ -110,11 +111,13 @@ function AboutProgram_Mob() {
           selected : true,
           context : 
           <>타운홀 미팅으로 시작하여 모든 동아리원들과 관계를 쌓아갑니다. <br/>
-          세미나는 전문가로부터 검토받은 커리큘럼을 기반으로 파트장의 <br/>
-          세션과 파트원들의 정보 공유, 현직자 실무 세션을 통해 <br/>
-          협업을 위한 지식을 쌓습니다. <br/>
-          특히 연합 세미나에서는 타 직군과 협업하는 법을 배우고, <br/>
-          의사 결정과 문제 해결에 대한 시각을 확장합니다.</>
+          세미나는 전문가로부터 검토받은 커리큘럼을<br/>
+          기반으로 파트장의 세션과 파트원들의<br/>
+          정보 공유, 현직자 실무 세션을 통해 협업을 위한<br/>
+          지식을 쌓습니다.<br/>
+          특히 연합 세미나에서는 타 직군과 협업하는 법을<br/>
+          배우고, 의사 결정과 문제 해결에 대한 시각을<br/>
+          확장합니다.</>
         },
         {
           id:2,
@@ -124,10 +127,12 @@ function AboutProgram_Mob() {
           imgsrc : AboutStudyImage,
           selected : false,
           context : 
-          <>파드는 새로운 것을 배우는 것에 있어 주저하지 않습니다. <br/>
-            직군, 관심 분야와 관계없이 누구나 자유롭게<br/>
-            배우고 싶은 내용이 있다면 함께 학습할 사람을 모으고,<br/>
-            서로 정한 기간에 따라 전문 지식을 쌓아가고 이를 공유합니다.</>
+          <>파드는 새로운 것을 배우는 것에 있어<br/>
+            주저하지 않습니다.<br/>
+            직군, 관심 분야와 관계없이 누구나 자유롭게 배우고<br/> 
+            싶은 내용이 있다면 함께 학습할 사람을 모으고,<br/>
+            서로 정한 기간에 따라 전문 지식을 쌓아가고<br/>
+            이를 공유합니다.</>
         },
         {
           id:3,
@@ -137,10 +142,12 @@ function AboutProgram_Mob() {
           imgsrc : AboutSurfingImage,
           selected : false,
           context : 
-          <>1박 2일간 일상에서 벗어나 서로 함께 알아가고 즐기며, <br/>
-            다른 직군과 함께 일 할 때 가장 필요한 협업 커뮤니케이션 및 방법론을 학습합니다.<br/>
-            조직 문화 및 커뮤니케이션 컨설팅사의 검수를 받은 <br/>
-            자체 개발 프로그램을 보유하여 보다 전문성 있는 협업을 습득합니다.</>
+          <>1박 2일간 일상에서 벗어나 서로 함께 알아가고 <br/>
+          즐기며, 다른 직군과 함께 일 할 때 가장 필요한 <br/>
+          협업 커뮤니케이션 및 방법론을 학습합니다.<br/>
+          조직 문화 및 커뮤니케이션 컨설팅사의 검수를 받은<br/>
+          자체 개발 프로그램을 보유하여 보다 전문성 있는 <br/>
+          협업을 습득합니다.</>
         },
         {
           id:4,
@@ -150,10 +157,12 @@ function AboutProgram_Mob() {
           imgsrc : AboutShortImage,
           selected : false,
           context : 
-          <>제시된 주제에 따라 무박 2일간 기획자, 디자이너, 개발자가 한 팀이 되어<br/>
-            MVP(Minimum Value Product) 수준의 서비스(웹/앱)를 빠르게 개발합니다.<br/>
-            후원사 세션, 야식타임, 추첨과 같은 이벤트는 물론<br/>
-            발표 이후 멘토링까지 준비되어 있어 실력 향상과 재미를 모두 잡을 수 있습니다.</>
+          <>제시된 주제에 따라 무박 2일간 <br/>
+          기획자, 디자이너, 개발자가 한 팀이 되어<br/>
+          MVP(Minimum Value Product) 수준의 서비스(웹/앱)를 빠르게 개발합니다.<br/>
+          후원사 세션, 야식타임, 추첨과 같은 이벤트는 물론<br/>
+          발표 이후 멘토링까지 준비되어 있어 실력 향상과 <br/>
+          재미를 모두 잡을 수 있습니다.</>
         },
         {
           id:5,
@@ -163,10 +172,13 @@ function AboutProgram_Mob() {
           imgsrc : AboutLongImage,
           selected : false,
           context : 
-          <>파트 상관 없이 누구나 아이디어 경선을 통해 팀을 구성 합니다.<br/>
-            3주간 기획, 디자인, 개발 파트가 협업하여 배포 가능한 웹/앱 서비스를 만듭니다.<br/>
-            각 파트별 실무자들의 멘토링을 받고 피드백을 받으며 완성도를 높이고<br/>
-            데모데이를 통해 IT 협업 과정과 결과물에 대한 평가를 받습니다.</>
+          <>파트 상관 없이 누구나 아이디어 경선을 통해 <br/>
+          팀을 구성 합니다.<br/>
+          3주간 기획, 디자인, 개발 파트가 협업하여 배포 <br/>
+          가능한 웹/앱 서비스를 만듭니다.<br/>
+          각 파트별 실무자들의 멘토링을 받고 피드백을 <br/>
+          받으며 완성도를 높이고 데모데이를 통해 <br/>
+          IT 협업 과정과 결과물에 대한 평가를 받습니다.</>
         },
         {
             id:6,
@@ -176,10 +188,12 @@ function AboutProgram_Mob() {
             imgsrc : AboutProjectImage,
             selected : false,
             context : 
-            <>공모전과 같은 일회성 프로젝트가 아닌, '문제 해결 공동 프로젝트' 형태로 <br/>
-            서비스 개선 및 신규 아이디어를 발굴하며 실무 역량을 향상합니다.<br/>
-            UX/UI 컨설팅펌과 함께하여 아이디어 도출 과정과 시장에 필요로한<br/>
-            서비스를 만드는 데 있어 전문성을 확보하고 있습니다.</>
+            <>공모전과 같은 일회성 프로젝트가 아닌, <br/>
+            ‘문제 해결 공동 프로젝트’ 형태로서비스 개선 및<br/>
+            신규 아이디어를 발굴하며 실무 역량을 향상합니다.<br/>
+            UX/UI 컨설팅펌과 함께하여 아이디어 도출 과정과<br/>
+            시장에 필요로한 서비스를 만드는 데 있어 <br/>
+            전문성을 확보하고 있습니다.</>
           },
       ]);
     
