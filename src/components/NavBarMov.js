@@ -32,7 +32,7 @@ const MenuButton = styled.button`
   background-color: transparent;
   color: white;
   border: none;
-  font-size: 1.5rem;
+  font-size: 24px;
   cursor: pointer;
 `;
 
@@ -72,7 +72,9 @@ const NavBarMov = () => {
     <Nav>
       <ThemeProvider theme={theme}>
         <Logo>
+        <Link to="/">
           <img src={require("../assets/img/Logo.png")} alt="Logo" />
+          </Link>
         </Logo>
         <MenuButton onClick={toggleMenu}><FaBars /></MenuButton>
         <Menu  isOpen={isOpen}>

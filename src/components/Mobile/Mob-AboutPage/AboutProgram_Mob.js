@@ -8,24 +8,24 @@ import AboutShortImage from '../../../assets/img/AboutShort.png';
 import AboutLongImage from '../../../assets/img/AboutLong.png';
 import AboutProjectImage from '../../../assets/img/AboutProject.png';
 
-const Header7 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
+const Header8 = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Header8};
+  font-weight: ${props => props.theme.fontWeights.Header8};
   color: #000000;
   font-family: 'NanumSquare Neo';
   white-space: pre-line;
   position: absolute;
 `;
 
-const Body1 = styled.div`
-    font-size: ${props => props.theme.Web_fontSizes.Body1};
-    font-weight: ${props => props.theme.fontWeights.Body1};
+const Body2 = styled.div`
+    font-size: ${props => props.theme.Web_fontSizes.Body2};
+    font-weight: ${props => props.theme.fontWeights.Body2};
     position: absolute;
     font-family: 'NanumSquare Neo';
     color: #000000;
-    width: 448px;
+    width: 303px;
     margin-top: 30px;
-    line-height: 160%;
+    line-height: 140%;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 
@@ -41,68 +41,66 @@ const StyledWrap2 = styled.ul`
 `;
 
 const Button = styled.button`
-    width: 448px;
-    height: 40px;
-    border-radius: 1.0417vw;
+    width: 303px;
+    height: 34px;
+    border-radius: 15px;
     margin-bottom: 0.6944vw;
     text-align: left;
     border-width: 0px;
     background-color: ${props=> (props.selected) ? props.color:'#fff'} ;
 `;
 
-const Header6Number = styled.text`
+const ButtonText1Number = styled.text`
     display: inline-block;
-    font-size: ${props => props.theme.Web_fontSizes.Header6};
-    font-weight: ${props => props.theme.fontWeights.Header6};
+    font-size: ${props => props.theme.Web_fontSizes.ButtonText1};
+    font-weight: ${props => props.theme.fontWeights.ButtonText1};
     font-family: 'NanumSquare Neo';
     color: ${props=> (props.selected) ? '#fff':'#000'} ;
     padding-left: 20px;
 `;
 
-const Header6 = styled.text`
+const ButtonText1 = styled.text`
     display: inline-block;
-    font-size: ${props => props.theme.Web_fontSizes.Header6};
-    font-weight: ${props => props.theme.fontWeights.Header6};
+    font-size: ${props => props.theme.Web_fontSizes.ButtonText1};
+    font-weight: ${props => props.theme.fontWeights.ButtonText1};
     font-family: 'NanumSquare Neo';
     color: ${props=> (props.selected) ? '#fff':'#000'} ;
-    padding-left: 6.6667vw;
+    padding-left: 10.6667vw;
 `;
 
 const Image = styled.img`
-    margin-top : -300px;
     position: absolute;
-    margin-left: 520px;
-    margin-right : 184px;
-    width: 552px;
-    height: 511px;
+    width: 303px;
+    height: 280px;
+    padding-top: 256px;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 const Div = styled.div`
-    background-color: #FFFFFF;
-`;
-
-const PartDiv = styled.div`
-    background-color: #FFFFFF;
-    width: 1440px;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    background-color: #FFFFFF;
+    width: 375px;
+`;
 
+const PartDiv = styled.div`
+  background-color: #FFFFFF;
 `;
 
 const Part2Div = styled.div`
   background-color: #FFFFFF;
-  height : 950px;
-  padding-top : 175px;
-  padding-left : 184px;
-  padding-bottom : 155px;
-  padding-right : 184px;
+  height: 1196px;
+  padding-top : 150px;
+  padding-left : 36px;
+  padding-bottom : 40px;
+  padding-right : 38px;
   display: block;
   margin: 0 auto;
 `;
 
-function AboutProgram() {
-    const [part, setPart] = useState([ //part배열 생성 후 setPart 함수로 상태값을 업데이트
+function AboutProgram_Mob() {
+
+  const [part, setPart] = useState([ //part배열 생성 후 setPart 함수로 상태값을 업데이트
         {
           id:1,
           listNum :'01',
@@ -205,25 +203,25 @@ function AboutProgram() {
         <PartDiv>
           <Part2Div>
             <ThemeProvider theme={theme}>
-                <Header7>함께하는 여정</Header7>
+                <Header8>함께하는 여정</Header8>
                 <StyledWrap>
                     {part.map(content=>(
                       <StyledWrap2>
                         <Button key={content.id} onClick={()=>handleButtonClick(content.id)}
                                 selected = {content.selected} color={content.border_color}>
-                                  <Header6Number selected = {content.selected}>{content.listNum}</Header6Number>  
-                                  <Header6 selected = {content.selected}>{content.listCon}</Header6>
+                                  <ButtonText1Number selected = {content.selected}>{content.listNum}</ButtonText1Number>  
+                                  <ButtonText1 selected = {content.selected}>{content.listCon}</ButtonText1>
                         </Button>
-                      </StyledWrap2>
+                      </StyledWrap2>  
                     ))}
+                  </StyledWrap>
                     {part.map(props=>(
                         <Image key={props.id} src={props.imgsrc} alt={`Image ${props.id}`} selected = {props.selected}/>
                     ))}
                     {part.map(props=>(
-                        <Body1 selected={props.selected}>{props.context}</Body1>
+                        <Body2 selected={props.selected}>{props.context}</Body2>
                     ))}
                     
-                </StyledWrap>
             </ThemeProvider>
             </Part2Div>
         </PartDiv>
@@ -231,4 +229,4 @@ function AboutProgram() {
     );
 }
 
-export default AboutProgram;
+export default AboutProgram_Mob;

@@ -14,9 +14,10 @@ const Header2 = styled.div`
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  margin-bottom: 3vw;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity 0.6s ease-in-out;
+  margin-bottom: 40px;
+  margin-left: 110px;
 `;
 const Header2_1 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
@@ -24,7 +25,8 @@ const Header2_1 = styled.div`
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  margin-bottom: 3vw;
+  margin-bottom: 70px;
+  margin-left: 110px;
 `;
 
 const HeaderDiv = styled.div`
@@ -41,9 +43,9 @@ const PartDiv2 = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: auto;
-  width: 100%;
-  padding-bottom: 20px;
-  margin-right: -20px;
+  height: 890px;
+  margin-left: 40px;
+  margin-right: 40px;
 
   &::-webkit-scrollbar {
     width: 10px;
@@ -62,7 +64,6 @@ const PartDiv2 = styled.div`
 
 function ProgramsTrain() {
   const headerRef = useRef(null);
-
   const [seminarHeader, setSeminarHeader] = useState("세미나");
   const [visible, setVisible] = useState(true);
   const seminarHeaders = ["세미나", "스터디", "서핑데이", "숏커톤", "롱커톤"];
@@ -84,13 +85,16 @@ function ProgramsTrain() {
         }
       };
 
+      //이 함수에 대한 정확한 이해가 필요함
       const handleWheel = (event) => {
         const isAtScrollStart = DivRef.scrollLeft === 0;
         const isAtScrollEnd =
-          DivRef.scrollLeft >= DivRef.scrollWidth - DivRef.clientWidth;
+          DivRef.scrollLeft >= DivRef.scrollWidth - DivRef.clientWidth - 1;
+
         if (!(isAtScrollStart || isAtScrollEnd)) event.preventDefault();
-        const scrollAmount = event.deltaY; // Get the scroll amount
-        DivRef.scrollLeft += scrollAmount; // Scroll horizontally
+
+        const scrollAmount = event.deltaY;
+        DivRef.scrollLeft += scrollAmount / 6;
       };
 
       // window.addEventListener("scroll", handleScroll);
@@ -135,6 +139,14 @@ function ProgramsTrain() {
     if (headerDiv) {
       const moveAmount = (scrollPosition / width) * 100; // Calculate the percentage to move
       headerDiv.style.transform = `translateX(${moveAmount}%)`;
+    }
+
+    const programsHeader = document.querySelector(".Header2_1");
+    if (programsHeader && programsHeader.getBoundingClientRect().top <= 0) {
+      document.body.style.overflow = "hidden";
+      setTimeout(() => {
+        document.body.style.overflow = "auto";
+      }, 2000); // Wait for 1 second and re-enable scroll
     }
   };
 

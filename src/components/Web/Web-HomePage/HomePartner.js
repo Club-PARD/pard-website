@@ -10,8 +10,9 @@ const Header2 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header2};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
+  margin-bottom: 54px;
   white-space: pre-line;
+  padding-left:125px;
 `;
 
 const Header4 = styled.div`
@@ -20,38 +21,39 @@ const Header4 = styled.div`
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
-    text-align: left;
+    padding-left:125px;
+    padding-right: 80px;
 `;
 
 const PartDiv = styled.div`
-    padding-left:5.5556vw;
-    padding-right: 5.5556vw;
-    padding-top: 7.9861vw;
-    height: 45.1389vw;
+      margin: 0px auto;
+    height: 900px;
+    justify-content: center;
+    width: 1330px;
 `;
 
 const DisquietImage1 = styled.img`
-    width: 16.7701vw;
-    height: 3.4722vw;
-    padding-left: 5.4861vw;
+    width: 241px;
+    height: 50px;
+    padding-left: 79px;
 `;
 
 const LincImage2 = styled.img`
-    width: 10.4167vw;
-    height: 3.4722vw;
-    padding-left: 6.9444vw;
+    width: 150px;
+    height: 50px;
+    padding-left: 100px;
 `;
 
 const ImpactCampusImage3 = styled.img`
-    width: 25.4194vw;
-    height: 3.4722vw;
-    padding-left: 6.9444vw;
+    width: 366px;
+    height: 50px;
+    padding-left: 100px;
 `;
 
 const SImage4 = styled.img`
-    width: 5.5556vw;
-    height: 5.5556vw;
-    padding-left: 6.9444vw;
+    width: 80px;
+    height: 80px;
+    padding-left: 100px;
 `;
 
 const ContentWrapper = styled.div`
@@ -60,7 +62,7 @@ const ContentWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 11.5278vw;
+    margin-top: 166px;
 `;
 
 function HomePartner() {

@@ -7,17 +7,17 @@ const Header2 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header2};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
+  margin-bottom: 54px;
   white-space: pre-line;
 `;
 
 const PartDiv = styled.div`
-    padding-left:5.5556vw;
-    padding-right: 112px;
-    padding-top: 100px;
-    height: 62vw;
+    margin: 0px auto;
+    justify-content: center;
+    margin-top: 130px;
+    height: 893px;
+    width: 1440px;
 `;
-//<Header2>PARD에 대해<br></br>무엇이든 물어보세요!</Header2>
 function InquiryContact() {
 
     return (

@@ -52,7 +52,6 @@ const Body2 = styled.div`
     line-height: 140%;
     display: flex;
     text-align:right;
-    position: absolute;
     bottom: ${props => props.isname ? '2.631vw' : '1.189vw'}; 
     right: 20px;
 `;
@@ -63,7 +62,7 @@ const PartContents = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap: 72px;
+    gap: 37px;
     align-items: flex-start;
     margin-top: 110px;
 `;
@@ -72,15 +71,14 @@ const PartWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-    margin-top: ${props => (props.marginTop ? '5.4861vw' : '0')};
+    margin-top: ${props => (props.marginTop ? '79px' : '0')};
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px;
-    height: 270px;
+    width: 240px;
+height: 270px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    position: relative;
 `;
 
 const TextWrapper = styled.div`
@@ -89,6 +87,7 @@ const TextWrapper = styled.div`
     align-items: center;
     width: 167px;
     height: 84px;
+    margin-bottom:27px;
 `;
 
 const TextWrapper2 = styled.div`
@@ -99,12 +98,21 @@ const TextWrapper2 = styled.div`
     width: 80%;
     justify-content: space-between;
 `;
+const TextWrapper3 = styled.div`
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 240px;
+    padding-right: 20px;
+    margin-top: 27px;
+`;
 
 const Image = styled.img`
     margin-top: -60px;
     width: 120px;
     height: 120px;
-    border: 0.139vw solid ${props => (props.color)};
+    border: 2px solid ${props => (props.color)};
     border-radius: 50%;
     
 `;
@@ -116,19 +124,21 @@ const Div = styled.div`
     width: 1330px;
 `;
 
-function MentorCard(props){
+function MentorCard(props) {
     return (
-        <ContentWrapper key={props.content.id} marginTop={props.content.id % 2 !== 0 }>
-            <Image src={props.content.imageSrc} alt={`Image ${props.content.id}`} color={props.content.color}/>
+        <ContentWrapper key={props.content.id} marginTop={props.content.id % 2 !== 0}>
+            <Image src={props.content.imageSrc} alt={`Image ${props.content.id}`} color={props.content.color} />
             <TextWrapper2>
-                <Header7 color = {props.content.color}>"</Header7>
-                <Header7 color = {props.content.color}>"</Header7>
+                <Header7 color={props.content.color}>"</Header7>
+                <Header7 color={props.content.color}>"</Header7>
             </TextWrapper2>
             <TextWrapper>
                 <Header6>{props.content.title}</Header6>
             </TextWrapper>
-            <Body2 isname={true}>{props.content.mentor_name}</Body2>
-            <Body2 isname={false}>{props.content.mentor_from}</Body2>
+            <TextWrapper3>
+                <Body2 isname={true}>{props.content.mentor_name}</Body2>
+                <Body2 isname={false}>{props.content.mentor_from}</Body2>
+            </TextWrapper3>
         </ContentWrapper>
     );
 }
@@ -155,32 +165,32 @@ function HomeMentor() {
             id: 3,
             imageSrc: PlanerImage,
             title: '배워서 남주는 가치를 제대로 실천하는 후배들',
-            mentor_name: '이즌쉬러블리',
-            mentor_from: '-메타코미디클럽 개발자',
+            mentor_name: '김강학',
+            mentor_from: '토스 Product Owner',
             color: '#64C59A'
         },
         {
             id: 4,
             imageSrc: PlanerImage,
             title: '배워서 남주는 가치를 제대로 실천하는 후배들',
-            mentor_name: '이즌쉬러블리',
-            mentor_from: '-메타코미디클럽 개발자',
+            mentor_name: '김',
+            mentor_from: 'Microsoft PM',
             color: '#5262F5'
         },
     ];
 
     return (
         <Div>
-             <ThemeProvider theme={theme}>
-            <Header2>멘토 추천사</Header2>
-            <Header4>함께할 수 밖에 없는 이유</Header4>
-            <PartContents>
-                {contentsData.map(content => (
-                    <PartWrapper key={content.id}>
-                        <MentorCard content={content}></MentorCard>
-                    </PartWrapper>
-                ))}
-            </PartContents>
+            <ThemeProvider theme={theme}>
+                <Header2>멘토 추천사</Header2>
+                <Header4>함께할 수 밖에 없는 이유</Header4>
+                <PartContents>
+                    {contentsData.map(content => (
+                        <PartWrapper key={content.id}>
+                            <MentorCard content={content}></MentorCard>
+                        </PartWrapper>
+                    ))}
+                </PartContents>
             </ThemeProvider>
         </Div>
     );

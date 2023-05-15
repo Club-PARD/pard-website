@@ -4,9 +4,13 @@ import Askmobile from './InquiryContact_Mob_ASked';
 
 
 const PartDiv = styled.div`
-    padding-left:16px;
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0px auto;
+    padding-right:6px;
     padding-top: 45px;
-    height: 1000px;
+    height: 800px;
 `;
 //<Header7>문의하세요! 모바일</Header7>
 function InquiryContactMob() {
