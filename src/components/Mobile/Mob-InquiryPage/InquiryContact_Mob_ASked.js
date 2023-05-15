@@ -5,6 +5,7 @@ import Vec from '../../../assets/img/vector.png';
 
 
 const Margin = styled.div`
+ align-items: center;
   display: flex;
   flex-direction: column;
 
