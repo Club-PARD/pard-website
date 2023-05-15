@@ -8,7 +8,7 @@ const PartDiv = styled.div`
     flex-direction: column;
     
     margin: 0px auto;
-    padding-right:10px;
+    padding-right:6px;
     padding-top: 45px;
     height: 800px;
 `;
