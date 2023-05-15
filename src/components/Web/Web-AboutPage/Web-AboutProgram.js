@@ -78,15 +78,16 @@ const Image = styled.img`
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 const Div = styled.div`
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
     background-color: #FFFFFF;
-    width: 1440px;
 `;
 
 const PartDiv = styled.div`
     background-color: #FFFFFF;
+    width: 1440px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
 `;
 
 const Part2Div = styled.div`
