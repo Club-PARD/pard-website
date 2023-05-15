@@ -54,6 +54,13 @@ const Image = styled.img`
     height: 64vw;
 `;
 
+const Div = styled.div`
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 375px;
+`;
+
 const PartDiv = styled.div`
     flex-direction: row;
     padding-top: 45px;
@@ -95,7 +102,7 @@ function PartSection(props){
     );
 }
 
-function HomePartsMob() {
+function HomePartsMob() { 
     const contentsData = [
         {
             id: 1,
@@ -129,7 +136,8 @@ function HomePartsMob() {
         },
     ]
     return (
-        <PartDiv>
+        <Div>
+           <PartDiv>
             <ThemeProvider theme={theme}>
             <Header7>PARTS</Header7>
             <PartContents>
@@ -140,7 +148,9 @@ function HomePartsMob() {
                 ))}
             </PartContents>
             </ThemeProvider>
-        </PartDiv>
+        </PartDiv> 
+        </Div>
+        
     );
 }
 
