@@ -35,8 +35,8 @@ const BandAnimation = keyframes`
 const BandContainer = styled.aside`
     position: relative;
     height: 132px;
-    margin-right: 50px;
     overflow: hidden;
+
 
     ::after {
         content: '';

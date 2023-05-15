@@ -4,15 +4,15 @@ import React from 'react';
 import bandImage1 from '../../../assets/img/band1.svg';
 import bandImage2 from '../../../assets/img/band2.svg';
 
-const Header7 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
+const Header8 = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Header8};
+  font-weight: ${props => props.theme.fontWeights.Header8};
   color: #000000;
   font-family: 'NanumSquare Neo';
   line-height: 1.45;
-  margin-bottom: 9.514vw;
   white-space: pre-line;
-  text-align : center;
+  text-align : left;
+  margin-left: 36px;
   `;
 
 const PartDiv = styled.div`
@@ -34,8 +34,7 @@ const BandAnimation = keyframes`
 
 const BandContainer = styled.aside`
     position: relative;
-    height: 132px;
-    margin-right: 50px;
+    height: 100%;
     overflow: hidden;
 
     ::after {
@@ -80,9 +79,6 @@ const BandComponent = ({ mentorInfos, src }) => {
     );
 };
 
-
-
-
 const VerticalGap = styled.div`
     height: ${props=>props.height != null ? props.height : "0px"};
 `
@@ -104,8 +100,10 @@ function AboutMentor() {
     return (
         <PartDiv>
             <ThemeProvider theme={theme}>
-                <Header7>파드와 함께하는 멘토진</Header7>
+                <Header8>함께하는 여정</Header8>
+                <VerticalGap height={'110px'}></VerticalGap>
                 <CardsList cardsData={metorDb}/>
+                <VerticalGap height={'150px'}></VerticalGap>
             </ThemeProvider>
         </PartDiv>
     );
