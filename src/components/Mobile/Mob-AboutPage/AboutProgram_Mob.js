@@ -80,11 +80,11 @@ const Div = styled.div`
     align-items: center;
     margin: 0 auto;
     background-color: #FFFFFF;
-    width: 375px;
 `;
 
 const PartDiv = styled.div`
   background-color: #FFFFFF;
+  width: 375px;
 `;
 
 const Part2Div = styled.div`
