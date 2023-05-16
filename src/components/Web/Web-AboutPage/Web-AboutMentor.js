@@ -10,14 +10,13 @@ const Header7 = styled.div`
   color: #000000;
   font-family: 'NanumSquare Neo';
   line-height: 1.45;
-  margin-bottom: 9.514vw;
+  margin-bottom: 137px;
   white-space: pre-line;
   text-align : center;
   `;
 
 const PartDiv = styled.div`
-    padding-top: 11.111vw;
-    padding-bottom: 12.986vw;
+    padding-bottom: 187px;
     height: 100%;
     background: rgba(255, 255, 255);
 `;
@@ -34,7 +33,7 @@ const BandAnimation = keyframes`
 
 const BandContainer = styled.aside`
     position: relative;
-    height: 132px;
+    height: 100px;
     overflow: hidden;
 
 

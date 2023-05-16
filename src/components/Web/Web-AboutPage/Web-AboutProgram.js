@@ -44,7 +44,7 @@ const Button = styled.button`
     width: 448px;
     height: 40px;
     border-radius: 1.0417vw;
-    margin-bottom: 0.6944vw;
+    margin-bottom: 10px;
     text-align: left;
     border-width: 0px;
     background-color: ${props=> (props.selected) ? props.color:'#fff'} ;
@@ -65,7 +65,7 @@ const Header6 = styled.text`
     font-weight: ${props => props.theme.fontWeights.Header6};
     font-family: 'NanumSquare Neo';
     color: ${props=> (props.selected) ? '#fff':'#000'} ;
-    padding-left: 6.6667vw;
+    padding-left: 96px;
 `;
 
 const Image = styled.img`
@@ -95,7 +95,6 @@ const Part2Div = styled.div`
   height : 950px;
   padding-top : 175px;
   padding-left : 184px;
-  padding-bottom : 155px;
   padding-right : 184px;
   display: block;
   margin: 0 auto;

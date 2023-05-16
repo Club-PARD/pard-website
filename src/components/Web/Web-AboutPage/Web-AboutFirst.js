@@ -30,7 +30,7 @@ const PartDiv = styled.div`
     justify-content: center;
     overflow-x: hidden;
     background-color: ${props => props.scroll < 300 ? '#000000' : 'white'};
-    transition: background-color 0.3s ease; /* 배경색 변경 시 부드럽게 전환되도록 설정 */
+    transition: background-color 0.3s ease;
 `;
 
 const AboutLogo = styled.img`
