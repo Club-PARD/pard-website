@@ -1,39 +1,32 @@
-import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
+import React from 'react';
+import styled from 'styled-components';
 
-const Header2 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header2};
-  font-weight: ${props => props.theme.fontWeights.Header2};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
-  margin-bottom: 7.2222vw;
-  white-space: pre-line;
-  display : flex;
-  margin-top: 217px;  
+const VideoContainer = styled.div`
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* 변경된 부분 */
+  overflow: hidden;
 `;
 
-const PartDiv = styled.div`
-    padding-left:24.7222vw;
-    padding-right: 22.7222vw;
-    padding-top: 15.0694vw;
-    height: 1000px;
-    position: relative;
+const VideoBackground = styled.video`
+  width: 100%;
+  height: 100%; /* 변경된 부분 */
+  object-fit: cover;
+  position: absolute; /* 변경된 부분 */
+  top: 0; /* 변경된 부분 */
+  left: 0; /* 변경된 부분 */
+  z-index: -999;
 `;
 
-const Div = styled.div`
-`;
-
-
-function HomeFirst() {
-    return (
-        <Div>
-            <ThemeProvider theme={theme}>
-                <PartDiv>
-                    <Header2>asdf</Header2>
-                </PartDiv>
-            </ThemeProvider>
-        </Div>
-    );
-}
+const HomeFirst = () => {
+  return (
+    <VideoContainer>
+      <VideoBackground autoPlay loop muted>
+        <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
+      </VideoBackground>
+    </VideoContainer>
+  );
+};
 
 export default HomeFirst;
