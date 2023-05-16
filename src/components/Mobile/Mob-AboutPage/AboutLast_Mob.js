@@ -3,7 +3,7 @@ import { theme } from '../../../styles/theme';
 import React from 'react';
 
 const PartDiv = styled.div`
-    height: 833px;
+    height: 700px;
     width: 375px;
     background: #FFFFFF;
     display: flex;
@@ -75,7 +75,7 @@ const Comment = styled.div`
   margin-bottom: 96px;
   `
 
-  const Button1 = styled.button`
+const Button1 = styled.button`
     font-size: ${props => props.theme.Mob_fontSizes.ButtonText1};
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
     font-family: 'NanumSquare Neo';
@@ -88,12 +88,68 @@ const Comment = styled.div`
     background-color: #FF5C00;
     justify-content: center;
     margin-top: 15px;
+    margin-bottom: 168px;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
   `
+const Bottom = styled.div`
+  width: 375px;
+  height: 40px;
+  background: #FF5C00;
+`
 
+const Vector1 = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: none;
+  margin-left: 20px;
+  margin-top: 10px;
+`
 
+const Vector2 = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: none;
+  margin-left: -10px;
+  margin-top: 10px;
+`
+
+const Vector3 = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: none;
+  margin-left: 121px;
+  margin-top: 10px;
+`
+
+const Vector4 = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: none;
+  margin-left: -10px;
+  margin-top: 10px;
+`
+
+const Vector5 = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: none;
+  margin-left: 125px;
+  margin-top: 10px;
+`
+
+const Vector6 = styled.svg`
+  width: 20px;
+  height: 20px;
+  fill: none;
+  margin-left: -10px;
+  margin-top: 10px;
+`
+
+const StyledPath = styled.path`
+  stroke: white;
+`;
 
 function AboutLast_Mob() {
 
@@ -108,6 +164,26 @@ function AboutLast_Mob() {
         <Header6>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도<br></br>선수들의 역량이에요</Header6>
         <Comment>송민 KBS 서핑 해설위원</Comment>
         <Button1>지금 바로 2기 지원하기</Button1>
+        <Bottom>
+          <Vector1 width="20" height="20" viewBox="0 0 20 20">
+            <StyledPath d="M19.1906 0.5L10.3088 0.5L0.80901 19.5H9.69077L19.1906 0.5Z" />
+          </Vector1>
+          <Vector2 width="20" height="20" viewBox="0 0 20 20">
+            <StyledPath d="M19.1906 19.5H10.3088L0.80901 0.500002H9.69077L19.1906 19.5Z" />
+          </Vector2>
+          <Vector3 width="20" height="20" viewBox="0 0 20 20">
+            <StyledPath d="M19.1906 0.5L10.3088 0.5L0.80901 19.5H9.69077L19.1906 0.5Z" />
+          </Vector3>
+          <Vector4 width="20" height="20" viewBox="0 0 20 20">
+            <StyledPath d="M19.1906 19.5H10.3088L0.80901 0.500002H9.69077L19.1906 19.5Z" />
+          </Vector4>
+          <Vector5 width="20" height="20" viewBox="0 0 20 20">
+            <StyledPath d="M19.1906 0.5L10.3088 0.5L0.80901 19.5H9.69077L19.1906 0.5Z" />
+          </Vector5>
+          <Vector6 width="20" height="20" viewBox="0 0 20 20">
+            <StyledPath d="M19.1906 19.5H10.3088L0.80901 0.500002H9.69077L19.1906 19.5Z" />
+          </Vector6>
+        </Bottom>
       </ThemeProvider>
     </PartDiv>
   );
