@@ -1,8 +1,8 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
-import AboutImage from '../../../assets/img/AboutLogo.png'; 
-import AboutFrame from '../../../assets/img/AboutFrame.png'; 
+import AboutImage from '../../../assets/img/AboutLogo.png';
+import AboutFrame from '../../../assets/img/AboutFrame.png';
 
 const Header8 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header8};
@@ -12,67 +12,65 @@ const Header8 = styled.div`
   line-height: 42px;
   margin-bottom: 58px;
   white-space: pre-line;
-  text-align : center;
+  text-align: center;
   font-style: normal;
   position: absolute;
   width: 280px;
   height: 168px;
-  left: 47px;
-  top: 289px;
-  left: 50%;
+  left: 53%;
   top: 50%;
   transform: translate(-50%, -50%);
-  `;
+
+`;
 
 const PartDiv = styled.div`
-  padding-left:174px;
-  padding-right: 149px;
-  padding-top: 133px;
-  height: 756px;
+  padding-top: 289px;
+  padding-left: 47px;
+  padding-right: 47px;
+
+  height: 700px;
   position: relative;
   display: flex;
-  justify-content: center;
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: center; /* 수평 가운데 정렬 */
   overflow-x: hidden;
-  align-items: center;
+  width: 100%; /* 전체 너비 차지 */
+
 `;
+
 const AboutLogo = styled.img`
   position: absolute;
   width: 301px;
   height: 123px;
-  left: 37px;
-  top: 307px;
-  left: 50%;
+  opacity: 0.5;
+  left: 53%;
   top: 50%;
   transform: translate(-50%, -50%);
-
-  opacity: 0.5;
 `;
+
 const AboutFrame1 = styled.img`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 113px;
   position: absolute;
-  width: 375px;
+  width: 100%;
   height: 40px;
   left: 0px;
-  top: 756px;
-  
+  bottom: 0px;
+  margin: 0;
 `;
 
-
 function AboutFirst_Mob() {
-
   return (
     <PartDiv>
-            <ThemeProvider theme={theme}>
-            <AboutLogo src={AboutImage} alt="AboutLogo" />
-            <Header8>
-                    Pay it foward<br/>문화를 실천하는<br/>대학생 IT 협업 동아리<br/>PARD
-            </Header8>   
-            </ThemeProvider>  
-            <AboutFrame1 src={AboutFrame} alt="AboutFrame" />  
-        </PartDiv>
+      <ThemeProvider theme={theme}>
+        <AboutLogo src={AboutImage} alt="AboutLogo" />
+        <Header8>
+          Pay it forward<br/>문화를 실천하는<br/>대학생 IT 협업 동아리<br/>PARD
+        </Header8>
+      </ThemeProvider>
+      <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
+    </PartDiv>
   );
 }
 
