@@ -24,6 +24,13 @@ function HomePage() {
 
     `;
 
+const HomePageComponent_Mob = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+`;
+
     return (
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
@@ -37,7 +44,7 @@ function HomePage() {
                     <HomeLastWeb />
                 </div>
                 :
-                <div>
+                <HomePageComponent_Mob>
                     <NavBarMov/>
                     <HomeVideoMob/>
                     <HomePartsMob/>
@@ -46,7 +53,7 @@ function HomePage() {
                     <HomePartnerMob/>
                     <HomeLastsMob/>
 
-                </div>
+                </HomePageComponent_Mob>
             }
         </HomePageComponent>
     );

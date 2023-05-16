@@ -24,33 +24,40 @@ const Subtitle3 = styled.div`
 `;
 
 const DisquietImage1 = styled.img`
-    width: 51.5173vw;
-    height: 10.6667vw;
-    padding-top: 22.1333vw;
+    width: 193px;
+    height: 40px;
+    padding-top: 83px;
 `;
 
 const LincImage2 = styled.img`
-    width: 32.0000vw;
-    height: 10.6667vw;
-    padding-top: 16.0000vw;
+    width: 120px;
+    height: 40px;
+    padding-top: 60px;
 `;
 
 const ImpactCampusImage3 = styled.img`
-    width: 78.0880vw;
-    height: 10.6667vw;
-    padding-top: 16.0000vw;
+    width: 293px;
+    height: 40px;
+    padding-top: 60px;
 `;
 
 const SImage4 = styled.img`
-    width: 18.6667vw;
-    height: 18.6667vw;
-    padding-top: 16.0000vw;
+    width: 70px;
+    height: 70px;
+    padding-top: 60px;
 `;
 
+const Div = styled.div`
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
 const PartDiv = styled.div`
-    padding-left:1.1111vw;
-    padding-top: 35vw;
-    height: 200vw;
+    padding-top: 131px;
+    height: 750px;
+    width: 375px;
+    
 `;
 
 const ContentWrapper = styled.div`
@@ -59,11 +66,12 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-top: 11.5278vw;
+    margin-top: 43px;
 `;
 
 function HomePartnerMob() {
     return (
+        <Div>
         <PartDiv>
              <ThemeProvider theme={theme}>
             <Header7>PARTNERS</Header7>
@@ -76,6 +84,7 @@ function HomePartnerMob() {
                 </ContentWrapper>
             </ThemeProvider>
         </PartDiv>
+        </Div>
     );
 }
 

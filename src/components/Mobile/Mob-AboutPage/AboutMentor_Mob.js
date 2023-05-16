@@ -16,8 +16,8 @@ const Header8 = styled.div`
   `;
 
 const PartDiv = styled.div`
-    padding-top: 11.111vw;
-    padding-bottom: 12.986vw;
+        padding-top: 42px;
+    padding-bottom: 49px;
     height: 100%;
     background: rgba(255, 255, 255);
 `;

@@ -36,7 +36,6 @@ const StyledWrap = styled.ul`
 `;
 
 const StyledWrap2 = styled.ul`
-    width : 448px;
     padding-inline-start: 0px;
 `;
 
@@ -44,7 +43,7 @@ const Button = styled.button`
     width: 303px;
     height: 34px;
     border-radius: 15px;
-    margin-bottom: 0.6944vw;
+    margin-bottom: 3px;
     text-align: left;
     border-width: 0px;
     background-color: ${props=> (props.selected) ? props.color:'#fff'} ;
@@ -65,7 +64,6 @@ const ButtonText1 = styled.text`
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
     font-family: 'NanumSquare Neo';
     color: ${props=> (props.selected) ? '#fff':'#000'} ;
-    padding-left: 10.6667vw;
 `;
 
 const Image = styled.img`
@@ -85,7 +83,6 @@ const Div = styled.div`
 const PartDiv = styled.div`
   background-color: #FFFFFF;
   width: 375px;
-  margin: 0 auto;
 `;
 
 const Part2Div = styled.div`
@@ -96,7 +93,6 @@ const Part2Div = styled.div`
   padding-bottom : 40px;
   padding-right : 35px;
   display: block;
-  margin: 0 auto;
 `;
 
 function AboutProgram_Mob() {

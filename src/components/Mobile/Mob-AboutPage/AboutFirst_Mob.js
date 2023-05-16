@@ -10,24 +10,19 @@ const Header8 = styled.div`
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   line-height: 42px;
-  margin-bottom: 58px;
+  margin-bottom: 29px;
   white-space: pre-line;
   text-align: center;
   font-style: normal;
-  position: absolute;
   width: 280px;
   height: 168px;
-  left: 53%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
+  margin-left: 40px;
 `;
 
 const PartDiv = styled.div`
   padding-top: 289px;
   padding-left: 47px;
   padding-right: 47px;
-
   height: 700px;
   position: relative;
   display: flex;
@@ -35,7 +30,6 @@ const PartDiv = styled.div`
   justify-content: center; /* 수평 가운데 정렬 */
   overflow-x: hidden;
   width: 100%; /* 전체 너비 차지 */
-
 `;
 
 const AboutLogo = styled.img`

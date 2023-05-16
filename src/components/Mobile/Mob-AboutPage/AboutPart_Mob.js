@@ -16,15 +16,24 @@ const Header8 = styled.div`
   margin-bottom: 58px;
   white-space: pre-line;
   `;
+
+const Div = styled.div`
+display: flex;
+justify-content: center;
+background : #FFFFFF;
+align-items: center;
+`;
+
+
 const PartDiv = styled.div`
   padding-top: 133px;
+  width: 375px;
   height: 1000px;
-  position: relative;
   background-color: #ffffff;
   display: grid;
   place-content: center;
   align-content: start;
- ;
+  justify-content: center;
   
 `;
 const ButtonText1 = styled.div`
@@ -36,7 +45,6 @@ const ButtonText1 = styled.div`
   white-space: pre-wrap;
   margin-top: 313px;
   text-align: left;
-  
 `;
 
 
@@ -48,11 +56,6 @@ const Body2 = styled.div`
   position: absolute;
   white-space: pre-wrap;
   margin-top: 350px;
-`;
-
-const Div = styled.div`
-background-color: #ffffff;  
-min-width: 375px;
 `;
 
 

@@ -20,7 +20,7 @@ const Header5 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header5};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 5vw;
+  margin-bottom: 19px;
   white-space: pre-line;
 `;
 
@@ -36,22 +36,22 @@ const Body2 = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-    margin-bottom: 26vw;
-    margin-top: 1vw;
-    margin-left: 4vw;
-    margin-right: -85vw;
+    margin-bottom: 98px;
+    margin-top: 4px;
+    margin-left: 15px;
+    margin-left: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
     display: flex;    
     flex-direction: column;
     align-items: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
-    width: 85vw;
-    height: 53vw;
+    width: 319px;
+    height: 199px;
 `;
 
 const Image = styled.img`
-    margin-bottom: 4.8vw;
-    margin-top: -20vw;
-    width: 53vw;
-    height: 64vw;
+    margin-bottom: 18px;
+    margin-top: -75px;
+    width: 199px;
+    height: 240px;
 `;
 
 const Div = styled.div`
@@ -84,9 +84,9 @@ const PartContents = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    gap: 26.667vw;
+    gap: 100px;
     align-items: flex-start;
-    margin-top: 29.333vw;
+    margin-top: 110px;
     padding: 0;
 `;
 

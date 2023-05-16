@@ -7,7 +7,7 @@ const Header7 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 6.667vw;
+  margin-bottom: 25px;
   white-space: pre-line;
 `;
 
@@ -16,7 +16,7 @@ const Sub3 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Subtitle3};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
+  margin-bottom: 14px;
   white-space: pre-line;
 `;
 
@@ -29,8 +29,8 @@ const Header6 = styled.div`
     text-align: center;
     line-height: 140%;
     display: flex;
-    margin-top: 5.333vw;
-    margin-bottom: 4vw;
+    margin-top: 20px;
+    margin-bottom: 15px;
 `;
 const Header3 = styled.div`
     font-size: ${props => props.theme.Mob_fontSizes.Header3};
@@ -50,7 +50,7 @@ const Body2 = styled.div`
     text-align:right;
     position: absolute;
     bottom: ${props => props.isname ? '9vw' : '4.267vw'}; 
-    right: 5.333vw;
+    right: 20px;
 `;
 
 
@@ -59,29 +59,29 @@ const PartContents = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap: 26.667vw;
     align-items: flex-start;
-    margin-top: 29.333vw;
+    gap: 100px;
+    margin-top: 110px;
 `;
 
 const PartWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-    margin-top: 12vw;
+    margin-top: 45px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    width: 66.667vw;
-    height: 72vw;
+    width: 250px;
+    height: 270px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     position: relative;
 `;
 
 const TextWrapper = styled.div`
-    padding: 0px 11.200vw;
+    padding: 0px 42px;
     word-break: keep-all;
     align-items: center;
 `;
@@ -96,18 +96,18 @@ const TextWrapper2 = styled.div`
 `;
 
 const Image = styled.img`
-    margin-top: -16vw;
-    width: 32vw;
-    height: 32vw;
+    margin-top: -60px;
+    width: 120px;
+    height: 120px;
     border: 2px solid ${props => (props.color)};
     border-radius: 50%;
     
 `;
 
 const PartDiv = styled.div`
-    padding-left:5.5556vw;
-    padding-right: 5.5556vw;
-    padding-top: 7.9861vw;
+    padding-left:21px;
+    padding-right: 21px;
+    padding-top: 30px;
     height: 100%;
 `;
 
