@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React,{useState} from 'react';
 import PM from '../../../assets/img/PMpart.png';
-import Web from '../../../assets/img/AppPart.png';
+import Web from '../../../assets/img/WebPart.png';
 import Design from '../../../assets/img/DesignPart.png';
 import App from '../../../assets/img/AppPart.png';
 import Server from '../../../assets/img/ServerPart.png';
@@ -59,7 +59,7 @@ height: 720px;
 background-color: #ffffff;
 position: relative;
 display: block;
-width: 1260px;
+width: 1200px;
 margin: 0 auto;
 `;
 
