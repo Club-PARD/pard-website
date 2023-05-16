@@ -43,7 +43,7 @@ function AboutPage() {
                 :
                 <AboutPageComponent_Mob>
                     <NavBarMov />
-                    <AboutFirst_Mob />
+                    {/* <AboutFirst_Mob /> */}
                     <AboutVision_Mob />
                     <AboutPart_Mob />
                     <AboutProgram_Mob />

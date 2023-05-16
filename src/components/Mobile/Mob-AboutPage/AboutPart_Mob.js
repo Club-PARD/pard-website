@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React,{useState} from 'react';
 import PM from '../../../assets/img/PMpart.png';
-import Web from '../../../assets/img/AppPart.png';
+import Web from '../../../assets/img/WebPart.png';
 import Design from '../../../assets/img/DesignPart.png';
 import App from '../../../assets/img/AppPart.png';
 import Server from '../../../assets/img/ServerPart.png';
@@ -22,6 +22,9 @@ display: flex;
 justify-content: center;
 background : #FFFFFF;
 align-items: center;
+min-width: 411px;
+padding: 0;
+width: 100%;
 `;
 
 
@@ -75,7 +78,6 @@ const List = styled.li`
   font-family: 'NanumSquare Neo';
 white-space: pre-line;
 color: ${props=> (props.selected) ? '#fff':'#000'} ;
-max-width: 100%;
 `;
 const ImageBorder =styled.div`
 width: 303px;
