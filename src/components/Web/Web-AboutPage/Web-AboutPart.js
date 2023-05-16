@@ -48,6 +48,7 @@ const Div = styled.div`
 align-items: center;
 justify-content: center;
 background-color: #ffffff;
+width: 100%;
 `;
 
 const PartDiv = styled.div`
