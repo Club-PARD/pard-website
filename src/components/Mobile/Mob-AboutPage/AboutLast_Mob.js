@@ -5,7 +5,7 @@ import React from 'react';
 const PartDiv = styled.div`
     padding-left: 18.5px;
     height: 700px;
-    width: 375px;
+    width: 100%;
     background: #FFFFFF;
     display: flex;
     flex-direction: column;
