@@ -119,7 +119,7 @@ const Vector3 = styled.svg`
   width: 20px;
   height: 20px;
   fill: none;
-  margin-left: 121px;
+  margin-left: 123px;
   margin-top: 10px;
 `
 
@@ -135,7 +135,7 @@ const Vector5 = styled.svg`
   width: 20px;
   height: 20px;
   fill: none;
-  margin-left: 125px;
+  margin-left: 123px;
   margin-top: 10px;
 `
 
