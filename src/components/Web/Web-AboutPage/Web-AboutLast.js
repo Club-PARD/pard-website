@@ -3,7 +3,6 @@ import { theme } from '../../../styles/theme';
 
 
 const PartDiv = styled.div`
-    padding-top: 217px;
     height: 720px;
     background-color: #FFFFFF;
     display: flex;

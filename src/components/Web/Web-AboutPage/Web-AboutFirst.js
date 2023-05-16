@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 const Header2 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Header2};
     font-weight: ${props => props.theme.fontWeights.Header2};
-    color: ${props => props.scroll > 300 ? '#000000' : 'white'};;
+    color: white;
     font-family: 'NanumSquare Neo';
     line-height:  84px;
     margin-bottom: 43px;
@@ -29,7 +29,7 @@ const PartDiv = styled.div`
     display: flex;
     justify-content: center;
     overflow-x: hidden;
-    background-color: ${props => props.scroll < 300 ? '#000000' : 'white'};
+    background-color: #000000;
     transition: background-color 0.3s ease;
 `;
 
@@ -60,26 +60,13 @@ const TextContainer = styled.div`
 `;
 
 function AboutFirst() {
-    const [scroll, setScroll] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScroll(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     return (
-        <PartDiv scroll={scroll}>
+        <PartDiv>
             <ThemeProvider theme={theme}>
                 <AboutLogo src={AboutImage} alt="AboutLogo" />
                 <TextContainer>
-                    <Header2 scroll={scroll}>
+                    <Header2>
                         Pay it forward 문화를 실천하는<br />대학생 IT 협업 동아리 PARD
                     </Header2>   
                 </TextContainer>
