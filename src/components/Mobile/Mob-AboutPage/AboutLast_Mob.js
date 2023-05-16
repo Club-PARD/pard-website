@@ -3,6 +3,7 @@ import { theme } from '../../../styles/theme';
 import React from 'react';
 
 const PartDiv = styled.div`
+    padding-left: 18.5px;
     height: 700px;
     width: 375px;
     background: #FFFFFF;
@@ -11,6 +12,7 @@ const PartDiv = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    /* position: relative; */
 `;
 
 const Header7 = styled.div`
@@ -33,6 +35,7 @@ width:13px;
 height:33px;
 display: flex;
 color: #FF5C00;
+margin-left: -18.5px;
 margin-right: 288px;
 `;
 
@@ -60,6 +63,8 @@ const Header6 = styled.div`
   margin-bottom: 18px;
   white-space: pre-line;
   text-align : center;
+  margin-left: -18.5px;
+
   `;
 
 const Comment = styled.div`
@@ -73,6 +78,7 @@ const Comment = styled.div`
   white-space: pre-line;
   text-align : center;
   margin-bottom: 96px;
+  margin-left: -18.5px;
   `
 
 const Button1 = styled.button`
@@ -89,12 +95,14 @@ const Button1 = styled.button`
     justify-content: center;
     margin-top: 15px;
     margin-bottom: 168px;
+    margin-left: -18.5px;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
   `
 const Bottom = styled.div`
-  width: 375px;
+margin-right: 18.5px;
+  width: 393.5px;
   height: 40px;
   background: #FF5C00;
 `
@@ -103,7 +111,7 @@ const Vector1 = styled.svg`
   width: 20px;
   height: 20px;
   fill: none;
-  margin-left: 20px;
+  margin-left: 29px;
   margin-top: 10px;
 `
 
@@ -119,7 +127,7 @@ const Vector3 = styled.svg`
   width: 20px;
   height: 20px;
   fill: none;
-  margin-left: 123px;
+  margin-left: 119.5px;
   margin-top: 10px;
 `
 
