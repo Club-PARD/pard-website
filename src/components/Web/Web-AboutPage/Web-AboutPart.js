@@ -83,6 +83,14 @@ background-color: ${props=> (props.selected) ? props.color:'#ff0'} ;
 margin-bottom: 144px;
 
 `;
+const ImageText = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Caption1};
+  font-weight: ${props => props.theme.fontWeights.Caption1};
+  margin-left: 32px;
+  margin-top: 9px;
+  color: white;
+  opacity: ${props => props.selected ? '1' : '0'};
+`;
 
 const List = styled.li`
   font-size: ${props => props.theme.Web_fontSizes.Header6};
@@ -130,7 +138,8 @@ function AboutPart() {
          ${'\n'} 것인지 의견을 나눠요 
          ${'\n'}  ${'\n'} 단순한 서비스 기획에 필요한 하드스킬만을 배우는 것이 아니라 BM(비즈니스 모델),  
          ${'\n'} 데이터, 사용자 경험, 유저의 니즈에 기반해 이유 있는 기획을 할 수 있는 기반과 마인드를  
-         ${'\n'} 가질 수 있습니다.`
+         ${'\n'} 가질 수 있습니다.`,
+         homework : '서비스 기획파트 최현종'
               },
       {
         id:2,
@@ -145,7 +154,8 @@ function AboutPart() {
          ${'\n'} 다각도에서 분석하면서 다양한 역량을 키우고 동시에 유의미한 포트폴리오를 완성해요.  
          ${'\n'}  ${'\n'} 현업에 계시는 실무자 분들, 그리고 타 파트과의 협업을 통해 디자인 뿐 아니라 기획,  
          ${'\n'} 사용자 조사, 데이터 도출, 개발자와 협업 등 비즈니스에 대한 이해와 전문성을 갖추어  
-         ${'\n'} 협업에 최적화 된 1인 디자이너로 성장합니다.`
+         ${'\n'} 협업에 최적화 된 1인 디자이너로 성장합니다.`,
+         homework : '디자인 파트 최현종'
       },
       {
         id:3,
@@ -160,7 +170,8 @@ function AboutPart() {
          ${'\n'} 물론 프로젝트 파일 생성부터 배포까지의 과정을 경험할 수 있습니다.  
          ${'\n'}  ${'\n'} 프레임 워크에 대한 깊은 분석과 역량을 키우고, IT 프로덕트 제작 과정을 경험함으로써 
          ${'\n'} 유의미한 포트폴리오를 가진 개발자로 성장합니다.
-         ${'\n'} *1기는 Flutter를, 2기부터는 iOS기반으로 학습합니다.`
+         ${'\n'} *1기는 Flutter를, 2기부터는 iOS기반으로 학습합니다.`,
+         homework : '앱 파트 최현종'
       },
       {
         id:4,
@@ -174,7 +185,8 @@ function AboutPart() {
          ${'\n'} HTML/CSS/JS에 대해 기초를 빠르게 다지고, React 프레임워크 기반으로
          ${'\n'} 웹 서비스를 개발합니다. 
          ${'\n'}  ${'\n'} 기획, 디자인 직군과의 제대로 된 협업 경험을 통해서 인공지능이 대체할 수 없는
-         ${'\n'} 협업 능력을 갖추고, 기획자와 디자이너를 이해할 수 있는 개발자로 성장합니다.`
+         ${'\n'} 협업 능력을 갖추고, 기획자와 디자이너를 이해할 수 있는 개발자로 성장합니다.`,
+         homework : '웹 파트 최현종'
       },
       {
         id:5,
@@ -189,7 +201,8 @@ function AboutPart() {
          ${'\n'} 이해하고, Spring Boot의 기본기를 다지며 다양한 API를 구현하는 개발자로
          ${'\n'} 성장합니다.
          ${'\n'}  ${'\n'} 클라이언트를 담당하는 앱/웹 파트와 협업하며 의사소통 능력을 키우고, CI/CD를
-         ${'\n'} 구축할 수 있는 개발자로 성장합니다.`
+         ${'\n'} 구축할 수 있는 개발자로 성장합니다.`,
+         homework : '서버 파트 최현종'
       },
     ]);
   
@@ -239,7 +252,7 @@ function AboutPart() {
         <ImageBorder 
             selected={props.selected}
             color={props.border_color}
-            > </ImageBorder>
+            > <ImageText selected={props.selected}>{props.homework}</ImageText> </ImageBorder>
         <Header5 
         selected={props.selected}
         color={props.border_color}>{props.partEng} of Pard</Header5>
