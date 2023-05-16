@@ -10,26 +10,28 @@ const Header8 = styled.div`
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   line-height: 42px;
-  margin-bottom: 29px;
   white-space: pre-line;
   text-align: center;
   font-style: normal;
   width: 280px;
   height: 168px;
-  margin-left: 40px;
+  position: absolute;
+  left: 52%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
 `;
 
 const PartDiv = styled.div`
+  padding-left:37px;
   padding-top: 289px;
-  padding-left: 47px;
-  padding-right: 47px;
-  height: 700px;
+  height: 756px;
   position: relative;
   display: flex;
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: center; /* 수평 가운데 정렬 */
   overflow-x: hidden;
-  width: 100%; /* 전체 너비 차지 */
+  width: 375px; /* 전체 너비 차지 */
 `;
 
 const AboutLogo = styled.img`
@@ -37,7 +39,7 @@ const AboutLogo = styled.img`
   width: 301px;
   height: 123px;
   opacity: 0.5;
-  left: 53%;
+  left: 52%;
   top: 50%;
   transform: translate(-50%, -50%);
 `;
@@ -51,7 +53,6 @@ const AboutFrame1 = styled.img`
   height: 40px;
   left: 0px;
   bottom: 0px;
-  margin: 0;
 `;
 
 function AboutFirst_Mob() {
