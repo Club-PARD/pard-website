@@ -3,6 +3,7 @@ import { theme } from '../../../styles/theme';
 import React from 'react';
 import bandImage1 from '../../../assets/img/band1.svg';
 import bandImage2 from '../../../assets/img/band2.svg';
+import bandImage3 from '../../../assets/img/band3.svg';
 
 const Header7 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header7};
@@ -43,6 +44,7 @@ const BandContainer = styled.aside`
         position: absolute;
         inset: 0 auto auto 0;
         width: 11028px;
+        margin-left: ${props => props.hasMargin ? "170px" : "0px"};
         height: 100%;
         background: ${props => `url(${props.src}) repeat-x 0/3676px`};
         animation: ${BandAnimation} 48s infinite linear;
@@ -66,9 +68,9 @@ const BandItem = styled.li`
     color: transparent;
 `;
 
-const BandComponent = ({ mentorInfos, src }) => {
+const BandComponent = ({ mentorInfos, src, hasMargin }) => {
     return (
-        <BandContainer src={src}>
+        <BandContainer src={src} hasMargin={hasMargin ?? false}>
             <BandList >
                 {mentorInfos.map((info) => (
                     <BandItem key={info.id}>
@@ -94,7 +96,7 @@ const CardsList = ({ cardsData }) => {
         <>
         <BandComponent mentorInfos={firstRow} src={bandImage1}></BandComponent>
         <VerticalGap height={'50px'}></VerticalGap>
-        <BandComponent mentorInfos={secondRow} src={bandImage2}></BandComponent>
+        <BandComponent mentorInfos={secondRow} src={bandImage3} hasMargin = {true}></BandComponent>
         </>
         
     );
