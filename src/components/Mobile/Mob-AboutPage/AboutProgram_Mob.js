@@ -74,25 +74,24 @@ const Image = styled.img`
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 const Div = styled.div`
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  background : #FFFFFF;
+  align-items: center;
+  min-width: 411px;
+  padding-left : 18px;
+  width: 100%;
 `;
 
 const PartDiv = styled.div`
-  background-color: #FFFFFF;
   width: 375px;
-`;
-
-const Part2Div = styled.div`
-  background-color: #FFFFFF;
-  height: 1096px;
+  height : 1096px;
+  padding-left : 40px;
   padding-top : 150px;
-  padding-left : 37px;
   padding-bottom : 40px;
-  padding-right : 35px;
-  display: block;
+  place-content: center;
+  align-content: start;
+  justify-content: center;
 `;
 
 function AboutProgram_Mob() {
@@ -211,7 +210,6 @@ function AboutProgram_Mob() {
     return (
       <Div>
         <PartDiv>
-          <Part2Div>
             <ThemeProvider theme={theme}>
                 <Header8>함께하는 여정</Header8>
                 <StyledWrap>
@@ -233,7 +231,6 @@ function AboutProgram_Mob() {
                     ))}
                     
             </ThemeProvider>
-            </Part2Div>
         </PartDiv>
         </Div>
     );
