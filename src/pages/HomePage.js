@@ -38,7 +38,7 @@ const HomePageComponent_Mob = styled.div`
                      <NavBarHome/>
                     <HomeFirst/>
                     <HomePartWeb />
-                    <HomeProgramWeb />
+                    {/* <HomeProgramWeb /> */}
                     <HomeMentorWeb />
                     <HomePartnerWeb />
                     <HomeLastWeb />
