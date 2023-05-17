@@ -17,33 +17,39 @@ import AboutProgram_Mob from "../components/Mobile/Mob-AboutPage/AboutProgram_Mo
 import AboutMentor_Mob from "../components/Mobile/Mob-AboutPage/AboutMentor_Mob";
 import AboutLast_Mob from "../components/Mobile/Mob-AboutPage/AboutLast_Mob";
 
-function AboutPage(){
-    const isDesktopOrMobile = useMediaQuery({query: '(max-width:768px)'}); // 758px 이하일 때는 모바일 뷰로 바뀐다.
+function AboutPage() {
+    const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
 
     const AboutPageComponent = styled.div`
     `;
+
+    const AboutPageComponent_Mob = styled.div`
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+`;
     return (
         <AboutPageComponent>
-            {isDesktopOrMobile !== true ? 
-            <div>
-                 <Navbar />
-                 <AboutFirst/>
-                <AboutVision/>
-                <AboutPart/>
-                <AboutProgram/>
-                <AboutMentor/>
-                <AboutLast/>
-            </div>
-            :
-            <div>
-                <NavBarMov/>
-                <AboutFirst_Mob/>
-                <AboutVision_Mob/>
-                <AboutPart_Mob/>
-                <AboutProgram_Mob/>
-                <AboutMentor_Mob/>
-                <AboutLast_Mob/>
-            </div>
+            {isDesktopOrMobile !== true ?
+                <div>
+                    <Navbar />
+                    <AboutFirst />
+                    <AboutVision />
+                    <AboutPart />
+                    <AboutProgram />
+                    <AboutMentor />
+                    <AboutLast />
+                </div>
+                :
+                <AboutPageComponent_Mob>
+                    <NavBarMov />
+                    <AboutFirst_Mob />
+                    <AboutVision_Mob />
+                    <AboutPart_Mob />
+                    <AboutProgram_Mob />
+                    <AboutMentor_Mob />
+                    <AboutLast_Mob />
+                </AboutPageComponent_Mob>
             }
         </AboutPageComponent>
     );

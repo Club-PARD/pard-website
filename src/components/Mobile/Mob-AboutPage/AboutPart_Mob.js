@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React,{useState} from 'react';
 import PM from '../../../assets/img/PMpart.png';
-import Web from '../../../assets/img/AppPart.png';
+import Web from '../../../assets/img/WebPart.png';
 import Design from '../../../assets/img/DesignPart.png';
 import App from '../../../assets/img/AppPart.png';
 import Server from '../../../assets/img/ServerPart.png';
@@ -16,15 +16,27 @@ const Header8 = styled.div`
   margin-bottom: 58px;
   white-space: pre-line;
   `;
+
+const Div = styled.div`
+display: flex;
+justify-content: center;
+background : #FFFFFF;
+align-items: center;
+min-width: 411px;
+padding: 0;
+width: 100%;
+`;
+
+
 const PartDiv = styled.div`
   padding-top: 133px;
+  width: 375px;
   height: 1000px;
-  position: relative;
   background-color: #ffffff;
   display: grid;
   place-content: center;
   align-content: start;
- ;
+  justify-content: center;
   
 `;
 const ButtonText1 = styled.div`
@@ -36,7 +48,6 @@ const ButtonText1 = styled.div`
   white-space: pre-wrap;
   margin-top: 313px;
   text-align: left;
-  
 `;
 
 
@@ -48,10 +59,6 @@ const Body2 = styled.div`
   position: absolute;
   white-space: pre-wrap;
   margin-top: 350px;
-`;
-
-const Div = styled.div`
-background-color: #ffffff;
 `;
 
 
@@ -71,7 +78,6 @@ const List = styled.li`
   font-family: 'NanumSquare Neo';
 white-space: pre-line;
 color: ${props=> (props.selected) ? '#fff':'#000'} ;
-max-width: 100%;
 `;
 const ImageBorder =styled.div`
 width: 303px;
@@ -81,6 +87,15 @@ border-radius: 0px 0px 13px 13px;
 opacity: ${props => props.selected ? '1' : '0'};
 background-color: ${props=> (props.selected) ? props.color:'#ff0'} ;
 margin-top: 253px;
+
+`;
+const ImageText = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Caption1};
+  font-weight: ${props => props.theme.fontWeights.Caption1};
+  margin-left: 17px;
+  margin-top: 9px;
+  color: white;
+  opacity: ${props => props.selected ? '1' : '0'};
 `;
 
 const ListButton = styled.button`
@@ -124,7 +139,8 @@ function AboutPart_Mob() {
        ${'\n'} ${'\n'}단순한 서비스 기획에 필요한 하드스킬만을 배우는
        ${'\n'}것이 아니라 BM(비즈니스 모델), 데이터, 사용자
        ${'\n'}경험, 유저의 니즈에 기반해 이유 있는 기획을 
-       ${'\n'}할 수 있는 기반과 마인드를 가질 수 있습니다.`
+       ${'\n'}할 수 있는 기반과 마인드를 가질 수 있습니다.`,
+       homework : '서비스 기획파트 최현종'
             },
     {
       id:2,
@@ -144,7 +160,8 @@ function AboutPart_Mob() {
        ${'\n'}협업을 통해 디자인 뿐 아니라 기획,  
        ${'\n'}사용자 조사, 데이터 도출, 개발자와 협업 등 비즈니
        ${'\n'}스에 대한 이해와 전문성을 갖추어  
-       ${'\n'}협업에 최적화 된 1인 디자이너로 성장합니다.`
+       ${'\n'}협업에 최적화 된 1인 디자이너로 성장합니다.`,
+       homework : '디자인파트 최현종'
     },
     {
       id:3,
@@ -164,7 +181,8 @@ function AboutPart_Mob() {
        ${'\n'}IT 프로덕트 제작 과정을 경험함으로써 유의미한
        ${'\n'}포트폴리오를 가진 개발자로 성장합니다.
        ${'\n'}*1기는 Flutter를, 2기부터는 iOS기반으로 
-       ${'\n'}학습합니다.`
+       ${'\n'}학습합니다.`,
+       homework : '앱파트 최현종'
     },
     {
       id:4,
@@ -183,7 +201,8 @@ function AboutPart_Mob() {
        ${'\n'}  ${'\n'}기획, 디자인 직군과의 제대로 된 협업 경험을
        ${'\n'}통해서 인공지능이 대체할 수 없는 협업 능력을 갖추고,
        ${'\n'}기획자와 디자이너를 이해할 수 있는 
-       ${'\n'}개발자로 성장합니다.`
+       ${'\n'}개발자로 성장합니다.`,
+       homework : '웹파트 최현종'
     },
     {
       id:5,
@@ -202,7 +221,8 @@ function AboutPart_Mob() {
        
        ${'\n'}  ${'\n'}클라이언트를 담당하는 앱/웹 파트와 
        ${'\n'}협업하며 의사소통 능력을 키우고, CI/CD를 구축할 수 있는 
-       ${'\n'}개발자로 성장합니다.`
+       ${'\n'}개발자로 성장합니다.`,
+       homework : '서버파트 최현종'
     },
   ]);
 
@@ -251,7 +271,7 @@ function AboutPart_Mob() {
         <ImageBorder 
             selected={props.selected}
             color={props.border_color}
-            > </ImageBorder>
+            > <ImageText selected = {props.selected}>{props.homework}</ImageText> </ImageBorder>
         <ButtonText1 
         selected={props.selected}
         color={props.border_color}>{props.partEng} of Pard</ButtonText1>

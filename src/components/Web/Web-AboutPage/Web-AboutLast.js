@@ -3,15 +3,14 @@ import { theme } from '../../../styles/theme';
 
 
 const PartDiv = styled.div`
-    padding-top: 217px;
     height: 720px;
     background-color: #FFFFFF;
     display: flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-width: 1440px;
-
+width: 100%;
+margin: 0 auto;
 `;
 
 const Div = styled.div`
@@ -19,6 +18,8 @@ const Div = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+
 
 `;
 

@@ -31,8 +31,10 @@ const Div = styled.div`
 const PartDiv = styled.div`
    display: flex;
    flex-direction: column;
-    height: 850px;
+    height: 750px;
     align-items: center;
+    margin: 0px auto;
+    width: 1330px;
 `;
 
 const Subtitle2 = styled.div`

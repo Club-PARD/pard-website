@@ -164,8 +164,8 @@ function AboutVision_Mob() {
             <Down2>
               <Third>03</Third>
             </Down2>
-            <Mainblack>현업 실무진 분들과<br></br></Mainblack>
-            <Mainorange> 함께 성장하는 커뮤니티</Mainorange>
+            <Mainblack>현업 실무진 분들과</Mainblack>
+            <Mainorange>함께 성장하는 커뮤니티</Mainorange>
             <Mainblack>를 꿈꿉니다.</Mainblack>
           </Cover>
           <Cover>

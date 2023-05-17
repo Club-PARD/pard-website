@@ -24,7 +24,7 @@ const PartDiv = styled.div`
 padding-top: 188px;
 padding-left: 184px;
 padding-right: 222px;
-padding-bottom: 6.9444vw;
+padding-bottom: 100px;
 height: 800px;
 width: 1100px;
 border-radius: 0px;

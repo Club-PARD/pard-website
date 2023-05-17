@@ -17,6 +17,7 @@ function InquiryPage() {
     const AboutPageComponent = styled.div`
         
     `;
+
     return (
         <AboutPageComponent>
             {isDesktopOrMobile !== true ?

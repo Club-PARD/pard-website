@@ -77,18 +77,18 @@ const Subtitle1 = styled.div`
             text-align: left;
     `;
 const Caption = styled.div`
-        font-size: ${props => props.theme.Web_fontSizes.Caption};
-        font-weight: ${props => props.theme.fontWeights.Caption};
-        color : #FFFFFF;
-        font-family: 'NanumSquare Neo';
+            font-size: ${props => props.theme.Web_fontSizes.Caption};
+            font-weight: ${props => props.theme.fontWeights.Caption};
+            color : #FFFFFF;
+            font-family: 'NanumSquare Neo';
             position: absolute;
             bottom: 0%;
             left: 58%;
             width: 100%;
             transform: translate(-50%,-50%);
-        margin-bottom: 5px;
-        white-space: pre-line;
-        text-align: left;
+            margin-bottom: 5px;
+            white-space: pre-line;
+            text-align: left;
     `;
 
 const PartDiv = styled.div`
@@ -296,7 +296,7 @@ function InquiryManagement() {
                                                     : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
                                                         : site.name === "github" ? <FaGithub style={{ color: "black" }} />
                                                             // : <FaInvision style={{ color: "black" }} />
-                                                            : <img src={disquiet} alt="Disquiet Logo" style={{ width: '28px', height: '28px', marginLeft: '4.5px' }} />
+                                                            : <img src={disquiet} alt="Disquiet Logo" style={{ width: '22px', height: '17px', marginLeft: '4.5px' }} />
                                                     //in 도 넣어야 하고 위에 in은 아닌듯 그리고 디스콰이엇도 넣어야함
                                                 }
                                             </Icon>

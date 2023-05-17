@@ -14,6 +14,7 @@ import HomePartnerMob from "../components/Mobile/Mob-HomePage/HomePartner_Mob";
 import NavBarMov from "../components/NavBarMov";
 import HomeFirst from "../components/Web/Web-HomePage/HomeFirst";
 import NavBarHome from "../components/Navbar_Home";
+import HomeSecond from "../components/Web/Web-HomePage/homeSecond";
 
 
 
@@ -24,20 +25,28 @@ function HomePage() {
 
     `;
 
+const HomePageComponent_Mob = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+`;
+
     return (
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
                 <div>
                      <NavBarHome/>
                     <HomeFirst/>
+                    <HomeSecond/>
                     <HomePartWeb />
-                    <HomeProgramWeb />
+                    {/* <HomeProgramWeb /> */}
                     <HomeMentorWeb />
                     <HomePartnerWeb />
                     <HomeLastWeb />
                 </div>
                 :
-                <div>
+                <HomePageComponent_Mob>
                     <NavBarMov/>
                     <HomeVideoMob/>
                     <HomePartsMob/>
@@ -46,7 +55,7 @@ function HomePage() {
                     <HomePartnerMob/>
                     <HomeLastsMob/>
 
-                </div>
+                </HomePageComponent_Mob>
             }
         </HomePageComponent>
     );
