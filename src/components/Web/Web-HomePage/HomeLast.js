@@ -33,6 +33,8 @@ const PartDiv = styled.div`
    flex-direction: column;
     height: 850px;
     align-items: center;
+    margin: 0px auto;
+    width: 1330px;
 `;
 
 const Subtitle2 = styled.div`
