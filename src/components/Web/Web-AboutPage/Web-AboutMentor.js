@@ -19,6 +19,7 @@ const PartDiv = styled.div`
     padding-top: 11.111vw;
     padding-bottom: 12.986vw;
     height: 100%;
+    width: 100%;
     background: rgba(255, 255, 255);
 `;
 

@@ -34,7 +34,7 @@ const BandAnimation = keyframes`
 
 const BandContainer = styled.aside`
     position: relative;
-    height: 100%;
+    height: 110px;
     overflow: hidden;
 
     ::after {
@@ -103,7 +103,7 @@ function AboutMentor() {
                 <Header8>함께하는 여정</Header8>
                 <VerticalGap height={'110px'}></VerticalGap>
                 <CardsList cardsData={metorDb}/>
-                <VerticalGap height={'150px'}></VerticalGap>
+                <VerticalGap height={'100px'}></VerticalGap>
             </ThemeProvider>
         </PartDiv>
     );
