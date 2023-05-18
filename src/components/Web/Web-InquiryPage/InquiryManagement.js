@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import styled, { css, ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { FaInstagram, FaGithub, FaInvision } from 'react-icons/fa';
 import { theme } from '../../../styles/theme';
 import CHJ from '../../../assets/img/최현종(회장).png';
@@ -47,19 +46,6 @@ const TextWrap = styled.div`
             ? "rgba(123,63,239,0.5)" : position === 'Operator'
                 ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
     transition: 0.3s;
-    /* &:hover{
-        top: 0%;
-        height: 100%;
-        border-top-left-radius: 19.5px;
-        border-top-right-radius: 19.5px;
-        background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
-        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
-        width: ${({ position }) => position ? '251.5px' : 'initial'};
-        height: ${({ position }) => position ? '286.5px' : 'initial'};
-        margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
-        padding-top: ${({ position }) => position ? '15px' : 'initial'};
-        } */
     `;
 
 const Subtitle1 = styled.div`
@@ -117,16 +103,13 @@ const ImageWrap = styled.div`
     width: 250px;
     height: 300px;
     display: block;
-`
-const Image = styled.img`
-    max-width: 250px;
-    width: 250px;
-    height: 300px;
-    display: block;
-    /* margin-right: 20px; */
 
     &:hover{
         ${TextWrap}{ 
+            width: 251.5px;
+            height: 286.5px;
+            margin-top: -1.5px;
+            padding-top: 3px;
             top: 0%;
             height: 100%;
             border-top-left-radius: 19.5px;
@@ -134,12 +117,14 @@ const Image = styled.img`
             background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
         : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
             : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
-            width: ${({ position }) => position ? '251.5px' : 'initial'};
-            height: ${({ position }) => position ? '286.5px' : 'initial'};
-            margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
-            padding-top: ${({ position }) => position ? '15px' : 'initial'};
         }
     }
+`
+const Image = styled.img`
+    max-width: 250px;
+    width: 250px;
+    height: 300px;
+    display: block;
     `
 const IconWrapper = styled.div`
     display: none;
@@ -154,6 +139,7 @@ const IconBackground = styled.div`
     height: 40px;
     border-radius: 50%;
     background-color: #fff;
+    margin-top: 13px;
     margin-left: -5px;
     margin-right: 15px;
     text-align: center;
@@ -314,10 +300,20 @@ function InquiryManagement() {
                                     <IconWrapper>
                                         {content.site.map(site => (
                                             <IconBackground key={site.name}>
-                                                <Icon href={site.link}>
-                                                    {site.name === "instagram" ? <FaInstagram style={{ color: "black" }} />
-                                                        : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
-                                                            : site.name === "github" ? <FaGithub style={{ color: "black" }} /> : <img src={disquiet} alt="Disquiet Logo" style={{ width: '22px', height: '17px', marginLeft: '4.5px' }} />}
+                                                <Icon href={site.link} target="_blank" rel="noopener noreferrer">
+                                                    {site.name === "instagram" ? (
+                                                        <FaInstagram style={{ color: "black" }} />
+                                                    ) : site.name === "linkedin" ? (
+                                                        <FaInvision style={{ color: "black" }} />
+                                                    ) : site.name === "github" ? (
+                                                        <FaGithub style={{ color: "black" }} />
+                                                    ) : (
+                                                        <img
+                                                            src={disquiet}
+                                                            alt="Disquiet Logo"
+                                                            style={{ width: '22px', height: '17px', marginLeft: '4.5px' }}
+                                                        />
+                                                    )}
                                                 </Icon>
                                             </IconBackground>
                                         ))}
