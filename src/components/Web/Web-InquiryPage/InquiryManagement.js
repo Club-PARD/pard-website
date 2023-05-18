@@ -50,7 +50,7 @@ const TextWrap = styled.div`
 
 const Subtitle1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
-    font-weight: ${props => props.theme.fontWeights.Subtitle1};
+    font-weight: ${props => props.theme.fontWeights.Subtitle2};
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
     position: absolute;
@@ -72,7 +72,7 @@ const Caption = styled.div`
     left: 58%;
     width: 100%;
     transform: translate(-50%,-50%);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     white-space: pre-line;
     text-align: left;
     `;
