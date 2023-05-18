@@ -56,9 +56,8 @@ const Mail = styled.div`
 white-space: nowrap;
 width: 60px; // 원래보다 14px올림
 height:34px;
-margin-left: 0px;
 //margin-right:441px;
-margin-top: 0px;
+margin-top: 5px;
 /* Header/H5 - B 24 */
 &:hover{color:#5262F5;}
 
@@ -79,9 +78,6 @@ white-space: nowrap;
 width: 222px;
 height: 28px;
 margin-left:63px;
-margin-top: 0px;
-&:hover{color:#5262F5;}
-
 
 /* Header/H6 - B 20 */
 
@@ -111,8 +107,6 @@ font-weight: ${(props) => props.theme.fontWeights.header5};
 font-size: ${(props) => props.theme.Web_fontSizes.Header5};
 line-height: 27px;
 /* identical to box height */
-&:hover{color:#5262F5;}
-
 
 color: #FFFFFF;
 `
@@ -131,7 +125,6 @@ font-weight: ${(props) => props.theme.fontWeights.Header6};
 font-size: ${(props) => props.theme.Web_fontSizes.Header6};
 line-height: 140%;
 /* identical to box height, or 28px */
-&:hover{color:#5262F5;}
 
 
 text-align: right;
@@ -182,6 +175,11 @@ line-height: 27px;
 
 color: #FFFFFF;
 
+
+&:hover {
+    color: #5262F5;
+  }
+
 `
 const Here = styled(Link)`
 
@@ -190,8 +188,7 @@ font-style: normal;
 font-weight: ${(props) => props.theme.fontWeights.Header5};
 font-size: ${(props) => props.theme.Web_fontSizes.Header5};
 line-height: 27px;
-color: #FFFFFF;
-&:hover{color:#5262F5;}
+color:#5262F5;
 `
 
 const Vectorbox1 = styled.div`
@@ -215,7 +212,7 @@ height: 14px;
 
 `
 
-const InformBox1 = styled.div`
+const InformBox1 = styled.a`
 
 display: flex;
 
@@ -223,19 +220,40 @@ margin-top:33px;
 width:361px;
 height:34px;
 align-items: center;
+text-decoration: none;
+&:hover {
+    ${Mail}, ${EMail} {
+      color: #5262F5;
+    }
+    ${Vector} {
+      content: url(${Vec_p});
+    }
+  }
 `
+
 const InformBox2 = styled.div`
 display: flex;
 margin-top:40px; // 위에 informbox1기준 margin-top
 width:361px;
 height:34px;
 align-items: center;
-
+text-decoration: none;
+&:hover {
+    ${Instagram}, ${InstagramId} {
+      color: #5262F5;
+    }
+    ${Vector} {
+      content: url(${Vec_p});
+    }
+  }
 
 `
 
 
 const Ask = () => {
+    const onClickInstagramHandler = () => {
+        window.open("https://www.instagram.com/official_pard_");
+      };
 
     return (
         <ThemeProvider theme={theme}>
@@ -251,7 +269,7 @@ const Ask = () => {
                         <EMail>official@we-pard.com</EMail>
                         <Vectorbox1><Vector src={Vec} /></Vectorbox1>
                     </InformBox1>
-                    <InformBox2>
+                    <InformBox2 >
                         <Instagram>인스타그램</Instagram>
                         <InstagramId>@official_pard_</InstagramId>
                         <Vectorbox2><Vector src={Vec} /></Vectorbox2>
