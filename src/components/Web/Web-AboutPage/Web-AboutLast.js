@@ -54,13 +54,13 @@ const Body2 = styled.div`
 `;
 
 const Button1 = styled.button`
-    font-size: ${props => props.theme.Web_fontSizes.Header5};
-    font-weight: ${props => props.theme.fontWeights.Header5};
+    font-size: ${props => props.theme.Web_fontSizes.Header6};
+    font-weight: ${props => props.theme.fontWeights.Header6};
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
     display: flex;
     align-items: center;
-    line-height: 34px;
+    line-height: 140%;
     width: 440px;
     height: 64px;
     background-color: #FF5C00;
