@@ -98,7 +98,7 @@ const Column = styled.div`
     max-width: 333px;
     `
 
-const ImageWrap = styled.div`
+const ImageWrapper = styled.div`
     max-width: 250px;
     width: 250px;
     height: 300px;
@@ -109,14 +109,15 @@ const ImageWrap = styled.div`
             width: 251.5px;
             height: 286.5px;
             margin-top: -1.5px;
-            padding-top: 3px;
+            padding-top: 3.5px;
             top: 0%;
             height: 100%;
             border-top-left-radius: 19.5px;
             border-top-right-radius: 19.5px;
-            background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
-        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
+            background-color: ${({ position }) => 
+              position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
+            : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
+            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rbga(255,0,0,0.8)'};
         }
     }
 `
@@ -128,7 +129,7 @@ const Image = styled.img`
     `
 const IconWrapper = styled.div`
     display: none;
-    ${ImageWrap}:hover & {
+    ${ImageWrapper}:hover & {
     display: flex;
     justify-content: flex-end;
     }
@@ -292,7 +293,7 @@ function InquiryManagement() {
                 <GridContainer>
                     {managerData.map(content => (
                         <Column key={content.id}>
-                            <ImageWrap>
+                            <ImageWrapper>
                                 <Image src={content.imgsrc} alt={`Image ${content.id}`}></Image>
                                 <TextWrap position={content.position} >
                                     <Subtitle1>{content.name}</Subtitle1>
@@ -319,7 +320,7 @@ function InquiryManagement() {
                                         ))}
                                     </IconWrapper>
                                 </TextWrap>
-                            </ImageWrap>
+                            </ImageWrapper>
                         </Column>
                     ))}
                 </GridContainer>
