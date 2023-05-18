@@ -13,7 +13,7 @@ const Header7 = styled.div`
   color: #000000;
   font-family: 'NanumSquare Neo';
   line-height: 1.45;
-  margin-bottom: 720px;
+  margin-bottom: 745px;
   text-align : left;
   position: absolute;
   bottom: 0;
@@ -42,6 +42,9 @@ const Body1 = styled.div`
   bottom : 0;
   white-space: pre-wrap;
   margin-bottom: 144px;  
+  line-height: 90%;
+
+
 `;
 
 const Div = styled.div`
@@ -230,7 +233,6 @@ function AboutPart() {
       }));
     }
   
-
 
   return (
     <Div>

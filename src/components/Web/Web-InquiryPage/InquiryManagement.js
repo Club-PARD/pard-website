@@ -1,6 +1,5 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { FaInstagram, FaGithub, FaInvision } from 'react-icons/fa';
-import { SiNotion } from 'react-icons/si';
 import { theme } from '../../../styles/theme';
 import CHJ from '../../../assets/img/최현종(회장).png';
 import SYC from '../../../assets/img/송예찬(부회장).png';
@@ -26,105 +25,114 @@ const Header7 = styled.div`
     text-align : center;
     `;
 const Subtitle3 = styled.div`
-        font-size: ${props => props.theme.Web_fontSizes.Subtitle3};
-        font-weight: ${props => props.theme.fontWeights.Subtitle3};
-        color : #FFFFFF;
-        font-family: 'NanumSquare Neo';
-        margin-bottom: 72px;
-        white-space: pre-line;
-        text-align: center;
+    font-size: ${props => props.theme.Web_fontSizes.Subtitle3};
+    font-weight: ${props => props.theme.fontWeights.Subtitle3};
+    color : #FFFFFF;
+    font-family: 'NanumSquare Neo';
+    margin-bottom: 72px;
+    white-space: pre-line;
+    text-align: center;
     `;
+
 const TextWrap = styled.div`
-        position: absolute;
-        width: 250px;
-        height: 22%;
-        top: 78%;
-        /* margin-left: 41px; */
-        border-bottom-left-radius: 19.5px;
-        border-bottom-right-radius: 19.5px;
-        background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
+    position: absolute;
+    width: 250px;
+    height: 22%;
+    top: 78%;
+    border-bottom-left-radius: 19.5px;
+    border-bottom-right-radius: 19.5px;
+    background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
         : position === 'Designer'
             ? "rgba(123,63,239,0.5)" : position === 'Operator'
                 ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
-        transition: 0.3s;
-        &:hover{
+    transition: 0.3s;
+    `;
+
+const Subtitle1 = styled.div`
+    font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
+    font-weight: ${props => props.theme.fontWeights.Subtitle1};
+    color : #FFFFFF;
+    font-family: 'NanumSquare Neo';
+    position: absolute;
+    bottom: 38px;
+    left: 58%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    margin-bottom: -10px;
+    white-space: pre-line;
+    text-align: left;
+    `;
+const Caption = styled.div`
+    font-size: ${props => props.theme.Web_fontSizes.Caption};
+    font-weight: ${props => props.theme.fontWeights.Caption};
+    color : #FFFFFF;
+    font-family: 'NanumSquare Neo';
+    position: absolute;
+    bottom: 0%;
+    left: 58%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    margin-bottom: 5px;
+    white-space: pre-line;
+    text-align: left;
+    `;
+
+const PartDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100%;
+    justify-items: center;
+    width: 1050px;
+    `;
+const GridContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4,1fr); //4개씩 넣고 각 넓이는 1fr이다
+    row-gap: 27px;//서로 20px의 차이가 있도록
+    column-gap: 0px;
+    grid-auto-rows: 1.5fr;    
+    `
+const Column = styled.div`
+    //나중에 이미지 넣을 공간
+    position: relative;
+    max-width: 333px;
+    `
+
+const ImageWrapper = styled.div`
+    max-width: 250px;
+    width: 250px;
+    height: 300px;
+    display: block;
+
+    &:hover{
+        ${TextWrap}{ 
+            width: 251.5px;
+            height: 286.5px;
+            margin-top: -1.5px;
+            padding-top: 3.5px;
             top: 0%;
             height: 100%;
             border-top-left-radius: 19.5px;
             border-top-right-radius: 19.5px;
-            background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
-        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
-            width: ${({ position }) => position ? '251.5px' : 'initial'};
-            height: ${({ position }) => position ? '286.5px' : 'initial'};
-            margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
-            padding-top: ${({ position }) => position ? '15px' : 'initial'};
+            background-color: ${({ position }) => 
+              position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
+            : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
+            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rbga(255,0,0,0.8)'};
         }
-    `;
-
-const Subtitle1 = styled.div`
-            font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
-            font-weight: ${props => props.theme.fontWeights.Subtitle1};
-            color : #FFFFFF;
-            font-family: 'NanumSquare Neo';
-            position: absolute;
-            bottom: 38px;
-            left: 58%;
-            width: 100%;
-            transform: translate(-50%,-50%);
-            margin-bottom: -10px;
-            white-space: pre-line;
-            text-align: left;
-    `;
-const Caption = styled.div`
-            font-size: ${props => props.theme.Web_fontSizes.Caption};
-            font-weight: ${props => props.theme.fontWeights.Caption};
-            color : #FFFFFF;
-            font-family: 'NanumSquare Neo';
-            position: absolute;
-            bottom: 0%;
-            left: 58%;
-            width: 100%;
-            transform: translate(-50%,-50%);
-            margin-bottom: 5px;
-            white-space: pre-line;
-            text-align: left;
-    `;
-
-const PartDiv = styled.div`
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        height: 100%;
-        justify-items: center;
-        width: 1050px;
-    `;
-const GridContainer = styled.div`
-        display: grid;
-        grid-template-columns: repeat(4,1fr); //4개씩 넣고 각 넓이는 1fr이다
-        row-gap: 27px;//서로 20px의 차이가 있도록
-        column-gap: 0px;
-        grid-auto-rows: 1.5fr;
-        
-    `
-const Column = styled.div`
-        //나중에 이미지 넣을 공간
-        position: relative;
-        max-width: 333px;
-    `
+    }
+`
 const Image = styled.img`
-        max-width: 250px;
-        width: 250px;
-        height: 300px;
-        display: block;
-        margin-right: 20px;
+    max-width: 250px;
+    width: 250px;
+    height: 300px;
+    display: block;
     `
 const IconWrapper = styled.div`
-        display: none;
-        ${TextWrap}:hover & {
-        display: flex;
-        justify-content: flex-end;
-        }
+    display: none;
+    ${ImageWrapper}:hover & {
+    display: flex;
+    justify-content: flex-end;
+    }
     `
 const IconBackground = styled.div`
     position: relative;
@@ -132,6 +140,7 @@ const IconBackground = styled.div`
     height: 40px;
     border-radius: 50%;
     background-color: #fff;
+    margin-top: 13px;
     margin-left: -5px;
     margin-right: 15px;
     text-align: center;
@@ -273,6 +282,7 @@ function InquiryManagement() {
         },
 
 
+
     ] //ARRAY 값 운영진의 정보를 넣을 예정
     return (
         <PartDiv>
@@ -283,33 +293,37 @@ function InquiryManagement() {
                 <GridContainer>
                     {managerData.map(content => (
                         <Column key={content.id}>
-                            <Image src={content.imgsrc} alt={`Image ${content.id}`} ></Image>
-
-                            <TextWrap position={content.position}>
-                                <Subtitle1>{content.name}</Subtitle1>
-                                <Caption>{content.position}</Caption>
-                                <IconWrapper>
-                                    {content.site.map(site => (
-                                        <IconBackground key={site.name}>
-                                            <Icon href={site.link}>
-                                                {site.name === "instagram" ? <FaInstagram style={{ color: "black" }} />
-                                                    : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
-                                                        : site.name === "github" ? <FaGithub style={{ color: "black" }} />
-                                                            // : <FaInvision style={{ color: "black" }} />
-                                                            : <img src={disquiet} alt="Disquiet Logo" style={{ width: '22px', height: '17px', marginLeft: '4.5px' }} />
-                                                    //in 도 넣어야 하고 위에 in은 아닌듯 그리고 디스콰이엇도 넣어야함
-                                                }
-                                            </Icon>
-                                        </IconBackground>
-                                    ))}
-                                </IconWrapper>
-
-                            </TextWrap>
+                            <ImageWrapper>
+                                <Image src={content.imgsrc} alt={`Image ${content.id}`}></Image>
+                                <TextWrap position={content.position} >
+                                    <Subtitle1>{content.name}</Subtitle1>
+                                    <Caption>{content.position}</Caption>
+                                    <IconWrapper>
+                                        {content.site.map(site => (
+                                            <IconBackground key={site.name}>
+                                                <Icon href={site.link} target="_blank" rel="noopener noreferrer">
+                                                    {site.name === "instagram" ? (
+                                                        <FaInstagram style={{ color: "black" }} />
+                                                    ) : site.name === "linkedin" ? (
+                                                        <FaInvision style={{ color: "black" }} />
+                                                    ) : site.name === "github" ? (
+                                                        <FaGithub style={{ color: "black" }} />
+                                                    ) : (
+                                                        <img
+                                                            src={disquiet}
+                                                            alt="Disquiet Logo"
+                                                            style={{ width: '22px', height: '17px', marginLeft: '4.5px' }}
+                                                        />
+                                                    )}
+                                                </Icon>
+                                            </IconBackground>
+                                        ))}
+                                    </IconWrapper>
+                                </TextWrap>
+                            </ImageWrapper>
                         </Column>
                     ))}
-
                 </GridContainer>
-
             </ThemeProvider>
         </PartDiv>
     );

@@ -30,7 +30,7 @@ const Body1 = styled.div`
 `;
 
 const StyledWrap = styled.ul`
-    padding-top : 53px;
+    padding-top : 97px;
     padding-left: 0;
     padding-inline-start: 0px;
 `;

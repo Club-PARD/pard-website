@@ -60,6 +60,7 @@ margin-left: 0px;
 //margin-right:441px;
 margin-top: 0px;
 /* Header/H5 - B 24 */
+&:hover{color:#5262F5;}
 
 font-family: 'NanumSquare Neo';
 font-style: normal;
@@ -79,7 +80,7 @@ width: 222px;
 height: 28px;
 margin-left:63px;
 margin-top: 0px;
-
+&:hover{color:#5262F5;}
 
 
 /* Header/H6 - B 20 */
@@ -110,6 +111,7 @@ font-weight: ${(props)=>props.theme.fontWeights.header5};
 font-size: ${(props)=>props.theme.Web_fontSizes.Header5};
 line-height: 27px;
 /* identical to box height */
+&:hover{color:#5262F5;}
 
 
 color: #FFFFFF;
@@ -129,6 +131,7 @@ font-weight: ${(props)=>props.theme.fontWeights.Header6};
 font-size: ${(props)=>props.theme.Web_fontSizes.Header6};
 line-height: 140%;
 /* identical to box height, or 28px */
+&:hover{color:#5262F5;}
 
 
 text-align: right;
@@ -225,7 +228,6 @@ align-items: center;
 const InformBox2= styled.div`
 display: flex;
 margin-top:40px; // 위에 informbox1기준 margin-top
-margin-bottom: 20px; // 위에 informbox1기준 margin-bottom 30으로 하니까 간격이 너무 커서 20px로 줄임
 width:361px;
 height:34px;
 align-items: center;

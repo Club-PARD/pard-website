@@ -174,9 +174,6 @@ function AboutVision_Mob() {
               동아리원들은 실무자 분들로부터 현실적인<br></br> 조언을 구하고 성장합니다.<br></br>
               Pay it forward에 공감하는 사람들이 <br></br>모여 교류하고 소통함으로 IT 생태계를 <br></br>확장 합니다.</Subblack1>
           </Cover>
-
-
-
         </ThemeProvider>
       </PartDiv>
     </Div>
