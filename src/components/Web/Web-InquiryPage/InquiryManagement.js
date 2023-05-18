@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { css, ThemeProvider } from 'styled-components';
 import { FaInstagram, FaGithub, FaInvision } from 'react-icons/fa';
-import { SiNotion } from 'react-icons/si';
 import { theme } from '../../../styles/theme';
 import CHJ from '../../../assets/img/최현종(회장).png';
 import SYC from '../../../assets/img/송예찬(부회장).png';
@@ -35,6 +34,7 @@ const Subtitle3 = styled.div`
     white-space: pre-line;
     text-align: center;
     `;
+
 const TextWrap = styled.div`
     position: absolute;
     width: 250px;
@@ -47,7 +47,7 @@ const TextWrap = styled.div`
             ? "rgba(123,63,239,0.5)" : position === 'Operator'
                 ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
     transition: 0.3s;
-    &:hover{
+    /* &:hover{
         top: 0%;
         height: 100%;
         border-top-left-radius: 19.5px;
@@ -59,35 +59,8 @@ const TextWrap = styled.div`
         height: ${({ position }) => position ? '286.5px' : 'initial'};
         margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
         padding-top: ${({ position }) => position ? '15px' : 'initial'};
-        }
+        } */
     `;
-
-const hoverTextWrap = styled.div`
-    position: absolute;
-    width: 250px;
-    height: 22%;
-    top: 78%;
-    border-bottom-left-radius: 19.5px;
-    border-bottom-right-radius: 19.5px;
-    background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
-        : position === 'Designer'
-            ? "rgba(123,63,239,0.5)" : position === 'Operator'
-                ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
-    transition: 0.3s;
-    &:hover{
-        top: 0%;
-        height: 100%;
-        border-top-left-radius: 19.5px;
-        border-top-right-radius: 19.5px;
-        background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
-        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
-        width: ${({ position }) => position ? '251.5px' : 'initial'};
-        height: ${({ position }) => position ? '286.5px' : 'initial'};
-        margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
-        padding-top: ${({ position }) => position ? '15px' : 'initial'};
-        }
-`;
 
 const Subtitle1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
@@ -138,16 +111,39 @@ const Column = styled.div`
     position: relative;
     max-width: 333px;
     `
+
+const ImageWrap = styled.div`
+    max-width: 250px;
+    width: 250px;
+    height: 300px;
+    display: block;
+`
 const Image = styled.img`
     max-width: 250px;
     width: 250px;
     height: 300px;
     display: block;
-    margin-right: 20px;
+    /* margin-right: 20px; */
+
+    &:hover{
+        ${TextWrap}{ 
+            top: 0%;
+            height: 100%;
+            border-top-left-radius: 19.5px;
+            border-top-right-radius: 19.5px;
+            background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
+        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
+            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
+            width: ${({ position }) => position ? '251.5px' : 'initial'};
+            height: ${({ position }) => position ? '286.5px' : 'initial'};
+            margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
+            padding-top: ${({ position }) => position ? '15px' : 'initial'};
+        }
+    }
     `
 const IconWrapper = styled.div`
     display: none;
-    ${TextWrap}:hover & {
+    ${ImageWrap}:hover & {
     display: flex;
     justify-content: flex-end;
     }
@@ -301,16 +297,6 @@ function InquiryManagement() {
 
 
     ] //ARRAY 값 운영진의 정보를 넣을 예정
-
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleHover = () => {
-        setIsHovered(true);
-    };
-
-    const handleLeave = () => {
-        setIsHovered(false);
-    };
     return (
         <PartDiv>
             <ThemeProvider theme={theme}>
@@ -320,30 +306,27 @@ function InquiryManagement() {
                 <GridContainer>
                     {managerData.map(content => (
                         <Column key={content.id}>
-                            <Image src={content.imgsrc} alt={`Image ${content.id}`} ></Image>
-
-                            <TextWrap position={content.position}>
-                                <Subtitle1>{content.name}</Subtitle1>
-                                <Caption>{content.position}</Caption>
-                                <IconWrapper>
-                                    {content.site.map(site => (
-                                        <IconBackground key={site.name}>
-                                            <Icon href={site.link}>
-                                                {site.name === "instagram" ? <FaInstagram style={{ color: "black" }} />
-                                                    : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
-                                                        : site.name === "github" ? <FaGithub style={{ color: "black" }} /> : <img src={disquiet} alt="Disquiet Logo" style={{ width: '22px', height: '17px', marginLeft: '4.5px' }} />}
-                                            </Icon>
-
-                                        </IconBackground>
-                                    ))}
-                                </IconWrapper>
-
-                            </TextWrap>
+                            <ImageWrap>
+                                <Image src={content.imgsrc} alt={`Image ${content.id}`}></Image>
+                                <TextWrap position={content.position} >
+                                    <Subtitle1>{content.name}</Subtitle1>
+                                    <Caption>{content.position}</Caption>
+                                    <IconWrapper>
+                                        {content.site.map(site => (
+                                            <IconBackground key={site.name}>
+                                                <Icon href={site.link}>
+                                                    {site.name === "instagram" ? <FaInstagram style={{ color: "black" }} />
+                                                        : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
+                                                            : site.name === "github" ? <FaGithub style={{ color: "black" }} /> : <img src={disquiet} alt="Disquiet Logo" style={{ width: '22px', height: '17px', marginLeft: '4.5px' }} />}
+                                                </Icon>
+                                            </IconBackground>
+                                        ))}
+                                    </IconWrapper>
+                                </TextWrap>
+                            </ImageWrap>
                         </Column>
                     ))}
-
                 </GridContainer>
-
             </ThemeProvider>
         </PartDiv>
     );
