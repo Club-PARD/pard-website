@@ -20,18 +20,21 @@ const Header7 = styled.div`
     font-weight: ${props => props.theme.fontWeights.Header7};
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-bottom: 72px;
+    margin-bottom: 50px;
     white-space: pre-line;
     text-align : center;
+    line-height: 140%;
     `;
+
 const Subtitle3 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle3};
     font-weight: ${props => props.theme.fontWeights.Subtitle3};
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-bottom: 72px;
+    margin-bottom: 170px;
     white-space: pre-line;
     text-align: center;
+    line-height: 140%;
     `;
 
 const TextWrap = styled.div`
@@ -114,10 +117,10 @@ const ImageWrapper = styled.div`
             height: 100%;
             border-top-left-radius: 19.5px;
             border-top-right-radius: 19.5px;
-            background-color: ${({ position }) => 
-              position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
+            background-color: ${({ position }) =>
+        position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
             : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rbga(255,0,0,0.8)'};
+                : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rbga(255,0,0,0.8)'};
         }
     }
 `
@@ -134,17 +137,26 @@ const IconWrapper = styled.div`
     justify-content: flex-end;
     }
     `
-const IconBackground = styled.div`
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #fff;
-    margin-top: 13px;
-    margin-left: -5px;
-    margin-right: 15px;
-    text-align: center;
-    `;
+const IconBackground = styled.a`
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: #fff;
+margin-top: 13px;
+margin-left: -5px;
+margin-right: 15px;
+text-decoration: none;
+cursor: pointer;
+
+&:hover {
+    width: 42px;
+height: 42px;
+}
+`;
 const Icon = styled.a`
     position: absolute;
     width: 50%;
@@ -300,14 +312,19 @@ function InquiryManagement() {
                                     <Caption>{content.position}</Caption>
                                     <IconWrapper>
                                         {content.site.map(site => (
-                                            <IconBackground key={site.name}>
+                                            <IconBackground
+                                                key={site.name}
+                                                href={site.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
                                                 <Icon href={site.link} target="_blank" rel="noopener noreferrer">
                                                     {site.name === "instagram" ? (
-                                                        <FaInstagram style={{ color: "black" }} />
+                                                        <FaInstagram style={{ color: "black", width: '22px', height: '22px' }} />
                                                     ) : site.name === "linkedin" ? (
-                                                        <FaInvision style={{ color: "black" }} />
+                                                        <FaInvision style={{ color: "black", width: '20px', height: '20px' }} />
                                                     ) : site.name === "github" ? (
-                                                        <FaGithub style={{ color: "black" }} />
+                                                        <FaGithub style={{ color: "black", width: '24px', height: '24px' }} />
                                                     ) : (
                                                         <img
                                                             src={disquiet}
