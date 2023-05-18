@@ -75,18 +75,19 @@ const Image = styled.img`
 `;
 const Div = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background : #FFFFFF;
   align-items: center;
-  min-width: 411px;
   padding-left : 18px;
   width: 100%;
 `;
 
 const PartDiv = styled.div`
-  width: 375px;
   height : 1096px;
-  padding-left : 40px;
+  background-color: white;
+  margin: 0 auto;
+ padding-left : 40px;
   padding-top : 150px;
   padding-bottom : 40px;
   place-content: center;
