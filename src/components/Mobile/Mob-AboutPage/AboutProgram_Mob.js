@@ -73,26 +73,30 @@ const Image = styled.img`
     padding-top: 256px;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
+
 const Div = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background : #FFFFFF;
   align-items: center;
-  padding-left : 18px;
   width: 100%;
+  padding-left: 55px;
+padding-right: 75px;
+min-width: 570px;
+
 `;
 
 const PartDiv = styled.div`
-  height : 1096px;
+  height : 1000px;
   background-color: white;
   margin: 0 auto;
- padding-left : 40px;
   padding-top : 150px;
-  padding-bottom : 40px;
   place-content: center;
   align-content: start;
   justify-content: center;
+  padding-right: 20px;
+  
 `;
 
 function AboutProgram_Mob() {

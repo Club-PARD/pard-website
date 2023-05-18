@@ -3,16 +3,29 @@ import { theme } from '../../../styles/theme';
 import React from 'react';
 
 const PartDiv = styled.div`
-    padding-left: 18.5px;
     height: 700px;
-    width: 100%;
+    width: 375px;
     background: #FFFFFF;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    place-content: center;
     margin: 0 auto;
     /* position: relative; */
+`;
+
+const Div = styled.div`
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background : #FFFFFF;
+  align-items: center;
+  width: 100%;  
+  padding-left: 65px;
+padding-right: 65px;
+min-width: 570px;
+
 `;
 
 const Header7 = styled.div`
@@ -35,7 +48,6 @@ width:13px;
 height:33px;
 display: flex;
 color: #FF5C00;
-margin-left: -18.5px;
 margin-right: 288px;
 `;
 
@@ -63,7 +75,6 @@ const Header6 = styled.div`
   margin-bottom: 18px;
   white-space: pre-line;
   text-align : center;
-  margin-left: -18.5px;
 
   `;
 
@@ -78,7 +89,6 @@ const Comment = styled.div`
   white-space: pre-line;
   text-align : center;
   margin-bottom: 96px;
-  margin-left: -18.5px;
   `
 
 const Button1 = styled.button`
@@ -93,9 +103,7 @@ const Button1 = styled.button`
     height: 52px;
     background-color: #FF5C00;
     justify-content: center;
-    margin-top: 15px;
     margin-bottom: 168px;
-    margin-left: -18.5px;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
@@ -162,6 +170,7 @@ const StyledPath = styled.path`
 function AboutLast_Mob() {
 
   return (
+    <Div>
     <PartDiv>
       <ThemeProvider theme={theme}>
         <Header7>진짜 협업<br></br>함께 경험해봐요</Header7>
@@ -172,7 +181,7 @@ function AboutLast_Mob() {
         <Header6>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도<br></br>선수들의 역량이에요</Header6>
         <Comment>송민 KBS 서핑 해설위원</Comment>
         <Button1>지금 바로 2기 지원하기</Button1>
-        <Bottom>
+        {/* <Bottom>
           <Vector1 width="20" height="20" viewBox="0 0 20 20">
             <StyledPath d="M19.1906 0.5L10.3088 0.5L0.80901 19.5H9.69077L19.1906 0.5Z" />
           </Vector1>
@@ -190,10 +199,11 @@ function AboutLast_Mob() {
           </Vector5>
           <Vector6 width="20" height="20" viewBox="0 0 20 20">
             <StyledPath d="M19.1906 19.5H10.3088L0.80901 0.500002H9.69077L19.1906 19.5Z" />
-          </Vector6>
-        </Bottom>
+          </Vector6>s
+        </Bottom> */}
       </ThemeProvider>
     </PartDiv>
+    </Div>
   );
 }
 

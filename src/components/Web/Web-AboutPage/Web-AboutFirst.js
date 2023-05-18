@@ -33,6 +33,7 @@ const PartDiv = styled.div`
     transition: background-color 0.3s ease;
 `;
 
+
 const AboutLogo = styled.img`
     position: absolute;
     width: 1020.27px;

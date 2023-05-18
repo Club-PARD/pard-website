@@ -23,11 +23,6 @@ function AboutPage() {
     const AboutPageComponent = styled.div`
     `;
 
-    const AboutPageComponent_Mob = styled.div`
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-`;
     return (
         <AboutPageComponent>
             {isDesktopOrMobile !== true ?
@@ -41,7 +36,7 @@ function AboutPage() {
                     <AboutLast />
                 </div>
                 :
-                <AboutPageComponent_Mob>
+                <div>
                     <NavBarMov />
                     <AboutFirst_Mob />
                     <AboutVision_Mob />
@@ -49,7 +44,7 @@ function AboutPage() {
                     <AboutProgram_Mob />
                     <AboutMentor_Mob />
                     <AboutLast_Mob />
-                </AboutPageComponent_Mob>
+                </div>
             }
         </AboutPageComponent>
     );

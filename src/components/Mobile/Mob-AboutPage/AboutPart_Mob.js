@@ -13,26 +13,29 @@ const Header8 = styled.div`
   color: #000000;
   font-family: 'NanumSquare Neo';
   line-height: 1.45;
-  margin-bottom: 58px;
+  margin-bottom: 73px;
   white-space: pre-line;
   `;
 
 const Div = styled.div`
 display: flex;
 justify-content: center;
-background : #FFFFFF;
+background-color : #FFFFFF;
 align-items: center;
 min-width: 411px;
-padding-left:50px;
+flex-direction: column;
 width: 100%;
+padding-left: 48px;
+padding-right: 82px;
+min-width: 570px;
+
 `;
 
 
 const PartDiv = styled.div`
   padding-top: 133px;
   width: 375px;
-  height: 1000px;
-  margin-right: 50px;
+  height: 900px;
   background-color: #ffffff;
   position: relative;
   display: grid;
@@ -117,6 +120,7 @@ opacity: ${props => props.selected ? '1' : '0'};
 position: absolute;
 margin-top: 40px;
 `;
+
 const Down = styled.div`
 
 `;

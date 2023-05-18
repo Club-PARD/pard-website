@@ -7,6 +7,10 @@ display: flex;
 justify-content: center;
 background : #FFFFFF;
 align-items: center;
+min-width: 570px;
+width: 100%;
+padding-left: 50px;
+padding-right: 80px;
 `;
 
 const Header7 = styled.div`
@@ -17,14 +21,20 @@ const Header7 = styled.div`
   line-height: 140%;
   margin-bottom: 109px;
   white-space: pre-line;
+  margin-right: 150px;
+  margin-top: 180px;
   `;
 
 const PartDiv = styled.div`
-  padding-left:36px;
-  padding-top: 180px;
-  width: 375px;
+  width: 100%;
   height: 1128px;
-  position: relative;
+  background-color: white;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 43px;
+  min-width: 441px;
 `;
 
 const Cover = styled.div`
@@ -66,15 +76,16 @@ const Mainblack = styled.div`
 font-size: ${props => props.theme.Mob_fontSizes.Subtitle1};
 font-weight: ${props => props.theme.fontWeights.Header5};
 white-space:pre-wrap;
-display: flex;
-`;
+color: black;
+line-height: 140%;
 
-const Mainorange = styled.div`
-font-size: ${props => props.theme.Mob_fontSizes.Subtitle1};
-font-weight: ${props => props.theme.fontWeights.Header5};
-color: #FF5C00;
-white-space:pre-wrap;
-display: flex;
+
+.Orange{
+  color: #FF5C00;
+  white-space:pre-wrap;
+  font-size: ${props => props.theme.Mob_fontSizes.Subtitle1};
+  font-weight: ${props => props.theme.fontWeights.Header5};
+}
 `;
 
 const Subblack1 = styled.div`
@@ -131,9 +142,9 @@ function AboutVision_Mob() {
             <Down1>
               <First>01</First>
             </Down1>
-            <Mainblack>파드는 </Mainblack>
-            <Mainorange>몰입이 필요한 동아리 </Mainorange>
-            <Mainblack>입니다.</Mainblack>
+            <Mainblack>
+              파드는<strong className='Orange'> 몰입이 필요한 동아리 </strong>입니다.
+            </Mainblack>
           </Cover>
           <Cover>
             <Verticalline1></Verticalline1>
@@ -141,17 +152,15 @@ function AboutVision_Mob() {
               혼자보다는 함께 성장에 대한 끊임없는<br></br> 열망을 가지고 <br></br>
               서비스 기획-디자인-개발 과정을 거쳐 <br></br>완성도 높은 서비스를 만들어 냅니다.</Subblack1>
           </Cover>
-
-
           <Cover>
             <Down2>
               <Second>02</Second>
             </Down2>
-
             <Textbox1>
-            <Mainorange>좋은 협업</Mainorange>
-            <Mainblack>이란 무엇인지 끊임없이<br></br>함께 고민합니다.</Mainblack>
-          </Textbox1>
+              <Mainblack>
+                좋은 협업 <strong className='Orange'>이란 무엇인지 끊임없이</strong>함께 고민합니다.
+              </Mainblack>
+            </Textbox1>
           </Cover>
 
           <Cover>
@@ -164,9 +173,9 @@ function AboutVision_Mob() {
             <Down2>
               <Third>03</Third>
             </Down2>
-            <Mainblack>현업 실무진 분들과</Mainblack>
-            <Mainorange>함께 성장하는 커뮤니티</Mainorange>
-            <Mainblack>를 꿈꿉니다.</Mainblack>
+            <Mainblack>
+              현업 실무진 분들과<br></br><strong className='Orange'>함께 성장하는 커뮤니티</strong>를 꿈꿉니다.
+            </Mainblack>
           </Cover>
           <Cover>
             <Verticalline3></Verticalline3>

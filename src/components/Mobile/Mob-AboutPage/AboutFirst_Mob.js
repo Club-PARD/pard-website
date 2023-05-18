@@ -15,32 +15,33 @@ const Header8 = styled.div`
   font-style: normal;
   width: 280px;
   height: 168px;
-  position: absolute;
-  left: 52%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  
 `;
 
 const PartDiv = styled.div`
-  padding-left:37px;
-  padding-top: 289px;
   height: 756px;
   position: relative;
+  min-width: 700px;
   display: flex;
+  flex-direction: column;
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: center; /* 수평 가운데 정렬 */
-  overflow-x: hidden;
-  width: 375px; /* 전체 너비 차지 */
+`;
+
+const Div = styled.div`
+display: flex;
+flex-direction: column;
+  width: 100%;
+  min-width: 700px;
+  align-items: center;
 `;
 
 const AboutLogo = styled.img`
-  position: absolute;
   width: 301px;
   height: 123px;
   opacity: 0.5;
-  left: 52%;
+  position: absolute;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 `;
 
@@ -57,15 +58,17 @@ const AboutFrame1 = styled.img`
 
 function AboutFirst_Mob() {
   return (
-    <PartDiv>
-      <ThemeProvider theme={theme}>
-        <AboutLogo src={AboutImage} alt="AboutLogo" />
-        <Header8>
-          Pay it forward<br/>문화를 실천하는<br/>대학생 IT 협업 동아리<br/>PARD
-        </Header8>
-      </ThemeProvider>
-      <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
-    </PartDiv>
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <AboutLogo src={AboutImage} alt="AboutLogo" />
+          <Header8>
+            Pay it forward<br/>문화를 실천하는<br/>대학생 IT 협업 동아리<br/>PARD
+          </Header8>
+        </ThemeProvider>
+        <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
+      </PartDiv>
+    </Div>
   );
 }
 

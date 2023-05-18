@@ -20,6 +20,7 @@ const PartDiv = styled.div`
     padding-bottom: 49px;
     height: 100%;
     background: rgba(255, 255, 255);
+    
 `;
 
 const BandAnimation = keyframes`

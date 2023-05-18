@@ -75,6 +75,13 @@ font-size: ${props => props.theme.Web_fontSizes.Header5};
 font-weight: ${props => props.theme.fontWeights.Header5};
 color: black;
 white-space:pre-wrap;
+
+.Orange{
+  color: #FF5C00;
+  white-space:pre-wrap;
+  font-size: ${props => props.theme.Mob_fontSizes.Header5};
+  font-weight: ${props => props.theme.fontWeights.Header5};
+}
 `;
 
 const Mainorange = styled.div`
@@ -130,9 +137,9 @@ function AboutVision() {
                     <Cover>
                         <First>01</First>
                         <Down1>
-                            <Mainblack>파드는 </Mainblack>
-                            <Mainorange>몰입이 필요한 동아리 </Mainorange>
-                            <Mainblack>입니다.</Mainblack>
+                            <Mainblack>
+                                파드는<strong className='Orange'> 몰입이 필요한 동아리 </strong>입니다.
+                            </Mainblack>
                         </Down1>
                     </Cover>
                     <Cover>
@@ -144,8 +151,9 @@ function AboutVision() {
                     <Cover>
                         <Second>02</Second>
                         <Down2>
-                            <Mainorange>좋은 협업</Mainorange>
-                            <Mainblack>이란 무엇인지 끊임없이 함께 고민합니다.</Mainblack>
+                            <Mainblack>
+                                좋은 협업 <strong className='Orange'>이란 무엇인지 끊임없이</strong>함께 고민합니다.
+                            </Mainblack>
                         </Down2>
                     </Cover>
                     <Cover>
@@ -157,9 +165,9 @@ function AboutVision() {
                     <Cover>
                         <Third>03</Third>
                         <Down2>
-                            <Mainblack>현업 실무진 분들과</Mainblack>
-                            <Mainorange> 함께 성장하는 커뮤니티</Mainorange>
-                            <Mainblack>를 꿈꿉니다.</Mainblack>
+                            <Mainblack>
+                                현업 실무진 분들과<br></br><strong className='Orange'>함께 성장하는 커뮤니티</strong>를 꿈꿉니다.
+                            </Mainblack>
                         </Down2>
                     </Cover>
                     <Cover>
