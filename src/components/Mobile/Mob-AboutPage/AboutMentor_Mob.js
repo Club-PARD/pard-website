@@ -12,15 +12,15 @@ const Header8 = styled.div`
   line-height: 1.45;
   white-space: pre-line;
   text-align : left;
-  margin-left: 36px;
+  margin: 0px 6.933vw;
   `;
 
 const PartDiv = styled.div`
-        padding-top: 42px;
+    padding-top: 42px;
     padding-bottom: 49px;
     height: 100%;
+    width: 100%;
     background: rgba(255, 255, 255);
-    
 `;
 
 const BandAnimation = keyframes`

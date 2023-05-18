@@ -81,9 +81,6 @@ const Div = styled.div`
   background : #FFFFFF;
   align-items: center;
   width: 100%;
-  padding-left: 55px;
-padding-right: 75px;
-min-width: 570px;
 
 `;
 
@@ -234,9 +231,11 @@ function AboutProgram_Mob() {
                     {part.map(props=>(
                         <Body2 selected={props.selected}>{props.context}</Body2>
                     ))}
-                    
+                
             </ThemeProvider>
+                      
         </PartDiv>
+
         </Div>
     );
 }

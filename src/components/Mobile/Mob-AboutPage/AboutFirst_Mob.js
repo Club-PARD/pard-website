@@ -20,7 +20,7 @@ const Header8 = styled.div`
 const PartDiv = styled.div`
   height: 756px;
   position: relative;
-  min-width: 700px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center; /* 수직 가운데 정렬 */
@@ -31,7 +31,6 @@ const Div = styled.div`
 display: flex;
 flex-direction: column;
   width: 100%;
-  min-width: 700px;
   align-items: center;
 `;
 

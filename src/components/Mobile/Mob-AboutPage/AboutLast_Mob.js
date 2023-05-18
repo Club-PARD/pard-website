@@ -22,9 +22,6 @@ const Div = styled.div`
   background : #FFFFFF;
   align-items: center;
   width: 100%;  
-  padding-left: 65px;
-padding-right: 65px;
-min-width: 570px;
 
 `;
 

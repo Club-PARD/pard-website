@@ -7,10 +7,7 @@ display: flex;
 justify-content: center;
 background : #FFFFFF;
 align-items: center;
-min-width: 570px;
 width: 100%;
-padding-left: 50px;
-padding-right: 80px;
 `;
 
 const Header7 = styled.div`
@@ -34,7 +31,6 @@ const PartDiv = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 43px;
-  min-width: 441px;
 `;
 
 const Cover = styled.div`

@@ -22,19 +22,15 @@ display: flex;
 justify-content: center;
 background-color : #FFFFFF;
 align-items: center;
-min-width: 411px;
 flex-direction: column;
 width: 100%;
-padding-left: 48px;
-padding-right: 82px;
-min-width: 570px;
 
 `;
 
 
 const PartDiv = styled.div`
   padding-top: 133px;
-  width: 375px;
+  width: 100%;
   height: 900px;
   background-color: #ffffff;
   position: relative;
