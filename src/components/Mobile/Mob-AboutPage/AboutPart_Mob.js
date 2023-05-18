@@ -23,7 +23,7 @@ justify-content: center;
 background : #FFFFFF;
 align-items: center;
 min-width: 411px;
-padding: 0;
+padding-left:50px;
 width: 100%;
 `;
 
@@ -32,7 +32,9 @@ const PartDiv = styled.div`
   padding-top: 133px;
   width: 375px;
   height: 1000px;
+  margin-right: 50px;
   background-color: #ffffff;
+  position: relative;
   display: grid;
   place-content: center;
   align-content: start;
