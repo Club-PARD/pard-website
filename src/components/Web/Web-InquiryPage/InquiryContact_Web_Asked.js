@@ -12,6 +12,7 @@ margin: 0px auto;
 const DownLogo = styled.img`
 width: 80px;
 height: 63px;
+padding-top: 100px;
 `
 const LogoDiv = styled.div`
 width: 100%;
@@ -222,24 +223,26 @@ height: 14px;
 
 `
 
-const InformBox1 = styled.a`
 
-display: flex;
-
-margin-top:33px;
-width:361px;
-height:34px;
-align-items: center;
-text-decoration: none;
-&:hover {
-    ${Mail}, ${EMail} {
-      color: #5262F5;
+const InformBox1 = styled.a.attrs({
+    href: "mailto:official@we-pard.com",
+    target: "_blank",
+  })`
+    display: flex;
+    margin-top: 33px;
+    width: 361px;
+    height: 34px;
+    align-items: center;
+    text-decoration: none;
+    &:hover {
+      ${Mail}, ${EMail} {
+        color: #5262F5;
+      }
+      ${Vector} {
+        content: url(${Vec_p});
+      }
     }
-    ${Vector} {
-      content: url(${Vec_p});
-    }
-  }
-`
+  `;
 
 const InformBox2 = styled.a`
   display: flex;

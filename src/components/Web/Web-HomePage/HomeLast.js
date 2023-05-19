@@ -37,7 +37,7 @@ const PartDiv = styled.div`
     margin: 0px auto;
     width: 1330px;
     justify-content: center;
-
+    padding-bottom: 100px;
 
 `;
 
