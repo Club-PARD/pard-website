@@ -23,6 +23,14 @@ const PartDiv = styled.div`
     background: rgba(255, 255, 255);
 `;
 
+const Div = styled.div`
+    margin: 0 auto;
+    width: 100%;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+`;
+
 const BandAnimation = keyframes`
     0% {
         transform: translate(0, 0);
@@ -86,30 +94,32 @@ const BandComponent = ({ mentorInfos, src, hasMargin }) => {
 
 
 const VerticalGap = styled.div`
-    height: ${props=>props.height != null ? props.height : "0px"};
+    height: ${props => props.height != null ? props.height : "0px"};
 `
 const CardsList = ({ cardsData }) => {
     const firstRow = cardsData.filter((card) => card.id % 2 !== 0);
     const secondRow = cardsData.filter((card) => card.id % 2 === 0);
-  
+
     return (
         <>
-        <BandComponent mentorInfos={firstRow} src={bandImage1}></BandComponent>
-        <VerticalGap height={'50px'}></VerticalGap>
-        <BandComponent mentorInfos={secondRow} src={bandImage3} hasMargin = {true}></BandComponent>
+            <BandComponent mentorInfos={firstRow} src={bandImage1}></BandComponent>
+            <VerticalGap height={'50px'}></VerticalGap>
+            <BandComponent mentorInfos={secondRow} src={bandImage3} hasMargin={true}></BandComponent>
         </>
-        
+
     );
-  };
+};
 
 function AboutMentor() {
     return (
-        <PartDiv>
-            <ThemeProvider theme={theme}>
-                <Header7>파드와 함께하는 멘토진</Header7>
-                <CardsList cardsData={metorDb}/>
-            </ThemeProvider>
-        </PartDiv>
+        <Div>
+            <PartDiv>
+                <ThemeProvider theme={theme}>
+                    <Header7>파드와 함께하는 멘토진</Header7>
+                    <CardsList cardsData={metorDb} />
+                </ThemeProvider>
+            </PartDiv>
+        </Div>
     );
 }
 

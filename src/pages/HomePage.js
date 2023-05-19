@@ -22,10 +22,12 @@ function HomePage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
     const HomePageComponent = styled.div`
            background-color: '#1A1A1A';
-
+           justify-content: center;
+            width: 100%;
+            min-width: 1440px;
     `;
 
-const HomePageComponent_Mob = styled.div`
+    const HomePageComponent_Mob = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,25 +38,25 @@ const HomePageComponent_Mob = styled.div`
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
                 <div>
-                     <NavBarHome/>
-                    <HomeFirst/>
-                    <HomeSecond/>
+                    <NavBarHome />
+                    <HomeFirst />
+                    <HomeSecond />
                     <HomePartWeb />
                     {/* <HomeProgramWeb /> */}
                     <HomeMentorWeb />
                     <HomePartnerWeb />
                     <HomeLastWeb />
-                    <Footer/>
+                    <Footer />
                 </div>
                 :
                 <HomePageComponent_Mob>
-                    <NavBarMov/>
-                    <HomeVideoMob/>
-                    <HomePartsMob/>
-                    <HomeProgramMob/>
-                    <HomeMentorMob/>
-                    <HomePartnerMob/>
-                    <HomeLastsMob/>
+                    <NavBarMov />
+                    <HomeVideoMob />
+                    <HomePartsMob />
+                    <HomeProgramMob />
+                    <HomeMentorMob />
+                    <HomePartnerMob />
+                    <HomeLastsMob />
 
                 </HomePageComponent_Mob>
             }

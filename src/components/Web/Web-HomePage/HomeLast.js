@@ -6,7 +6,8 @@ const Header2 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header2};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 104px;
+  margin-bottom:70px;
+  margin-top: 100px;
   white-space: pre-line;
   display : flex;
   margin-top: 217-70px;  
@@ -35,6 +36,9 @@ const PartDiv = styled.div`
     align-items: center;
     margin: 0px auto;
     width: 1330px;
+    justify-content: center;
+
+
 `;
 
 const Subtitle2 = styled.div`
@@ -42,7 +46,7 @@ const Subtitle2 = styled.div`
     font-weight: ${props => props.theme.fontWeights.subtitle3};
     text-align: center;
     color: #FFFFFF;
-    margin-bottom: 95px;
+    margin-bottom: 90px;
 `;
 
 const Button1 = styled.button`

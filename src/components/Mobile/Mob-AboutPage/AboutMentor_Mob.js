@@ -12,7 +12,7 @@ const Header8 = styled.div`
   line-height: 1.45;
   white-space: pre-line;
   text-align : left;
-  margin: 0px 6.933vw;
+  margin-right: 25px;
   `;
 
 const PartDiv = styled.div`
@@ -59,6 +59,12 @@ const BandList = styled.ul`
     height: 100%;
 `;
 
+const TextDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+`;
+
 const BandItem = styled.li`
     flex: 1;
     display: flex;
@@ -102,7 +108,9 @@ function AboutMentor() {
     return (
         <PartDiv>
             <ThemeProvider theme={theme}>
-                <Header8>함께하는 여정</Header8>
+                <TextDiv>
+                <Header8>파드와 함께하는 멘토진</Header8>
+                </TextDiv>
                 <VerticalGap height={'110px'}></VerticalGap>
                 <CardsList cardsData={metorDb}/>
                 <VerticalGap height={'100px'}></VerticalGap>

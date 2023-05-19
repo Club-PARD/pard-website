@@ -16,9 +16,10 @@ const Header7 = styled.div`
 const PartDiv = styled.div`
    display: flex;
    flex-direction: column;
-    height: 850px;
+    height: 700px;
     align-items: center;
     justify-content: center;
+    margin-top: 100px;
 `;
 
 const Subtitle3 = styled.div`

@@ -6,17 +6,27 @@ import Vec_p from '../../../assets/img/vector_purple.png';
 
 const Margin = styled.div`
 display: flex;
-
 margin: 0px auto;
+
 `
+const DownLogo = styled.img`
+width: 80px;
+height: 63px;
+`
+const LogoDiv = styled.div`
+width: 100%;
+justify-content: center;
+display: flex;
+`
+
 const Askedstyled = styled.div`
 white-space: nowrap;
 margin-left:70px ;
 padding-right: 10px;
 padding-left: 105px;
-margin-top: 130px; 
+margin-top: 100px; 
 //padding한 만큼 원래 maring-top0px에서 값 뺴줌
-margin-bottom: 402px;
+margin-bottom: 200px;
 width:300px; // 원래보다0px3높임
 height: 168px;
 /* Header/H2 - EB 60 */
@@ -34,7 +44,7 @@ color: #FFFFFF;
 
 `
 const Informationstyle = styled.form`
-margin-top: 130px; 
+margin-top: 100px; 
  //padding한 만큼 원래 maring-left0px에서 값 뺴줌
  margin-left:380px;
  //padding한 만큼 원래 maring-top0px에서 값 뺴줌
@@ -231,23 +241,24 @@ text-decoration: none;
   }
 `
 
-const InformBox2 = styled.div`
-display: flex;
-margin-top:40px; // 위에 informbox1기준 margin-top
-width:361px;
-height:34px;
-align-items: center;
-text-decoration: none;
-&:hover {
+const InformBox2 = styled.a`
+  display: flex;
+  margin-top: 40px;
+  width: 361px;
+  height: 34px;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
     ${Instagram}, ${InstagramId} {
-      color: #5262F5;
+      color: #5262f5;
     }
     ${Vector} {
       content: url(${Vec_p});
     }
   }
-
-`
+`;
 
 
 const Ask = () => {
@@ -266,7 +277,7 @@ const Ask = () => {
                         <EMail>official@we-pard.com</EMail>
                         <Vectorbox1><Vector src={Vec} /></Vectorbox1>
                     </InformBox1>
-                    <InformBox2 >
+                    <InformBox2 href="https://www.instagram.com/official_pard_/" target="_blank">
                         <Instagram>인스타그램</Instagram>
                         <InstagramId>@official_pard_</InstagramId>
                         <Vectorbox2><Vector src={Vec} /></Vectorbox2>
@@ -277,6 +288,9 @@ const Ask = () => {
                     </Business>
                 </Informationstyle>
             </Margin>
+            <LogoDiv>
+            <DownLogo src={require('../../../assets/img/DownScrollLogo.png')}/>
+            </LogoDiv>
         </ThemeProvider>
 
     )

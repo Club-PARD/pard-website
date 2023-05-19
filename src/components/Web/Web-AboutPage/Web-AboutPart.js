@@ -44,19 +44,21 @@ const Body1 = styled.div`
   margin-bottom: 144px;  
   line-height: 90%;
 
-
 `;
 
 const Div = styled.div`
-align-items: center;
+display: flex;
 justify-content: center;
-background-color: #ffffff;
+background : #FFFFFF;
+align-items: center;
+margin: 0 auto;
 width: 100%;
 `;
 
+
 const PartDiv = styled.div`
 padding-top: 150px;
-padding-left:80px;
+padding-left:110px;
 padding-right: 112px;
 padding-bottom: 114px;
 height: 720px;
@@ -65,6 +67,7 @@ position: relative;
 display: block;
 width: 1072px;
 margin: 0 auto;
+
 `;
 
 const ListWrap = styled.ul`
@@ -252,8 +255,8 @@ function AboutPart() {
           ))}
         </ListWrap>
         {part.map(props=>(
-          <Down>
-        <Image key={props.id}
+          <Down key={props.id}>
+        <Image
         src={props.imgsrc} 
         alt={`Image ${props.id}`}
         selected = {props.selected}

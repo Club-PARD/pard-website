@@ -8,24 +8,25 @@ import { useState, useEffect } from 'react';
 const FooterWrapper = styled.footer`
     background-color: #2A2A2A;
     // background-color: white;
-    width: 1440px;
+    width: 100%;
     height: 130px;
     font-family: 'NanumSquare Neo';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 180%;
+    padding-bottom: 20px;
 `;
 const FooterLogoRules = styled.div`
     display:flex;
 `
 const PardLogo = styled.div`
   img {
-    height: 3.1250vw;
-    width: 9.7222vw;
+    height: 45px;
+    width: 140px;
   }
-  margin-right: 1vw; 
-  margin-left: 5.5556vw;
+  margin-right: 14px; 
+  margin-left: 80px;
 `;
 const Rules = styled.a`
     /* 회칙 > */
@@ -77,14 +78,14 @@ const Information = styled.div`
     height: 44px;
     left: 113px;
     top: 76px;
-    margin-left: 6vw;
+    margin-left: 86px;
 
     /* Caption/C1 - R 12 */
 
     font-family: 'NanumSquare Neo';
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight:${props => props.theme.Web_fontSizes.Caption1};
+    font-size: ${props => props.theme.Web_fontSizes.Caption1};
     line-height: 180%;
     /* or 22px */
 
@@ -101,8 +102,8 @@ const EmailLink = styled.a`
 
     font-family: 'NanumSquare Neo';
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight:${props => props.theme.Web_fontSizes.Caption1};
+    font-size: ${props => props.theme.Web_fontSizes.Caption1};
     line-height: 180%;
     /* identical to box height, or 22px */
 
@@ -133,8 +134,8 @@ const Instagram = styled.a`
 
     font-family: 'NanumSquare Neo';
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight:${props => props.theme.Web_fontSizes.Caption1};
+    font-size: ${props => props.theme.Web_fontSizes.Caption1};
     line-height: 180%;
     /* identical to box height, or 22px */
 
@@ -164,8 +165,8 @@ const Youtube = styled.a`
 
     font-family: 'NanumSquare Neo';
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight:${props => props.theme.Web_fontSizes.Caption1};
+    font-size: ${props => props.theme.Web_fontSizes.Caption1};
     line-height: 180%;
     /* identical to box height, or 22px */
 
@@ -195,8 +196,8 @@ const Disquiet = styled.a`
 
     font-family: 'NanumSquare Neo';
     font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
+    font-weight:${props => props.theme.Web_fontSizes.Caption1};
+    font-size: ${props => props.theme.Web_fontSizes.Caption1};
     line-height: 180%;
     /* identical to box height, or 22px */
 
@@ -217,37 +218,35 @@ const Disquiet = styled.a`
 `;
 
 function Footer() {
-  
-  return (
-    <FooterWrapper>
 
-        <LeftFooter>
-            <LeftComponent>
-                <FooterLogoRules>
-                    <PardLogo>
-                        <img src={require("../assets/img/Logo.png")} alt="Logo" />
-                    </PardLogo>
-                    <Rules href = "https://brunch.co.kr/">
-                        회칙{' >'}
-                    </Rules>
-                </FooterLogoRules>
-                <Information>
-                    PARD (파드, Pay it forward를 실천하는 IT협업 동아리)
-                    ⓒPARD. 2023.All rights reserved.
-                </Information>
-            </LeftComponent>
-
-            <RightFooter>
-                <EmailLink href = "http://naver.com">Email</EmailLink>
-                <Instagram href = "https://www.instagram.com/official_pard_/">Instagram</Instagram>
-                <Youtube href = "https://www.youtube.com/">Youtube</Youtube>
-                <Disquiet href = "https://disquiet.io/">Disquiet</Disquiet>
-            </RightFooter>
-
-        </LeftFooter>
-
-    </FooterWrapper>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <FooterWrapper>
+                <LeftFooter>
+                    <LeftComponent>
+                        <FooterLogoRules>
+                            <PardLogo>
+                                <img src={require("../assets/img/Logo.png")} alt="Logo" />
+                            </PardLogo>
+                            <Rules href="https://brunch.co.kr/" target="_blank">
+                                회칙{' >'}
+                            </Rules>
+                        </FooterLogoRules>
+                        <Information>
+                            PARD (파드, Pay it forward를 실천하는 IT협업 동아리)
+                            ⓒPARD. 2023.All rights reserved.
+                        </Information>
+                    </LeftComponent>
+                    <RightFooter>
+                        <EmailLink href="http://naver.com" target="_blank">Email</EmailLink>
+                        <Instagram href="https://www.instagram.com/official_pard_/" target="_blank">Instagram</Instagram>
+                        <Youtube href="https://www.youtube.com/" target="_blank">Youtube</Youtube>
+                        <Disquiet href="https://disquiet.io/club/pard" target="_blank">Disquiet</Disquiet>
+                    </RightFooter>
+                </LeftFooter>
+            </FooterWrapper>
+        </ThemeProvider>
+    );
 }
 
 export default Footer;

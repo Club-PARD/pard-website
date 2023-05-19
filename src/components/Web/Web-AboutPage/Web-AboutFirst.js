@@ -25,7 +25,7 @@ const PartDiv = styled.div`
     padding-right: 268px;
     padding-bottom: 274px;
     padding-top: 330px;
-    height: 225px;
+    height: 410px;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
@@ -39,23 +39,32 @@ const AboutLogo = styled.img`
     width: 1020.27px;
     height: 417px;
     margin-left: 1005px;
-    margin-top: 100px;
+    margin-top: 140px;
     transform: translate(-50%, -50%);
     opacity: 0.5;
+`;
+
+const Div = styled.div`
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 `;
 
 const AboutFrame1 = styled.img`
     position: absolute;
     height: 40px;
     width: 100%;
-    bottom: 0px;
+    /* margin-top: 550px; */
+    bottom: 0%;
     border-radius: 0px;
     padding: 0px 30px;
 `;
 
 const TextContainer = styled.div`
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 `;
@@ -63,6 +72,7 @@ const TextContainer = styled.div`
 function AboutFirst() {
 
     return (
+        <Div>
         <PartDiv>
             <ThemeProvider theme={theme}>
                 <AboutLogo src={AboutImage} alt="AboutLogo" />
@@ -74,6 +84,7 @@ function AboutFirst() {
             </ThemeProvider>  
             <AboutFrame1 src={AboutFrame} alt="AboutFrame" />  
         </PartDiv>
+        </Div>
     );
 }
 

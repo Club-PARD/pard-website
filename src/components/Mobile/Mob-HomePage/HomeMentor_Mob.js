@@ -87,7 +87,7 @@ const TextWrapper = styled.div`
 `;
 
 const TextWrapper2 = styled.div`
-    margin-top: 6.133vw;
+    margin-top: 23px;
     height: 0;
     display: flex;
     flex-direction: row;
