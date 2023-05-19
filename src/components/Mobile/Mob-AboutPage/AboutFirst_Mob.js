@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
 import AboutImage from '../../../assets/img/AboutLogo.png';
-import AboutFrame from '../../../assets/img/AboutFrame.png';
+import AboutFrame from '../../../assets/img/About_Mob_Bar.png';
 
 const Header8 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header8};
@@ -15,6 +15,8 @@ const Header8 = styled.div`
   font-style: normal;
   width: 280px;
   height: 168px;
+  position: relative;
+
 `;
 
 const PartDiv = styled.div`
@@ -25,6 +27,7 @@ const PartDiv = styled.div`
   flex-direction: column;
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: center; /* 수평 가운데 정렬 */
+  background-color: #1A1A1A;
 `;
 
 const Div = styled.div`
@@ -37,7 +40,7 @@ flex-direction: column;
 const AboutLogo = styled.img`
   width: 301px;
   height: 123px;
-  opacity: 0.5;
+  opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
