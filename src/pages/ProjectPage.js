@@ -7,17 +7,17 @@ import NavBarMov from "../components/NavBarMov";
 import Footer from "../components/Footer";
 import ProgramFirst from "../components/Web/Web-ProjectPage/ProgramFirst";
 
-function AboutPage() {
+function ProjectPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
 
     const AboutPageComponent = styled.div`
     `;
 
-const ProgramPageComponent_Web = styled.div`
-justify-content: center;
-width: 100%;
-min-width: 1440px;
-`;
+    const ProgramPageComponent_Web = styled.div`
+        justify-content: center;
+        width: 100%;
+        min-width: 1440px;
+    `;
 
 
     return (
@@ -38,4 +38,4 @@ min-width: 1440px;
     );
 }
 
-export default AboutPage;
+export default ProjectPage;
