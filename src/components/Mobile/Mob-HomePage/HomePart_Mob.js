@@ -35,8 +35,8 @@ const Body2 = styled.div`
     line-height: 140%;
     display: flex;
     position: relative;
+    justify-content: ${props => props.justifyContent ? 'flex-end' : 'flex-start'};
     //text-align: ${props => props.textAlign ? 'right' : 'left'};
-    //text-align: ${props => props.id % 2 === 1 ? 'left' : 'right'};
 `;
 
 const ContentWrapper = styled.div`
