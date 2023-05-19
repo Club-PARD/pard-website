@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.33a5a190.css",
-    "main.js": "/static/js/main.9a5f852a.js",
+    "main.js": "/static/js/main.07a590a8.js",
     "static/media/BackGroundVideo.mp4": "/static/media/BackGroundVideo.85ebd6d6842d77c76d30.mp4",
     "static/media/김유진.png": "/static/media/김유진.7d8235b07c9a576b7228.png",
     "static/media/조세희.png": "/static/media/조세희.bf6ff6e49f16ace61043.png",
@@ -31,6 +31,7 @@
     "static/media/AboutLogo.png": "/static/media/AboutLogo.207b42d1a33ac439b3b2.png",
     "static/media/band1.svg": "/static/media/band1.5077ba9976bcb8236e87014a108ac9f0.svg",
     "static/media/band2.svg": "/static/media/band2.fca008dacc0dbf32e16344c38f4a8bdc.svg",
+    "static/media/band3.svg": "/static/media/band3.ecff7ec44b424c5ac6998a39fa60301d.svg",
     "static/media/SpackLab.png": "/static/media/SpackLab.081ed1dd209c93321dec.png",
     "static/media/AboutLong.png": "/static/media/AboutLong.28a665830ac21947ed67.png",
     "static/media/AboutShort.png": "/static/media/AboutShort.28a665830ac21947ed67.png",
@@ -39,10 +40,10 @@
     "static/media/Disquiet-partner.png": "/static/media/Disquiet-partner.f767a3e9e5d25e08b076.png",
     "index.html": "/index.html",
     "main.33a5a190.css.map": "/static/css/main.33a5a190.css.map",
-    "main.9a5f852a.js.map": "/static/js/main.9a5f852a.js.map"
+    "main.07a590a8.js.map": "/static/js/main.07a590a8.js.map"
   },
   "entrypoints": [
     "static/css/main.33a5a190.css",
-    "static/js/main.9a5f852a.js"
+    "static/js/main.07a590a8.js"
   ]
 }
