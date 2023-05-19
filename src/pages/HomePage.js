@@ -15,7 +15,7 @@ import NavBarMov from "../components/NavBarMov";
 import HomeFirst from "../components/Web/Web-HomePage/HomeFirst";
 import NavBarHome from "../components/Navbar_Home";
 import HomeSecond from "../components/Web/Web-HomePage/HomeSecond";
-
+import Footer from "../components/Footer";
 
 
 function HomePage() {
@@ -44,6 +44,7 @@ const HomePageComponent_Mob = styled.div`
                     <HomeMentorWeb />
                     <HomePartnerWeb />
                     <HomeLastWeb />
+                    <Footer/>
                 </div>
                 :
                 <HomePageComponent_Mob>
