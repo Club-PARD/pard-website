@@ -251,9 +251,6 @@ text-decoration: none;
 
 
 const Ask = () => {
-    const onClickInstagramHandler = () => {
-        window.open("https://www.instagram.com/official_pard_");
-      };
 
     return (
         <ThemeProvider theme={theme}>
