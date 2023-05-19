@@ -25,7 +25,7 @@ const PartDiv = styled.div`
     padding-right: 268px;
     padding-bottom: 274px;
     padding-top: 330px;
-    height: 410px;
+    height: 405px;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
