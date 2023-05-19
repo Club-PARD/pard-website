@@ -23,14 +23,14 @@ const Body2 = styled.div`
     position: absolute;
     font-family: 'NanumSquare Neo';
     color: #000000;
-    width: 303px;
+    width: 320px;
     margin-top: 46px;
     line-height: 140%;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 
 const StyledWrap = styled.ul`
-    padding-top : 76px;
+    padding-top : 100px;
     padding-left: 0;
     padding-inline-start: 0px;
 `;
@@ -64,6 +64,7 @@ const ButtonText1 = styled.text`
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
     font-family: 'NanumSquare Neo';
     color: ${props=> (props.selected) ? '#fff':'#000'} ;
+    margin-left: 44px;
 `;
 
 const Image = styled.img`
@@ -107,7 +108,7 @@ function AboutProgram_Mob() {
           imgsrc : AboutSeminarImage,
           selected : true,
           context : 
-          <>타운홀 미팅으로 시작하여 모든 동아리원들과 관계를 쌓아갑니다. <br/>
+          <>타운홀 미팅으로 시작하여 모든 동아리원들과 <br/>관계를 쌓아갑니다. <br/>
           세미나는 전문가로부터 검토받은 커리큘럼을<br/>
           기반으로 파트장의 세션과 파트원들의<br/>
           정보 공유, 현직자 실무 세션을 통해 협업을 위한<br/>
@@ -124,12 +125,11 @@ function AboutProgram_Mob() {
           imgsrc : AboutStudyImage,
           selected : false,
           context : 
-          <>파드는 새로운 것을 배우는 것에 있어<br/>
-            주저하지 않습니다.<br/>
-            직군, 관심 분야와 관계없이 누구나 자유롭게 배우고<br/> 
-            싶은 내용이 있다면 함께 학습할 사람을 모으고,<br/>
-            서로 정한 기간에 따라 전문 지식을 쌓아가고<br/>
-            이를 공유합니다.</>
+          <>파드는 새로운 것을 배우는 것에 있어 <br/>
+          주저하지 않습니다.<br/>
+          직군, 관심 분야와 관계없이 누구나 자유롭게 배우고<br/> 싶은 내용이 있다면 함께 학습할 사람을 모으고,<br/>
+          서로 정한 기간에 따라 전문 지식을 쌓아가고<br/>
+          이를 공유합니다.</>
         },
         {
           id:3,

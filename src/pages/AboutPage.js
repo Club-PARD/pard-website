@@ -26,6 +26,7 @@ function AboutPage() {
 
 const AboutPageComponent_Web = styled.div`
 justify-content: center;
+background-color: #1A1A1A;
 width: 100%;
 min-width: 1440px;
 `;

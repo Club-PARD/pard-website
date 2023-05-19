@@ -25,11 +25,11 @@ const PartDiv = styled.div`
     padding-right: 268px;
     padding-bottom: 274px;
     padding-top: 330px;
-    height: 410px;
+    height: 405px;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
-    background-color: #000000;
+    background-color: #1A1A1A;
     transition: background-color 0.3s ease;
 `;
 
@@ -41,7 +41,7 @@ const AboutLogo = styled.img`
     margin-left: 1005px;
     margin-top: 140px;
     transform: translate(-50%, -50%);
-    opacity: 0.5;
+    opacity: 1;
 `;
 
 const Div = styled.div`
