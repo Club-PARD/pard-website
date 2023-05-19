@@ -87,7 +87,7 @@ const Comment = styled.div`
   line-height: 1.45;
   white-space: pre-line;
   text-align : center;
-  margin-bottom: 96px;
+  margin-bottom: 75px;
   `
 
 const Button1 = styled.button`

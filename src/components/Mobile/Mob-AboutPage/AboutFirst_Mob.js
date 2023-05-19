@@ -16,6 +16,7 @@ const Header8 = styled.div`
   width: 280px;
   height: 168px;
   position: relative;
+  line-height: 140%;
 
 `;
 
