@@ -21,7 +21,9 @@ const Header5 = styled.div`
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   margin-bottom: 19px;
+  display: flex;
   white-space: pre-line;
+  justify-content: ${props => props.justifyContent ? 'flex-end' : 'flex-start'};
 `;
 
 const Body2 = styled.div`
@@ -33,16 +35,18 @@ const Body2 = styled.div`
     line-height: 140%;
     display: flex;
     position: relative;
+    //text-align: ${props => props.textAlign ? 'right' : 'left'};
+    //text-align: ${props => props.id % 2 === 1 ? 'left' : 'right'};
 `;
 
 const ContentWrapper = styled.div`
     margin-bottom: 98px;
     margin-top: 4px;
-    margin-left: 15px;
-    margin-left: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
+    margin-left: 18px;
     display: flex;    
     flex-direction: column;
     align-items: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
+    align-items: flex-start;
     width: 319px;
     height: 199px;
 `;
@@ -59,6 +63,8 @@ const Div = styled.div`
     align-items: center;
     margin: 0 auto;
     width: 375px;
+    height: 2440px;
+    padding-left: 18px;
 `;
 
 const PartDiv = styled.div`
@@ -70,13 +76,14 @@ const PartDiv = styled.div`
 const TextWrapper = styled.div`
     word-break: keep-all;
     align-items: flex-start;
-    text-align: ${props => props.id % 2 === 1 ? 'left' : 'right'};
+    //text-align: ${props => props.textAlign ? 'right' : 'left'};
+    //text-align: ${props => props.id % 2 === 1 ? 'left' : 'right'};
 `;
 const PartWrapper = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
+    //justify-content: ${props => props.id % 2 === 0 ? '0' : '150px'};
 `;
 
 const PartContents = styled.div`
@@ -88,6 +95,25 @@ const PartContents = styled.div`
     align-items: flex-start;
     margin-top: 110px;
     padding: 0;
+`;
+
+const Button1 = styled.button`
+font-size: ${props => props.theme.Mob_fontSizes.Subtitle1};
+font-weight: ${props => props.theme.fontWeights.Subtitle2};
+    font-family: 'NanumSquare Neo';
+    white-space: pre-line;
+    display: flex;
+    align-items: center;
+    line-height: 9px;
+    width: 220px;
+    height: 48px;
+    background-color: #7B3FEF;
+    justify-content: center;
+    margin-left: 48px;
+    margin-top: 58px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border : none;
 `;
 
 function PartSection(props){
@@ -142,14 +168,17 @@ function HomePartsMob() {
             <Header7>PARTS</Header7>
             <PartContents>
                 {contentsData.map(content => (
-                    <PartWrapper key={content.id} id={content.id}>
+                    <PartWrapper key={content.id} id={content.id} justifyContent={content.id === 2 || content.id === 4}>
                         <PartSection content={content}></PartSection>
                     </PartWrapper>
                 ))}
             </PartContents>
+            <Button1>더 알아보기</Button1>
             </ThemeProvider>
         </PartDiv> 
+        
         </Div>
+        
         
     );
 }
