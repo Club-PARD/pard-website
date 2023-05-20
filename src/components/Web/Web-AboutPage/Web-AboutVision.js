@@ -156,7 +156,7 @@ function AboutVision() {
                         <Second>02</Second>
                         <Down2>
                             <Mainblack>
-                            <strong className='Orange'>좋은 협업</strong>이란 무엇인지 끊임없이함께 고민합니다.
+                            <strong className='Orange'>좋은 협업</strong>이란 무엇인지 끊임없이 함께 고민합니다.
                             </Mainblack>
                         </Down2>
                     </Cover>
