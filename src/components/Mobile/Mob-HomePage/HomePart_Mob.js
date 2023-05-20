@@ -44,7 +44,7 @@ const ContentWrapper = styled.div`
     display: flex;    
     flex-direction: column;
     align-items: flex-start;
-    width: 319px;
+    width: 243px;
     height: 199px;
 `;
 
@@ -78,7 +78,7 @@ const PartWrapper = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    margin-left: 185px;
+    margin-left: 110px;
     align-items: ${props => props.textAlign === 'left' ? 'flex-end' : 'flex-start'};
 `;
 
@@ -91,7 +91,6 @@ const PartContents = styled.div`
     align-items: flex-start;
     margin-top: 110px;
     padding: 0;
-    //margin-right: ${props => props.marginRight ? '50px' : '0'};
 `;
 
 const Button1 = styled.button`
@@ -102,7 +101,7 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     display: flex;
     align-items: center;
     line-height: 9px;
-    width: 220px;
+    width: 280px;
     height: 48px;
     background-color: #7B3FEF;
     justify-content: center;
