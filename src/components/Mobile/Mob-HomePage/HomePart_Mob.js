@@ -22,8 +22,8 @@ const Header5 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 19px;
   display: flex;
+  justify-content: ${props => (props.textAlign === 'right' ? 'flex-end' : 'flex-start')};
   white-space: pre-line;
-  justify-content: ${props => props.justifyContent ? 'flex-end' : 'flex-start'};
 `;
 
 const Body2 = styled.div`
@@ -35,8 +35,6 @@ const Body2 = styled.div`
     line-height: 140%;
     display: flex;
     position: relative;
-    justify-content: ${props => props.justifyContent ? 'flex-end' : 'flex-start'};
-    //text-align: ${props => props.textAlign ? 'right' : 'left'};
 `;
 
 const ContentWrapper = styled.div`
@@ -45,7 +43,6 @@ const ContentWrapper = styled.div`
     margin-left: 18px;
     display: flex;    
     flex-direction: column;
-    align-items: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
     align-items: flex-start;
     width: 319px;
     height: 199px;
@@ -75,15 +72,14 @@ const PartDiv = styled.div`
 
 const TextWrapper = styled.div`
     word-break: keep-all;
-    align-items: flex-start;
-    //text-align: ${props => props.textAlign ? 'right' : 'left'};
-    //text-align: ${props => props.id % 2 === 1 ? 'left' : 'right'};
+    text-align: ${props => props.textAlign === 'right' ? 'right' : 'left'};
 `;
 const PartWrapper = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    //justify-content: ${props => props.id % 2 === 0 ? '0' : '150px'};
+    margin-left: 185px;
+    align-items: ${props => props.textAlign === 'left' ? 'flex-end' : 'flex-start'};
 `;
 
 const PartContents = styled.div`
@@ -95,6 +91,7 @@ const PartContents = styled.div`
     align-items: flex-start;
     margin-top: 110px;
     padding: 0;
+    //margin-right: ${props => props.marginRight ? '50px' : '0'};
 `;
 
 const Button1 = styled.button`
@@ -120,8 +117,8 @@ function PartSection(props){
     return (
         <ContentWrapper>
             <Image src={props.content.imageSrc} alt={`Image ${props.content.id}`}/>
-            <TextWrapper>
-                <Header5>{props.content.title}</Header5>
+            <TextWrapper textAlign={props.content.id === 2 || props.content.id === 4 ? 'right' : 'left'}>
+                <Header5 textAlign={props.content.id === 2 || props.content.id === 4 ? 'right' : 'left'}>{props.content.title}</Header5>
                 <Body2>{props.content.description}</Body2>
             </TextWrapper>
         </ContentWrapper>
@@ -166,12 +163,12 @@ function HomePartsMob() {
            <PartDiv>
             <ThemeProvider theme={theme}>
             <Header7>PARTS</Header7>
-            <PartContents>
+            <PartContents >
                 {contentsData.map(content => (
-                    <PartWrapper key={content.id} id={content.id} justifyContent={content.id === 2 || content.id === 4}>
+                    <PartWrapper key={content.id} id={content.id} textAlign={content.id === 2 || content.id === 4 ? 'right' : 'left'}>
                         <PartSection content={content}></PartSection>
                     </PartWrapper>
-                ))}
+                ))}  
             </PartContents>
             <Button1>더 알아보기</Button1>
             </ThemeProvider>
