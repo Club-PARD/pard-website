@@ -18,6 +18,7 @@ const Sub3 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 14px;
   white-space: pre-line;
+
 `;
 
 const Header6 = styled.div`

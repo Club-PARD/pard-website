@@ -15,7 +15,7 @@ const Header7 = styled.div`
 
 const Line = styled.div`
 display : flex;
-justify-content: space-between;
+justify-content: center;
 `;
 
 const Shape = styled.div`
@@ -61,11 +61,9 @@ const Header6 = styled.div`
   font-size: ${props => props.theme.Mob_fontSizes.Header6};
   font-weight: ${props => props.theme.fontWeights.Header6};
   line-height : 28px;
-  margin-left : 19px;
-  margin-right : 25px;
   text-align : center;
   color : #FFFFFF;
-  width : 266px;
+  width : 300px;
   height: 84px;
   margin-bottom : 18px;
 `;
@@ -91,7 +89,6 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     height: 48px;
     background-color: #5262F5;
     justify-content: center;
-    margin-left: 48px;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
