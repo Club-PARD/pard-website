@@ -28,7 +28,7 @@ const Header4 = styled.div`
 
 const PartDiv = styled.div`
       margin: 0px auto;
-    height: 900px;
+    height: 700px;
     justify-content: center;
     width: 1330px;
 `;

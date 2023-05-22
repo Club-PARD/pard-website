@@ -14,18 +14,17 @@ import HomePartnerMob from "../components/Mobile/Mob-HomePage/HomePartner_Mob";
 import NavBarMov from "../components/NavBarMov";
 import HomeFirst from "../components/Web/Web-HomePage/HomeFirst";
 import NavBarHome from "../components/Navbar_Home";
-import HomeSecond from "../components/Web/Web-HomePage/homeSecond";
-
+import HomeSecond from "../components/Web/Web-HomePage/HomeSecond";
+import Footer from "../components/Footer";
 
 
 function HomePage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
     const HomePageComponent = styled.div`
-           background-color: '#1A1A1A';
 
     `;
 
-const HomePageComponent_Mob = styled.div`
+    const HomePageComponent_Mob = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,25 +34,33 @@ const HomePageComponent_Mob = styled.div`
     return (
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
+<<<<<<< HEAD
                 <div style={{display:'block'}}>
                      <NavBarHome/>
                     <HomeFirst/>
                     <HomeSecond/>
+=======
+                <div>
+                    <NavBarHome />
+                    <HomeFirst />
+                    <HomeSecond />
+>>>>>>> d7b05b08f7611724bed8d559915799c474e63d90
                     <HomePartWeb />
                     {/* <HomeProgramWeb /> */}
                     <HomeMentorWeb />
                     <HomePartnerWeb />
                     <HomeLastWeb />
+                    <Footer />
                 </div>
                 :
                 <HomePageComponent_Mob>
-                    <NavBarMov/>
-                    <HomeVideoMob/>
-                    <HomePartsMob/>
-                    <HomeProgramMob/>
-                    <HomeMentorMob/>
-                    <HomePartnerMob/>
-                    <HomeLastsMob/>
+                    <NavBarMov />
+                    <HomeVideoMob />
+                    <HomePartsMob />
+                    <HomeProgramMob />
+                    <HomeMentorMob />
+                    <HomePartnerMob />
+                    <HomeLastsMob />
 
                 </HomePageComponent_Mob>
             }

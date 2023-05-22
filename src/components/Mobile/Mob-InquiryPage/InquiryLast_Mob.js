@@ -41,8 +41,8 @@ const Subtitle3 = styled.div`
 const Frame15 = styled.button`
     align-items: center;
     gap: 5px;
-    margin-top: 100px;
-    width: 121px;
+    margin-top: 50px;
+    width: 220px;
     height: 52px;
     justify-content: center;
     border:none;

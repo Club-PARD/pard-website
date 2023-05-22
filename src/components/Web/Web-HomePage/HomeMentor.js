@@ -183,7 +183,7 @@ function HomeMentor() {
         <Div>
             <ThemeProvider theme={theme}>
                 <Header2>멘토 추천사</Header2>
-                <Header4>함께할 수 밖에 없는 이유</Header4>
+                <Header4>함께 할 수 밖에 없는 이유</Header4>
                 <PartContents>
                     {contentsData.map(content => (
                         <PartWrapper key={content.id}>

@@ -10,6 +10,7 @@ import InquiryContactMob from "../components/Mobile/Mob-InquiryPage/InquiryConta
 import InquiryManagemaentMob from "../components/Mobile/Mob-InquiryPage/InquiryManagement_Mob";
 import InquiryLastMob from "../components/Mobile/Mob-InquiryPage/InquiryLast_Mob";
 import NavBarMov from "../components/NavBarMov";
+import Footer from "../components/Footer";
 
 function InquiryPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -18,15 +19,22 @@ function InquiryPage() {
         
     `;
 
+const AboutPageComponent_Web = styled.div`
+        justify-content: center;
+        width: 100%;
+        min-width: 1440px;
+`;
+
     return (
         <AboutPageComponent>
             {isDesktopOrMobile !== true ?
-                <div>
+                <AboutPageComponent_Web>
                      <Navbar />
                     <InquiryContact />
                     <InquiryManagement />
                     <InquiryLast />
-                </div>
+                    <Footer/>
+                </AboutPageComponent_Web>
                 :
                 <div>
                      <NavBarMov/>

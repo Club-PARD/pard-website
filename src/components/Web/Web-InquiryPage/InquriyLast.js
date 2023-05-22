@@ -16,9 +16,10 @@ const Header7 = styled.div`
 const PartDiv = styled.div`
    display: flex;
    flex-direction: column;
-    height: 850px;
+    height: 700px;
     align-items: center;
     justify-content: center;
+    margin-top: 100px;
 `;
 
 const Subtitle3 = styled.div`
@@ -37,8 +38,8 @@ const Frame15 = styled.button`
   justify-content: center;
   align-items: center;
   gap: 13;
-  width: 323px;
-  height: 85px;
+  width: 332px;
+  height: 64px;
   /* left: calc(50% - 23.0556vw/2); */
   margin-top: 50px;
   border:none;
@@ -51,7 +52,6 @@ const Header5 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header5};
   color : #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 5px;
   white-space: pre-line;
   text-align: center;
   white-space: nowrap;

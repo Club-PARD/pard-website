@@ -10,8 +10,9 @@ const Header7 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  padding-top: 8.0000vw;
+  padding-top: 30px;
   white-space: pre-line;
+  padding-left: 18px;
 `;
 
 const Subtitle3 = styled.div`
@@ -20,7 +21,9 @@ const Subtitle3 = styled.div`
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
-    padding-top: 8.0000vw;
+    padding-top: 30px;
+    padding-left: 18px;
+
 `;
 
 const DisquietImage1 = styled.img`
@@ -48,7 +51,7 @@ const SImage4 = styled.img`
 `;
 
 const Div = styled.div`
-     display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;

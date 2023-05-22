@@ -1,4 +1,5 @@
 import styled, { ThemeProvider } from 'styled-components';
+import { useState } from 'react';
 import { FaInstagram, FaGithub, FaInvision } from 'react-icons/fa';
 import { SiNotion } from 'react-icons/si';
 import { theme } from '../../../styles/theme';
@@ -14,6 +15,7 @@ import LSY from '../../../assets/img/이신영.png';
 import JSH from '../../../assets/img/조세희.png';
 import JH from '../../../assets/img/조환.png';
 import disquiet from '../../../assets/img/disquiet.png';
+import WebLogo from '../../../assets/img/WebLogo.png'
 
 const Header8 = styled.div`
     font-size: ${props => props.theme.Mob_fontSizes.Header8};
@@ -23,6 +25,7 @@ const Header8 = styled.div`
     margin-bottom: 50px;
     white-space: pre-line;
     text-align: center;
+    line-height: 140%;
 `;
 const Body1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Body1};
@@ -32,6 +35,8 @@ const Body1 = styled.div`
     margin-bottom: 100px;
     white-space: pre-line;
     text-align: center;
+    line-height: 160%;
+
 `;
 const TextWrap = styled.div`
     position: absolute;
@@ -47,7 +52,8 @@ const TextWrap = styled.div`
     transition: 0.3s;
     &:hover{
         top: 0%;
-        height: 100%;
+        height: 99.5%;
+        width: 150px;
         border-top-left-radius:12.5px;
         border-top-right-radius: 12.5px;
         background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
@@ -55,10 +61,6 @@ const TextWrap = styled.div`
             : position === 'Operator' ? 'rgba(100, 197, 154, 0.5)' : 'rgba(82, 98, 245, 0.8)'};
             width: ${({ position }) => position ? '151.5px' : 'initial'};
             height: ${({ position }) => position ? '191.5px' : 'initial'};
-            margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
-            padding-top: ${({ position }) => position ? '1.5px' : 'initial'};
-            margin-left: ${({ position }) => position ? '-1.5px' : 'initial'};
-            padding-left: ${({ position }) => position ? '1.5px' : 'initial'};
     }   
 `
 const Subtitle1 = styled.div`
@@ -97,11 +99,14 @@ const PartDiv = styled.div`
     height: 100%;
     justify-items: center;
     width: 375px;
+    padding-left: 5px;
     `;
 const GridContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr; //2개씩 넣고 각 넓이는 1fr이다
-    grid-gap: 5px;//서로 20px의 차이가 있도록
+    /* grid-gap: 5px;//서로 20px의 차이가 있도록 */
+    row-gap: 5px;
+    column-gap: 0px;
     grid-auto-rows: 1fr;
 `
 const Column = styled.div`
@@ -124,6 +129,20 @@ const IconWrapper = styled.div`
     ${TextWrap}:hover & {
     display: flex;
     justify-content: flex-end;
+    }
+
+    &:hover{ㄴ
+        ${TextWrap}{ 
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            border-top-left-radius: 19.5px;
+            border-top-right-radius: 19.5px;
+            background-color: ${({ position }) =>
+        position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
+            : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
+                : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rbga(255,0,0,0.8)'};
+        }
     }
 `
 const IconBackground = styled.div`
@@ -163,12 +182,12 @@ function InquiryManagemaentMob() {
         {
             id: 2,
             imgsrc: SYC,
-            name: '송예찬(회장)',
+            name: '송예찬(부회장)',
             position: 'Operator',
             site: [
-                { name: 'linkedin', link: 'https://www.linkedin.com/in/hwan-jho-%EC%A1%B0%ED%99%98-70491b200' },
-                { name: 'disquiet', link: ' https://disquiet.io/@jhohwan' },
-                { name: 'instagram', link: 'https://instagram.com/hwanjho__75?igshid=NTc4MTIwNjQ2YQ==' },
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/yechan-song-impacter/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@impact_yechan' },
+                { name: 'web', link: 'https://brunch.co.kr/@songyechan15' },
             ],
         },
         {
@@ -289,9 +308,10 @@ function InquiryManagemaentMob() {
                                                 {site.name === "instagram" ? <FaInstagram style={{ color: "black" }} />
                                                     : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
                                                         : site.name === "github" ? <FaGithub style={{ color: "black" }} />
-                                                            // : <FaInvision style={{ color: "black" }} />
-                                                            : <img src={disquiet} alt="Disquiet Logo" style={{ width: '19px', height: '19px', marginLeft: '3.0px' }} />
-                                                    //in 도 넣어야 하고 위에 in은 아닌듯 그리고 디스콰이엇도 넣어야함
+                                                            : site.name === "web" ? (
+                                                                <img src={WebLogo} alt="Web Logo" style={{ width: '16px', height: '16px' }}/>) 
+                                                                :
+                                                                <img src={disquiet} alt="Disquiet Logo" style={{ width: '20px', height: '12px', marginLeft: '3.0px' }} />
                                                 }
                                             </Icon>
                                         </IconBackground>

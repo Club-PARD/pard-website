@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { FaInstagram, FaGithub, FaInvision } from 'react-icons/fa';
-import { SiNotion } from 'react-icons/si';
 import { theme } from '../../../styles/theme';
 import CHJ from '../../../assets/img/최현종(회장).png';
 import SYC from '../../../assets/img/송예찬(부회장).png';
@@ -15,26 +13,31 @@ import LSY from '../../../assets/img/이신영.png';
 import JSH from '../../../assets/img/조세희.png';
 import JH from '../../../assets/img/조환.png';
 import disquiet from '../../../assets/img/disquiet.png';
-
+import LinkedIn from '../../../assets/img/LinkedInLogo.png'
+import WebLogo from '../../../assets/img/WebLogo.png'
 
 const Header7 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Header7};
     font-weight: ${props => props.theme.fontWeights.Header7};
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-bottom: 72px;
+    margin-bottom: 50px;
     white-space: pre-line;
     text-align : center;
+    line-height: 140%;
     `;
+
 const Subtitle3 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle3};
     font-weight: ${props => props.theme.fontWeights.Subtitle3};
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
-    margin-bottom: 72px;
+    margin-bottom: 170px;
     white-space: pre-line;
     text-align: center;
+    line-height: 140%;
     `;
+
 const TextWrap = styled.div`
     position: absolute;
     width: 250px;
@@ -47,51 +50,11 @@ const TextWrap = styled.div`
             ? "rgba(123,63,239,0.5)" : position === 'Operator'
                 ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
     transition: 0.3s;
-    &:hover{
-        top: 0%;
-        height: 100%;
-        border-top-left-radius: 19.5px;
-        border-top-right-radius: 19.5px;
-        background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
-        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
-        width: ${({ position }) => position ? '251.5px' : 'initial'};
-        height: ${({ position }) => position ? '286.5px' : 'initial'};
-        margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
-        padding-top: ${({ position }) => position ? '15px' : 'initial'};
-        }
     `;
-
-const hoverTextWrap = styled.div`
-    position: absolute;
-    width: 250px;
-    height: 22%;
-    top: 78%;
-    border-bottom-left-radius: 19.5px;
-    border-bottom-right-radius: 19.5px;
-    background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
-        : position === 'Designer'
-            ? "rgba(123,63,239,0.5)" : position === 'Operator'
-                ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
-    transition: 0.3s;
-    &:hover{
-        top: 0%;
-        height: 100%;
-        border-top-left-radius: 19.5px;
-        border-top-right-radius: 19.5px;
-        background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
-        : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
-        width: ${({ position }) => position ? '251.5px' : 'initial'};
-        height: ${({ position }) => position ? '286.5px' : 'initial'};
-        margin-top: ${({ position }) => position ? '-1.5px' : 'initial'};
-        padding-top: ${({ position }) => position ? '15px' : 'initial'};
-        }
-`;
 
 const Subtitle1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
-    font-weight: ${props => props.theme.fontWeights.Subtitle1};
+    font-weight: ${props => props.theme.fontWeights.Subtitle2};
     color : #FFFFFF;
     font-family: 'NanumSquare Neo';
     position: absolute;
@@ -113,7 +76,7 @@ const Caption = styled.div`
     left: 58%;
     width: 100%;
     transform: translate(-50%,-50%);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     white-space: pre-line;
     text-align: left;
     `;
@@ -138,30 +101,56 @@ const Column = styled.div`
     position: relative;
     max-width: 333px;
     `
+
+const ImageWrapper = styled.div`
+    max-width: 250px;
+    width: 250px;
+    height: 300px;
+    display: block;
+
+    &:hover{
+        ${TextWrap}{ 
+            width: 250px;
+            height: 300px;
+            top: 0%;
+            border-top-left-radius: 19.5px;
+            border-top-right-radius: 19.5px;
+            background-color: ${({ position }) =>
+        position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
+            : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
+                : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rbga(255,0,0,0.8)'};
+        }
+    }
+`
 const Image = styled.img`
     max-width: 250px;
     width: 250px;
     height: 300px;
     display: block;
-    margin-right: 20px;
     `
 const IconWrapper = styled.div`
     display: none;
-    ${TextWrap}:hover & {
+    ${ImageWrapper}:hover & {
     display: flex;
     justify-content: flex-end;
     }
     `
-const IconBackground = styled.div`
-    position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #fff;
-    margin-left: -5px;
-    margin-right: 15px;
-    text-align: center;
-    `;
+const IconBackground = styled.a`
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: #fff;
+margin-top: 13px;
+margin-left: -5px;
+margin-right: 15px;
+text-decoration: none;
+cursor: pointer;
+
+`;
 const Icon = styled.a`
     position: absolute;
     width: 50%;
@@ -191,12 +180,12 @@ function InquiryManagement() {
         {
             id: 2,
             imgsrc: SYC,
-            name: '송예찬(회장)',
+            name: '송예찬(부회장)',
             position: 'Operator',
             site: [
-                { name: 'linkedin', link: 'https://www.linkedin.com/in/hwan-jho-%EC%A1%B0%ED%99%98-70491b200' },
-                { name: 'disquiet', link: ' https://disquiet.io/@jhohwan' },
-                { name: 'instagram', link: 'https://instagram.com/hwanjho__75?igshid=NTc4MTIwNjQ2YQ==' },
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/yechan-song-impacter/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@impact_yechan' },
+                { name: 'web', link: 'https://brunch.co.kr/@songyechan15' },
             ],
         },
         {
@@ -205,8 +194,8 @@ function InquiryManagement() {
             name: '이신영',
             position: 'Operator',
             site: [
-                { name: 'linkedin', link: 'hhttps://www.linkedin.com/in%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/' },
-                { name: 'disquiet', link: ' https://disquiet.io/@dltlsdud0319' },
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@dltlsdud0319' },
                 { name: 'instagram', link: 'https://www.instagram.com/shinyoung0319/' },
             ],
         },
@@ -301,16 +290,6 @@ function InquiryManagement() {
 
 
     ] //ARRAY 값 운영진의 정보를 넣을 예정
-
-    const [isHovered, setIsHovered] = useState(false);
-
-    const handleHover = () => {
-        setIsHovered(true);
-    };
-
-    const handleLeave = () => {
-        setIsHovered(false);
-    };
     return (
         <PartDiv>
             <ThemeProvider theme={theme}>
@@ -320,30 +299,52 @@ function InquiryManagement() {
                 <GridContainer>
                     {managerData.map(content => (
                         <Column key={content.id}>
-                            <Image src={content.imgsrc} alt={`Image ${content.id}`} ></Image>
-
-                            <TextWrap position={content.position}>
-                                <Subtitle1>{content.name}</Subtitle1>
-                                <Caption>{content.position}</Caption>
-                                <IconWrapper>
-                                    {content.site.map(site => (
-                                        <IconBackground key={site.name}>
-                                            <Icon href={site.link}>
-                                                {site.name === "instagram" ? <FaInstagram style={{ color: "black" }} />
-                                                    : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
-                                                        : site.name === "github" ? <FaGithub style={{ color: "black" }} /> : <img src={disquiet} alt="Disquiet Logo" style={{ width: '22px', height: '17px', marginLeft: '4.5px' }} />}
-                                            </Icon>
-
-                                        </IconBackground>
-                                    ))}
-                                </IconWrapper>
-
-                            </TextWrap>
+                            <ImageWrapper>
+                                <Image src={content.imgsrc} alt={`Image ${content.id}`}></Image>
+                                <TextWrap position={content.position} >
+                                    <Subtitle1>{content.name}</Subtitle1>
+                                    <Caption>{content.position}</Caption>
+                                    <IconWrapper>
+                                        {content.site.map(site => (
+                                            <IconBackground
+                                                key={site.name}
+                                                href={site.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <Icon href={site.link} target="_blank" rel="noopener noreferrer">
+                                                    {site.name === "instagram" ? (
+                                                        <FaInstagram style={{ color: "black", width: '22px', height: '22px' }} />
+                                                    ) : site.name === "linkedin" ? (
+                                                        <img
+                                                        src={LinkedIn}
+                                                        alt="LinkedIn Logo"
+                                                        style={{ width: '20px', height: '20px' }}
+                                                    />
+                                                    ) : site.name === "github" ? (
+                                                        <FaGithub style={{ color: "black", width: '24px', height: '24px' }} />
+                                                    ) :  site.name === "web" ? (
+                                                        <img
+                                                        src={WebLogo}
+                                                        alt="Web Logo"
+                                                        style={{ width: '24px', height: '24px' }}
+                                                    />
+                                                    ) :(
+                                                        <img
+                                                            src={disquiet}
+                                                            alt="Disquiet Logo"
+                                                            style={{ width: '22px', height: '17px', marginLeft: '4.5px' }}
+                                                        />
+                                                    )}
+                                                </Icon>
+                                            </IconBackground>
+                                        ))}
+                                    </IconWrapper>
+                                </TextWrap>
+                            </ImageWrapper>
                         </Column>
                     ))}
-
                 </GridContainer>
-
             </ThemeProvider>
         </PartDiv>
     );

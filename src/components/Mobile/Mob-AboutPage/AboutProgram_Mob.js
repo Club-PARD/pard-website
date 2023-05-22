@@ -23,14 +23,14 @@ const Body2 = styled.div`
     position: absolute;
     font-family: 'NanumSquare Neo';
     color: #000000;
-    width: 303px;
+    width: 320px;
     margin-top: 46px;
     line-height: 140%;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 
 const StyledWrap = styled.ul`
-    padding-top : 76px;
+    padding-top : 100px;
     padding-left: 0;
     padding-inline-start: 0px;
 `;
@@ -64,6 +64,7 @@ const ButtonText1 = styled.text`
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
     font-family: 'NanumSquare Neo';
     color: ${props=> (props.selected) ? '#fff':'#000'} ;
+    margin-left: 44px;
 `;
 
 const Image = styled.img`
@@ -73,25 +74,25 @@ const Image = styled.img`
     padding-top: 256px;
     opacity: ${props => props.selected ? '1' : '0'};
 `;
+
 const Div = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background : #FFFFFF;
   align-items: center;
-  min-width: 411px;
-  padding-left : 18px;
   width: 100%;
+
 `;
 
 const PartDiv = styled.div`
-  width: 375px;
-  height : 1096px;
-  padding-left : 40px;
+  height : 1000px;
+  background-color: white;
+  margin: 0 auto;
   padding-top : 150px;
-  padding-bottom : 40px;
   place-content: center;
   align-content: start;
-  justify-content: center;
+  justify-content: center;  
 `;
 
 function AboutProgram_Mob() {
@@ -105,7 +106,7 @@ function AboutProgram_Mob() {
           imgsrc : AboutSeminarImage,
           selected : true,
           context : 
-          <>타운홀 미팅으로 시작하여 모든 동아리원들과 관계를 쌓아갑니다. <br/>
+          <>타운홀 미팅으로 시작하여 모든 동아리원들과 <br/>관계를 쌓아갑니다. <br/>
           세미나는 전문가로부터 검토받은 커리큘럼을<br/>
           기반으로 파트장의 세션과 파트원들의<br/>
           정보 공유, 현직자 실무 세션을 통해 협업을 위한<br/>
@@ -122,12 +123,11 @@ function AboutProgram_Mob() {
           imgsrc : AboutStudyImage,
           selected : false,
           context : 
-          <>파드는 새로운 것을 배우는 것에 있어<br/>
-            주저하지 않습니다.<br/>
-            직군, 관심 분야와 관계없이 누구나 자유롭게 배우고<br/> 
-            싶은 내용이 있다면 함께 학습할 사람을 모으고,<br/>
-            서로 정한 기간에 따라 전문 지식을 쌓아가고<br/>
-            이를 공유합니다.</>
+          <>파드는 새로운 것을 배우는 것에 있어 <br/>
+          주저하지 않습니다.<br/>
+          직군, 관심 분야와 관계없이 누구나 자유롭게 배우고<br/> 싶은 내용이 있다면 함께 학습할 사람을 모으고,<br/>
+          서로 정한 기간에 따라 전문 지식을 쌓아가고<br/>
+          이를 공유합니다.</>
         },
         {
           id:3,
@@ -152,12 +152,14 @@ function AboutProgram_Mob() {
           imgsrc : AboutShortImage,
           selected : false,
           context : 
-          <>제시된 주제에 따라 무박 2일간 <br/>
-          기획자, 디자이너, 개발자가 한 팀이 되어<br/>
-          MVP(Minimum Value Product) 수준의 서비스(웹/앱)를 빠르게 개발합니다.<br/>
-          후원사 세션, 야식타임, 추첨과 같은 이벤트는 물론<br/>
-          발표 이후 멘토링까지 준비되어 있어 실력 향상과 <br/>
-          재미를 모두 잡을 수 있습니다.</>
+          <>제시된 주제에 따라 18시간 동안 <br/>
+          기획자, 디자이너, 개발자가 한 팀이 되어서<br/>
+          MVP(Minimum Value Product) 수준의<br/>
+          앱/웹 서비스를 개발합니다.<br/>
+          제한된 리소스 내에서 서비스의 임팩트를<br/> 
+          극대화 할 수 있는 방법을 모색하고, <br/>
+          혁신적인 아이디어를 어떻게 매력적으로<br/>
+          풀어낼 것인지 고민하고 실행합니다.</>
         },
         {
           id:5,
@@ -168,7 +170,7 @@ function AboutProgram_Mob() {
           selected : false,
           context : 
           <>파트 상관 없이 누구나 아이디어 경선을 통해 <br/>
-          팀을 구성 합니다.<br/>
+          팀을 구성합니다.<br/>
           3주간 기획, 디자인, 개발 파트가 협업하여 배포 <br/>
           가능한 웹/앱 서비스를 만듭니다.<br/>
           각 파트별 실무자들의 멘토링을 받고 피드백을 <br/>
@@ -184,10 +186,10 @@ function AboutProgram_Mob() {
             selected : false,
             context : 
             <>공모전과 같은 일회성 프로젝트가 아닌, <br/>
-            ‘문제 해결 공동 프로젝트’ 형태로서비스 개선 및<br/>
+            ‘문제 해결 공동 프로젝트’ 형태로 서비스 개선 및<br/>
             신규 아이디어를 발굴하며 실무 역량을 향상합니다.<br/>
             UX/UI 컨설팅펌과 함께하여 아이디어 도출 과정과<br/>
-            시장에 필요로한 서비스를 만드는 데 있어 <br/>
+            시장에 필요로 한 서비스를 만드는 데 있어 <br/>
             전문성을 확보하고 있습니다.</>
           },
       ]);
@@ -229,9 +231,11 @@ function AboutProgram_Mob() {
                     {part.map(props=>(
                         <Body2 selected={props.selected}>{props.context}</Body2>
                     ))}
-                    
+                
             </ThemeProvider>
+                      
         </PartDiv>
+
         </Div>
     );
 }

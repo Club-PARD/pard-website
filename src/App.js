@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
  import ProjectPage from './pages/ProjectPage';
  import RecruitingPage from './pages/RecruitingPage';
  import ScrollToTop from './components/ScrollToTop';
+import ErrorPage from './pages/ErrorPage';
 
  function App() {
      return <Router>
@@ -16,6 +17,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
              <Route path="/Recruting" element={<RecruitingPage />} />
              <Route path='/Project' element={<ProjectPage />} />
              <Route path='/pard-website' element={<HomePage />} />
+             <Route path="*" element={<ErrorPage/>} />
          </Routes>
      </Router>;
 };

@@ -7,6 +7,10 @@ display: flex;
 justify-content: center;
 background : #FFFFFF;
 align-items: center;
+margin: 0 auto;
+width: 100%;
+/* padding-left:360px; */
+
 `;
 
 const Header7 = styled.div`
@@ -19,16 +23,16 @@ const Header7 = styled.div`
   white-space: pre-line;
   `;
 
-
 const PartDiv = styled.div`
 padding-top: 188px;
-padding-left: 184px;
-padding-right: 222px;
 padding-bottom: 100px;
-height: 800px;
-width: 1100px;
+justify-content: center;
+height: 850px;
+/* width: 1440px; */
+width: 1080px;
 border-radius: 0px;
 background : #FFFFFF;
+margin: 0 auto;
 `;
 
 
@@ -51,7 +55,7 @@ const First = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   margin-left: 4px;
   margin-right: 76px;
-  margin-bottom: 9px;
+  margin-bottom: 30px;
 `;
 
 const Second = styled.div`
@@ -59,7 +63,7 @@ const Second = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   margin-left: 136px;
   margin-right: 73px;
-  margin-bottom: 9px;
+  margin-bottom: 30px;
 `;
 
 const Third = styled.div`
@@ -67,7 +71,7 @@ const Third = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   margin-left: 312px;
   margin-right: 73px;
-  margin-bottom: 9px;
+  margin-bottom: 30px;
 `;
 
 const Mainblack = styled.div`
@@ -75,6 +79,13 @@ font-size: ${props => props.theme.Web_fontSizes.Header5};
 font-weight: ${props => props.theme.fontWeights.Header5};
 color: black;
 white-space:pre-wrap;
+
+.Orange{
+  color: #FF5C00;
+  white-space:pre-wrap;
+  font-size: ${props => props.theme.Mob_fontSizes.Header5};
+  font-weight: ${props => props.theme.fontWeights.Header5};
+}
 `;
 
 const Mainorange = styled.div`
@@ -90,7 +101,8 @@ font-weight: ${props => props.theme.fontWeights.Body1};
 display: flex;
   color: black;
   line-height: 160%;
-  margin-top: 17px;
+  margin-top: -1px;
+  text-align: start;
 `;
 
 
@@ -130,9 +142,9 @@ function AboutVision() {
                     <Cover>
                         <First>01</First>
                         <Down1>
-                            <Mainblack>파드는 </Mainblack>
-                            <Mainorange>몰입이 필요한 동아리 </Mainorange>
-                            <Mainblack>입니다.</Mainblack>
+                            <Mainblack>
+                                파드는<strong className='Orange'> 몰입이 필요한 동아리 </strong>입니다.
+                            </Mainblack>
                         </Down1>
                     </Cover>
                     <Cover>
@@ -144,8 +156,9 @@ function AboutVision() {
                     <Cover>
                         <Second>02</Second>
                         <Down2>
-                            <Mainorange>좋은 협업</Mainorange>
-                            <Mainblack>이란 무엇인지 끊임없이 함께 고민합니다.</Mainblack>
+                            <Mainblack>
+                            <strong className='Orange'>좋은 협업</strong>이란 무엇인지 끊임없이 함께 고민합니다.
+                            </Mainblack>
                         </Down2>
                     </Cover>
                     <Cover>
@@ -157,9 +170,9 @@ function AboutVision() {
                     <Cover>
                         <Third>03</Third>
                         <Down2>
-                            <Mainblack>현업 실무진 분들과</Mainblack>
-                            <Mainorange> 함께 성장하는 커뮤니티</Mainorange>
-                            <Mainblack>를 꿈꿉니다.</Mainblack>
+                            <Mainblack>
+                                현업 실무진 분들과<strong className='Orange'> 함께 성장하는 커뮤니티</strong>를 꿈꿉니다.
+                            </Mainblack>
                         </Down2>
                     </Cover>
                     <Cover>

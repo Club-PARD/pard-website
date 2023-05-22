@@ -17,7 +17,9 @@ const PartDiv = styled.div`
     margin-top: 130px;
     height: 893px;
     width: 1440px;
+
 `;
+
 function InquiryContact() {
 
     return (

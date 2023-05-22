@@ -18,6 +18,7 @@ const Sub3 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 14px;
   white-space: pre-line;
+
 `;
 
 const Header6 = styled.div`
@@ -87,7 +88,7 @@ const TextWrapper = styled.div`
 `;
 
 const TextWrapper2 = styled.div`
-    margin-top: 6.133vw;
+    margin-top: 23px;
     height: 0;
     display: flex;
     flex-direction: row;
@@ -160,7 +161,7 @@ function HomeMentor() {
         <PartDiv>
              <ThemeProvider theme={theme}>
             <Header7>멘토 추천사</Header7>
-            <Sub3>함께할 수 밖에 없는 이유</Sub3>
+            <Sub3>함께 할 수 밖에 없는 이유</Sub3>
             <PartContents>
                 {contentsData.map(content => (
                     <PartWrapper key={content.id}>

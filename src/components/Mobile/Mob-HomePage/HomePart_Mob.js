@@ -11,7 +11,7 @@ const Header7 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
+  margin-bottom: 14px;
   white-space: pre-line;
 `;
 
@@ -21,6 +21,8 @@ const Header5 = styled.div`
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   margin-bottom: 19px;
+  display: flex;
+  justify-content: ${props => (props.textAlign === 'right' ? 'flex-end' : 'flex-start')};
   white-space: pre-line;
 `;
 
@@ -38,12 +40,11 @@ const Body2 = styled.div`
 const ContentWrapper = styled.div`
     margin-bottom: 98px;
     margin-top: 4px;
-    margin-left: 15px;
-    margin-left: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
+    margin-left: 18px;
     display: flex;    
     flex-direction: column;
-    align-items: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
-    width: 319px;
+    align-items: flex-start;
+    width: 243px;
     height: 199px;
 `;
 
@@ -59,6 +60,8 @@ const Div = styled.div`
     align-items: center;
     margin: 0 auto;
     width: 375px;
+    height: 2440px;
+    padding-left: 18px;
 `;
 
 const PartDiv = styled.div`
@@ -69,14 +72,14 @@ const PartDiv = styled.div`
 
 const TextWrapper = styled.div`
     word-break: keep-all;
-    align-items: flex-start;
-    text-align: ${props => props.id % 2 === 1 ? 'left' : 'right'};
+    text-align: ${props => props.textAlign === 'right' ? 'right' : 'left'};
 `;
 const PartWrapper = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: ${props => props.id % 2 === 0 ? 'flex-end' : 'flex-start'};
+    margin-left: 110px;
+    align-items: ${props => props.textAlign === 'left' ? 'flex-end' : 'flex-start'};
 `;
 
 const PartContents = styled.div`
@@ -90,12 +93,31 @@ const PartContents = styled.div`
     padding: 0;
 `;
 
+const Button1 = styled.button`
+font-size: ${props => props.theme.Mob_fontSizes.Subtitle1};
+font-weight: ${props => props.theme.fontWeights.Subtitle2};
+    font-family: 'NanumSquare Neo';
+    white-space: pre-line;
+    display: flex;
+    align-items: center;
+    line-height: 9px;
+    width: 280px;
+    height: 48px;
+    background-color: #7B3FEF;
+    justify-content: center;
+    margin-left: 48px;
+    margin-top: 58px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border : none;
+`;
+
 function PartSection(props){
     return (
         <ContentWrapper>
             <Image src={props.content.imageSrc} alt={`Image ${props.content.id}`}/>
-            <TextWrapper>
-                <Header5>{props.content.title}</Header5>
+            <TextWrapper textAlign={props.content.id === 2 || props.content.id === 4 ? 'right' : 'left'}>
+                <Header5 textAlign={props.content.id === 2 || props.content.id === 4 ? 'right' : 'left'}>{props.content.title}</Header5>
                 <Body2>{props.content.description}</Body2>
             </TextWrapper>
         </ContentWrapper>
@@ -140,16 +162,19 @@ function HomePartsMob() {
            <PartDiv>
             <ThemeProvider theme={theme}>
             <Header7>PARTS</Header7>
-            <PartContents>
+            <PartContents >
                 {contentsData.map(content => (
-                    <PartWrapper key={content.id} id={content.id}>
+                    <PartWrapper key={content.id} id={content.id} textAlign={content.id === 2 || content.id === 4 ? 'right' : 'left'}>
                         <PartSection content={content}></PartSection>
                     </PartWrapper>
-                ))}
+                ))}  
             </PartContents>
+            <Button1>더 알아보기</Button1>
             </ThemeProvider>
         </PartDiv> 
+        
         </Div>
+        
         
     );
 }

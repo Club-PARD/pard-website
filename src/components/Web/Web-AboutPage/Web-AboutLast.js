@@ -1,9 +1,9 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
-
+import AboutFrame_Down from '../../../assets/img/AboutFrame_Down.png';
 
 const PartDiv = styled.div`
-    height: 720px;
+    height: 620px;
     background-color: #FFFFFF;
     display: flex;
 justify-content: center;
@@ -13,14 +13,20 @@ width: 100%;
 margin: 0 auto;
 `;
 
+const AboutFrame1 = styled.img`
+    height: 40px;
+    width: 100%;
+    border-radius: 0px;
+    margin-top: 160px;
+`;
+
 const Div = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-
-
+    width: 100%;
 `;
 
 const Header7 = styled.div`
@@ -54,13 +60,13 @@ const Body2 = styled.div`
 `;
 
 const Button1 = styled.button`
-    font-size: ${props => props.theme.Web_fontSizes.Header5};
-    font-weight: ${props => props.theme.fontWeights.Header5};
+    font-size: ${props => props.theme.Web_fontSizes.Header6};
+    font-weight: ${props => props.theme.fontWeights.Header6};
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
     display: flex;
     align-items: center;
-    line-height: 34px;
+    line-height: 140%;
     width: 440px;
     height: 64px;
     background-color: #FF5C00;
@@ -116,6 +122,7 @@ function AboutLast() {
                 <Subtitle3>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도 선수들의 역량이에요</Subtitle3>
                 <Body2>송민 KBS 서핑 해설위원</Body2>
                 <Button1>지금 바로 2기 지원하기</Button1>
+                <AboutFrame1 src={AboutFrame_Down} alt="AboutFrame" />  
             </ThemeProvider>
         </PartDiv>
         </Div>
