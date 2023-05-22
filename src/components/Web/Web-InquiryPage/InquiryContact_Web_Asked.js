@@ -6,8 +6,8 @@ import Vec from '../../../assets/img/vector.png';
 
 const Margin= styled.div`
 display: flex;
+margin: 0 auto;
 
-margin: 0px auto;
 `
 const Askedstyled=styled.div`
 white-space: nowrap;

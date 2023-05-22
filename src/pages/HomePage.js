@@ -35,7 +35,7 @@ const HomePageComponent_Mob = styled.div`
     return (
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
-                <div>
+                <div style={{display:'block'}}>
                      <NavBarHome/>
                     <HomeFirst/>
                     <HomeSecond/>

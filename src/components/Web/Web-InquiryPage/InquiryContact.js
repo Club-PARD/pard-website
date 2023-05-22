@@ -12,7 +12,7 @@ const Header2 = styled.div`
 `;
 
 const PartDiv = styled.div`
-    margin: 0px auto;
+        margin: 0px auto;
     justify-content: center;
     margin-top: 130px;
     height: 893px;
@@ -22,9 +22,9 @@ function InquiryContact() {
 
     return (
         <PartDiv>
-             <ThemeProvider theme={theme}>
+            <ThemeProvider theme={theme}>
              <Ask/>
-            </ThemeProvider>
+             </ThemeProvider>
         </PartDiv>
     );
 }
