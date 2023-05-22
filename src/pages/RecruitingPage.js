@@ -17,10 +17,9 @@ function RecruitingPage() {
     `;
 
 const RecruitingPageComponent_Mob = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-right: 0;
+        justify-content: center;
+        width: 100%;
+        min-width: 1440px;
 `;
     return (
         <RecruitingPageComponent>
