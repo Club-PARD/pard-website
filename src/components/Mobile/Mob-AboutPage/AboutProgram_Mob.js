@@ -92,9 +92,7 @@ const PartDiv = styled.div`
   padding-top : 150px;
   place-content: center;
   align-content: start;
-  justify-content: center;
-  padding-right: 20px;
-  
+  justify-content: center;  
 `;
 
 function AboutProgram_Mob() {

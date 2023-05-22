@@ -202,24 +202,17 @@ line-height: 27px;
 color:#5262F5;
 `
 
-const Vectorbox1 = styled.div`
 
-margin-left: 30px;
-
-margin-top: 0px;
-
-`
 const Vectorbox2 = styled.div`
-
 margin-left: 30px;
 
-margin-top: 0px;  //102px하면 돌아옴
+margin-top: 3px;  //102px하면 돌아옴
 
 `
 const Vector = styled.img`
 max-width:14px;
 width: 14px;
-height: 14px;
+height: 21px;
 
 `
 
@@ -278,7 +271,7 @@ const Ask = () => {
                     <InformBox1>
                         <Mail>메일</Mail>
                         <EMail>official@we-pard.com</EMail>
-                        <Vectorbox1><Vector src={Vec} /></Vectorbox1>
+                        <Vectorbox2><Vector src={Vec} /></Vectorbox2>
                     </InformBox1>
                     <InformBox2 href="https://www.instagram.com/official_pard_/" target="_blank">
                         <Instagram>인스타그램</Instagram>

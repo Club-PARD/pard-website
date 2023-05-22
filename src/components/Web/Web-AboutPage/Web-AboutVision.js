@@ -9,6 +9,7 @@ background : #FFFFFF;
 align-items: center;
 margin: 0 auto;
 width: 100%;
+/* padding-left:360px; */
 
 `;
 
@@ -24,12 +25,11 @@ const Header7 = styled.div`
 
 const PartDiv = styled.div`
 padding-top: 188px;
-padding-left:360px;
-padding-right: 210px;
 padding-bottom: 100px;
 justify-content: center;
 height: 850px;
-width: 1440px;
+/* width: 1440px; */
+width: 1080px;
 border-radius: 0px;
 background : #FFFFFF;
 margin: 0 auto;
@@ -102,6 +102,7 @@ display: flex;
   color: black;
   line-height: 160%;
   margin-top: -1px;
+  text-align: start;
 `;
 
 

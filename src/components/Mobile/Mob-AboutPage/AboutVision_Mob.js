@@ -43,6 +43,7 @@ margin-top: 3px;
 display: flex;
 `;
 
+
 const Down2 = styled.div`
 margin-top: 3px;
 display: flex;
@@ -78,8 +79,27 @@ font-weight: ${props => props.theme.fontWeights.Body2};
 display: flex;
   color: black;
   line-height: 160%;
-  margin-top: 17px;
+  margin-top: 15px;
 `;
+
+const Subblack2 = styled.div`
+font-size: ${props => props.theme.Mob_fontSizes.Body2};
+font-weight: ${props => props.theme.fontWeights.Body2};
+display: flex;
+  color: black;
+  line-height: 160%;
+  margin-top: 20px;
+`;
+
+const Subblack3 = styled.div`
+font-size: ${props => props.theme.Mob_fontSizes.Body2};
+font-weight: ${props => props.theme.fontWeights.Body2};
+display: flex;
+  color: black;
+  line-height: 160%;
+  margin-top: 20px;
+`;
+
 
 
 const Verticalline1 = styled.div`
@@ -98,6 +118,7 @@ height: 185px;
 width: 0px;
 margin-right: 42px;
 margin-bottom: 70px;
+margin-top: -15px;
 `;
 
 const Verticalline3 = styled.div`
@@ -107,6 +128,8 @@ height: 205px;
 width: 0px;
 margin-right: 42px;
 margin-bottom: 43px;
+margin-top: -15px;
+
 `;
 
 const Textbox1 = styled.div`
@@ -137,32 +160,32 @@ function AboutVision_Mob() {
               서비스 기획-디자인-개발 과정을 거쳐 <br></br>완성도 높은 서비스를 만들어 냅니다.</Subblack1>
           </Cover>
           <Cover>
-            <Down1>
+            <Down2>
               <BigNum>02</BigNum>
-            </Down1>
+            </Down2>
               <Mainblack>
               <strong className='Orange'>좋은 협업</strong>이란 무엇인지 끊임없이<br/>함께 고민합니다.
               </Mainblack>
           </Cover>
           <Cover>
             <Verticalline2></Verticalline2>
-            <Subblack1>단순히 일을 잘 분배하고 최선을 다한다는<br></br>것이 협업의 전부라고 생각하지 않습니다.<br></br>
+            <Subblack2>단순히 일을 잘 분배하고 최선을 다한다는<br></br>것이 협업의 전부라고 생각하지 않습니다.<br></br>
               모두가 공감하는 목표를 추구하고,<br></br>모든 의견과 피드백은 선명한 솔직함에 <br></br>기반하며,
-              모자란 점을 투명하게 공유하고,<br></br>함께 보완하는 것이 진짜 협업이라고<br></br>믿고 실천합니다.</Subblack1>
+              모자란 점을 투명하게 공유하고,<br></br>함께 보완하는 것이 진짜 협업이라고<br></br>믿고 실천합니다.</Subblack2>
           </Cover>
           <Cover>
-            <Down1>
+            <Down2>
               <BigNum>03</BigNum>
-            </Down1>
+            </Down2>
             <Mainblack>
               현업 실무진 분들과<br></br><strong className='Orange'>함께 성장하는 커뮤니티</strong>를 꿈꿉니다.
             </Mainblack>
           </Cover>
           <Cover>
             <Verticalline3></Verticalline3>
-            <Subblack1>동아리원 소속 대학의 알럼나이 분들과<br></br> 대학 재학생들을 잇는 교두보 역할을<br></br>수행합니다.<br></br>
+            <Subblack3>동아리원 소속 대학의 알럼나이 분들과<br></br> 대학 재학생들을 잇는 교두보 역할을<br></br>수행합니다.<br></br>
               동아리원들은 실무자 분들로부터 현실적인<br></br> 조언을 구하고 성장합니다.<br></br>
-              Pay it forward에 공감하는 사람들이 <br></br>모여 교류하고 소통함으로 IT 생태계를 <br></br>확장 합니다.</Subblack1>
+              Pay it forward에 공감하는 사람들이 <br></br>모여 교류하고 소통함으로 IT 생태계를 <br></br>확장 합니다.</Subblack3>
           </Cover>
         </ThemeProvider>
       </PartDiv>

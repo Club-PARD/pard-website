@@ -13,7 +13,8 @@ import LSY from '../../../assets/img/이신영.png';
 import JSH from '../../../assets/img/조세희.png';
 import JH from '../../../assets/img/조환.png';
 import disquiet from '../../../assets/img/disquiet.png';
-
+import LinkedIn from '../../../assets/img/LinkedInLogo.png'
+import WebLogo from '../../../assets/img/WebLogo.png'
 
 const Header7 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Header7};
@@ -109,12 +110,9 @@ const ImageWrapper = styled.div`
 
     &:hover{
         ${TextWrap}{ 
-            width: 251.5px;
-            height: 286.5px;
-            margin-top: -1.5px;
-            padding-top: 3.5px;
+            width: 250px;
+            height: 300px;
             top: 0%;
-            height: 100%;
             border-top-left-radius: 19.5px;
             border-top-right-radius: 19.5px;
             background-color: ${({ position }) =>
@@ -152,10 +150,6 @@ margin-right: 15px;
 text-decoration: none;
 cursor: pointer;
 
-&:hover {
-    width: 42px;
-height: 42px;
-}
 `;
 const Icon = styled.a`
     position: absolute;
@@ -186,12 +180,12 @@ function InquiryManagement() {
         {
             id: 2,
             imgsrc: SYC,
-            name: '송예찬(회장)',
+            name: '송예찬(부회장)',
             position: 'Operator',
             site: [
-                { name: 'linkedin', link: 'https://www.linkedin.com/in/hwan-jho-%EC%A1%B0%ED%99%98-70491b200' },
-                { name: 'disquiet', link: ' https://disquiet.io/@jhohwan' },
-                { name: 'instagram', link: 'https://instagram.com/hwanjho__75?igshid=NTc4MTIwNjQ2YQ==' },
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/yechan-song-impacter/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@impact_yechan' },
+                { name: 'web', link: 'https://brunch.co.kr/@songyechan15' },
             ],
         },
         {
@@ -200,8 +194,8 @@ function InquiryManagement() {
             name: '이신영',
             position: 'Operator',
             site: [
-                { name: 'linkedin', link: 'hhttps://www.linkedin.com/in%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/' },
-                { name: 'disquiet', link: ' https://disquiet.io/@dltlsdud0319' },
+                { name: 'linkedin', link: 'https://www.linkedin.com/in/%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/' },
+                { name: 'disquiet', link: 'https://disquiet.io/@dltlsdud0319' },
                 { name: 'instagram', link: 'https://www.instagram.com/shinyoung0319/' },
             ],
         },
@@ -322,10 +316,20 @@ function InquiryManagement() {
                                                     {site.name === "instagram" ? (
                                                         <FaInstagram style={{ color: "black", width: '22px', height: '22px' }} />
                                                     ) : site.name === "linkedin" ? (
-                                                        <FaInvision style={{ color: "black", width: '20px', height: '20px' }} />
+                                                        <img
+                                                        src={LinkedIn}
+                                                        alt="LinkedIn Logo"
+                                                        style={{ width: '20px', height: '20px' }}
+                                                    />
                                                     ) : site.name === "github" ? (
                                                         <FaGithub style={{ color: "black", width: '24px', height: '24px' }} />
-                                                    ) : (
+                                                    ) :  site.name === "web" ? (
+                                                        <img
+                                                        src={WebLogo}
+                                                        alt="Web Logo"
+                                                        style={{ width: '24px', height: '24px' }}
+                                                    />
+                                                    ) :(
                                                         <img
                                                             src={disquiet}
                                                             alt="Disquiet Logo"
