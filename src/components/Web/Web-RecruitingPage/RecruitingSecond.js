@@ -216,11 +216,11 @@ const Detail = styled.div`
 
 const ArrowDiv = styled.div`
 margin-left: 50px;
-margin-top: 3px; 
+margin-top: 4px; 
 `
 const Arrow = styled.img`
 width: 15px;
-height: 28px;
+height: 22px;
 margin-right: -75px;
 
 `
