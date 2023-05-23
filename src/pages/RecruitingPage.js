@@ -39,6 +39,7 @@ const RecruitingPageComponent_Mob = styled.div`
                 <div>
                     <NavBarMov />
                     <h1>RecruitingPage 모바일</h1>
+                    
                 </div>
             }
         </RecruitingPageComponent>

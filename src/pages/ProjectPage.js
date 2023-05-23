@@ -9,6 +9,7 @@ import Projectirst from "../components/Web/Web-ProjectPage/ProjectFirst";
 import ProjectFirst_Mob from "../components/Mobile/Mob-ProjectPage/ProjectFirst_Mob";
 import ProjectLast_Mob from "../components/Mobile/Mob-ProjectPage/ProjectLast_Mob";
 import ProjectLast from "../components/Web/Web-ProjectPage/Project_Last";
+import FooterMov from "../components/FooterMov";
 
 function ProjectPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -37,6 +38,7 @@ function ProjectPage() {
                     <NavBarMov />
                     <ProjectFirst_Mob/>
                     <ProjectLast_Mob/>
+                    <FooterMov/>
                 </div>
             }
         </AboutPageComponent>
