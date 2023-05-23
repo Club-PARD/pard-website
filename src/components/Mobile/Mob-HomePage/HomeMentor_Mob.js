@@ -9,6 +9,7 @@ const Header7 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 25px;
   white-space: pre-line;
+  margin-right: 140px;
 `;
 
 const Sub3 = styled.div`
@@ -18,6 +19,7 @@ const Sub3 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 14px;
   white-space: pre-line;
+  margin-right: 78px;
 
 `;
 
@@ -106,10 +108,18 @@ const Image = styled.img`
 `;
 
 const PartDiv = styled.div`
-    padding-left:21px;
-    padding-right: 21px;
     padding-top: 30px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+`;
+
+const Div = styled.div`
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 `;
 
 function MentorCard(props){
@@ -158,6 +168,7 @@ function HomeMentor() {
     ];
 
     return (
+        <Div>
         <PartDiv>
              <ThemeProvider theme={theme}>
             <Header7>멘토 추천사</Header7>
@@ -171,6 +182,7 @@ function HomeMentor() {
             </PartContents>
             </ThemeProvider>
         </PartDiv>
+        </Div>
     );
 }
 

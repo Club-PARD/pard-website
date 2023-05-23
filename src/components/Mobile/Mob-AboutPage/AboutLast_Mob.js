@@ -5,7 +5,7 @@ import AboutFrame from '../../../assets/img/About_Mob_Bar_Last.png';
 import React from 'react';
 
 const PartDiv = styled.div`
-    height: 700px;
+    height: 500px;
     width: 375px;
     background: #FFFFFF;
     display: flex;
@@ -36,7 +36,7 @@ const Header7 = styled.div`
   margin-bottom: 58px;
   white-space: pre-line;
   text-align : center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   `;
 
 const Shape1 = styled.div`
@@ -103,7 +103,6 @@ const Button1 = styled.button`
     height: 52px;
     background-color: #FF5C00;
     justify-content: center;
-    margin-bottom: 50px;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
