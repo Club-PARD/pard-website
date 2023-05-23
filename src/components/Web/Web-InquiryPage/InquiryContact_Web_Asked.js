@@ -6,12 +6,7 @@ import Vec_p from '../../../assets/img/vector_purple.png';
 
 const Margin = styled.div`
 display: flex;
-<<<<<<< HEAD
 margin: 0 auto;
-=======
-margin: 0px auto;
->>>>>>> d7b05b08f7611724bed8d559915799c474e63d90
-
 `
 const DownLogo = styled.img`
 width: 80px;
