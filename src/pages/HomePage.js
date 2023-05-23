@@ -34,17 +34,11 @@ function HomePage() {
     return (
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
-<<<<<<< HEAD
-                <div style={{display:'block'}}>
-                     <NavBarHome/>
-                    <HomeFirst/>
-                    <HomeSecond/>
-=======
+
                 <div>
                     <NavBarHome />
                     <HomeFirst />
                     <HomeSecond />
->>>>>>> d7b05b08f7611724bed8d559915799c474e63d90
                     <HomePartWeb />
                     {/* <HomeProgramWeb /> */}
                     <HomeMentorWeb />
