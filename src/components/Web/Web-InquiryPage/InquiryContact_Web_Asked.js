@@ -216,9 +216,11 @@ height: 21px;
 `
 
 
-const InformBox1 = styled.a.attrs({
-    href: "mailto:official@we-pard.com",
-    target: "_blank",
+const InformBox1 = styled.div.attrs({
+    onClick: () => {
+      const mailtoLink = "mailto:official@we-pard.com";
+      window.open(mailtoLink, "_blank");
+    },
   })`
     display: flex;
     margin-top: 33px;
