@@ -1,5 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
+import Vec from '../../../assets/img/vector.png';
 import React from 'react';
 
 
@@ -65,17 +66,6 @@ const Box = styled.div`
   margin-right: 7px;
   margin-bottom: 25px;
   `
-const Header62 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header6};
-  font-weight: ${props => props.theme.fontWeights.Header6};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
-  font-style: normal;
-  line-height: 140%;
-  margin-left: 860px;
-  text-align: right;
-  margin-bottom: 117px;
-  `;
 
 const Header5 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header5};
@@ -201,11 +191,38 @@ const IconWrap = styled.div`
   margin-right: 175px;
 `;
 
-const Arrow = styled.svg`
-  width:15px;
-  fill: none;
-  transform: scaleX(-1);
-  margin-left: 575px;
+const Plus = styled.a`
+    display: flex;
+    margin-top: -40px;
+    margin-bottom: 117px;
+    margin-left: 800px;
+    width: 361px;
+    height: 34px;
+    align-items: center;
+    text-decoration: none;
+  `;
+
+const Detail = styled.div`
+  white-space: nowrap;
+  margin-left:63px;
+  font-family: 'NanumSquare Neo';
+  font-style: normal;
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  line-height: 140%;
+  text-align: right;
+  color: #FFFFFF;
+`
+
+const ArrowDiv = styled.div`
+margin-left: 50px;
+margin-top: 4px; 
+`
+const Arrow = styled.img`
+width: 15px;
+height: 22px;
+margin-right: -75px;
+
 `
 
 function RecruitingSecond() {
@@ -274,11 +291,14 @@ function RecruitingSecond() {
               </BoxText>
             </Box>
           </Container>
-          <Arrow viewBox="0 0 15 22">
-            <path d="M14.5 0.800822V7.02081L0.500002 13.865V7.64504L14.5 0.800822Z" stroke="white" />
-            <path d="M0.5 8.13481L0.5 14.3548L14.5 21.199V14.979L0.5 8.13481Z" stroke="white" />
-          </Arrow>
-          <Header62>정규 활동일정 자세히 보기</Header62>
+          <Plus>
+            <ArrowDiv><Arrow src={Vec} /></ArrowDiv>
+            <Detail>정규 활동일정 자세히 보기</Detail>
+          </Plus>
+          {/* <Form>
+            <ArrowDiv><Arrow src={Vec} /></ArrowDiv>
+            <Header62>정규 활동일정 자세히 보기</Header62>
+          </Form> */}
           <Header5>지원 방법 및 유의사항</Header5>
           <TextWrap>
             <Container>
