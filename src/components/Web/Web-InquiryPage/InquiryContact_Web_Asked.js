@@ -216,12 +216,7 @@ height: 21px;
 `
 
 
-const InformBox1 = styled.div.attrs({
-    onClick: () => {
-      const mailtoLink = "mailto:official@we-pard.com";
-      window.open(mailtoLink, "_blank");
-    },
-  })`
+const InformBox1 = styled.a`
     display: flex;
     margin-top: 33px;
     width: 361px;
@@ -269,7 +264,7 @@ const Ask = () => {
                 </Askedstyled>
                 <Informationstyle>
                     <Lineup />
-                    <InformBox1>
+                    <InformBox1 href="mailto:official@we-pard.com">
                         <Mail>메일</Mail>
                         <EMail>official@we-pard.com</EMail>
                         <Vectorbox2><Vector src={Vec} /></Vectorbox2>
