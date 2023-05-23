@@ -11,6 +11,7 @@ import InquiryManagemaentMob from "../components/Mobile/Mob-InquiryPage/InquiryM
 import InquiryLastMob from "../components/Mobile/Mob-InquiryPage/InquiryLast_Mob";
 import NavBarMov from "../components/NavBarMov";
 import Footer from "../components/Footer";
+import FooterMov from "../components/FooterMov";
 
 function InquiryPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -41,6 +42,7 @@ const AboutPageComponent_Web = styled.div`
                     <InquiryContactMob />
                     <InquiryManagemaentMob />
                     <InquiryLastMob />
+                    <FooterMov/>                    
                 </div>
             }
         </AboutPageComponent>

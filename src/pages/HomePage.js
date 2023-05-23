@@ -16,6 +16,7 @@ import HomeFirst from "../components/Web/Web-HomePage/HomeFirst";
 import NavBarHome from "../components/Navbar_Home";
 import HomeSecond from "../components/Web/Web-HomePage/HomeSecond";
 import Footer from "../components/Footer";
+import FooterMov from "../components/FooterMov";
 
 
 function HomePage() {
@@ -55,7 +56,7 @@ function HomePage() {
                     <HomeMentorMob />
                     <HomePartnerMob />
                     <HomeLastsMob />
-
+                    <FooterMov/>
                 </HomePageComponent_Mob>
             }
         </HomePageComponent>
