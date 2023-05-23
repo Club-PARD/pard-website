@@ -101,7 +101,6 @@ const Header6 = styled.div`
   font-style: normal;
   line-height: 140%;
   white-space: nowrap;
-  
 
   span.highlight {
     color: #64C59A;
@@ -112,7 +111,6 @@ const Number = styled(Header6)`
   margin-left: 30px;
   margin-right:30px;
   display: flex;
-  align-items: center;
 `
 
 const BoxText = styled.div`
@@ -203,6 +201,13 @@ const IconWrap = styled.div`
   margin-right: 175px;
 `;
 
+const Arrow = styled.svg`
+  width:15px;
+  fill: none;
+  transform: scaleX(-1);
+  margin-left: 575px;
+`
+
 function RecruitingSecond() {
   return (
     <Div>
@@ -268,31 +273,34 @@ function RecruitingSecond() {
                 2023.n.nn - n.nn
               </BoxText>
             </Box>
-
           </Container>
+          <Arrow viewBox="0 0 15 22">
+            <path d="M14.5 0.800822V7.02081L0.500002 13.865V7.64504L14.5 0.800822Z" stroke="white" />
+            <path d="M0.5 8.13481L0.5 14.3548L14.5 21.199V14.979L0.5 8.13481Z" stroke="white" />
+          </Arrow>
           <Header62>정규 활동일정 자세히 보기</Header62>
           <Header5>지원 방법 및 유의사항</Header5>
-            <TextWrap>
-              <Container>
-                <Number><span className="highlight">01</span></Number>
-                <Header6>접수기간이 지난 후에는 작성 중 이었던 지원서가 있었더라도 접수가 어려워요!<span className="highlight"> 꼭 작성 완료 후 제출 버튼</span> 을 눌러 제출해주세요.</Header6>
-              </Container>
+          <TextWrap>
+            <Container>
+              <Number><span className="highlight">01</span></Number>
+              <Header6>접수기간이 지난 후에는 작성 중 이었던 지원서가 있었더라도 접수가 어려워요!<span className="highlight"> 꼭 작성 완료 후 제출 버튼</span> 을 눌러 제출해주세요.</Header6>
+            </Container>
 
-              <Container>
-                <Number><span className="highlight">02</span></Number>
-                <Header6>기획, 디자인 파트의 사전과제는 지원서 접수 시작일인<span className="highlight">n월n일</span>에 기획,디자인 파트의 <span className="highlight">노션 페이지</span>에 공개됩니다!</Header6>
-              </Container>
+            <Container>
+              <Number><span className="highlight">02</span></Number>
+              <Header6>기획, 디자인 파트의 사전과제는 지원서 접수 시작일인<span className="highlight">n월n일</span>에 기획,디자인 파트의 <span className="highlight">노션 페이지</span>에 공개됩니다!</Header6>
+            </Container>
 
-              <Container>
-                <Number><span className="highlight">03</span></Number>
-                <Header6>지원서 합격/불합격 발표는 지원서 접수 시 <span className="highlight">기입해주신 번호로 문자</span> 안내됩니다.</Header6>
-              </Container>
+            <Container>
+              <Number><span className="highlight">03</span></Number>
+              <Header6>지원서 합격/불합격 발표는 지원서 접수 시 <span className="highlight">기입해주신 번호로 문자</span> 안내됩니다.</Header6>
+            </Container>
 
-              <Container>
-                <Number><span className="highlight">04</span></Number>
-                <Header6>면접은 <span className="highlight">지원자 2명, 운영진 4명(파트장,회장단)</span>과 함께<span className="highlight">다대다로 50분</span>동안 진행되며,<br></br>면접 시간은 지원서 합격자에 한하여 개별적으로 문자 안내 드립니다.</Header6>
-              </Container>
-            </TextWrap>
+            <Container>
+              <Number><span className="highlight">04</span></Number>
+              <Header6>면접은 <span className="highlight">지원자 2명, 운영진 4명(파트장,회장단)</span>과 함께<span className="highlight">다대다로 50분</span>동안 진행되며,<br></br>면접 시간은 지원서 합격자에 한하여 개별적으로 문자 안내 드립니다.</Header6>
+            </Container>
+          </TextWrap>
         </ThemeProvider>
       </PartDiv>
     </Div>
