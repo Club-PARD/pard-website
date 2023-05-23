@@ -1,8 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
-import docs from '../../../assets/img/docs.svg';
-import check from '../../../assets/img/check.svg';
 
 
 const PartDiv = styled.div`
