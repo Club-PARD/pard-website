@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.33a5a190.css",
-    "main.js": "/static/js/main.b5e38869.js",
+    "main.js": "/static/js/main.2af7d30e.js",
     "static/media/BackGroundVideo.mp4": "/static/media/BackGroundVideo.85ebd6d6842d77c76d30.mp4",
     "static/media/김유진.png": "/static/media/김유진.7d8235b07c9a576b7228.png",
     "static/media/조세희.png": "/static/media/조세희.bf6ff6e49f16ace61043.png",
@@ -9,6 +9,7 @@
     "static/media/ProjectLast.png": "/static/media/ProjectLast.734fc84c82a1c57abd7d.png",
     "static/media/백승균.png": "/static/media/백승균.6b1f0ad468ae432f0457.png",
     "static/media/이신영.png": "/static/media/이신영.f1b03d964bec51da557d.png",
+    "static/media/ProjectLastMov.png": "/static/media/ProjectLastMov.7b464c28801864e5857c.png",
     "static/media/AboutSurfing.png": "/static/media/AboutSurfing.44228a6e1581033efbdd.png",
     "static/media/App_part.png": "/static/media/App_part.605793696198913f8e1e.png",
     "static/media/AboutStudy.png": "/static/media/AboutStudy.823828e150fdc25cf188.png",
@@ -28,7 +29,7 @@
     "static/media/AppPart.png": "/static/media/AppPart.e42ababa211d082e1d96.png",
     "static/media/AboutProject.png": "/static/media/AboutProject.c853f2f739ebba3034f9.png",
     "static/media/WebPart.png": "/static/media/WebPart.96357b5deb744264327e.png",
-    "static/media/PMpart.png": "/static/media/PMpart.e8cb07e8779dea69348e.png",
+    "static/media/PMpart.png": "/static/media/PMpart.d54a2b802438e2650e75.png",
     "static/media/AboutLogo.png": "/static/media/AboutLogo.f5d6a230a5599a0e19b6.png",
     "static/media/band1.svg": "/static/media/band1.5077ba9976bcb8236e87014a108ac9f0.svg",
     "static/media/band2.svg": "/static/media/band2.fca008dacc0dbf32e16344c38f4a8bdc.svg",
@@ -41,10 +42,10 @@
     "static/media/Disquiet-partner.png": "/static/media/Disquiet-partner.f767a3e9e5d25e08b076.png",
     "index.html": "/index.html",
     "main.33a5a190.css.map": "/static/css/main.33a5a190.css.map",
-    "main.b5e38869.js.map": "/static/js/main.b5e38869.js.map"
+    "main.2af7d30e.js.map": "/static/js/main.2af7d30e.js.map"
   },
   "entrypoints": [
     "static/css/main.33a5a190.css",
-    "static/js/main.b5e38869.js"
+    "static/js/main.2af7d30e.js"
   ]
 }
