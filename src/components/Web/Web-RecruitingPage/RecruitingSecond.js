@@ -203,25 +203,6 @@ const IconWrap = styled.div`
   margin-right: 175px;
 `;
 
-const CC = styled.div`
-
-`;
-
-// const Docs = styled.svg`
-//   width: 30px;
-//   height: 38px;
-//   fill: none;
-//   position: absolute;
-// `
-
-// const Check = styled.svg`
-//   width: 30px;
-//   height: 38px;
-//   fill: none;
-//   position: absolute;
-// `
-
-
 function RecruitingSecond() {
   return (
     <Div>
@@ -291,7 +272,6 @@ function RecruitingSecond() {
           </Container>
           <Header62>정규 활동일정 자세히 보기</Header62>
           <Header5>지원 방법 및 유의사항</Header5>
-          {/* <CC> */}
             <TextWrap>
               <Container>
                 <Number><span className="highlight">01</span></Number>
@@ -313,7 +293,6 @@ function RecruitingSecond() {
                 <Header6>면접은 <span className="highlight">지원자 2명, 운영진 4명으로</span> 다대다로  <span className="highlight">50분</span>동안 진행되며 시간 선택은 지원서 합격자에 한해서 개별적으로 문자 안내드립니다.</Header6>
               </Container>
             </TextWrap>
-          {/* </CC> */}
         </ThemeProvider>
       </PartDiv>
     </Div>
