@@ -7,22 +7,55 @@ import ProgramFrame from '../../../assets/img/Program_Mob_Bar.png';
 
 
 const PartDiv = styled.div`
-  height: 756px;
+
   position: relative;
   width: 100%;
+  height: 872px;
   display: flex;
   flex-direction: column;
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: center; /* 수평 가운데 정렬 */
-  background-color: #1A1A1A;
+
+
+  background-image: url(${require('../../../assets/img/ProjectLastMov.png')});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 const Div = styled.div`
-display: flex;
-flex-direction: column;
-  width: 100%;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 `;
+const Header7 = styled.div`
+    font-size: ${props => props.theme.Web_fontSizes.Header7};
+    font-weight: ${props => props.theme.fontWeights.Header7};
+    color: #FFFFFF;
+    font-family: 'NanumSquare Neo';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 140%;
+    margin-top: 550px;
+    text-align : center;
+`;
+
+const LogoDiv = styled.div`
+    width: 100%;
+    display: flex;
+    margin-bottom: 180px;
+    margin-top: 200px;
+    justify-content: space-between;
+`
+const ArrowLogo = styled.img`
+    width: 40px;
+    height: 60px;
+    /* margin-left: 100px;
+    margin-right: 100px; */
+    margin : 0 35px; 
+   
+`
 
 
 
@@ -31,7 +64,14 @@ function ProjectLast_Mob() {
         <Div>
             <PartDiv>
                 <ThemeProvider theme={theme}>
-                    <h1>asdfasdfas</h1>
+                    <Header7>
+                        PARD의 첫 프로젝트가<br/>곧 공개 예정이에요!
+                    </Header7>
+                    <LogoDiv>
+                        <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
+                        <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
+                        <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
+                    </LogoDiv>
                 </ThemeProvider>
             </PartDiv>
         </Div>
@@ -39,3 +79,9 @@ function ProjectLast_Mob() {
 }
 
 export default ProjectLast_Mob;
+
+
+
+
+
+
