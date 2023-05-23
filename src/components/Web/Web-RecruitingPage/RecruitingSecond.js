@@ -1,6 +1,9 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
+import docs from '../../../assets/img/docs.svg';
+import check from '../../../assets/img/check.svg';
+
 
 const PartDiv = styled.div`
   height: 950px;
@@ -94,11 +97,31 @@ const Header6 = styled.div`
   font-style: normal;
   line-height: 140%;
   white-space: nowrap;
+  
 
   span.highlight {
     color: #64C59A;
   }
 `;
+
+const IconWrap = styled.div`
+  position: relative;
+  margin-right: 175px;
+`;
+
+const Docs = styled.svg`
+  width: 30px;
+  height: 38px;
+  fill: none;
+  position: absolute;
+`
+
+const Check = styled.svg`
+  width: 30px;
+  height: 38px;
+  fill: none;
+  position: absolute;
+`
 
 
 function RecruitingSecond() {
@@ -109,10 +132,20 @@ function RecruitingSecond() {
           <Header7>신입 멤버 모집은 이렇게 진행되어요</Header7>
           <Header61>2023년도 9월부터 24년도 1월까지 활동할 2기 멤버들을 모집합니다<br></br>* 일부 일정 변동 가능</Header61>
           <Container>
-            <Box>서류접수</Box>
-            <Box>서류 합격 발표</Box>
-            <Box>면접</Box>
-            <Box>최종합격 발표</Box>
+            <Box style={{ opacity: 0.2 }}>
+              <IconWrap>
+                <Docs viewBox="0 0 30 38">
+                  <path d="M16 37.375H2.875C1.42731 37.375 0.25 36.1977 0.25 34.75V3.25C0.25 1.80231 1.42731 0.625 2.875 0.625H26.5C27.9477 0.625 29.125 1.80231 29.125 3.25V22.9375H26.5V3.25H2.875V34.75H16V37.375Z" fill="white" />
+                </Docs>
+                <Check viewBox="0 0 30 38">
+                  <path d="M17.875 26.6738L14.4756 23.2744L12.625 25.125L17.875 30.375L28.375 19.875L26.5244 18.0244L17.875 26.6738ZM0.8125 13.3125H10V15.9375H0.8125V13.3125ZM0.8125 6.75H16.5625V9.375H0.8125V6.75ZM0.8125 0.1875H16.5625V2.8125H0.8125V0.1875Z" fill="white" />
+                </Check>
+              </IconWrap>
+              서류접수
+            </Box>
+            <Box style={{ opacity: 0.4 }}>서류 합격 발표</Box>
+            <Box style={{ opacity: 0.7 }}>면접</Box>
+            <Box style={{ opacity: 1.0 }}>최종합격 발표</Box>
           </Container>
           <Header62>정규 활동일정 자세히 보기</Header62>
           <Header5>지원 방법 및 유의사항</Header5>
