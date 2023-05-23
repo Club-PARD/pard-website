@@ -44,6 +44,7 @@ const NavLinks = styled.ul`
   align-items: center;
   list-style-type: none;
   margin-right: 184px;
+  font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
 `;
 
 const NavItem = styled.li`
