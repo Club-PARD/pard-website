@@ -113,8 +113,8 @@ const Column = styled.div`
     //나중에 이미지 넣을 공간
     position: relative;
     max-width: 65px;
-    margin-left: 13.5px;
-    margin-top: 10px; 
+    margin-left: ${props => props.even ? '11px' : '20px'}; // 짝수번째 이미지에만 다른 마진을 설정
+    margin-top: 10px;
 `
 const Image = styled.img`
     width: 150px;
@@ -131,7 +131,7 @@ const IconWrapper = styled.div`
     justify-content: flex-end;
     }
 
-    &:hover{ㄴ
+    &:hover{
         ${TextWrap}{ 
             width: 100%;
             height: 100%;
@@ -294,8 +294,8 @@ function InquiryManagemaentMob() {
                 <Header8>거친 파도를 <br />뚫고 나가는<br /> 파드 1기 운영진을<br />소개합니다</Header8>
                 <Body1>함께 했을 때 더 큰 일을 <br></br> 이룰 수 있음을 강하게 믿고 있어요</Body1>
                 <GridContainer>
-                    {managerData.map(content => (
-                        <Column key={content.id}>
+                    {managerData.map((content, index) => (
+                        <Column key={content.id} even={index % 2 === 1}>
                             <Image src={content.imgsrc} alt={`Image ${content.id}`} ></Image>
 
                             <TextWrap position={content.position}>
@@ -309,7 +309,7 @@ function InquiryManagemaentMob() {
                                                     : site.name === "linkedin" ? <FaInvision style={{ color: "black" }} />
                                                         : site.name === "github" ? <FaGithub style={{ color: "black" }} />
                                                             : site.name === "web" ? (
-                                                                <img src={WebLogo} alt="Web Logo" style={{ width: '16px', height: '16px' }}/>) 
+                                                                <img src={WebLogo} alt="Web Logo" style={{ width: '16px', height: '16px' }} />)
                                                                 :
                                                                 <img src={disquiet} alt="Disquiet Logo" style={{ width: '20px', height: '12px', marginLeft: '3.0px' }} />
                                                 }
