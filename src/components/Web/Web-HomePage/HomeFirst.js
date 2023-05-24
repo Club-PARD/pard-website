@@ -299,8 +299,21 @@ const HomeFirst = () => {
    
      
       
-    } else if (position >= 250 && position < 1450) {
+    } else if (position >= 250 && position < 850) {
       setchanged('b');
+ setisExpanded(true);
+      setText1('PA');
+      setText2('RD');
+      setText3('Y it FORWA');
+      setIsFixed(true);
+      setIsVisible(true);
+      setbackcolor(true);
+      setIsAnimation(true);
+   // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
+
+
+    } else if (position >= 850 && position < 1450) {
+      setchanged('bc');
  setisExpanded(true);
       setText1('PA');
       setText2('RD');
@@ -380,8 +393,19 @@ setIsSplitTextVisible(true);
     <SplitTextContainer isVisible={isVisible}>
       <Text1 isAnimation={isAnimation}>{text1}</Text1>
       <Text2 isAnimation={isAnimation}>{text2}</Text2>
-      <MovedText isAnimation={isAnimation}>{text3}</MovedText> 
+      
     </SplitTextContainer>
+
+</>
+
+:changed==='bc' ?  
+<>
+
+<SplitTextContainer isVisible={isVisible}>
+<Text1 isAnimation={isAnimation}>{text1}</Text1>
+<Text2 isAnimation={isAnimation}>{text2}</Text2>
+<MovedText isAnimation={isAnimation}>{text3}</MovedText> 
+</SplitTextContainer>
 
 </>
 

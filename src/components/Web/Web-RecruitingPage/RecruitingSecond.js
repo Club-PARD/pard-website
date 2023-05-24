@@ -214,7 +214,7 @@ const Plus = styled.a`
 
 const Detail = styled.div`
   white-space: nowrap;
-  margin-left:63px;
+  margin-left:78px;
   font-family: 'NanumSquare Neo';
   font-style: normal;
   font-weight: ${(props) => props.theme.fontWeights.Header6};
