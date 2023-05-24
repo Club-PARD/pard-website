@@ -11,6 +11,7 @@ const PartDiv = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-bottom: 80px;
 `;
 const Div = styled.div`
   margin: 0px auto;

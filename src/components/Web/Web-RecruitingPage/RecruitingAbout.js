@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React, { useState } from 'react';
 import vector from '../../../assets/img/vector.png';
-import selectVector from '../../../assets/img/vector_purple.png';
+import selectVector from '../../../assets/img/vector_Green.png';
 
 
 const Div = styled.div`
@@ -71,6 +71,8 @@ border-radius: 10px;
 font-size: ${props => props.theme.Web_fontSizes.ButtonText1};
 font-weight: ${props => props.theme.fontWeights.ButtonText1};
 font-family: 'NanumSquare Neo';
+line-height: 140%;
+
 `;
 const Button = styled.div`
 width: 174px;
@@ -91,6 +93,7 @@ font-size: ${props => props.theme.Web_fontSizes.Body2};
 font-weight: ${props => props.theme.fontWeights.Body2};
 font-family: 'NanumSquare Neo';
 color: white;
+line-height: 140%;
 `;
 
 

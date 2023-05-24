@@ -191,7 +191,7 @@ color: #FFFFFF;
   }
 
 `
-const Here = styled(Link)`
+const Here = styled.a`
 
 font-family: 'NanumSquare Neo';
 font-style: normal;
@@ -276,7 +276,7 @@ const Ask = () => {
                     </InformBox2>
                     <Linedown />
                     <Business>비지니스 문의는 &nbsp;
-                        <Here to='/'>여기로!</Here>
+                        <Here href="mailto:official@we-pard.com">여기로!</Here>
                     </Business>
                 </Informationstyle>
             </Margin>

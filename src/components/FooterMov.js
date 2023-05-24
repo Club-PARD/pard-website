@@ -208,7 +208,7 @@ function FooterMov() {
                 ⓒPARD. 2023.All rights reserved.
             </Information>
             <Links>
-                <EmailLink href="http://naver.com" target="_blank">Email</EmailLink>
+                <EmailLink href="mailto:official@we-pard.com">Email</EmailLink>
                 <Instagram href="https://www.instagram.com/official_pard_/" target="_blank">Instagram</Instagram>
                 <Youtube href="https://www.youtube.com/" target="_blank">Youtube</Youtube>
                 <Disquiet href="https://disquiet.io/club/pard" target="_blank">Disquiet</Disquiet>
