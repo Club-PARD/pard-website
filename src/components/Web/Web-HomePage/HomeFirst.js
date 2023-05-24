@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react';
 
 const VideoContainer = styled.div`
 
-  position: ${({ isFixed }) => (isFixed ? 'fixed' : 'relative')};
+  position:${({ isFixed }) => (isFixed ? 'sticky' : 'relative')};
+  top:0%;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.4);
 `;
@@ -52,11 +53,11 @@ const VideoBackground = styled.video`
   z-index: -1;
 `;
 const SplitTextContainer = styled.div`
-  position: absolute;
 
+position: absolute;
 width: 1040px;
 height: 112px;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -68,50 +69,14 @@ height: 112px;
   transition: opacity 0.5s ease-in;
 
 `;
-const TextContainer = styled.div`
-//display: flex;
-width: 1040px;
-height: 112px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 4;
-  opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
-  transition: opacity 0.5s ease-in;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`${expandAnimation} 1s ease-in-out`}
-    `};
 
-`;
-const TextContainerC = styled.div`
-//display: flex;
-width: 1040px;
-height: 112px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 4;
-  opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
-  transition: opacity 0.5s ease-in;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`${expandAnimation} 1s ease-in-out`}
-    `};
 
-`;
 const TextContainer1 = styled.div`
 
 width: 1040px;
 height: 112px;
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -131,13 +96,20 @@ const TextContainer2 = styled.div`
 width: 616px;
 height: 84px;
   position: absolute;
-  top:52%;
+  top:45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 4;
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   transition: opacity 0.5s ease-in;
+    animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`${expandAnimation}  1s ease-in-out forwards`}
+      //2초만에 나타나서 고정이 된다
+      // forwards
+    `};
 
 `;
 
@@ -145,7 +117,7 @@ const TextContainer3 = styled.div`
 width: 1040px;
 height: 112px;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -155,7 +127,7 @@ height: 112px;
   animation: ${({ isAnimation }) =>
     isAnimation &&
     css`
-      ${css`${expandAnimation} 1s ease-in-out`}
+      ${css`${expandAnimation} 0.5s ease-in-out`}
     `};
 `;
 const Text = styled.p`
@@ -175,7 +147,9 @@ font-weight: 900;
 font-size: 120px;
 line-height: 140%;
 color: white;
-animation: ${({ isAnimation }) => (isAnimation ? css`${moveLeft} 3s ease-in-out forwards` : 'none')};
+
+  transition: transform 2s ease-in-out forwards;
+//animation: ${({ isAnimation }) => (isAnimation ? css`${moveLeft} 1s ease-in-out forwards` : 'none')};
 // forwards로 벌리고 난 뒤에 고정
 `;
 
@@ -186,8 +160,8 @@ font-weight: 900;
 font-size: 120px;
 line-height: 140%;
 color: white;
-
-animation: ${({ isAnimation }) => (isAnimation ? css`${moveRight} 3s ease-in-out forwards` : 'none')};
+transition: transform 0.5s ease-in-out forwards;
+//animation: ${({ isAnimation }) => (isAnimation ? css`${moveRight} 1s ease-in-out forwards` : 'none')};
 // forwards로 벌리고 난 뒤에 고정
 `;
 const Textchanged1 = styled.p`
@@ -200,11 +174,7 @@ line-height: 140%;
 
 text-align: center;
 color: #FFFFFF;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`${expandAnimation}  6s ease-in-out both 8s`}
-    `};
+
 
 `;
 const Textchanged2 = styled.p`
@@ -279,12 +249,21 @@ const MovedText = styled.div`
   display: flex;
   width: 1000px;
   position: absolute;
-  top: 106%;  // adjust this value to control the initial position
+  top: 107%;  // adjust this value to control the initial position
   left: 19%;  // position it in the middle of its parent
   transform: translate(-50%, -50%);  // change the origin of transformation
-  animation: ${({ isAnimation }) => (isAnimation ? css`${moveUp} 6s ease-in-out both 2s` : 'none')};
+  transition: transform 0.5s ease-in-out forwards;
+    animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`${expandAnimation}  1s ease-in-out forwards`}
+      //2초만에 나타나서 고정이 된다
+      // forwards
+    `};
+  //animation: ${({ isAnimation }) => (isAnimation ? css`${moveUp} 1s ease-in-out both 0.5s` : 'none')};
   //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다. 
-  // forwards 2s는 added 2s delay
+  // forwards 0.5s는 added 0.5s delay
+  // 위에 태그들 즉 Text1,Text2 가 끝나고 0.5s뒤에 실행
   font-family: 'NanumSquare Neo';
   font-style: normal;
   z-index: 4;
@@ -306,20 +285,24 @@ const HomeFirst = () => {
   const [text3, setText3] = useState(''); // text변화
   const [text1, setText1] = useState('PA'); // 텍스트 1
   const [text2, setText2] = useState('RD'); // 텍스트 2
-const [screenfixed,setscreenfixed] =useState(true);
+  const [isSplitTextVisible, setIsSplitTextVisible] = useState(false);
+
+
+
 
 
   const position = useScrollPosition();
-
+ 
 
   useEffect(() => {
     const absPosition = Math.abs(position);
 
-    if (absPosition < 200) {
+    if (absPosition < 100) {
+      setchanged('aaa');
       setbackcolor(false);
       setIsFixed(true);
       setIsVisible(false);
-    } else if (absPosition < 450) {
+    } else if (position >= 100 && position <650) { 
       setchanged('a');
       setText('PARD');
     
@@ -328,9 +311,10 @@ const [screenfixed,setscreenfixed] =useState(true);
       setbackcolor(true);
    
    
-     
+     //keyframse에 따른 animation 값을 스크롤에 따른 값으로 설정
+     // position으로 설정한다 이를
       
-    } else if (position >= 450 && position < 800) {
+    } else if (position >= 650 && position <950) {
       setchanged('b');
  setisExpanded(true);
       setText1('PA');
@@ -340,28 +324,82 @@ const [screenfixed,setscreenfixed] =useState(true);
       setIsVisible(true);
       setbackcolor(true);
       setIsAnimation(true);
-      setText('실천하는 IT 협업 동아리');
+   // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
 
-    } else if (position >= 800 && position <1100){
+
+    } else if (position >= 950 && position < 1250) {
+      setchanged('c');
+      setisExpanded(true);
+      setText1('PA');
+      setText2('RD');
+      setText3('Y it FORWA');
+           setIsFixed(true);
+           setIsVisible(true);
+           setbackcolor(true);
+           setIsAnimation(true);
+          
+
+
+    }else if (position >= 1250 && position < 1800) {
+      setchanged('cd');
+      setisExpanded(true);
+      setText1('PA');
+      setText2('RD');
+      setText3('Y it FORWA');
+           setIsFixed(true);
+           setIsVisible(true);
+           setbackcolor(true);
+           setIsAnimation(true);
+
+    
+
+    }  else if (position >= 1800 && position < 2200) {
+      setchanged('cdd');
+      setisExpanded(true);
+      setText1('PA');
+      setText2('RD');
+      setText3('Y it FORWA');
+           setIsFixed(true);
+           setIsVisible(true);
+           setbackcolor(true);
+           setIsAnimation(true);
+           setText('실천하는 IT 협업 동아리');
+     setIsSplitTextVisible(true);
+
+    } else if (position >= 2200 && position <2500) {
       setIsVisible(false);
       setbackcolor(true);
+      // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
 
-    }
-     else if (position >= 1100 &&absPosition < 1400) {
-      setchanged('c');
+    } else if (position >= 2500 && position <2900){
+      setchanged('d');
       setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
       setIsFixed(true);
       setIsVisible(true);
       setbackcolor(true);
-    } else {
+
+    }
+    else {
       setText('');
       setIsFixed(false);
       setIsVisible(false);
       setbackcolor(true);
-    }
-  }, [position]);
+    } 
+
+  }, [position,isVisible]);
+
+
+    /*
+    if (position >= 750 && position < 1200 && isVisible) {
+      setIsAnimation(true);
+      setIsVisible(true);
+    } }, [position,isVisible]);
+    */
+  
 
   return (
+  <>
+
     <VideoContainer  isFixed={isFixed}>
       <VideoBackground  autoPlay loop muted>
         <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
@@ -375,7 +413,11 @@ const [screenfixed,setscreenfixed] =useState(true);
         <>
         
 
-            {changed==='a' ?  
+            {changed==='aaa' ?  
+              <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
+              
+                </TextContainer1> 
+                :changed==='a' ?  
               <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
                 <Text isExpanded={isExpanded}>{text}</Text>
                 </TextContainer1> 
@@ -385,19 +427,80 @@ const [screenfixed,setscreenfixed] =useState(true);
                 <>
           
     <SplitTextContainer isVisible={isVisible}>
-      <Text1 isAnimation={isAnimation}>{text1}</Text1>
-      <Text2 isAnimation={isAnimation}>{text2}</Text2>
-      <MovedText isAnimation={isAnimation}>{text3}</MovedText> 
+      <Text1 style={{ transform: `translateX(-${position-650}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${position-650}px)` }}>{text2}</Text2>
+      
     </SplitTextContainer>
-    <TextContainer2 isVisible={isVisible} >
-     
-     <Textchanged1 isAnimation={isAnimation}  isExpanded={isExpanded}>  {text}</Textchanged1>
-</ TextContainer2>
+
+</>
+/*
+:changed==='bc' ?  
+<>
+
+<SplitTextContainer isVisible={isVisible}>
+<Text1 style={{ transform: `translateX(-${position-250}px)` }}>{text1}</Text1>
+<Text2 isAnimation={isAnimation}>{text2}</Text2>
+<MovedText isAnimation={isAnimation}>{text3}</MovedText> 
+</SplitTextContainer>
+
+</>
+*/
+
+:changed==='c' ?  
+<>
+<SplitTextContainer isVisible={isVisible}>
+      <Text1 style={{ transform: `translateX(-${300}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${400}px)` }}>{text2}</Text2>
+      
+    </SplitTextContainer>
+    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
+
+
+{/*isSplitTextVisible && (
+<TextContainer2 isVisible={isVisible}>
+<Textchanged1 isAnimation={isAnimation} isExpanded={isExpanded}>
+{text}
+</Textchanged1>
+</TextContainer2>
+)*/}
 </>
 
+:changed==='cd' ?  
+<>
+<SplitTextContainer isVisible={isVisible}>
+      <Text1 style={{ transform: `translateX(-${300}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${400}px)` }}>{text2}</Text2>
+      <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
+    </SplitTextContainer>
+    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
+
+
+
+</>
+:changed==='cdd' ?  
+<>
+<SplitTextContainer isVisible={isVisible}>
+      <Text1 style={{ transform: `translateX(-${300}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${400}px)` }}>{text2}</Text2>
+      <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
+      
+    
+    </SplitTextContainer>
+    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
+
+{/*위에 컴포넌트 그전 스크롤에서 나타난것들 고정되게 하고 스크롤 내리면 딱 animation으로 나타난다*/}
+{isSplitTextVisible && (
+        <TextContainer2 isAnimation={isAnimation}  isVisible={isVisible}>
+<Textchanged1 isExpanded={isExpanded}>
+{text}
+</Textchanged1>
+</TextContainer2>
+)}
+</>
 :
 
-            changed ==='c' && 
+
+            changed ==='d' && 
             <TextContainer3 isAnimation={isAnimation} isVisible={isVisible}>
             <Textchanged2 isExpanded={isExpanded}>{text}</Textchanged2>
             </TextContainer3>
@@ -410,6 +513,8 @@ const [screenfixed,setscreenfixed] =useState(true);
         </>
       )}
     </VideoContainer>
+
+      </>
   );
 };
 
