@@ -201,17 +201,6 @@ const IconWrap = styled.div`
   margin-right: 175px;
 `;
 
-const Plus = styled.a`
-    display: flex;
-    margin-top: -40px;
-    margin-bottom: 117px;
-    margin-left: 800px;
-    width: 361px;
-    height: 34px;
-    align-items: center;
-    text-decoration: none;
-  `;
-
 const Detail = styled.div`
   white-space: nowrap;
   margin-left:78px;
@@ -234,6 +223,25 @@ height: 22px;
 margin-right: -50px;
 
 `
+
+const Plus = styled.div`
+    display: flex;
+    margin-top: -40px;
+    margin-bottom: 117px;
+    margin-left: 800px;
+    width: 361px;
+    height: 34px;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover{
+      ${Detail}{ 
+      }
+
+      ${Arrow}{ 
+      }
+    }
+  `;
 
 function RecruitingSecond() {
   return (
