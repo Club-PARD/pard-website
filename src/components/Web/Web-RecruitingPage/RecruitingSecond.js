@@ -204,7 +204,7 @@ const Plus = styled.a`
 
 const Detail = styled.div`
   white-space: nowrap;
-  margin-left:63px;
+  margin-left:78px;
   font-family: 'NanumSquare Neo';
   font-style: normal;
   font-weight: ${(props) => props.theme.fontWeights.Header6};
@@ -215,14 +215,12 @@ const Detail = styled.div`
 `
 
 const ArrowDiv = styled.div`
-margin-left: 50px;
+margin-left: 15px;
 margin-top: 4px; 
 `
 const Arrow = styled.img`
 width: 15px;
 height: 22px;
-margin-right: -75px;
-
 `
 
 function RecruitingSecond() {
@@ -292,8 +290,8 @@ function RecruitingSecond() {
             </Box>
           </Container>
           <Plus>
-            <ArrowDiv><Arrow src={Vec} /></ArrowDiv>
             <Detail>정규 활동일정 자세히 보기</Detail>
+            <ArrowDiv><Arrow src={Vec} /></ArrowDiv>
           </Plus>
           {/* <Form>
             <ArrowDiv><Arrow src={Vec} /></ArrowDiv>
