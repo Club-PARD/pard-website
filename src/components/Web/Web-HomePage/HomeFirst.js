@@ -52,11 +52,11 @@ const VideoBackground = styled.video`
   z-index: -1;
 `;
 const SplitTextContainer = styled.div`
-  position: fixed;
 
+position: absolute;
 width: 1040px;
 height: 112px;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -75,7 +75,7 @@ const TextContainer1 = styled.div`
 width: 1040px;
 height: 112px;
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -95,13 +95,20 @@ const TextContainer2 = styled.div`
 width: 616px;
 height: 84px;
   position: absolute;
-  top:55%;
+  top:45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 4;
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   transition: opacity 0.5s ease-in;
+    animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`${expandAnimation}  1s ease-in-out forwards`}
+      //2초만에 나타나서 고정이 된다
+      // forwards
+    `};
 
 `;
 
@@ -109,7 +116,7 @@ const TextContainer3 = styled.div`
 width: 1040px;
 height: 112px;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -166,13 +173,7 @@ line-height: 140%;
 
 text-align: center;
 color: #FFFFFF;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`${expandAnimation}  1s ease-in-out forwards`}
-      //2초만에 나타나서 고정이 된다
-      // forwards
-    `};
+
 
 `;
 const Textchanged2 = styled.p`
@@ -270,7 +271,6 @@ const MovedText = styled.div`
   line-height: 140%;
   color: white;
 `;
-
 
 
 const HomeFirst = () => {
@@ -397,6 +397,8 @@ const HomeFirst = () => {
   
 
   return (
+  <>
+
     <VideoContainer  isFixed={isFixed}>
       <VideoBackground  autoPlay loop muted>
         <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
@@ -480,13 +482,15 @@ const HomeFirst = () => {
       <Text1 style={{ transform: `translateX(-${300}px)` }}>{text1}</Text1>
       <Text2 style={{ transform: `translateX(${400}px)` }}>{text2}</Text2>
       <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
+      
+    
     </SplitTextContainer>
     {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
 
 {/*위에 컴포넌트 그전 스크롤에서 나타난것들 고정되게 하고 스크롤 내리면 딱 animation으로 나타난다*/}
 {isSplitTextVisible && (
-<TextContainer2 isVisible={isVisible}>
-<Textchanged1 isAnimation={isAnimation} isExpanded={isExpanded}>
+        <TextContainer2 isAnimation={isAnimation}  isVisible={isVisible}>
+<Textchanged1 isExpanded={isExpanded}>
 {text}
 </Textchanged1>
 </TextContainer2>
@@ -508,6 +512,8 @@ const HomeFirst = () => {
         </>
       )}
     </VideoContainer>
+
+      </>
   );
 };
 
