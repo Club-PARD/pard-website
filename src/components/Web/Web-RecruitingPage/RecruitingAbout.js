@@ -36,7 +36,7 @@ font-size: ${props => props.theme.Web_fontSizes.Header6};
 font-weight: ${props => props.theme.fontWeights.Header6};
 color: ${props => (props.selected) ? '#64C59A' : '#fff'};
 font-family: 'NanumSquare Neo';
-margin-bottom: 35px;
+margin-bottom: 45px;
 display: flex;
 align-items: center;
 margin-right: 100px;
@@ -82,8 +82,6 @@ line-height: 140%;
 z-index: -1;
 color: #1F1F1F;
 white-space: pre-wrap;
-;
-
 `;
 const Button = styled.div`
 width: 184px;
