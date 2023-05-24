@@ -169,7 +169,7 @@ function RecruitingAbout() {
       question: [{
         id: 1,
         quest: 'Q. 세미나 말고 해커톤만 참여 가능한가요?',
-        answer: <>Pay it forward를 실천하기 위해서는<br/>
+        answer: <>A. Pay it forward를 실천하기 위해서는<br/>
         &nbsp; &nbsp; &nbsp;활동기수로 참여 하셔야 합니다!
         </>,
         select: false
