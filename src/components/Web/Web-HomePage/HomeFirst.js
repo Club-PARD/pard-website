@@ -299,7 +299,7 @@ const HomeFirst = () => {
    
      
       
-    } else if (position >= 250 && position < 750) {
+    } else if (position >= 250 && position < 1450) {
       setchanged('b');
  setisExpanded(true);
       setText1('PA');
@@ -312,7 +312,7 @@ const HomeFirst = () => {
    // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
 
 
-    } else if (position >= 750 && position < 1000) {
+    } else if (position >= 1450 && position < 2100) {
       setchanged('c');
  setisExpanded(true);
  setText1('PA');
@@ -325,12 +325,12 @@ const HomeFirst = () => {
       setText('실천하는 IT 협업 동아리');
 setIsSplitTextVisible(true);
 
-    } else if (position >= 1000 && position <1200){
+    } else if (position >= 2100 && position <2300){
       setIsVisible(false);
       setbackcolor(true);
 
     }
-     else if (position >= 1200 &&absPosition < 1380) {
+     else if (position >= 2300 &&absPosition < 2800) {
       setchanged('d');
       setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
       setIsFixed(true);
