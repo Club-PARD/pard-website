@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 
 const VideoContainer = styled.div`
 
-  position:${({ isFixed }) => (isFixed ? 'fixed' : 'relative')};
+  position:${({ isFixed }) => (isFixed ? 'sticky' : 'relative')};
+  top:0%;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -301,7 +302,7 @@ const HomeFirst = () => {
       setbackcolor(false);
       setIsFixed(true);
       setIsVisible(false);
-    } else if (position >= 100 && position <450) { 
+    } else if (position >= 100 && position <650) { 
       setchanged('a');
       setText('PARD');
     
@@ -313,7 +314,7 @@ const HomeFirst = () => {
      //keyframse에 따른 animation 값을 스크롤에 따른 값으로 설정
      // position으로 설정한다 이를
       
-    } else if (position >= 450 && position <750) {
+    } else if (position >= 650 && position <950) {
       setchanged('b');
  setisExpanded(true);
       setText1('PA');
@@ -326,7 +327,7 @@ const HomeFirst = () => {
    // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
 
 
-    } else if (position >= 750 && position < 1050) {
+    } else if (position >= 950 && position < 1250) {
       setchanged('c');
       setisExpanded(true);
       setText1('PA');
@@ -339,7 +340,7 @@ const HomeFirst = () => {
           
 
 
-    }else if (position >= 1050 && position < 1600) {
+    }else if (position >= 1250 && position < 1800) {
       setchanged('cd');
       setisExpanded(true);
       setText1('PA');
@@ -352,7 +353,7 @@ const HomeFirst = () => {
 
     
 
-    }  else if (position >= 1600 && position < 2000) {
+    }  else if (position >= 1800 && position < 2200) {
       setchanged('cdd');
       setisExpanded(true);
       setText1('PA');
@@ -365,12 +366,12 @@ const HomeFirst = () => {
            setText('실천하는 IT 협업 동아리');
      setIsSplitTextVisible(true);
 
-    } else if (position >= 2000 && position <2300) {
+    } else if (position >= 2200 && position <2500) {
       setIsVisible(false);
       setbackcolor(true);
       // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
 
-    } else if (position >= 2300 && position <2700){
+    } else if (position >= 2500 && position <2900){
       setchanged('d');
       setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
       setIsFixed(true);
@@ -426,8 +427,8 @@ const HomeFirst = () => {
                 <>
           
     <SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${position-450}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${position-450}px)` }}>{text2}</Text2>
+      <Text1 style={{ transform: `translateX(-${position-650}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${position-650}px)` }}>{text2}</Text2>
       
     </SplitTextContainer>
 
