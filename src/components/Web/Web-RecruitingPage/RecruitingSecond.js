@@ -80,7 +80,7 @@ const Header5 = styled.div`
 `;
 
 const TextWrap = styled.div`
-  margin-left: 30px;
+  margin-left: -42px;
   text-align: left;
 `
 const Body3 = styled.div`
@@ -309,17 +309,17 @@ function RecruitingSecond() {
           <TextWrap>
             <Container>
               <Number><span className="highlight">01</span></Number>
-              <Body3>접수기간이 지난 후에는 작성 중 이었던 지원서가 있었더라도 접수가 어려워요!<span className="highlight"> 꼭 작성 완료 후 제출 버튼</span> 을 눌러 제출해주세요.</Body3>
+              <Body3><span className="highlight">원서 접수 마감 이후</span>접수된 지원 서류 및 사전 과제는</Body3>
             </Container>
 
             <Container>
               <Number><span className="highlight">02</span></Number>
-              <Body3>기획, 디자인 파트의 사전과제는 지원서 접수 시작일인<span className="highlight">n월n일</span>에 기획,디자인 파트의 <span className="highlight">노션 페이지</span>에 공개됩니다!</Body3>
+              <Body3>사전과제는 지원서 접수 시작일인<span className="highlight">n월n일</span>에 기획,디자인 파트의 <span className="highlight">노션 페이지</span>에 공개됩니다.(개발 파트는   사전과제 없음)</Body3>
             </Container>
 
             <Container>
               <Number><span className="highlight">03</span></Number>
-              <Body3>지원서 합격/불합격 발표는 지원서 접수 시 <span className="highlight">기입해주신 번호로 문자</span> 안내됩니다.</Body3>
+              <Body3>지원서 합격/불합격 발표는 지원서 접수 시 <span className="highlight">기입해주신 전화번호로 문자</span> 안내됩니다.</Body3>
             </Container>
 
             <Container>
