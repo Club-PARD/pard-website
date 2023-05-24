@@ -201,6 +201,17 @@ const IconWrap = styled.div`
   margin-right: 175px;
 `;
 
+const Plus = styled.a`
+    display: flex;
+    margin-top: -40px;
+    margin-bottom: 117px;
+    margin-left: 800px;
+    width: 361px;
+    height: 34px;
+    align-items: center;
+    text-decoration: none;
+  `;
+
 const Detail = styled.div`
   white-space: nowrap;
   margin-left:78px;
@@ -223,25 +234,6 @@ height: 22px;
 margin-right: -50px;
 
 `
-
-const Plus = styled.div`
-    display: flex;
-    margin-top: -40px;
-    margin-bottom: 117px;
-    margin-left: 800px;
-    width: 361px;
-    height: 34px;
-    align-items: center;
-    text-decoration: none;
-
-    &:hover{
-      ${Detail}{ 
-      }
-
-      ${Arrow}{ 
-      }
-    }
-  `;
 
 function RecruitingSecond() {
   return (
@@ -322,7 +314,7 @@ function RecruitingSecond() {
 
             <Container>
               <Number><span className="highlight">02</span></Number>
-              <Body3>사전과제는 지원서 접수 시작일인<span className="highlight">n월n일</span>에 기획,디자인 파트의 <span className="highlight">노션 페이지</span>에 공개됩니다.(개발 파트는   사전과제 없음)</Body3>
+              <Body3>사전과제는 지원서 접수 시작일인<span className="highlight"> n월n일</span>에 기획,디자인 파트의 <span className="highlight">노션 페이지</span>에 공개됩니다.(개발 파트는   사전과제 없음)</Body3>
             </Container>
 
             <Container>
@@ -332,7 +324,7 @@ function RecruitingSecond() {
 
             <Container>
               <Number><span className="highlight">04</span></Number>
-              <Body3>면접은 <span className="highlight">지원자 2명, 운영진 4명(파트장,회장단)</span>과 함께<span className="highlight">다대다로 50분</span>동안 진행되며,<br></br>면접 시간은 지원서 합격자에 한하여 개별적으로 문자 안내 드립니다.</Body3>
+              <Body3>면접은 <span className="highlight">지원자 2명, 운영진 4명(파트장,회장단)</span>과 함께<span className="highlight"> 다대다로 50분</span>동안 진행되며,<br></br>면접 시간은 지원서 합격자에 한하여 개별적으로 문자 안내 드립니다.</Body3>
             </Container>
           </TextWrap>
         </ThemeProvider>
