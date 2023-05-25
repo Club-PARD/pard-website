@@ -2,6 +2,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import Vec from '../../../assets/img/vector.png';
 import React from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
 
 
 const PartDiv = styled.div`
@@ -201,17 +202,6 @@ const IconWrap = styled.div`
   margin-right: 175px;
 `;
 
-const Plus = styled.a`
-    display: flex;
-    margin-top: -40px;
-    margin-bottom: 117px;
-    margin-left: 800px;
-    width: 361px;
-    height: 34px;
-    align-items: center;
-    text-decoration: none;
-  `;
-
 const Detail = styled.div`
   white-space: nowrap;
   margin-left:78px;
@@ -228,12 +218,32 @@ const ArrowDiv = styled.div`
 /* margin-left: 50px; */
 margin-top: 4px; 
 `
-const Arrow = styled.img`
+const Arrow = styled.svg`
 width: 15px;
 height: 22px;
-margin-right: -50px;
-
+margin-right: -40px;
 `
+
+const Plus = styled.div`
+    display: flex;
+    margin-top: -40px;
+    margin-bottom: 117px;
+    margin-left: 800px;
+    width: 361px;
+    height: 34px;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover{
+      ${Detail}{ 
+        color: #64C59A;
+      }
+      ${Arrow}{
+        filter: opacity(0.5) drop-shadow(0 0 0 #228b22);
+      }
+    }
+  `;
+
 
 function RecruitingSecond() {
   return (
@@ -303,7 +313,12 @@ function RecruitingSecond() {
           </Container>
           <Plus>
             <Detail>정규 활동일정 자세히 보기</Detail>
-            <ArrowDiv><Arrow src={Vec} /></ArrowDiv>
+            <ArrowDiv>
+              <Arrow viewBox="0 0 15 22">
+                <path d="M0.5 21.1992L0.5 14.9792L14.5 8.13497V14.355L0.5 21.1992Z" stroke="white" />
+                <path d="M14.5 13.8652L14.5 7.64521L0.500002 0.800987V7.02098L14.5 13.8652Z" stroke="white" />
+              </Arrow>
+            </ArrowDiv>
           </Plus>
           <Header5>지원 방법 및 유의사항</Header5>
           <TextWrap>
