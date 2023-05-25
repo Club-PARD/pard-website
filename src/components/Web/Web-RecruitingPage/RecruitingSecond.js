@@ -32,7 +32,7 @@ const Header7 = styled.div`
   font-style: normal;
   line-height: 140%;
   margin-bottom: 20px;
-  margin-right: 495px;
+  margin-right: 520px;
 `;
 
 const Header61 = styled.div`
@@ -42,7 +42,7 @@ const Header61 = styled.div`
   font-family: 'NanumSquare Neo';
   font-style: normal;
   line-height: 140%;
-  margin-right: 470px;
+  margin-right: 495px;
   text-align: left;
   margin-bottom: 55px;
 `;
@@ -50,6 +50,7 @@ const Header61 = styled.div`
 const Container = styled.div`
   display: flex;
   margin-bottom: 40px;
+  margin-right: 25px;
   `;
 
 const Box = styled.div`
@@ -64,7 +65,7 @@ const Box = styled.div`
   border: 2px solid #64C59A;
   border-radius: 20px;
   margin-left: 30px;
-  margin-right: 7px;
+  margin-right: 7.3px;
   margin-bottom: 25px;
   `
 
@@ -75,7 +76,7 @@ const Header5 = styled.div`
   font-family: 'NanumSquare Neo';
   font-style: normal;
   line-height: 140%;
-  margin-right: 845px;
+  margin-right: 870px;
   text-align: left;
   margin-bottom: 40px;
 `;
