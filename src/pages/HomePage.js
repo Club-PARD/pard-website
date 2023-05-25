@@ -35,6 +35,7 @@ function HomePage() {
     return (
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
+
                 <div>
                     <NavBarHome />
                     <HomeFirst />

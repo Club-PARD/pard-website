@@ -6,13 +6,12 @@ import Vec_p from '../../../assets/img/vector_purple.png';
 
 const Margin = styled.div`
 display: flex;
-margin: 0px auto;
-
+margin: 0 auto;
 `
 const DownLogo = styled.img`
 width: 80px;
 height: 63px;
-padding-top: 100px;
+padding-top: 150px;
 `
 const LogoDiv = styled.div`
 width: 100%;
@@ -192,7 +191,7 @@ color: #FFFFFF;
   }
 
 `
-const Here = styled(Link)`
+const Here = styled.a`
 
 font-family: 'NanumSquare Neo';
 font-style: normal;
@@ -217,10 +216,7 @@ height: 21px;
 `
 
 
-const InformBox1 = styled.a.attrs({
-    href: "mailto:official@we-pard.com",
-    target: "_blank",
-  })`
+const InformBox1 = styled.a`
     display: flex;
     margin-top: 33px;
     width: 361px;
@@ -268,7 +264,7 @@ const Ask = () => {
                 </Askedstyled>
                 <Informationstyle>
                     <Lineup />
-                    <InformBox1>
+                    <InformBox1 href="mailto:official@we-pard.com">
                         <Mail>메일</Mail>
                         <EMail>official@we-pard.com</EMail>
                         <Vectorbox2><Vector src={Vec} /></Vectorbox2>
@@ -280,7 +276,7 @@ const Ask = () => {
                     </InformBox2>
                     <Linedown />
                     <Business>비지니스 문의는 &nbsp;
-                        <Here to='/'>여기로!</Here>
+                        <Here href="mailto:official@we-pard.com">여기로!</Here>
                     </Business>
                 </Informationstyle>
             </Margin>

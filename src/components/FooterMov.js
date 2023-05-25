@@ -9,11 +9,12 @@ const FooterMovWrapper = styled.div`
     height: 222px;
     background-color: #2A2A2A;
     line-height: 180%;
-    margin :0 auto
+    margin :0 auto;
+
 `
 const TopComponent = styled.div`
     display : flex; 
-    margin-top: 35px;
+    margin-top: 0px;
 `
 const PardLogo = styled.div`
     img {
@@ -22,6 +23,7 @@ const PardLogo = styled.div`
     }
     margin-right: 12px; 
     margin-left: 9px;
+    margin-top: 20px;
 `
 const Rules = styled.a`
     /* 회칙 > */
@@ -42,6 +44,7 @@ const Rules = styled.a`
     
     text-decoration:none;
     color : #FFFFFF;
+    margin-top: 35px;
 `;
 
 const Information = styled.div`
@@ -196,7 +199,7 @@ function FooterMov() {
                 <PardLogo>
                     <img src={require("../assets/img/Logo.png")} alt="Logo" />
                 </PardLogo>
-                <Rules href="https://brunch.co.kr/" target="_blank">
+                <Rules href="https://pardhgu.notion.site/PARD-v1-7c576d9d8d42441790ad10c23b35c1e3" target="_blank">
                     회칙{' >'}
                 </Rules>
             </TopComponent>
@@ -205,9 +208,9 @@ function FooterMov() {
                 ⓒPARD. 2023.All rights reserved.
             </Information>
             <Links>
-                <EmailLink href="http://naver.com" target="_blank">Email</EmailLink>
+                <EmailLink href="mailto:official@we-pard.com">Email</EmailLink>
                 <Instagram href="https://www.instagram.com/official_pard_/" target="_blank">Instagram</Instagram>
-                <Youtube href="https://www.youtube.com/" target="_blank">Youtube</Youtube>
+                <Youtube href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA" target="_blank">Youtube</Youtube>
                 <Disquiet href="https://disquiet.io/club/pard" target="_blank">Disquiet</Disquiet>
             </Links>
         </FooterMovWrapper>

@@ -12,13 +12,20 @@ const NavBarWrapper = styled.nav`
  background-color: ${props => props.isScrolled ? (props.scrollPosition >= 1000 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'};
   height: 70px;
   display: flex;
-  align-items: center;
   justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
 `;
+
+const NavDiv = styled.div`
+  min-width: 1600px;
+  max-width: 2000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`
 
 const Subtitle1 = styled.p`
   font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
@@ -35,15 +42,15 @@ const Logo = styled.div`
     height: 45px;
     width: 140px;
   }
-  margin-left: 165px;
-  margin-right: 500px;
+  /* margin-left: 165px; */
+  /* margin-right: 500px; */
 `;
 
 const NavLinks = styled.ul`
   display: flex;
   align-items: center;
   list-style-type: none;
-  margin-right: 184px;
+  margin-right: 7px;
 `;
 
 const NavItem = styled.li`
@@ -71,6 +78,7 @@ const NavBar = () => {
     <Div>
       <NavBarWrapper isScrolled={scrollPosition >= 30} scrollPosition={scrollPosition}>
         <ThemeProvider theme={theme}>
+          <NavDiv>
           <Logo>
             <Link to="/">
               <img src={require("../assets/img/Logo.png")} alt="Logo" />
@@ -98,6 +106,7 @@ const NavBar = () => {
               </Link>
             </NavItem>
           </NavLinks>
+          </NavDiv>
         </ThemeProvider>
       </NavBarWrapper>
     </Div>

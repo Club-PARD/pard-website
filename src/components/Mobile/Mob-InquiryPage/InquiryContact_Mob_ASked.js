@@ -60,10 +60,7 @@ border: 1px solid #5262F5;
 
 `
 
-const Informbox1 = styled.a.attrs({
-    href: "mailto:official@we-pard.com",
-    target: "_blank",
-})`
+const Informbox1 = styled.a`
     text-decoration: none;
     display: flex;
     width: 326px;
@@ -247,7 +244,7 @@ const Askmobile = () => {
                 <Informbox>
                     <Lineup />
                     <Informbox1
-                        onClick={handleInformbox1Click}
+                        href="mailto:official@we-pard.com"
                         onMouseEnter={() => handleInformbox1Hover(true)}
                         onMouseLeave={() => handleInformbox1Hover(false)}
                     >

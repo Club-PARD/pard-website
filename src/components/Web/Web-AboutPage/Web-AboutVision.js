@@ -19,7 +19,7 @@ const Header7 = styled.div`
   color: black;
   font-family: 'NanumSquare Neo';
   line-height: 140%;
-  margin-bottom: 97px;
+  margin-bottom: 60px;
   white-space: pre-line;
   `;
 

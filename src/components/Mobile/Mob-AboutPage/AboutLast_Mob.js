@@ -5,7 +5,7 @@ import AboutFrame from '../../../assets/img/About_Mob_Bar_Last.png';
 import React from 'react';
 
 const PartDiv = styled.div`
-    height: 700px;
+    height: 500px;
     width: 375px;
     background: #FFFFFF;
     display: flex;
@@ -36,6 +36,7 @@ const Header7 = styled.div`
   margin-bottom: 58px;
   white-space: pre-line;
   text-align : center;
+  /* margin-top: 100px; */
   `;
 
 const Shape1 = styled.div`
@@ -102,69 +103,10 @@ const Button1 = styled.button`
     height: 52px;
     background-color: #FF5C00;
     justify-content: center;
-    margin-bottom: 168px;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
   `
-const Bottom = styled.div`
-margin-right: 18.5px;
-  width: 393.5px;
-  height: 40px;
-  background: #FF5C00;
-`
-
-const Vector1 = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: none;
-  margin-left: 29px;
-  margin-top: 10px;
-`
-
-const Vector2 = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: none;
-  margin-left: -10px;
-  margin-top: 10px;
-`
-
-const Vector3 = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: none;
-  margin-left: 119.5px;
-  margin-top: 10px;
-`
-
-const Vector4 = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: none;
-  margin-left: -10px;
-  margin-top: 10px;
-`
-
-const Vector5 = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: none;
-  margin-left: 123px;
-  margin-top: 10px;
-`
-
-const Vector6 = styled.svg`
-  width: 20px;
-  height: 20px;
-  fill: none;
-  margin-left: -10px;
-  margin-top: 10px;
-`
-
-const StyledPath = styled.path`
-  stroke: white;
-`;
 
 const AboutFrame1 = styled.img`
     height: 40px;
