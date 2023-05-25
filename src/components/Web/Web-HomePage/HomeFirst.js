@@ -3,12 +3,18 @@ import React, { useState, useEffect } from 'react';
 
 const VideoContainer = styled.div`
 
-  position:${({ isFixed }) => (isFixed ? 'sticky' : 'relative')};
-  top:0%;
+  /* position:${({ isFixed }) => (isFixed ? 'sticky' : 'relative')}; */
+  position: sticky;
+  top:0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.4);
+`;
+
+const DIVVVV = styled.div`
+  display: inline-block;
+  height: 4000px;
 `;
 
 function useScrollPosition() {
@@ -399,7 +405,7 @@ const HomeFirst = () => {
 
   return (
   <>
-
+<DIVVVV>
     <VideoContainer  isFixed={isFixed}>
       <VideoBackground  autoPlay loop muted>
         <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
@@ -513,7 +519,7 @@ const HomeFirst = () => {
         </>
       )}
     </VideoContainer>
-
+    </DIVVVV>
       </>
   );
 };
