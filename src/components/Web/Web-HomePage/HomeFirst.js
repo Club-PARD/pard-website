@@ -67,7 +67,7 @@ const SplitTextContainer = styled.div`
 position: absolute;
 width: 1040px;
 height: 112px;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -86,7 +86,7 @@ const TextContainer1 = styled.div`
 width: 1040px;
 height: 112px;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -106,7 +106,7 @@ const TextContainer2 = styled.div`
 width: 616px;
 height: 84px;
   position: absolute;
-  top:45%;
+  top:55%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -121,7 +121,7 @@ const TextContainer3 = styled.div`
 width: 1040px;
 height: 112px;
   position: absolute;
-  top: 35%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -218,7 +218,7 @@ const DownLogo = styled.img`
 
 const LogoDiv = styled.div`
   position: absolute;
-  top: 60%;
+  top: 66%;
   width: 100%;
   justify-content: center;
   display: flex;
@@ -508,7 +508,9 @@ const HomeFirst = () => {
 {text}
 </Textchanged1>
 </TextContainer2>
-
+{/*컴포넌트를 감싸는 조건문으로 설정하니까 animation이 안먹었음
+근데 애초에 택스트에 애니메이션을 걸어놔야 되는 것 같기도 하고
+그래서 Textchanged1에 애니메이션 넣음*/}
 </>
 :
 
