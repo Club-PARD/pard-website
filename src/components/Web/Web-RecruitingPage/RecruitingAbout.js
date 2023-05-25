@@ -71,7 +71,7 @@ const Answer = styled.div`
 background-color: #64C59A;
 margin-top: -40px;
 margin-bottom: 30px;
-padding: 13px 0px 8px 35px;
+padding: 13px 0px 4px 35px;
 height: 92px;
 display: flex;
 align-items: center;
