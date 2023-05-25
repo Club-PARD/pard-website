@@ -2,6 +2,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React, { useState, useEffect, useRef } from 'react';
 import leftvector from '../../../assets/img/RPLeftButton.svg';
+import noleftvector from '../../../assets/img/RLeftButton.svg';
+import norightvector from '../../../assets/img/RRightButton.svg';
 import rightvector from '../../../assets/img/RPRightButton.svg';
 import review1Image from '../../../assets/img/Review조민.svg';
 import review2Image from '../../../assets/img/Review배예진.svg';
@@ -108,8 +110,8 @@ const Window = styled.div`
   overflow: hidden;
 `;
 const CardDiv = styled.div`
-  margin-left: 16px;
-  margin-right: 16px;
+  // margin-left: 16px;
+  // margin-right: 16px;
   cursor: pointer;
 `;
 const Image = styled.div`
@@ -123,13 +125,19 @@ const Image = styled.div`
   flex: none;
 `;
 
-const BTN = styled.div`
+const BTNL = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
   font-size: 3.3rem;
   color: gray;
-  padding: 0 10px;
+`;
+const BTNR = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 3.3rem;
+  color: gray;
 `;
 
 const FlexBox = styled.div`
@@ -144,32 +152,32 @@ function RecruitingReview() {
       src: review1Image,
       title: '1기 디자인파트 조민님의 연합 세미나 후기',
       link: 'https://disquiet.io/@hguhimin/makerlog/9020',
-      word: <>"그만큼 '파드'가 간절했다. 왜냐하면 나는 잘하고 싶었고 성장하고 싶었고 <br/>
-      더 대단한 사람들과 함게하고 싶었기 때문이다."</>
+      word: <>"그만큼 '파드'가 간절했다. 왜냐하면 나는 잘하고 싶었고 성장하고 싶었고 <br />
+        더 대단한 사람들과 함게하고 싶었기 때문이다."</>
     },
     {
       id: 2,
       src: review2Image,
       title: '1기 기획파트 배예진님의 기획 세미나 후기',
       link: 'https://disquiet.io/@yepotter/makerlog/8795',
-      word: <>“세미나 전의 나는 기획자, 프로젝트 매니저는 뭐하는 사람인가요? 라는 질문에 <br/>
-      확실한 대답을 하지 못했다면, 지금은 명확하게 말할 수 있다.”</>
+      word: <>“세미나 전의 나는 기획자, 프로젝트 매니저는 뭐하는 사람인가요? 라는 질문에 <br />
+        확실한 대답을 하지 못했다면, 지금은 명확하게 말할 수 있다.”</>
     },
     {
       id: 3,
       src: review3Image,
       title: '1기 웹파트 정승훈님의 html/css 스터디 후기',
       link: 'https://disquiet.io/@jshooni/makerlog/7690',
-      word: <>“스터디를 열어준 PARD에 감사하고, 앞으로 더 열심히 공부하여<br/>
-      컴맹이 훌륭한 개발자가 되는 과정을 보여주겠다.“</>
+      word: <>“스터디를 열어준 PARD에 감사하고, 앞으로 더 열심히 공부하여<br />
+        컴맹이 훌륭한 개발자가 되는 과정을 보여주겠다.“</>
     },
     {
       id: 4,
       src: review4Image,
       title: "1기 앱파트 김민혁님의 ‘함께자라기' 북 스터디 후기",
       link: 'https://disquiet.io/@alsgur/makerlog/7747',
-      word: <>“사람과의 관계 문제 때문에 프로젝트가 힘들었던 전날의 예시들을 나누면서<br/>
-      논리성과 객관성에 대한 환상이 협업에 정말로 작용하는구나 라는 것을 느꼈다.”</>
+      word: <>“사람과의 관계 문제 때문에 프로젝트가 힘들었던 전날의 예시들을 나누면서<br />
+        논리성과 객관성에 대한 환상이 협업에 정말로 작용하는구나 라는 것을 느꼈다.”</>
     }
   ]);
   const [current, setCurrent] = useState(0);
@@ -180,7 +188,7 @@ function RecruitingReview() {
 
   const moveSlide = (i) => {
     let nextIndex = current + i;
-    
+
     if (nextIndex < 0) nextIndex = cardSize.current - 1;
     else if (nextIndex >= cardSize.current) nextIndex = 0;
 
@@ -207,19 +215,50 @@ function RecruitingReview() {
           <Header6>여전히 지원하기 망설여지나요?  먼저 파드를 경험한 1기 파디들의 진짜 이야기를 들어보세요!</Header6>
           <Container>
             <Slide>
-              <BTN onClick={() => { moveSlide(-1); }}><LeftVector src={leftvector}/></BTN>
+              {current > 0 && (
+                <BTNL onClick={() => { moveSlide(-1); }} style={{ marginRight: '32px' }}>
+                  <LeftVector src={leftvector} />
+                </BTNL>
+              )}
+              {current === 0 && (
+                <BTNL>
+                  <LeftVector src={noleftvector} />
+                </BTNL>
+              )}
               <Window>
+              {current === 0 && (
                 <FlexBox style={style}>
-                {cards.current.map((card) =>  (
-                  <CardDiv key={card.id} onClick={() => handleCardClick(card.link)}>
-                    <Image style={{ backgroundImage: `url(${card.src})` }}></Image>
-                    <Header6>{card.title}</Header6>
-                    <Body2>{card.word}</Body2>
-                  </CardDiv>
-                ))}
+                  {cards.current.map((card) => (
+                    <CardDiv key={card.id} onClick={() => handleCardClick(card.link)} style={{ marginLeft: '32px' }}>
+                      <Image style={{ backgroundImage: `url(${card.src})` }}></Image>
+                      <Header6>{card.title}</Header6>
+                      <Body2>{card.word}</Body2>
+                    </CardDiv>
+                  ))}
                 </FlexBox>
+              )}
+              {current >= 1 && (
+                <FlexBox style={style}>
+                  {cards.current.map((card) => (
+                    <CardDiv key={card.id} onClick={() => handleCardClick(card.link)} style={{ marginRight: '32px' }}>
+                      <Image style={{ backgroundImage: `url(${card.src})` }}></Image>
+                      <Header6>{card.title}</Header6>
+                      <Body2>{card.word}</Body2>
+                    </CardDiv>
+                  ))}
+                </FlexBox>
+              )}
               </Window>
-              <BTN onClick={() => { moveSlide(1); }}><RightVector src={rightvector}/></BTN>
+              {current < 1 && (
+                <BTNR onClick={() => { moveSlide(1); }} style={{ marginLeft: '32px' }}>
+                  <RightVector src={rightvector} />
+                </BTNR>
+              )}
+              {current >= 1 && (
+                <BTNR>
+                  <RightVector src={norightvector} />
+                </BTNR>
+              )}
             </Slide>
           </Container>
           <DivButton>
