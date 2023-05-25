@@ -5,10 +5,10 @@ import leftvector from '../../../assets/img/RPLeftButton.svg';
 import noleftvector from '../../../assets/img/RLeftButton.svg';
 import norightvector from '../../../assets/img/RRightButton.svg';
 import rightvector from '../../../assets/img/RPRightButton.svg';
-import review1Image from '../../../assets/img/Review조민.svg';
-import review2Image from '../../../assets/img/Review배예진.svg';
-import review3Image from '../../../assets/img/Review정승훈.svg';
-import review4Image from '../../../assets/img/Review김민혁.svg';
+import review1Image from '../../../assets/img/Review조민.png';
+import review2Image from '../../../assets/img/Review배예진.png';
+import review3Image from '../../../assets/img/Review정승훈.png';
+import review4Image from '../../../assets/img/Review김민혁.png';
 
 const PartDiv = styled.div`
   height: 950px;
