@@ -58,6 +58,7 @@ z-index: 3;
 position: relative;
 cursor: pointer;
 :hover{
+  font-weight: bold;
   color: #64C59A;
 }
 `;
