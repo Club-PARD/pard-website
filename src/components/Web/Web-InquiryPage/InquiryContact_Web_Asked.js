@@ -11,13 +11,15 @@ margin: 0 auto;
 const DownLogo = styled.img`
 width: 80px;
 height: 63px;
-padding-top: 100px;
+padding-top: 150px;
 `
 const LogoDiv = styled.div`
 width: 100%;
 justify-content: center;
 display: flex;
+margin-top: 20px;
 `
+
 
 const Askedstyled = styled.div`
 white-space: nowrap;

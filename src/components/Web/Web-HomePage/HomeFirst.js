@@ -3,13 +3,26 @@ import React, { useState, useEffect } from 'react';
 
 const VideoContainer = styled.div`
 
-  position:${({ isFixed }) => (isFixed ? 'sticky' : 'relative')};
-  top:0%;
+  /* position:${({ isFixed }) => (isFixed ? 'sticky' : 'relative')}; */
+  position: sticky;
+  top:0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  min-width: 1440px; // 아무리 줄여도 1440px로 유지됨
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: ${({ isColor }) => (isColor ? ' rgba(0, 0, 0, 0.4)' : ' rgba(0, 0, 0, 0.4)')};
+ ;
 `;
+
+//inline-block으로 stickybox를 위로 올리는 역할을한다.
+const DIVVVV = styled.div`
+
+  display: inline-block;
+  height: 4000px;
+  width: 100%;
+`;
+
+
 
 function useScrollPosition() {
   const [scrollPos, setScrollPos] = useState(0);
@@ -57,7 +70,7 @@ const SplitTextContainer = styled.div`
 position: absolute;
 width: 1040px;
 height: 112px;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -76,7 +89,7 @@ const TextContainer1 = styled.div`
 width: 1040px;
 height: 112px;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -96,20 +109,14 @@ const TextContainer2 = styled.div`
 width: 616px;
 height: 84px;
   position: absolute;
-  top:45%;
+  top:55%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 4;
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   transition: opacity 0.5s ease-in;
-    animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`${expandAnimation}  1s ease-in-out forwards`}
-      //2초만에 나타나서 고정이 된다
-      // forwards
-    `};
+
 
 `;
 
@@ -117,7 +124,7 @@ const TextContainer3 = styled.div`
 width: 1040px;
 height: 112px;
   position: absolute;
-  top: 35%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -174,7 +181,13 @@ line-height: 140%;
 
 text-align: center;
 color: #FFFFFF;
-
+  animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`${expandAnimation}  1s ease-in-out forwards`}
+      //2초만에 나타나서 고정이 된다
+      // forwards
+    `};
 
 `;
 const Textchanged2 = styled.p`
@@ -208,7 +221,7 @@ const DownLogo = styled.img`
 
 const LogoDiv = styled.div`
   position: absolute;
-  top: 60%;
+  top: 66%;
   width: 100%;
   justify-content: center;
   display: flex;
@@ -370,6 +383,7 @@ const HomeFirst = () => {
       setIsVisible(false);
       setbackcolor(true);
       // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
+      setIsSplitTextVisible(false);
 
     } else if (position >= 2500 && position <2900){
       setchanged('d');
@@ -379,11 +393,12 @@ const HomeFirst = () => {
       setbackcolor(true);
 
     }
-    else {
-      setText('');
-      setIsFixed(false);
-      setIsVisible(false);
+    else if (position >= 2900 ) {
+      setchanged('ddd');
+   
+
       setbackcolor(true);
+      
     } 
 
   }, [position,isVisible]);
@@ -399,8 +414,9 @@ const HomeFirst = () => {
 
   return (
   <>
+<DIVVVV>
+    <VideoContainer isColor={backcolor}  isFixed={isFixed}>
 
-    <VideoContainer  isFixed={isFixed}>
       <VideoBackground  autoPlay loop muted>
         <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
       </VideoBackground>
@@ -489,21 +505,27 @@ const HomeFirst = () => {
     {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
 
 {/*위에 컴포넌트 그전 스크롤에서 나타난것들 고정되게 하고 스크롤 내리면 딱 animation으로 나타난다*/}
-{isSplitTextVisible && (
-        <TextContainer2 isAnimation={isAnimation}  isVisible={isVisible}>
-<Textchanged1 isExpanded={isExpanded}>
+
+        <TextContainer2   isVisible={isVisible}>
+<Textchanged1 isAnimation={isSplitTextVisible} isExpanded={isExpanded}>
 {text}
 </Textchanged1>
 </TextContainer2>
-)}
+{/*컴포넌트를 감싸는 조건문으로 설정하니까 animation이 안먹었음
+근데 애초에 택스트에 애니메이션을 걸어놔야 되는 것 같기도 하고
+그래서 Textchanged1에 애니메이션 넣음*/}
 </>
 :
 
 
-            changed ==='d' && 
+            changed ==='d'? 
             <TextContainer3 isAnimation={isAnimation} isVisible={isVisible}>
             <Textchanged2 isExpanded={isExpanded}>{text}</Textchanged2>
-            </TextContainer3>
+            </TextContainer3>:
+            changed==='ddd' && 
+            <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
+            
+              </TextContainer1> 
             
             }
            
@@ -513,7 +535,7 @@ const HomeFirst = () => {
         </>
       )}
     </VideoContainer>
-
+    </DIVVVV>
       </>
   );
 };
