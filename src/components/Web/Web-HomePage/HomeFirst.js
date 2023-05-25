@@ -19,6 +19,8 @@ const DIVVVV = styled.div`
   width: 100%;
 `;
 
+
+
 function useScrollPosition() {
   const [scrollPos, setScrollPos] = useState(0);
 
@@ -411,6 +413,7 @@ const HomeFirst = () => {
   <>
 <DIVVVV>
     <VideoContainer isColor={backcolor}  isFixed={isFixed}>
+
       <VideoBackground  autoPlay loop muted>
         <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
       </VideoBackground>
