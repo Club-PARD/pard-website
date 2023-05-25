@@ -13,18 +13,13 @@ import review4Image from '../../../assets/img/Review김민혁.png';
 const PartDiv = styled.div`
   height: 950px;
   position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 150px;
 `;
 
 const Div = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  justify-content: center;
   align-items: center;
-  margin-left: 184px;
+  padding-top: 150px;
 `;
 
 const Header7 = styled.div`
@@ -75,7 +70,6 @@ const DivButton = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
-  margin-left: -184px;
 `;
 
 const Button = styled.button`
@@ -97,12 +91,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: -184px;
 `;
 const Slide = styled.div`
   display: flex;
   align-items: center;
-  margin-left: -184px;
 `;
 const Window = styled.div`
   width: 990px;
@@ -110,8 +102,6 @@ const Window = styled.div`
   overflow: hidden;
 `;
 const CardDiv = styled.div`
-  // margin-left: 16px;
-  // margin-right: 16px;
   cursor: pointer;
 `;
 const Image = styled.div`
@@ -200,11 +190,11 @@ function RecruitingReview() {
 
   const handleCardClick = (link) => {
     // Redirect to the provided link
-    window.location.href = link;
+    window.open(link, '_blank');
   };
   const handleButtonClick = () => {
     // Redirect to the specified link
-    window.location.href = 'https://disquiet.io/club/pard';
+    window.open('https://disquiet.io/club/pard', '_blank');
   };
 
   return (
@@ -262,7 +252,7 @@ function RecruitingReview() {
             </Slide>
           </Container>
           <DivButton>
-            <Button onClick={handleButtonClick}>조금 더 들어볼래요!</Button>
+            <Button onClick={handleButtonClick} style={{ cursor: 'pointer' }}>조금 더 들어볼래요!</Button>
           </DivButton>
         </ThemeProvider>
       </PartDiv>
