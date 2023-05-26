@@ -8,6 +8,7 @@ const VideoContainer = styled.div`
   top:0;
   width: 100%;
   height: 100vh;
+  max-width: 100vw; 
   min-width: 1440px; // 아무리 줄여도 1440px로 유지됨
   overflow: hidden;
   background-color: ${({ isColor }) => (isColor ? ' rgba(0, 0, 0, 0.4)' : ' rgba(0, 0, 0, 0.4)')};
@@ -18,7 +19,7 @@ const VideoContainer = styled.div`
 const DIVVVV = styled.div`
 
   display: inline-block;
-  height: 4000px;
+  height: 5000px;
   width: 100%;
 `;
 
@@ -327,7 +328,7 @@ const HomeFirst = () => {
      //keyframse에 따른 animation 값을 스크롤에 따른 값으로 설정
      // position으로 설정한다 이를
       
-    } else if (position >= 650 && position <950) {
+    } else if (position >= 650 && position <2350) {
       setchanged('b');
  setisExpanded(true);
       setText1('PA');
@@ -340,7 +341,7 @@ const HomeFirst = () => {
    // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
 
 
-    } else if (position >= 950 && position < 1250) {
+    } else if (position >= 2350 && position < 2650) {
       setchanged('c');
       setisExpanded(true);
       setText1('PA');
@@ -353,7 +354,7 @@ const HomeFirst = () => {
           
 
 
-    }else if (position >= 1250 && position < 1800) {
+    }else if (position >= 2650 && position < 3200) {
       setchanged('cd');
       setisExpanded(true);
       setText1('PA');
@@ -366,7 +367,7 @@ const HomeFirst = () => {
 
     
 
-    }  else if (position >= 1800 && position < 2200) {
+    }  else if (position >= 3200 && position < 3500) {
       setchanged('cdd');
       setisExpanded(true);
       setText1('PA');
@@ -379,13 +380,13 @@ const HomeFirst = () => {
            setText('실천하는 IT 협업 동아리');
      setIsSplitTextVisible(true);
 
-    } else if (position >= 2200 && position <2500) {
+    } else if (position >= 3500 && position <4000) {
       setIsVisible(false);
       setbackcolor(true);
       // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
       setIsSplitTextVisible(false);
 
-    } else if (position >= 2500 && position <2900){
+    } else if (position >= 4000 && position <4600){
       setchanged('d');
       setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
       setIsFixed(true);
@@ -393,7 +394,7 @@ const HomeFirst = () => {
       setbackcolor(true);
 
     }
-    else if (position >= 2900 ) {
+    else if (position >= 4600 ) {
       setchanged('ddd');
    
 
@@ -443,8 +444,8 @@ const HomeFirst = () => {
                 <>
           
     <SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${position-650}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${position-650}px)` }}>{text2}</Text2>
+      <Text1 style={{ transform: `translateX(-${Math.min((position - 650)/6, 300)}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${Math.min((position - 650)/5, 400)}px)` }}>{text2}</Text2>
       
     </SplitTextContainer>
 
