@@ -11,6 +11,7 @@ import ProjectLast_Mob from "../components/Mobile/Mob-ProjectPage/ProjectLast_Mo
 import ProjectLast from "../components/Web/Web-ProjectPage/Project_Last";
 import FooterMov from "../components/FooterMov";
 
+
 function ProjectPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
 
@@ -29,16 +30,16 @@ function ProjectPage() {
             {isDesktopOrMobile !== true ?
                 <ProgramPageComponent_Web>
                     <Navbar />
-                    <Projectirst/>
-                    <ProjectLast/>
-                    <Footer/>
+                    <Projectirst />
+                    <ProjectLast />
+                    <Footer />
                 </ProgramPageComponent_Web>
                 :
                 <div>
                     <NavBarMov />
-                    <ProjectFirst_Mob/>
-                    <ProjectLast_Mob/>
-                    <FooterMov/>
+                    <ProjectFirst_Mob />
+                    <ProjectLast_Mob />
+                    <FooterMov />
                 </div>
             }
         </AboutPageComponent>
