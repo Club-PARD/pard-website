@@ -1,12 +1,13 @@
 import { React, useState, useEffect, useRef, useMemo } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider, keyframes, css } from 'styled-components';
 import { theme } from '../../../styles/theme';
-import ScrollAnimation from 'react-animate-on-scroll';
 import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
-
+import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
+import backgroundImage3 from '../../../assets/img/homeBackgroundImg3.svg';
 const PageContainer = styled.div`
   width: 100%;
   background-color: #eee;
+  z-index: -2;
 `
 
 const Background = styled.div`
@@ -14,64 +15,225 @@ const Background = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  height: 0;
   padding-top: 66.64%; /* (img-height / img-width * container-width) */
   position: sticky;
+  z-index = -1;
   top: 0;
+  background-color: rgba(26, 26, 26);
 `;
 
 
 const Text1 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header0};
-  font-weight: ${props => props.theme.fontWeights.Header0};
+  font-size: ${({ textInfo, theme }) => textFontSizeLogic(textInfo, theme)};
+  font-weight: ${({ textInfo, theme }) => textFontWeightLogic(textInfo, theme)};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   white-space: pre-line;
-  z-index: 999;
-  text-anchor: middle; 
-  text-align: center;
-  opacity: ${props => props.position < props.breakPoint1 ? 0 : (props.position - props.breakPoint1) / 200};
-  transform: ${props => props.position < props.breakPoint2 ? 0 : `translateX(${props.breakPoint2 - props.position}px)`};
-  position: relative;
+  z-index: 1;
+
+  width: 100%; // 중요! width를 키우지 않으면 text-align: center 는 의미 없어짐.
+  text-align: ${({ textInfo }) => textAlignLogic(textInfo)};
+  position: absolute;
+  padding: ${({ textInfo }) => textPaddingLofic(textInfo)};
+
+  top: ${({ textInfo }) => (textInfo.posX)};
+  left: ${({ textInfo }) => (textInfo.posY)};
+
+  transform: ${({ textInfo, position }) => textTransformLogic(textInfo, position)};
+  
+  opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
+  transition: opacity 0.5s ease-in;
+
+  transform
 `
+const textPaddingLofic = (textInfo) => {
+  switch(textInfo.id){
+    case 0:
+    case 1:
+    case 2:
+      return "0px";
+    case 3:
+    case 4:
+      return "0px 200px";
+    default: 
+      return null;
+  }
+}
+const textAlignLogic = (textInfo) => {
+  switch(textInfo.id){
+    case 0:
+    case 1:
+    case 2:
+      return "center";
+    case 3:
+    case 4:
+      return "start";
+    default: 
+      return null;
+  }
+}
+const textFontSizeLogic = (textInfo, theme) => {
+  switch(textInfo.id){
+    case 0:
+    case 1:
+    case 2:
+      return theme.Web_fontSizes.Header0;
+    case 3:
+      return theme.Web_fontSizes.Header7;
+    case 4:
+      return theme.Web_fontSizes.Header5;
+    default: 
+      return null;
+  }
+}
+const textFontWeightLogic = (textInfo, theme) => {
+  switch(textInfo.id){
+    case 0:
+    case 1:
+    case 2:
+      return theme.fontWeights.Header0;
+    case 3:
+      return theme.fontWeights.Header7;
+    case 4:
+      return theme.fontWeights.Header5;
+    default: 
+      return null;
+  }
+}
 
-const Animation1 = ({ position }) => {
-  const [scrollDisabled, setScrollDisabled] = useState(true);
+const textTransformLogic = (textInfo, position) => {
+  var offset = (position - (textInfo.breakPoint + textInfo.period * 0.8));
+  if(textInfo.id == 3) {
+    const change = 75;
+    var x = position - (textInfo.breakPoint + 1000 - change);
+    if(x >= 0 && x < change){
+      return `translateY(${x * -1}px)`
+    } else if(x >= change){
+      return `translateY(${change * -1}px)`
+    } else{
+      return `translateY(0px)`;
+    }
+    
+  }
+  if(offset < 0) return 0;
+  switch(textInfo.id){
+    case 0:
+      return `translateX(${offset * -1}px)`
+    case 2:
+      return `translateX(${offset * 1}px)`
+    default:
+      return `translateY(0px)`;
+  }
+}
+
+const Animation1 = ({isTextVisible, textInfos, position}) => {
   const targetRef = useRef(null);
-  const breakPoint1 = 0;
-  const breakPoint2 = 3700;
-
+  
   return (
-    <div style={{ justifyContent: "center", display: "flex" }}>
-      <Text1 ref={targetRef} position={position} breakPoint1={breakPoint1} breakPoint2={breakPoint2}> This is the text</Text1>
+    <div style={{ justifyContent: "center", display: "flex"}}>
+      {console.log(isTextVisible[3])}
+      {textInfos.map(textInfo => (
+        <Text1 ref={targetRef} key={textInfo.id} isVisible={isTextVisible[textInfo.id]} textInfo = {textInfo} position={position}>
+          {textInfo.text} 
+        </Text1>
+      ))}
     </div>
   );
 }
-
-const HomeSecond = () => {
-  const [position, setPosition] = useState(0);
-
-  function onScroll() {
-    setPosition(window.scrollY);
-  }
+function useScrollPosition() {
+  const [scrollPos, setScrollPos] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", onScroll);
+    const updateScrollPos = () => {
+      setScrollPos(window.pageYOffset);
+    };
+
+    window.addEventListener('scroll', updateScrollPos);
+
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener('scroll', updateScrollPos);
     };
   }, []);
 
+  return scrollPos;
+}
+
+const textDB = [
+  {
+    id : 0,
+    text: "협업하고",
+    breakPoint: 4500,
+    period: 1000,
+    posX: "20%",
+    posY: "0%",
+  },
+  {
+    id : 1,
+    text: "성장하고",
+    breakPoint: 4500,
+    period: 1000,
+    posX: "35%",
+    posY: "0%",
+  },
+  {
+    id : 2,
+    text: "해결하기",
+    breakPoint: 4500,
+    period: 1000,
+    posX: "50%",
+    posY: "0%",
+  },
+  {
+    id : 3,
+    text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
+    breakPoint: 8200,
+    period: 1800,
+    posX: "35%",
+    posY: "0%",
+  },
+  {
+    id : 4,
+    text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
+    breakPoint: 9000,
+    period: 1000,
+    posX: "45%",
+    posY: "0%",
+  },
+]
+
+const HomeSecond = () => {
+  const [text1, setText1] = useState(false);
+  const [text2, setText2] = useState(false);
+  const [text3, setText3] = useState(false);
+  const [text4, setText4] = useState(false);
+  const [text5, setText5] = useState(false);
+
+  const setList = [setText1, setText2, setText3, setText4, setText5];
+  const list1 = [text1, text2, text3, text4, text5];
+  const position = useScrollPosition();
+
+  useEffect(()=>{
+    textDB.forEach((textInfo) => {
+      setList[textInfo.id](position > textInfo.breakPoint && position < textInfo.breakPoint + textInfo.period);
+    });
+  }, [position, text1, text2, text3, text4, text5]);
+
   return (
     <ThemeProvider theme={theme}>
-      <PageContainer>
-
-        <Background src={backgroundImage1}>
-        <Animation1 position={position}></Animation1>
+      <div>
+        <Background src={backgroundImage1} >
+          <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
+          </Background>
+        <div style={{height: "1500px"}}></div> 
+        <Background src={backgroundImage2} >
         </Background>
-        <div style={{height: "1000px"}}></div>
-
-      </PageContainer>
+        <div style={{height: "750px"}}></div>
+        <Background src={backgroundImage3} >
+          <Animation1 isTextVisible={list1} textInfos = {textDB.slice(3, 5)} position = {position}></Animation1>
+        </Background>
+        <div style={{height: "2000px"}}></div>
+        
+      </div>
     </ThemeProvider>
   );
 };
