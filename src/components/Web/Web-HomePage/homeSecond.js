@@ -17,7 +17,7 @@ const Background = styled.div`
   width: 100%;
   padding-top: 66.64%; /* (img-height / img-width * container-width) */
   position: sticky;
-  z-index = -1;
+  z-index :-1;
   top: 0;
   background-color: rgba(26, 26, 26);
 `;
@@ -44,7 +44,7 @@ const Text1 = styled.div`
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   transition: opacity 0.5s ease-in;
 
-  transform
+  /* transform */
 `
 const textPaddingLofic = (textInfo) => {
   switch(textInfo.id){
