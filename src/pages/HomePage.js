@@ -18,6 +18,7 @@ import HomeSecond from "../components/Web/Web-HomePage/HomeSecond";
 import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
 import HomeSecondMob from "../components/Mobile/Mob-HomePage/HomeSecond_Mob";
+import ProgramsTrain from "../components/Web/Web-ProjectPage/ProgramsTrain";
 
 
 function HomePage() {
@@ -42,6 +43,7 @@ function HomePage() {
                     <HomeFirst />
                     <HomeSecond />
                     <HomePartWeb />
+                    <ProgramsTrain />
                     {/* <HomeProgramWeb /> */}
                     <HomeMentorWeb />
                     <HomePartnerWeb />

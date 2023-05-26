@@ -1,4 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
+import img1 from '../../../assets/img/서핑데이1.png';
+import img2 from '../../../assets/img/서핑데이2.png';
+import img3 from '../../../assets/img/서핑데이3.png';
 
 const Header4 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header4};
@@ -40,21 +43,22 @@ const Card = styled.div`
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  width: 280px; //원래 크기 310px;
-  height: 300px; //원래 크기 370px;
-  margin-right: 30px;
+  width: 310px; //원래 크기 310px;
+  height: 370px; //원래 크기 370px;
+  margin-right: 40px;
   background-color: #d9d9d9;
   border-radius: 20px 20px 20px 20px;
 `;
+
 const FirstCard = styled.div`
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
   width: 320px;
-  height: 320px;
+  height: 370px;
   border-radius: 20px 20px 20px 20px;
-  margin-right: 60px;
-  margin-left: 40px; 
+  margin-right: 30px;
+  margin-left: 80px; 
   background-color: #1a1a1a;
 `;
 
@@ -63,15 +67,21 @@ const CardContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 86%; //margin-bottom 안먹는 이유
+  margin-top: auto; 
   height: 20%;
   background-color: #FF5C00;
   border-radius: 0px 0px 20px 20px;
 `;
 
+const CardImage = styled.img`
+  // object-fit: cover;
+  width: 100%;
+  height: 100%;
+`;
+
 const Box = styled.div`
   width: 100%;
-  height: 55%;
+  height: 70%;
   background-color: #1a1a1a;
 `;
 
@@ -79,14 +89,17 @@ function ProgramSurfing() {
   const cardData = [
     {
       id: 1,
+      image: img1,
       description: "관계를 쌓고, 서로를 이해할 수 있는\n레크레이션 및 워크샵 진행",
     },
     {
       id: 2,
+      image: img2,
       description: "조직문화 코칭 전문 회사에\n검수받은 자체 개발 프로그램 보유",
     },
     {
       id: 3,
+      image: img3,
       description: "진짜 협업이란 무엇인지에 대한 깊은 토의",
     },
   ];
@@ -105,6 +118,7 @@ function ProgramSurfing() {
       </FirstCard>
       {cardData.map((content) => (
         <Card key={content.id}>
+           <CardImage key={content.id} src={content.image} alt={`Card ${content.id}`} />
           <CardContent key={content.id}>
             <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
           </CardContent>

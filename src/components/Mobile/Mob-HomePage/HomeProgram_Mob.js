@@ -11,10 +11,11 @@ const Header7 = styled.div`
 `;
 
 const PartDiv = styled.div`
-    padding-left:16px;
+    padding-left:24px;
     padding-top: 45px;
     height: 2445px;
 `;
+
 
 function HomeProgramMob() {
 

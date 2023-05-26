@@ -1,12 +1,9 @@
-import styled, { ThemeProvider, css } from "styled-components";
-import { useRef, useState } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { useRef, useState, useEffect } from "react";
 import { theme } from "../../../styles/theme";
-import { useEffect } from "react";
-import ProgramSeminar from "./ProgramSeminar";
-import ProgramStudy from "./ProgramStudy";
-import ProgramSurfing from "./ProgramSurfing";
-import ProgramShort from "./ProgramShort";
-import ProgramLong from "./ProgramLong";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProgramsTrain2 from "./ProgramsTrain2";
 
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
@@ -14,157 +11,115 @@ const Header2 = styled.div`
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  transition: opacity 0.6s ease-in-out;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   margin-left: 110px;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  transition: opacity 0.5s ease-in-out; 
 `;
+
 const Header2_1 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
   font-weight: ${(props) => props.theme.fontWeights.Header2};
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
   margin-left: 110px;
 `;
 
 const HeaderDiv = styled.div`
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 15%;
+  &.unfixed {
+    position: relative;
+  }
 `;
 
-const PartDiv3 = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-const PartDiv2 = styled.div`
+const Div1 = styled.div`
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
-  height: 890px;
-  margin-left: 40px;
-  margin-right: 40px;
-
-  &::-webkit-scrollbar {
-    width: 10px;
-    margin-bottom: 20px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-radius: 1px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
+  scroll-behavior: smooth;
+  margin-bottom: 300px; //******* 임의 설정 수정해야함 ********
 `;
 
 function ProgramsTrain() {
-  const headerRef = useRef(null);
-  const [seminarHeader, setSeminarHeader] = useState("세미나");
-  const [visible, setVisible] = useState(true);
-  const seminarHeaders = ["세미나", "스터디", "서핑데이", "숏커톤", "롱커톤"];
+  const Headers2 = ["세미나", "스터디", "서핑데이", "숏커톤", "롱커톤"];
+  const [Header2Index, setHeader2Index] = useState(0); // Index of Headers2 array
+  const [isHeaderFixed, setIsHeaderFixed] = useState(true);
+
 
   useEffect(() => {
-    const DivRef = PartDiv2.current;
+    gsap.registerPlugin(ScrollTrigger);
 
-    if (DivRef) {
-      const handleScroll = () => {
-        const scrollPositionY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const scrollThreshold = documentHeight / 2;
 
-        if (scrollPositionY >= scrollThreshold - windowHeight / 2) {
-          const height = DivRef.getBoundingClientRect().height;
-          const scrolledX = (scrollPositionY / windowHeight) * height;
-          DivRef.scrollLeft = scrolledX;
-        }
-      };
+    ScrollTrigger.defaults({
+      markers: true, // Set to true for debugging
+    });
 
-      //이 함수에 대한 정확한 이해가 필요함
-      const handleWheel = (event) => {
-        const isAtScrollStart = DivRef.scrollLeft === 0;
-        const isAtScrollEnd =
-          DivRef.scrollLeft >= DivRef.scrollWidth - DivRef.clientWidth - 1;
 
-        if (!(isAtScrollStart || isAtScrollEnd)) event.preventDefault();
+    
 
-        const scrollAmount = event.deltaY;
-        DivRef.scrollLeft += scrollAmount / 6;
-      };
 
-      // window.addEventListener("scroll", handleScroll);
-      DivRef.addEventListener("wheel", handleWheel, { passive: false });
+    const horizontalScrollAnimation = gsap.to(".div1", {
+      x: () =>
+        -(
+          document.querySelector(".div1").scrollWidth -
+          document.querySelector(".div1").clientWidth
+        ),
+      scrollTrigger: {
+        trigger: ".div1",
+        start: "top center",
+        end: () =>
+          `+=${document.querySelector(".div1").scrollWidth}`,
+        scrub: 0.7,
+        pin: true,
+        anticipatePin: 1,
+        onUpdate: ({ progress }) => {
+          setIsHeaderFixed(progress < 1); // 스크롤이 끝나면 sticky 해제
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-        DivRef.removeEventListener("wheel", handleWheel);
-      };
-    }
-  }, [PartDiv2]);
+          let newIndex = 0;
+          if (progress < 0.085) {
+            newIndex = 0;
+          } else if (progress >= 0.085 && progress < 0.23) {
+            newIndex = 1;
+          } else if (progress >= 0.23 && progress < 0.4) {
+            newIndex = 2;
+          } else if (progress >= 0.4 && progress < 0.7) {
+            newIndex = 3;
+          } else if (progress >= 0.7) {
+            newIndex = 4;
+          }
+          setHeader2Index(newIndex);
+        
 
-  const handleScroll = () => {
-    const scrollPosition = PartDiv2.current.scrollLeft;
-    const width = PartDiv2.current.getBoundingClientRect().width;
-    const one = width / 1.5;
-    const two = one * 2.3;
-    const three = one * 3.7;
-    const four = one * 5.5;
+        },
 
-    let newHeader = "";
-    if (scrollPosition <= one) {
-      newHeader = seminarHeaders[0];
-    } else if (scrollPosition > one && scrollPosition <= two) {
-      newHeader = seminarHeaders[1];
-    } else if (scrollPosition > two && scrollPosition <= three) {
-      newHeader = seminarHeaders[2];
-    } else if (scrollPosition > three && scrollPosition <= four) {
-      newHeader = seminarHeaders[3];
-    } else {
-      newHeader = seminarHeaders[4];
-    }
 
-    if (newHeader !== seminarHeader) {
-      setVisible(false);
-      setTimeout(() => {
-        setSeminarHeader(newHeader);
-        setVisible(true);
-      }, 600);
-    }
-    const headerDiv = headerRef.current;
-    if (headerDiv) {
-      const moveAmount = (scrollPosition / width) * 100; // Calculate the percentage to move
-      headerDiv.style.transform = `translateX(${moveAmount}%)`;
-    }
+      },
+    });
 
-    const programsHeader = document.querySelector(".Header2_1");
-    if (programsHeader && programsHeader.getBoundingClientRect().top <= 0) {
-      document.body.style.overflow = "hidden";
-      setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 2000); // Wait for 1 second and re-enable scroll
-    }
-  };
+    return () => {
+      horizontalScrollAnimation.kill();
+      ScrollTrigger.getAll().forEach((trigger) => {
+        trigger.kill(true);
+      });
+    };
+  }, []);
+
+  const Header2Text = Headers2[Header2Index];
 
   return (
     <ThemeProvider theme={theme}>
-      <PartDiv2 ref={PartDiv2} onScroll={handleScroll}>
-        <HeaderDiv ref={headerRef}>
-          <Header2_1>PROGRAMS</Header2_1>
-          <Header2 visible={visible}>{seminarHeader}</Header2>
-        </HeaderDiv>
-        <PartDiv3>
-          <ProgramSeminar />
-          <ProgramStudy />
-          <ProgramSurfing />
-          <ProgramShort />
-          <ProgramLong />
-        </PartDiv3>
-      </PartDiv2>
+      <HeaderDiv className={isHeaderFixed ? "" : "unfixed"}>
+        <Header2_1>PROGRAMS</Header2_1>
+        <Header2 visible={isHeaderFixed}>{Header2Text}</Header2>
+      </HeaderDiv>
+      <Div1 className="div1">
+        <ProgramsTrain2 />
+      </Div1>
     </ThemeProvider>
   );
 }

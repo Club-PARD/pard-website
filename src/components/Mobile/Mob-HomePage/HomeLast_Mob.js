@@ -46,6 +46,7 @@ const Div = styled.div` //정해진 width를 또 가운데 정렬
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-left: 24px;
 `;
 
 const PartDiv = styled.div`
