@@ -14,9 +14,10 @@ import HomePartnerMob from "../components/Mobile/Mob-HomePage/HomePartner_Mob";
 import NavBarMov from "../components/NavBarMov";
 import HomeFirst from "../components/Web/Web-HomePage/HomeFirst";
 import NavBarHome from "../components/Navbar_Home";
-import HomeSecond from "../components/Web/Web-HomePage/HomeSecond";
+import HomeSecond from "../components/Web/Web-HomePage/homeSecond";
 import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
+import HomeSecondMob from "../components/Mobile/Mob-HomePage/HomeSecond_Mob";
 
 
 function HomePage() {
@@ -51,6 +52,7 @@ function HomePage() {
                 <HomePageComponent_Mob>
                     <NavBarMov />
                     <HomeVideoMob />
+                    <HomeSecondMob/>
                     <HomePartsMob />
                     <HomeProgramMob />
                     <HomeMentorMob />
