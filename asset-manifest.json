@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.33a5a190.css",
-    "main.js": "/static/js/main.2af7d30e.js",
+    "main.js": "/static/js/main.bc3b8338.js",
     "static/media/BackGroundVideo.mp4": "/static/media/BackGroundVideo.85ebd6d6842d77c76d30.mp4",
+    "static/media/homeBackgroundImg1.svg": "/static/media/homeBackgroundImg1.a078e6b2f325e7a4eab2ef558044b4c6.svg",
     "static/media/김유진.png": "/static/media/김유진.7d8235b07c9a576b7228.png",
     "static/media/조세희.png": "/static/media/조세희.bf6ff6e49f16ace61043.png",
     "static/media/최현종(회장).png": "/static/media/최현종(회장).e779ffb5724acd23f16e.png",
@@ -31,9 +32,13 @@
     "static/media/WebPart.png": "/static/media/WebPart.96357b5deb744264327e.png",
     "static/media/PMpart.png": "/static/media/PMpart.d54a2b802438e2650e75.png",
     "static/media/AboutLogo.png": "/static/media/AboutLogo.f5d6a230a5599a0e19b6.png",
+    "static/media/Review배예진.png": "/static/media/Review배예진.9e5d757259c99ac08076.png",
     "static/media/band1.svg": "/static/media/band1.5077ba9976bcb8236e87014a108ac9f0.svg",
     "static/media/band2.svg": "/static/media/band2.fca008dacc0dbf32e16344c38f4a8bdc.svg",
     "static/media/band3.svg": "/static/media/band3.ecff7ec44b424c5ac6998a39fa60301d.svg",
+    "static/media/Review김민혁.png": "/static/media/Review김민혁.c7d24c36bb22edfb57fc.png",
+    "static/media/Review조민.png": "/static/media/Review조민.c801f1cd95ddf636fb59.png",
+    "static/media/Review정승훈.png": "/static/media/Review정승훈.75df3586bd2bd87c0ec2.png",
     "static/media/SpackLab.png": "/static/media/SpackLab.081ed1dd209c93321dec.png",
     "static/media/AboutLong.png": "/static/media/AboutLong.28a665830ac21947ed67.png",
     "static/media/AboutShort.png": "/static/media/AboutShort.28a665830ac21947ed67.png",
@@ -41,11 +46,15 @@
     "static/media/Linc-partner.png": "/static/media/Linc-partner.0fc3853c665ed035e80b.png",
     "static/media/Disquiet-partner.png": "/static/media/Disquiet-partner.f767a3e9e5d25e08b076.png",
     "index.html": "/index.html",
+    "static/media/RRightButton.svg": "/static/media/RRightButton.77d60730d9abfdf30245075988b1ef49.svg",
+    "static/media/RLeftButton.svg": "/static/media/RLeftButton.fd0127301c9aa6641aba55ccc9916924.svg",
+    "static/media/RPRightButton.svg": "/static/media/RPRightButton.7ba2a91df4489029a67c7c6ddd0ae5e2.svg",
+    "static/media/RPLeftButton.svg": "/static/media/RPLeftButton.79475f6cd6e2ff34d69ad4d00ab33b59.svg",
     "main.33a5a190.css.map": "/static/css/main.33a5a190.css.map",
-    "main.2af7d30e.js.map": "/static/js/main.2af7d30e.js.map"
+    "main.bc3b8338.js.map": "/static/js/main.bc3b8338.js.map"
   },
   "entrypoints": [
     "static/css/main.33a5a190.css",
-    "static/js/main.2af7d30e.js"
+    "static/js/main.bc3b8338.js"
   ]
 }
