@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const Nav = styled.nav`
-  background-color: #1A1A1A;
+ background-color: rgba(0,0,0,0);
   color: white;
   display: flex;
   align-items: center;
@@ -69,7 +69,7 @@ const NavBarMov = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <Nav>
+    <Nav >
       <ThemeProvider theme={theme}>
         <Logo>
         <Link to="/">
