@@ -4,24 +4,41 @@ import { theme } from '../../../styles/theme';
 import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
 import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
 import backgroundImage3 from '../../../assets/img/homeBackgroundImg3.svg';
-const PageContainer = styled.div`
-  width: 100%;
-  background-color: #eee;
-  z-index: -2;
-`
 
 const Background = styled.div`
   background-image: ${props => `url(${props.src})`};
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  padding-top: 66.64%; /* (img-height / img-width * container-width) */
+  padding-top: 70%; /* (img-height / img-width * container-width) */
   position: sticky;
   z-index :-1;
   top: 0;
   background-color: rgba(26, 26, 26);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ${({breakPointInfos, position, id}) => backgroundColorLogic(breakPointInfos, position, id)}; /* Adjust the opacity as desired */
+  }
 `;
 
+const backgroundColorLogic = (breakPointInfos, position, id) => {
+  if(breakPointInfos == null || id == null) return "rgba(0, 0, 0, 0)";
+  const offset = position - breakPointInfos[id].breakPoint;
+  if(offset > 0 && offset < breakPointInfos[id].period){
+    var opacity = offset/200;
+    if(opacity > 0.5) {
+      opacity = 0.5;
+    }
+    return "rgba(0, 0, 0, "+opacity+")";
+  }
+  return "rgba(0, 0, 0, 0)";
+}
 
 const Text1 = styled.div`
   font-size: ${({ textInfo, theme }) => textFontSizeLogic(textInfo, theme)};
@@ -131,7 +148,6 @@ const Animation1 = ({isTextVisible, textInfos, position}) => {
   
   return (
     <div style={{ justifyContent: "center", display: "flex"}}>
-      {console.log(isTextVisible[3])}
       {textInfos.map(textInfo => (
         <Text1 ref={targetRef} key={textInfo.id} isVisible={isTextVisible[textInfo.id]} textInfo = {textInfo} position={position}>
           {textInfo.text} 
@@ -186,7 +202,7 @@ const textDB = [
   {
     id : 3,
     text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
-    breakPoint: 8200,
+    breakPoint: 8400,
     period: 1800,
     posX: "35%",
     posY: "0%",
@@ -194,10 +210,20 @@ const textDB = [
   {
     id : 4,
     text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
-    breakPoint: 9000,
+    breakPoint: 9200,
     period: 1000,
     posX: "45%",
     posY: "0%",
+  },
+]
+const breakPointInfos = [
+  {
+    breakPoint: 4000,
+    period: 2400
+  },
+  {
+    breakPoint: 8200,
+    period: 2200
   },
 ]
 
@@ -221,17 +247,17 @@ const HomeSecond = () => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Background src={backgroundImage1} >
+        <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
           <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
           </Background>
         <div style={{height: "1500px"}}></div> 
         <Background src={backgroundImage2} >
         </Background>
         <div style={{height: "750px"}}></div>
-        <Background src={backgroundImage3} >
+        <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1}>
           <Animation1 isTextVisible={list1} textInfos = {textDB.slice(3, 5)} position = {position}></Animation1>
         </Background>
-        <div style={{height: "2000px"}}></div>
+        <div style={{height: "2200px"}}></div>
         
       </div>
     </ThemeProvider>
