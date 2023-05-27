@@ -178,7 +178,7 @@ const textDB = [
   {
     id : 0,
     text: "협업하고",
-    breakPoint: 4500,
+    breakPoint: 5500,
     period: 1000,
     posX: "20%",
     posY: "0%",
@@ -186,7 +186,7 @@ const textDB = [
   {
     id : 1,
     text: "성장하고",
-    breakPoint: 4500,
+    breakPoint: 5500,
     period: 1000,
     posX: "35%",
     posY: "0%",
@@ -194,7 +194,7 @@ const textDB = [
   {
     id : 2,
     text: "해결하기",
-    breakPoint: 4500,
+    breakPoint: 5500,
     period: 1000,
     posX: "50%",
     posY: "0%",
@@ -202,7 +202,7 @@ const textDB = [
   {
     id : 3,
     text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
-    breakPoint: 8400,
+    breakPoint: 9600,
     period: 1800,
     posX: "35%",
     posY: "0%",
@@ -210,7 +210,7 @@ const textDB = [
   {
     id : 4,
     text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
-    breakPoint: 9200,
+    breakPoint: 10400,
     period: 1000,
     posX: "45%",
     posY: "0%",
@@ -218,12 +218,12 @@ const textDB = [
 ]
 const breakPointInfos = [
   {
-    breakPoint: 4000,
+    breakPoint: 5000,
     period: 2400
   },
   {
-    breakPoint: 8200,
-    period: 2200
+    breakPoint: 9400,
+    period: 2800
   },
 ]
 
@@ -257,7 +257,7 @@ const HomeSecond = () => {
         <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1}>
           <Animation1 isTextVisible={list1} textInfos = {textDB.slice(3, 5)} position = {position}></Animation1>
         </Background>
-        <div style={{height: "2200px"}}></div>
+        <div style={{height: "3400px"}}></div>
         
       </div>
     </ThemeProvider>
