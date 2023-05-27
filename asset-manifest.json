@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.33a5a190.css",
-    "main.js": "/static/js/main.bc3b8338.js",
+    "main.js": "/static/js/main.e71586c4.js",
     "static/media/BackGroundVideo.mp4": "/static/media/BackGroundVideo.85ebd6d6842d77c76d30.mp4",
+    "static/media/homeBackgroundImg2.svg": "/static/media/homeBackgroundImg2.78984828a5b1720a5fe00df3e1fa58f3.svg",
     "static/media/homeBackgroundImg1.svg": "/static/media/homeBackgroundImg1.a078e6b2f325e7a4eab2ef558044b4c6.svg",
     "static/media/김유진.png": "/static/media/김유진.7d8235b07c9a576b7228.png",
     "static/media/조세희.png": "/static/media/조세희.bf6ff6e49f16ace61043.png",
@@ -31,17 +32,31 @@
     "static/media/AboutProject.png": "/static/media/AboutProject.c853f2f739ebba3034f9.png",
     "static/media/WebPart.png": "/static/media/WebPart.96357b5deb744264327e.png",
     "static/media/PMpart.png": "/static/media/PMpart.d54a2b802438e2650e75.png",
+    "static/media/세미나1.png": "/static/media/세미나1.db62b735a885e2ae34a4.png",
+    "static/media/서핑데이1.png": "/static/media/서핑데이1.b1be2165aa5eb96133a0.png",
+    "static/media/세미나3.png": "/static/media/세미나3.a167c2a1256e73b86dc7.png",
+    "static/media/세미나2.png": "/static/media/세미나2.ee7ed564f1423fdd46a6.png",
+    "static/media/숏커톤2.png": "/static/media/숏커톤2.c1838b2bedab07997361.png",
+    "static/media/롱커톤2.png": "/static/media/롱커톤2.723ccaf3086540e7c92f.png",
     "static/media/AboutLogo.png": "/static/media/AboutLogo.f5d6a230a5599a0e19b6.png",
+    "static/media/서핑데이3.png": "/static/media/서핑데이3.10785f71ef1454d2d6e9.png",
+    "static/media/스터디1.png": "/static/media/스터디1.00379127fd1ec24c80a3.png",
     "static/media/Review배예진.png": "/static/media/Review배예진.9e5d757259c99ac08076.png",
+    "static/media/서핑데이2.png": "/static/media/서핑데이2.2c8c219739e58e7ea3c3.png",
+    "static/media/숏커톤1.png": "/static/media/숏커톤1.94b0d8809451fa544c47.png",
     "static/media/band1.svg": "/static/media/band1.5077ba9976bcb8236e87014a108ac9f0.svg",
+    "static/media/스터디3.png": "/static/media/스터디3.4ed40dc3d19ee6f9b826.png",
+    "static/media/롱커톤3.png": "/static/media/롱커톤3.cedccf38ca266714cc64.png",
     "static/media/band2.svg": "/static/media/band2.fca008dacc0dbf32e16344c38f4a8bdc.svg",
     "static/media/band3.svg": "/static/media/band3.ecff7ec44b424c5ac6998a39fa60301d.svg",
     "static/media/Review김민혁.png": "/static/media/Review김민혁.c7d24c36bb22edfb57fc.png",
     "static/media/Review조민.png": "/static/media/Review조민.c801f1cd95ddf636fb59.png",
     "static/media/Review정승훈.png": "/static/media/Review정승훈.75df3586bd2bd87c0ec2.png",
     "static/media/SpackLab.png": "/static/media/SpackLab.081ed1dd209c93321dec.png",
+    "static/media/스터디2.png": "/static/media/스터디2.91d8b816a9029b5c8b3e.png",
     "static/media/AboutLong.png": "/static/media/AboutLong.28a665830ac21947ed67.png",
     "static/media/AboutShort.png": "/static/media/AboutShort.28a665830ac21947ed67.png",
+    "static/media/homeBackgroundImg3.svg": "/static/media/homeBackgroundImg3.ba80ca518ea56feb87cbd49ef32354e3.svg",
     "static/media/ImpactCampus-partner.png": "/static/media/ImpactCampus-partner.e4bb9a91b77c407a4271.png",
     "static/media/Linc-partner.png": "/static/media/Linc-partner.0fc3853c665ed035e80b.png",
     "static/media/Disquiet-partner.png": "/static/media/Disquiet-partner.f767a3e9e5d25e08b076.png",
@@ -51,10 +66,10 @@
     "static/media/RPRightButton.svg": "/static/media/RPRightButton.7ba2a91df4489029a67c7c6ddd0ae5e2.svg",
     "static/media/RPLeftButton.svg": "/static/media/RPLeftButton.79475f6cd6e2ff34d69ad4d00ab33b59.svg",
     "main.33a5a190.css.map": "/static/css/main.33a5a190.css.map",
-    "main.bc3b8338.js.map": "/static/js/main.bc3b8338.js.map"
+    "main.e71586c4.js.map": "/static/js/main.e71586c4.js.map"
   },
   "entrypoints": [
     "static/css/main.33a5a190.css",
-    "static/js/main.bc3b8338.js"
+    "static/js/main.e71586c4.js"
   ]
 }
