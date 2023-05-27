@@ -127,7 +127,7 @@ function RecruitingAbout() {
       {
         id: 2,
         quest: 'Q. 지원 조건이 어떻게 되나요?',
-        answer: <>A. 2기 기준 2023년도 한동대학교 재학생 혹은 휴학생이시라면 지원 가능합니다.        
+        answer: <>A. 2기 기준 2023년도 포항시에 소재한 대학생, 대학원생이면 지원 가능합니다.      
         </>,
         select: false
       },
