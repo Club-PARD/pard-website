@@ -1,5 +1,5 @@
-import { React, useState, useEffect, useRef, useMemo } from 'react';
-import styled, { ThemeProvider, keyframes, css } from 'styled-components';
+import { React, useState, useEffect, useRef } from 'react';
+import styled, { ThemeProvider} from 'styled-components';
 import { theme } from '../../../styles/theme';
 import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
 import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
@@ -73,8 +73,8 @@ const textDB = [
     background-image: ${props => `url(${props.src})`};
     background-size: contain;
     background-repeat: no-repeat;
-    width: 100%;
-    padding-top: 70%; /* (img-height / img-width * container-width) */
+    width: 100vw;
+    padding-top: 59.2%; /* (img-height / img-width * container-width) */
     position: sticky;
     z-index :-1;
     top: 0;
@@ -273,8 +273,8 @@ const HomeSecond = () => {
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
+      <div style={{width: "100vw"}}>
       <ThemeProvider theme={theme}>
-        <div>
           <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
             </Background>
@@ -287,8 +287,8 @@ const HomeSecond = () => {
           </Background>
           <div style={{height: pageLength[2]+ "px"}}></div>
           
-        </div>
       </ThemeProvider>
+      </div>
     );
   };
 

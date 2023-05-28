@@ -1,15 +1,26 @@
-import { React, useState, useEffect, useRef, useMemo } from 'react';
-import styled, { ThemeProvider, keyframes, css } from 'styled-components';
+import { React, useState, useEffect, useRef } from 'react';
+import styled, { ThemeProvider} from 'styled-components';
 import { theme } from '../../../styles/theme';
 import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
 import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
 import backgroundImage3 from '../../../assets/img/homeBackgroundImg3.svg';
 
+const firstScrollPoint = 12800; //homesecond 시작 스크롤 위치
+const pageLength = [
+  2000,
+  750,
+  3400,
+]
+const period1 = 200;
+const period2 = 1000;
+const period3 = 1500;
+const secondScrollPoint = firstScrollPoint + pageLength[0] + pageLength[1] + 2000;
+
 const textDB = [
     {
       id : 0,
       text: "협업하고",
-      breakPoint: 5500,
+      breakPoint: firstScrollPoint + period1,
       period: 1000,
       posX: "20%",
       posY: "0%",
@@ -17,7 +28,7 @@ const textDB = [
     {
       id : 1,
       text: "성장하고",
-      breakPoint: 5500,
+      breakPoint: firstScrollPoint + period1,
       period: 1000,
       posX: "35%",
       posY: "0%",
@@ -25,7 +36,7 @@ const textDB = [
     {
       id : 2,
       text: "해결하기",
-      breakPoint: 5500,
+      breakPoint: firstScrollPoint + period1,
       period: 1000,
       posX: "50%",
       posY: "0%",
@@ -33,28 +44,28 @@ const textDB = [
     {
       id : 3,
       text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
-      breakPoint: 9600,
-      period: 1800,
+      breakPoint: secondScrollPoint + period2,
+      period:  period2 + period3,
       posX: "35%",
       posY: "0%",
     },
     {
       id : 4,
       text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
-      breakPoint: 10400,
-      period: 1000,
+      breakPoint: secondScrollPoint + period2 + period3,
+      period: period2,
       posX: "45%",
       posY: "0%",
     },
   ]
   const breakPointInfos = [
     {
-      breakPoint: 5000,
-      period: 2400
+      breakPoint: firstScrollPoint,
+      period: pageLength[0] + 2000,
     },
     {
-      breakPoint: 9400,
-      period: 2800
+      breakPoint: secondScrollPoint,
+      period: period2 + period3 + 1400,
     },
   ]
   
@@ -62,8 +73,7 @@ const textDB = [
     background-image: ${props => `url(${props.src})`};
     background-size: contain;
     background-repeat: no-repeat;
-    width: 100%;
-    padding-top: 70%; /* (img-height / img-width * container-width) */
+    padding-top: 59.2%; /* (img-height / img-width * container-width) */
     position: sticky;
     z-index :-1;
     top: 0;
@@ -99,7 +109,7 @@ const textDB = [
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
-    z-index: 1;
+    z-index: 999;
   
     width: 100%; // 중요! width를 키우지 않으면 text-align: center 는 의미 없어짐.
     text-align: ${({ textInfo }) => textAlignLogic(textInfo)};
@@ -147,11 +157,11 @@ const textDB = [
       case 0:
       case 1:
       case 2:
-        return theme.Web_fontSizes.Header0;
+        return theme.Mob_fontSizes.Header2;
       case 3:
-        return theme.Web_fontSizes.Header7;
+        return theme.Mob_fontSizes.Subtitle1;
       case 4:
-        return theme.Web_fontSizes.Header5;
+        return theme.Mob_fontSizes.Subtitle2;
       default: 
         return null;
     }
@@ -161,11 +171,11 @@ const textDB = [
       case 0:
       case 1:
       case 2:
-        return theme.fontWeights.Header0;
+        return theme.fontWeights.Header2;
       case 3:
-        return theme.fontWeights.Header7;
+        return theme.fontWeights.Subtitle1;
       case 4:
-        return theme.fontWeights.Header5;
+        return theme.fontWeights.Subtitle2;
       default: 
         return null;
     }
@@ -227,21 +237,6 @@ const textDB = [
     return scrollPos;
   }
 
-const Header7 = styled.div`
-  font-size: ${props => props.theme.Mob_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
-  white-space: pre-line;
-`;
-
-const PartDiv = styled.div`
-    padding-left:16px;
-    padding-top: 45px;
-    height: 2445px;
-`;
-
 
 const HomeSecondMob = () => {
     const [text1, setText1] = useState(false);
@@ -255,28 +250,28 @@ const HomeSecondMob = () => {
     const position = useScrollPosition();
   
     useEffect(()=>{
+      
       textDB.forEach((textInfo) => {
         setList[textInfo.id](position > textInfo.breakPoint && position < textInfo.breakPoint + textInfo.period);
       });
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
+    <div style={{width: "100vw", boxSizing: "border-box", overflow: "hidden"}}>
       <ThemeProvider theme={theme}>
-        <div>
           <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
             </Background>
-          <div style={{height: "1500px"}}></div> 
+          <div style={{height: pageLength[0]+ "px"}}></div> 
           <Background src={backgroundImage2} >
           </Background>
-          <div style={{height: "750px"}}></div>
+          <div style={{height: pageLength[1]+ "px"}}></div>
           <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(3, 5)} position = {position}></Animation1>
           </Background>
-          <div style={{height: "3400px"}}></div>
-          
-        </div>
+          <div style={{height: pageLength[2]+ "px"}}></div>
       </ThemeProvider>
+      </div>
     );
   };
 
