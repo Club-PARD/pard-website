@@ -1,14 +1,12 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 
-const Header7 = styled.div`
-  font-size: ${props => props.theme.Mob_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
+const Header8 = styled.div`
+  font-size: ${props => props.theme.Mob_fontSizes.Header8};
+  font-weight: ${props => props.theme.fontWeights.Header8};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  padding-top: 30px;
   white-space: pre-line;
-  padding-left: 18px;
 `;
 
 const Div = styled.div`
@@ -31,7 +29,7 @@ function RecruitingFirstMob() {
         <Div>
         <PartDiv>
              <ThemeProvider theme={theme}>
-            <Header7>RecruitingFirstMob</Header7>
+            <Header8>RecruitingFirstMob</Header8>
             </ThemeProvider>
         </PartDiv>
         </Div>

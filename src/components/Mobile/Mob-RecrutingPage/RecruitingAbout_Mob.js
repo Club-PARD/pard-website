@@ -6,9 +6,7 @@ const Header7 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  padding-top: 30px;
   white-space: pre-line;
-  padding-left: 18px;
 `;
 
 const Div = styled.div`
