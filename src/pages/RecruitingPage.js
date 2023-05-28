@@ -52,11 +52,11 @@ const RecruitingPageComponent_Mob = styled.div`
                 <RecruitingPageComponent_Mob>
                     <NavBarMov />
                     <RecruitingFirstMob/>
-                    {/* <RecruitingSecondMob/>
+                    <RecruitingSecondMob/>
                     <RecruitingIdealMob/>
                     <RecruitingPartMob/>
                     <RecruitingReviewMob/>
-                    <RecruitingAboutMob/> */}
+                    <RecruitingAboutMob/>
                     <RecruitingLastMob/>
                 </RecruitingPageComponent_Mob>
             }
