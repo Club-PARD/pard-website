@@ -168,7 +168,7 @@ function RecruitingReviewMob() {
         setCurrent(nextIndex);
     };
     useEffect(() => {
-        setStyle({ marginTop: `-${Math.floor(current) * 96.5}%` }); // Adjust marginTop based on current index
+        setStyle({ marginTop: `-${Math.floor(current) * 96.65}%` }); // Adjust marginTop based on current index
       }, [current]);
 
     const handleCardClick = (link) => {
