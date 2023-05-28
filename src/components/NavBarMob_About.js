@@ -31,7 +31,6 @@ img {
 
 const MenuButton = styled.button`
   background-color: transparent;
-  color: white;
   border: none;
   font-size: 24px;
   cursor: pointer;
@@ -66,20 +65,34 @@ width: 100%;
 color: white;
 `;
 
-const NavBarMov = () => {
+const NavBarMob_About = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <Nav isOpen={isOpen}>
       <ThemeProvider theme={theme}>
         <Logo>
-        <Link to="/">
-          <img src={require("../assets/img/Logo.png")} alt="Logo" />
+          <Link to="/">
+            <img src={require("../assets/img/Logo.png")} alt="Logo" />
           </Link>
         </Logo>
         <MenuButton onClick={toggleMenu}><FaBars /></MenuButton>
-        <Menu  isOpen={isOpen}>
+        <Menu isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>
             <Subtitle2>소개</Subtitle2>
           </Link>
@@ -101,4 +114,4 @@ const NavBarMov = () => {
   );
 }
 
-export default NavBarMov;
+export default NavBarMob_About;

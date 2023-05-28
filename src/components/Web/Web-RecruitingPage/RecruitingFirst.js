@@ -18,6 +18,7 @@ const Div = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
+
 `;
 
 const Header2 = styled.div`

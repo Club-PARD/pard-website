@@ -25,7 +25,7 @@ const PartDiv = styled.div`
     padding-right: 268px;
     padding-bottom: 274px;
     padding-top: 330px;
-    height: 405px;
+    height: 390px;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
@@ -37,7 +37,7 @@ const PartDiv = styled.div`
 const AboutLogo = styled.img`
     position: absolute;
     width: 1020.27px;
-    height: 417px;
+    height: 390px;
     margin-left: 1005px;
     margin-top: 140px;
     transform: translate(-50%, -50%);
@@ -60,6 +60,7 @@ const AboutFrame1 = styled.img`
     bottom: 0%;
     border-radius: 0px;
     padding: 0px 30px;
+
 `;
 
 const TextContainer = styled.div`
@@ -69,13 +70,43 @@ const TextContainer = styled.div`
     transform: translate(-50%, -50%);
 `;
 
-function AboutFirst() {
+function useScrollPosition() {
+    const [scrollPos, setScrollPos] = useState(0);
+  
+    useEffect(() => {
+      const updateScrollPos = () => {
+        setScrollPos(window.pageYOffset);
+      };
+  
+      window.addEventListener('scroll', updateScrollPos);
+  
+      return () => {
+        window.removeEventListener('scroll', updateScrollPos);
+      };
+    }, []);
+  
+    return scrollPos;
+  }
 
+function AboutFirst() {
+    const [scrollPos, setScrollPos] = useState(0);
+    useEffect(() => {
+        const updateScrollPos = () => {
+          setScrollPos(window.pageYOffset);
+        };
+    
+        window.addEventListener('scroll', updateScrollPos);
+    
+        return () => {
+          window.removeEventListener('scroll', updateScrollPos);
+        };
+      }, []);
     return (
+        <>
         <Div>
         <PartDiv>
             <ThemeProvider theme={theme}>
-                <AboutLogo src={AboutImage} alt="AboutLogo" />
+                <AboutLogo src={AboutImage} alt="AboutLogo" position = {scrollPos} />
                 <TextContainer>
                     <Header2>
                         Pay it forward 문화를 실천하는<br />대학생 IT 협업 동아리 PARD
@@ -85,6 +116,7 @@ function AboutFirst() {
             <AboutFrame1 src={AboutFrame} alt="AboutFrame" />  
         </PartDiv>
         </Div>
+        </>
     );
 }
 

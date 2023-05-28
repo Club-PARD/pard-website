@@ -1,6 +1,3 @@
-// import { useParams } from "react-router-dom";
-// import { useState, useEffect } from "react";
-import Navbar from "../components/NavBar";
 import styled from "styled-components";
 import { useMediaQuery } from 'react-responsive'
 import NavBarMov from "../components/NavBarMov";
@@ -18,6 +15,7 @@ import AboutMentor_Mob from "../components/Mobile/Mob-AboutPage/AboutMentor_Mob"
 import AboutLast_Mob from "../components/Mobile/Mob-AboutPage/AboutLast_Mob";
 import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
+import NavBar_About from "../components/NavBar_About";
 
 function AboutPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -37,7 +35,7 @@ min-width: 1440px;
         <AboutPageComponent>
             {isDesktopOrMobile !== true ?
                 <AboutPageComponent_Web>
-                    <Navbar />
+                    <NavBar_About/>
                     <AboutFirst />
                     <AboutVision />
                     <AboutPart />
