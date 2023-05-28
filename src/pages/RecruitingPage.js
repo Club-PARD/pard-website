@@ -31,6 +31,7 @@ const RecruitingPageComponent_WEB = styled.div`
 
 const RecruitingPageComponent_Mob = styled.div`
         justify-content: center;
+        min-width: 550px;
         width: 100%;
 `;
 

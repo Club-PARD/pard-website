@@ -59,7 +59,7 @@ const Header5 = styled.div`
 
 function InquiryLast() {
   const handleClick = () => {
-    window.location.href = "https://pard.channel.io/lounge";
+    window.open("https://pard.channel.io/lounge", "_blank");
   };
 
   return (
