@@ -29,8 +29,10 @@ const Div = styled.div`
 `;
 const PartDiv = styled.div`
     height: 750px;
-    width: 375px;    
-    justify-content: center;
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 20px;
 `;
 
