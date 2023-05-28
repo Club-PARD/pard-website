@@ -93,7 +93,7 @@ const NavBarMov = () => {
           </Link>
         </Logo>
         <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
-          <img src={scrollPosition >= 730 ? MenuBar_black : MenuBar_white} alt="menu" />
+          <img src={MenuBar_white} alt="menu" />
         </MenuButton>
         <Menu  isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>

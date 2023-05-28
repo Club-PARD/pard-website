@@ -16,6 +16,7 @@ import AboutLast_Mob from "../components/Mobile/Mob-AboutPage/AboutLast_Mob";
 import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
 import NavBar_About from "../components/NavBar_About";
+import NavBarMov_About from "../components/NavBarMob_About";
 
 function AboutPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -46,7 +47,7 @@ min-width: 1440px;
                 </AboutPageComponent_Web>
                 :
                 <div>
-                    <NavBarMov />
+                    <NavBarMov_About/>
                     <AboutFirst_Mob />
                     <AboutVision_Mob />
                     <AboutPart_Mob />

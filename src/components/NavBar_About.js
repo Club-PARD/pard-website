@@ -98,7 +98,7 @@ const NavBar_About = () => {
           <NavLinks>
             <NavItem>
               <Link to="/About" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/About'} isScrolled={scrollPosition >= 970}>소개</Subtitle1>
+                <Subtitle1 active={pathname === '/About'} isScrolled={scrollPosition >= 1000}>소개</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>

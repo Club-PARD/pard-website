@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 import { theme } from '../styles/theme';
 import { Link } from 'react-router-dom';
-
+import MenuBar_white from '../assets/img/MenuBar_white.png'; 
+import MenuBar_black from '../assets/img/MenuBar_black.png'; 
 
 const Nav = styled.nav`
   background-color: ${({ isOpen }) => (isOpen ? 'rgba(26, 26, 26, 0.8)' : 'rgba(0,0,0,0)')};
@@ -31,6 +32,7 @@ img {
 
 const MenuButton = styled.button`
   background-color: transparent;
+  color: white;
   border: none;
   font-size: 24px;
   cursor: pointer;
@@ -65,34 +67,35 @@ width: 100%;
 color: white;
 `;
 
-const NavBarMob_About = () => {
+const NavBarMov_About = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+ 
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
-
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <Nav isOpen={isOpen}>
       <ThemeProvider theme={theme}>
         <Logo>
-          <Link to="/">
-            <img src={require("../assets/img/Logo.png")} alt="Logo" />
+        <Link to="/">
+          <img src={require("../assets/img/Logo.png")} alt="Logo" />
           </Link>
         </Logo>
-        <MenuButton onClick={toggleMenu}><FaBars /></MenuButton>
-        <Menu isOpen={isOpen}>
+        <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
+          <img src={scrollPosition >= 730 ? MenuBar_black : MenuBar_white} alt="menu" />
+        </MenuButton>
+        <Menu  isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>
             <Subtitle2>소개</Subtitle2>
           </Link>
@@ -114,4 +117,4 @@ const NavBarMob_About = () => {
   );
 }
 
-export default NavBarMob_About;
+export default NavBarMov_About;
