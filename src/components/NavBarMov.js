@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 import { theme } from '../styles/theme';
 import { Link } from 'react-router-dom';
-
+import MenuBar_white from '../assets/img/MenuBar_white.png'; 
+import MenuBar_black from '../assets/img/MenuBar_black.png'; 
 
 const Nav = styled.nav`
   background-color: ${({ isOpen }) => (isOpen ? 'rgba(26, 26, 26, 0.8)' : 'rgba(0,0,0,0)')};
@@ -68,6 +69,19 @@ color: white;
 
 const NavBarMov = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+ 
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
@@ -78,7 +92,9 @@ const NavBarMov = () => {
           <img src={require("../assets/img/Logo.png")} alt="Logo" />
           </Link>
         </Logo>
-        <MenuButton onClick={toggleMenu}><FaBars /></MenuButton>
+        <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
+          <img src={scrollPosition >= 730 ? MenuBar_black : MenuBar_white} alt="menu" />
+        </MenuButton>
         <Menu  isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>
             <Subtitle2>소개</Subtitle2>
