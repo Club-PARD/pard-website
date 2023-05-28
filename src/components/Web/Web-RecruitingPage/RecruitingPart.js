@@ -1,7 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
-
 import ServiceVector from '../../../assets/img/ServiceVector.png';
 import DesignVector from '../../../assets/img/DesignVector.png';
 import DevelopVector from '../../../assets/img/DevelopVector.png';
@@ -12,23 +11,25 @@ const PartDiv = styled.div`
   position: relative;
   margin-top: 50px;
   margin-left: 10px;
+  
 `;
 
 const Div = styled.div`
   display: flex;
-  width: 100%;
   align-items: center;
   justify-content: center;
 `;
 
 const Header7 = styled.div`
-  font-size: 40px;
-  font-weight: 800;
+  font-size: ${props => props.theme.Web_fontSizes.Header7};
+  font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   line-height: 140%;
-  margin-left: 208px;
+  margin-left: 210px;
   margin-bottom: 137px;
+  display: flex;
+  justify-items: center;
 `;
 
 const Header5 = styled.div`
@@ -116,9 +117,6 @@ const Button = styled.a`
     ${BtnText} {
       color: ${({ hoverColor }) => hoverColor};
     }
-    /* ${Vector} {
-      content: ${({ selectedImage }) => selectedImage};
-    } */
   }
   &:hover {
     ${Vector} {
@@ -194,7 +192,7 @@ const RecruitingPart = () => {
     window.open(link, '_blank');
   };
 
-  const [isHovered, setIsHovered] = React.useState(null);
+const [isHovered, setIsHovered] = React.useState(null);
 
 const handleHover = (index) => {
   setIsHovered(index);
@@ -229,7 +227,6 @@ const handleHover = (index) => {
                   )}
                 </Header5>
                 <Body1>자세히 보기</Body1>
-                {/* <Vector src={button.selected ? button.selectedImage : button.vectorImage} /> */}
               </Button>
               ))}
             </ButtonRow>
@@ -250,7 +247,6 @@ const handleHover = (index) => {
                       </SmallButton>
                     )}
                   </Header5>
-                  {/* <Vector src={button.selected ? button.selectedImage : button.vectorImage} /> */}
                   <Body1>자세히 보기</Body1>
                 </Button>
               ))}
