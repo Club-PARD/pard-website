@@ -181,6 +181,13 @@ const textDB = [
         return null;
     }
   }
+
+  const translate3d = (x, y, z) => {
+    x = x !== null ? x : 0;
+    y = y !== null ? y : 0;
+    z = z !== null ? z : 0;
+    return `translate3d(${x}px, ${y}px, ${z}px)`
+  }
   
   const textTransformLogic = (textInfo, position) => {
     var offset = (position - (textInfo.breakPoint + textInfo.period * 0.8));
@@ -188,22 +195,22 @@ const textDB = [
       const change = 75;
       var x = position - (textInfo.breakPoint + 1000 - change);
       if(x >= 0 && x < change){
-        return `translateY(${x * -1}px)`
+        return translate3d(0, x * -1, 0);
       } else if(x >= change){
-        return `translateY(${change * -1}px)`
+        return translate3d(0, change * -1, 0);
       } else{
-        return `translateY(0px)`;
+        return translate3d(0, 0, 0);
       }
       
     }
     if(offset < 0) return 0;
     switch(textInfo.id){
       case 0:
-        return `translateX(${offset * -1}px)`
+        return translate3d(offset * -1, 0, 0);
       case 2:
-        return `translateX(${offset * 1}px)`
+        return translate3d(offset * 1, 0, 0);
       default:
-        return `translateY(0px)`;
+        return translate3d(0, 0, 0);
     }
   }
   
