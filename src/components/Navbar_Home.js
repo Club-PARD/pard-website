@@ -56,7 +56,7 @@ const NavLinks = styled.ul`
   display: flex;
   align-items: center;
   list-style-type: none;
-  margin-right: 7px;
+  margin-right: 10px;
 `;
 
 const NavItem = styled.li`
