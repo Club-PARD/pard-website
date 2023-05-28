@@ -1,7 +1,7 @@
 import { React, useState, useEffect, useRef, useMemo } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
-import ScrollAnimation from 'react-animate-on-scroll';
+//import ScrollAnimation from 'react-animate-on-scroll';
 import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
 
 const PageContainer = styled.div`
