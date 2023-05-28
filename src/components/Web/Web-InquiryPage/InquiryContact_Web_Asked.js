@@ -48,7 +48,7 @@ color: #FFFFFF;
 const Informationstyle = styled.form`
 margin-top: 100px; 
  //padding한 만큼 원래 maring-left0px에서 값 뺴줌
- margin-left:380px;
+ margin-left:390px;
  //padding한 만큼 원래 maring-top0px에서 값 뺴줌
 
 height:220px;
