@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import img1 from '../../../assets/img/숏커톤1.png';
 import img2 from '../../../assets/img/숏커톤2.png';
-import img3 from '../../../assets/img/숏커톤3-롱커톤1.png';
+import img3 from '../../../assets/img/숏커톤3.png';
 
 const Header4 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header4};
