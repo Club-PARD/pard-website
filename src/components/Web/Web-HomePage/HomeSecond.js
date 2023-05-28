@@ -275,7 +275,6 @@ const HomeSecond = () => {
     return (
       <ThemeProvider theme={theme}>
         <div>
-          {position}
           <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
             </Background>
