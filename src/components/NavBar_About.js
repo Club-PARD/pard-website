@@ -9,8 +9,7 @@ const Div = styled.div`
 `;
 
 const NavBarWrapper = styled.nav`
- /* background-color: ${props => props.isScrolled ? (props.scrollPosition >= 1000 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'}; */
- background-color: 'rgba(0,0,0,0)';
+  background-color: ${({ scrollPosition }) => (scrollPosition > 970 ? '#FFFFFF' : '#1A1A1A')};
   height: 70px;
   display: flex;
   justify-content: center;
@@ -88,7 +87,7 @@ const NavBar_About = () => {
 
   return (
     <Div>
-      <NavBarWrapper isScrolled={scrollPosition >= 30} scrollPosition={scrollPosition}>
+      <NavBarWrapper scrollPosition={scrollPosition}>
         <ThemeProvider theme={theme}>
           <NavDiv>
           <Logo>
@@ -99,22 +98,22 @@ const NavBar_About = () => {
           <NavLinks>
             <NavItem>
               <Link to="/About" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/About'} isScrolled={scrollPosition >= 1000}>소개</Subtitle1>
+                <Subtitle1 active={pathname === '/About'} isScrolled={scrollPosition >= 970}>소개</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Project" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Project'} isScrolled={scrollPosition >= 1000}>프로젝트</Subtitle1>
+                <Subtitle1 active={pathname === '/Project'} isScrolled={scrollPosition >= 970}>프로젝트</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Inquiry'} isScrolled={scrollPosition >= 1000}>문의</Subtitle1>
+                <Subtitle1 active={pathname === '/Inquiry'} isScrolled={scrollPosition >= 970}>문의</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Recruting" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Recruting'} isScrolled={scrollPosition >= 1000}>리쿠르팅</Subtitle1>
+                <Subtitle1 active={pathname === '/Recruting'} isScrolled={scrollPosition >= 970}>리쿠르팅</Subtitle1>
               </Link>
             </NavItem>
           </NavLinks>

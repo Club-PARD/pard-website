@@ -25,7 +25,7 @@ const PartDiv = styled.div`
     padding-right: 268px;
     padding-bottom: 274px;
     padding-top: 330px;
-    height: 370px;
+    height: 390px;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
@@ -53,14 +53,13 @@ const Div = styled.div`
 `;
 
 const AboutFrame1 = styled.img`
-    position: sticky;
+    position: absolute;
     height: 40px;
     width: 100%;
     /* margin-top: 550px; */
-    bottom: 0%; 
-
+    bottom: 0%;
     border-radius: 0px;
-    // padding: 0px 30px;
+    padding: 0px 30px;
 
 `;
 
@@ -114,10 +113,9 @@ function AboutFirst() {
                     </Header2>   
                 </TextContainer>
             </ThemeProvider>  
-            
+            <AboutFrame1 src={AboutFrame} alt="AboutFrame" />  
         </PartDiv>
         </Div>
-        <AboutFrame1 src={AboutFrame} alt="AboutFrame" />  
         </>
     );
 }
