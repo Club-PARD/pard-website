@@ -42,10 +42,10 @@ const Menu = styled.div`
   left: 0;
   right: 0;
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  background-color: rgba(26, 26, 26, 0.6); // 여기가 NavBar 투명도
-  padding: 1rem;
+  background-color: rgba(26, 26, 26, 0.8); // 여기가 NavBar 투명도
+  padding: 1rem 5rem;
   text-align: center;
-  height: 100%;
+  height: 237px;
 `;
 
 const Subtitle2 = styled.div`
@@ -60,7 +60,7 @@ const Subtitle2 = styled.div`
 
 
 const Hr = styled.hr`
-width: 499px;
+width: 100%;
 color: white;
 `;
 
