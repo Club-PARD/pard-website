@@ -5,6 +5,60 @@ import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
 import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
 import backgroundImage3 from '../../../assets/img/homeBackgroundImg3.svg';
 
+
+const textDB = [
+  {
+    id : 0,
+    text: "협업하고",
+    breakPoint: 5500,
+    period: 1000,
+    posX: "20%",
+    posY: "0%",
+  },
+  {
+    id : 1,
+    text: "성장하고",
+    breakPoint: 5500,
+    period: 1000,
+    posX: "35%",
+    posY: "0%",
+  },
+  {
+    id : 2,
+    text: "해결하기",
+    breakPoint: 5500,
+    period: 1000,
+    posX: "50%",
+    posY: "0%",
+  },
+  {
+    id : 3,
+    text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
+    breakPoint: 9600,
+    period: 1800,
+    posX: "35%",
+    posY: "0%",
+  },
+  {
+    id : 4,
+    text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
+    breakPoint: 10400,
+    period: 1000,
+    posX: "45%",
+    posY: "0%",
+  },
+]
+const breakPointInfos = [
+  {
+    breakPoint: 5000,
+    period: 2400
+  },
+  {
+    breakPoint: 9400,
+    period: 2800
+  },
+]
+
 const Background = styled.div`
   background-image: ${props => `url(${props.src})`};
   background-size: contain;
@@ -173,59 +227,6 @@ function useScrollPosition() {
 
   return scrollPos;
 }
-
-const textDB = [
-  {
-    id : 0,
-    text: "협업하고",
-    breakPoint: 5500,
-    period: 1000,
-    posX: "20%",
-    posY: "0%",
-  },
-  {
-    id : 1,
-    text: "성장하고",
-    breakPoint: 5500,
-    period: 1000,
-    posX: "35%",
-    posY: "0%",
-  },
-  {
-    id : 2,
-    text: "해결하기",
-    breakPoint: 5500,
-    period: 1000,
-    posX: "50%",
-    posY: "0%",
-  },
-  {
-    id : 3,
-    text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
-    breakPoint: 9600,
-    period: 1800,
-    posX: "35%",
-    posY: "0%",
-  },
-  {
-    id : 4,
-    text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
-    breakPoint: 10400,
-    period: 1000,
-    posX: "45%",
-    posY: "0%",
-  },
-]
-const breakPointInfos = [
-  {
-    breakPoint: 5000,
-    period: 2400
-  },
-  {
-    breakPoint: 9400,
-    period: 2800
-  },
-]
 
 const HomeSecond = () => {
   const [text1, setText1] = useState(false);
