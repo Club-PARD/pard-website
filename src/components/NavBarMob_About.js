@@ -87,12 +87,12 @@ const NavBarMob_About = () => {
     <Nav isOpen={isOpen}>
       <ThemeProvider theme={theme}>
         <Logo>
-        <Link to="/">
-          <img src={require("../assets/img/Logo.png")} alt="Logo" />
+          <Link to="/">
+            <img src={require("../assets/img/Logo.png")} alt="Logo" />
           </Link>
         </Logo>
-        <MenuButton onClick={toggleMenu}><FaBars/></MenuButton>
-        <Menu  isOpen={isOpen}>
+        <MenuButton onClick={toggleMenu}><FaBars /></MenuButton>
+        <Menu isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>
             <Subtitle2>소개</Subtitle2>
           </Link>
