@@ -15,6 +15,7 @@ const PartDiv = styled.div`
 `;
 
 const Div = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,10 +27,11 @@ const Header7 = styled.div`
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   line-height: 140%;
-  margin-left: 210px;
+  margin-right: 420px;
   margin-bottom: 137px;
   display: flex;
-  justify-items: center;
+  justify-content: center;
+
 `;
 
 const Header5 = styled.div`
