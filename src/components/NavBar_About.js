@@ -27,16 +27,29 @@ const NavDiv = styled.div`
   align-items: center;
   justify-content: space-around;
 `
-
 const Subtitle1 = styled.p`
   font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
   font-weight: ${props => props.theme.fontWeights.Subtitle1};
-  color: ${props => props.isScrolled ?  props.active ? '#1A1A1A' : 'rgba(255, 255, 255, 0.2)': props.active ? '#FFFFFF' : 'rgba(26, 26, 26, 0.2)'};
   font-family: 'NanumSquare Neo';
-  &:hover{
+
+  // Apply the color based on the scroll position and active state
+  color: ${props => props.isScrolled 
+    ? (props.active 
+      ? '#1A1A1A'  // Scrolled and active: dark gray
+      : 'rgba(26, 26, 26, 0.2)'  // Scrolled and not active: dark gray with 0.2 opacity
+    )
+    : (props.active 
+      ? '#FFFFFF'  // Not scrolled and active: white
+      : 'rgba(255, 255, 255, 0.2)'  // Not scrolled and not active: white with 0.2 opacity
+    )
+  };
+
+  // Apply the hover color based on the scroll position
+  &:hover {
     color: ${props => props.isScrolled ? '#1A1A1A' : '#FFFFFF'};
   }
 `;
+
 
 const Logo = styled.div`
   img {
@@ -91,17 +104,17 @@ const NavBar_About = () => {
             </NavItem>
             <NavItem>
               <Link to="/Project" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Project'}>프로젝트</Subtitle1>
+                <Subtitle1 active={pathname === '/Project'} isScrolled={scrollPosition >= 1000}>프로젝트</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Inquiry'}>문의</Subtitle1>
+                <Subtitle1 active={pathname === '/Inquiry'} isScrolled={scrollPosition >= 1000}>문의</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Recruting" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Recruting'}>리쿠르팅</Subtitle1>
+                <Subtitle1 active={pathname === '/Recruting'} isScrolled={scrollPosition >= 1000}>리쿠르팅</Subtitle1>
               </Link>
             </NavItem>
           </NavLinks>
