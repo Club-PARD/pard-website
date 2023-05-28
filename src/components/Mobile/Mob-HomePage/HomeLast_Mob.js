@@ -46,6 +46,7 @@ const Div = styled.div` //정해진 width를 또 가운데 정렬
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-left: 24px;
 `;
 
 const PartDiv = styled.div`
@@ -95,7 +96,9 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
 `;
 
 function HomeLastMob() {
-
+  const handleClick = () => {
+    window.open("https://tally.so/r/w4BxRd", "_blank");
+  };
     return (
         <Div>
         <PartDiv>
@@ -107,7 +110,7 @@ function HomeLastMob() {
             </Line>
             <Header6>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도<br></br>선수들의 역량이에요</Header6>
             <Subtitle2>송민 KBS 서핑 해설위원</Subtitle2>
-            <Button1>지금 바로 2기 지원하기</Button1>
+            <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1>
             </ThemeProvider>
         </PartDiv>
         </Div>

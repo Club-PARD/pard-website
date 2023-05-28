@@ -60,6 +60,7 @@ const PartDiv = styled.div`
     padding-top: 131px;
     height: 750px;
     width: 375px;
+    padding-left: 24px;
     
 `;
 

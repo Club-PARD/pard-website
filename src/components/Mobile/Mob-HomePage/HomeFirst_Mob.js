@@ -1,6 +1,8 @@
 import styled, { css, keyframes,ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+
 const Header7 = styled.div`
   font-size: ${props => props.theme.Mob_fontSizes.Header7};
   font-weight: ${props => props.theme.fontWeights.Header7};
@@ -25,7 +27,7 @@ const VideoContainer = styled.div`
   top:0;
   width: 100%;
   height: 100vh;
-  min-width: 740px; // 아무리 줄여도 1440px로 유지됨
+  min-width: 375px; // 아무리 줄여도 1440px로 유지됨
   overflow: hidden;
   background-color: ${({ isColor }) => (isColor ? ' rgba(0, 0, 0, 0.4)' : ' rgba(0, 0, 0, 0.4)')};
  ;
@@ -35,7 +37,7 @@ const VideoContainer = styled.div`
 const DIVVVV = styled.div`
 
   display: inline-block;
-  height: 4000px;
+  height: 13500px;
   width: 100%;
 `;
 
@@ -126,8 +128,8 @@ const TextContainer2 = styled.div`
 width: 616px;
 height: 84px;
   position: absolute; // 전체 태그에 대한거임 absolute니까 당연히!
-  top:50%;
-  left: 73%;
+  top:190%;
+  left: 97%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 4;
@@ -148,17 +150,13 @@ height: 104px;
   z-index: 4;
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   transition: opacity 0.5s ease-in;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`${expandAnimation} 0.5s ease-in-out`}
-    `};
+
 `;
 const Text = styled.p`
 font-family: 'NanumSquare Neo';
 font-style: normal;
 font-weight: ${(props) => props.theme.fontWeights.Header7};
-font-size:  ${(props) => props.theme.Mob_fontSizes.Header7};
+font-size:  42px;
 line-height: 140%;
   color: white;
 
@@ -168,11 +166,11 @@ const Text1 = styled.p`
 font-family: 'NanumSquare Neo';
 font-style: normal;
 font-weight: ${(props) => props.theme.fontWeights.Header7};
-font-size:  ${(props) => props.theme.Mob_fontSizes.Header7};
+font-size:  42px;
 line-height: 140%;
 color: white;
 
-  transition: transform 2s ease-in-out forwards;
+  transition: transform 6s ease-in-out forwards;
 //animation: ${({ isAnimation }) => (isAnimation ? css`${moveLeft} 1s ease-in-out forwards` : 'none')};
 // forwards로 벌리고 난 뒤에 고정
 `;
@@ -181,7 +179,7 @@ const Text2 = styled(Text)`
 font-family: 'NanumSquare Neo';
 font-style: normal;
 font-weight: ${(props) => props.theme.fontWeights.Header7};
-font-size:  ${(props) => props.theme.Mob_fontSizes.Header7};
+font-size:   42px;
 line-height: 140%;
 color: white;
 transition: transform 0.5s ease-in-out forwards;
@@ -216,6 +214,11 @@ line-height: 160%;
 /* or 56px */
 color: #FFFFFF;
 text-align: center;
+  animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`${expandAnimation} 0.5s ease-in-out`}
+    `};
 
   //letter-spacing: ${({ isExpanded }) => (isExpanded ? '0.5em' : '0')};
 `;
@@ -279,8 +282,8 @@ const MovedText = styled.div`
   display: flex;
   width: 306px;
   position: absolute;
-  top: 70%;  // adjust this value to control the initial position
-  left: 19%;  // position it in the middle of its parent
+  top: 75%;  // adjust this value to control the initial position
+  left: 10%;  // position it in the middle of its parent
   transform: translate(-50%, -50%);  // change the origin of transformation
   transition: transform 0.5s ease-in-out forwards;
     animation: ${({ isAnimation }) =>
@@ -298,7 +301,7 @@ const MovedText = styled.div`
   font-style: normal;
   z-index: 4;
 font-weight: 800;
-font-size: 40px;
+font-size:  42px;
 line-height: 140%;
   color: white;
 `;
@@ -322,7 +325,7 @@ const HomeVideoMob = () => {
 
 
   const position = useScrollPosition();
- 
+  const stopPosition = 1200;
 
   useEffect(() => {
     const absPosition = Math.abs(position);
@@ -332,7 +335,7 @@ const HomeVideoMob = () => {
       setbackcolor(false);
       setIsFixed(true);
       setIsVisible(false);
-    } else if (position >= 100 && position <650) { 
+    } else if (position >= 100 && position <950) { 
       setchanged('a');
       setText('PARD');
     
@@ -344,7 +347,7 @@ const HomeVideoMob = () => {
      //keyframse에 따른 animation 값을 스크롤에 따른 값으로 설정
      // position으로 설정한다 이를
       
-    } else if (position >= 650 && position <745) {
+    } else if (position >= 950 && position <3500) {
       setchanged('b');
  setisExpanded(true);
       setText1('PA');
@@ -357,7 +360,7 @@ const HomeVideoMob = () => {
    // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
 
 
-    } else if (position >= 745 && position < 1050) {
+    } else if (position >= 3500 && position <4100) {
       setchanged('c');
       setisExpanded(true);
       setText1('PA');
@@ -370,7 +373,7 @@ const HomeVideoMob = () => {
           
 
 
-    }else if (position >= 1050 && position < 1500) {
+    }else if (position >= 4100 && position < 4900) {
       setchanged('cd');
       setisExpanded(true);
       setText1('PA');
@@ -383,7 +386,7 @@ const HomeVideoMob = () => {
 
     
 
-    }  else if (position >= 1500 && position < 1900) {
+    }  else if (position >= 4900 && position < 7400) {
       setchanged('cdd');
       setisExpanded(true);
       setText1('PA');
@@ -391,18 +394,19 @@ const HomeVideoMob = () => {
       setText3('Y it FORWA');
            setIsFixed(true);
            setIsVisible(true);
+
            setbackcolor(true);
            setIsAnimation(true);
            setText('실천하는 IT 협업 동아리');
      setIsSplitTextVisible(true);
 
-    } else if (position >= 1900 && position <2400) {
+    } else if (position >= 7400 && position <7700) {
       setIsVisible(false);
       setbackcolor(true);
       // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
       setIsSplitTextVisible(false);
 
-    } else if (position >= 2400 && position <2900){
+    } else if (position >= 7700 && position <10300){
       setchanged('d');
       setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
       setIsFixed(true);
@@ -410,13 +414,25 @@ const HomeVideoMob = () => {
       setbackcolor(true);
 
     }
-    else if (position >= 2900 ) {
+    else if (position >= 10300 && position <10900){
+
+    
+      setIsVisible(false);
+      setbackcolor(true);
+      setIsAnimation(false);
+
+    }
+    else if (position >= 10500 ) {
       setchanged('ddd');
    
 
       setbackcolor(true);
       
     } 
+
+    
+  
+
 
   }, [position,isVisible]);
 
@@ -428,12 +444,12 @@ const HomeVideoMob = () => {
     } }, [position,isVisible]);
     */
   
-
+    
     return (
         <>
         <DIVVVV>
         <ThemeProvider theme={theme}>
-            <VideoContainer isColor={backcolor}  isFixed={isFixed}>
+            <VideoContainer isColor={backcolor}>
         
               <VideoBackground  autoPlay loop muted>
                 <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
@@ -449,7 +465,7 @@ const HomeVideoMob = () => {
         
                     {changed==='aaa' ?  
                       <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
-                      
+                       
                         </TextContainer1> 
                         :changed==='a' ?  
                       <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
@@ -460,9 +476,11 @@ const HomeVideoMob = () => {
                         changed==='b' ?  
                         <>
                   
-            <SplitTextContainer isVisible={isVisible}>
-              <Text1 style={{ transform: `translateX(-${position-650}px)` }}>{text1}</Text1>
-              <Text2 style={{ transform: `translateX(${position-650}px)` }}>{text2}</Text2>
+            <SplitTextContainer     isVisible={isVisible}>
+            <Text1 style={{ transform: `translateX(-${Math.min((position - 950)/20, 121)}px)` }}>{text1}</Text1>
+            {/* 이동하는 속도를 1px당 이동하는 속도를  /20한 만큼 낮추었고 위에 position을 늘려서 충분히 그 속도를 유지하여 스크롤을 
+            내리도록 하였다.*/}
+<Text2 style={{ transform: `translateX(${Math.min((position - 950)/20, 120)}px)` }}>{text2}</Text2>
               
             </SplitTextContainer>
         
@@ -482,9 +500,9 @@ const HomeVideoMob = () => {
         
         :changed==='c' ?  
         <>
-        <SplitTextContainer isVisible={isVisible}>
-              <Text1 style={{ transform: `translateX(-${95}px)` }}>{text1}</Text1>
-              <Text2 style={{ transform: `translateX(${140}px)` }}>{text2}</Text2>
+        <SplitTextContainer  isVisible={isVisible}>
+        <Text1 style={{ transform: `translateX(-${121}px)` }}>{text1}</Text1>
+              <Text2 style={{ transform: `translateX(${120}px)` }}>{text2}</Text2>
               
             </SplitTextContainer>
             {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
@@ -502,8 +520,8 @@ const HomeVideoMob = () => {
         :changed==='cd' ?  
         <>
         <SplitTextContainer isVisible={isVisible}>
-              <Text1 style={{ transform: `translateX(-${95}px)` }}>{text1}</Text1>
-              <Text2 style={{ transform: `translateX(${140}px)` }}>{text2}</Text2>
+        <Text1 style={{ transform: `translateX(-${121}px)` }}>{text1}</Text1>
+              <Text2 style={{ transform: `translateX(${120}px)` }}>{text2}</Text2>
               <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
             </SplitTextContainer>
             {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
@@ -514,21 +532,26 @@ const HomeVideoMob = () => {
         :changed==='cdd' ?  
         <>
         <SplitTextContainer isVisible={isVisible}>
-              <Text1 style={{ transform: `translateX(-${95}px)` }}>{text1}</Text1>
-              <Text2 style={{ transform: `translateX(${140}px)` }}>{text2}</Text2>
+              <Text1 style={{ transform: `translateX(-${121}px)` }}>{text1}</Text1>
+              <Text2 style={{ transform: `translateX(${120}px)` }}>{text2}</Text2>
               <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
               
-            
+              <TextContainer2   isVisible={isVisible}>
+        <Textchanged1 isAnimation={isSplitTextVisible} isExpanded={isExpanded}>
+        {text}
+        </Textchanged1>
+        </TextContainer2>
             </SplitTextContainer>
             {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
         
         {/*위에 컴포넌트 그전 스크롤에서 나타난것들 고정되게 하고 스크롤 내리면 딱 animation으로 나타난다*/}
         
-                <TextContainer2   isVisible={isVisible}>
+             
+             {/*  <TextContainer2   isVisible={isVisible}>
         <Textchanged1 isAnimation={isSplitTextVisible} isExpanded={isExpanded}>
         {text}
         </Textchanged1>
-        </TextContainer2>
+      </TextContainer2>*/}
         {/*컴포넌트를 감싸는 조건문으로 설정하니까 animation이 안먹었음
         근데 애초에 택스트에 애니메이션을 걸어놔야 되는 것 같기도 하고
         그래서 Textchanged1에 애니메이션 넣음*/}
@@ -537,9 +560,10 @@ const HomeVideoMob = () => {
         
         
                     changed ==='d'? 
-                    <TextContainer3 isAnimation={isAnimation} isVisible={isVisible}>
-                    <Textchanged2 isExpanded={isExpanded}>함께 성장하고 싶은 <br/>기획자, 디자이너, 개발자 대학생들이 모여<br/> 세상을 바꾸는 IT제품을<br/> 어떻게 만들 수 있을까요?</Textchanged2>
+                    <TextContainer3 isVisible={isVisible}>
+                    <Textchanged2 isAnimation={isAnimation}  isExpanded={isExpanded}>함께 성장하고 싶은 <br/>기획자, 디자이너, 개발자 대학생들이 모여<br/> 세상을 바꾸는 IT제품을<br/> 어떻게 만들 수 있을까요?</Textchanged2>
                     </TextContainer3>:
+
                     changed==='ddd' && 
                     <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
                     

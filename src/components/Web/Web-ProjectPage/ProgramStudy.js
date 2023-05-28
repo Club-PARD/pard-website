@@ -1,4 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
+import img1 from '../../../assets/img/스터디1.png';
+import img2 from '../../../assets/img/스터디2.png';
+import img3 from '../../../assets/img/스터디3.png';
 
 const Header4 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header4};
@@ -40,21 +43,22 @@ const Card = styled.div`
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  width: 280px; //원래 크기 310px;
-  height: 300px; //원래 크기 370px;
-  margin-right: 30px;
+  width: 310px; //원래 크기 310px;
+  height: 370px; //원래 크기 370px;
+  margin-right: 40px;
   background-color: #d9d9d9;
   border-radius: 20px 20px 20px 20px;
 `;
+
 const FirstCard = styled.div`
   display: flex;
   flex: 0 0 auto;
   flex-direction: column;
   width: 320px;
-  height: 320px;
+  height: 370px;
   border-radius: 20px 20px 20px 20px;
-  margin-right: 60px;
-  margin-left: 40px; 
+  margin-right: 30px;
+  margin-left: 80px; 
   background-color: #1a1a1a;
 `;
 
@@ -63,15 +67,22 @@ const CardContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 86%; //margin-bottom 안먹는 이유
+  margin-top: auto; 
   height: 20%;
   background-color: #5262F5;
   border-radius: 0px 0px 20px 20px;
 `;
 
+const CardImage = styled.img`
+  // object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0px 0px;
+`;
+
 const Box = styled.div`
   width: 100%;
-  height: 55%;
+  height: 70%;
   background-color: #1a1a1a;
 `;
 
@@ -79,14 +90,17 @@ function ProgramStudy() {
   const cardData = [
     {
       id: 1,
+      image: img1,
       description: "전공, 파트, 나이와 상관없이\n 원하면 누구나 모여 학습",
     },
     {
       id: 2,
+      image: img2,
       description: "협업, AI, 3D 디자인 툴, 글쓰기,\n 스포츠 까지 다양한 주제로 진행",
     },
     {
       id: 3,
+      image: img3,
       description: "Pay it forward 실천을 위한\n스터디 결과물 전체 공유",
     },
   ];
@@ -105,6 +119,7 @@ function ProgramStudy() {
       </FirstCard>
       {cardData.map((content) => (
         <Card key={content.id}>
+          <CardImage key={content.id} src={content.image} alt={`Card ${content.id}`} />
           <CardContent key={content.id}>
             <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
           </CardContent>

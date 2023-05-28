@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 import { theme } from '../styles/theme';
 import { Link } from 'react-router-dom';
-
+import MenuBar_white from '../assets/img/MenuBar_white.png'; 
+import MenuBar_black from '../assets/img/MenuBar_black.png'; 
 
 const Nav = styled.nav`
-  background-color: #1A1A1A;
+  background-color: ${({ isOpen }) => (isOpen ? 'rgba(26, 26, 26, 0.8)' : 'rgba(0,0,0,0)')};
   color: white;
   display: flex;
   align-items: center;
@@ -16,7 +17,8 @@ const Nav = styled.nav`
   left: 0;
   right: 0;
   height: 69px;
-  z-index: 2;
+  z-index: 999;
+  border-bottom: none;
 `;
 
 const Logo = styled.div`
@@ -42,10 +44,11 @@ const Menu = styled.div`
   left: 0;
   right: 0;
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  background-color: rgba(26, 26, 26, 0.6); // 여기가 NavBar 투명도
-  padding: 1rem;
+  background-color: rgba(26, 26, 26, 0.8); // 여기가 NavBar 투명도
+  padding: 1rem 5rem;
   text-align: center;
-  height: 100%;
+  height: 237px;
+  margin-top: 4px;
 `;
 
 const Subtitle2 = styled.div`
@@ -60,23 +63,38 @@ const Subtitle2 = styled.div`
 
 
 const Hr = styled.hr`
-width: 499px;
+width: 100%;
 color: white;
 `;
 
 const NavBarMov = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+ 
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <Nav>
+    <Nav isOpen={isOpen}>
       <ThemeProvider theme={theme}>
         <Logo>
         <Link to="/">
           <img src={require("../assets/img/Logo.png")} alt="Logo" />
           </Link>
         </Logo>
-        <MenuButton onClick={toggleMenu}><FaBars /></MenuButton>
+        <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
+          <img src={MenuBar_white} alt="menu" />
+        </MenuButton>
         <Menu  isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>
             <Subtitle2>소개</Subtitle2>

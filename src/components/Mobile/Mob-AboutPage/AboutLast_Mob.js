@@ -117,7 +117,9 @@ const AboutFrame1 = styled.img`
   ;
 
 function AboutLast_Mob() {
-
+  const handleClick = () => {
+    window.open("https://tally.so/r/w4BxRd", "_blank");
+  };
   return (
     <Div>
     <PartDiv>
@@ -129,7 +131,7 @@ function AboutLast_Mob() {
         </Line>
         <Header6>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도<br></br>선수들의 역량이에요</Header6>
         <Comment>송민 KBS 서핑 해설위원</Comment>
-        <Button1>지금 바로 2기 지원하기</Button1>
+        <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1>
       </ThemeProvider>
     </PartDiv>
     <AboutFrame1 src={AboutFrame} alt="AboutFrame" />

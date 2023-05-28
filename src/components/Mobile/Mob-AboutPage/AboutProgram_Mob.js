@@ -49,7 +49,7 @@ const Button = styled.button`
     background-color: ${props=> (props.selected) ? props.color:'#fff'} ;
 `;
 
-const ButtonText1Number = styled.text`
+const ButtonText1Number = styled.div`
     display: inline-block;
     font-size: ${props => props.theme.Web_fontSizes.ButtonText1};
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
@@ -58,7 +58,7 @@ const ButtonText1Number = styled.text`
     padding-left: 20px;
 `;
 
-const ButtonText1 = styled.text`
+const ButtonText1 = styled.div`
     display: inline-block;
     font-size: ${props => props.theme.Web_fontSizes.ButtonText1};
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
@@ -216,7 +216,7 @@ function AboutProgram_Mob() {
                 <Header8>함께하는 여정</Header8>
                 <StyledWrap>
                     {part.map(content=>(
-                      <StyledWrap2>
+                      <StyledWrap2 key={content.id}>
                         <Button key={content.id} onClick={()=>handleButtonClick(content.id)}
                                 selected = {content.selected} color={content.border_color}>
                                   <ButtonText1Number selected = {content.selected}>{content.listNum}</ButtonText1Number>  
@@ -229,7 +229,7 @@ function AboutProgram_Mob() {
                         <Image key={props.id} src={props.imgsrc} alt={`Image ${props.id}`} selected = {props.selected}/>
                     ))}
                     {part.map(props=>(
-                        <Body2 selected={props.selected}>{props.context}</Body2>
+                        <Body2  key={props.id} selected={props.selected}>{props.context}</Body2>
                     ))}
                 
             </ThemeProvider>

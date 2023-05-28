@@ -16,7 +16,7 @@ const Header7 = styled.div`
   color: black;
   font-family: 'NanumSquare Neo';
   line-height: 140%;
-  margin-bottom: 109px;
+  margin-bottom: 73px;
   white-space: pre-line;
   margin-right: 150px;
   margin-top: 180px;

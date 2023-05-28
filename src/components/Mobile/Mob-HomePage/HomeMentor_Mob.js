@@ -120,6 +120,7 @@ const Div = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding-left: 18px;
 `;
 
 function MentorCard(props){

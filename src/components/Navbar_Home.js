@@ -10,7 +10,8 @@ const Div = styled.div`
 `;
 
 const NavBarWrapper = styled.nav`
- background-color: ${props => props.isScrolled ? (props.scrollPosition >= 10000 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'};
+ /* background-color: ${props => props.isScrolled ? (props.scrollPosition >= 10000 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'}; */
+ background-color: 'rgba(0,0,0,0)';
   height: 70px;
   display: flex;
   justify-content: center;
@@ -55,7 +56,7 @@ const NavLinks = styled.ul`
   display: flex;
   align-items: center;
   list-style-type: none;
-  margin-right: 7px;
+  margin-right: 10px;
 `;
 
 const NavItem = styled.li`

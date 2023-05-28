@@ -11,7 +11,7 @@ margin: 0 auto;
 const DownLogo = styled.img`
 width: 80px;
 height: 63px;
-padding-top: 150px;
+padding-top: 147px;
 `
 const LogoDiv = styled.div`
 width: 100%;
@@ -23,7 +23,7 @@ margin-top: 20px;
 
 const Askedstyled = styled.div`
 white-space: nowrap;
-margin-left:70px ;
+margin-left:73px ;
 padding-right: 10px;
 padding-left: 105px;
 margin-top: 100px; 
@@ -48,7 +48,7 @@ color: #FFFFFF;
 const Informationstyle = styled.form`
 margin-top: 100px; 
  //padding한 만큼 원래 maring-left0px에서 값 뺴줌
- margin-left:380px;
+ margin-left:390px;
  //padding한 만큼 원래 maring-top0px에서 값 뺴줌
 
 height:220px;
