@@ -11,7 +11,7 @@ margin: 0 auto;
 const DownLogo = styled.img`
 width: 80px;
 height: 63px;
-padding-top: 150px;
+padding-top: 147px;
 `
 const LogoDiv = styled.div`
 width: 100%;
