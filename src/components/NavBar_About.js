@@ -31,7 +31,7 @@ const NavDiv = styled.div`
 const Subtitle1 = styled.p`
   font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
   font-weight: ${props => props.theme.fontWeights.Subtitle1};
-  color: ${props => props.isScrolled ?  props.active ? '#1A1A1A' : 'rgba(26, 26, 26, 0.2)': props.active ? '#FFFFFF' : 'rgba(255, 255, 255, 0.2)'};
+  color: ${props => props.isScrolled ?  props.active ? '#1A1A1A' : 'rgba(255, 255, 255, 0.2)': props.active ? '#FFFFFF' : 'rgba(26, 26, 26, 0.2)'};
   font-family: 'NanumSquare Neo';
   &:hover{
     color: ${props => props.isScrolled ? '#1A1A1A' : '#FFFFFF'};
