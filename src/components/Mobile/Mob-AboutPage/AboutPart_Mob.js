@@ -276,7 +276,7 @@ function AboutPart_Mob() {
             ))}
           </ListWrap>
           {part.map(props => (
-            <Down>
+            <Down key={props.id}>
               <Image key={props.id}
                 src={props.imgsrc}
                 alt={`Image ${props.id}`}

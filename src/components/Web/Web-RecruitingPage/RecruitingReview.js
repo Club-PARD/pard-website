@@ -230,7 +230,7 @@ function RecruitingReview() {
               {current >= 1 && (
                 <FlexBox style={style}>
                   {cards.current.map((card) => (
-                    <CardDiv key={card.id} onClick={() => handleCardClick(card.link)} style={{ marginRight: '32px' }}>
+                    <CardDiv key={card.id} onClick={() => handleCardClick(card.link)} style={{ marginRight: '31px' }}>
                       <Image style={{ backgroundImage: `url(${card.src})` }}></Image>
                       <Header6>{card.title}</Header6>
                       <Body2>{card.word}</Body2>

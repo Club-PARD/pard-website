@@ -67,7 +67,7 @@ width: 100%;
 color: white;
 `;
 
-const NavBarMov = () => {
+const NavBarMov_About = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
  
@@ -93,7 +93,7 @@ const NavBarMov = () => {
           </Link>
         </Logo>
         <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
-          <img src={MenuBar_white} alt="menu" />
+          <img src={scrollPosition >= 730 ? MenuBar_black : MenuBar_white} alt="menu" />
         </MenuButton>
         <Menu  isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>
@@ -117,4 +117,4 @@ const NavBarMov = () => {
   );
 }
 
-export default NavBarMov;
+export default NavBarMov_About;

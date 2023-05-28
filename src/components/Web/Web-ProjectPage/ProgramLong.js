@@ -1,5 +1,5 @@
 import styled, { ThemeProvider } from "styled-components";
-import img1 from '../../../assets/img/숏커톤3-롱커톤1.png';
+import img1 from '../../../assets/img/롱커톤1.png';
 import img2 from '../../../assets/img/롱커톤2.png';
 import img3 from '../../../assets/img/롱커톤3.png';
 

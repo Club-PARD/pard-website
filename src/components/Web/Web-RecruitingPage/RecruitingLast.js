@@ -48,12 +48,15 @@ const Button = styled.button`
 
 
 function RecruitingLast() {
+  const handleClick = () => {
+    window.open("https://tally.so/r/w4BxRd", "_blank");
+  };
   return (
     <Div>
       <PartDiv>
         <ThemeProvider theme={theme}>
           <Header7>협업에 미친 파드의 여정에 동참하고 싶다면</Header7>
-          <Button>2기 모집 알림 신청하기</Button>
+          <Button onClick={handleClick}>2기 모집 알림 신청하기</Button>
         </ThemeProvider>
       </PartDiv>
     </Div>

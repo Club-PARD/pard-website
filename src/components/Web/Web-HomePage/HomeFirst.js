@@ -19,7 +19,7 @@ const VideoContainer = styled.div`
 const DIVVVV = styled.div`
 
   display: inline-block;
-  height: 5000px;
+  height: 11000px;
   width: 100%;
 `;
 
@@ -131,12 +131,8 @@ height: 112px;
   text-align: center;
   z-index: 4;
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
-  transition: opacity 0.5s ease-in;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`${expandAnimation} 0.5s ease-in-out`}
-    `};
+   transition: opacity 0.5s ease-in;
+
 `;
 const Text = styled.p`
 font-family: 'NanumSquare Neo';
@@ -200,6 +196,11 @@ line-height: 140%;
 /* or 56px */
 color: #FFFFFF;
 text-align: center;
+  animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`${expandAnimation} 1s ease-in-out forwards`}
+    `};
 
   //letter-spacing: ${({ isExpanded }) => (isExpanded ? '0.5em' : '0')};
 `;
@@ -328,7 +329,7 @@ const HomeFirst = () => {
      //keyframse에 따른 animation 값을 스크롤에 따른 값으로 설정
      // position으로 설정한다 이를
       
-    } else if (position >= 650 && position <2350) {
+    } else if (position >= 650 && position <2250) {
       setchanged('b');
  setisExpanded(true);
       setText1('PA');
@@ -341,7 +342,7 @@ const HomeFirst = () => {
    // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
 
 
-    } else if (position >= 2350 && position < 2650) {
+    } else if (position >= 2250 && position < 2650) {
       setchanged('c');
       setisExpanded(true);
       setText1('PA');
@@ -354,7 +355,7 @@ const HomeFirst = () => {
           
 
 
-    }else if (position >= 2650 && position < 3200) {
+    }else if (position >= 2650 && position < 3300) {
       setchanged('cd');
       setisExpanded(true);
       setText1('PA');
@@ -367,7 +368,7 @@ const HomeFirst = () => {
 
     
 
-    }  else if (position >= 3200 && position < 3500) {
+    }  else if (position >=3300 && position < 5500) {
       setchanged('cdd');
       setisExpanded(true);
       setText1('PA');
@@ -380,26 +381,33 @@ const HomeFirst = () => {
            setText('실천하는 IT 협업 동아리');
      setIsSplitTextVisible(true);
 
-    } else if (position >= 3500 && position <4000) {
+    } else if (position >= 5500 && position <6100) {
       setIsVisible(false);
       setbackcolor(true);
       // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
       setIsSplitTextVisible(false);
 
-    } else if (position >= 4000 && position <4600){
+    } else if (position >= 6100 && position <8300){
       setchanged('d');
       setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
       setIsFixed(true);
       setIsVisible(true);
       setbackcolor(true);
+      setIsSplitTextVisible(true);
 
     }
-    else if (position >= 4600 ) {
-      setchanged('ddd');
-   
-
+    else if (position >= 8300 && position <9200 ) {
+      //아무 구역 없는 곳으로 가야 animation이 싸악 사라짐
+      // 특정 changed로 가면 거기로넘어가므로 바로 없어짐
+      setIsVisible(false);
+      setIsSplitTextVisible(false);
+    
       setbackcolor(true);
       
+    } 
+    else if (position >= 9200 ) {
+      setbackcolor(true);
+      setchanged('ddd');
     } 
 
   }, [position,isVisible]);
@@ -520,11 +528,12 @@ const HomeFirst = () => {
 
 
             changed ==='d'? 
-            <TextContainer3 isAnimation={isAnimation} isVisible={isVisible}>
-            <Textchanged2 isExpanded={isExpanded}>{text}</Textchanged2>
-            </TextContainer3>:
+            <TextContainer3  isVisible={isVisible}>
+            <Textchanged2 isAnimation={isSplitTextVisible} isExpanded={isExpanded}>{text}</Textchanged2>
+            </TextContainer3>
+            :
             changed==='ddd' && 
-            <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
+            <TextContainer1 isVisible={isVisible}>
             
               </TextContainer1> 
             

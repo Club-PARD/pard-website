@@ -37,7 +37,7 @@ const VideoContainer = styled.div`
 const DIVVVV = styled.div`
 
   display: inline-block;
-  height: 7200px;
+  height: 13500px;
   width: 100%;
 `;
 
@@ -150,11 +150,7 @@ height: 104px;
   z-index: 4;
   opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
   transition: opacity 0.5s ease-in;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`${expandAnimation} 0.5s ease-in-out`}
-    `};
+
 `;
 const Text = styled.p`
 font-family: 'NanumSquare Neo';
@@ -218,6 +214,11 @@ line-height: 160%;
 /* or 56px */
 color: #FFFFFF;
 text-align: center;
+  animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`${expandAnimation} 0.5s ease-in-out`}
+    `};
 
   //letter-spacing: ${({ isExpanded }) => (isExpanded ? '0.5em' : '0')};
 `;
@@ -385,7 +386,7 @@ const HomeVideoMob = () => {
 
     
 
-    }  else if (position >= 4900 && position < 5900) {
+    }  else if (position >= 4900 && position < 7400) {
       setchanged('cdd');
       setisExpanded(true);
       setText1('PA');
@@ -399,13 +400,13 @@ const HomeVideoMob = () => {
            setText('실천하는 IT 협업 동아리');
      setIsSplitTextVisible(true);
 
-    } else if (position >= 5900 && position <6200) {
+    } else if (position >= 7400 && position <7700) {
       setIsVisible(false);
       setbackcolor(true);
       // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
       setIsSplitTextVisible(false);
 
-    } else if (position >= 6200 && position <6800){
+    } else if (position >= 7700 && position <10300){
       setchanged('d');
       setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
       setIsFixed(true);
@@ -413,7 +414,15 @@ const HomeVideoMob = () => {
       setbackcolor(true);
 
     }
-    else if (position >= 6800 ) {
+    else if (position >= 10300 && position <10900){
+
+    
+      setIsVisible(false);
+      setbackcolor(true);
+      setIsAnimation(false);
+
+    }
+    else if (position >= 10500 ) {
       setchanged('ddd');
    
 
@@ -440,7 +449,7 @@ const HomeVideoMob = () => {
         <>
         <DIVVVV>
         <ThemeProvider theme={theme}>
-            <VideoContainer isColor={backcolor}  isFixed={isFixed}>
+            <VideoContainer isColor={backcolor}>
         
               <VideoBackground  autoPlay loop muted>
                 <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
@@ -551,9 +560,10 @@ const HomeVideoMob = () => {
         
         
                     changed ==='d'? 
-                    <TextContainer3 isAnimation={isAnimation} isVisible={isVisible}>
-                    <Textchanged2 isExpanded={isExpanded}>함께 성장하고 싶은 <br/>기획자, 디자이너, 개발자 대학생들이 모여<br/> 세상을 바꾸는 IT제품을<br/> 어떻게 만들 수 있을까요?</Textchanged2>
+                    <TextContainer3 isVisible={isVisible}>
+                    <Textchanged2 isAnimation={isAnimation}  isExpanded={isExpanded}>함께 성장하고 싶은 <br/>기획자, 디자이너, 개발자 대학생들이 모여<br/> 세상을 바꾸는 IT제품을<br/> 어떻게 만들 수 있을까요?</Textchanged2>
                     </TextContainer3>:
+
                     changed==='ddd' && 
                     <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
                     

@@ -1,5 +1,10 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
+import ProgramSeminar_Mob from '../Mob-ProjectPage/ProgramSeminar_Mob';
+import ProgramStudy_Mob from '../Mob-ProjectPage/ProgramStudy_Mob';
+import ProgramSurfing_Mob from '../Mob-ProjectPage/ProgramSurfing_Mob';
+import ProgramShort_Mob from '../Mob-ProjectPage/ProgramShort_Mob';
+import ProgramLong_Mob from '../Mob-ProjectPage/ProgramLong_Mob';
 
 const Header7 = styled.div`
   font-size: ${props => props.theme.Mob_fontSizes.Header7};
@@ -11,20 +16,27 @@ const Header7 = styled.div`
 `;
 
 const PartDiv = styled.div`
-    padding-left:24px;
-    padding-top: 45px;
-    height: 2445px;
+    height: 3000px;
+    display: flex;
+    flex-direction: column;
 `;
 
 
 function HomeProgramMob() {
 
     return (
-        <PartDiv>
+       
              <ThemeProvider theme={theme}>
-            <Header7>Program</Header7>
+            
+            <ProgramSeminar_Mob />
+            <ProgramStudy_Mob />
+            <ProgramSurfing_Mob />
+            <ProgramShort_Mob />
+            <ProgramLong_Mob />
+           
             </ThemeProvider>
-        </PartDiv>
+        
+       
     );
 }
 
