@@ -9,8 +9,6 @@ const Div = styled.div`
 `;
 
 const NavBarWrapper = styled.nav`
- /* background-color: ${props => props.isScrolled ? (props.scrollPosition >= 1000 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'}; */
- background-color: 'rgba(0,0,0,0)';
   height: 70px;
   display: flex;
   justify-content: center;
@@ -18,6 +16,7 @@ const NavBarWrapper = styled.nav`
   top: 0;
   width: 100%;
   z-index: 999;
+  background-color: #1A1A1A;
 `;
 
 const NavDiv = styled.div`

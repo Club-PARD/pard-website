@@ -17,15 +17,15 @@ display: flex;
 
 const Div = styled.div`
 display: flex;
-flex - direction: column;
-align - items: center;
-justify - content: center;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 `;
 
 const PartDiv = styled.div`
 height: 750px;
 width: 375px;
-justify - content: center;
+justify-content: center;
 `;
 
 const Button1 = styled.button`
@@ -41,7 +41,7 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     gap: 10px;
     width: 220px;
     height: 52px;
-    background-color #64C59A;
+    background-color: #64C59A;
     color: black;
     border-radius: 10px;
     border : none;
