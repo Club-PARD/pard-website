@@ -19,7 +19,7 @@ const VideoContainer = styled.div`
 const DIVVVV = styled.div`
 
   display: inline-block;
-  height: 8000px;
+  height: 9500px;
   width: 100%;
 `;
 
@@ -368,7 +368,7 @@ const HomeFirst = () => {
 
     
 
-    }  else if (position >=3300 && position < 4000) {
+    }  else if (position >=3300 && position < 5500) {
       setchanged('cdd');
       setisExpanded(true);
       setText1('PA');
@@ -381,13 +381,13 @@ const HomeFirst = () => {
            setText('실천하는 IT 협업 동아리');
      setIsSplitTextVisible(true);
 
-    } else if (position >= 4000 && position <4600) {
+    } else if (position >= 5500 && position <6100) {
       setIsVisible(false);
       setbackcolor(true);
       // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
       setIsSplitTextVisible(false);
 
-    } else if (position >= 4600 && position <5300){
+    } else if (position >= 6100 && position <6800){
       setchanged('d');
       setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
       setIsFixed(true);
@@ -396,7 +396,7 @@ const HomeFirst = () => {
       setIsSplitTextVisible(true);
 
     }
-    else if (position >= 5300 && position <6200 ) {
+    else if (position >= 6800 && position <7700 ) {
       //아무 구역 없는 곳으로 가야 animation이 싸악 사라짐
       // 특정 changed로 가면 거기로넘어가므로 바로 없어짐
       setIsVisible(false);
@@ -405,7 +405,7 @@ const HomeFirst = () => {
       setbackcolor(true);
       
     } 
-    else if (position >= 6200 ) {
+    else if (position >= 7700 ) {
       setbackcolor(true);
       setchanged('ddd');
     } 
