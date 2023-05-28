@@ -53,10 +53,10 @@ const RecruitingPageComponent_Mob = styled.div`
                     <NavBarMov />
                     <RecruitingFirstMob/>
                     <RecruitingSecondMob/>
-                    <RecruitingIdealMob/>
-                    <RecruitingPartMob/>
-                    <RecruitingReviewMob/>
-                    <RecruitingAboutMob/>
+                    {/* <RecruitingIdealMob/> */}
+                    {/* <RecruitingPartMob/> */}
+                    {/* <RecruitingReviewMob/> */}
+                    {/* <RecruitingAboutMob/> */}
                     <RecruitingLastMob/>
                 </RecruitingPageComponent_Mob>
             }
