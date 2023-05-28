@@ -20,28 +20,58 @@ const Div = styled.div`
   align-items: center;
 `;
 
-const Header7 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
+const Header2 = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Header2};
+  font-weight: ${props => props.theme.fontWeights.Header2};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
 font-style: normal;
-font-weight: 800;
-font-size: 40px;
 line-height: 140%;
-margin-top: 550px;
+margin-top: 183px;
 `;
 
+const Header5 = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Header5};
+  font-weight: ${props => props.theme.fontWeights.Header5};
+  color: #FFFFFF;
+  font-family: 'NanumSquare Neo';
+font-style: normal;
+line-height: 140%;
+text-align: center;
+margin-top: 40px;
+`;
 
+const Button = styled.button`
+    font-size: ${props => props.theme.Web_fontSizes.Header6};
+    font-weight: ${props => props.theme.fontWeights.Header6};
+    font-family: 'NanumSquare Neo';
+    display: flex;
+    align-items: center;
+    width: 440px;
+    height: 58px;
+    background-color: #64C59A;
+    justify-content: center;
+    margin-top: 110px;
+    color: #000000;
+    border-radius: 10px;
+    border : none;
+`;
+
+const DownLogo = styled.img`
+width: 80px;
+height: 63px;
+margin-top: 101px;
+`
 
 function RecruitingFirst() {
   return (
     <Div>
       <PartDiv>
         <ThemeProvider theme={theme}>
-          <Header7>
-          RecruitingFirst
-          </Header7>
+          <Header2>협업이 무엇이라고 생각하시나요?</Header2>
+          <Header5>파드는 제대로 ‘협업’하고자 하는 사람들이<br/>함께 ‘성장’하고자 모였어요!</Header5>
+          <Button>2기 모집 알림 신청하기</Button>
+          <DownLogo src={require('../../../assets/img/DownScrollLogo.png')}/>
         </ThemeProvider>
       </PartDiv>
     </Div>

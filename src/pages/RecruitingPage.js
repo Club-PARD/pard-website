@@ -10,21 +10,34 @@ import RecruitingPart from "../components/Web/Web-RecruitingPage/RecruitingPart"
 import RecruitingReview from "../components/Web/Web-RecruitingPage/RecruitingReview";
 import RecruitingAbout from "../components/Web/Web-RecruitingPage/RecruitingAbout";
 import RecruitingLast from "../components/Web/Web-RecruitingPage/RecruitingLast";
+import RecruitingFirstMob from '../components/Mobile/Mob-RecrutingPage/RecruitingFirst_Mob';
+import RecruitingSecondMob from "../components/Mobile/Mob-RecrutingPage/RecruitingSecond_Mob";
+import RecruitingIdealMob from "../components/Mobile/Mob-RecrutingPage/RecruitingIdeal_Mob";
+import RecruitingPartMob from "../components/Mobile/Mob-RecrutingPage/RecruitingPart_Mob";
+import RecruitingReviewMob from "../components/Mobile/Mob-RecrutingPage/RecruitingReview_Mob";
+import RecruitingAboutMob from "../components/Mobile/Mob-RecrutingPage/RecruitingAbout_Mob";
+import RecruitingLastMob from "../components/Mobile/Mob-RecrutingPage/RecruitingLast_Mob";
 
 function RecruitingPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
     const RecruitingPageComponent = styled.div`
     `;
 
-const RecruitingPageComponent_Mob = styled.div`
+const RecruitingPageComponent_WEB = styled.div`
         justify-content: center;
         width: 100%;
         min-width: 1440px;
 `;
+
+const RecruitingPageComponent_Mob = styled.div`
+        justify-content: center;
+        width: 100%;
+`;
+
     return (
         <RecruitingPageComponent>
             {isDesktopOrMobile !== true ?
-                <RecruitingPageComponent_Mob>
+                <RecruitingPageComponent_WEB>
                     <Navbar />
                     <RecruitingFirst/>
                     <RecruitingSecond/>
@@ -34,13 +47,18 @@ const RecruitingPageComponent_Mob = styled.div`
                     <RecruitingAbout/>
                     <RecruitingLast/>
                     <Footer/>
-                </RecruitingPageComponent_Mob>
+                </RecruitingPageComponent_WEB>
                 :
-                <div>
+                <RecruitingPageComponent_Mob>
                     <NavBarMov />
-                    <h1>RecruitingPage 모바일</h1>
-                    
-                </div>
+                    <RecruitingFirstMob/>
+                    <RecruitingSecondMob/>
+                    <RecruitingIdealMob/>
+                    <RecruitingPartMob/>
+                    <RecruitingReviewMob/>
+                    <RecruitingAboutMob/>
+                    <RecruitingLastMob/>
+                </RecruitingPageComponent_Mob>
             }
         </RecruitingPageComponent>
     );
