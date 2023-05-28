@@ -7,6 +7,9 @@ const Header8 = styled.div`
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
   white-space: pre-line;
+  text-align: center;
+  line-height: 140%;
+
 `;
 
 const Div = styled.div`
@@ -16,11 +19,9 @@ const Div = styled.div`
     justify-content: center;
 `;
 const PartDiv = styled.div`
-    padding-top: 131px;
     height: 750px;
-    width: 375px;
-    padding-left: 24px;
-    
+    width: 375px;    
+    justify-content: center;
 `;
 
 
@@ -29,7 +30,7 @@ function RecruitingFirstMob() {
         <Div>
         <PartDiv>
              <ThemeProvider theme={theme}>
-            <Header8>RecruitingFirstMob</Header8>
+            <Header8>협업이 무엇이라고<br/>생각하시나요?</Header8>
             </ThemeProvider>
         </PartDiv>
         </Div>

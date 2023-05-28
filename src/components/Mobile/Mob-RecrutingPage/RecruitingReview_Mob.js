@@ -8,7 +8,6 @@ const Header7 = styled.div`
   font-family: 'NanumSquare Neo';
   white-space: pre-line;
 `;
-
 const Div = styled.div`
     display: flex;
     flex-direction: column;
@@ -16,11 +15,9 @@ const Div = styled.div`
     justify-content: center;
 `;
 const PartDiv = styled.div`
-    padding-top: 131px;
     height: 750px;
-    width: 375px;
-    padding-left: 24px;
-    
+    width: 375px;    
+    justify-content: center;
 `;
 
 
