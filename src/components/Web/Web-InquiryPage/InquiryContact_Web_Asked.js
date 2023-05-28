@@ -23,7 +23,7 @@ margin-top: 20px;
 
 const Askedstyled = styled.div`
 white-space: nowrap;
-margin-left:70px ;
+margin-left:73px ;
 padding-right: 10px;
 padding-left: 105px;
 margin-top: 100px; 
