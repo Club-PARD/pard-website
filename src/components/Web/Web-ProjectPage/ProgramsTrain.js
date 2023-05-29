@@ -56,12 +56,8 @@ function ProgramsTrain() {
 
 
     ScrollTrigger.defaults({
-      markers: true, // Set to true for debugging
+      markers: false, 
     });
-
-
-    
-
 
     const horizontalScrollAnimation = gsap.to(".div1", {
       x: () =>
