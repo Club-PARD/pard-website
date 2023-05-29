@@ -74,11 +74,13 @@ const textDB = [
   
   const Background = styled.div`
     background-image: ${({breakPointInfos, position, id, src}) => backgroundImgLogic(breakPointInfos, position, id, src)};
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     width: 100vw;
-    padding-top: 59.2%; /* (img-height / img-width * container-width) */
+    height: 100vh;
     position: sticky;
+    
     z-index :-1;
     top: 0;
     background-color: rgba(26, 26, 26);

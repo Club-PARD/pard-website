@@ -48,8 +48,8 @@ const textDB = [
       text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
       breakPoint: secondScrollPoint + period2,
       period:  period2 + period3,
-      posX: "35%",
-      posY: "0%",
+      posX: "45%",
+      posY: "-30%",
     },
     {
       id : 4,
@@ -57,7 +57,7 @@ const textDB = [
       breakPoint: secondScrollPoint + period2 + period3,
       period: period2,
       posX: "45%",
-      posY: "0%",
+      posY: "-30%",
     },
   ]
   const breakPointInfos = [
