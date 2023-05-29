@@ -452,7 +452,7 @@ const HomeVideoMob = () => {
             <VideoContainer isColor={backcolor}>
         
               <VideoBackground  autoPlay loop muted>
-                <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
+                <source src={require("../../../assets/Video/BackGroundVideo_Mob.mp4")} type="video/mp4" />
               </VideoBackground>
         
               <LogoDiv>

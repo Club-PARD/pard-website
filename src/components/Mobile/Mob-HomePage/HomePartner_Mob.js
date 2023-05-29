@@ -4,6 +4,8 @@ import DisquietImage from '../../../assets/img/Disquiet-partner.png';
 import LincImage from '../../../assets/img/Linc-partner.png';
 import ImpactCampusImage from '../../../assets/img/ImpactCampus-partner.png';
 import SImage from '../../../assets/img/S-partner.png';
+import SpackImg from '../../../assets/img/SpackLab.png';
+
 
 const Header7 = styled.div`
   font-size: ${props => props.theme.Mob_fontSizes.Header7};
@@ -50,6 +52,13 @@ const SImage4 = styled.img`
     padding-top: 60px;
 `;
 
+const Spacklab = styled.img`
+    width: 182px;
+    height: 50px;
+    padding-top: 60px;
+    margin-right: 25px;
+`;
+
 const Div = styled.div`
     display: flex;
     flex-direction: column;
@@ -81,6 +90,7 @@ function HomePartnerMob() {
             <Header7>PARTNERS</Header7>
             <Subtitle3>함께하는 성장을 돕는 후원사</Subtitle3>
             <ContentWrapper>
+                <Spacklab src={SpackImg} alt='SparkLab'/>
                     <DisquietImage1 src={DisquietImage} alt="Disquiet" />
                     <LincImage2 src={LincImage} alt="Linc" />
                     <ImpactCampusImage3 src={ImpactCampusImage} alt="Impact Campus" />

@@ -14,21 +14,9 @@ const Header2 = styled.div`
     white-space: pre-line;
     text-align: center;
     width: 900px;
-    height: 150px;
-`;
-
-const Header5 = styled.div`
-    font-size: ${props => props.theme.Web_fontSizes.Header5};
-    font-weight: ${props => props.theme.fontWeights.Header5};
-    color: white;
-    font-family: 'NanumSquare Neo';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 140%;
-    /* or 34px */
-
-    text-align: center;
+    height: 168px;
+    left: 307px;
+    top: 275px;
 `;
 
 const PartDiv = styled.div`
@@ -36,8 +24,8 @@ const PartDiv = styled.div`
     padding-left: 268px;
     padding-right: 268px;
     padding-bottom: 274px;
-    padding-top: 330px;
-    height: 405px;
+    padding-top: 230px;
+    height: 390px;
     display: flex;
     justify-content: center;
     overflow-x: hidden;
@@ -49,7 +37,7 @@ const PartDiv = styled.div`
 const AboutLogo = styled.img`
     position: absolute;
     width: 1020.27px;
-    height: 417px;
+    height: 390px;
     margin-left: 1005px;
     margin-top: 140px;
     transform: translate(-50%, -50%);
@@ -72,14 +60,31 @@ const ProgramFrame1 = styled.img`
     bottom: 0%;
     border-radius: 0px;
     padding: 0px 30px;
+
 `;
 
 const TextContainer = styled.div`
     position: absolute;
-    top: 46%;
-    left: 49.5%;
+    top: 47%;
+    left: 50%;
     transform: translate(-50%, -50%);
 `;
+
+
+const Header5 = styled.div`
+    font-size: ${props => props.theme.Web_fontSizes.Header5};
+    font-weight: ${props => props.theme.fontWeights.Header5};
+    color: white;
+    font-family: 'NanumSquare Neo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+    /* or 34px */
+
+    text-align: center;
+`;
+
 
 function Projectirst() {
 

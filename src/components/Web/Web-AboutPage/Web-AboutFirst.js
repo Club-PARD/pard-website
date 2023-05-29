@@ -24,7 +24,7 @@ const PartDiv = styled.div`
     padding-left: 268px;
     padding-right: 268px;
     padding-bottom: 274px;
-    padding-top: 330px;
+    padding-top: 230px;
     height: 390px;
     display: flex;
     justify-content: center;
@@ -65,48 +65,19 @@ const AboutFrame1 = styled.img`
 
 const TextContainer = styled.div`
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
 `;
 
-function useScrollPosition() {
-    const [scrollPos, setScrollPos] = useState(0);
-  
-    useEffect(() => {
-      const updateScrollPos = () => {
-        setScrollPos(window.pageYOffset);
-      };
-  
-      window.addEventListener('scroll', updateScrollPos);
-  
-      return () => {
-        window.removeEventListener('scroll', updateScrollPos);
-      };
-    }, []);
-  
-    return scrollPos;
-  }
 
 function AboutFirst() {
-    const [scrollPos, setScrollPos] = useState(0);
-    useEffect(() => {
-        const updateScrollPos = () => {
-          setScrollPos(window.pageYOffset);
-        };
-    
-        window.addEventListener('scroll', updateScrollPos);
-    
-        return () => {
-          window.removeEventListener('scroll', updateScrollPos);
-        };
-      }, []);
+
     return (
-        <>
         <Div>
         <PartDiv>
             <ThemeProvider theme={theme}>
-                <AboutLogo src={AboutImage} alt="AboutLogo" position = {scrollPos} />
+                <AboutLogo src={AboutImage} alt="AboutLogo" />
                 <TextContainer>
                     <Header2>
                         Pay it forward 문화를 실천하는<br />대학생 IT 협업 동아리 PARD
@@ -116,7 +87,6 @@ function AboutFirst() {
             <AboutFrame1 src={AboutFrame} alt="AboutFrame" />  
         </PartDiv>
         </Div>
-        </>
     );
 }
 
