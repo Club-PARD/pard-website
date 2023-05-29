@@ -4,6 +4,9 @@ import { theme } from '../../../styles/theme';
 import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
 import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
 import backgroundImage3 from '../../../assets/img/homeBackgroundImg3.svg';
+import backgroundImage3op from '../../../assets/img/homeBackgroundImg3_op.svg';
+
+const request1 = false;
 
 const firstScrollPoint = 11000; //homesecond 시작 스크롤 위치
 const pageLength = [
@@ -70,7 +73,7 @@ const textDB = [
   ]
   
   const Background = styled.div`
-    background-image: ${props => `url(${props.src})`};
+    background-image: ${({breakPointInfos, position, id, src}) => backgroundImgLogic(breakPointInfos, position, id, src)};
     background-size: contain;
     background-repeat: no-repeat;
     width: 100vw;
@@ -79,6 +82,7 @@ const textDB = [
     z-index :-1;
     top: 0;
     background-color: rgba(26, 26, 26);
+    overflow-x: hidden;
   
     &::before {
       content: "";
@@ -90,9 +94,23 @@ const textDB = [
       background-color: ${({breakPointInfos, position, id}) => backgroundColorLogic(breakPointInfos, position, id)}; /* Adjust the opacity as desired */
     }
   `;
+
+  const backgroundImgLogic = (breakPointInfos, position, id, src) => {
+    if(breakPointInfos == null || id == null) return `url(${src})`;
+    const offset = position - breakPointInfos[id].breakPoint;
+    if(offset > 0 && offset < breakPointInfos[id].period){
+      switch(id){
+        case 1:
+          return `url(${backgroundImage3op})`
+        default:
+          return `url(${src})`
+      }
+    }
+    return `url(${src})`;
+  }
   
   const backgroundColorLogic = (breakPointInfos, position, id) => {
-    if(breakPointInfos == null || id == null) return "rgba(0, 0, 0, 0)";
+    if(breakPointInfos == null || id == null || id == 1) return "rgba(0, 0, 0, 0)";
     const offset = position - breakPointInfos[id].breakPoint;
     if(offset > 0 && offset < breakPointInfos[id].period){
       var opacity = offset/200;
@@ -112,7 +130,7 @@ const textDB = [
     white-space: pre-line;
     z-index: 1;
   
-    width: 100%; // 중요! width를 키우지 않으면 text-align: center 는 의미 없어짐.
+    width: ${request1 ? "1330px" : "100%"}; // 중요! width를 키우지 않으면 text-align: center 는 의미 없어짐.
     text-align: ${({ textInfo }) => textAlignLogic(textInfo)};
     position: absolute;
     padding: ${({ textInfo }) => textPaddingLofic(textInfo)};
@@ -127,6 +145,11 @@ const textDB = [
   
     /* transform */
   `
+  const Div = styled.div`
+    margin: ${request1 ? "0px auto" : ""};
+    justify-content: ${request1 ? "center" : ""};
+    width: ${request1 ? "1330px" : ""};
+`;
   const textPaddingLofic = (textInfo) => {
     switch(textInfo.id){
       case 0:
@@ -201,7 +224,6 @@ const textDB = [
       } else{
         return translate3d(0, 0, 0);
       }
-      
     }
     if(offset < 0) return 0;
     switch(textInfo.id){
@@ -245,22 +267,6 @@ const textDB = [
     return scrollPos;
   }
 
-const Header7 = styled.div`
-  font-size: ${props => props.theme.Mob_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
-  white-space: pre-line;
-`;
-
-const PartDiv = styled.div`
-    padding-left:16px;
-    padding-top: 45px;
-    height: 2445px;
-`;
-
-
 const HomeSecond = () => {
     const [text1, setText1] = useState(false);
     const [text2, setText2] = useState(false);
@@ -280,7 +286,8 @@ const HomeSecond = () => {
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
-      <div style={{width: "100vw"}}>
+      <Div>
+          
       <ThemeProvider theme={theme}>
           <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
@@ -295,7 +302,8 @@ const HomeSecond = () => {
           <div style={{height: pageLength[2]+ "px"}}></div>
           
       </ThemeProvider>
-      </div>
+      
+      </Div>
     );
   };
 

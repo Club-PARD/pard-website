@@ -4,6 +4,8 @@ import { theme } from '../../../styles/theme';
 import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
 import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
 import backgroundImage3 from '../../../assets/img/homeBackgroundImg3.svg';
+import backgroundImage3op from '../../../assets/img/homeBackgroundImg3_op.svg';
+
 
 const firstScrollPoint = 12800; //homesecond 시작 스크롤 위치
 const pageLength = [
@@ -70,14 +72,18 @@ const textDB = [
   ]
   
   const Background = styled.div`
-    background-image: ${props => `url(${props.src})`};
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding-top: 59.2%; /* (img-height / img-width * container-width) */
-    position: sticky;
-    z-index :-1;
-    top: 0;
-    background-color: rgba(26, 26, 26);
+  background-image: ${({ breakPointInfos, position, id, src }) =>
+    backgroundImgLogic(breakPointInfos, position, id, src)};
+  background-size: ${({ id }) => id == 1 ? 'contain' : 'cover'};
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh; /* Added property */
+  background-position: center;
+  position: sticky;
+  z-index: -1;
+  top: 0;
+  background-color: rgba(26, 26, 26);
+  overflow-x: hidden;
   
     &::before {
       content: "";
@@ -89,9 +95,23 @@ const textDB = [
       background-color: ${({breakPointInfos, position, id}) => backgroundColorLogic(breakPointInfos, position, id)}; /* Adjust the opacity as desired */
     }
   `;
+
+  const backgroundImgLogic = (breakPointInfos, position, id, src) => {
+    if(breakPointInfos == null || id == null) return `url(${src})`;
+    const offset = position - breakPointInfos[id].breakPoint;
+    if(offset > 0 && offset < breakPointInfos[id].period){
+      switch(id){
+        case 1:
+          return `url(${backgroundImage3op})`
+        default:
+          return `url(${src})`
+      }
+    }
+    return `url(${src})`;
+  }
   
   const backgroundColorLogic = (breakPointInfos, position, id) => {
-    if(breakPointInfos == null || id == null) return "rgba(0, 0, 0, 0)";
+    if(breakPointInfos == null || id == null || id == 1) return "rgba(0, 0, 0, 0)";
     const offset = position - breakPointInfos[id].breakPoint;
     if(offset > 0 && offset < breakPointInfos[id].period){
       var opacity = offset/200;
@@ -257,7 +277,7 @@ const HomeSecondMob = () => {
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
-    <div style={{width: "100vw", boxSizing: "border-box", overflow: "hidden"}}>
+    <div style={{width: "100vw", boxSizing: "border-box"}}>
       <ThemeProvider theme={theme}>
           <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
