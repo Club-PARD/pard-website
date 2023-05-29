@@ -10,6 +10,7 @@ const FooterMovWrapper = styled.div`
     background-color: #2A2A2A;
     line-height: 180%;
     margin :0 auto;
+    min-width: 420px;
 
 `
 const TopComponent = styled.div`

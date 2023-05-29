@@ -24,6 +24,14 @@ function ProjectPage() {
         min-width: 1440px;
     `;
 
+    const ProgramPageComponent_Mob = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0 auto;
+min-width: 420px;
+`;
+
 
     return (
         <AboutPageComponent>
@@ -35,12 +43,12 @@ function ProjectPage() {
                     <Footer />
                 </ProgramPageComponent_Web>
                 :
-                <div>
+                <ProgramPageComponent_Mob>
                     <NavBarMov />
                     <ProjectFirst_Mob />
                     <ProjectLast_Mob />
                     <FooterMov />
-                </div>
+                </ProgramPageComponent_Mob>
             }
         </AboutPageComponent>
     );

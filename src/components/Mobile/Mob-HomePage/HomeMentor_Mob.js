@@ -109,7 +109,7 @@ const Image = styled.img`
 
 const PartDiv = styled.div`
     padding-top: 30px;
-    height: 100%;
+    height: 1500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,7 +120,7 @@ const Div = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding-left: 18px;
+    padding-left: 10px;
 `;
 
 function MentorCard(props){

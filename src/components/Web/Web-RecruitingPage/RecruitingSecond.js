@@ -6,7 +6,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 
 const PartDiv = styled.div`
-  height: 950px;
+  height: 1050px;
   position: relative;
   width: 100%;
   display: flex;
@@ -228,7 +228,7 @@ margin-right: -40px;
 const Plus = styled.div`
     display: flex;
     margin-top: -40px;
-    margin-bottom: 117px;
+    margin-bottom: 150px;
     margin-left: 800px;
     width: 361px;
     height: 34px;
@@ -325,7 +325,7 @@ function RecruitingSecond() {
           <TextWrap>
             <Container>
               <Number><span className="highlight">01</span></Number>
-              <Body3><span className="highlight">원서 접수 마감 이후</span>접수된 지원 서류 및 사전 과제는 접수가 어렵습니다.제시간 안에 꼭 제출해주세요.</Body3>
+              <Body3><span className="highlight">원서 접수 마감 이후</span>접수된 지원 서류 및 사전 과제는 접수가 어렵습니다.제 시간 안에 꼭 제출해주세요.</Body3>
             </Container>
 
             <Container>

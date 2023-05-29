@@ -16,36 +16,44 @@ import FooterMov from "../components/FooterMov";
 function InquiryPage() {
     const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
 
-    const AboutPageComponent = styled.div`
+    const InquiryPageComponent = styled.div`
         
     `;
 
-const AboutPageComponent_Web = styled.div`
+const InquiryPageComponent_Web = styled.div`
         justify-content: center;
         width: 100%;
         min-width: 1440px;
 `;
 
+const InquiryPageComponent_Mob = styled.div`
+         display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    min-width: 420px;
+`;
+
     return (
-        <AboutPageComponent>
+        <InquiryPageComponent>
             {isDesktopOrMobile !== true ?
-                <AboutPageComponent_Web>
+                <InquiryPageComponent_Web>
                      <Navbar />
                     <InquiryContact />
                     <InquiryManagement />
                     <InquiryLast />
                     <Footer/>
-                </AboutPageComponent_Web>
+                </InquiryPageComponent_Web>
                 :
-                <div>
+                <InquiryPageComponent_Mob>
                      <NavBarMov/>
                     <InquiryContactMob />
                     <InquiryManagemaentMob />
                     <InquiryLastMob />
                     <FooterMov/>                    
-                </div>
+                </InquiryPageComponent_Mob>
             }
-        </AboutPageComponent>
+        </InquiryPageComponent>
     );
 }
 

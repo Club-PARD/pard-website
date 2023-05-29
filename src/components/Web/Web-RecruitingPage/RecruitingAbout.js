@@ -12,7 +12,7 @@ align-items: center;
 padding-top: 150px;
 `;
 const PartDiv = styled.div`
-height: 950px;
+height: 700px;
 position: relative;
 `;
 

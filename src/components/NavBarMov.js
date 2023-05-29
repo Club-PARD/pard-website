@@ -35,6 +35,7 @@ const MenuButton = styled.button`
   color: white;
   border: none;
   font-size: 24px;
+  margin-right: 10px;
   cursor: pointer;
 `;
 

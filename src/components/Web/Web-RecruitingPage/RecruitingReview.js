@@ -11,7 +11,7 @@ import review3Image from '../../../assets/img/Review정승훈.png';
 import review4Image from '../../../assets/img/Review김민혁.png';
 
 const PartDiv = styled.div`
-  height: 950px;
+  height: 850px;
   position: relative;
 `;
 

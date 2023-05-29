@@ -119,7 +119,7 @@ const Image = styled.img`
 
 const Div = styled.div`
      margin: 0px auto;
-    height: 900px;
+    height: 850px;
     justify-content: center;
     width: 1330px;
 `;

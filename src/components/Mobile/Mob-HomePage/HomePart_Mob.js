@@ -61,7 +61,7 @@ const Div = styled.div`
     margin: 0 auto;
     width: 375px;
     height: 2440px;
-    padding-left: 24px;
+    padding-left: 35px;
     padding-right: 6px;
 `;
 
@@ -102,11 +102,11 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     display: flex;
     align-items: center;
     line-height: 9px;
-    width: 280px;
+    width: 290px;
     height: 48px;
     background-color: #7B3FEF;
     justify-content: center;
-    margin-left: 48px;
+    margin-left: 15px;
     margin-top: 58px;
     color: #FFFFFF;
     border-radius: 10px;

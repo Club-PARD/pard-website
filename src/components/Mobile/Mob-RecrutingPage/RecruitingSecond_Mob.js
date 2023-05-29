@@ -12,7 +12,7 @@ const Div = styled.div`
     justify-content: center;
 `;
 const PartDiv = styled.div`
-    height: 750px;
+    height: 1350px;
     width: 375px;    
     justify-content: center;
 `;
