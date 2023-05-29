@@ -15,6 +15,7 @@ const Header2 = styled.div`
   white-space: pre-line;
   padding-right: 40px;
   padding-left: 125px;
+  margin-top: 90px;
 `;
 
 
@@ -96,7 +97,7 @@ const ButtonDiv = styled.div`
 
 const Div = styled.div`
     margin: 0px auto; // 가운데 정렬 하는 방법
-    height: 893px;
+    height: 900px;
     justify-content: center;
     width: 1330px;
 `;

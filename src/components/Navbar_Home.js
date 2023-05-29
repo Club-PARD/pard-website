@@ -10,7 +10,7 @@ const Div = styled.div`
 `;
 
 const NavBarWrapper = styled.nav`
- background-color: ${props => props.isScrolled ? (props.scrollPosition >= 19000 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'};
+ background-color: ${props => props.isScrolled ? (props.scrollPosition >= 19650 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'};
   height: 70px;
   display: flex;
   justify-content: center;
@@ -18,7 +18,7 @@ position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
-  transition: transform 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
   transform: translateY(${props => props.isScrolled ? '0' : '-100%'});
 
 `;
