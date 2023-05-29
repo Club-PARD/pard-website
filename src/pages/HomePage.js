@@ -31,7 +31,8 @@ function HomePage() {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 0;
+    margin: 0 auto;
+    min-width: 420px;
 `;
 
     return (
@@ -53,7 +54,7 @@ function HomePage() {
                 <HomePageComponent_Mob>
                     <NavBarMov />
                     <HomeVideoMob />
-                    <HomeSecondMob/>
+                    {/* <HomeSecondMob/> */}
                     <HomePartsMob />
                     <HomeProgramMob />
                     <HomeMentorMob />

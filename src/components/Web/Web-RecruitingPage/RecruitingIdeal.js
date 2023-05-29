@@ -118,9 +118,9 @@ const AndPic = styled.div`
 const CatImage = styled.img`
   position: absolute;
   bottom: 120px;
-  left: 15px;
+  left: 7px;
   width: 100%;
-  height: 175px;
+  height: 205px;
 `;
 const Horizon1 = styled.div`
   border: 1.5px solid #64C59A;

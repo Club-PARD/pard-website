@@ -31,6 +31,14 @@ width: 100%;
 min-width: 1440px;
 `;
 
+const AboutPageComponent_Mob = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    min-width: 420px;
+`;
+
 
     return (
         <AboutPageComponent>
@@ -46,7 +54,7 @@ min-width: 1440px;
                     <Footer/>
                 </AboutPageComponent_Web>
                 :
-                <div>
+                <AboutPageComponent_Mob>
                     <NavBarMov_About/>
                     <AboutFirst_Mob />
                     <AboutVision_Mob />
@@ -55,7 +63,7 @@ min-width: 1440px;
                     <AboutMentor_Mob />
                     <AboutLast_Mob />
                     <FooterMov/>
-                </div>
+                </AboutPageComponent_Mob>
             }
         </AboutPageComponent>
     );
