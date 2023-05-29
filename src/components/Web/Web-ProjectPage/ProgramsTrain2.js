@@ -8,7 +8,8 @@ import ProgramLong from "./ProgramLong";
 const Div = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 20px;
+//   background-color: yellow;
 `;
 
 function ProgramsTrain2() {

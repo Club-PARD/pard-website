@@ -57,7 +57,6 @@ const FirstCard = styled.div`
   height: 370px;
   border-radius: 20px 20px 20px 20px;
   margin-right: 70px;
-  margin-left: 110px; 
   background-color: #1a1a1a;
 `;
 

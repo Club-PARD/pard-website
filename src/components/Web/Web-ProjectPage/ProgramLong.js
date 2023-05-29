@@ -120,14 +120,15 @@ function ProgramLong() {
           효과적으로 회고하고 성장합니다.
         </Body2>
       </FirstCard>
-      {cardData.map((content) => (
-        <Card key={content.id}>
-           <CardImage src={content.image} alt={`Card ${content.id}`} isCover={content.id === 1} />
+      {cardData.map((content, index) => (
+        <Card key={content.id} style={{ marginRight: index === cardData.length - 1 ? 0 : '40px' }}>
+          <CardImage src={content.image} alt={`Card ${content.id}`} isCover={content.id === 1} />
           <CardContent key={content.id}>
             <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
           </CardContent>
         </Card>
       ))}
+
     </LongDiv>
   );
 }
