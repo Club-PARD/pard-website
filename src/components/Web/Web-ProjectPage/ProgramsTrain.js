@@ -77,7 +77,7 @@ function ProgramsTrain() {
         end: () =>
           `+=${document.querySelector(".div1").scrollWidth}`,
         scrub: 0.4,
-        markers: true,
+        // markers: true,
         pin: true,
         anticipatePin: 0,
         onUpdate: ({ progress }) => {
