@@ -98,7 +98,7 @@ const AndPic = styled.div`
   //border: 1px solid #000000;
 `;
 const CatImage = styled.img`
-  position: absolute;
+  //position: absolute;
   bottom: 120px;
   left: 15px;
 `;
