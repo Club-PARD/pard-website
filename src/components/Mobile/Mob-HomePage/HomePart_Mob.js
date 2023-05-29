@@ -61,7 +61,7 @@ const Div = styled.div`
     margin: 0 auto;
     width: 375px;
     height: 2440px;
-    padding-left: 24px;
+    padding-left: 35px;
     padding-right: 6px;
 `;
 

@@ -33,6 +33,7 @@ function HomePage() {
     align-items: center;
     margin: 0 auto;
     min-width: 420px;
+    
 `;
 
     return (

@@ -66,6 +66,7 @@ margin: auto;
 width: 375px;
 height: 907px;
 padding: 0 20px;
+margin-left: 15px;
 `;
 
 const CardnBtn = styled.div`

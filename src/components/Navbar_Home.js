@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 const Div = styled.div`
     margin: 0px auto;
+    
 `;
 
 const NavBarWrapper = styled.nav`
