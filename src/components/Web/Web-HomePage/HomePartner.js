@@ -11,7 +11,7 @@ const Header2 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header2};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 54px;
+  margin-bottom: 25px;
   white-space: pre-line;
   padding-left:125px;
 `;
@@ -66,7 +66,7 @@ const ContentWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 160px;
+    margin-top: 120px;
     justify-content: center;
 `;
 

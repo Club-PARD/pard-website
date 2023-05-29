@@ -48,6 +48,8 @@ const Button = styled.button`
     text-align: left;
     border-width: 0px;
     background-color: ${props => (props.selected) ? props.color : '#fff'} ;
+    cursor:pointer;
+
 `;
 
 const Header6Number = styled.div`

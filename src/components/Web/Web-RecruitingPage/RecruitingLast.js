@@ -44,6 +44,8 @@ const Button = styled.button`
     color: #000000;
     border-radius: 10px;
     border : none;
+    cursor:pointer;
+
 `;
 
 
