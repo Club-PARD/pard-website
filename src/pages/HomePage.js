@@ -32,7 +32,7 @@ function HomePage() {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    min-width: 420px;
+    min-width: 430px;
     
 `;
 
