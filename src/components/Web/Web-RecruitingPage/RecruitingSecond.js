@@ -6,7 +6,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 
 const PartDiv = styled.div`
-  height: 950px;
+  height: 1050px;
   position: relative;
   width: 100%;
   display: flex;
