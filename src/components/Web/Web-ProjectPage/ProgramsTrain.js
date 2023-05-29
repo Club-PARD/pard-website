@@ -1,9 +1,11 @@
 import styled, { ThemeProvider } from "styled-components";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { theme } from "../../../styles/theme";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap/all";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import ProgramsTrain2 from "./ProgramsTrain2";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
@@ -11,11 +13,11 @@ const Header2 = styled.div`
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-top: 0px;
   margin-left: 110px;
   opacity: ${(props) => (props.visible ? 1 : 0)};
-  transition: opacity 0.5s ease-in-out; 
+  transition: opacity 0.5s ease-in-out;
 `;
 
 const Header2_1 = styled.div`
@@ -42,23 +44,15 @@ const Div1 = styled.div`
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  margin-bottom: 300px; //******* 임의 설정 수정해야함 ********
+  margin-bottom: 300px;
 `;
 
 function ProgramsTrain() {
   const Headers2 = ["세미나", "스터디", "서핑데이", "숏커톤", "롱커톤"];
-  const [Header2Index, setHeader2Index] = useState(0); // Index of Headers2 array
+  const [Header2Index, setHeader2Index] = useState(0);
   const [isHeaderFixed, setIsHeaderFixed] = useState(true);
 
-
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-
-    ScrollTrigger.defaults({
-      markers: false, 
-    });
-
     const horizontalScrollAnimation = gsap.to(".div1", {
       x: () =>
         -(
@@ -67,14 +61,14 @@ function ProgramsTrain() {
         ),
       scrollTrigger: {
         trigger: ".div1",
-        start: "top center",
+        start: "top+=50 center",
         end: () =>
           `+=${document.querySelector(".div1").scrollWidth}`,
-        scrub: 0.7,
+        scrub: 0.4,
         pin: true,
-        anticipatePin: 1,
+        anticipatePin: 0,
         onUpdate: ({ progress }) => {
-          setIsHeaderFixed(progress < 1); // 스크롤이 끝나면 sticky 해제
+          setIsHeaderFixed(progress < 1);
 
           let newIndex = 0;
           if (progress < 0.085) {
@@ -89,11 +83,7 @@ function ProgramsTrain() {
             newIndex = 4;
           }
           setHeader2Index(newIndex);
-        
-
         },
-
-
       },
     });
 
@@ -121,5 +111,3 @@ function ProgramsTrain() {
 }
 
 export default ProgramsTrain;
-
-
