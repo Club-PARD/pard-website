@@ -7,7 +7,7 @@ import DevelopVector from '../../../assets/img/DevelopVector.png';
 import SelectedVector from '../../../assets/img/SelectedVector.png';
 
 const PartDiv = styled.div`
-  height: 950px;
+  height: 600px;
   position: relative;
   margin-top: 50px;
   margin-left: 10px;

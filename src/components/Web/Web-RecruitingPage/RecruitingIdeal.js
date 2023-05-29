@@ -6,7 +6,7 @@ import OrangeVector from '../../../assets/img/OrangeVector.png';
 import Cat from '../../../assets/img/CatPic.png';
 
 const PartDiv = styled.div`
-  height: 750px;
+  height: 800px;
   position: relative;
   margin-top: 150px;
 `;
@@ -25,8 +25,8 @@ const Header7 = styled.div`
   font-style: normal;
   line-height: 140%;
   margin-bottom: 100px;
-  margin-left: 184px;
-  margin-right: 818px;
+  margin-left: 150px;
+  margin-right: 800px;
 `;
 
 const Header6 = styled.div` 
@@ -69,15 +69,15 @@ const Container = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   margin-bottom: 140px;
-  margin-left: 184px;
-  align-items: flex-start;
-`;
+  align-items: center;
+  margin-left: 20px;
+  `
 
 const ContainerRow = styled.div`
   display: flex;
   padding: 0px;
   align-items: center;
-  margin-bottom: 76px;
+  margin-bottom: 45px;
   position: relative;
 `;
 
@@ -85,6 +85,13 @@ const ContentDiv = styled.div`
   width: 308px;
   height: 128px;
   margin-top: 32px;
+`;
+
+const ContentButton = styled.div`
+  width: 308px;
+  height: 128px;
+  margin-top: 32px;
+  cursor:pointer;
 `;
 
 const Vector = styled.div`
@@ -113,28 +120,39 @@ const CatImage = styled.img`
   bottom: 120px;
   left: 15px;
   width: 100%;
-  height: 100%;
+  height: 175px;
 `;
-const Horizon = styled.div`
-  border: 2px solid #64C59A;
+const Horizon1 = styled.div`
+  border: 1.5px solid #64C59A;
   width: 312px;
   height: 0px;
-  margin-bottom: 37px;
+  margin-bottom: 25px;
+`;
+const Horizon2 = styled.div`
+  border: 1.5px solid #64C59A;
+  width: 334px;
+  height: 0px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+`;
+const Horizon3 = styled.div`
+  border: 1.5px solid #64C59A;
+  width: 312px;
+  height: 0px;
+  margin-bottom: 25px;
 `;
 
 const Gap = styled.div`
+  width: 1100px;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  position: absolute;
-  gap: 68px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
+  height: 5px;
+  margin-bottom: 30px;
+  justify-content: space-between;`;
+
 const Vertical = styled.div`
-  border: 2px solid #64C59A;
-  width: 160px;
+  border: 1.5px solid #64C59A;
+  width: 165px;
   height: 0px;
   transform: rotate(90deg);
   margin-top: 17px;
@@ -143,8 +161,8 @@ const Vertical = styled.div`
 `;
 
 function RecruitingIdeal() {
-  const handleLinkClick = () => {
-    window.location.href = 'https://pardhgu.notion.site/ec0dd7dddcf4472883cbe71dac5e1da6 '; 
+  const handleClick = () => {
+    window.open("https://pardhgu.notion.site/ec0dd7dddcf4472883cbe71dac5e1da6", "_blank");
   };
   return (
     <Div>
@@ -181,7 +199,7 @@ function RecruitingIdeal() {
               </ContentDiv>
             </ContainerRow>
            <Gap>
-            <Horizon /><Horizon /><Horizon />
+            <Horizon1 /><Horizon2 /><Horizon3 />
            </Gap>
             <ContainerRow>
               <ContentDiv>
@@ -200,7 +218,7 @@ function RecruitingIdeal() {
                 <Header6>빠르게 실패하되 작은 성공을<br/> 수집하며 파드 활동을 <strong className="Green">책임감</strong>있게<br/> 수행할 수 있으신 분</Header6>
               </ContentDiv>
               <Vertical/>
-              <ContentDiv onClick={handleLinkClick}>
+              <ContentButton onClick={handleClick}>
                 <Vector>
                   <img src={OrangeVector} alt="OrangeVector.png" width="16px" height="25px"/>
                   <Header5>AND...</Header5>
@@ -209,7 +227,7 @@ function RecruitingIdeal() {
                 <AndPic>
                   <CatImage src={Cat} alt="CatPic.png"/>
                 </AndPic>
-              </ContentDiv>
+              </ContentButton>
             </ContainerRow>
           </Container>           
         </ThemeProvider>

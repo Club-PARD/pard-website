@@ -228,7 +228,7 @@ margin-right: -40px;
 const Plus = styled.div`
     display: flex;
     margin-top: -40px;
-    margin-bottom: 117px;
+    margin-bottom: 150px;
     margin-left: 800px;
     width: 361px;
     height: 34px;
