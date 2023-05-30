@@ -105,7 +105,7 @@ const CatImage = styled.img`
 `;
 
 const Horizon = styled.div`
-  border: 1.5px solid #64C59A;
+  border: 1px solid #64C59A;
   width: 303px;
   height: 0px;
   margin-bottom: 35px;

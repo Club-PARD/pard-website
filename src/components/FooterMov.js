@@ -74,7 +74,6 @@ const Links = styled.div`
 `
 const EmailLink = styled.a`
     /* EMAIL */
-    width: 39px;
     height: 22px;
 
     /* Caption/C1 - R 12 */
@@ -105,8 +104,6 @@ const EmailLink = styled.a`
 const Instagram = styled.a`
     /* INSTAGRAM */
 
-
-    width: 75px;
     height: 22px;
 
     /* Caption/C1 - R 12 */
@@ -136,7 +133,6 @@ const Youtube = styled.a`
     /* YOUTUBE */
 
 
-    width: 61px;
     height: 22px;
 
     /* Caption/C1 - R 12 */
@@ -164,7 +160,6 @@ const Youtube = styled.a`
     margin-left: 30px; 
 `
 const Disquiet = styled.a`
-    width: 58px;
     height: 22px;
 
     /* Caption/C1 - R 12 */
