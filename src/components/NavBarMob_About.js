@@ -7,7 +7,7 @@ import MenuBar_white from '../assets/img/MenuBar_white.png';
 import MenuBar_black from '../assets/img/MenuBar_black.png'; 
 
 const Nav = styled.nav`
-  background-color: ${({ isOpen }) => (isOpen ? 'rgba(26, 26, 26, 0.8)' : 'rgba(0,0,0,0)')};
+  background-color: ${props => props.scrollPosition <= 690 ? '#1A1A1A' : '#FFFFFF'};
   color: white;
   display: flex;
   align-items: center;
@@ -19,6 +19,7 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border-bottom: none;
+  transition: background-color 0.3s ease;
 `;
 
 const Logo = styled.div`
@@ -68,6 +69,11 @@ width: 100%;
 color: white;
 `;
 
+const LogoImg = styled.img`
+width: 120px;
+height: 25px;
+`;
+
 const NavBarMov_About = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -86,11 +92,11 @@ const NavBarMov_About = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <Nav isOpen={isOpen}>
+    <Nav scrollPosition={scrollPosition}>
       <ThemeProvider theme={theme}>
         <Logo>
         <Link to="/">
-          <img src={require("../assets/img/Logo.png")} alt="Logo" />
+          <LogoImg src={require("../assets/img/Logo.png")} alt="Logo" />
           </Link>
         </Logo>
         <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
