@@ -3,22 +3,6 @@ import { theme } from '../../../styles/theme';
 import React, { useState, useEffect, useRef } from 'react';
 
 
-const Header7 = styled.div`
-  font-size: ${props => props.theme.Mob_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
-  margin-bottom: 3.7500vw;
-  white-space: pre-line;
-`;
-
-const PartDiv = styled.div`
-    padding-left:16px;
-    padding-top: 45px;
-    height: 2445px;
-`;
-
-
 
 const VideoContainer = styled.div`
 
@@ -26,7 +10,7 @@ const VideoContainer = styled.div`
   position: sticky;
   top:0;
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   min-width: 420px; // 아무리 줄여도 1440px로 유지됨
   overflow: hidden;
   background-color: ${({ isColor }) => (isColor ? ' rgba(0, 0, 0, 0.4)' : ' rgba(0, 0, 0, 0.4)')};

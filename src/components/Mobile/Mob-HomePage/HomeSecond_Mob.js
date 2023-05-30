@@ -78,7 +78,7 @@ const textDB = [
   background-repeat: no-repeat;
   width: 100vw;
   min-width: 420px;
-  height: 100vh; /* Added property */
+  height: 110vh; /* Added property */
   background-position: center;
   position: sticky;
   z-index: -1;
