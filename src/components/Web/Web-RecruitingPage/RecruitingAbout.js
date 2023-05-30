@@ -270,7 +270,7 @@ function RecruitingAbout() {
   };
 
   const handleClick = () => {
-    window.open("https://www.figma.com/file/07TZOSw3gfUDkb3X178F8i?node-id=1921:6765#456941853", "_blank");
+    window.open("https://pard.channel.io/lounge", "_blank");
   };
 
 

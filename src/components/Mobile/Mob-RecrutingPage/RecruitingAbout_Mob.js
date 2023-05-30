@@ -342,7 +342,7 @@ function RecruitingAbout() {
                         <Extra>
                           <Body2>찾으시는 내용이 없으신가요?<br />
                               익명으로 편하게 물어보세요!</Body2>
-                          <Button href='https://pard.channel.io/lounge'>조금 더 물어볼래요</Button>
+                          <Button href='https://pard.channel.io/lounge' target="_blank">조금 더 물어볼래요</Button>
                           </Extra>
                   </React.Fragment>
                 )
