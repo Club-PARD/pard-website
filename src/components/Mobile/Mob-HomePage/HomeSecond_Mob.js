@@ -282,16 +282,16 @@ const HomeSecondMob = () => {
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
-      <div>
+      <div >
       <ThemeProvider theme={theme}>
-          <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
+          <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0} style={{minWidth: "444px"}}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
             </Background>
           <div style={{height: pageLength[0]+ "px"}}></div> 
-          <Background src={backgroundImage2} >
+          <Background src={backgroundImage2} style={{minWidth: "444px"}}>
           </Background>
           <div style={{height: pageLength[1]+ "px"}}></div>
-          <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1}>
+          <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1} style={{minWidth: "444px"}}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(3, 5)} position = {position}></Animation1>
           </Background>
           <div style={{height: pageLength[2]+ "px"}}></div>
