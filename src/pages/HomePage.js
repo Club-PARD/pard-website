@@ -18,11 +18,9 @@ import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
 import HomeSecondMob from "../components/Mobile/Mob-HomePage/HomeSecond_Mob";
 import ProgramsTrain from "../components/Web/Web-ProjectPage/ProgramsTrain";
-<<<<<<< HEAD
 import SmallPage from "../components/Web/Web-ProjectPage/SmallPage";
-=======
 import NavBarMob_Home from "../components/NavBarMob_Home";
->>>>>>> ab7820040e110c3a497b7e25a1b6e77d2367f48c
+
 
 
 function HomePage() {
