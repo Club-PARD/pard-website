@@ -19,6 +19,7 @@ import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
 import HomeSecondMob from "../components/Mobile/Mob-HomePage/HomeSecond_Mob";
 import ProgramsTrain from "../components/Web/Web-ProjectPage/ProgramsTrain";
+import SmallPage from "../components/Web/Web-ProjectPage/SmallPage";
 
 
 function HomePage() {
@@ -42,6 +43,7 @@ function HomePage() {
 
                 <div>
                     <NavBarHome />
+                    <SmallPage />
                     <HomeFirst />
                     <HomeSecond />
                     <HomePartWeb />
