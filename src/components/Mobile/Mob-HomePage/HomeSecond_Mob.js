@@ -282,6 +282,7 @@ const HomeSecondMob = () => {
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
+      <div>
       <ThemeProvider theme={theme}>
           <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
@@ -295,6 +296,7 @@ const HomeSecondMob = () => {
           </Background>
           <div style={{height: pageLength[2]+ "px"}}></div>
       </ThemeProvider>
+      </div>
     );
   };
 
