@@ -420,7 +420,7 @@ const HomeFirst = () => {
     */
    
   
-
+    document.documentElement.style.overflowX = 'hidden';
   return (
 
 

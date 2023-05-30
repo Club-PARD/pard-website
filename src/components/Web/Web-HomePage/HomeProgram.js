@@ -20,6 +20,7 @@ const PartDiv = styled.div`
 `;
 
 function HomeProgram() {
+    document.documentElement.style.overflowX = 'scroll';
 
     return (
         <ProjectPage/>
