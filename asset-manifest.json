@@ -1,9 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.15d9d581.css",
-    "main.js": "/static/js/main.7425d021.js",
+    "main.js": "/static/js/main.961d49ef.js",
+    "static/media/BackGroundVideo_Mob.mp4": "/static/media/BackGroundVideo_Mob.f6436974c3c62e3e6150.mp4",
     "static/media/BackGroundVideo.mp4": "/static/media/BackGroundVideo.85ebd6d6842d77c76d30.mp4",
     "static/media/homeBackgroundImg2.svg": "/static/media/homeBackgroundImg2.78984828a5b1720a5fe00df3e1fa58f3.svg",
+    "static/media/AboutShort.png": "/static/media/AboutShort.e53e0d64c310fe52cef8.png",
     "static/media/homeBackgroundImg1.svg": "/static/media/homeBackgroundImg1.a078e6b2f325e7a4eab2ef558044b4c6.svg",
     "static/media/김유진.png": "/static/media/김유진.7d8235b07c9a576b7228.png",
     "static/media/조세희.png": "/static/media/조세희.bf6ff6e49f16ace61043.png",
@@ -57,9 +59,9 @@
     "static/media/SpackLab.png": "/static/media/SpackLab.081ed1dd209c93321dec.png",
     "static/media/스터디2.png": "/static/media/스터디2.91d8b816a9029b5c8b3e.png",
     "static/media/AboutLong.png": "/static/media/AboutLong.28a665830ac21947ed67.png",
-    "static/media/AboutShort.png": "/static/media/AboutShort.28a665830ac21947ed67.png",
+    "static/media/homeBackgroundImg3_op.svg": "/static/media/homeBackgroundImg3_op.3362b54b5c594aaee2e7a6e0be603729.svg",
     "static/media/homeBackgroundImg3.svg": "/static/media/homeBackgroundImg3.ba80ca518ea56feb87cbd49ef32354e3.svg",
-    "static/media/ImpactCampus-partner.png": "/static/media/ImpactCampus-partner.e4bb9a91b77c407a4271.png",
+    "static/media/ImpactCampus-partner.png": "/static/media/ImpactCampus-partner.63c954828964fde48963.png",
     "static/media/Linc-partner.png": "/static/media/Linc-partner.0fc3853c665ed035e80b.png",
     "static/media/스터디Frame.png": "/static/media/스터디Frame.4f379b1ccf0be931d647.png",
     "static/media/서핑데이Frame.png": "/static/media/서핑데이Frame.d6a02480ad54decd2c45.png",
@@ -72,10 +74,10 @@
     "static/media/RPRightButton.svg": "/static/media/RPRightButton.7ba2a91df4489029a67c7c6ddd0ae5e2.svg",
     "static/media/RPLeftButton.svg": "/static/media/RPLeftButton.79475f6cd6e2ff34d69ad4d00ab33b59.svg",
     "main.15d9d581.css.map": "/static/css/main.15d9d581.css.map",
-    "main.7425d021.js.map": "/static/js/main.7425d021.js.map"
+    "main.961d49ef.js.map": "/static/js/main.961d49ef.js.map"
   },
   "entrypoints": [
     "static/css/main.15d9d581.css",
-    "static/js/main.7425d021.js"
+    "static/js/main.961d49ef.js"
   ]
 }
