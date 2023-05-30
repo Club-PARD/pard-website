@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { theme } from "../../../styles/theme";
 import { gsap } from "gsap/all";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import ProgramsTrain2 from "./ProgramsTrain2";
-
+import Programsasdf from "../Web-ProjectPage/Programsasdf"
 gsap.registerPlugin(ScrollTrigger);
 
 const Div1 = styled.div`
@@ -54,7 +53,6 @@ function SmallPage() {
     <div>
         <ThemeProvider theme={theme}>
       <Div1 className="div1">
-        <ProgramsTrain2 />
       </Div1>
       </ThemeProvider>
     </div>
