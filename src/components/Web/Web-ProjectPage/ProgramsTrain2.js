@@ -9,7 +9,6 @@ const Div = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 20px;
-//   background-color: yellow;
 `;
 
 function ProgramsTrain2() {

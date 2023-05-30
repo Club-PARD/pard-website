@@ -46,6 +46,7 @@ const Div1 = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1080px;
+  
   // background-color: green;
 `;
 
@@ -111,7 +112,7 @@ function ProgramsTrain() {
   const Header2Text = Headers2[Header2Index];
 
   return (
-    
+    <div>
     <ThemeProvider theme={theme}>
       <HeaderDiv className={isHeaderFixed ? "" : "unfixed"}>
         <HeaderDiv2>
@@ -123,6 +124,7 @@ function ProgramsTrain() {
         <ProgramsTrain2 />
       </Div1>
     </ThemeProvider>
+    </div>
   );
 }
 

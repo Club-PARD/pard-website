@@ -41,7 +41,7 @@ const Body1 = styled.div`
 const TextWrap = styled.div`
     position: absolute;
     width: 150px;
-    height: 34.7%;
+    height: 66px;
     top: 65.3%;
     border-bottom-left-radius: 12.5px;
     border-bottom-right-radius: 12.5px;
@@ -52,15 +52,14 @@ const TextWrap = styled.div`
     transition: 0.3s;
     &:hover{
         top: 0%;
-        height: 99.5%;
         width: 150px;
-        border-top-left-radius:12.5px;
-        border-top-right-radius: 12.5px;
+        border-top-left-radius: 12.5px;
+            border-top-right-radius: 12.5px;
         background-color: ${({ position }) => position === 'Developer' ? 'rgba(255, 92, 0, 0.8)'
         : position === 'Designer' ? 'rgba(123, 63, 239, 0.8)'
-            : position === 'Operator' ? 'rgba(100, 197, 154, 0.5)' : 'rgba(82, 98, 245, 0.8)'};
-            width: ${({ position }) => position ? '151.5px' : 'initial'};
-            height: ${({ position }) => position ? '191.5px' : 'initial'};
+            : position === 'Operator' ? 'rgba(100, 197, 154, 0.8)' : 'rgba(82, 98, 245, 0.8)'};
+            width: ${({ position }) => position ? '150px' : 'initial'};
+            height: ${({ position }) => position ? '190px' : 'initial'};
     }   
 `
 const Subtitle1 = styled.div`

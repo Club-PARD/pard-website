@@ -55,7 +55,7 @@ function HomePage() {
                 <HomePageComponent_Mob>
                     <NavBarMov />
                     <HomeVideoMob />
-                    {/* <HomeSecondMob/> */}
+                    <HomeSecondMob/>
                     <HomePartsMob />
                     <HomeProgramMob />
                     <HomeMentorMob />
