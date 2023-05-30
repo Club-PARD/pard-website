@@ -34,8 +34,8 @@ const NavigationContainer = styled.div`
 `;
 
 const NavigationButton = styled.img`
-    width: auto;
-    height: auto;
+    width: 15px;
+    height: 20px;
     cursor: pointer;
     margin-right: 10px;
     margin-left: 210px;
