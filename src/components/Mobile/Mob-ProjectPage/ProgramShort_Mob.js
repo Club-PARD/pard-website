@@ -62,7 +62,7 @@ const SeminarDiv = styled.div`
 display: flex;
 flex-direction: column;
 align-items: flex-start;
-margin: auto;
+margin: auto 0;
 width: 375px;
 height: 907px;
 padding: 0 20px;
