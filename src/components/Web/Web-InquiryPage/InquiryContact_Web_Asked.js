@@ -11,13 +11,13 @@ margin: 0 auto;
 const DownLogo = styled.img`
 width: 80px;
 height: 63px;
-padding-top: 147px;
+padding-top: 55px;
 `
 const LogoDiv = styled.div`
 width: 100%;
 justify-content: center;
 display: flex;
-margin-top: 20px;
+margin-top: 20.5px;
 `
 
 

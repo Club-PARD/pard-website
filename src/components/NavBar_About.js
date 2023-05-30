@@ -9,7 +9,7 @@ const Div = styled.div`
 `;
 
 const NavBarWrapper = styled.nav`
-  background-color: ${({ scrollPosition }) => (scrollPosition > 923 ? '#FFFFFF' : '#1A1A1A')};
+  background-color: ${({ scrollPosition }) => (scrollPosition > 800 ? '#FFFFFF' : '#1A1A1A')};
   height: 70px;
   display: flex;
   justify-content: center;
@@ -43,7 +43,6 @@ const Subtitle1 = styled.p`
       : 'rgba(255, 255, 255, 0.2)'  // Not scrolled and not active: white with 0.2 opacity
     )
   };
-
   // Apply the hover color based on the scroll position
   &:hover {
     color: ${props => props.isScrolled ? '#1A1A1A' : '#FFFFFF'};
@@ -99,22 +98,22 @@ const NavBar_About = () => {
           <NavLinks>
             <NavItem>
               <Link to="/About" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/About'} isScrolled={scrollPosition >= 923}>소개</Subtitle1>
+                <Subtitle1 active={pathname === '/About'} isScrolled={scrollPosition >= 800}>소개</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Project" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Project'} isScrolled={scrollPosition >= 923}>프로젝트</Subtitle1>
+                <Subtitle1 active={pathname === '/Project'} isScrolled={scrollPosition >= 800}>프로젝트</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Inquiry'} isScrolled={scrollPosition >= 923}>문의</Subtitle1>
+                <Subtitle1 active={pathname === '/Inquiry'} isScrolled={scrollPosition >= 800}>문의</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
               <Link to="/Recruting" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Recruting'} isScrolled={scrollPosition >= 923}>리쿠르팅</Subtitle1>
+                <Subtitle1 active={pathname === '/Recruting'} isScrolled={scrollPosition >= 800}>리쿠르팅</Subtitle1>
               </Link>
             </NavItem>
           </NavLinks>

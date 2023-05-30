@@ -7,7 +7,7 @@ import MenuBar_white from '../assets/img/MenuBar_white.png';
 import MenuBar_black from '../assets/img/MenuBar_black.png'; 
 
 const Nav = styled.nav`
-  background-color: ${({ isOpen }) => (isOpen ? 'rgba(26, 26, 26, 0.8)' : 'rgba(0,0,0,0)')};
+  background-color: #1A1A1A;
   color: white;
   display: flex;
   align-items: center;
@@ -35,7 +35,7 @@ const MenuButton = styled.button`
   color: white;
   border: none;
   font-size: 24px;
-  margin-right: 10px;
+  margin-right: 20px;
   cursor: pointer;
 `;
 
@@ -68,20 +68,14 @@ width: 100%;
 color: white;
 `;
 
+const LogoImg = styled.img`
+width: 120px;
+height: 25px;
+`;
+
 const NavBarMov = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
- 
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -90,7 +84,7 @@ const NavBarMov = () => {
       <ThemeProvider theme={theme}>
         <Logo>
         <Link to="/">
-          <img src={require("../assets/img/Logo.png")} alt="Logo" />
+          <LogoImg src={require("../assets/img/Logo.png")}alt="Logo" />
           </Link>
         </Logo>
         <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>

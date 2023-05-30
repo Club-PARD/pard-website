@@ -15,8 +15,10 @@ const Header8 = styled.div`
   font-style: normal;
   width: 300px;
   height: 140px;
-  margin-top: 20px; 
   position: relative;
+  line-height: 140%;
+  margin-bottom: 10px;
+
 `;
 
 const ButtonText1 = styled.div`
@@ -30,11 +32,13 @@ line-height: 140%;
 color: white;
 position: relative;
 text-align: center;
+margin-bottom: 215px;
+
 
 `;
 
 const PartDiv = styled.div`
-  height: 756px;
+  height: 700px;
   position: relative;
   width: 100%;
   display: flex;
@@ -56,7 +60,7 @@ const AboutLogo = styled.img`
   height: 123px;
   opacity: 1;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;

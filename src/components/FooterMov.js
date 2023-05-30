@@ -71,10 +71,10 @@ const Information = styled.div`
 const Links = styled.div`
     display : flex; 
     margin-top : 50px; 
+    justify-content: space-between;
 `
 const EmailLink = styled.a`
     /* EMAIL */
-    width: 39px;
     height: 22px;
 
     /* Caption/C1 - R 12 */
@@ -105,8 +105,6 @@ const EmailLink = styled.a`
 const Instagram = styled.a`
     /* INSTAGRAM */
 
-
-    width: 75px;
     height: 22px;
 
     /* Caption/C1 - R 12 */
@@ -130,13 +128,11 @@ const Instagram = styled.a`
     flex: none;
     order: 1;
     flex-grow: 0;
-    margin-left: 30px; 
 `;
 const Youtube = styled.a`
     /* YOUTUBE */
 
 
-    width: 61px;
     height: 22px;
 
     /* Caption/C1 - R 12 */
@@ -161,10 +157,8 @@ const Youtube = styled.a`
     flex: none;
     order: 2;
     flex-grow: 0;
-    margin-left: 30px; 
 `
 const Disquiet = styled.a`
-    width: 58px;
     height: 22px;
 
     /* Caption/C1 - R 12 */
@@ -189,7 +183,7 @@ const Disquiet = styled.a`
     flex: none;
     order: 3;
     flex-grow: 0;
-    margin-left: 30px; 
+    margin-right: 16px; 
 `;
 
 function FooterMov() {

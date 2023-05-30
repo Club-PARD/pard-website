@@ -17,11 +17,11 @@ const Header8 = styled.div`
   height: 168px;
   position: relative;
   line-height: 140%;
-
+margin-bottom: 215px;
 `;
 
 const PartDiv = styled.div`
-  height: 756px;
+  height: 700px;
   position: relative;
   width: 100%;
   display: flex;
@@ -43,7 +43,7 @@ const AboutLogo = styled.img`
   height: 123px;
   opacity: 1;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;

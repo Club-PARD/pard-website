@@ -12,12 +12,12 @@ const firstScrollPoint = 11000; //homesecond 시작 스크롤 위치
 const pageLength = [
   2000,
   750,
-  3400,
+  3900,
 ]
 const period1 = 200;
 const period2 = 1000;
 const period3 = 1500;
-const secondScrollPoint = firstScrollPoint + pageLength[0] + pageLength[1] + 2000;
+const secondScrollPoint = firstScrollPoint + pageLength[0] + pageLength[1] + 2500;
 
 const textDB = [
     {
@@ -25,7 +25,7 @@ const textDB = [
       text: "협업하고",
       breakPoint: firstScrollPoint + period1,
       period: 1000,
-      posX: "20%",
+      posX: "25%",
       posY: "0%",
     },
     {
@@ -33,7 +33,7 @@ const textDB = [
       text: "성장하고",
       breakPoint: firstScrollPoint + period1,
       period: 1000,
-      posX: "35%",
+      posX: "40%",
       posY: "0%",
     },
     {
@@ -41,7 +41,7 @@ const textDB = [
       text: "해결하기",
       breakPoint: firstScrollPoint + period1,
       period: 1000,
-      posX: "50%",
+      posX: "55%",
       posY: "0%",
     },
     {
@@ -49,7 +49,7 @@ const textDB = [
       text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
       breakPoint: secondScrollPoint + period2,
       period:  period2 + period3,
-      posX: "35%",
+      posX: "40%",
       posY: "0%",
     },
     {
@@ -57,7 +57,7 @@ const textDB = [
       text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
       breakPoint: secondScrollPoint + period2 + period3,
       period: period2,
-      posX: "45%",
+      posX: "48%",
       posY: "0%",
     },
   ]
@@ -74,11 +74,13 @@ const textDB = [
   
   const Background = styled.div`
     background-image: ${({breakPointInfos, position, id, src}) => backgroundImgLogic(breakPointInfos, position, id, src)};
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     width: 100vw;
-    padding-top: 59.2%; /* (img-height / img-width * container-width) */
+    height: 100vh;
     position: sticky;
+    
     z-index :-1;
     top: 0;
     background-color: rgba(26, 26, 26);
@@ -135,8 +137,12 @@ const textDB = [
     position: absolute;
     padding: ${({ textInfo }) => textPaddingLofic(textInfo)};
   
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
     top: ${({ textInfo }) => (textInfo.posX)};
-    left: ${({ textInfo }) => (textInfo.posY)};
+    //left: ${({ textInfo }) => (textInfo.posY)};
   
     transform: ${({ textInfo, position }) => textTransformLogic(textInfo, position)};
     

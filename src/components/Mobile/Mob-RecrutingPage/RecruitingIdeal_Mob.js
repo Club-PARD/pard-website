@@ -63,6 +63,7 @@ const Container = styled.div`
 const ContentDiv = styled.div`
   width: 303px;
   height: auto;
+  cursor: pointer;
   //margin-top: 32px;
 `;
 const Div = styled.div`
@@ -72,7 +73,7 @@ const Div = styled.div`
     justify-content: center;
 `;
 const PartDiv = styled.div`
-    height: 1550px;
+    height: 1450px;
     width: 375px;    
     justify-content: center;
     margin-bottom: 35px;
@@ -105,7 +106,7 @@ const CatImage = styled.img`
 `;
 
 const Horizon = styled.div`
-  border: 1.5px solid #64C59A;
+  border: 1px solid #64C59A;
   width: 303px;
   height: 0px;
   margin-bottom: 35px;

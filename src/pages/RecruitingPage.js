@@ -36,8 +36,6 @@ flex-direction: column;
 align-items: center;
 margin: 0 auto;
 min-width: 420px;
-padding-left: 20px;
-
 `;
 
     return (

@@ -48,16 +48,16 @@ const textDB = [
       text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 대학생 IT 협업동아리 입니다.",
       breakPoint: secondScrollPoint + period2,
       period:  period2 + period3,
-      posX: "35%",
-      posY: "0%",
+      posX: "45%",
+      posY: "-30%",
     },
     {
       id : 4,
       text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
       breakPoint: secondScrollPoint + period2 + period3,
       period: period2,
-      posX: "45%",
-      posY: "0%",
+      posX: "48%",
+      posY: "-40%",
     },
   ]
   const breakPointInfos = [
@@ -135,9 +135,14 @@ const textDB = [
     text-align: ${({ textInfo }) => textAlignLogic(textInfo)};
     position: absolute;
     padding: ${({ textInfo }) => textPaddingLofic(textInfo)};
+
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
   
     top: ${({ textInfo }) => (textInfo.posX)};
-    left: ${({ textInfo }) => (textInfo.posY)};
+    // left: ${({ textInfo }) => (textInfo.posY)};
   
     transform: ${({ textInfo, position }) => textTransformLogic(textInfo, position)};
     
@@ -154,7 +159,7 @@ const textDB = [
         return "0px";
       case 3:
       case 4:
-        return "0px 200px";
+        return "0px 50px";
       default: 
         return null;
     }
@@ -204,7 +209,7 @@ const textDB = [
   const textTransformLogic = (textInfo, position) => {
     var offset = (position - (textInfo.breakPoint + textInfo.period * 0.8));
     if(textInfo.id == 3) {
-      const change = 75;
+      const change = 37;
       var x = position - (textInfo.breakPoint + 1000 - change);
       if(x >= 0 && x < change){
         return `translateY(${x * -1}px)`
@@ -277,7 +282,7 @@ const HomeSecondMob = () => {
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
-    <div style={{width: "100vw", boxSizing: "border-box"}}>
+      <div>
       <ThemeProvider theme={theme}>
           <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
