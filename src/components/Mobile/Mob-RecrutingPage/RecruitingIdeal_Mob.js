@@ -63,6 +63,7 @@ const Container = styled.div`
 const ContentDiv = styled.div`
   width: 303px;
   height: auto;
+  cursor: pointer;
   //margin-top: 32px;
 `;
 const Div = styled.div`
