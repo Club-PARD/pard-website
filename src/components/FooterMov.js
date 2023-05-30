@@ -71,6 +71,7 @@ const Information = styled.div`
 const Links = styled.div`
     display : flex; 
     margin-top : 50px; 
+    justify-content: space-between;
 `
 const EmailLink = styled.a`
     /* EMAIL */
@@ -127,7 +128,6 @@ const Instagram = styled.a`
     flex: none;
     order: 1;
     flex-grow: 0;
-    margin-left: 30px; 
 `;
 const Youtube = styled.a`
     /* YOUTUBE */
@@ -157,7 +157,6 @@ const Youtube = styled.a`
     flex: none;
     order: 2;
     flex-grow: 0;
-    margin-left: 30px; 
 `
 const Disquiet = styled.a`
     height: 22px;
@@ -184,7 +183,7 @@ const Disquiet = styled.a`
     flex: none;
     order: 3;
     flex-grow: 0;
-    margin-left: 30px; 
+    margin-right: 16px; 
 `;
 
 function FooterMov() {
