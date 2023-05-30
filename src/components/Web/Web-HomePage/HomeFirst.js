@@ -421,6 +421,8 @@ const HomeFirst = () => {
    
   
     document.documentElement.style.overflowX = 'hidden';
+    document.getElementById('vid').play();
+
   return (
 
 
