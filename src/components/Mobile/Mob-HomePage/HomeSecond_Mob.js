@@ -77,6 +77,7 @@ const textDB = [
   background-size: ${({ id }) => id == 1 ? 'contain' : 'cover'};
   background-repeat: no-repeat;
   width: 100vw;
+  min-width: 420px;
   height: 100vh; /* Added property */
   background-position: center;
   position: sticky;
@@ -284,14 +285,14 @@ const HomeSecondMob = () => {
     return (
       <div >
       <ThemeProvider theme={theme}>
-          <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0} style={{minWidth: "444px"}}>
+          <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0} style={{minWidth: "420px"}}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
             </Background>
           <div style={{height: pageLength[0]+ "px"}}></div> 
-          <Background src={backgroundImage2} style={{minWidth: "444px"}}>
+          <Background src={backgroundImage2} style={{minWidth: "420px"}}>
           </Background>
           <div style={{height: pageLength[1]+ "px"}}></div>
-          <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1} style={{minWidth: "444px"}}>
+          <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1} style={{minWidth: "420px"}}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(3, 5)} position = {position}></Animation1>
           </Background>
           <div style={{height: pageLength[2]+ "px"}}></div>

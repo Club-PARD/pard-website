@@ -11,7 +11,6 @@ import HomeProgramMob from "../components/Mobile/Mob-HomePage/HomeProgram_Mob";
 import HomePartsMob from "../components/Mobile/Mob-HomePage/HomePart_Mob";
 import HomeLastsMob from "../components/Mobile/Mob-HomePage/HomeLast_Mob";
 import HomePartnerMob from "../components/Mobile/Mob-HomePage/HomePartner_Mob";
-import NavBarMov from "../components/NavBarMov";
 import HomeFirst from "../components/Web/Web-HomePage/HomeFirst";
 import NavBarHome from "../components/Navbar_Home";
 import HomeSecond from "../components/Web/Web-HomePage/HomeSecond";
@@ -33,7 +32,7 @@ function HomePage() {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    min-width: 430px;
+    min-width: 420px;
 `;
 
     return (
@@ -54,7 +53,7 @@ function HomePage() {
                 </div>
                 :
                 <HomePageComponent_Mob>
-                    <NavBarMov />
+                    <NavBarMob_Home/>
                     <HomeVideoMob />
                     <HomeSecondMob />
                     <HomePartsMob />

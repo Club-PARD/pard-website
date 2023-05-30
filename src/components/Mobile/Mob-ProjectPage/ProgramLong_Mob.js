@@ -63,9 +63,9 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 margin: auto 0;
-width: 375px;
+width: 340px;
 height: 907px;
-margin-left: 47px;
+padding-left: 47px;
 `;
 
 const CardnBtn = styled.div`

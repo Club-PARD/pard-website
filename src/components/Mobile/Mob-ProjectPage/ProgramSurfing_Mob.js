@@ -63,7 +63,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 margin: auto 0;
-width: 375px;
+width: 340px;
 height: 907px;
 padding: 0 20px;
 padding-left: 47px;
