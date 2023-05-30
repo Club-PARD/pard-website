@@ -218,7 +218,7 @@ const BackgroundOverlay = styled.div`
 const DownLogo = styled.img`
   width: 80px;
   height: 63px;
-  padding-top: 100px;
+  padding-top:  8px;
 `;
 
 const LogoDiv = styled.div`
