@@ -28,7 +28,7 @@ const Header2 = styled.div`
   font-family: 'NanumSquare Neo';
 font-style: normal;
 line-height: 140%;
-margin-top: 183px;
+margin-top: 0px;
 `;
 
 const Header5 = styled.div`

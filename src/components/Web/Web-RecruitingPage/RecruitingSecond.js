@@ -313,7 +313,7 @@ function RecruitingSecond() {
             </Box>
           </Container>
           <Plus>
-            <Detail>정규 활동일정 자세히 보기</Detail>
+            <Detail>정규 활동 일정 자세히 보기</Detail>
             <ArrowDiv>
               <Arrow viewBox="0 0 15 22">
                 <path d="M0.5 21.1992L0.5 14.9792L14.5 8.13497V14.355L0.5 21.1992Z" stroke="white" />
