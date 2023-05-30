@@ -123,7 +123,7 @@ function ProgramLong() {
       {cardData.map((content, index) => (
         <Card key={content.id} style={{ marginRight: index === cardData.length - 1 ? 0 : '40px' }}>
           <CardImage src={content.image} alt={`Card ${content.id}`} isCover={content.id === 1} />
-          <CardContent key={content.id}>
+          <CardContent>
             <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
           </CardContent>
         </Card>

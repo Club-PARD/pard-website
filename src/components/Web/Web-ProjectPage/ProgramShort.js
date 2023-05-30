@@ -122,7 +122,7 @@ function ProgramShort() {
       {cardData.map((content) => (
         <Card key={content.id}>
          <CardImage src={content.image} alt={`Card ${content.id}`} isCover={content.id === 3} />
-          <CardContent key={content.id}>
+          <CardContent >
             <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
           </CardContent>
         </Card>

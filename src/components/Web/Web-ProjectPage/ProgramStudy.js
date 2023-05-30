@@ -119,8 +119,8 @@ function ProgramStudy() {
       </FirstCard>
       {cardData.map((content) => (
         <Card key={content.id}>
-          <CardImage key={content.id} src={content.image} alt={`Card ${content.id}`} />
-          <CardContent key={content.id}>
+          <CardImage src={content.image} alt={`Card ${content.id}`} />
+          <CardContent >
             <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
           </CardContent>
         </Card>
