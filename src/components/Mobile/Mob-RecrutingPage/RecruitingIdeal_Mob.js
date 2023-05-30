@@ -73,7 +73,7 @@ const Div = styled.div`
     justify-content: center;
 `;
 const PartDiv = styled.div`
-    height: 1550px;
+    height: 1450px;
     width: 375px;    
     justify-content: center;
     margin-bottom: 35px;
