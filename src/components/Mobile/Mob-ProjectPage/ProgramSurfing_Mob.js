@@ -66,7 +66,7 @@ margin: auto 0;
 width: 375px;
 height: 907px;
 padding: 0 20px;
-margin-left: 15px;
+margin-left: 47px;
 
 `;
 
