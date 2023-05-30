@@ -10,14 +10,11 @@ const VideoContainer = styled.div`
   height: 100vh;
   max-width: 100vw; 
   min-width: 1440px; // 아무리 줄여도 1440px로 유지됨
-  overflow: hidden;
   background-color: ${({ isColor }) => (isColor ? ' rgba(0, 0, 0, 0.4)' : ' rgba(0, 0, 0, 0.4)')};
- ;
 `;
 
 //inline-block으로 stickybox를 위로 올리는 역할을한다.
 const DIVVVV = styled.div`
-
   display: inline-block;
   height: 11000px;
   width: 100%;
@@ -42,6 +39,8 @@ function useScrollPosition() {
 
   return scrollPos;
 }
+
+
 
 const expandAnimation = keyframes`
 0% {
@@ -419,9 +418,12 @@ const HomeFirst = () => {
       setIsVisible(true);
     } }, [position,isVisible]);
     */
+   
   
 
   return (
+
+
   <>
 <DIVVVV>
     <VideoContainer isColor={backcolor}  isFixed={isFixed}>

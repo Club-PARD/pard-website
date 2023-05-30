@@ -2,6 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 import img1 from '../../../assets/img/세미나1.png';
 import img2 from '../../../assets/img/세미나2.png';
 import img3 from '../../../assets/img/세미나3.png';
+import ProgramStudy from "./ProgramStudy";
 
 const Header4 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header4};

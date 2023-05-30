@@ -40,6 +40,10 @@ const DIVVVV = styled.div`
   width: 100%;
 `;
 
+const Div = styled.div`
+overflow-x: hidden;
+width: 100vw;
+`
 
 
 function useScrollPosition() {
@@ -447,7 +451,7 @@ const HomeVideoMob = () => {
   
     
     return (
-        <>
+        <Div>
         <DIVVVV>
         <ThemeProvider theme={theme}>
             <VideoContainer isColor={backcolor}>
@@ -580,7 +584,7 @@ const HomeVideoMob = () => {
             </VideoContainer>
             </ThemeProvider>
             </DIVVVV>
-              </>
+              </Div>
           );
 
 }

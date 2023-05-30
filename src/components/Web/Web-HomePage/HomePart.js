@@ -97,7 +97,7 @@ const ButtonDiv = styled.div`
 
 const Div = styled.div`
     margin: 0px auto; // 가운데 정렬 하는 방법
-    height: 900px;
+    height: 1000px;
     justify-content: center;
     width: 1330px;
 `;
@@ -139,29 +139,29 @@ function HomePart() {
     ];
 
     return (
-        <Div>
-            <ThemeProvider theme={theme}>
+            <Div>
+                <ThemeProvider theme={theme}>
                     <Header2>PARTS</Header2>
-                <PartContents>
-                    {contentsData.map(content => (
-                        <PartWrapper key={content.id}>
-                            <ContentWrapper key={content.id} marginright={content.id === 5}>
-                                <Image src={content.imageSrc} alt={`Image ${content.id}`} marginTop={content.id === 2 || content.id === 4} />
-                                <Header5>{content.title}</Header5>
-                                <Body2>{content.description}</Body2>
-                            </ContentWrapper>
-                        </PartWrapper>
-                    ))}
-                </PartContents>
-                <ButtonDiv>
-                    <div style={{ width: '360px', }}>
-                        <LearnMoreButton>
-                            <Header5>더 알아보기</Header5>
-                        </LearnMoreButton>
-                    </div>
-                </ButtonDiv>
-            </ThemeProvider>
-        </Div>
+                    <PartContents>
+                        {contentsData.map(content => (
+                            <PartWrapper key={content.id}>
+                                <ContentWrapper key={content.id} marginright={content.id === 5}>
+                                    <Image src={content.imageSrc} alt={`Image ${content.id}`} marginTop={content.id === 2 || content.id === 4} />
+                                    <Header5>{content.title}</Header5>
+                                    <Body2>{content.description}</Body2>
+                                </ContentWrapper>
+                            </PartWrapper>
+                        ))}
+                    </PartContents>
+                    <ButtonDiv>
+                        <div style={{ width: '360px', }}>
+                            <LearnMoreButton>
+                                <Header5>더 알아보기</Header5>
+                            </LearnMoreButton>
+                        </div>
+                    </ButtonDiv>
+                </ThemeProvider>
+            </Div>
     );
 }
 
