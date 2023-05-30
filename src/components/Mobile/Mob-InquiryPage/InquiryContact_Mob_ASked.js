@@ -60,7 +60,7 @@ border: 1px solid #5262F5;
 
 `
 
-const Informbox1 = styled.a`
+const Informbox1 = styled.div`
     text-decoration: none;
     display: flex;
     width: 326px;
@@ -229,9 +229,9 @@ margin-top: 79px;
 
 
 const Askmobile = () => {
-    const [informbox1Hovered, setInformbox1Hovered] = useState(false);
-    const [informbox2Hovered, setInformbox2Hovered] = useState(false);
-    const [BusinessHovered, setBusinessHoveredHovered] = useState(false);
+    const [informbox1Hovered, setInformbox1Hovered] = useState();
+    const [informbox2Hovered, setInformbox2Hovered] = useState();
+    const [BusinessHovered, setBusinessHoveredHovered] = useState();
 
     const handleInformbox2Hover = (isHovered) => {
         setInformbox2Hovered(isHovered);
@@ -258,7 +258,7 @@ const Askmobile = () => {
                     <Informbox1
                         href="mailto:official@we-pard.com"
                         onMouseEnter={() => handleInformbox1Hover(true)}
-                        onMouseLeave={() => handleInformbox1Hover(false)}
+                        onMouseLeave={() => handleInformbox1Hover()}
                     >
                         <Mail hovered={informbox1Hovered}>메일</Mail>
                         <EMail hovered={informbox1Hovered}>official@we-pard.com</EMail>
@@ -268,7 +268,7 @@ const Askmobile = () => {
                         href="https://www.instagram.com/official_pard_/"
                         target="_blank"
                         onMouseEnter={() => handleInformbox2Hover(true)}
-                        onMouseLeave={() => handleInformbox2Hover(false)}
+                        onMouseLeave={() => handleInformbox2Hover()}
                         hovered={informbox2Hovered}
                     >
                         <Instagram hovered={informbox2Hovered}>인스타그램</Instagram>
@@ -280,7 +280,7 @@ const Askmobile = () => {
 
                 <Business
                     onMouseEnter={() => BusinessHoveredHover(true)}
-                    onMouseLeave={() => BusinessHoveredHover(false)}
+                    onMouseLeave={() => BusinessHoveredHover()}
                     hovered={BusinessHovered}>
                     비즈니스 문의는 &nbsp;
                     <Here to='/' hovered={informbox2Hovered}>여기로</Here></Business>

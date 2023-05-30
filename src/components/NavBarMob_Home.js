@@ -18,6 +18,8 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border-bottom: none;
+  transition: background-color 0.3s ease;
+
 `;
 
 const Logo = styled.div`
