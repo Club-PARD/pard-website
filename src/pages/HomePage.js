@@ -40,7 +40,7 @@ function HomePage() {
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
 
-                <HomePageComponent_Mob>
+                <div>
                     <NavBarHome />
                     <HomeFirst />
                     <HomeSecond />
@@ -50,7 +50,7 @@ function HomePage() {
                     <HomePartnerWeb />
                     <HomeLastWeb />
                     <Footer />
-                </HomePageComponent_Mob>
+                </div>
                 :
                 <HomePageComponent_Mob>
                     <NavBarMov />
