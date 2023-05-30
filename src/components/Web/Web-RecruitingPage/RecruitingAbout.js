@@ -96,6 +96,7 @@ font-size: ${props => props.theme.Web_fontSizes.ButtonText1};
 font-weight: ${props => props.theme.fontWeights.ButtonText1};
 font-family: 'NanumSquare Neo';
 border-radius: 10px;
+cursor: pointer;
 `;
 const Body2 = styled.div`
 margin-top: 12px;
@@ -175,7 +176,7 @@ function RecruitingAbout() {
       },
       {
         id: 2,
-        quest: 'Q. 지원 요건이 어떻게 되나요?',
+        quest: 'Q. 해커톤 팀은 어떻게 꾸리게 되나요?',
         answer: <>A. 숏커톤을 위한 팀은 팀원들의 스킬셋과 커뮤니케이션 스타일을 고려하려 지정하고 있으며,<br/>
          &nbsp; &nbsp; &nbsp;롱커톤을 위한 팀은 아이디어 경선을 통해 아이디어를 피칭하고,<br/>
          &nbsp; &nbsp; &nbsp;해당 아이디어 관심이 있는 팀원들 위주로 별도의 팀빌딩 프로세스가 진행됩니다!</>,
@@ -268,6 +269,10 @@ function RecruitingAbout() {
     setQuestion(updatedQuestions);
   };
 
+  const handleClick = () => {
+    window.open("https://pard.channel.io/lounge", "_blank");
+  };
+
 
   return (
     <Div>
@@ -284,7 +289,7 @@ function RecruitingAbout() {
                   {item.item}
                 </QuestionItem>
               ))}
-              <Button>조금 더 물어볼래요</Button>
+              <Button onClick={handleClick}>조금 더 물어볼래요</Button>
               <Body2>찾으시는 내용이 없으신가요?<br />
                 익명으로 편하게 물어보세요!</Body2>
             </div>

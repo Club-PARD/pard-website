@@ -187,7 +187,7 @@ function HomeMentor() {
                 <PartContents>
                     {contentsData.map(content => (
                         <PartWrapper key={content.id}>
-                            <MentorCard content={content}></MentorCard>
+                            <MentorCard  key={content.id} content={content}></MentorCard>
                         </PartWrapper>
                     ))}
                 </PartContents>

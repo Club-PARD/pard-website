@@ -14,8 +14,6 @@ const Header2 = styled.div`
   font-family: "NanumSquare Neo";
   white-space: pre-line;
   margin-bottom: 50px;
-  margin-top: 0px;
-  margin-left: 110px;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;
 `;
@@ -27,7 +25,6 @@ const Header2_1 = styled.div`
   font-family: "NanumSquare Neo";
   white-space: pre-line;
   margin-bottom: 90px;
-  margin-left: 110px;
 `;
 
 const HeaderDiv = styled.div`
@@ -35,6 +32,7 @@ const HeaderDiv = styled.div`
   flex-direction: column;
   position: sticky;
   top: 15%;
+  // background-color: blue;
   &.unfixed {
     position: relative;
   }
@@ -45,7 +43,22 @@ const Div1 = styled.div`
   flex-direction: column;
   scroll-behavior: smooth;
   margin-bottom: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px;
+  
+  // background-color: green;
 `;
+
+
+const HeaderDiv2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 1080px;
+  // background-color: red;
+`;
+
 
 function ProgramsTrain() {
   const Headers2 = ["세미나", "스터디", "서핑데이", "숏커톤", "롱커톤"];
@@ -65,6 +78,7 @@ function ProgramsTrain() {
         end: () =>
           `+=${document.querySelector(".div1").scrollWidth}`,
         scrub: 0.4,
+        // markers: true,
         pin: true,
         anticipatePin: 0,
         onUpdate: ({ progress }) => {
@@ -98,15 +112,19 @@ function ProgramsTrain() {
   const Header2Text = Headers2[Header2Index];
 
   return (
+    <div>
     <ThemeProvider theme={theme}>
       <HeaderDiv className={isHeaderFixed ? "" : "unfixed"}>
+        <HeaderDiv2>
         <Header2_1>PROGRAMS</Header2_1>
         <Header2 visible={isHeaderFixed}>{Header2Text}</Header2>
+        </HeaderDiv2>
       </HeaderDiv>
       <Div1 className="div1">
         <ProgramsTrain2 />
       </Div1>
     </ThemeProvider>
+    </div>
   );
 }
 

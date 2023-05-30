@@ -57,7 +57,6 @@ const FirstCard = styled.div`
   height: 370px;
   border-radius: 20px 20px 20px 20px;
   margin-right: 70px;
-  margin-left: 110px; 
   background-color: #1a1a1a;
 `;
 
@@ -106,28 +105,28 @@ function ProgramSeminar() {
   ];
 
   return (
-    <SeminarDiv>
-      <FirstCard>
-        <Header4>프로덕트 메이킹의 기반</Header4>
-        <Box />
-        <Body2_1>PARD는 기본에 충실합니다.</Body2_1>
-        <Body2>
-          {/* 이렇게 할 시 영상과 길이가 다름 */}
-          IT 프로덕트를 완성하기 위해 필요한 지식을 서로 공유하고,
-          기술적으로 성장할 수 있도록 돕습니다.
-          파트 별 전문가나 선배들의 초밀착 멘토링을 통해,
-          실무에서 활용할 수 있는 팁과 노하우를 배웁니다.
-        </Body2>
-      </FirstCard>
-      {cardData.map((content) => (
-        <Card key={content.id}>
-          <CardImage key={content.id} src={content.image} alt={`Card ${content.id}`} />
-          <CardContent key={content.id}>
-            <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
-          </CardContent>
-        </Card>
-      ))}
-    </SeminarDiv>
+      <SeminarDiv>
+        <FirstCard>
+          <Header4>프로덕트 메이킹의 기반</Header4>
+          <Box />
+          <Body2_1>PARD는 기본에 충실합니다.</Body2_1>
+          <Body2>
+            {/* 이렇게 할 시 영상과 길이가 다름 */}
+            IT 프로덕트를 완성하기 위해 필요한 지식을 서로 공유하고,
+            기술적으로 성장할 수 있도록 돕습니다.
+            파트 별 전문가나 선배들의 초밀착 멘토링을 통해,
+            실무에서 활용할 수 있는 팁과 노하우를 배웁니다.
+          </Body2>
+        </FirstCard>
+        {cardData.map((content) => (
+          <Card key={content.id}>
+            <CardImage src={content.image} alt={`Card ${content.id}`} />
+            <CardContent >
+              <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
+            </CardContent>
+          </Card>
+        ))}
+      </SeminarDiv>
   );
 }
 

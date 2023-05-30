@@ -215,6 +215,18 @@ color:#5262F5;
 
 `
 
+const DownLogo = styled.img`
+width: 80px;
+height: 63px;
+`
+
+const LogoDiv = styled.div`
+width: 100%;
+justify-content: center;
+display: flex;
+margin-top: 79px;
+`
+
 
 const Askmobile = () => {
     const [informbox1Hovered, setInformbox1Hovered] = useState(false);
@@ -273,6 +285,9 @@ const Askmobile = () => {
                     비즈니스 문의는 &nbsp;
                     <Here to='/' hovered={informbox2Hovered}>여기로</Here></Business>
             </Margin>
+            <LogoDiv>
+            <DownLogo src={require('../../../assets/img/DownScrollLogo.png')}/>
+            </LogoDiv>
         </ThemeProvider>
 
 

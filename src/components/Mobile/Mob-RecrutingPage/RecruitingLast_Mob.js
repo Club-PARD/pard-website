@@ -45,6 +45,7 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     color: black;
     border-radius: 10px;
     border : none;
+    cursor: pointer;
 `;
 
 

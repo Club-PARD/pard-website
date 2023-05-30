@@ -40,7 +40,7 @@ const Button = styled.button`
     height: 58px;
     background-color: #64C59A;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 100px;
     color: #000000;
     border-radius: 10px;
     border : none;

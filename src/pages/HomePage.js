@@ -55,13 +55,13 @@ function HomePage() {
                 <HomePageComponent_Mob>
                     <NavBarMov />
                     <HomeVideoMob />
-                    <HomeSecondMob/>
+                    <HomeSecondMob />
                     <HomePartsMob />
                     <HomeProgramMob />
                     <HomeMentorMob />
                     <HomePartnerMob />
                     <HomeLastsMob />
-                    <FooterMov/>
+                    <FooterMov />
                 </HomePageComponent_Mob>
             }
         </HomePageComponent>

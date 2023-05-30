@@ -209,10 +209,10 @@ function FooterMov() {
                 ⓒPARD. 2023.All rights reserved.
             </Information>
             <Links>
-                <EmailLink href="mailto:official@we-pard.com">Email</EmailLink>
-                <Instagram href="https://www.instagram.com/official_pard_/" target="_blank">Instagram</Instagram>
-                <Youtube href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA" target="_blank">Youtube</Youtube>
-                <Disquiet href="https://disquiet.io/club/pard" target="_blank">Disquiet</Disquiet>
+                <EmailLink href="mailto:official@we-pard.com">EMAIL</EmailLink>
+                <Instagram href="https://www.instagram.com/official_pard_/" target="_blank">INSTAGRAM</Instagram>
+                <Youtube href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA" target="_blank">YOUTUBE</Youtube>
+                <Disquiet href="https://disquiet.io/club/pard" target="_blank">DISQUIET</Disquiet>
             </Links>
         </FooterMovWrapper>
     );

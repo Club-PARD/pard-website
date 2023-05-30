@@ -84,7 +84,7 @@ const Card2 = () => {
                 slidesPerView={1}
                 spaceBetween={35}
                 effect={"fade"}
-                loop={false}
+                loop={true}
                 speed={800}
             >
 

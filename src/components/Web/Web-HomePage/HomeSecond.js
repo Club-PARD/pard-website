@@ -154,7 +154,7 @@ const textDB = [
   const Div = styled.div`
     margin: ${request1 ? "0px auto" : ""};
     justify-content: ${request1 ? "center" : ""};
-    width: ${request1 ? "1330px" : ""};
+    width: ${request1 ? "1330px" : "100vw"};
 `;
   const textPaddingLofic = (textInfo) => {
     switch(textInfo.id){
@@ -292,7 +292,7 @@ const HomeSecond = () => {
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
-      <Div>
+      <Div > 
           
       <ThemeProvider theme={theme}>
           <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>

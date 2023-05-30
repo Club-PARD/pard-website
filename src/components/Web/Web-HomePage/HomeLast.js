@@ -65,6 +65,7 @@ const Button1 = styled.button`
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
+    cursor: pointer;
 `;
 
 const Shape1 = styled.div`

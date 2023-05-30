@@ -90,12 +90,14 @@ const Except = styled.div`
 
 const AndPic = styled.div`
   display: flex;
-  margin-left: 187px;
-  //margin-top: -75px;
+  margin-left: 200px;
+  margin-top: -120px;
   width: 106px;
   height: 123px;
   position: relative;
   //border: 1px solid #000000;
+  cursor:pointer;
+
 `;
 const CatImage = styled.img`
   bottom: 120px;
@@ -103,7 +105,7 @@ const CatImage = styled.img`
 `;
 
 const Horizon = styled.div`
-  border: 2px solid #64C59A;
+  border: 1.5px solid #64C59A;
   width: 303px;
   height: 0px;
   margin-bottom: 35px;

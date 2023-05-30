@@ -4,11 +4,17 @@ import { theme } from '../styles/theme';
 import styled, { ThemeProvider } from 'styled-components';
 import { useState, useEffect } from 'react';
 
+const Div = styled.footer`
+   background-color: #2A2A2A;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    `
 
 const FooterWrapper = styled.footer`
     background-color: #2A2A2A;
     // background-color: white;
-    width: 100%;
+    width: 1280px;
     height: 130px;
     font-family: 'NanumSquare Neo';
     font-style: normal;
@@ -16,6 +22,10 @@ const FooterWrapper = styled.footer`
     font-size: 12px;
     line-height: 180%;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 100px;
 `;
 const FooterLogoRules = styled.div`
     display:flex;
@@ -220,32 +230,34 @@ const Disquiet = styled.a`
 function Footer() {
 
     return (
-        <ThemeProvider theme={theme}>
-            <FooterWrapper>
-                <LeftFooter>
-                    <LeftComponent>
-                        <FooterLogoRules>
-                            <PardLogo>
-                                <img src={require("../assets/img/Logo.png")} alt="Logo" />
-                            </PardLogo>
-                            <Rules href="https://pardhgu.notion.site/PARD-v1-7c576d9d8d42441790ad10c23b35c1e3" target="_blank">
-                                회칙{' >'}
-                            </Rules>
-                        </FooterLogoRules>
-                        <Information>
-                            PARD (파드, Pay it forward를 실천하는 IT협업 동아리)
-                            ⓒPARD. 2023.All rights reserved.
-                        </Information>
-                    </LeftComponent>
-                    <RightFooter>
-                        <EmailLink href="mailto:official@we-pard.com">Email</EmailLink>
-                        <Instagram href="https://www.instagram.com/official_pard_/" target="_blank">Instagram</Instagram>
-                        <Youtube href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA" target="_blank">Youtube</Youtube>
-                        <Disquiet href="https://disquiet.io/club/pard" target="_blank">Disquiet</Disquiet>
-                    </RightFooter>
-                </LeftFooter>
-            </FooterWrapper>
-        </ThemeProvider>
+        <Div>
+            <ThemeProvider theme={theme}>
+                <FooterWrapper>
+                    <LeftFooter>
+                        <LeftComponent>
+                            <FooterLogoRules>
+                                <PardLogo>
+                                    <img src={require("../assets/img/Logo.png")} alt="Logo" />
+                                </PardLogo>
+                                <Rules href="https://pardhgu.notion.site/PARD-v1-7c576d9d8d42441790ad10c23b35c1e3" target="_blank">
+                                    회칙{' >'}
+                                </Rules>
+                            </FooterLogoRules>
+                            <Information>
+                                PARD (파드, Pay it forward를 실천하는 IT협업 동아리)
+                                ⓒPARD. 2023.All rights reserved.
+                            </Information>
+                        </LeftComponent>
+                        <RightFooter>
+                            <EmailLink href="mailto:official@we-pard.com">EMAIL</EmailLink>
+                            <Instagram href="https://www.instagram.com/official_pard_/" target="_blank">INSTAGRAM</Instagram>
+                            <Youtube href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA" target="_blank">YOUTUBE</Youtube>
+                            <Disquiet href="https://disquiet.io/club/pard" target="_blank">DISQUIET</Disquiet>
+                        </RightFooter>
+                    </LeftFooter>
+                </FooterWrapper>
+            </ThemeProvider>
+        </Div>
     );
 }
 

@@ -45,6 +45,7 @@ const Frame15 = styled.button`
   border:none;
   background: #5262F5;
   border-radius: 13px;
+  cursor: pointer;
 `;
 
 const Header5 = styled.div`
