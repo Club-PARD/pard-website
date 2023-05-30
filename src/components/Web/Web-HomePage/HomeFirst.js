@@ -110,7 +110,7 @@ const TextContainer2 = styled.div`
 width: 616px;
 height: 84px;
   position: absolute;
-  top:55%;
+  top:53%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -265,7 +265,7 @@ const MovedText = styled.div`
   width: 1000px;
   position: absolute;
   top: 107%;  // adjust this value to control the initial position
-  left: 19%;  // position it in the middle of its parent
+  left: 15%;  // position it in the middle of its parent
   transform: translate(-50%, -50%);  // change the origin of transformation
   transition: transform 0.5s ease-in-out forwards;
     animation: ${({ isAnimation }) =>
@@ -452,8 +452,8 @@ const HomeFirst = () => {
                 <>
           
     <SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${Math.min((position - 650)/6, 300)}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${Math.min((position - 650)/5, 400)}px)` }}>{text2}</Text2>
+      <Text1 style={{ transform: `translateX(-${Math.min((position - 650)/6, 338)}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${Math.min((position - 650)/5, 360)}px)` }}>{text2}</Text2>
       
     </SplitTextContainer>
 
@@ -474,8 +474,8 @@ const HomeFirst = () => {
 :changed==='c' ?  
 <>
 <SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${300}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${400}px)` }}>{text2}</Text2>
+      <Text1 style={{ transform: `translateX(-${338}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${360}px)` }}>{text2}</Text2>
       
     </SplitTextContainer>
     {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
@@ -493,8 +493,8 @@ const HomeFirst = () => {
 :changed==='cd' ?  
 <>
 <SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${300}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${400}px)` }}>{text2}</Text2>
+      <Text1 style={{ transform: `translateX(-${338}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${360}px)` }}>{text2}</Text2>
       <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
     </SplitTextContainer>
     {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
@@ -505,8 +505,8 @@ const HomeFirst = () => {
 :changed==='cdd' ?  
 <>
 <SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${300}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${400}px)` }}>{text2}</Text2>
+      <Text1 style={{ transform: `translateX(-${338}px)` }}>{text1}</Text1>
+      <Text2 style={{ transform: `translateX(${360}px)` }}>{text2}</Text2>
       <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
       
     
