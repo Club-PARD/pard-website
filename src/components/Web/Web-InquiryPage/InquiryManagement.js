@@ -283,7 +283,7 @@ function InquiryManagement() {
             position: 'Product Manager',
             site: [
                 { name: 'instagram', link: 'https://www.instagram.com/winningvirus_baek/' },
-                { name: 'disquiet', link: 'disquiet.io/sign-up?ref=skbaek0716' },
+                { name: 'disquiet', link: 'https://disquiet.io/@skbaek0716' },
             ],
         },
 

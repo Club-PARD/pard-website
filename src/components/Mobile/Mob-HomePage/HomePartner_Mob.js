@@ -31,7 +31,7 @@ const Subtitle3 = styled.div`
 const DisquietImage1 = styled.img`
     width: 193px;
     height: 40px;
-    padding-top: 83px;
+    padding-top: 60px;
 `;
 
 const LincImage2 = styled.img`
@@ -54,8 +54,8 @@ const SImage4 = styled.img`
 
 const Spacklab = styled.img`
     width: 182px;
-    height: 50px;
-    padding-top: 60px;
+    height: 65px;
+    padding-top: 83px;
     margin-right: 25px;
 `;
 

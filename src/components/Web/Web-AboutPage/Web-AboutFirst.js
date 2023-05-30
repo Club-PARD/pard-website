@@ -65,7 +65,7 @@ const AboutFrame1 = styled.img`
 
 const TextContainer = styled.div`
     position: absolute;
-    top: 47%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 `;

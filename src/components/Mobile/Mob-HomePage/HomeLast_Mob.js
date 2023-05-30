@@ -45,8 +45,7 @@ const Div = styled.div` //정해진 width를 또 가운데 정렬
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-left: 24px;
+    justify-content: center;    
 `;
 
 const PartDiv = styled.div`
@@ -93,6 +92,7 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
+    cursor: pointer;
 `;
 
 function HomeLastMob() {

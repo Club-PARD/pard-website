@@ -140,7 +140,7 @@ const RecruitingPart = () => {
   const buttons = [
     {
       title: '서비스 기획',
-      link: 'https://www.notion.so/pardhgu/10bcc2923e4445e6a8a1015fbae7e9b7?pvs=4',
+      link: 'https://pard-recruiting.oopy.io/part/pm',
       textColor: '#000000',
       hoverColor: '#5262F5',
       vectorImage: ServiceVector,
@@ -150,7 +150,7 @@ const RecruitingPart = () => {
     },
     {
       title: '디자인',
-      link: 'https://www.notion.so/pardhgu/81510a5747af4d0eb2ac126ca115912d?pvs=4',
+      link: 'https://pard-recruiting.oopy.io/part/design',
       textColor: '#000000',
       hoverColor: '#7B3FEF',
       vectorImage: DesignVector,
@@ -160,7 +160,7 @@ const RecruitingPart = () => {
     },
     {
       title: 'APP(iOS)',
-      link: 'https://www.notion.so/pardhgu/IOS-5d0a8b8312a44c83a24d9e2ed29af797?pvs=4',
+      link: 'https://pard-recruiting.oopy.io/part/app',
       textColor: '#000000',
       hoverColor: '#FF5C00',
       vectorImage: DevelopVector,
@@ -170,7 +170,7 @@ const RecruitingPart = () => {
     },
     {
       title: 'WEB',
-      link: 'https://www.notion.so/pardhgu/WEB-3abe9cee136c4c319a900a8230320284?pvs=4',
+      link: 'https://pard-recruiting.oopy.io/part/web',
       textColor: '#000000',
       hoverColor: '#FF5C00',
       vectorImage: DevelopVector,
@@ -180,7 +180,7 @@ const RecruitingPart = () => {
     },
     {
       title: 'SERVER',
-      link: 'https://www.notion.so/pardhgu/SERVER-9032119e8aea44538cb348ad7da84806?pvs=4',
+      link: 'https://pard-recruiting.oopy.io/part/server',
       textColor: '#000000',
       hoverColor: '#FF5C00',
       vectorImage: DevelopVector,

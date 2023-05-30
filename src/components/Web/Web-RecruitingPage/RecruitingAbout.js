@@ -96,6 +96,7 @@ font-size: ${props => props.theme.Web_fontSizes.ButtonText1};
 font-weight: ${props => props.theme.fontWeights.ButtonText1};
 font-family: 'NanumSquare Neo';
 border-radius: 10px;
+cursor: pointer;
 `;
 const Body2 = styled.div`
 margin-top: 12px;
@@ -268,6 +269,10 @@ function RecruitingAbout() {
     setQuestion(updatedQuestions);
   };
 
+  const handleClick = () => {
+    window.open("https://www.figma.com/file/07TZOSw3gfUDkb3X178F8i?node-id=1921:6765#456941853", "_blank");
+  };
+
 
   return (
     <Div>
@@ -284,7 +289,7 @@ function RecruitingAbout() {
                   {item.item}
                 </QuestionItem>
               ))}
-              <Button>조금 더 물어볼래요</Button>
+              <Button onClick={handleClick}>조금 더 물어볼래요</Button>
               <Body2>찾으시는 내용이 없으신가요?<br />
                 익명으로 편하게 물어보세요!</Body2>
             </div>
