@@ -27,7 +27,7 @@ img {
     width: 180px;
   }
   margin-right: auto; 
-  margin-left: 7px;
+  margin-left: 15px;
 `;
 
 const MenuButton = styled.button`
@@ -88,7 +88,7 @@ const NavBarMov = () => {
           </Link>
         </Logo>
         <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
-          <img src={MenuBar_white} alt="menu" />
+          <img src={MenuBar_white} alt="menu"height={'50px'} width3={'25px'} />
         </MenuButton>
         <Menu  isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>

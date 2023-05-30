@@ -7,7 +7,8 @@ import MenuBar_white from '../assets/img/MenuBar_white.png';
 import MenuBar_black from '../assets/img/MenuBar_black.png'; 
 
 const Nav = styled.nav`
-  background-color: ${props => props.scrollPosition <= 690 ? '#1A1A1A' : '#FFFFFF'};
+background-color: ${({ isOpen, scrollPosition }) =>
+    isOpen ? 'rgba(26, 26, 26, 0.8)' : scrollPosition <= 650 ? '#1A1A1A' : '#FFFFFF'};
   color: white;
   display: flex;
   align-items: center;
@@ -19,7 +20,6 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border-bottom: none;
-  transition: background-color 0.3s ease;
 `;
 
 const Logo = styled.div`
@@ -28,7 +28,7 @@ img {
     width: 180px;
   }
   margin-right: auto; 
-  margin-left: 7px;
+  margin-left: 15px;
 `;
 
 const MenuButton = styled.button`
@@ -92,7 +92,7 @@ const NavBarMov_About = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <Nav scrollPosition={scrollPosition}>
+    <Nav scrollPosition={scrollPosition} isOpen={isOpen}>
       <ThemeProvider theme={theme}>
         <Logo>
         <Link to="/">
@@ -100,7 +100,8 @@ const NavBarMov_About = () => {
           </Link>
         </Logo>
         <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
-          <img src={scrollPosition >= 730 ? MenuBar_black : MenuBar_white} alt="menu" />
+          <img src={isOpen ? MenuBar_white : (scrollPosition >= 650 ? MenuBar_black : MenuBar_white)} alt="menu" height={'50px'} width={'50px'} />
+
         </MenuButton>
         <Menu  isOpen={isOpen}>
           <Link to="/About" style={{ textDecoration: "none" }}>

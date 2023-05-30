@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import MenuBar_white from '../assets/img/MenuBar_white.png';
 
 const Nav = styled.nav`
-  background-color: ${props => props.scrollPosition <= 20000 ? 'rgba(0,0,0,0)' : '#1A1A1A'};
+  background-color: ${props => props.isOpen ?  props.scrollPosition <= 20000 ? 'rgba(26, 26, 26, 0.8)' : '#1A1A1A' : 'rgba(0,0,0,0)'};
   color: white;
   display: flex;
   align-items: center;
@@ -18,8 +18,6 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border-bottom: none;
-  transition: background-color 0.3s ease;
-
 `;
 
 const Logo = styled.div`
@@ -28,7 +26,7 @@ img {
     width: 180px;
   }
   margin-right: auto; 
-  margin-left: 7px;
+  margin-left: 15px;
 `;
 
 const MenuButton = styled.button`
@@ -47,7 +45,7 @@ const Menu = styled.div`
   right: 0;
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   background-color: rgba(26, 26, 26, 0.8); // 여기가 NavBar 투명도
-  padding: 1rem 5rem;
+  padding: 0rem 7rem;
   text-align: center;
   height: 237px;
   margin-top: 4px;
@@ -91,7 +89,7 @@ const NavBarMob_Home = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <Nav scrollPosition={scrollPosition}>
+        <Nav scrollPosition={scrollPosition} isOpen={isOpen}>
             <ThemeProvider theme={theme}>
                 <Logo>
                     <Link to="/">
@@ -99,7 +97,7 @@ const NavBarMob_Home = () => {
                     </Link>
                 </Logo>
                 <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
-                    <img src={MenuBar_white} alt="menu" />
+                    <img src={MenuBar_white} alt="menu" height={'50px'} width3={'25px'}/>
                 </MenuButton>
                 <Menu isOpen={isOpen}>
                     <Link to="/About" style={{ textDecoration: "none" }}>
