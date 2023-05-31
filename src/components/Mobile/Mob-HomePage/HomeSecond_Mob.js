@@ -45,7 +45,7 @@ const textDB = [
     },
     {
       id : 3,
-      text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 \n대학생 IT 협업동아리 입니다.",
+      text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 \n대학생 IT 협업동아리입니다.",
       breakPoint: secondScrollPoint + period2,
       period:  period2 + period3,
       posX: "45%",

@@ -23,7 +23,7 @@ const PartDiv = styled.div`
     position: relative;
     padding-left: 268px;
     padding-right: 268px;
-    padding-bottom: 274px;
+    padding-bottom: 130px;
     padding-top: 230px;
     height: 390px;
     display: flex;

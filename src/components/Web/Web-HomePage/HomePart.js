@@ -110,7 +110,7 @@ function HomePart() {
             id: 1,
             imageSrc: PlanerImage,
             title: '서비스 기획',
-            description: '문제 정의부터, 산출물 작성까지\n사용자 중심으로 문제를\n해결하고 프로젝트를 관리합니다.',
+            description: '문제 정의부터 산출물 작성까지\n사용자 중심으로 문제를\n해결하고 프로젝트를 관리합니다.',
         },
         {
             id: 2,
@@ -122,7 +122,7 @@ function HomePart() {
             id: 3,
             imageSrc: APPImage,
             title: '앱(APP)',
-            description: '사용자를 위한 어플리케이션 \nUI를 설계하고  Flutter 기반 \n앱 서비스를 개발합니다. \n* 2기 부터는 ios 기반 예정',
+            description: '사용자를 위한 어플리케이션 \nUI를 설계하고  Flutter 기반 \n앱 서비스를 개발합니다. \n* 2기부터는 ios 기반 예정',
         },
         {
             id: 4,

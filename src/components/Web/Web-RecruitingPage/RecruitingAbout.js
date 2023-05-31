@@ -138,7 +138,7 @@ function RecruitingAbout() {
         answer: <>
         A. 다양한 분야로 관심이 많으신 예비 지원자님 정말 멋지십니다!<br/>
         &nbsp; &nbsp; &nbsp;하지만 아쉽게도 중복 지원은 어려울 것 같습니다. 2기는 YB로 먼저 배우고 싶은 파트를,<br/>
-        &nbsp; &nbsp; &nbsp;3기에는 OB로 다른 파트에 지원해보시는 건 어떨까요?
+        &nbsp; &nbsp; &nbsp;3기에는 OB로 다른 파트에 지원해 보시는 건 어떨까요?
         </>,
         select: false
       },
@@ -146,8 +146,8 @@ function RecruitingAbout() {
         id: 4,
         quest: 'Q. 비슷한 동아리들이 있는데 PARD만의 차별점은 무엇인가요?',
         answer: <>A. 파드는 협업이라는 가치에 누구보다 진심인 동아리입니다.<br/> 
-        &nbsp; &nbsp; &nbsp;혼자 잘하기 보단 함께 자라기를 추구하며 IT 프로덕트를 만드는 과정에서<br/>
-        &nbsp; &nbsp; &nbsp;제대로된 협업을 경험합니다.
+        &nbsp; &nbsp; &nbsp;혼자 잘하기보단 함께 자라기를 추구하며 IT 프로덕트를 만드는 과정에서<br/>
+        &nbsp; &nbsp; &nbsp;제대로 된 협업을 경험합니다.
         </>,
         select: false
       },
@@ -170,7 +170,7 @@ function RecruitingAbout() {
         id: 1,
         quest: 'Q. 세미나 말고 해커톤만 참여 가능한가요?',
         answer: <>A. Pay it forward를 실천하기 위해서는<br/>
-        &nbsp; &nbsp; &nbsp;활동기수로 참여 하셔야 합니다!
+        &nbsp; &nbsp; &nbsp;활동기수로 참여하셔야 합니다!
         </>,
         select: false
       },
@@ -206,8 +206,7 @@ function RecruitingAbout() {
         {
           id: 1,
           quest: 'Q. PARD 기수는 언제 시작되나요?',
-          answer: <>A. 1년에 2번, 개강시기에 맞춰 2월,<br/>
-          &nbsp; &nbsp; &nbsp;8월에 새로 기수를 선발합니다.</>,
+          answer: <>A. 1년에 2번, 개강 시기에 맞춰 2월, 8월에 새로 기수를 선발합니다.</>,
           select: false
         },
         {
@@ -227,8 +226,8 @@ function RecruitingAbout() {
         {
           id: 4,
           quest: 'Q. 정기적인 오프라인 모임에 모두 참석해야하나요?',
-          answer: <>A. 네, 세미나 프로그램이 매주 토요일(2주차부터 14주차 진행, 시험기간 제외-7,8주차)에 <br></br>
-           &nbsp; &nbsp; &nbsp;오후 1시부터 5시까지 진행 될 예정입니다. 방학이 시작되고 3주 동안은 롱커톤 프로그램이 진행됩니다.</>,
+          answer: <>A. 네, 세미나 프로그램이 매주 토요일(2주차부터 14주차 진행, 시험 기간 제외-7,8주차)에 <br></br>
+           &nbsp; &nbsp; &nbsp;오후 1시부터 5시까지 진행될 예정입니다. 방학이 시작되고 3주 동안은 롱커톤 프로그램이 진행됩니다.</>,
           select: false
         }
       ],

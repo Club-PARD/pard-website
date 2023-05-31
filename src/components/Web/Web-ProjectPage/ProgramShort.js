@@ -116,7 +116,7 @@ function ProgramShort() {
           무박 2일 간의 해커톤을 통해<br></br>
           기획자, 디자이너, 개발자가 함께 소통하여<br></br>
           최소 기능 제품을 구현하며<br></br>
-          제품 개발 협업의 첫 발을 내딛습니다.
+          제품 개발 협업의 첫발을 내딛습니다.
         </Body2>
       </FirstCard>
       {cardData.map((content) => (

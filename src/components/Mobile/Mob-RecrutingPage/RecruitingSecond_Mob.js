@@ -243,9 +243,9 @@ function RecruitingSecond() {
     <Div>
       <PartDiv>
         <ThemeProvider theme={theme}>
-          <Header8>파드와 함께하는<br></br>여정을 소개해요</Header8>
+          <Header8>파드와 함께하는<br></br>여정을 소개해요.</Header8>
 
-          <Subtitle2>2023년도 9월부터 24년도 1월까지 활동할<br></br>2기 멤버들을 모집합니다<br></br>* 일부 일정 변동 가능</Subtitle2>
+          <Subtitle2>2023년도 9월부터 24년도 1월까지 활동할<br></br>2기 멤버들을 모집합니다.<br></br>* 일부 일정 변동 가능</Subtitle2>
 
           <Container>
             <Box style={{ border: '2px solid rgba(100, 197, 154, 0.2)' }}>
@@ -318,12 +318,12 @@ function RecruitingSecond() {
           <TextWrap>
             <Container style={{ display: 'flex' }}>
               <Number><span className="highlight">01</span></Number>
-              <Body3><span className="highlight">원서 접수 마감 이후</span>접수된 지원 서류 및<br></br>사전 과제는 접수가 어렵습니다.제시간 안<br></br>에 꼭 제출해주세요.</Body3>
+              <Body3><span className="highlight">원서 접수 마감 이후</span> 접수된 지원 서류 및<br></br>사전 과제는 접수가 어렵습니다.제시간 안<br></br>에 꼭 제출 해주세요.</Body3>
             </Container>
 
             <Container style={{ display: 'flex' }}>
               <Number><span className="highlight">02</span></Number>
-              <Body3>사전과제는 지원서 접수 시작일인<span className="highlight"> n월n일</span><br></br>에 기획,디자인 파트의 <span className="highlight">노션 페이지</span>에<br></br> 공개됩니다.(개발 파트는   사전과제 없음)</Body3>
+              <Body3>사전과제는 지원서 접수 시작일인<span className="highlight"> n월n일</span><br></br>에 기획,  파트의 <span className="highlight">노션 페이지</span>에<br></br> 공개됩니다. (개발 파트는   사전과제 없음)</Body3>
             </Container>
 
             <Container style={{ display: 'flex' }}>
@@ -333,7 +333,7 @@ function RecruitingSecond() {
 
             <Container style={{ display: 'flex' }}>
               <Number><span className="highlight">04</span></Number>
-              <Body3>면접은 <span className="highlight">지원자 2명, 운영진 4명(파트장,<br></br>회장단)</span>과 함께<span className="highlight"> 다대다로 50분</span>동안 진행되<br></br>며,면접 시간은 지원서 합격자에<br></br> 한하여 개별적으로 문자 안내 드립니다.</Body3>
+              <Body3>면접은 <span className="highlight">지원자 2명, 운영진 4명(파트장,<br></br>회장단)</span>과 함께<span className="highlight"> 다대다로 50분</span> 동안 진행되<br></br>며,면접 시간은 지원서 합격자에<br></br> 한하여 개별적으로 문자 안내 드립니다.</Body3>
             </Container>
           </TextWrap>
         </ThemeProvider>

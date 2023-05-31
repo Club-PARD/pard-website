@@ -290,8 +290,8 @@ function InquiryManagemaentMob() {
     return (
         <PartDiv>
             <ThemeProvider theme={theme}>
-                <Header8>거친 파도를 <br />뚫고 나가는<br /> 파드 1기 운영진을<br />소개합니다</Header8>
-                <Body1>함께 했을 때 더 큰 일을 <br></br> 이룰 수 있음을 강하게 믿고 있어요</Body1>
+                <Header8>거친 파도를 <br />뚫고 나가는<br /> 파드 1기 운영진을<br />소개합니다.</Header8>
+                <Body1>함께 했을 때 더 큰 일을 <br></br> 이룰 수 있음을 강하게 믿고 있어요.</Body1>
                 <GridContainer>
                     {managerData.map((content, index) => (
                         <Column key={content.id} even={index % 2 === 1}>

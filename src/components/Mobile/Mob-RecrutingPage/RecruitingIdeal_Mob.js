@@ -115,7 +115,7 @@ const Horizon = styled.div`
 
 function RecruitingIdealMob() {
     const handleLinkClick = () => {
-        window.location.href = 'https://pardhgu.notion.site/ec0dd7dddcf4472883cbe71dac5e1da6 '; 
+        window.location.href = 'https://pardhgu.notion.site/ed2bc564ebf341eab08cfd8a24afe472'; 
       };
     return (
         <Div>
@@ -140,7 +140,7 @@ function RecruitingIdealMob() {
                         <Header6>02</Header6>
                     </Vector>
                     <ContentText>
-                        기획자, 디자이너, 개발자와 함께 <strong className="Green">IT 프로덕트<br/> 개발의 A to Z</strong>를 경험해보고 싶으신 분
+                        기획자, 디자이너, 개발자와 함께 <strong className="Green">IT 프로덕트<br/> 개발의 A to Z</strong>를 경험해 보고 싶으신 분
                     </ContentText>
                 </ContentDiv>
                 <Horizon/>
@@ -150,7 +150,7 @@ function RecruitingIdealMob() {
                         <Header6>03</Header6>
                     </Vector>
                     <ContentText>
-                        자신의 성장 뿐만이 아니라 <strong className="Green">팀의 성장,<br/> 동료의 성장</strong>에 기꺼이 헌신할 준비가<br/> 되어 있으신 분
+                        자신의 성장뿐만이 아니라 <strong className="Green">팀의 성장,<br/> 동료의 성장</strong>에 기꺼이 헌신할 준비가<br/> 되어 있으신 분
                     </ContentText>
                 </ContentDiv>
                 <Horizon/>
@@ -170,7 +170,7 @@ function RecruitingIdealMob() {
                         <Header6>05</Header6>
                     </Vector>
                     <ContentText>
-                        빠르게 실패하되 작은 성공을 수집하며 파드<br/> 활동을 <strong className="Green">책임감</strong>있게 수행할 수 있으신 분                    
+                        빠르게 실패하되 작은 성공을 수집하며 파드<br/> 활동을 <strong className="Green">책임감</strong> 있게 수행할 수 있으신 분                    
                     </ContentText>
                 </ContentDiv>
                 <Horizon/>

@@ -162,7 +162,7 @@ const Vertical = styled.div`
 
 function RecruitingIdeal() {
   const handleClick = () => {
-    window.open("https://pardhgu.notion.site/ec0dd7dddcf4472883cbe71dac5e1da6", "_blank");
+    window.open("https://pardhgu.notion.site/ed2bc564ebf341eab08cfd8a24afe472", "_blank");
   };
   return (
     <Div>
@@ -187,7 +187,7 @@ function RecruitingIdeal() {
                   <img src={GreenVector} alt="Arrow_Ideal.png" width="16px" height="25px"/>
                   <Header5>02</Header5>
               </Vector>
-              <Header6>기획자, 디자이너, 개발자와 함께<br/> <strong className="Green">IT 프로덕트 개발의 A to Z</strong>를<br/> 경험해보고 싶으신 분</Header6>
+              <Header6>기획자, 디자이너, 개발자와 함께<br/> <strong className="Green">IT 프로덕트 개발의 A to Z</strong>를<br/> 경험해 보고 싶으신 분</Header6>
               </ContentDiv>
               <Vertical/>
               <ContentDiv>
@@ -195,7 +195,7 @@ function RecruitingIdeal() {
                 <img src={GreenVector} alt="Arrow_Ideal.png" width="16px" height="25px"/>
                 <Header5>03</Header5>
               </Vector>
-                <Header6>자신의 성장 뿐만이 아니라<br/> <strong className="Green">팀의 성장, 동료의 성장</strong>에 기꺼이<br/> 헌신할 준비가 되어 있으신 분</Header6>
+                <Header6>자신의 성장뿐만이 아니라<br/> <strong className="Green">팀의 성장, 동료의 성장</strong>에 기꺼이<br/> 헌신할 준비가 되어 있으신 분</Header6>
               </ContentDiv>
             </ContainerRow>
            <Gap>
@@ -215,7 +215,7 @@ function RecruitingIdeal() {
                   <img src={GreenVector} alt="Arrow_Ideal.png" width="16px" height="25px"/>
                   <Header5>05</Header5>       
                 </Vector>
-                <Header6>빠르게 실패하되 작은 성공을<br/> 수집하며 파드 활동을 <strong className="Green">책임감</strong>있게<br/> 수행할 수 있으신 분</Header6>
+                <Header6>빠르게 실패하되 작은 성공을<br/> 수집하며 파드 활동을 <strong className="Green">책임감</strong> 있게<br/> 수행할 수 있으신 분</Header6>
               </ContentDiv>
               <Vertical/>
               <ContentButton onClick={handleClick}>

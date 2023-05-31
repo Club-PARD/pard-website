@@ -178,8 +178,8 @@ function AboutVision() {
                     <Cover>
                         <Verticalline3></Verticalline3>
                         <Subblack1>동아리원 소속 대학의 알럼나이 분들과 대학 재학생들을 잇는 교두보 역할을 수행합니다.<br></br>
-                            동아리원들은 실무자 분들로부터 현실적인 조언을 구하고 성장합니다.<br></br>
-                            Pay it forward에 공감하는 사람들이 모여 교류하고 소통함으로 IT 생태계를 확장 합니다.</Subblack1>
+                            동아리원들은 실무자분들로부터 현실적인 조언을 구하고 성장합니다.<br></br>
+                            Pay it forward에 공감하는 사람들이 모여 교류하고 소통함으로 IT 생태계를 확장합니다.</Subblack1>
                     </Cover>
                 </ThemeProvider>
             </PartDiv>

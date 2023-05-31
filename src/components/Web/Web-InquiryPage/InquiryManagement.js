@@ -294,8 +294,8 @@ function InquiryManagement() {
         <PartDiv>
             <ThemeProvider theme={theme}>
 
-                <Header7>거친 파도를 뚫고 나가는<br></br>파드 1기 운영진을 소개합니다</Header7>
-                <Subtitle3>함께 했을 때 더 큰 일을 <br></br> 이룰 수 있음을 강하게 믿고 있어요</Subtitle3>
+                <Header7>거친 파도를 뚫고 나가는<br></br>파드 1기 운영진을 소개합니다.</Header7>
+                <Subtitle3>함께 했을 때 더 큰 일을 <br></br> 이룰 수 있음을 강하게 믿고 있어요.</Subtitle3>
                 <GridContainer>
                     {managerData.map(content => (
                         <Column key={content.id}>

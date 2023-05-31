@@ -93,7 +93,7 @@ function ProgramStudy_Mob() {
                 <Header4>공동체 학습의 기쁨</Header4>
                 <Body2_1>PARD는 상시 학습이 흐르는 조직입니다.</Body2_1>
                 <Body2>
-                    주제 선정부터 인원모집까지,<br />
+                    주제 선정부터 인원 모집까지,<br />
                     서로의 실력을 향상시킬 수 있는 학습 모임을<br />
                     자발적으로 주도하고 참여하여 나눕니다.<br />
                 </Body2>

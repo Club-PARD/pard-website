@@ -122,7 +122,7 @@ function RecruitingReviewMob() {
             title: '1기 디자인파트 조민님의 연합 세미나 후기',
             link: 'https://disquiet.io/@hguhimin/makerlog/9020',
             word: <>"그만큼 '파드'가 간절했다. 왜냐하면 나는 잘하고 <br />
-            싶었고 성장하고 싶었고 더 대단한 사람들과 함게하고<br /> 
+            싶었고 성장하고 싶었고 더 대단한 사람들과 함께하고<br /> 
             싶었기 때문이다."</>
         },
         {
@@ -130,7 +130,7 @@ function RecruitingReviewMob() {
             src: review2Image,
             title: '1기 기획파트 배예진님의 기획 세미나 후기',
             link: 'https://disquiet.io/@yepotter/makerlog/8795',
-            word: <>“세미나 전의 나는 기획자, 프로젝트 매니저는 뭐하는<br />
+            word: <>“세미나 전의 나는 기획자, 프로젝트 매니저는 뭐 하는<br />
             사람인가요? 라는 질문에 확실한 대답을 하지 <br />
             못했다면, 지금은 명확하게 말할 수 있다.”</>
         },

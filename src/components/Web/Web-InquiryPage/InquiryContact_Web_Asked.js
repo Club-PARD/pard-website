@@ -277,7 +277,7 @@ const Ask = () => {
                         <Vectorbox2><Vector src={Vec} /></Vectorbox2>
                     </InformBox2>
                     <Linedown />
-                    <Business>비지니스 문의는 &nbsp;
+                    <Business>비즈니스 문의는 &nbsp;
                         <Here href="mailto:official@we-pard.com">여기로!</Here>
                     </Business>
                 </Informationstyle>

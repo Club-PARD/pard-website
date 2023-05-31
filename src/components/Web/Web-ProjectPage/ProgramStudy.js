@@ -96,7 +96,7 @@ function ProgramStudy() {
     {
       id: 2,
       image: img2,
-      description: "협업, AI, 3D 디자인 툴, 글쓰기,\n 스포츠 까지 다양한 주제로 진행",
+      description: "협업, AI, 3D 디자인 툴, 글쓰기,\n 스포츠까지 다양한 주제로 진행",
     },
     {
       id: 3,
@@ -112,7 +112,7 @@ function ProgramStudy() {
         <Box />
         <Body2_1>PARD는 상시 학습이 흐르는 조직입니다.</Body2_1>
         <Body2>
-          주제 선정부터 인원모집까지,<br></br>
+          주제 선정부터 인원 모집까지,<br></br>
           서로의 실력을 향상시킬 수 있는 학습 모임을<br></br>
           자발적으로 주도하고 참여하여 나눕니다. 
         </Body2>
