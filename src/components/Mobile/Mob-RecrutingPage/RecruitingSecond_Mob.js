@@ -261,7 +261,7 @@ function RecruitingSecond() {
                 서류접수
               </Box1>
               <BoxText>
-                2023.n.nn - n.nn
+              추후 공개
               </BoxText>
             </Box>
             <Box style={{ border: '2px solid rgba(100, 197, 154, 0.4)', marginLeft: '70px' }}>
@@ -275,7 +275,7 @@ function RecruitingSecond() {
               </IconWrap>
               <Box2>서류 합격 발표</Box2>
               <BoxText>
-                2023.n.nn - n.nn
+              추후 공개
               </BoxText>
             </Box>
             <Box style={{ border: '2px solid rgba(100, 197, 154, 0.7)', marginLeft: '105px' }}>
@@ -286,7 +286,7 @@ function RecruitingSecond() {
               </IconWrap>
               <Box3>면접</Box3>
               <BoxText>
-                2023.n.nn - n.nn
+              추후 공개
               </BoxText>
             </Box>
             <Box style={{ border: '2px solid rgba(100, 197, 154, 1.0)', marginLeft: '139px' }}>
@@ -300,7 +300,7 @@ function RecruitingSecond() {
               </IconWrap>
               <Box4>최종합격 발표</Box4>
               <BoxText>
-                2023.n.nn - n.nn
+              추후 공개
               </BoxText>
             </Box>
           </Container>

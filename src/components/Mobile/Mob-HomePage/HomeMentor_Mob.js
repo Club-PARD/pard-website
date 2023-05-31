@@ -1,6 +1,11 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import PlanerImage from '../../../assets/img/Planner_parts.png';
+import 하조은 from '../../../assets/img/하조은.png'
+import 주영민 from '../../../assets/img/주영민.png'
+import 김강학 from '../../../assets/img/김강학.png'
+import 김선엽 from '../../../assets/img/김선엽.png'
+
 
 const Header7 = styled.div`
   font-size: ${props => props.theme.Mob_fontSizes.Header7};
@@ -143,26 +148,26 @@ function HomeMentor() {
     const contentsData = [
         {
             id: 1,
-            imageSrc: PlanerImage,
-            title: '솔직히 얘네가 교수보다 낫다',
-            mentor_name: '이동영',
-            mentor_from: '- 노을(주) 前 CEO',
-            color: '#5262F5'
+            imageSrc: 주영민,
+            title: 'Think Big, Start Small, Move fast, Pard',
+            mentor_name: '주영민',
+            mentor_from: '(주)히든피겨스 CEO',
+            color: '#7B3FEF'
         },
         {
             id: 2,
-            imageSrc: PlanerImage,
-            title: ' 진짜 실무역량을 키울 수 있는 학부생 나부랭이들 중 최고',
-            mentor_name: '주영민',
-            mentor_from: '-히든피겨스 대표',
+            imageSrc: 하조은,
+            title: ' 1인분 해내는 주니어가 되기 위한 최고의 선택',
+            mentor_name: '하조은',
+            mentor_from: '당근마켓 Software Engineer',
             color: '#FF5C00'
         },
         {
             id: 3,
-            imageSrc: PlanerImage,
-            title: '배워서 남주는 가치를 제대로 실천하는 후배들',
-            mentor_name: '이즌쉬러블리',
-            mentor_from: '-메타코미디클럽 개발자',
+            imageSrc: 김강학,
+            title: '문제 해결에 미쳐 있는 열정있는 학생들의 모임',
+            mentor_name: '김강학',
+            mentor_from: '토스 Product Owner',
             color: '#64C59A'
         },
     ];
