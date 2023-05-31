@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const VideoContainer = styled.div`
 
@@ -428,8 +428,8 @@ const HomeFirst = () => {
 <DIVVVV>
     <VideoContainer isColor={backcolor}  isFixed={isFixed}>
 
-      <VideoBackground  autoPlay loop muted>
-        <source src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
+      <VideoBackground  autoPlay loop muted playsinline>
+        <source playsinline muted autoPlay src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
       </VideoBackground>
 
       <LogoDiv>
