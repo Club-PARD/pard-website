@@ -436,8 +436,8 @@ const HomeVideoMob = () => {
         <ThemeProvider theme={theme}>
             <VideoContainer isColor={backcolor}>
         
-              <VideoBackground  autoPlay loop muted playsinline>
-                <source muted playsinline src={require("../../../assets/Video/BackGroundVideo_Mob.mp4")} type="video/mp4" />
+              <VideoBackground  autoPlay loop muted playsInline>
+                <source muted playsInline src={require("../../../assets/Video/BackGroundVideo_Mob.mp4")} type="video/mp4" />
               </VideoBackground>
         
               <LogoDiv>

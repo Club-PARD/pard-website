@@ -418,18 +418,16 @@ const HomeFirst = () => {
       setIsVisible(true);
     } }, [position,isVisible]);
     */
-   
-  
+
     document.documentElement.style.overflowX = 'hidden';
   return (
-
 
   <>
 <DIVVVV>
     <VideoContainer isColor={backcolor}  isFixed={isFixed}>
 
       <VideoBackground  autoPlay loop muted playsInline>
-        <source playsInline muted autoPlay src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
+        <source  playsInline muted autoPlay src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
       </VideoBackground>
 
       <LogoDiv>
