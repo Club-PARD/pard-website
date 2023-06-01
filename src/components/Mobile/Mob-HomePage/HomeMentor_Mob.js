@@ -53,7 +53,7 @@ const Body2 = styled.div`
     color: rgba(255, 255, 255, 0.4);
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
-    line-height: 140%;
+    line-height: ${props => (props.id === 1) ? '160%' : (props.isname ? '140%' : '140%') };
     display: flex;
     text-align:right;
     position: absolute;
@@ -138,7 +138,7 @@ function MentorCard(props){
             <TextWrapper>
                 <Header6 id={props.content.id}>{props.content.title}</Header6>
             </TextWrapper>
-            <Body2 isname={true}>{props.content.mentor_name}</Body2>
+            <Body2 isname={true} id={props.content.id}>{props.content.mentor_name}</Body2>
             <Body2 isname={false}>{props.content.mentor_from}</Body2>
         </ContentWrapper>
     );
