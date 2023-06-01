@@ -428,8 +428,8 @@ const HomeFirst = () => {
 <DIVVVV>
     <VideoContainer isColor={backcolor}  isFixed={isFixed}>
 
-      <VideoBackground  autoPlay loop muted playsinline>
-        <source playsinline muted autoPlay src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
+      <VideoBackground  autoPlay loop muted playsInline>
+        <source playsInline muted autoPlay src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
       </VideoBackground>
 
       <LogoDiv>

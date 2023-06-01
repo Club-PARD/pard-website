@@ -42,7 +42,6 @@ function HomePage() {
 
                 <div>
                     <NavBarHome />
-                    {/* <SmallPage /> */}
                     <HomeFirst />
                     <HomeSecond />
                     <HomePartWeb />

@@ -56,10 +56,9 @@ const Body2 = styled.div`
     color: rgba(255, 255, 255, 0.4);
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
-    line-height: 140%;
+    line-height: ${props => (props.id === 1 || props.id === 4) ? '160%' : (props.isname ? '140%' : '140%') };
     display: flex;
     text-align:right;
-    bottom: ${props => props.isname ? '2.631vw' : '1.189vw'}; 
     right: 20px;
 `;
 
@@ -111,8 +110,8 @@ const TextWrapper3 = styled.div`
     flex-direction: column;
     align-items: flex-end;
     width: 240px;
-    padding-right: 20px;
-    margin-top: 27px;
+    padding-right: 25px;
+    margin-top:${props => (props.id === 1 || props.id === 4) ? '24px' :'27px'};
 `;
 
 const Image = styled.img`
@@ -142,9 +141,9 @@ function MentorCard(props) {
             <TextWrapper>
             <Header6 id={props.content.id} color={props.content.color}>{props.content.title}</Header6>
             </TextWrapper>
-            <TextWrapper3>
-                <Body2 isname={true}>{props.content.mentor_name}</Body2>
-                <Body2 isname={false}>{props.content.mentor_from}</Body2>
+            <TextWrapper3 id={props.content.id} >
+                <Body2 isname={true} id={props.content.id}>{props.content.mentor_name}</Body2>
+                <Body2 isname={false} id={props.content.id}>{props.content.mentor_from}</Body2>
             </TextWrapper3>
         </ContentWrapper>
     );
