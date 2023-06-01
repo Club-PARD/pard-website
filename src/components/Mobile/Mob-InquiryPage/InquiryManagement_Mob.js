@@ -94,7 +94,6 @@ const Caption = styled.div`
 const PartDiv = styled.div`
     height: 100%;
     width: 375px;
-    padding-left: 5px;
     `;
 
 
@@ -104,6 +103,8 @@ const Div = styled.div`
     margin: 0 auto;
     height: 100%;
     align-items: center;
+    /* padding-left: 10px; */
+
     `;
 const GridContainer = styled.div`
     display: grid;
