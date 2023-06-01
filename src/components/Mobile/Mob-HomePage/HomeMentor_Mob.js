@@ -37,7 +37,8 @@ const Header6 = styled.div`
     text-align: center;
     line-height: 140%;
     display: flex;
-    margin-top: 20px;
+    margin-top: ${props => props.id === 1 ? '-5px' : '20px'};
+    margin-left: ${props => props.id === 1 ? '10px' : '0'};
     margin-bottom: 15px;
 `;
 const Header3 = styled.div`
@@ -149,7 +150,7 @@ function HomeMentor() {
         {
             id: 1,
             imageSrc: 주영민,
-            title: 'Think Big, Start Small, Move fast, Pard',
+            title: 'Think Big,\nStart Small,\nMove fast,\nPard',
             mentor_name: '주영민',
             mentor_from: '(주)히든피겨스 CEO',
             color: '#7B3FEF'

@@ -10,7 +10,6 @@ const FooterMovWrapper = styled.div`
     background-color: #2A2A2A;
     line-height: 180%;
     margin :0 auto;
-    min-width: 420px;
 
 `
 const TopComponent = styled.div`
@@ -71,7 +70,7 @@ const Information = styled.div`
 const Links = styled.div`
     display : flex; 
     margin-top : 50px; 
-    justify-content: space-between;
+    justify-content: space-around;
 `
 const EmailLink = styled.a`
     /* EMAIL */
@@ -81,6 +80,8 @@ const EmailLink = styled.a`
 
     font-family: 'NanumSquare Neo';
     font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
 
     line-height: 180%;
     /* identical to box height, or 22px */
@@ -104,7 +105,8 @@ const EmailLink = styled.a`
 `;
 const Instagram = styled.a`
     /* INSTAGRAM */
-
+    font-size: 12px;
+    font-weight: 400;
     height: 22px;
 
     /* Caption/C1 - R 12 */
@@ -139,7 +141,8 @@ const Youtube = styled.a`
 
     font-family: 'NanumSquare Neo';
     font-style: normal;
-    
+    font-size: 12px;
+    font-weight: 400;
     line-height: 180%;
     /* identical to box height, or 22px */
 
@@ -160,7 +163,8 @@ const Youtube = styled.a`
 `
 const Disquiet = styled.a`
     height: 22px;
-
+    font-size: 12px;
+    font-weight: 400;
     /* Caption/C1 - R 12 */
 
     font-family: 'NanumSquare Neo';

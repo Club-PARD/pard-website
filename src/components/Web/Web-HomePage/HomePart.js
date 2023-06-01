@@ -31,6 +31,7 @@ const Header5 = styled.div`
     display: flex;
     margin-top: 20px;
     margin-bottom: 15px;
+    cursor: pointer;
 `;
 
 const Body2 = styled.div`
@@ -138,6 +139,9 @@ function HomePart() {
         },
     ];
 
+    const handleClick = () => {
+        window.open("https://pard-recruiting.oopy.io", "_blank");
+      };
     return (
             <Div>
                 <ThemeProvider theme={theme}>
@@ -156,7 +160,7 @@ function HomePart() {
                     <ButtonDiv>
                         <div style={{ width: '360px', }}>
                             <LearnMoreButton>
-                                <Header5>더 알아보기</Header5>
+                                <Header5 onClick={handleClick}>더 알아보기</Header5>
                             </LearnMoreButton>
                         </div>
                     </ButtonDiv>

@@ -111,6 +111,7 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
+    cursor: pointer;
 `;
 
 function PartSection(props){
@@ -158,6 +159,11 @@ function HomePartsMob() {
             description: '서비스의 핵심 비즈니스 로직과 \n데이터 흐름을 설계하고 \n인프라 구축과 배포를 담당합니다. \n* 2기부터 신설 예정',
         },
     ]
+
+    const handleClick = () => {
+        window.open("https://pard-recruiting.oopy.io", "_blank");
+      };
+
     return (
         <Div>
            <PartDiv>
@@ -170,7 +176,7 @@ function HomePartsMob() {
                     </PartWrapper>
                 ))}  
             </PartContents>
-            <Button1>더 알아보기</Button1>
+            <Button1 onClick={handleClick}>더 알아보기</Button1>
             </ThemeProvider>
         </PartDiv> 
         

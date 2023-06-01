@@ -32,11 +32,7 @@ min-width: 1440px;
 `;
 
 const AboutPageComponent_Mob = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    min-width: 420px;
+width: 100%;
 `;
 
 

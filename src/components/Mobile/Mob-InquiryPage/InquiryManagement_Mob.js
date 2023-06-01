@@ -92,13 +92,18 @@ const Caption = styled.div`
 `;
 
 const PartDiv = styled.div`
+    height: 100%;
+    width: 375px;
+    padding-left: 5px;
+    `;
+
+
+const Div = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     height: 100%;
-    justify-items: center;
-    width: 375px;
-    padding-left: 5px;
+    align-items: center;
     `;
 const GridContainer = styled.div`
     display: grid;
@@ -288,6 +293,7 @@ function InquiryManagemaentMob() {
             ],
         },]
     return (
+        <Div>
         <PartDiv>
             <ThemeProvider theme={theme}>
                 <Header8>거친 파도를 <br />뚫고 나가는<br /> 파드 1기 운영진을<br />소개합니다.</Header8>
@@ -324,6 +330,7 @@ function InquiryManagemaentMob() {
                 </GridContainer>
             </ThemeProvider>
         </PartDiv>
+        </Div>
     );
 }
 
