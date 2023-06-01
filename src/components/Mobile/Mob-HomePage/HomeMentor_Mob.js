@@ -29,7 +29,7 @@ const Sub3 = styled.div`
 `;
 
 const Header6 = styled.div`
-    font-size: ${props => props.theme.Mob_fontSizes.Header6};
+  font-size: ${props => props.id === 3 ?  props.theme.Mob_fontSizes.ButtonText1 :  props.theme.Mob_fontSizes.Header6 };
     font-weight: ${props => props.theme.fontWeights.Header6};
     color: ${props => props.color == null ? "#FFFFFF" : props.color};
     font-family: 'NanumSquare Neo';
@@ -136,7 +136,7 @@ function MentorCard(props){
                 <Header3 color = {props.content.color}>"</Header3>
             </TextWrapper2>
             <TextWrapper>
-                <Header6>{props.content.title}</Header6>
+                <Header6 id={props.content.id}>{props.content.title}</Header6>
             </TextWrapper>
             <Body2 isname={true}>{props.content.mentor_name}</Body2>
             <Body2 isname={false}>{props.content.mentor_from}</Body2>
@@ -165,7 +165,7 @@ function HomeMentor() {
         {
             id: 3,
             imageSrc: 김강학,
-            title: '문제 해결에 미쳐 있는 열정있는 학생들의 모임',
+            title: '스펙 쌓기용이 아닌, 정말 문제를 해결하고 싶은 사람들이 모여 함께 몰입하고 있습니다',
             mentor_name: '김강학',
             mentor_from: '토스 Product Owner',
             color: '#64C59A'
