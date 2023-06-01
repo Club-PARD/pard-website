@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.15d9d581.css",
-    "main.js": "/static/js/main.65ce8375.js",
+    "main.js": "/static/js/main.979f8cd6.js",
     "static/media/BackGroundVideo_Mob.mp4": "/static/media/BackGroundVideo_Mob.f6436974c3c62e3e6150.mp4",
     "static/media/BackGroundVideo.mp4": "/static/media/BackGroundVideo.85ebd6d6842d77c76d30.mp4",
     "static/media/homeBackgroundImg2.svg": "/static/media/homeBackgroundImg2.78984828a5b1720a5fe00df3e1fa58f3.svg",
@@ -36,12 +36,12 @@
     "static/media/김하람.png": "/static/media/김하람.c70c8add8dfa03ede8e6.png",
     "static/media/박정규.png": "/static/media/박정규.6a13d4ac26973b2e3a5a.png",
     "static/media/하조은.png": "/static/media/하조은.b88e5fa0c6f11a089357.png",
+    "static/media/김강학.png": "/static/media/김강학.8a09621b34df52cc8ae7.png",
     "static/media/세미나1.png": "/static/media/세미나1.db62b735a885e2ae34a4.png",
     "static/media/서핑데이1.png": "/static/media/서핑데이1.b1be2165aa5eb96133a0.png",
     "static/media/세미나3.png": "/static/media/세미나3.a167c2a1256e73b86dc7.png",
     "static/media/롱커톤1.png": "/static/media/롱커톤1.e056b0b79e2661733087.png",
     "static/media/숏커톤3.png": "/static/media/숏커톤3.ced9cb9eb8e0cb9403aa.png",
-    "static/media/김강학.png": "/static/media/김강학.f38f7e8271eaf4db5aa0.png",
     "static/media/세미나2.png": "/static/media/세미나2.ee7ed564f1423fdd46a6.png",
     "static/media/숏커톤2.png": "/static/media/숏커톤2.c1838b2bedab07997361.png",
     "static/media/김선엽.png": "/static/media/김선엽.2e3f2182bab442cb39da.png",
@@ -78,10 +78,10 @@
     "static/media/RPRightButton.svg": "/static/media/RPRightButton.7ba2a91df4489029a67c7c6ddd0ae5e2.svg",
     "static/media/RPLeftButton.svg": "/static/media/RPLeftButton.79475f6cd6e2ff34d69ad4d00ab33b59.svg",
     "main.15d9d581.css.map": "/static/css/main.15d9d581.css.map",
-    "main.65ce8375.js.map": "/static/js/main.65ce8375.js.map"
+    "main.979f8cd6.js.map": "/static/js/main.979f8cd6.js.map"
   },
   "entrypoints": [
     "static/css/main.15d9d581.css",
-    "static/js/main.65ce8375.js"
+    "static/js/main.979f8cd6.js"
   ]
 }
