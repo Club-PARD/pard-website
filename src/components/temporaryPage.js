@@ -1,12 +1,12 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../styles/theme';
 import React from 'react';
-import AboutImage from '../assets/img/AboutLogo.png';
-import ProgramFrame from '../assets/img/Program_Mob_Bar.png';
+import AboutImage from '../assets/img/임시화면로고.png';
+import ProgramFrame from '../assets/img/HomeEditFrame.png';
 
-const Header8 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header8};
-  font-weight: ${props => props.theme.fontWeights.Header8};
+const Header6 = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Header6};
+  font-weight: ${props => props.theme.fontWeights.Header6};
   color: white;
   font-family: 'NanumSquare Neo';
   line-height: 42px;
@@ -14,25 +14,24 @@ const Header8 = styled.div`
   text-align: center;
   font-style: normal;
   width: 300px;
-  height: 140px;
   position: relative;
   line-height: 140%;
-  margin-bottom: 10px;
-
+  margin-top: 19px;
+  margin-bottom: 32px;
 `;
 
-const ButtonText1 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.ButtonText1};
-  font-weight: ${props => props.theme.fontWeights.ButtonText1};
+const Body1 = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Body1};
+  font-weight: ${props => props.theme.fontWeights.Body1};
   font-family: 'NanumSquare Neo';
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 140%;
-color: white;
+color: rgba(255, 255, 255, 1);
 position: relative;
 text-align: center;
-margin-bottom: 215px;
+margin-bottom: 119px;
 `;
 
 const PartDiv = styled.div`
@@ -54,14 +53,28 @@ flex-direction: column;
 `;
 
 const AboutLogo = styled.img`
-  width: 301px;
-  height: 123px;
-  opacity: 1;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 60px;
+  margin-left: 20px;
 `;
+
+const Button1 = styled.button`
+    font-size: ${props => props.theme.Mob_fontSizes.ButtonText1};
+    font-weight: ${props => props.theme.fontWeights.ButtonText1};
+    font-family: 'NanumSquare Neo';
+    white-space: pre-line;
+    display: flex;
+    align-items: center;
+    line-height: 34px;
+    width: 220px;
+    height: 52px;
+    background-color: #FF5C00;
+    justify-content: center;
+    color: #FFFFFF;
+    border-radius: 10px;
+    border : none;
+    cursor: pointer;
+  `
 
 const ProgramFrame1 = styled.img`
   display: flex;
@@ -74,21 +87,21 @@ const ProgramFrame1 = styled.img`
   bottom: 0px;
 `;
 
-function temporaryPage() {
+function TemporaryPage() {
+
+    const handleClick = () => {
+        window.open("https://tally.so/r/w4BxRd", "_blank");
+      };
+
     return (
         <Div>
             <PartDiv>
                 <ThemeProvider theme={theme}>
                     <AboutLogo src={AboutImage} alt="AboutLogo" />
-                    <Header8>
-                        PARD가<br />진행한 프로젝트를<br />보여드릴게요
-                    </Header8>
-                    <ButtonText1>
-                        PARD는 기획자・디자이너・개발자 간<br />
-                        협업을 바탕으로 독창적이면서도 <br />
-                        사용자의 문제를 효과적으로 해결할 수 있는 <br />
-                        다양한 프로젝트들을 선보이고 있습니다.<br />
-                    </ButtonText1>
+                    <Header6>모바일 페이지는 제작 중이에요! </Header6>
+                    <Body1>파드의 자세한 내용이 궁금하시다면<br/>PC로 확인해주세요</Body1>
+                    <Header6>진짜 협업을 경험하고 싶다면</Header6>
+                    <Button1  onClick={handleClick}>지금 바로 2기 지원하기</Button1>
                 </ThemeProvider>
                 <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
             </PartDiv>
@@ -96,4 +109,4 @@ function temporaryPage() {
     );
 }
 
-export default temporaryPage;
+export default TemporaryPage;

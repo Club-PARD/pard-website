@@ -10,6 +10,7 @@ import ProjectFirst_Mob from "../components/Mobile/Mob-ProjectPage/ProjectFirst_
 import ProjectLast_Mob from "../components/Mobile/Mob-ProjectPage/ProjectLast_Mob";
 import ProjectLast from "../components/Web/Web-ProjectPage/Project_Last";
 import FooterMov from "../components/FooterMov";
+import TemporaryPage from "../components/TemporaryPage";
 
 
 function ProjectPage() {
@@ -41,9 +42,10 @@ width: 100%;
                 </ProgramPageComponent_Web>
                 :
                 <ProgramPageComponent_Mob>
-                    <NavBarMov />
+                    {/* <NavBarMov />
                     <ProjectFirst_Mob />
-                    <ProjectLast_Mob />
+                    <ProjectLast_Mob /> */}
+                     <TemporaryPage/>
                     <FooterMov />
                 </ProgramPageComponent_Mob>
             }

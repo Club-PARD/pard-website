@@ -18,9 +18,8 @@ import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
 import HomeSecondMob from "../components/Mobile/Mob-HomePage/HomeSecond_Mob";
 import ProgramsTrain from "../components/Web/Web-ProjectPage/ProgramsTrain";
-import SmallPage from "../components/Web/Web-ProjectPage/SmallPage";
 import NavBarMob_Home from "../components/NavBarMob_Home";
-import temporaryPage from "../components/temporaryPage";
+import TemporaryPage from "../components/TemporaryPage";
 
 
 
@@ -49,15 +48,16 @@ function HomePage() {
                 </div>
                 :
                 <HomePageComponent_Mob>
-                    <NavBarMob_Home/>
+                    {/* <NavBarMob_Home/> */}
+                    <TemporaryPage/>
                     {/* <HomeVideoMob /> */}
-                    <HomeSecondMob />
+                    {/* <HomeSecondMob /> */}
                     {/* <HomePartsMob /> */}
                     {/* <HomeProgramMob /> */}
-                    <HomeMentorMob />
-                    <HomePartnerMob />
-                    <HomeLastsMob />
-                    <FooterMov />
+                    {/* <HomeMentorMob /> */}
+                    {/* <HomePartnerMob /> */}
+                    {/* <HomeLastsMob /> */}
+                    <FooterMov /> 
                 </HomePageComponent_Mob>
             }
         </HomePageComponent>
