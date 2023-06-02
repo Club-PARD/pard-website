@@ -67,6 +67,7 @@ const Button1 = styled.button`
     align-items: center;
     line-height: 34px;
     width: 220px;
+    margin-bottom: 120px;
     height: 52px;
     background-color: #FF5C00;
     justify-content: center;
