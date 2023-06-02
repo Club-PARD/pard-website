@@ -51,6 +51,7 @@ function HomePage() {
                     {/* <NavBarMob_Home/> */}
                     <TemporaryPage/>
                     {/* <HomeVideoMob /> */}
+                    
                     {/* <HomeSecondMob /> */}
                     {/* <HomePartsMob /> */}
                     {/* <HomeProgramMob /> */}
