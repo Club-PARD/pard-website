@@ -11,7 +11,8 @@ const VideoContainer = styled.div`
   top:0;
   width: 100%;
   height: 110vh;
-  min-width: 420px; // 아무리 줄여도 1440px로 유지됨
+  //min-width: 420px; // 아무리 줄여도 1440px로 유지됨
+  margin: 0 auto;
   overflow: hidden;
   background-color: ${({ isColor }) => (isColor ? ' rgba(0, 0, 0, 0.4)' : ' rgba(0, 0, 0, 0.4)')};
 `;
