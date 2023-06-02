@@ -14,7 +14,7 @@ const Header7 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 25px;
   white-space: pre-line;
-  margin-right: 140px;
+  margin-right: 120px;
 `;
 
 const Sub3 = styled.div`
@@ -24,7 +24,7 @@ const Sub3 = styled.div`
   font-family: 'NanumSquare Neo';
   margin-bottom: 14px;
   white-space: pre-line;
-  margin-right: 78px;
+  margin-right: 55px;
 
 `;
 

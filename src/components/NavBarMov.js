@@ -27,7 +27,7 @@ img {
     width: 180px;
   }
   margin-right: auto; 
-  margin-left: 15px;
+  margin-left: 10px;
 `;
 
 const MenuButton = styled.button`

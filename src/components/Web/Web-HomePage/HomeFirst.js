@@ -418,7 +418,6 @@ const HomeFirst = () => {
       setIsVisible(true);
     } }, [position,isVisible]);
     */
-
     document.documentElement.style.overflowX = 'hidden';
   return (
 

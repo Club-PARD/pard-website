@@ -14,7 +14,8 @@ const Header7 = styled.div`
   font-family: 'NanumSquare Neo';
   padding-top: 30px;
   white-space: pre-line;
-  padding-left: 18px;
+  /* padding-left: 18px; */
+  margin-right: 100px;
 `;
 
 const Subtitle3 = styled.div`
@@ -24,7 +25,7 @@ const Subtitle3 = styled.div`
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
     padding-top: 30px;
-    padding-left: 18px;
+    /* padding-left: 18px; */
 
 `;
 
@@ -41,7 +42,7 @@ const LincImage2 = styled.img`
 `;
 
 const ImpactCampusImage3 = styled.img`
-    width: 293px;
+    width: 260px;
     height: 40px;
     padding-top: 60px;
 `;
@@ -64,11 +65,11 @@ const Div = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 `;
 const PartDiv = styled.div`
     padding-top: 131px;
     height: 750px;
-    width: 375px;
     padding-left: 10px;
     
 `;

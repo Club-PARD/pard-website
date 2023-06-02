@@ -20,6 +20,7 @@ import HomeSecondMob from "../components/Mobile/Mob-HomePage/HomeSecond_Mob";
 import ProgramsTrain from "../components/Web/Web-ProjectPage/ProgramsTrain";
 import SmallPage from "../components/Web/Web-ProjectPage/SmallPage";
 import NavBarMob_Home from "../components/NavBarMob_Home";
+import temporaryPage from "../components/temporaryPage";
 
 
 
@@ -29,17 +30,12 @@ function HomePage() {
     
     `;
     const HomePageComponent_Mob = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    min-width: 420px;
+    width: 100%;
 `;
 
     return (
         <HomePageComponent>
             {isDesktopOrMobile !== true ?
-
                 <div>
                     <NavBarHome />
                     <HomeFirst />
@@ -54,10 +50,10 @@ function HomePage() {
                 :
                 <HomePageComponent_Mob>
                     <NavBarMob_Home/>
-                    <HomeVideoMob />
+                    {/* <HomeVideoMob /> */}
                     <HomeSecondMob />
-                    <HomePartsMob />
-                    <HomeProgramMob />
+                    {/* <HomePartsMob /> */}
+                    {/* <HomeProgramMob /> */}
                     <HomeMentorMob />
                     <HomePartnerMob />
                     <HomeLastsMob />
@@ -69,4 +65,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
