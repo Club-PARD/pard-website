@@ -49,8 +49,8 @@ function HomePage() {
                 :
                 <HomePageComponent_Mob>
                     {/* <NavBarMob_Home/> */}
-                    {/*<TemporaryPage/>*/}
-                    <HomeVideoMob /> 
+                    <TemporaryPage/>
+                    {/* <HomeVideoMob />  */}
                     
                     {/* <HomeSecondMob /> */}
                     {/* <HomePartsMob /> */}
