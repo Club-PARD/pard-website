@@ -53,7 +53,7 @@ function HomePage() {
                     <HomeVideoMob /> 
                     <HomeSecondMob />
                     <HomePartsMob />
-                    {/* <HomeProgramMob /> */}
+                    <HomeProgramMob />
                     <HomeMentorMob />
                     <HomePartnerMob />
                     <HomeLastsMob />

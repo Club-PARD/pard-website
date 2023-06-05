@@ -52,15 +52,15 @@ justify-content: center;
                 </RecruitingPageComponent_WEB>
                 :
                 <RecruitingPageComponent_Mob>
-                    {/* <NavBarMov />
+                    <NavBarMov />
                     <RecruitingFirstMob/>
                     <RecruitingSecondMob/>
                     <RecruitingIdealMob/>
                     <RecruitingPartMob/>
                     <RecruitingReviewMob/>
                     <RecruitingAboutMob/>
-                    <RecruitingLastMob/> */}
-                     <TemporaryPage/>
+                    <RecruitingLastMob/>
+                     {/* <TemporaryPage/> */}
                     <FooterMov/>
                 </RecruitingPageComponent_Mob>
             }

@@ -13,6 +13,8 @@ const Header7_1 = styled.div`
     justify-content: start; 
     white-space: pre-line;
     margin-top: 70px;
+    margin-left: 10px;
+
 `;
 
 const Header7_2 = styled.div`
@@ -23,6 +25,8 @@ const Header7_2 = styled.div`
     justify-content: start; 
     white-space: pre-line;
     margin-top: 70px;
+    margin-left: 10px;
+
 `;
 
 const Header4 = styled.div`
@@ -33,6 +37,8 @@ const Header4 = styled.div`
   white-space: pre-line;
   justify-content: start; 
   margin-top: 50px;
+  margin-left: 10px;
+
 `;
 
 const Body2 = styled.div`
@@ -44,6 +50,8 @@ const Body2 = styled.div`
   justify-content: start; 
   line-height: 19.6px;
   display: flex;
+  margin-left: 10px;
+
 `;
 
 const Body2_1 = styled.div`
@@ -55,6 +63,7 @@ const Body2_1 = styled.div`
   justify-content: start; 
   line-height: 19.6px;
   display: flex;
+  margin-left: 10px;
   margin-top: 30px;
 `;
 
@@ -65,8 +74,6 @@ align-items: flex-start;
 margin: auto 0;
 width: 340px;
 height: 907px;
-padding: 0 20px;
-padding-left: 47px;
 
 `;
 
@@ -84,8 +91,16 @@ const Seminar_Bar = styled.img`
     margin-bottom: auto;
 `;
 
+const Div = styled.div`
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
 function ProgramStudy_Mob() {
     return (
+        <Div>
         <ThemeProvider theme={theme}>
             <SeminarDiv>
                 <Header7_1></Header7_1>
@@ -103,6 +118,7 @@ function ProgramStudy_Mob() {
             </SeminarDiv>
             <Seminar_Bar src={Bar} alt="Bar" />
         </ThemeProvider>
+        </Div>
     );
 }
 

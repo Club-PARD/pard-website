@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom';
 import MenuBar_white from '../assets/img/MenuBar_white.png';
 
 const Nav = styled.nav`
-  background-color: ${props => props.isOpen ?  props.scrollPosition <= 20000 ? 'rgba(26, 26, 26, 0.8)' : '#1A1A1A' : 'rgba(0,0,0,0)'};
+  /* background-color: ${props => props.isOpen ?  props.scrollPosition <= 10000 ? '#1A1A1A' : 'rgba(26, 26, 26, 0.8)' : 'rgba(0,0,0,0)'}; */
+  background-color: ${({ isOpen, scrollPosition }) =>
+    isOpen ? 'rgba(26, 26, 26, 0.8)' : scrollPosition >= 20000 ? '#1A1A1A' : 'rgba(0,0,0,0)'};
   color: white;
   display: flex;
   align-items: center;

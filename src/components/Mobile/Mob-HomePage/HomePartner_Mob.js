@@ -55,7 +55,7 @@ const SImage4 = styled.img`
 
 const Spacklab = styled.img`
     width: 182px;
-    height: 65px;
+    height: 55px;
     padding-top: 83px;
     margin-right: 25px;
 `;

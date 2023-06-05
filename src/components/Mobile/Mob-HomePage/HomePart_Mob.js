@@ -11,11 +11,14 @@ const Header7 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-right: 210px;
+  margin-right: 180px;
   white-space: pre-line;
   margin-bottom: 40px;
   margin-top: 45px;
+  
 `;
+
+
 
 const Header5 = styled.div`
   font-size: ${props => props.theme.Mob_fontSizes.Header5};
@@ -42,49 +45,48 @@ const Body2 = styled.div`
 const ContentWrapper = styled.div`
     margin-bottom: 98px;
     margin-top: 4px;
-    margin-left: 37px;
     display: flex;    
     flex-direction: column;
     width: 243px;
     height: 199px;
     justify-content: center;
     align-items: flex-start;
+
 `;
 
 const Image = styled.img`
     margin-bottom: 18px;
-    width: 199px;
+    width: 200px;
     height: 240px;
 `;
 
 const Div = styled.div`
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 0 auto;
     width: 100%;
-    height: 2440px;
-    margin-right: 210px;
+    height: 2600px;
 `;
 
 const PartDiv = styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
     flex-direction: column;
-    width: 100%;
+    width: 375px;
+    align-items: center;
 `;
 
 const TextWrapper = styled.div` 
     word-break: keep-all;
     text-align: ${props => props.textAlign === 'right' ? 'right' : 'left'};
+
 `;
 const PartWrapper = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    margin-left: 115px;
+    /* margin-left: 115px; */
     align-items: ${props => props.textAlign === 'left' ? 'flex-end' : 'flex-start'};
 
 `;
@@ -93,12 +95,13 @@ const PartContents = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     gap: 100px;
     height: 2117px;
-    align-items: flex-start;
     margin-top: 80px;
     position: relative;
+    align-items: center;
+    padding-left: 25px;
     //margin-left: 24px;
 `;
 
@@ -123,7 +126,7 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
 
 function PartSection(props){
     return (
-        <ContentWrapper>
+        <ContentWrapper textAlign={props.content.id === 2 || props.content.id === 4 ? 'right' : 'left'}>
             <Image src={props.content.imageSrc} alt={`Image ${props.content.id}`}/>
             <TextWrapper textAlign={props.content.id === 2 || props.content.id === 4 ? 'right' : 'left'}>
                 <Header5 textAlign={props.content.id === 2 || props.content.id === 4 ? 'right' : 'left'}>{props.content.title}</Header5>

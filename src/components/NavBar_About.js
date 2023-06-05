@@ -9,7 +9,7 @@ const Div = styled.div`
 `;
 
 const NavBarWrapper = styled.nav`
-  background-color: ${({ scrollPosition }) => (scrollPosition > 800 ? '#FFFFFF' : '#1A1A1A')};
+  background-color: ${({ scrollPosition }) => (scrollPosition >= 800 ? '#FFFFFF' : '#1A1A1A')};
   height: 70px;
   display: flex;
   justify-content: center;

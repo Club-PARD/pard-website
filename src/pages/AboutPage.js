@@ -52,14 +52,14 @@ width: 100%;
                 </AboutPageComponent_Web>
                 :
                 <AboutPageComponent_Mob>
-                    <TemporaryPage/>
-                    {/* <NavBarMov_About/>
+                    {/* <TemporaryPage/> */}
+                    <NavBarMov_About/>
                     <AboutFirst_Mob />
                     <AboutVision_Mob />
                     <AboutPart_Mob />
                     <AboutProgram_Mob />
                     <AboutMentor_Mob />
-                    <AboutLast_Mob /> */}
+                    <AboutLast_Mob />
                     <FooterMov/>
                 </AboutPageComponent_Mob>
             }

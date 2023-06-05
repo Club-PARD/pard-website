@@ -24,6 +24,7 @@ const Swiper1 = styled(Swiper)`
 const SwiperDiv = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 5px;
 `;
 
 const NavigationContainer = styled.div`
