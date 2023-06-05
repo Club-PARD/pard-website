@@ -234,13 +234,21 @@ const textDB = [
     const targetRef = useRef(null);
     
     return (
-      <div style={{ justifyContent: "center", display: "flex"}}>
-        {textInfos.map(textInfo => (
-          <Text1 ref={targetRef} key={textInfo.id} isVisible={isTextVisible[textInfo.id]} textInfo = {textInfo} position={position}>
-            {textInfo.text} 
-          </Text1>
-        ))}
-      </div>
+      <div style={{ justifyContent: "center", display: "flex", overflowX: "hidden" }}>
+  <div style={{ maxWidth: "100%" }}>
+    {textInfos.map((textInfo) => (
+      <Text1
+        ref={targetRef}
+        key={textInfo.id}
+        isVisible={isTextVisible[textInfo.id]}
+        textInfo={textInfo}
+        position={position}
+      >
+        {textInfo.text}
+      </Text1>
+    ))}
+  </div>
+</div>
     );
   }
   function useScrollPosition() {
