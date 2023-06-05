@@ -6,6 +6,7 @@ import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
 import backgroundImage3 from '../../../assets/img/homeBackgroundImg3.svg';
 import backgroundImage3op from '../../../assets/img/homeBackgroundImg3_op.svg';
 
+const request1 = false;
 
 const firstScrollPoint = 12800; //homesecond 시작 스크롤 위치
 const pageLength = [
@@ -75,14 +76,19 @@ const textDB = [
   background-image: ${({ breakPointInfos, position, id, src }) =>
     backgroundImgLogic(breakPointInfos, position, id, src)};
   background-size: ${({ id }) => id == 1 ? 'contain' : 'cover'};
+  background-position: center;
   background-repeat: no-repeat;
+
   width: 100vw;
   height: 110vh; /* Added property */
-  background-position: center;
+  
+
   position: sticky;
+
   z-index: -1;
   top: 0;
   background-color: rgba(26, 26, 26);
+  overflow-x: hidden;
   
     &::before {
       content: "";
@@ -128,9 +134,9 @@ const textDB = [
     color: #FFFFFF;
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
-    z-index: 999;
+    z-index: 1;
   
-    width: 100%; // 중요! width를 키우지 않으면 text-align: center 는 의미 없어짐.
+    width: ${request1 ? "1330px" : "100%"}; // 중요! width를 키우지 않으면 text-align: center 는 의미 없어짐.
     text-align: ${({ textInfo }) => textAlignLogic(textInfo)};
     position: absolute;
     padding: ${({ textInfo }) => textPaddingLofic(textInfo)};
@@ -150,6 +156,11 @@ const textDB = [
   
     /* transform */
   `
+  const Div = styled.div`
+    margin: ${request1 ? "0px auto" : ""};
+    justify-content: ${request1 ? "center" : ""};
+    width: ${request1 ? "1330px" : "100vw"};
+`;
   const textPaddingLofic = (textInfo) => {
     switch(textInfo.id){
       case 0:
@@ -204,29 +215,35 @@ const textDB = [
         return null;
     }
   }
-  
+
+  const translate3d = (x, y, z) => {
+    x = x !== null ? x : 0;
+    y = y !== null ? y : 0;
+    z = z !== null ? z : 0;
+    return `translate3d(${x}px, ${y}px, ${z}px)`
+  }
+
   const textTransformLogic = (textInfo, position) => {
     var offset = (position - (textInfo.breakPoint + textInfo.period * 0.8));
     if(textInfo.id == 3) {
       const change = 37;
       var x = position - (textInfo.breakPoint + 1000 - change);
       if(x >= 0 && x < change){
-        return `translateY(${x * -1}px)`
+        return translate3d(0, x * -1, 0);
       } else if(x >= change){
-        return `translateY(${change * -1}px)`
+        return translate3d(0, change * -1, 0);
       } else{
-        return `translateY(0px)`;
+        return translate3d(0, 0, 0);
       }
-      
     }
     if(offset < 0) return 0;
     switch(textInfo.id){
       case 0:
-        return `translateX(${offset * -1}px)`
+        return translate3d(offset * -1, 0, 0);
       case 2:
-        return `translateX(${offset * 1}px)`
+        return translate3d(offset * 1, 0, 0);
       default:
-        return `translateY(0px)`;
+        return translate3d(0, 0, 0);
     }
   }
   
@@ -234,21 +251,13 @@ const textDB = [
     const targetRef = useRef(null);
     
     return (
-      <div style={{ justifyContent: "center", display: "flex", overflowX: "hidden" }}>
-  <div style={{ maxWidth: "100%" }}>
-    {textInfos.map((textInfo) => (
-      <Text1
-        ref={targetRef}
-        key={textInfo.id}
-        isVisible={isTextVisible[textInfo.id]}
-        textInfo={textInfo}
-        position={position}
-      >
-        {textInfo.text}
-      </Text1>
-    ))}
-  </div>
-</div>
+      <div style={{ justifyContent: "center", display: "flex"}}>
+        {textInfos.map(textInfo => (
+          <Text1 ref={targetRef} key={textInfo.id} isVisible={isTextVisible[textInfo.id]} textInfo = {textInfo} position={position}>
+            {textInfo.text} 
+          </Text1>
+        ))}
+      </div>
     );
   }
   function useScrollPosition() {
@@ -289,21 +298,24 @@ const HomeSecondMob = () => {
     }, [position, text1, text2, text3, text4, text5]);
   
     return (
-      <div >
+      <Div > 
+          
       <ThemeProvider theme={theme}>
-          <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0} >
+          <Background src={backgroundImage1} breakPointInfos={breakPointInfos} position={position} id={0}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(0, 3)} position = {position}></Animation1>
             </Background>
           <div style={{height: pageLength[0]+ "px"}}></div> 
-          <Background src={backgroundImage2}>
+          <Background src={backgroundImage2} >
           </Background>
           <div style={{height: pageLength[1]+ "px"}}></div>
           <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(3, 5)} position = {position}></Animation1>
           </Background>
           <div style={{height: pageLength[2]+ "px"}}></div>
+          
       </ThemeProvider>
-      </div>
+      
+      </Div>
     );
   };
 

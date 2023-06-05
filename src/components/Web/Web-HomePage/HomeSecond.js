@@ -77,8 +77,10 @@ const textDB = [
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     width: 100vw;
     height: 100vh;
+
     position: sticky;
     
     z-index :-1;
@@ -141,6 +143,7 @@ const textDB = [
     right: 0; 
     margin-left: auto; 
     margin-right: auto; 
+    
     top: ${({ textInfo }) => (textInfo.posX)};
     //left: ${({ textInfo }) => (textInfo.posY)};
   
