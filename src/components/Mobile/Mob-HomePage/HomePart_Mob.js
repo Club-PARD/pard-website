@@ -11,8 +11,10 @@ const Header7 = styled.div`
   font-weight: ${props => props.theme.fontWeights.Header7};
   color: #FFFFFF;
   font-family: 'NanumSquare Neo';
-  margin-bottom: 14px;
+  margin-right: 210px;
   white-space: pre-line;
+  margin-bottom: 40px;
+  margin-top: 45px;
 `;
 
 const Header5 = styled.div`
@@ -40,38 +42,40 @@ const Body2 = styled.div`
 const ContentWrapper = styled.div`
     margin-bottom: 98px;
     margin-top: 4px;
-    margin-left: 18px;
+    margin-left: 37px;
     display: flex;    
     flex-direction: column;
-    align-items: flex-start;
     width: 243px;
     height: 199px;
+    justify-content: center;
+    align-items: flex-start;
 `;
 
 const Image = styled.img`
     margin-bottom: 18px;
-    margin-top: -75px;
     width: 199px;
     height: 240px;
 `;
 
 const Div = styled.div`
+    display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    width: 375px;
+    width: 100%;
     height: 2440px;
-    padding-left: 35px;
-    padding-right: 6px;
+    margin-right: 210px;
 `;
 
 const PartDiv = styled.div`
-    flex-direction: row;
-    padding-top: 45px;
-    height: 2445px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled.div` 
     word-break: keep-all;
     text-align: ${props => props.textAlign === 'right' ? 'right' : 'left'};
 `;
@@ -79,19 +83,23 @@ const PartWrapper = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    margin-left: 110px;
+    justify-content: space-between; 
+    margin-left: 115px;
     align-items: ${props => props.textAlign === 'left' ? 'flex-end' : 'flex-start'};
+
 `;
 
-const PartContents = styled.div`
+const PartContents = styled.div` 
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     gap: 100px;
+    height: 2117px;
     align-items: flex-start;
-    margin-top: 110px;
-    padding: 0;
+    margin-top: 80px;
+    position: relative;
+    //margin-left: 24px;
 `;
 
 const Button1 = styled.button`
@@ -106,7 +114,6 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     height: 48px;
     background-color: #7B3FEF;
     justify-content: center;
-    margin-left: 15px;
     margin-top: 58px;
     color: #FFFFFF;
     border-radius: 10px;
@@ -126,7 +133,7 @@ function PartSection(props){
     );
 }
 
-function HomePartsMob() { 
+function HomePartsMob(){
     const contentsData = [
         {
             id: 1,
@@ -171,7 +178,11 @@ function HomePartsMob() {
             <Header7>PARTS</Header7>
             <PartContents >
                 {contentsData.map(content => (
-                    <PartWrapper key={content.id} id={content.id} textAlign={content.id === 2 || content.id === 4 ? 'right' : 'left'}>
+                    <PartWrapper 
+                        key={content.id} 
+                        id={content.id} 
+                        textAlign={content.id === 2 || content.id === 4 ? 'right' : 'left'}
+                    >    
                         <PartSection content={content}></PartSection>
                     </PartWrapper>
                 ))}  
