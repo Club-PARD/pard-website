@@ -42,10 +42,10 @@ width: 100%;
                 </ProgramPageComponent_Web>
                 :
                 <ProgramPageComponent_Mob>
-                    <NavBarMov />
+                    {/* <NavBarMov />
                     <ProjectFirst_Mob />
-                    <ProjectLast_Mob />
-                     {/* <TemporaryPage/> */}
+                    <ProjectLast_Mob /> */}
+                     <TemporaryPage/>
                     <FooterMov />
                 </ProgramPageComponent_Mob>
             }

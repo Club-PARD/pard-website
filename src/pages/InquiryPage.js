@@ -45,11 +45,11 @@ justify-content: center;
                 </InquiryPageComponent_Web>
                 :
                 <InquiryPageComponent_Mob>
-                     <NavBarMov/>
+                     {/* <NavBarMov/>
                     <InquiryContactMob />
                     <InquiryManagemaentMob />
-                    <InquiryLastMob />
-                    {/* <TemporaryPage/> */}
+                    <InquiryLastMob /> */}
+                    <TemporaryPage/>
                     <FooterMov/>                    
                 </InquiryPageComponent_Mob>
             }
