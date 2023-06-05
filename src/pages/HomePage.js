@@ -48,12 +48,12 @@ function HomePage() {
                 </div>
                 :
                 <HomePageComponent_Mob>
-                    <NavBarMob_Home/>
-                    {/* <TemporaryPage/> */}
-                    <HomeVideoMob />
-                    
-                    <HomeSecondMob />
-                    {/* <HomePartsMob /> */}
+                    {/* <NavBarMob_Home/> */}
+                    <TemporaryPage/>
+                    {/* <HomeVideoMob />  */}
+
+                    {/* <HomeSecondMob /> */}
+                    <HomePartsMob />
                     {/* <HomeProgramMob /> */}
                     <HomeMentorMob />
                     <HomePartnerMob />
