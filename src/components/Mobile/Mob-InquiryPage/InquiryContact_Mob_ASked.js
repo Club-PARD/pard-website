@@ -283,7 +283,7 @@ const Askmobile = () => {
                     onMouseLeave={() => BusinessHoveredHover()}
                     hovered={BusinessHovered}>
                     비즈니스 문의는 &nbsp;
-                    <Here to='/' hovered={informbox2Hovered}>여기로</Here></Business>
+                    <Here href="mailto:official@we-pard.com" hovered={informbox2Hovered}>여기로</Here></Business>
             </Margin>
             <LogoDiv>
             <DownLogo src={require('../../../assets/img/DownScrollLogo.png')}/>
