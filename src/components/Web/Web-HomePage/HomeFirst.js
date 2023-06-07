@@ -65,6 +65,15 @@ const VideoBackground = styled.video`
   object-fit: fill;
   z-index: -1;
 `;
+
+const VideoBackgroundImg = styled.img`
+ width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+`;
+
+
 const SplitTextContainer = styled.div`
 
 position: absolute;
@@ -300,6 +309,7 @@ const HomeFirst = () => {
   const [text1, setText1] = useState('PA'); // 텍스트 1
   const [text2, setText2] = useState('RD'); // 텍스트 2
   const [isSplitTextVisible, setIsSplitTextVisible] = useState(false);
+  const [isSafari, setIsSafari] = useState(false); // 사파리인지 아닌지 구분
 
 
 
@@ -310,7 +320,10 @@ const HomeFirst = () => {
 
   useEffect(() => {
     const absPosition = Math.abs(position);
+    const userAgent = window.navigator.userAgent;
+    const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(userAgent);
 
+    setIsSafari(isSafariBrowser);
     if (absPosition < 100) {
       setchanged('aaa');
       setbackcolor(false);
@@ -425,9 +438,14 @@ const HomeFirst = () => {
 <DIVVVV>
     <VideoContainer isColor={backcolor}  isFixed={isFixed}>
 
+      {
+        isSafari ? 
+      <VideoBackgroundImg src={require('../../../assets/img/BackgroundImg_Web.png')}/>
+      : 
       <VideoBackground  autoPlay loop muted playsInline>
-        <source  playsInline muted autoPlay src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
-      </VideoBackground>
+      <source  playsInline muted autoPlay src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
+    </VideoBackground> 
+      }
 
       <LogoDiv>
         <DownLogo src={require('../../../assets/img/DownScrollLogo.png')} />
