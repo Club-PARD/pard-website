@@ -139,6 +139,7 @@ const textDB = [
     position: absolute;
     padding: ${({ textInfo }) => textPaddingLofic(textInfo)};
   
+    
     left: 0; 
     right: 0; 
     margin-left: auto; 

@@ -52,12 +52,12 @@ function HomePage() {
                     <TemporaryPage/>
                     {/* <HomeVideoMob /> 
                     <HomeSecondMob />
-                    <HomePartsMob />
-                    <HomeProgramMob />
-                    <HomeMentorMob />
+                    <HomePartsMob /> */}
+                    {/* <HomeProgramMob /> */}
+                    {/* <HomeMentorMob />
                     <HomePartnerMob />
-                    <HomeLastsMob /> */}
-                    <FooterMov /> 
+                    <HomeLastsMob />
+                    <FooterMov />  */}
                 </HomePageComponent_Mob>
             }
         </HomePageComponent>
