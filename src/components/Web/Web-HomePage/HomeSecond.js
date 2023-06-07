@@ -5,6 +5,8 @@ import backgroundImage1 from '../../../assets/img/homeBackgroundImg1.svg';
 import backgroundImage2 from '../../../assets/img/homeBackgroundImg2.svg';
 import backgroundImage3 from '../../../assets/img/homeBackgroundImg3.svg';
 import backgroundImage3op from '../../../assets/img/homeBackgroundImg3_op.svg';
+import downScrollImage from '../../../assets/img/DownScrollLogo.svg'
+
 
 const request1 = false;
 
@@ -125,6 +127,16 @@ const textDB = [
     }
     return "rgba(0, 0, 0, 0)";
   }
+
+  const ScrollIcon = styled.img`
+  z-index: 1;
+  position: absolute;
+  left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    bottom: 100px;
+  `
   
   const Text1 = styled.div`
     font-size: ${({ textInfo, theme }) => textFontSizeLogic(textInfo, theme)};
@@ -308,6 +320,9 @@ const HomeSecond = () => {
           <div style={{height: pageLength[1]+ "px"}}></div>
           <Background src={backgroundImage3} breakPointInfos={breakPointInfos} position={position} id={1}>
             <Animation1 isTextVisible={list1} textInfos = {textDB.slice(3, 5)} position = {position}></Animation1>
+            <ScrollIcon src={downScrollImage} >
+
+            </ScrollIcon>
           </Background>
           <div style={{height: pageLength[2]+ "px"}}></div>
           
