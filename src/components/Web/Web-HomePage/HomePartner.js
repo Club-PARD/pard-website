@@ -36,29 +36,34 @@ const PartDiv = styled.div`
 const DisquietImage1 = styled.img`
     width: 241px;
     height: 50px;
-    padding-left: 79px;
+    padding-right: 65px;
+    cursor: pointer;
 `;
 
 const LincImage2 = styled.img`
     width: 150px;
     height: 50px;
-    padding-left: 100px;
+    padding-left: 90px;
+    cursor: pointer;
 `;
 
 const ImpactCampusImage3 = styled.img`
     width: 366px;
     height: 50px;
     padding-left: 100px;
+    cursor: pointer;
 `;
 
 const SImage4 = styled.img`
-    width: 80px;
-    height: 80px;
+    width: 240px;
+    height: 70px;
+    cursor: pointer;
 `;
 
 const SpackImgDiv = styled.img`
     width: 217px;
     height: 60px;
+    cursor: pointer;
 `;
 
 const ContentWrapper = styled.div`
@@ -80,19 +85,40 @@ const ContentWrapper2 = styled.div`
 `;
 
 function HomePartner() {
+
+
+    const handleClickSpark = () => {
+        window.open("https://sparklabs.co.kr/lb/index.php", "_blank");
+    };
+    const handleClickDiquiet = () => {
+        window.open("https://disquiet.io/", "_blank");
+    };
+    const handleClickImpactCampus = () => {
+        window.open("https://impact.career/", "_blank");
+    };
+    const handleClickLink = () => {
+        window.open("https://linc30.handong.edu/", "_blank");
+    };
+    const handleClickSwyg = () => {
+        window.open("https://www.swygbro.com", "_blank");
+    };
+    //   const handleClick = () => {
+    //     window.open("", "_blank");
+    //   };
+
     return (
         <PartDiv>
             <ThemeProvider theme={theme}>
                 <Header2>PARTNERS</Header2>
                 <Header4>함께하는 성장을 돕는 후원사</Header4>
                 <ContentWrapper>
-                    <SpackImgDiv src={SpackImg} alt="S" />
-                    <ImpactCampusImage3 src={ImpactCampusImage} alt="Impact Campus" />
+                    <SpackImgDiv onClick={handleClickSpark} src={SpackImg} alt="S" />
+                    <ImpactCampusImage3 onClick={handleClickImpactCampus} src={ImpactCampusImage} alt="Impact Campus" />
                 </ContentWrapper>
                 <ContentWrapper2>
-                    <SImage4 src={SImage} alt="S" />
-                    <DisquietImage1 src={DisquietImage} alt="Disquiet" />
-                    <LincImage2 src={LincImage} alt="Linc" />
+                    <DisquietImage1 onClick={handleClickDiquiet} src={DisquietImage} alt="Disquiet" />
+                    <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
+                    <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
                 </ContentWrapper2>
             </ThemeProvider>
         </PartDiv>

@@ -33,24 +33,28 @@ const DisquietImage1 = styled.img`
     width: 193px;
     height: 40px;
     padding-top: 60px;
+    cursor: pointer;
 `;
 
 const LincImage2 = styled.img`
     width: 120px;
     height: 40px;
     padding-top: 60px;
+    cursor: pointer;
 `;
 
 const ImpactCampusImage3 = styled.img`
     width: 260px;
     height: 40px;
     padding-top: 60px;
+    cursor: pointer;
 `;
 
 const SImage4 = styled.img`
-    width: 70px;
-    height: 70px;
+    width: 230px;
+    height: 60px;
     padding-top: 60px;
+    cursor: pointer;
 `;
 
 const Spacklab = styled.img`
@@ -58,6 +62,7 @@ const Spacklab = styled.img`
     height: 55px;
     padding-top: 83px;
     margin-right: 25px;
+    cursor: pointer;
 `;
 
 const Div = styled.div`
@@ -84,6 +89,23 @@ const ContentWrapper = styled.div`
 `;
 
 function HomePartnerMob() {
+
+    const handleClickSpark = () => {
+        window.open("https://sparklabs.co.kr/lb/index.php", "_blank");
+    };
+    const handleClickDiquiet = () => {
+        window.open("https://disquiet.io/", "_blank");
+    };
+    const handleClickImpactCampus = () => {
+        window.open("https://impact.career/", "_blank");
+    };
+    const handleClickLink = () => {
+        window.open("https://linc30.handong.edu/", "_blank");
+    };
+    const handleClickSwyg = () => {
+        window.open("https://www.swygbro.com", "_blank");
+    };
+
     return (
         <Div>
         <PartDiv>
@@ -91,11 +113,11 @@ function HomePartnerMob() {
             <Header7>PARTNERS</Header7>
             <Subtitle3>함께하는 성장을 돕는 후원사</Subtitle3>
             <ContentWrapper>
-                <Spacklab src={SpackImg} alt='SparkLab'/>
-                    <DisquietImage1 src={DisquietImage} alt="Disquiet" />
-                    <LincImage2 src={LincImage} alt="Linc" />
-                    <ImpactCampusImage3 src={ImpactCampusImage} alt="Impact Campus" />
-                    <SImage4 src={SImage} alt="S" />
+                <Spacklab onClick={handleClickSpark} src={SpackImg} alt='SparkLab'/>
+                    <DisquietImage1 onClick={handleClickDiquiet} src={DisquietImage} alt="Disquiet" />
+                    <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
+                    <ImpactCampusImage3 onClick={handleClickImpactCampus} src={ImpactCampusImage} alt="Impact Campus" />
+                    <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
                 </ContentWrapper>
             </ThemeProvider>
         </PartDiv>
