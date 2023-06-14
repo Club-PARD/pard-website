@@ -5,6 +5,8 @@ import LincImage from '../../../assets/img/Linc-partner.png';
 import ImpactCampusImage from '../../../assets/img/ImpactCampus-partner.png';
 import SImage from '../../../assets/img/S-partner.png';
 import SpackImg from '../../../assets/img/SpackLab.png';
+import AsanImg from '../../../assets/img/ASANImg.png';
+
 
 const Header2 = styled.div`
   font-size: ${props => props.theme.Web_fontSizes.Header2};
@@ -66,6 +68,13 @@ const SpackImgDiv = styled.img`
     cursor: pointer;
 `;
 
+const AsanImgDiv = styled.img`
+    width: 223px;
+    height: 90px;
+    margin-right: 65px;
+    cursor: pointer;
+`;
+
 const ContentWrapper = styled.div`
     flex: 1;
     display: flex;
@@ -102,9 +111,9 @@ function HomePartner() {
     const handleClickSwyg = () => {
         window.open("https://www.swygbro.com", "_blank");
     };
-    //   const handleClick = () => {
-    //     window.open("", "_blank");
-    //   };
+      const handleClickAsan = () => {
+        window.open("https://asan-nanum.org/", "_blank");
+      };
 
     return (
         <PartDiv>
@@ -112,6 +121,7 @@ function HomePartner() {
                 <Header2>PARTNERS</Header2>
                 <Header4>함께하는 성장을 돕는 후원사</Header4>
                 <ContentWrapper>
+                    <AsanImgDiv onClick={handleClickAsan} src={AsanImg} ast="Asan"/>
                     <SpackImgDiv onClick={handleClickSpark} src={SpackImg} alt="S" />
                     <ImpactCampusImage3 onClick={handleClickImpactCampus} src={ImpactCampusImage} alt="Impact Campus" />
                 </ContentWrapper>

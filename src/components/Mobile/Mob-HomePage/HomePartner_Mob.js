@@ -5,6 +5,7 @@ import LincImage from '../../../assets/img/Linc-partner.png';
 import ImpactCampusImage from '../../../assets/img/ImpactCampus-partner.png';
 import SImage from '../../../assets/img/S-partner.png';
 import SpackImg from '../../../assets/img/SpackLab.png';
+import AsanImg from '../../../assets/img/ASANImg.png';
 
 
 const Header7 = styled.div`
@@ -60,8 +61,16 @@ const SImage4 = styled.img`
 const Spacklab = styled.img`
     width: 182px;
     height: 55px;
-    padding-top: 83px;
+    padding-top: 50px;
     margin-right: 25px;
+    cursor: pointer;
+`;
+
+
+const AsanImgDiv = styled.img`
+    width: 200px;
+    height: 75px;
+    padding-top: 83px;
     cursor: pointer;
 `;
 
@@ -105,6 +114,9 @@ function HomePartnerMob() {
     const handleClickSwyg = () => {
         window.open("https://www.swygbro.com", "_blank");
     };
+    const handleClickAsan = () => {
+        window.open("https://asan-nanum.org", "_blank");
+    };
 
     return (
         <Div>
@@ -113,6 +125,7 @@ function HomePartnerMob() {
             <Header7>PARTNERS</Header7>
             <Subtitle3>함께하는 성장을 돕는 후원사</Subtitle3>
             <ContentWrapper>
+                <AsanImgDiv onClick={handleClickAsan} src={AsanImg} alt='Asan'/>
                 <Spacklab onClick={handleClickSpark} src={SpackImg} alt='SparkLab'/>
                     <DisquietImage1 onClick={handleClickDiquiet} src={DisquietImage} alt="Disquiet" />
                     <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
