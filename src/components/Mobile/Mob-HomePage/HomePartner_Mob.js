@@ -6,6 +6,7 @@ import ImpactCampusImage from '../../../assets/img/ImpactCampus-partner.png';
 import SImage from '../../../assets/img/S-partner.png';
 import SpackImg from '../../../assets/img/SpackLab.png';
 import AsanImg from '../../../assets/img/ASANImg.png';
+import MobitImg from '../../../assets/img/MobitImg.png';
 
 
 const Header7 = styled.div`
@@ -74,6 +75,13 @@ const AsanImgDiv = styled.img`
     cursor: pointer;
 `;
 
+const MobitDiv = styled.img`
+    width: 167px;
+    height: 50px;
+    padding-top: 50px;
+    cursor: pointer;
+`;
+
 const Div = styled.div`
     display: flex;
     flex-direction: column;
@@ -83,9 +91,8 @@ const Div = styled.div`
 `;
 const PartDiv = styled.div`
     padding-top: 131px;
-    height: 750px;
-    padding-left: 10px;
-    
+    height: 950px;
+    padding-left: 10px; 
 `;
 
 const ContentWrapper = styled.div`
@@ -131,6 +138,7 @@ function HomePartnerMob() {
                     <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
                     <ImpactCampusImage3 onClick={handleClickImpactCampus} src={ImpactCampusImage} alt="Impact Campus" />
                     <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
+                    <MobitDiv onClick={handleClickSwyg} src={MobitImg} alt="Mobit"/>
                 </ContentWrapper>
             </ThemeProvider>
         </PartDiv>
