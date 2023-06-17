@@ -166,8 +166,19 @@ function RecruitingAbout() {
     {
       id: 2,
       item: '활동관련',
-      question: [{
-        id: 1,
+      question: [
+        {
+          id: 1,
+          quest: 'Q. 교통이 불편한데, 어디서 모여 활동하나요?',
+          answer: <>A. 활동 멤버 분들이 속한 구성원 분들의 수가 많은 곳에서 주요 활동을 진행하고자 합니다. 우선 2기는 한동대학교에서<br/>
+          &nbsp; &nbsp; &nbsp;모일 예정입니다. 교통이 불편한 포항 여건 상, 파드는 포항시에 소재한 한동대학교 외 대학생 분들이라면 매주 <br/>
+          &nbsp; &nbsp; &nbsp;교통비(택시비)를 지원해드릴 예정 입니다! 많은 지원 부탁드릴게요:)
+          &nbsp; &nbsp; &nbsp;
+          </>,
+          select: false
+        },
+        {
+        id: 2,
         quest: 'Q. 세미나 말고 해커톤만 참여 가능한가요?',
         answer: <>A. Pay it forward를 실천하기 위해서는<br/>
         &nbsp; &nbsp; &nbsp;활동기수로 참여하셔야 합니다!
@@ -175,7 +186,7 @@ function RecruitingAbout() {
         select: false
       },
       {
-        id: 2,
+        id: 3,
         quest: 'Q. 해커톤 팀은 어떻게 꾸리게 되나요?',
         answer: <>A. 숏커톤을 위한 팀은 팀원들의 스킬셋과 커뮤니케이션 스타일을 고려하려 지정하고 있으며,<br/>
          &nbsp; &nbsp; &nbsp;롱커톤을 위한 팀은 아이디어 경선을 통해 아이디어를 피칭하고,<br/>
@@ -183,7 +194,7 @@ function RecruitingAbout() {
         select: false
       },
       {
-        id: 3,
+        id: 4,
         quest: 'Q. 해커톤의 주제는 어떻게 정해지게 되나요?',
         answer: <>A. 해커톤의 주제는 운영진에 의해 시대적 트렌드와 <br/>
         &nbsp; &nbsp; &nbsp;PARD의 핵심 가치를 아우를 수 있는 주제를 채택합니다.
@@ -191,7 +202,7 @@ function RecruitingAbout() {
         select: false
       },
       {
-        id: 4,
+        id: 5,
         quest: 'Q. 앱 개발 시 어떤 프로그래밍 언어를 사용하나요?',
         answer: 'A. 2기 기준 IOS 앱 개발을 위한 Swift UI를 사용하고 있습니다.',
         select: false

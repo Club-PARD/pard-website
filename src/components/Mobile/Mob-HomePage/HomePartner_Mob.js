@@ -1,6 +1,6 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
-import DisquietImage from '../../../assets/img/Disquiet-partner.png'; 
+import DisquietImage from '../../../assets/img/Disquiet-partner.png';
 import LincImage from '../../../assets/img/Linc-partner.png';
 import ImpactCampusImage from '../../../assets/img/ImpactCampus-partner.png';
 import SImage from '../../../assets/img/S-partner.png';
@@ -124,24 +124,27 @@ function HomePartnerMob() {
     const handleClickAsan = () => {
         window.open("https://asan-nanum.org", "_blank");
     };
+    const handleClickMobit = () => {
+        window.open("https://www.momit.co.kr", "_blank");
+    };
 
     return (
         <Div>
-        <PartDiv>
-             <ThemeProvider theme={theme}>
-            <Header7>PARTNERS</Header7>
-            <Subtitle3>함께하는 성장을 돕는 후원사</Subtitle3>
-            <ContentWrapper>
-                <AsanImgDiv onClick={handleClickAsan} src={AsanImg} alt='Asan'/>
-                <Spacklab onClick={handleClickSpark} src={SpackImg} alt='SparkLab'/>
-                    <DisquietImage1 onClick={handleClickDiquiet} src={DisquietImage} alt="Disquiet" />
-                    <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
-                    <ImpactCampusImage3 onClick={handleClickImpactCampus} src={ImpactCampusImage} alt="Impact Campus" />
-                    <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
-                    <MobitDiv onClick={handleClickSwyg} src={MobitImg} alt="Mobit"/>
-                </ContentWrapper>
-            </ThemeProvider>
-        </PartDiv>
+            <PartDiv>
+                <ThemeProvider theme={theme}>
+                    <Header7>PARTNERS</Header7>
+                    <Subtitle3>함께하는 성장을 돕는 후원사</Subtitle3>
+                    <ContentWrapper>
+                        <AsanImgDiv onClick={handleClickAsan} src={AsanImg} alt='Asan' />
+                        <Spacklab onClick={handleClickSpark} src={SpackImg} alt='SparkLab' />
+                        <DisquietImage1 onClick={handleClickDiquiet} src={DisquietImage} alt="Disquiet" />
+                        <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
+                        <ImpactCampusImage3 onClick={handleClickImpactCampus} src={ImpactCampusImage} alt="Impact Campus" />
+                        <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
+                        <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" />
+                    </ContentWrapper>
+                </ThemeProvider>
+            </PartDiv>
         </Div>
     );
 }
