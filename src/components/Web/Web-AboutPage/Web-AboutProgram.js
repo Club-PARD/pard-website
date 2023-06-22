@@ -29,6 +29,7 @@ const Body1 = styled.div`
     opacity: ${props => props.selected ? '1' : '0'};
 `;
 
+
 const StyledWrap = styled.ul`
     padding-top : 97px;
     padding-left: 0;
