@@ -2,7 +2,6 @@ import styled, { ThemeProvider, keyframes } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
 import bandImage1 from '../../../assets/img/band1.svg';
-import bandImage2 from '../../../assets/img/band2.svg';
 import bandImage3 from '../../../assets/img/band3.svg';
 
 const Header7 = styled.div`
@@ -125,28 +124,6 @@ function AboutMentor() {
 
 export default AboutMentor;
 
-const roleList = [
-    {
-        id: 1,
-        role: 'admin',
-        theme: "#64C59A",
-    },
-    {
-        id: 2,
-        role: 'developer',
-        theme: "#FF5C00",
-    },
-    {
-        id: 3,
-        role: 'designer',
-        theme: "#7B3FEF",
-    },
-    {
-        id: 4,
-        role: 'pm',
-        theme: "#5262F5",
-    }
-]
 
 const metorDb = [
     {
@@ -167,7 +144,7 @@ const metorDb = [
         id: 3,
         title: "Apple Developer Academy 디자인 멘토 ",
         sub_title: "대외 프로젝트 리드",
-        name: "구민정",
+        name: "이민아",
         roleId: 3,
     },
     {
@@ -181,7 +158,7 @@ const metorDb = [
         id: 5,
         title: "프리랜서 (전 SK C&C) 개발자",
         sub_title: "대외 프로젝트 리드",
-        name: "이민아",
+        name: "구민정",
         roleId: 2,
     },
     {
