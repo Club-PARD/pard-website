@@ -433,49 +433,66 @@ const HomeFirst = () => {
     */
     document.documentElement.style.overflowX = 'hidden';
   return (
+    <>
+      <DIVVVV>
+        <VideoContainer isColor={backcolor} isFixed={isFixed}>
+          {isSafari ? (
+            <VideoBackgroundImg
+              src={require("../../../assets/img/BackgroundImg_Web.png")}
+            />
+          ) : (
+            <VideoBackground autoPlay loop muted playsInline>
+              <source
+                playsInline
+                muted
+                autoPlay
+                src={require("../../../assets/Video/BackGroundVideo.mp4")}
+                type="video/mp4"
+              />
+            </VideoBackground>
+          )}
 
-  <>
-<DIVVVV>
-    <VideoContainer isColor={backcolor}  isFixed={isFixed}>
+          <LogoDiv>
+            <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
+          </LogoDiv>
 
-      {
-        isSafari ? 
-      <VideoBackgroundImg src={require('../../../assets/img/BackgroundImg_Web.png')}/>
-      : 
-      <VideoBackground  autoPlay loop muted playsInline>
-      <source  playsInline muted autoPlay src={require("../../../assets/Video/BackGroundVideo.mp4")} type="video/mp4" />
-    </VideoBackground> 
-      }
-
-      <LogoDiv>
-        <DownLogo src={require('../../../assets/img/DownScrollLogo.png')} />
-      </LogoDiv>
-
-      {isFixed && (
-        <>
-        
-
-            {changed==='aaa' ?  
-              <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
-              
-                </TextContainer1> 
-                :changed==='a' ?  
-              <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
-                <Text isExpanded={isExpanded}>{text}</Text>
-                </TextContainer1> 
-                :
-                
-                changed==='b' ?  
+          {isFixed && (
+            <>
+              {changed === "aaa" ? (
+                <TextContainer1
+                  isAnimation={isAnimation}
+                  isVisible={isVisible}
+                ></TextContainer1>
+              ) : changed === "a" ? (
+                <TextContainer1 isAnimation={isAnimation} isVisible={isVisible}>
+                  <Text isExpanded={isExpanded}>{text}</Text>
+                </TextContainer1>
+              ) : changed === "b" ? (
                 <>
-          
-    <SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${Math.min((position - 650)/6, 338)}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${Math.min((position - 650)/5, 360)}px)` }}>{text2}</Text2>
-      
-    </SplitTextContainer>
-
-</>
-/*
+                  <SplitTextContainer isVisible={isVisible}>
+                    <Text1
+                      style={{
+                        transform: `translateX(-${Math.min(
+                          (position - 650) / 6,
+                          338
+                        )}px)`,
+                      }}
+                    >
+                      {text1}
+                    </Text1>
+                    <Text2
+                      style={{
+                        transform: `translateX(${Math.min(
+                          (position - 650) / 5,
+                          360
+                        )}px)`,
+                      }}
+                    >
+                      {text2}
+                    </Text2>
+                  </SplitTextContainer>
+                </>
+              ) : /*
 :changed==='bc' ?  
 <>
 
@@ -488,82 +505,97 @@ const HomeFirst = () => {
 </>
 */
 
-:changed==='c' ?  
-<>
-<SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${338}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${360}px)` }}>{text2}</Text2>
-      
-    </SplitTextContainer>
-    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
+              changed === "c" ? (
+                <>
+                  <SplitTextContainer isVisible={isVisible}>
+                    <Text1 style={{ transform: `translateX(-${338}px)` }}>
+                      {text1}
+                    </Text1>
+                    <Text2 style={{ transform: `translateX(${360}px)` }}>
+                      {text2}
+                    </Text2>
+                  </SplitTextContainer>
+                  {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
 
-
-{/*isSplitTextVisible && (
+                  {/*isSplitTextVisible && (
 <TextContainer2 isVisible={isVisible}>
 <Textchanged1 isAnimation={isAnimation} isExpanded={isExpanded}>
 {text}
 </Textchanged1>
 </TextContainer2>
 )*/}
-</>
+                </>
+              ) : changed === "cd" ? (
+                <>
+                  <SplitTextContainer isVisible={isVisible}>
+                    <Text1 style={{ transform: `translateX(-${338}px)` }}>
+                      {text1}
+                    </Text1>
+                    <Text2 style={{ transform: `translateX(${360}px)` }}>
+                      {text2}
+                    </Text2>
+                    <MovedText
+                      style={{ transform: `translateY(${0}%)` }}
+                      isAnimation={isAnimation}
+                    >
+                      {text3}
+                    </MovedText>
+                  </SplitTextContainer>
+                  {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
+                </>
+              ) : changed === "cdd" ? (
+                <>
+                  <SplitTextContainer isVisible={isVisible}>
+                    <Text1 style={{ transform: `translateX(-${338}px)` }}>
+                      {text1}
+                    </Text1>
+                    <Text2 style={{ transform: `translateX(${360}px)` }}>
+                      {text2}
+                    </Text2>
+                    <MovedText
+                      style={{ transform: `translateY(${0}%)` }}
+                      isAnimation={isAnimation}
+                    >
+                      {text3}
+                    </MovedText>
+                  </SplitTextContainer>
+                  {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
 
-:changed==='cd' ?  
-<>
-<SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${338}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${360}px)` }}>{text2}</Text2>
-      <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
-    </SplitTextContainer>
-    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
+                  {/*위에 컴포넌트 그전 스크롤에서 나타난것들 고정되게 하고 스크롤 내리면 딱 animation으로 나타난다*/}
 
-
-
-</>
-:changed==='cdd' ?  
-<>
-<SplitTextContainer isVisible={isVisible}>
-      <Text1 style={{ transform: `translateX(-${338}px)` }}>{text1}</Text1>
-      <Text2 style={{ transform: `translateX(${360}px)` }}>{text2}</Text2>
-      <MovedText style={{ transform: `translateY(${0}%)` }} isAnimation={isAnimation} >{text3}</MovedText> 
-      
-    
-    </SplitTextContainer>
-    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
-
-{/*위에 컴포넌트 그전 스크롤에서 나타난것들 고정되게 하고 스크롤 내리면 딱 animation으로 나타난다*/}
-
-        <TextContainer2   isVisible={isVisible}>
-<Textchanged1 isAnimation={isSplitTextVisible} isExpanded={isExpanded}>
-{text}
-</Textchanged1>
-</TextContainer2>
-{/*컴포넌트를 감싸는 조건문으로 설정하니까 animation이 안먹었음
+                  <TextContainer2 isVisible={isVisible}>
+                    <Textchanged1
+                      isAnimation={isSplitTextVisible}
+                      isExpanded={isExpanded}
+                    >
+                      {text}
+                    </Textchanged1>
+                  </TextContainer2>
+                  {/*컴포넌트를 감싸는 조건문으로 설정하니까 animation이 안먹었음
 근데 애초에 택스트에 애니메이션을 걸어놔야 되는 것 같기도 하고
 그래서 Textchanged1에 애니메이션 넣음*/}
-</>
-:
+                </>
+              ) : changed === "d" ? (
+                <TextContainer3 isVisible={isVisible}>
+                  <Textchanged2
+                    isAnimation={isSplitTextVisible}
+                    isExpanded={isExpanded}
+                  >
+                    {text}
+                  </Textchanged2>
+                </TextContainer3>
+              ) : (
+                changed === "ddd" && (
+                  <TextContainer1 isVisible={isVisible}></TextContainer1>
+                )
+              )}
 
-
-            changed ==='d'? 
-            <TextContainer3  isVisible={isVisible}>
-            <Textchanged2 isAnimation={isSplitTextVisible} isExpanded={isExpanded}>{text}</Textchanged2>
-            </TextContainer3>
-            :
-            changed==='ddd' && 
-            <TextContainer1 isVisible={isVisible}>
-            
-              </TextContainer1> 
-            
-            }
-           
-          
-
-          <BackgroundOverlay backcolor={backcolor} />
-        </>
-      )}
-    </VideoContainer>
-    </DIVVVV>
-      </>
+              <BackgroundOverlay backcolor={backcolor} />
+            </>
+          )}
+        </VideoContainer>
+      </DIVVVV>
+    </>
   );
 };
 
