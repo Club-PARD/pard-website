@@ -83,8 +83,9 @@ const SmallButton = styled.button`
   /* margin-left: 15px; */
   margin-left: ${(props) => props.left}px;
   width: auto;
-  padding: 5px 10px;
+  padding: 4px 10px;
   cursor: pointer;
+  margin-bottom: 3px;
 `;
 
 const Vector = styled.img`
