@@ -67,7 +67,7 @@ const BtnText = styled.div`
   justify-content: center;
   text-align: center;
   color: #FFFFFF;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 `;
 
 const Container = styled.div`
@@ -82,9 +82,10 @@ const SmallButton = styled.button`
   background-color: ${({ hoverColor }) => hoverColor};
   color: ${({ textColor }) => textColor};
   border: none;
-  margin-left: 15px;
-  width: auto;
-  padding: 6px 12px;
+  /* margin-left: 15px; */
+  margin-left: ${props => props.left}px;
+    width: auto;
+  padding: 5px 10px;
   cursor: pointer;
 `;
 
@@ -147,6 +148,9 @@ const RecruitingPart = () => {
       selectedImage: SelectedVector,
       showButton: true,
       buttonText: '사전과제',
+      showButton2: false,
+      buttonText2: '',
+      
     },
     {
       title: '디자인',
@@ -157,6 +161,8 @@ const RecruitingPart = () => {
       selectedImage: SelectedVector,
       showButton: true,
       buttonText: '사전과제',
+      showButton2: false,
+      buttonText2: '',
     },
     {
       title: 'APP(iOS)',
@@ -166,7 +172,9 @@ const RecruitingPart = () => {
       vectorImage: DevelopVector,
       selectedImage: SelectedVector,
       showButton: true,
-      buttonText: 'New!',
+      buttonText: '사전과제!',
+      showButton2: true,
+      buttonText2: 'New!',
     },
     {
       title: 'WEB',
@@ -177,6 +185,8 @@ const RecruitingPart = () => {
       selectedImage: SelectedVector,
       showButton: false,
       buttonText: false,
+      showButton2: false,
+      buttonText2: '',
     },
     {
       title: 'SERVER',
@@ -187,6 +197,8 @@ const RecruitingPart = () => {
       selectedImage: SelectedVector,
       showButton: true,
       buttonText: 'New!',
+      showButton2: false,
+      buttonText2: '',
     },
   ];
 
@@ -223,8 +235,13 @@ const handleHover = (index) => {
                 <Header5 textColor={button.textColor}>
                   {button.title}
                   {button.showButton && (
-                    <SmallButton textColor={button.textColor} hoverColor={button.hoverColor}>
+                    <SmallButton textColor={button.textColor} hoverColor={button.hoverColor} left={12}>
                       <BtnText>{button.buttonText}</BtnText>
+                    </SmallButton>
+                  )}
+                  {button.showButton2 && (
+                    <SmallButton textColor={button.textColor} hoverColor={button.hoverColor} left={10}>
+                      <BtnText>{button.buttonText2}</BtnText>
                     </SmallButton>
                   )}
                 </Header5>
@@ -244,7 +261,7 @@ const handleHover = (index) => {
                   <Header5 textColor={button.textColor}>
                     {button.title}
                     {button.showButton && (
-                      <SmallButton textColor={button.textColor} hoverColor={button.hoverColor}>
+                      <SmallButton textColor={button.textColor} hoverColor={button.hoverColor} left={12}>
                         <BtnText>{button.buttonText}</BtnText>
                       </SmallButton>
                     )}
