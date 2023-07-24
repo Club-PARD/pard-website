@@ -1,17 +1,16 @@
-import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
-import React from 'react';
-import ServiceVector from '../../../assets/img/ServiceVector.png';
-import DesignVector from '../../../assets/img/DesignVector.png';
-import DevelopVector from '../../../assets/img/DevelopVector.png';
-import SelectedVector from '../../../assets/img/SelectedVector.png';
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from "../../../styles/theme";
+import React from "react";
+import ServiceVector from "../../../assets/img/ServiceVector.png";
+import DesignVector from "../../../assets/img/DesignVector.png";
+import DevelopVector from "../../../assets/img/DevelopVector.png";
+import SelectedVector from "../../../assets/img/SelectedVector.png";
 
 const PartDiv = styled.div`
   height: 600px;
   position: relative;
   margin-top: 50px;
   margin-left: 10px;
-  
 `;
 
 const Div = styled.div`
@@ -22,23 +21,22 @@ const Div = styled.div`
 `;
 
 const Header7 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
+  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
   line-height: 140%;
   margin-right: 420px;
   margin-bottom: 137px;
   display: flex;
   justify-content: center;
-
 `;
 
 const Header5 = styled.div`
   font-size: ${({ theme }) => theme.Mob_fontSizes.Header5};
   font-weight: ${({ theme }) => theme.fontWeights.Header5};
-  color: ${({ textColor }) => textColor || '#000000'};
-  font-family: 'NanumSquare Neo';
+  color: ${({ textColor }) => textColor || "#000000"};
+  font-family: "NanumSquare Neo";
   display: flex;
   align-items: center;
   white-space: pre-line;
@@ -49,7 +47,7 @@ const Header5 = styled.div`
 const Body1 = styled.div`
   font-size: ${({ theme }) => theme.Web_fontSizes.Body1};
   font-weight: ${({ theme }) => theme.fontWeights.Body1};
-  font-family: 'NanumSquare Neo';
+  font-family: "NanumSquare Neo";
   color: #000000;
   margin-bottom: 22px;
   margin-left: 21px;
@@ -57,7 +55,7 @@ const Body1 = styled.div`
 `;
 
 const BtnText = styled.div`
-  font-family: 'NanumSquare Neo';
+  font-family: "NanumSquare Neo";
   font-style: normal;
   font-weight: 800;
   font-size: 14.5455px;
@@ -66,7 +64,7 @@ const BtnText = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 `;
 
@@ -83,8 +81,8 @@ const SmallButton = styled.button`
   color: ${({ textColor }) => textColor};
   border: none;
   /* margin-left: 15px; */
-  margin-left: ${props => props.left}px;
-    width: auto;
+  margin-left: ${(props) => props.left}px;
+  width: auto;
   padding: 5px 10px;
   cursor: pointer;
 `;
@@ -102,7 +100,7 @@ const Button = styled.a`
   width: 320px;
   height: 105px;
   border-radius: 8.70663px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin-left: 56px;
   position: relative;
   cursor: pointer;
@@ -111,11 +109,11 @@ const Button = styled.a`
     background-color: ${({ hoverColor }) => hoverColor};
     ${Header5},
     ${Body1} {
-      color: #FFFFFF;
+      color: #ffffff;
     }
     ${SmallButton} {
       color: ${({ hoverColor }) => hoverColor};
-      background-color: #FFFFFF;
+      background-color: #ffffff;
     }
     ${BtnText} {
       color: ${({ hoverColor }) => hoverColor};
@@ -140,77 +138,76 @@ const ButtonRow = styled.div`
 const RecruitingPart = () => {
   const buttons = [
     {
-      title: '서비스 기획',
-      link: 'https://pard-recruiting.oopy.io/part/pm',
-      textColor: '#000000',
-      hoverColor: '#5262F5',
+      title: "서비스 기획",
+      link: "https://pard-recruiting.oopy.io/part/pm",
+      textColor: "#000000",
+      hoverColor: "#5262F5",
       vectorImage: ServiceVector,
       selectedImage: SelectedVector,
       showButton: true,
-      buttonText: '사전과제',
+      buttonText: "사전과제",
       showButton2: false,
-      buttonText2: '',
-      
+      buttonText2: "",
     },
     {
-      title: '디자인',
-      link: 'https://pard-recruiting.oopy.io/part/design',
-      textColor: '#000000',
-      hoverColor: '#7B3FEF',
+      title: "디자인",
+      link: "https://pard-recruiting.oopy.io/part/design",
+      textColor: "#000000",
+      hoverColor: "#7B3FEF",
       vectorImage: DesignVector,
       selectedImage: SelectedVector,
       showButton: true,
-      buttonText: '사전과제',
+      buttonText: "사전과제",
       showButton2: false,
-      buttonText2: '',
+      buttonText2: "",
     },
     {
-      title: 'APP(iOS)',
-      link: 'https://pard-recruiting.oopy.io/part/app',
-      textColor: '#000000',
-      hoverColor: '#FF5C00',
+      title: "APP(iOS)",
+      link: "https://pard-recruiting.oopy.io/part/app",
+      textColor: "#000000",
+      hoverColor: "#FF5C00",
       vectorImage: DevelopVector,
       selectedImage: SelectedVector,
       showButton: true,
-      buttonText: '사전과제!',
+      buttonText: "사전과제!",
       showButton2: true,
-      buttonText2: 'New!',
+      buttonText2: "New!",
     },
     {
-      title: 'WEB',
-      link: 'https://pard-recruiting.oopy.io/part/web',
-      textColor: '#000000',
-      hoverColor: '#FF5C00',
+      title: "WEB",
+      link: "https://pard-recruiting.oopy.io/part/web",
+      textColor: "#000000",
+      hoverColor: "#FF5C00",
       vectorImage: DevelopVector,
       selectedImage: SelectedVector,
       showButton: false,
       buttonText: false,
       showButton2: false,
-      buttonText2: '',
+      buttonText2: "",
     },
     {
-      title: 'SERVER',
-      link: 'https://pard-recruiting.oopy.io/part/server',
-      textColor: '#000000',
-      hoverColor: '#FF5C00',
+      title: "SERVER",
+      link: "https://pard-recruiting.oopy.io/part/server",
+      textColor: "#000000",
+      hoverColor: "#FF5C00",
       vectorImage: DevelopVector,
       selectedImage: SelectedVector,
       showButton: true,
-      buttonText: 'New!',
+      buttonText: "New!",
       showButton2: false,
-      buttonText2: '',
+      buttonText2: "",
     },
   ];
 
   const openLink = (link) => {
-    window.open(link, '_blank');
+    window.open(link, "_blank");
   };
 
-const [isHovered, setIsHovered] = React.useState(null);
+  const [isHovered, setIsHovered] = React.useState(null);
 
-const handleHover = (index) => {
-  setIsHovered(index);
-};
+  const handleHover = (index) => {
+    setIsHovered(index);
+  };
 
   return (
     <Div>
@@ -228,25 +225,33 @@ const handleHover = (index) => {
                   onMouseEnter={() => handleHover(index)}
                   onMouseLeave={() => handleHover(null)}
                 >
-                <Vector 
-                src={button.vectorImage}
-                isHovered={isHovered === index}
-                />
-                <Header5 textColor={button.textColor}>
-                  {button.title}
-                  {button.showButton && (
-                    <SmallButton textColor={button.textColor} hoverColor={button.hoverColor} left={12}>
-                      <BtnText>{button.buttonText}</BtnText>
-                    </SmallButton>
-                  )}
-                  {button.showButton2 && (
-                    <SmallButton textColor={button.textColor} hoverColor={button.hoverColor} left={10}>
-                      <BtnText>{button.buttonText2}</BtnText>
-                    </SmallButton>
-                  )}
-                </Header5>
-                <Body1>자세히 보기</Body1>
-              </Button>
+                  <Vector
+                    src={button.vectorImage}
+                    isHovered={isHovered === index}
+                  />
+                  <Header5 textColor={button.textColor}>
+                    {button.title}
+                    {button.showButton && (
+                      <SmallButton
+                        textColor={button.textColor}
+                        hoverColor={button.hoverColor}
+                        left={12}
+                      >
+                        <BtnText>{button.buttonText}</BtnText>
+                      </SmallButton>
+                    )}
+                    {button.showButton2 && (
+                      <SmallButton
+                        textColor={button.textColor}
+                        hoverColor={button.hoverColor}
+                        left={10}
+                      >
+                        <BtnText>{button.buttonText2}</BtnText>
+                      </SmallButton>
+                    )}
+                  </Header5>
+                  <Body1>자세히 보기</Body1>
+                </Button>
               ))}
             </ButtonRow>
             <ButtonRow>
@@ -261,7 +266,11 @@ const handleHover = (index) => {
                   <Header5 textColor={button.textColor}>
                     {button.title}
                     {button.showButton && (
-                      <SmallButton textColor={button.textColor} hoverColor={button.hoverColor} left={12}>
+                      <SmallButton
+                        textColor={button.textColor}
+                        hoverColor={button.hoverColor}
+                        left={12}
+                      >
                         <BtnText>{button.buttonText}</BtnText>
                       </SmallButton>
                     )}
