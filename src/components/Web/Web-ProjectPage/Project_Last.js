@@ -30,18 +30,18 @@ const Div = styled.div`
 function ProjectLast() {
   const [getData, setGetData] = useState();
 
+  const fetchAllData = async() => {
+    await getDocs(collection(dbService, "Project"))
+            .then((querySnapshot)=>{       
+              setGetData(querySnapshot.docs
+                    .map((doc) => ({...doc.data(), id:doc.uid })))
+            })
+            console.log('데이터 :',getData);   
+};
 
-  async function fetchAllData() { 
-    const data = await getDocs(collection(dbService, "Project"));
-    const newData = data.docs.map(doc => ({ ...doc.data()}));
-    console.log('data 가공 전',newData);
-    setGetData(newData);
-  }
-  
+
   useEffect(() => { 
     fetchAllData();
-    console.log('asdf');
-    console.log("가져온 data : ",getData);
   }, [])
 
   return (

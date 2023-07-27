@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useEffect } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -41,6 +42,10 @@ const Pagination = ({ images }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
   const totalPages = Math.ceil(images.length / itemsPerPage);
+
+  useEffect(() => { 
+    console.log('받아온 정보 : ',images);
+  }, [])
 
   const handleClick = (pageNumber) => {
     setCurrentPage(pageNumber);
