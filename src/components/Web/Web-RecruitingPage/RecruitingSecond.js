@@ -311,7 +311,7 @@ function RecruitingSecond() {
                 </Icon3>
               </IconWrap>
               <Box3>면접</Box3>
-              <BoxText>8/29 ~ 9/01</BoxText>
+              <BoxText>8/29(화) ~ 9/01(금)</BoxText>
             </Box>
             <Box style={{ border: "2px solid rgba(100, 197, 154, 1.0)" }}>
               <IconWrap>
