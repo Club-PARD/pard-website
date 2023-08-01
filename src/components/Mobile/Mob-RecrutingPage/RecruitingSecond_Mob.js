@@ -111,6 +111,8 @@ const BoxText = styled.div`
   line-height: 140%;
   white-space: nowrap;
   margin-left: 60px;
+  margin-top: 6px;
+  
 
   span.highlight {
     color: #64c59a;

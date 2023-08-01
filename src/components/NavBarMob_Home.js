@@ -24,8 +24,8 @@ const Nav = styled.nav`
 
 const Logo = styled.div`
 img {
-    height: 51px;// 로고 크기가 px로 바꾸니 너무 작아서 1.5배늘림
-    width: 180px;
+    height: 45px;// 로고 크기가 px로 바꾸니 너무 작아서 1.5배늘림
+    width: 140px;
   }
   margin-right: auto; 
   margin-left: 10px;

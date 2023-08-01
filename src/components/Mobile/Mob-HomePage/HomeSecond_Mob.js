@@ -44,7 +44,7 @@ const textDB = [
   },
   {
     id: 3,
-    text: "PARD는 기획자, 디자이너, 개발자가 모여\nPay it Forward를 실천하는 \n대학생 IT 협업동아리입니다.",
+    text: "PARD는 기획자, 디자이너, 개발자가 모여\n Pay it Forward를 실천하는 \n대학생 IT 협업동아리입니다.",
     breakPoint: secondScrollPoint + period2,
     period: period2 + period3,
     posX: "45%",
@@ -52,7 +52,7 @@ const textDB = [
   },
   {
     id: 4,
-    text: "대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
+    text: "\n대가를 바라지 않고 남을 돕는 행위를 기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 함께 성장하는 법을 배워나가는 조직. \n\nPARD를 소개합니다. ",
     breakPoint: secondScrollPoint + period2 + period3,
     period: period2,
     posX: "48%",
@@ -142,6 +142,7 @@ const ScrollIcon = styled.img`
 `;
 
 const Text1 = styled.div`
+ line-height: 140%;
   font-size: ${({ textInfo, theme }) => textFontSizeLogic(textInfo, theme)};
   font-weight: ${({ textInfo, theme }) => textFontWeightLogic(textInfo, theme)};
   color: #ffffff;

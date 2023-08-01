@@ -76,8 +76,9 @@ function RecruitingFirst() {
     <Div>
       <PartDiv>
         <ThemeProvider theme={theme}>
-          <Header2>협업이 무엇이라고 생각하시나요?</Header2>
-          <Header5>파드는 제대로 ‘협업’하고자 하는 사람들이<br/>함께 ‘성장’하고자 모였어요!</Header5>
+          <Header2>함께 성장하며 최고의 팀을 만들어가는 곳</Header2>
+          <Header5>단순히 같이 일하는 것이 협업이라고 생각하시나요?
+            <br/>PARD에서 서로의 전문성을 이해하고, 솔직하게 대립하고, 빠르게 실행해요.</Header5>
           <Button onClick={handleClick}>2기 모집 알림 신청하기</Button>
           <DownLogo src={require('../../../assets/img/DownScrollLogo.png')}/>
         </ThemeProvider>
