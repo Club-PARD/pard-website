@@ -44,19 +44,6 @@ const Subtitle3 = styled.div`
     line-height: 140%;
     `;
 
-const TextWrap = styled.div`
-    position: absolute;
-    width: 250px;
-    height: 22%;
-    top: 78%;
-    border-bottom-left-radius: 19.5px;
-    border-bottom-right-radius: 19.5px;
-    background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
-        : position === 'Designer'
-            ? "rgba(123,63,239,0.5)" : position === 'Operator'
-                ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
-    transition: 0.3s;
-    `;
 
 const Subtitle1 = styled.div`
     font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
@@ -107,6 +94,19 @@ const Column = styled.div`
     position: relative;
     max-width: 333px;
     `
+const TextWrap = styled.div`
+position: absolute;
+width: 250px;
+height: 22%;
+top: 78%;
+border-bottom-left-radius: 19.5px;
+border-bottom-right-radius: 19.5px;
+background-color :  ${({ position }) => position === 'Developer' ? "rgba(255,92,0,0.5)"
+    : position === 'Designer'
+        ? "rgba(123,63,239,0.5)" : position === 'Operator'
+            ? "rgba(100, 197, 154, 0.5)" : "rgba(82,98,245,0.5)"};
+transition: 0.3s;
+`;
 
 const ImageWrapper = styled.div`
     max-width: 250px;
@@ -128,18 +128,19 @@ const ImageWrapper = styled.div`
         }
     }
 `
-const Image = styled.img`
-    max-width: 250px;
-    width: 250px;
-    height: 300px;
-    display: block;
-    `
 const IconWrapper = styled.div`
     display: none;
     ${ImageWrapper}:hover & {
     display: flex;
     justify-content: flex-end;
     }
+    `
+
+const Image = styled.img`
+    max-width: 250px;
+    width: 250px;
+    height: 300px;
+    display: block;
     `
 const IconBackground = styled.a`
 position: relative;
