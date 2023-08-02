@@ -1,21 +1,20 @@
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
 import React from 'react';
-import { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { dbService } from '../../../fbase';
-import { Pagination } from 'react-bootstrap';
-
+import AboutImage from '../../../assets/img/AboutLogo.png';
+import ProgramFrame from '../../../assets/img/Program_Mob_Bar.png';
 
 const PartDiv = styled.div`
-  height:  1881px;
+  height: 950px;
   position: relative;
-  /* background-color: red; */
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url(${require('../../../assets/img/ProjectLast.png')});
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 `;
 
@@ -26,29 +25,48 @@ const Div = styled.div`
   align-items: center;
 `;
 
+const ArrowLogo = styled.img`
+width: 80px;
+height: 120px;
+/* margin-left: 100px;
+margin-right: 100px; */
+`
+
+const Header7 = styled.div`
+  font-size: ${props => props.theme.Web_fontSizes.Header7};
+  font-weight: ${props => props.theme.fontWeights.Header7};
+  color: #FFFFFF;
+  font-family: 'NanumSquare Neo';
+font-style: normal;
+font-weight: 800;
+font-size: 40px;
+line-height: 140%;
+margin-top: 550px;
+`;
+
+
+const LogoDiv = styled.div`
+width: 1000px;
+display: flex;
+margin-bottom: 180px;
+margin-top: 200px;
+justify-content: space-between;
+`
 
 function ProjectLast() {
-  const [getData, setGetData] = useState();
-
-  const fetchAllData = async() => {
-    await getDocs(collection(dbService, "Project"))
-            .then((querySnapshot)=>{       
-              setGetData(querySnapshot.docs
-                    .map((doc) => ({...doc.data(), id:doc.uid })))
-            })
-            console.log('데이터 :',getData);   
-};
-
-
-  useEffect(() => { 
-    fetchAllData();
-  }, [])
-
   return (
     <Div>
       <PartDiv>
         <ThemeProvider theme={theme}>
-        <Pagination images={getData} />
+          <Header7>
+          PARD의 첫 프로젝트가<br/>곧 공개 예정이에요!
+          </Header7>
+          <LogoDiv>
+          <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
+          <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
+          <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
+          <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
+          </LogoDiv>
         </ThemeProvider>
       </PartDiv>
     </Div>
