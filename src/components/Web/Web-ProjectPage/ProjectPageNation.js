@@ -4,43 +4,40 @@ import styled from "styled-components";
 import { dbService } from "../../../fbase";
 import { collection, getDocs } from "firebase/firestore";
 
-
 const Header6 = styled.div`
-    font-size: ${props => props.theme.Web_fontSizes.Header6};
-    font-weight: ${props => props.theme.fontWeights.Header6};
-    color: #FFFFFF;
-    font-family: 'NanumSquare Neo';
-    white-space: pre-line;
-    text-align : center;
-    line-height: 140%;
-    margin-left: 2px;
-    `;
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: center;
+  line-height: 140%;
+  margin-left: 2px;
+`;
 
-    
 const Header7 = styled.div`
-font-size: ${props => props.theme.Web_fontSizes.Header7};
-font-weight: ${props => props.theme.fontWeights.Header7};
-color: #FFFFFF;
-font-family: 'NanumSquare Neo';
-white-space: pre-line;
-text-align : center;
-line-height: 140%;
-margin-right: 100px;
-margin-top: 3px;
+  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: center;
+  line-height: 140%;
+  margin-right: 100px;
+  margin-top: 3px;
 `;
 
 const Body2 = styled.div`
-font-size: ${props => props.theme.Web_fontSizes.Body2};
-font-weight: ${props => props.theme.fontWeights.Body2};
-color: #FFFFFF;
-font-family: 'NanumSquare Neo';
-white-space: pre-line;
-text-align: start;
-line-height: 140%;
-width: 190px;
-margin-top: 25px;
+  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
+  font-weight: ${(props) => props.theme.fontWeights.Body2};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: start;
+  line-height: 140%;
+  width: 190px;
+  margin-top: 25px;
 `;
-
 
 const Container = styled.div`
   display: grid;
@@ -100,9 +97,9 @@ const MainImg = styled.img`
 `;
 
 const ContentTextDiv = styled.div`
-display: flex;
-margin-top: 210px;
-margin-right: 188px;
+  display: flex;
+  margin-top: 210px;
+  margin-right: 188px;
 `;
 
 const ProjectGrid = () => {
@@ -132,13 +129,15 @@ const ProjectGrid = () => {
             <TextDiv>
               <ContentsWrap>
                 <ContentTextDiv>
-                <Header6>{project.generation} | {project.part}</Header6>
+                  <Header6>
+                    {project.generation} | {project.part}
+                  </Header6>
                 </ContentTextDiv>
-                <Header7>
-                {project.serviceName} 
-                </Header7>
+                <Header7>{project.serviceName}</Header7>
                 <Body2>
-                흩어진 기록을 한눈에 보여주는 <br/>아카이빙 서비스
+                {project.title}
+                  {/* 흩어진 기록을 한눈에 보여주는 <br />
+                  아카이빙 서비스 */}
                 </Body2>
               </ContentsWrap>
             </TextDiv>
