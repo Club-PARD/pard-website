@@ -46,10 +46,9 @@ const Div1 = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 1080px;
-  
+
   // background-color: green;
 `;
-
 
 const HeaderDiv2 = styled.div`
   display: flex;
@@ -58,7 +57,6 @@ const HeaderDiv2 = styled.div`
   width: 1080px;
   // background-color: red;
 `;
-
 
 function ProgramsTrain() {
   const Headers2 = ["세미나", "스터디", "서핑데이", "숏커톤", "롱커톤"];
@@ -75,8 +73,7 @@ function ProgramsTrain() {
       scrollTrigger: {
         trigger: ".div1",
         start: "top+=50 center",
-        end: () =>
-          `+=${document.querySelector(".div1").scrollWidth}`,
+        end: () => `+=${document.querySelector(".div1").scrollWidth}`,
         scrub: 0.4,
         // markers: true,
         pin: true,
@@ -113,17 +110,17 @@ function ProgramsTrain() {
 
   return (
     <div>
-    <ThemeProvider theme={theme}>
-      <HeaderDiv className={isHeaderFixed ? "" : "unfixed"}>
-        <HeaderDiv2>
-        <Header2_1>PROGRAMS</Header2_1>
-        <Header2 visible={isHeaderFixed}>{Header2Text}</Header2>
-        </HeaderDiv2>
-      </HeaderDiv>
-      <Div1 className="div1">
-        <ProgramsTrain2 />
-      </Div1>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <HeaderDiv className={isHeaderFixed ? "" : "unfixed"}>
+          <HeaderDiv2>
+            <Header2_1>PROGRAMS</Header2_1>
+            <Header2 visible={isHeaderFixed}>{Header2Text}</Header2>
+          </HeaderDiv2>
+        </HeaderDiv>
+        <Div1 className="div1">
+          <ProgramsTrain2 />
+        </Div1>
+      </ThemeProvider>
     </div>
   );
 }
