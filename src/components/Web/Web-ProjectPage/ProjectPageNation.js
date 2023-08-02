@@ -1,78 +1,47 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { useEffect } from "react";
+// src/components/ProjectGrid.js
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { dbService } from "../../../fbase";
+import { collection, getDocs } from "firebase/firestore";
 
 const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+`;
+
+const MainImg = styled.img`
   width: 320px;
-height: 400px;`
-;
-
-const ImageWrapper = styled.div`
-  position: relative;
-  width: 33.33%;
-  padding: 10px;
-  cursor: pointer;
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-  &:hover .text {
-    opacity: 1;
-  }
+  height: 400px;
 `;
 
-const Text = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-`;
+const ProjectGrid = () => {
+  const [projects, setProjects] = useState([]);
 
-const Pagination = ({ images }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9;
-  const totalPages = Math.ceil(images.length / itemsPerPage);
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const data = await getDocs(collection(dbService, "Project")); // create라는 collection 안에 모든 document를 읽어올 때 사용한다.
+        const newData = data.docs.map((doc) => ({ ...doc.data() }));
+        setProjects(newData);
+        console.log(newData);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
 
-  useEffect(() => { 
-    console.log('받아온 정보 : ',images);
-  }, [])
-
-  const handleClick = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  const renderImages = () => {
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentImages = images.slice(startIndex, endIndex);
-
-    return currentImages.map((image, index) => (
-      <ImageWrapper key={index}>
-        <img src={image.mainImg} alt={`Image ${index + 1}`} />
-        <Text className="text">{image.title}</Text>
-      </ImageWrapper>
-    ));
-  };
+    fetchProjects();
+  }, []);
 
   return (
-    <>
-      <Container>{renderImages()}</Container>
-      <Text>asdfasf</Text>
-      <div>
-        {/* Implement pagination buttons here */}
-      </div>
-    </>
+    <Container>
+      {projects.map((project) => (
+        <div key={project.id}>
+          <MainImg src={project.mainImg} alt="TeamImg" />
+        </div>
+      ))}
+    </Container>
   );
 };
 
-export default Pagination;
+export default ProjectGrid;
