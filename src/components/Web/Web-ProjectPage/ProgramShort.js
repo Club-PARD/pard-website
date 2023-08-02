@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
-import img1 from '../../../assets/img/숏커톤1.png';
-import img2 from '../../../assets/img/숏커톤2.png';
-import img3 from '../../../assets/img/숏커톤3.png';
+import img1 from "../../../assets/img/숏커톤1.png";
+import img2 from "../../../assets/img/숏커톤2.png";
+import img3 from "../../../assets/img/숏커톤3.png";
 
 const Header4 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header4};
@@ -26,7 +26,7 @@ const Body2 = styled.div`
 const Body2_1 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Body2};
   font-weight: ${(props) => props.theme.fontWeights.Body2};
-  color: #7B3FEF;
+  color: #7b3fef;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
   text-align: left;
@@ -57,7 +57,7 @@ const FirstCard = styled.div`
   height: 370px;
   border-radius: 20px 20px 20px 20px;
   margin-right: 30px;
-  margin-left: 80px; 
+  margin-left: 80px;
   background-color: #1a1a1a;
 `;
 
@@ -68,14 +68,14 @@ const CardContent = styled.div`
   align-items: center;
   margin-top: auto;
   height: 20%;
-  background-color: #7B3FEF;
+  background-color: #7b3fef;
   border-radius: 0px 0px 20px 20px;
 `;
 
 const CardImage = styled.img`
-  // width: ${(props) => (props.isCover ? 'auto' : '100%')};
-  // height: ${(props) => (props.isCover ? 'auto' : '100%')};
-  // object-fit: ${(props) => (props.isCover ? 'cover' : 'none')};
+  // width: ${(props) => (props.isCover ? "auto" : "100%")};
+  // height: ${(props) => (props.isCover ? "auto" : "100%")};
+  // object-fit: ${(props) => (props.isCover ? "cover" : "none")};
   width: 100%;
   height: 100%;
   border-radius: 20px 20px 0px 0px;
@@ -97,7 +97,8 @@ function ProgramShort() {
     {
       id: 2,
       image: img2,
-      description: "다양한 협업 방법론을 적용하면서\n더 나은 커뮤니케이션을 위한 회고",
+      description:
+        "다양한 협업 방법론을 적용하면서\n더 나은 커뮤니케이션을 위한 회고",
     },
     {
       id: 3,
@@ -121,8 +122,12 @@ function ProgramShort() {
       </FirstCard>
       {cardData.map((content) => (
         <Card key={content.id}>
-         <CardImage src={content.image} alt={`Card ${content.id}`} isCover={content.id === 3} />
-          <CardContent >
+          <CardImage
+            src={content.image}
+            alt={`Card ${content.id}`}
+            isCover={content.id === 3}
+          />
+          <CardContent>
             <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
           </CardContent>
         </Card>
