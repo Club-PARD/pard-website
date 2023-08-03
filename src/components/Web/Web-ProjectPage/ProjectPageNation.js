@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { dbService } from "../../../fbase";
 import { collection, getDocs } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const Header6 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header6};
@@ -21,7 +22,7 @@ const Header7 = styled.div`
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  text-align: center;
+  text-align: start;
   line-height: 140%;
   margin-right: 100px;
   margin-top: 3px;
@@ -56,7 +57,7 @@ const TextDiv = styled.div`
   height: 0%;
   top: 100%;
   border-radius: 20px;
-  transition: 2s;
+  transition: 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,6 +67,7 @@ const ContentDiv = styled.div`
   width: 320px;
   height: 400px;
   display: block;
+  cursor: pointer;
 
   &:hover {
     ${TextDiv} {
@@ -111,7 +113,7 @@ const ProjectGrid = () => {
         const data = await getDocs(collection(dbService, "Project"));
         const newData = data.docs.map((doc) => ({ ...doc.data() }));
         setProjects(newData);
-        console.log(newData);
+        console.log("일어온 data:", newData);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
@@ -123,7 +125,8 @@ const ProjectGrid = () => {
   return (
     <Container>
       {projects.map((project) => (
-        <Column>
+        <Link to={`/Project/${project.id}`}  key={project.id}>
+        <Column key={project.id}> 
           <ContentDiv key={project.id}>
             <MainImg src={project.mainImg} alt="TeamImg" />
             <TextDiv>
@@ -136,13 +139,12 @@ const ProjectGrid = () => {
                 <Header7>{project.serviceName}</Header7>
                 <Body2>
                 {project.title}
-                  {/* 흩어진 기록을 한눈에 보여주는 <br />
-                  아카이빙 서비스 */}
                 </Body2>
               </ContentsWrap>
             </TextDiv>
           </ContentDiv>
         </Column>
+        </Link>
       ))}
     </Container>
   );

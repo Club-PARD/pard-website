@@ -9,6 +9,7 @@ import ErrorPage from './pages/ErrorPage';
 import ReactGA from "react-ga";
 import TagManager from 'react-gtm-module'
 import React, { useEffect } from 'react';
+import ProjectDetail from './components/Web/Web-ProjectPage/ProjectDetailPage';
 
  function App() {
 
@@ -34,6 +35,7 @@ ReactGA.pageview(window.location.pathname); // 추적하려는 page 설정
              <Route path="/Inquiry" element={<InquiryPage />} />
              <Route path="/Recruting" element={<RecruitingPage />} />
              <Route path='/Project' element={<ProjectPage />} />
+             <Route path="/Project/:id" component={<ProjectDetail/>} />
              <Route path='/pard-website' element={<HomePage />} />
              <Route path="*" element={<ErrorPage/>} />
          </Routes>
