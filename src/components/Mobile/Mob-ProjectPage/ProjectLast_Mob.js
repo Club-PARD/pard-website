@@ -65,7 +65,7 @@ function ProjectLast_Mob() {
             <PartDiv>
                 <ThemeProvider theme={theme}>
                     <Header7>
-                        PARD의 첫 프로젝트가<br/>곧 공개 예정이에요!
+                        PARD의 첫 프로젝트를<br/>웹에서 확인해주세요!
                     </Header7>
                     <LogoDiv>
                         <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>

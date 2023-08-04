@@ -269,6 +269,7 @@ function InquiryManagemaentMob() {
       site: [
         //     { name: 'linkedin', link: 'https://www.linkedin.com/in/%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/' },
         //    { name: 'disquiet', link: 'https://disquiet.io/@dltlsdud0319' },
+        // { name: "github", link: "https://github.com/dasdfadssda" },
         { name: "instagram", link: "https://www.instagram.com/vang.ee/" },
       ],
     },
