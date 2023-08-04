@@ -37,7 +37,7 @@ const Header6 = styled.div`
   line-height: 160%;
   white-space: pre-line;
   text-align: start;
-  width: 580px;
+  width: 590px;
 `;
 
 const Header7 = styled.div`
