@@ -125,24 +125,22 @@ const ProjectGrid = () => {
     <Container>
       {projects.map((project) => (
         <Link to={`/Project/${project.id}`} key={project.id}>
-        <Column key={project.id}> 
-          <ContentDiv key={project.id}>
-            <MainImg src={project.mainImg} alt={project.serviceName} />
-            <TextDiv>
-              <ContentsWrap>
-                <ContentTextDiv>
-                  <Header6>
-                    {project.generation} | {project.part}
-                  </Header6>
-                </ContentTextDiv>
-                <Header7>{project.serviceName}</Header7>
-                <Body2>
-                {project.title}
-                </Body2>
-              </ContentsWrap>
-            </TextDiv>
-          </ContentDiv>
-        </Column>
+          <Column key={project.id}>
+            <ContentDiv key={project.id}>
+              <MainImg src={project.mainImg} alt={project.serviceName} />
+              <TextDiv>
+                <ContentsWrap>
+                  <ContentTextDiv>
+                    <Header6>
+                      {project.generation} | {project.part}
+                    </Header6>
+                  </ContentTextDiv>
+                  <Header7>{project.serviceName}</Header7>
+                  <Body2>{project.title}</Body2>
+                </ContentsWrap>
+              </TextDiv>
+            </ContentDiv>
+          </Column>
         </Link>
       ))}
     </Container>

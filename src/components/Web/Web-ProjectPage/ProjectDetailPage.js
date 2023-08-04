@@ -34,9 +34,10 @@ const Header6 = styled.div`
   margin-top: ${(props) => props.marginTop};
   color: white;
   font-family: "NanumSquare Neo";
+  line-height: 160%; 
   white-space: pre-line;
   text-align: start;
-  width: 570px;
+  width: 580px;
 `;
 
 const Header7 = styled.div`
@@ -67,8 +68,7 @@ const PartDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   overflow-x: hidden;
-  background-color: red;
-  transition: background-color 0.3s ease;
+  /* background-color: red; */
 `;
 
 const Div = styled.div`
@@ -82,12 +82,13 @@ const Div = styled.div`
 const MainBackImg = styled.img`
   width: 100%;
   height: 647px;
+  border: none;
 `;
 
 const MainDiv = styled.div`
   width: 100%;
   height: 800px;
-  background-color: green;
+  /* background-color: green; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,11 +100,12 @@ const HR = styled.hr`
   height: 1px;
   background-color: #fff;
   margin-top: 34px;
+  border: none;
 `;
 
 const ContentsDiv = styled.div`
   display: flex;
-  background-color: blue;
+  /* background-color: blue; */
   width: 1216px;
   height: 100%;
   margin-top: 50px;
@@ -111,7 +113,7 @@ const ContentsDiv = styled.div`
 
 const RightContent = styled.div`
   width: 624px;
-  background-color: beige;
+  /* background-color: beige; */
 `;
 
 const TitleText = styled.div`
@@ -124,7 +126,7 @@ const TitleText = styled.div`
 const PartText = styled.div`
   display: flex;
   margin-top: ${(props) => props.marginTop};
-  background-color: yellow;
+  /* background-color: yellow; */
   height: 28px;
   align-items: center;
   justify-content: start;
@@ -145,7 +147,7 @@ const PartTool = styled.div`
 
 const LeftContent = styled.div`
   width: 591px;
-  background-color: brown;
+  /* background-color: brown; */
 `;
 
 const ImgDiv = styled.div`
@@ -172,44 +174,38 @@ function ProjectDetail() {
   const navigate = useNavigate();
 
   const [detailProjects, setDetailProjects] = useState([]);
-  const [detailtool, setDetailtool] = useState([]);
-  const [detailMember, setDetailMember] = useState([]);
 
   const location = useLocation();
-  const currentURL = location.pathname; // Get the current URL path as a string
-  const id = currentURL.substring(currentURL.lastIndexOf("/") + "${id}");
+  const currentURL = location.pathname; 
+  const id = currentURL.split("/").pop(); 
 
-  useEffect(() => {
-    console.log("id :", id);
-    const fetchProjects = async () => {
-      try {
-        const docRef = doc(dbService, "Project", "1");
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          console.log("Document data:", docSnap.data());
-          setDetailProjects(docSnap.data());
-          setDetailtool(detailProjects.tool);
-          setDetailMember(detailProjects.member);
-        } else {
-          navigate("*");
-        }
-      } catch (error) {
-        console.log("에러임");
-        console.error("Error fetching projects:", error);
+  const fetchProjects = async () => {
+    try {
+      const docRef = doc(dbService, "Project", id);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+        setDetailProjects(docSnap.data());
+      } else {
+        navigate("*");
       }
-    };
+    } catch (error) {
+      console.log("에러임");
+      console.error("Error fetching projects:", error);
+    }
+  };
 
+useEffect(() => {
+    console.log("id :", id);
     fetchProjects();
   }, []);
-
+  
   useEffect(() => {
     if (detailProjects) {
-      setDetailtool(detailProjects.tool);
-      setDetailMember(detailProjects.member);
-      console.log("Detail tool:", detailtool);
-      console.log("Detail member:", detailMember);
+      console.log("Document tool:", detailProjects.tool);
+      console.log("asdf:", detailProjects.member);
     }
-  }, [detailProjects, setDetailtool, setDetailMember]);
+  }, [detailProjects, id]);
 
   return (
     <div>
@@ -232,7 +228,7 @@ function ProjectDetail() {
                     <Header8>{detailProjects.part} |</Header8>
                     <Header7>{detailProjects.serviceName}</Header7>
                   </TitleText>
-                  <PartText marginTop={"35px"}>
+                  {/* <PartText marginTop={"35px"}>
                     <Body3 color="white" align="start" marginright={"62px"}>
                       기획
                     </Body3>
@@ -289,7 +285,7 @@ function ProjectDetail() {
                         {tool}
                       </Body3>
                     ))}
-                  </PartText>
+                  </PartText> */}
                 </RightContent>
                 <LeftContent>
                   <ImgDiv>
@@ -301,11 +297,10 @@ function ProjectDetail() {
                     ))}
                   </ImgDiv>
                   <Header5 marginTop={"58px"}>{detailProjects.title}</Header5>
-                  {/* <Header6 marginTop={"20px"}>{detailProjects.contents}</Header6> */}
                   <ContentsText>
-                    {detailProjects.contents.map((tool, index) => (
+                    {/* {detailProjects.contents.map((tool, index) => (
                       <Header6 key={index}>{tool}</Header6>
-                    ))}
+                    ))} */}
                   </ContentsText>
                 </LeftContent>
               </ContentsDiv>
