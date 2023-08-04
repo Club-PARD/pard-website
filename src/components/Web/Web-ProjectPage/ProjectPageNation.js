@@ -104,6 +104,42 @@ const ContentTextDiv = styled.div`
   margin-right: 188px;
 `;
 
+const ButtonDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 450px;
+  width: 160px;
+  height: 40px;
+  /* background-color: red; */
+`;
+
+const NumButtonDiv = styled.div`
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--primary-purple, #7b3fef);
+  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
+  font-weight: ${(props) => props.theme.fontWeights.Body2};
+  line-height: 140%;
+  font-family: "NanumSquare Neo";
+  cursor: pointer;
+`;
+
+const ArrowButtonDiv = styled.img`
+  width: 20px;
+  height: 30px;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-right: ${(props) => props.marginright};
+  margin-left: ${(props) => props.marginleft};
+`;
+
 const ProjectGrid = () => {
   const [projects, setProjects] = useState([]);
 
@@ -122,28 +158,41 @@ const ProjectGrid = () => {
   }, []);
 
   return (
-    <Container>
-      {projects.map((project) => (
-        <Link to={`/Project/${project.id}`} key={project.id}>
-          <Column key={project.id}>
-            <ContentDiv key={project.id}>
-              <MainImg src={project.mainImg} alt={project.serviceName} />
-              <TextDiv>
-                <ContentsWrap>
-                  <ContentTextDiv>
-                    <Header6>
-                      {project.generation} | {project.part}
-                    </Header6>
-                  </ContentTextDiv>
-                  <Header7>{project.serviceName}</Header7>
-                  <Body2>{project.title}</Body2>
-                </ContentsWrap>
-              </TextDiv>
-            </ContentDiv>
-          </Column>
-        </Link>
-      ))}
-    </Container>
+    <>
+      <Container>
+        {projects.map((project) => (
+          <Link to={`/Project/${project.id}`} key={project.id}>
+            <Column key={project.id}>
+              <ContentDiv key={project.id}>
+                <MainImg src={project.mainImg} alt={project.serviceName} />
+                <TextDiv>
+                  <ContentsWrap>
+                    <ContentTextDiv>
+                      <Header6>
+                        {project.generation} | {project.part}
+                      </Header6>
+                    </ContentTextDiv>
+                    <Header7>{project.serviceName}</Header7>
+                    <Body2>{project.title}</Body2>
+                  </ContentsWrap>
+                </TextDiv>
+              </ContentDiv>
+            </Column>
+          </Link>
+        ))}
+      </Container>
+      <ButtonDiv>
+        <ArrowButtonDiv
+          src={require("../../../assets/img/ProjectPageimg/LeftArrow.png")}
+          marginright={"30px"}
+        />
+        <NumButtonDiv>1</NumButtonDiv>
+        <ArrowButtonDiv
+          src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
+          marginleft={"30px"}
+        />
+      </ButtonDiv>
+    </>
   );
 };
 

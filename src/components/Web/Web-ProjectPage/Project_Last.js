@@ -5,7 +5,7 @@ import React from "react";
 import ProjectGrid from "./ProjectPageNation";
 
 const PartDiv = styled.div`
-  height: 1881px;
+  height: 1800px;
   position: relative;
   width: 100%;
   display: flex;
