@@ -34,7 +34,7 @@ const Header6 = styled.div`
   margin-top: ${(props) => props.marginTop};
   color: white;
   font-family: "NanumSquare Neo";
-  line-height: 160%; 
+  line-height: 160%;
   white-space: pre-line;
   text-align: start;
   width: 580px;
@@ -170,42 +170,56 @@ const ContentsText = styled.div`
   margin-top: 20px;
 `;
 
+const ToolListDiv = styled.div`
+  margin-top: 175px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+`;
+
+const IconBackground = styled.a`
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+const Icon = styled.img`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+`;
+
 function ProjectDetail() {
   const navigate = useNavigate();
 
   const [detailProjects, setDetailProjects] = useState([]);
 
   const location = useLocation();
-  const currentURL = location.pathname; 
-  const id = currentURL.split("/").pop(); 
+  const currentURL = location.pathname;
+  const id = currentURL.split("/").pop();
 
   const fetchProjects = async () => {
-    try {
-      const docRef = doc(dbService, "Project", id);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
-        setDetailProjects(docSnap.data());
-      } else {
-        navigate("*");
-      }
-    } catch (error) {
-      console.log("에러임");
-      console.error("Error fetching projects:", error);
+    const docRef = doc(dbService, "Project", id);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      setDetailProjects(docSnap.data());
+    } else {
+      navigate("*");
     }
   };
 
-useEffect(() => {
+  useEffect(() => {
     console.log("id :", id);
     fetchProjects();
   }, []);
-  
-  useEffect(() => {
-    if (detailProjects) {
-      console.log("Document tool:", detailProjects.tool);
-      console.log("asdf:", detailProjects.member);
-    }
-  }, [detailProjects, id]);
 
   return (
     <div>
@@ -228,64 +242,69 @@ useEffect(() => {
                     <Header8>{detailProjects.part} |</Header8>
                     <Header7>{detailProjects.serviceName}</Header7>
                   </TitleText>
-                  {/* <PartText marginTop={"35px"}>
-                    <Body3 color="white" align="start" marginright={"62px"}>
-                      기획
-                    </Body3>
-                    {detailProjects.tool.planner.map((tool, index) => (
-                      <PartTool key={index}>{tool} </PartTool>
-                    ))}
-                  </PartText>
-                  <PartText marginTop={"20px"}>
-                    <Body3 color="white" align="start" marginright={"47px"}>
-                      디자인
-                    </Body3>
-                    {detailProjects.tool.designer.map((tool, index) => (
-                      <PartTool key={index} color={"#7B3FEF"}>
-                        {tool}
-                      </PartTool>
-                    ))}
-                  </PartText>
-                  <PartText marginTop={"20px"}>
-                    <Body3 color="white" align="start" marginright={"62px"}>
-                      개발
-                    </Body3>
-                    {detailProjects.tool.developer.map((tool, index) => (
-                      <PartTool key={index} color={"#FF5C00"}>
-                        {tool}
-                      </PartTool>
-                    ))}
-                  </PartText>
-                  <TitleText marginTop={"86px"}>
-                    <Header8>Team |</Header8>
-                    <Header7>{detailProjects.teamName}</Header7>
-                  </TitleText>
-                  <PartText marginTop={"35px"}>
-                    <Body3 color="white" align="start" marginright={"62px"}>
-                      기획
-                    </Body3>
-                    {detailProjects.member.planner.map((tool, index) => (
-                      <Body3 key={index}>{tool} </Body3>
-                    ))}
-                  </PartText>
-                  <PartText marginTop={"20px"}>
-                    <Body3 color="white" align="start" marginright={"47px"}>
-                      디자인
-                    </Body3>
-                    {detailProjects.member.designer.map((tool, index) => (
-                      <Body3 key={index}>{tool}</Body3>
-                    ))}
-                  </PartText>
-                  <PartText marginTop={"20px"}>
-                    <Body3 color="white" align="start" marginright={"62px"}>
-                      개발
-                    </Body3>
-                    {detailProjects.member.developer.map((tool, index) => (
-                      <Body3 key={index} marginright={"15px"}>
-                        {tool}
-                      </Body3>
-                    ))}
-                  </PartText> */}
+                  {detailProjects.tool && (
+                    <>
+                      <PartText marginTop={"35px"}>
+                        <Body3 color="white" align="start" marginright={"62px"}>
+                          기획
+                        </Body3>
+                        {detailProjects.tool.planner.map((tool, index) => (
+                          <PartTool key={index}>{tool} </PartTool>
+                        ))}
+                      </PartText>
+                      <PartText marginTop={"20px"}>
+                        <Body3 color="white" align="start" marginright={"47px"}>
+                          디자인
+                        </Body3>
+                        {detailProjects.tool.designer.map((tool, index) => (
+                          <PartTool key={index} color={"#7B3FEF"}>
+                            {tool}
+                          </PartTool>
+                        ))}
+                      </PartText>
+                      <PartText marginTop={"20px"}>
+                        <Body3 color="white" align="start" marginright={"62px"}>
+                          개발
+                        </Body3>
+                        {detailProjects.tool.developer.map((tool, index) => (
+                          <PartTool key={index} color={"#FF5C00"}>
+                            {tool}
+                          </PartTool>
+                        ))}
+                      </PartText>
+                      <TitleText marginTop={"86px"}>
+                        <Header8>Team |</Header8>
+                        <Header7>{detailProjects.teamName}</Header7>
+                      </TitleText>
+                      <PartText marginTop={"35px"}>
+                        <Body3 color="white" align="start" marginright={"62px"}>
+                          기획
+                        </Body3>
+                        {detailProjects.member.planner.map((tool, index) => (
+                          <Body3 key={index}>{tool} </Body3>
+                        ))}
+                      </PartText>
+                      <PartText marginTop={"20px"}>
+                        <Body3 color="white" align="start" marginright={"47px"}>
+                          디자인
+                        </Body3>
+                        {detailProjects.member.designer.map((tool, index) => (
+                          <Body3 key={index}>{tool}</Body3>
+                        ))}
+                      </PartText>
+                      <PartText marginTop={"20px"}>
+                        <Body3 color="white" align="start" marginright={"62px"}>
+                          개발
+                        </Body3>
+                        {detailProjects.member.developer.map((tool, index) => (
+                          <Body3 key={index} marginright={"15px"}>
+                            {tool}
+                          </Body3>
+                        ))}
+                      </PartText>
+                    </>
+                  )}
+                  ;
                 </RightContent>
                 <LeftContent>
                   <ImgDiv>
@@ -297,11 +316,78 @@ useEffect(() => {
                     ))}
                   </ImgDiv>
                   <Header5 marginTop={"58px"}>{detailProjects.title}</Header5>
-                  <ContentsText>
-                    {/* {detailProjects.contents.map((tool, index) => (
-                      <Header6 key={index}>{tool}</Header6>
-                    ))} */}
-                  </ContentsText>
+                  {detailProjects.contents && (
+                    <>
+                      <ContentsText>
+                        {detailProjects.contents.map((tool, index) => (
+                          <Header6 key={index}>{tool}</Header6>
+                        ))}
+                      </ContentsText>
+                    </>
+                  )}
+                  ;
+                  <ToolListDiv>
+                    {detailProjects.link && (
+                      <>
+                        {detailProjects.link.url && (
+                          <IconBackground
+                            key="url"
+                            href={detailProjects.link.url}
+                            target="_blank"
+                          >
+                            <Icon
+                              src={require("../../../assets/img/ProjectPageimg/URLImg.png")}
+                              alt={"url"}
+                              width={"38px"}
+                              height={"38px"}
+                            />
+                          </IconBackground>
+                        )}
+                        {detailProjects.link.github && (
+                          <IconBackground
+                            key="github"
+                            href={detailProjects.link.github}
+                            target="_blank"
+                          >
+                            <Icon
+                              src={require("../../../assets/img/ProjectPageimg/GitHubImg.png")}
+                              alt={"github"}
+                              width={"36px"}
+                              height={"36px"}
+                            />
+                          </IconBackground>
+                        )}
+                        {detailProjects.link.notion && (
+                          <IconBackground
+                            key="notion"
+                            href={detailProjects.link.notion}
+                            target="_blank"
+                          >
+                            <Icon
+                              src={require("../../../assets/img/ProjectPageimg/NotionImg.png")}
+                              alt={"notion"}
+                              width={"46px"}
+                              height={"46px"}
+                            />
+                          </IconBackground>
+                        )}
+                        {detailProjects.link.figma && (
+                          <IconBackground
+                            key="figma"
+                            href={detailProjects.link.figma}
+                            target="_blank"
+                          >
+                            <Icon
+                              src={require("../../../assets/img/ProjectPageimg/FigmaImg.png")}
+                              alt={"figma"}
+                              width={"32px"}
+                              height={"32px"}
+                            />
+                          </IconBackground>
+                        )}
+                      </>
+                    )}
+                  </ToolListDiv>
                 </LeftContent>
               </ContentsDiv>
             </MainDiv>

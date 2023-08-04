@@ -90,7 +90,7 @@ const NavBar = () => {
             </NavItem>
             <NavItem>
               <Link to="/Project" style={{ textDecoration: "none" }}>
-                <Subtitle1 active={pathname === '/Project'}>프로젝트</Subtitle1>
+                <Subtitle1 active={pathname.startsWith('/Project')}>프로젝트</Subtitle1>
               </Link>
             </NavItem>
             <NavItem>
