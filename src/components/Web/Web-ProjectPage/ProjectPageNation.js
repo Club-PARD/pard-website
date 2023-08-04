@@ -113,7 +113,6 @@ const ProjectGrid = () => {
         const data = await getDocs(collection(dbService, "Project"));
         const newData = data.docs.map((doc) => ({ ...doc.data() }));
         setProjects(newData);
-        console.log("일어온 data:", newData);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
@@ -125,10 +124,10 @@ const ProjectGrid = () => {
   return (
     <Container>
       {projects.map((project) => (
-        <Link to={`/Project/${project.id}`}  key={project.id}>
+        <Link to={`/Project/${project.id}`} key={project.id}>
         <Column key={project.id}> 
           <ContentDiv key={project.id}>
-            <MainImg src={project.mainImg} alt="TeamImg" />
+            <MainImg src={project.mainImg} alt={project.serviceName} />
             <TextDiv>
               <ContentsWrap>
                 <ContentTextDiv>
