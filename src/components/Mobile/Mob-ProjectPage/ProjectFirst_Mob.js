@@ -15,10 +15,9 @@ const Header8 = styled.div`
   font-style: normal;
   width: 300px;
   height: 140px;
-  position: relative;
-  line-height: 140%;
-  margin-bottom: 10px;
-
+  position: absolute;
+    line-height: 140%;
+    top: 13%;
 `;
 
 const ButtonText1 = styled.div`
@@ -30,15 +29,14 @@ font-weight: 700;
 font-size: 16px;
 line-height: 140%;
 color: white;
-position: relative;
 text-align: center;
-margin-bottom: 215px;
-
-
+position: absolute;
+top: 40%;
 `;
 
 const PartDiv = styled.div`
-  height: 700px;
+  height: 500px;
+  margin-top: 100px;
   position: relative;
   width: 100%;
   display: flex;
