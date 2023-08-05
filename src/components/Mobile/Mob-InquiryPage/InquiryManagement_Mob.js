@@ -256,8 +256,8 @@ function InquiryManagemaentMob() {
       name: "이지은",
       position: "Operator",
       site: [
-          { name: 'linkedin', link: 'www.linkedin.com/in/ezn' },
-         { name: 'disquiet', link: 'https://disquiet.io/@twins24j' },
+        { name: "linkedin", link: "www.linkedin.com/in/ezn" },
+        { name: "disquiet", link: "https://disquiet.io/@twins24j" },
         { name: "instagram", link: "https://www.instagram.com/ana_jieun/" },
       ],
     },
@@ -267,9 +267,8 @@ function InquiryManagemaentMob() {
       name: "우병희",
       position: "Operator",
       site: [
-        //     { name: 'linkedin', link: 'https://www.linkedin.com/in/%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/' },
-        //    { name: 'disquiet', link: 'https://disquiet.io/@dltlsdud0319' },
-        // { name: "github", link: "https://github.com/dasdfadssda" },
+        { name: "github", link: "https://github.com/dnqudgml12" },
+        { name: "disquiet", link: "https://disquiet.io/@21800454" },
         { name: "instagram", link: "https://www.instagram.com/vang.ee/" },
       ],
     },
@@ -364,8 +363,12 @@ function InquiryManagemaentMob() {
       name: "진세진",
       position: "Developer",
       site: [
-        //     { name: 'linkedin', link: 'https://www.linkedin.com/in/sayjo2/' },
+        {
+          name: "linkedin",
+          link: "https://www.linkedin.com/in/%EC%84%B8%EC%A7%84-%EC%A7%84-309b11266/",
+        },
         { name: "instagram", link: "https://www.instagram.com/jinsejin2/" },
+        { name: "github", link: "https://github.com/jinsejin" },
         //    { name: 'disquiet', link: 'https://disquiet.io/@sehijo' },
       ],
     },
