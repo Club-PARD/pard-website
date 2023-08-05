@@ -113,6 +113,7 @@ const ContentsDiv = styled.div`
 const RightContent = styled.div`
   width: 624px;
   /* background-color: beige; */
+  padding-left: 72px;
 `;
 
 const TitleText = styled.div`

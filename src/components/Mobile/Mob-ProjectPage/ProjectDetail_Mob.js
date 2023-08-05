@@ -14,6 +14,7 @@ const Body1 = styled.div`
   text-align: ${(props) => props.align};
   margin-top: ${(props) => props.marginTop};
   margin-right: ${(props) => props.marginright};
+  opacity: ${(props) => props.opacity};
 `;
 
 const Body2 = styled.div`
@@ -97,11 +98,11 @@ const MainBackImg = styled.img`
   width: 100%;
   height: 329px;
   border: none;
-  object-fit: cover;
+  /* object-fit: cover; */
 `;
 
 const MainDiv = styled.div`
-  width: 100%;
+  width: 303px;
   height: 1500px;
   /* background-color: green; */
   display: flex;
@@ -127,27 +128,31 @@ const TitleText = styled.div`
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  height: 45px;
+  /* background-color: red; */
+  grid-template-columns: repeat(${props => props.numOfColumns || 2}, 1fr); /* prop으로 전달된 값 사용 */
   row-gap: 10px;
   column-gap: 1.5px;
   margin-top: 43px;
+  margin-top: ${(props) => props.marginTop || "18px"};
 `;
 
 const PartText = styled.div`
   display: flex;
-  width: 303px;
+  width: 310px;
   margin-top: ${(props) => props.marginTop};
   /* background-color: yellow; */
   height: 28px;
   align-items: center;
   justify-content: start;
+  margin-left: 7px;
 `;
 
 const PartTool = styled.div`
   display: inline-flex;
   padding: 5px 20px;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   border-radius: 15px;
   background-color: ${(props) => props.color || "#5262F5"};
   font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
@@ -289,27 +294,29 @@ function ProjectDetail_Mob() {
                   <Body1 color="white" align="start" marginright={"62px"}>
                     기획
                   </Body1>
-                  {detailProjects.member.planner.map((tool, index) => (
-                    <Body1 key={index}>{tool} </Body1>
+                  {detailProjects.member.planner.map((name, index) => (
+                    <Body1 key={index} opacity={0.6}>{name} </Body1>
                   ))}
                 </PartText>
                 <PartText marginTop={"20px"}>
                   <Body1 color="white" align="start" marginright={"47px"}>
                     디자인
                   </Body1>
-                  {detailProjects.member.designer.map((tool, index) => (
-                    <Body1 key={index}>{tool}</Body1>
+                  {detailProjects.member.designer.map((name, index) => (
+                    <Body1 key={index} opacity={0.6}>{name}</Body1>
                   ))}
                 </PartText>
                 <PartText marginTop={"20px"}>
                   <Body1 color="white" align="start" marginright={"62px"}>
                     개발
                   </Body1>
-                  {detailProjects.member.developer.map((tool, index) => (
-                    <Body1 key={index} marginright={"15px"}>
-                      {tool}
+                  <Container numOfColumns={3} marginTop={"28px"} detailProjects={detailProjects}>
+                  {detailProjects.member.developer.map((name, index) => (
+                    <Body1 key={index} marginright={"15px"} opacity={0.6}>
+                      {name}
                     </Body1>
                   ))}
+                  </Container>
                 </PartText>
               </>
             )}
@@ -324,10 +331,10 @@ function ProjectDetail_Mob() {
             <TitleText marginTop={"-10px"}>
               <Header6 marginTop={"58px"}>{detailProjects.title}</Header6>
             </TitleText>
-            {detailProjects.contents && (
+            {detailProjects.mobContents && (
               <>
                 <ContentsText>
-                  {detailProjects.contents.map((tool, index) => (
+                  {detailProjects.mobContents.map((tool, index) => (
                     <Subtitle2 key={index}>{tool}</Subtitle2>
                   ))}
                 </ContentsText>
