@@ -4,8 +4,6 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { dbService } from "../../../fbase";
 import { doc, getDoc } from "firebase/firestore";
-import Footer from "../../Footer";
-import NavBar from "../../NavBar";
 
 const Body3 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Body3};
@@ -83,6 +81,7 @@ const MainBackImg = styled.img`
   width: 100%;
   height: 647px;
   border: none;
+  object-fit: cover;
 `;
 
 const MainDiv = styled.div`
@@ -209,7 +208,7 @@ function ProjectDetail() {
     const docRef = doc(dbService, "Project", id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
+      // console.log("Document data:", docSnap.data());
       setDetailProjects(docSnap.data());
     } else {
       navigate("*");
@@ -217,13 +216,12 @@ function ProjectDetail() {
   };
 
   useEffect(() => {
-    console.log("id :", id);
+    // console.log("id :", id);
     fetchProjects();
   }, []);
 
   return (
     <div>
-      <NavBar />
       <Div>
         <PartDiv>
           <ThemeProvider theme={theme}>
@@ -304,7 +302,6 @@ function ProjectDetail() {
                       </PartText>
                     </>
                   )}
-                  ;
                 </RightContent>
                 <LeftContent>
                   <ImgDiv>
@@ -325,7 +322,6 @@ function ProjectDetail() {
                       </ContentsText>
                     </>
                   )}
-                  ;
                   <ToolListDiv>
                     {detailProjects.link && (
                       <>
@@ -394,7 +390,6 @@ function ProjectDetail() {
           </ThemeProvider>
         </PartDiv>
       </Div>
-      <Footer />
     </div>
   );
 }
