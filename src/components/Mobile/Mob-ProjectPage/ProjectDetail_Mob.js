@@ -83,7 +83,7 @@ const PartDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 75px;
 `;
 
 const Div = styled.div`
@@ -234,7 +234,7 @@ function ProjectDetail_Mob() {
       <PartDiv>
         <ThemeProvider theme={theme}>
           <MainBackImg
-            src={detailProjects.backImg}
+            src={detailProjects.mobileBackImg}
             alt={detailProjects.teamName}
           />
           <MainDiv>
