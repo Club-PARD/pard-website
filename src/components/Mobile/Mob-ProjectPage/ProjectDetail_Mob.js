@@ -179,12 +179,13 @@ const ArrowImg = styled.img`
 `;
 
 const ContentsText = styled.div`
-  margin-top: 100px;
+  margin-top: 115px;
   width: 303px;
 `;
 
 const ToolListDiv = styled.div`
   margin-top: 100px;
+  width: 303px;
   height: 60px;
   display: flex;
   align-items: center;
