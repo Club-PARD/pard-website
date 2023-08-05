@@ -5,11 +5,11 @@ import InquiryPage from "./pages/InquiryPage";
 import ProjectPage from "./pages/ProjectPage";
 import RecruitingPage from "./pages/RecruitingPage";
 import ScrollToTop from "./components/ScrollToTop";
-import ProjectDetail from "./components/Web/Web-ProjectPage/ProjectDetailPage.js";
 import ErrorPage from "./pages/ErrorPage";
 import ReactGA from "react-ga";
 import TagManager from "react-gtm-module";
 import React, { useEffect } from "react";
+import ProjectDetailPage from "./pages/ProjectDetail";
 
 function App() {
   const tagManagerArgs = {
@@ -33,7 +33,7 @@ function App() {
         <Route path="/Inquiry" element={<InquiryPage />} />
         <Route path="/Recruting" element={<RecruitingPage />} />
         <Route path="/Project" element={<ProjectPage />} />
-        <Route path="/Project/:projectId" element={<ProjectDetail />} />
+        <Route path="/Project/:projectId" element={<ProjectDetailPage />} />
         <Route path="/pard-website" element={<HomePage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

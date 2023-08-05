@@ -44,15 +44,6 @@ function ProjectLast() {
       <PartDiv>
         <ThemeProvider theme={theme}>
           <Header7>전체 프로젝트</Header7>
-          {/* <Header7>
-          PARD의 첫 프로젝트가<br/>곧 공개 예정이에요!
-          </Header7>
-          <LogoDiv>
-          <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
-          <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
-          <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
-          <ArrowLogo src={require('../../../assets/img/Arrow_Project.png')}/>
-          </LogoDiv> */}
           <ProjectGrid />
         </ThemeProvider>
       </PartDiv>
