@@ -81,7 +81,7 @@ const MainBackImg = styled.img`
   width: 100%;
   height: 647px;
   border: none;
-  object-fit: cover;
+  /* object-fit: cover; */
 `;
 
 const MainDiv = styled.div`
