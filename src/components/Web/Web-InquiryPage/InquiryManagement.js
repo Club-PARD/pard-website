@@ -245,8 +245,8 @@ function InquiryManagement() {
       name: "이지은",
       position: "Operator",
       site: [
-        //   { name: 'linkedin', link: 'https://www.linkedin.com/in/%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/' },
-        //  { name: 'disquiet', link: 'https://disquiet.io/@dltlsdud0319' },
+        { name: 'linkedin', link: 'www.linkedin.com/in/ezn' },
+        { name: 'disquiet', link: 'https://disquiet.io/@twins24j' },
         { name: "instagram", link: "https://www.instagram.com/ana_jieun/" },
       ],
     },
