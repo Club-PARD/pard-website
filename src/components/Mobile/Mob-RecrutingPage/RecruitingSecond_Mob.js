@@ -295,7 +295,7 @@ function RecruitingSecond() {
                 </Icon2B>
               </IconWrap>
               <Box2>서류 합격 발표</Box2>
-              <BoxText>8/27(토) 중</BoxText>
+              <BoxText>8/27(일) 중</BoxText>
             </Box>
             <Box
               style={{
