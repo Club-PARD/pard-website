@@ -65,7 +65,7 @@ const ButtonDiv = styled.div`
 function RecruitingFirstMob() {
 
     const handleClick = () => {
-        window.open("https://tally.so/r/w4BxRd", "_blank");
+        window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
       };
     
     return (
@@ -79,7 +79,7 @@ function RecruitingFirstMob() {
                 <br/> 솔직하게 대립하고, 빠르게 실행해요.
                 </ButtonText1>
             <ButtonDiv>
-            <Button onClick={handleClick}>2기 모집 알림 신청하기</Button>
+            <Button onClick={handleClick}>지금 바로 2기 지원하기</Button>
             </ButtonDiv>
             </ThemeProvider>
         </PartDiv>

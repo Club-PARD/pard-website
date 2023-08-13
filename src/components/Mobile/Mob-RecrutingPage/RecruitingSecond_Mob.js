@@ -376,9 +376,9 @@ function RecruitingSecond() {
                 <span className="highlight">02</span>
               </Number>
               <Body3>
-                사전과제는 지원서 접수 시작일인
-                <span className="highlight"> n월n일</span>
-                <br></br>에 기획, 파트의{" "}
+                사전과제는 지원서 
+                <span className="highlight"> 접수 시작일</span>
+                <br></br>에 기획, 디자인 파트의{" "}
                 <span className="highlight">노션 페이지</span>에<br></br>{" "}
                 공개됩니다. (개발 파트는 사전과제 없음)
               </Body3>
@@ -403,11 +403,8 @@ function RecruitingSecond() {
               </Number>
               <Body3>
                 면접은{" "}
-                <span className="highlight">
-                  지원자 2명, 운영진 4명(파트장,<br></br>회장단)
-                </span>
-                과 함께<span className="highlight"> 다대다로 50분</span> 동안
-                진행되<br></br>며,면접 시간은 지원서 합격자에<br></br> 한하여
+<span className="highlight"> 2대다로 30분</span> 동안
+                진행되며, <br></br>면접 시간은 지원서 합격자에<br></br> 한하여
                 개별적으로 문자 안내 드립니다.
               </Body3>
             </Container>

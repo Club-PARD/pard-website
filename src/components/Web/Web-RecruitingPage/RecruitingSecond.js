@@ -390,11 +390,9 @@ function RecruitingSecond() {
               </Number>
               <Body3>
                 면접은{" "}
-                <span className="highlight">
-                  지원자 2명, 운영진 4명(파트장, 회장단)
-                </span>
-                과 함께<span className="highlight"> 다대다로 50분</span> 동안
-                진행되며,<br></br>면접 시간은 지원서 합격자에 한하여 개별적으로
+
+                <span className="highlight"> 2대다로 30분</span> 동안
+                진행되며, 면접 시간은 지원서 합격자에 한하여 개별적으로
                 문자 안내 드립니다.
               </Body3>
             </Container>

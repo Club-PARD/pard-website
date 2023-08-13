@@ -69,7 +69,7 @@ margin-top: 101px;
 function RecruitingFirst() {
 
   const handleClick = () => {
-    window.open("https://tally.so/r/w4BxRd", "_blank");
+    window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
   };
 
   return (
@@ -79,7 +79,7 @@ function RecruitingFirst() {
           <Header2>함께 성장하며 최고의 팀을 만들어가는 곳</Header2>
           <Header5>단순히 같이 일하는 것이 협업이라고 생각하시나요?
             <br/>PARD에서 서로의 전문성을 이해하고, 솔직하게 대립하고, 빠르게 실행해요.</Header5>
-          <Button onClick={handleClick}>2기 모집 알림 신청하기</Button>
+          <Button onClick={handleClick}>지금 바로 2기 지원하기</Button>
           <DownLogo src={require('../../../assets/img/DownScrollLogo.png')}/>
         </ThemeProvider>
       </PartDiv>
