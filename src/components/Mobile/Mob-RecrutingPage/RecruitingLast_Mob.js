@@ -52,15 +52,15 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
 function RecruitingLastMob() {
 
     const handleClick = () => {
-        window.open("https://tally.so/r/w4BxRd", "_blank");
-      };
+        window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
+    };
       
     return (
         <Div>
             <PartDiv>
                 <ThemeProvider theme={theme}>
                     <Header8>협업에 미친<br></br>파드의 여정에<br></br>동참하고 싶다면</Header8>
-                    <Button1 onClick={handleClick}>2기 모집 알림 신청하기</Button1>
+                    <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1>
                 </ThemeProvider>
             </PartDiv>
         </Div>

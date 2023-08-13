@@ -97,7 +97,7 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
 
 function HomeLastMob() {
   const handleClick = () => {
-    window.open("https://tally.so/r/w4BxRd", "_blank");
+    window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
   };
     return (
         <Div>
