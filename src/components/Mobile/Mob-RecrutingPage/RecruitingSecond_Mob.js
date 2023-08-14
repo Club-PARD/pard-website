@@ -312,7 +312,7 @@ function RecruitingSecond() {
                 </Icon3>
               </IconWrap>
               <Box3>면접</Box3>
-              <BoxText>8/29(화) ~ 9/01(금)</BoxText>
+              <BoxText>8/28(월) ~ 9/02(토)</BoxText>
             </Box>
             <Box
               style={{
@@ -339,7 +339,7 @@ function RecruitingSecond() {
                 </Icon4B>
               </IconWrap>
               <Box4>최종합격 발표</Box4>
-              <BoxText>9/2(토) 중</BoxText>
+              <BoxText>9/3(일) 중</BoxText>
             </Box>
           </Container>
 
