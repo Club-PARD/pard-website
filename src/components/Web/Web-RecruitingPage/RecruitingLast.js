@@ -51,7 +51,7 @@ const Button = styled.button`
 
 function RecruitingLast() {
   const handleClick = () => {
-    window.open("https://tally.so/r/w4BxRd", "_blank");
+    window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
   };
   return (
     <Div>
