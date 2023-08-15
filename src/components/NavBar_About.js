@@ -108,6 +108,8 @@ const BannerDiv = styled.div`
   height: 120px;
   background-image: url(${backgroundImg});
   cursor: pointer;
+  pointer-events: none;
+
 `;
 
 const CloseButton = styled.img`

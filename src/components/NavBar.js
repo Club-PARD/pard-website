@@ -102,6 +102,7 @@ const BannerDiv = styled.div`
   cursor: pointer;
   text-decoration: none;
     text-decoration-line:none;
+    pointer-events: none;
 
 `;
 
