@@ -310,10 +310,9 @@ function InquiryManagement() {
       position: "Developer",
       site: [
         {
-          name: "linkedin",
-          link: "https://www.linkedin.com/in/학부생-김유진-4bb385252",
+          name: "github",
+          link: "https://github.com/Park21700305",
         },
-        { name: "disquiet", link: "https://disquiet.io/@22100164" },
         { name: "instagram", link: "https://www.instagram.com/10_mandarin/" },
       ],
     },
