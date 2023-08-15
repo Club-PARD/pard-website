@@ -106,10 +106,10 @@ const BannerDiv = styled.div`
   position: relative;
   width: 100%;
   height: 120px;
+  position: absolute;
   background-image: url(${backgroundImg});
-  cursor: pointer;
+  background-size: contain;
   pointer-events: none;
-
 `;
 
 const CloseButton = styled.img`
