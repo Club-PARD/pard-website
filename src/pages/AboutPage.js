@@ -41,7 +41,7 @@ function AboutPage() {
       {isDesktopOrMobile !== true ? (
         <AboutPageComponent_Web>
           <NavBar_About />
-          <BannerWeb />
+          {/* <BannerWeb /> */}
           <AboutFirst />
           <AboutVision />
           <AboutPart />
