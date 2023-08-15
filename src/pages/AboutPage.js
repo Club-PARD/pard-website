@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from "react-responsive";
 import NavBarMov from "../components/NavBarMov";
-import AboutVision from "../components/Web/Web-AboutPage/Web-AboutVision"
+import AboutVision from "../components/Web/Web-AboutPage/Web-AboutVision";
 import AboutFirst from "../components/Web/Web-AboutPage/Web-AboutFirst";
 import AboutPart from "../components/Web/Web-AboutPage/Web-AboutPart";
 import AboutProgram from "../components/Web/Web-AboutPage/Web-AboutProgram";
@@ -18,53 +18,53 @@ import FooterMov from "../components/FooterMov";
 import NavBar_About from "../components/NavBar_About";
 import NavBarMov_About from "../components/NavBarMob_About";
 import TemporaryPage from "../components/TemporaryPage";
+import BannerWeb from "../components/Web/Banner/Banner";
 
 function AboutPage() {
-    const isDesktopOrMobile = useMediaQuery({ query: '(max-width:768px)' }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
+  const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
 
-    const AboutPageComponent = styled.div`
-    `;
+  const AboutPageComponent = styled.div``;
 
-const AboutPageComponent_Web = styled.div`
-justify-content: center;
-background-color: #1A1A1A;
-width: 100%;
-min-width: 1440px;
-`;
+  const AboutPageComponent_Web = styled.div`
+    justify-content: center;
+    background-color: #1a1a1a;
+    width: 100%;
+    min-width: 1440px;
+  `;
 
-const AboutPageComponent_Mob = styled.div`
-width: 100%;
-`;
+  const AboutPageComponent_Mob = styled.div`
+    width: 100%;
+  `;
 
-
-    return (
-        <AboutPageComponent>
-            {isDesktopOrMobile !== true ?
-                <AboutPageComponent_Web>
-                    <NavBar_About/>
-                    <AboutFirst />
-                    <AboutVision />
-                    <AboutPart />
-                    <AboutProgram />
-                    <AboutMentor />
-                    <AboutLast />
-                    <Footer/>
-                </AboutPageComponent_Web>
-                :
-                <AboutPageComponent_Mob>
-                    {/* <TemporaryPage/> */}
-                    <NavBarMov_About/>
-                    <AboutFirst_Mob />
-                    <AboutVision_Mob />
-                    <AboutPart_Mob />
-                    <AboutProgram_Mob />
-                    <AboutMentor_Mob />
-                    <AboutLast_Mob />
-                    <FooterMov/>
-                </AboutPageComponent_Mob>
-            }
-        </AboutPageComponent>
-    );
+  return (
+    <AboutPageComponent>
+      {isDesktopOrMobile !== true ? (
+        <AboutPageComponent_Web>
+          <NavBar_About />
+          <BannerWeb />
+          <AboutFirst />
+          <AboutVision />
+          <AboutPart />
+          <AboutProgram />
+          <AboutMentor />
+          <AboutLast />
+          <Footer />
+        </AboutPageComponent_Web>
+      ) : (
+        <AboutPageComponent_Mob>
+          {/* <TemporaryPage/> */}
+          <NavBarMov_About />
+          <AboutFirst_Mob />
+          <AboutVision_Mob />
+          <AboutPart_Mob />
+          <AboutProgram_Mob />
+          <AboutMentor_Mob />
+          <AboutLast_Mob />
+          <FooterMov />
+        </AboutPageComponent_Mob>
+      )}
+    </AboutPageComponent>
+  );
 }
 
 export default AboutPage;

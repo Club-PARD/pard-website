@@ -14,10 +14,16 @@ const NavBarWrapper = styled.nav`
   display: flex;
   justify-content: center;
   position: fixed;
-  top: 0;
+  /* top:  ${({ banner }) => (banner === false ? '0%' : '18%')};;
+  top: ${({ scrollPosition }) => (scrollPosition >= 70 ? '0%' : '18%')}; */
+  margin-top: 0px;
+  top: 0%;
   width: 100%;
   z-index: 999;
   transition: background-color 0.3s ease;
+  border: 1px #263AF3;
+  border-left: none;
+  border-right: none;
 `;
 
 const NavDiv = styled.div`
@@ -70,7 +76,8 @@ const NavItem = styled.li`
 
 const NavBar_About = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { pathname } = useLocation(); // 현재 페이지의 URL을 가져옴
+  const [banner, setBanner] = useState(true);
+  const { pathname } = useLocation(); 
 
   useEffect(() => {
     function handleScroll() {
@@ -87,7 +94,7 @@ const NavBar_About = () => {
 
   return (
     <Div>
-      <NavBarWrapper scrollPosition={scrollPosition}>
+      <NavBarWrapper scrollPosition={scrollPosition} banner={banner}>
         <ThemeProvider theme={theme}>
           <NavDiv>
           <Logo>
