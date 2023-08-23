@@ -204,7 +204,7 @@ function RecruitingAbout() {
       {
         id: 5,
         quest: 'Q. 앱 개발 시 어떤 프로그래밍 언어를 사용하나요?',
-        answer: 'A. 2기 기준 IOS 앱 개발을 위한 Swift UI를 사용하고 있습니다.',
+        answer: 'A. 2기 기준 iOS 앱 개발을 위한 Swift UIkit를 사용하고 있습니다.',
         select: false
       }
       ],
