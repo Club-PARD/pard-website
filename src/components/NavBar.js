@@ -120,24 +120,24 @@ const NavBar = () => {
 
   // 배너 관련 코드.. 이때 총학 웹사이트 하고 바빴어서
   // 유지보수 생각 안하고 코드 짬요.. 다음 개발 파트장님 죄송합니다..
-  const [isBannerVisible, setIsBannerVisible] = useState(true);
+  const [isBannerVisible, setIsBannerVisible] = useState(false); // 여기 true로
   const [isSticky, setIsSticky] = useState(false);
   const { pathname } = useLocation(); // 현재 페이지의 URL을 가져옴
 
   const handleCloseBanner = () => {
     setIsBannerVisible(false);
-    setIsSticky(true);
+    setIsSticky(false); // 여기 true로
   };
 
   useEffect(() => {
-    
+    setIsBannerVisible(true);
     function handleScroll() {
       const position = window.pageYOffset;
       setScrollPosition(position);
-      setIsSticky(position >= 49);
+      setIsSticky(position >= 0);
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: false }); // 여기 true로
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -152,7 +152,7 @@ const NavBar = () => {
   return (
     <Div>
       <>
-        {isBannerVisible && (
+        {/* {isBannerVisible && (
         <NavLink to="/Recruting" style={{ textDecoration: "none" }}>
         <BannerDiv>
             <CloseButton
@@ -164,12 +164,12 @@ const NavBar = () => {
             <SubText>지원서 접수 기간 : 08.14(월) - 08.25(금)</SubText>
           </BannerDiv>
           </NavLink>
-        )}
+        )} */}
       </>
       <NavBarWrapper
-        scrollPosition={scrollPosition}
-        isSticky={isSticky}
-        isBannerVisible={isBannerVisible}
+        // scrollPosition={scrollPosition}
+        // isSticky={isSticky}
+        // isBannerVisible={isBannerVisible}
       >
         <ThemeProvider theme={theme}>
           <NavDiv>
