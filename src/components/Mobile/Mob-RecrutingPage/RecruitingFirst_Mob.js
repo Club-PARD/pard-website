@@ -45,12 +45,13 @@ font-weight: ${props => props.theme.fontWeights.ButtonText1};
     align-items: center;
     width: 220px;
     height: 60px;
-    background-color: #64C59A;
+    /* background-color: #64C59A; */
+        background-color: #d3d1d8;
     justify-content: center;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
-    color: black;
+    /* color: black; */
     cursor: not-allowed;
 `;
 
@@ -80,7 +81,7 @@ function RecruitingFirstMob() {
                 </ButtonText1>
             <ButtonDiv>
             {/* <Button onClick={handleClick}>지금 바로 2기 지원하기</Button> */}
-            <Button>(모집 마감) 2기 모집이 완료 되었습니다.</Button>
+            <Button>2기 모집이 완료 되었습니다.</Button>
             </ButtonDiv>
             </ThemeProvider>
         </PartDiv>

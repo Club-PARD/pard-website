@@ -41,8 +41,10 @@ font-weight: ${props => props.theme.fontWeights.Subtitle2};
     gap: 10px;
     width: 220px;
     height: 52px;
-    background-color: #64C59A;
-    color: black;
+    /* background-color: #64C59A; */
+    background-color: #d3d1d8;
+    color: #FFFFFF;
+    /* color: black; */
     border-radius: 10px;
     border : none;
     /* cursor: pointer; */
@@ -63,7 +65,7 @@ function RecruitingLastMob() {
                 <ThemeProvider theme={theme}>
                     <Header8>협업에 미친<br></br>파드의 여정에<br></br>동참하고 싶다면</Header8>
                     {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
-                    <Button1>(모집 마감) 2기 모집이 완료 되었습니다.</Button1>
+                    <Button1>2기 모집이 완료 되었습니다.</Button1>
                 </ThemeProvider>
             </PartDiv>
         </Div>

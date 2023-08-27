@@ -100,7 +100,8 @@ const Button = styled.button`
     align-items: center;
     width: 220px;
     height: 60px;
-    background-color: #FF5C00;
+    /* background-color: #FF5C00; */
+    background-color: #d3d1d8;
     justify-content: center;
     color: #FFFFFF;
     border-radius: 10px;
@@ -134,7 +135,7 @@ function AboutLast_Mob() {
         <Header6>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도<br></br>선수들의 역량이에요</Header6>
         <Comment>송민 KBS 서핑 해설위원</Comment>
         {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
-        <Button>(모집 마감) 2기 모집이 완료 되었습니다.</Button>
+        <Button>2기 모집이 완료 되었습니다.</Button>
       </ThemeProvider>
     </PartDiv>
     <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
