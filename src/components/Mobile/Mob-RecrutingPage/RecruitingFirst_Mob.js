@@ -43,15 +43,15 @@ font-weight: ${props => props.theme.fontWeights.ButtonText1};
     white-space: pre-line;
     display: flex;
     align-items: center;
-    line-height: 9px;
     width: 220px;
-    height: 52px;
+    height: 60px;
     background-color: #64C59A;
     justify-content: center;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
     color: black;
+    cursor: not-allowed;
 `;
 
 const ButtonDiv = styled.div`
@@ -79,7 +79,8 @@ function RecruitingFirstMob() {
                 <br/> 솔직하게 대립하고, 빠르게 실행해요.
                 </ButtonText1>
             <ButtonDiv>
-            <Button onClick={handleClick}>지금 바로 2기 지원하기</Button>
+            {/* <Button onClick={handleClick}>지금 바로 2기 지원하기</Button> */}
+            <Button>(모집 마감) 2기 모집이 완료 되었습니다.</Button>
             </ButtonDiv>
             </ThemeProvider>
         </PartDiv>

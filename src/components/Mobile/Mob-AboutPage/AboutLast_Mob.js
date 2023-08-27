@@ -91,22 +91,23 @@ const Comment = styled.div`
   margin-bottom: 75px;
   `
 
-const Button1 = styled.button`
+const Button = styled.button`
     font-size: ${props => props.theme.Mob_fontSizes.ButtonText1};
     font-weight: ${props => props.theme.fontWeights.ButtonText1};
     font-family: 'NanumSquare Neo';
     white-space: pre-line;
     display: flex;
     align-items: center;
-    line-height: 34px;
     width: 220px;
-    height: 52px;
+    height: 60px;
     background-color: #FF5C00;
     justify-content: center;
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
-    cursor: pointer;
+    /* cursor: pointer; */
+    cursor: not-allowed;
+
   `
 
 const AboutFrame1 = styled.img`
@@ -132,7 +133,8 @@ function AboutLast_Mob() {
         </Line>
         <Header6>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도<br></br>선수들의 역량이에요</Header6>
         <Comment>송민 KBS 서핑 해설위원</Comment>
-        <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1>
+        {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
+        <Button>(모집 마감) 2기 모집이 완료 되었습니다.</Button>
       </ThemeProvider>
     </PartDiv>
     <AboutFrame1 src={AboutFrame} alt="AboutFrame" />

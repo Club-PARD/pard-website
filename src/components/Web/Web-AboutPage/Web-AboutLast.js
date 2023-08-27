@@ -59,7 +59,7 @@ const Body2 = styled.div`
     margin-bottom: 95px;
 `;
 
-const Button1 = styled.button`
+const Button = styled.button`
     font-size: ${props => props.theme.Web_fontSizes.Header6};
     font-weight: ${props => props.theme.fontWeights.Header6};
     font-family: 'NanumSquare Neo';
@@ -75,7 +75,8 @@ const Button1 = styled.button`
     color: #FFFFFF;
     border-radius: 10px;
     border : none;
-    cursor:pointer;
+    /* cursor:pointer; */
+    cursor: not-allowed;
 
 `;
 
@@ -128,7 +129,8 @@ function AboutLast() {
                 </Line>
                 <Subtitle3>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도 선수들의 역량이에요</Subtitle3>
                 <Body2>송민 KBS 서핑 해설위원</Body2>
-                <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1>
+                {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
+                <Button>(모집 마감) 2기 모집이 완료 되었습니다.</Button>
                 <AboutFrame1 src={AboutFrame_Down} alt="AboutFrame" />  
             </ThemeProvider>
         </PartDiv>

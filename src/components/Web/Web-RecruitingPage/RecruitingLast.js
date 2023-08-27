@@ -44,7 +44,8 @@ const Button = styled.button`
     color: #000000;
     border-radius: 10px;
     border : none;
-    cursor:pointer;
+    /* cursor:pointer; */
+    cursor: not-allowed;
 
 `;
 
@@ -58,7 +59,8 @@ function RecruitingLast() {
       <PartDiv>
         <ThemeProvider theme={theme}>
           <Header7>협업에 미친 파드의 여정에 동참하고 싶다면</Header7>
-          <Button onClick={handleClick}>2기 모집 알림 신청하기</Button>
+          {/* <Button onClick={handleClick}>2기 모집 알림 신청하기</Button> */}
+          <Button>(모집 마감) 2기 모집이 완료 되었습니다.</Button>
         </ThemeProvider>
       </PartDiv>
     </Div>
