@@ -8,6 +8,7 @@ import SpackImg from "../../../assets/img/SpackLab.png";
 import AsanImg from "../../../assets/img/ASANImg.png";
 import MobitImg from "../../../assets/img/MobitImg.png";
 import NextChallengeImg from "../../../assets/img/NextChallengeImg.png";
+import PickPly from "../../../assets/img/Pickply_Img.png";
 
 const Header7 = styled.div`
   font-size: ${(props) => props.theme.Mob_fontSizes.Header7};
@@ -87,6 +88,13 @@ const MobitDiv = styled.img`
   cursor: pointer;
 `;
 
+const PickPlyDiv = styled.img`
+width: 180px;
+height: 55px;
+padding-top: 50px;
+  cursor: pointer;
+`;
+
 const Div = styled.div`
   display: flex;
   flex-direction: column;
@@ -96,7 +104,7 @@ const Div = styled.div`
 `;
 const PartDiv = styled.div`
   padding-top: 131px;
-  height: 950px;
+  height: 1180px;
   padding-left: 10px;
 `;
 
@@ -134,6 +142,9 @@ function HomePartnerMob() {
   const handleClickNextChallenge = () => {
     window.open("https://www.ncf.or.kr/", "_blank");
   };
+  const handleClickPickPly = () => {
+    window.open("https://pickply.com/company ", "_blank");
+  };
 
   return (
     <Div>
@@ -166,6 +177,7 @@ function HomePartnerMob() {
             />
             <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
             <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" />
+            <PickPlyDiv onClick={handleClickPickPly} src={PickPly} alt="PickPly" />
           </ContentWrapper>
         </ThemeProvider>
       </PartDiv>
