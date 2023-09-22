@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { theme } from "../styles/theme";
 import styled, { ThemeProvider } from "styled-components";
-import { useState, useEffect } from "react";
 
 const Div = styled.footer`
   background-color: #2a2a2a;
