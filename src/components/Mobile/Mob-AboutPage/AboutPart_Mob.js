@@ -237,7 +237,7 @@ function AboutPart_Mob() {
           의사소통 능력을 키우고, CI/CD를 구축할 수 있는 <br />
           개발자로 성장합니다.
         </>,
-      homework: '2학기 서버 파트장 박정규'
+      homework: 'ERD(Entity Relationship Diagram)'
     },
   ]);
 
