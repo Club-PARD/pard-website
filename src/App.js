@@ -12,15 +12,6 @@ import React, { useEffect } from "react";
 import ProjectDetailPage from "./pages/ProjectDetail";
 
 function App() {
-  
-  if (1+1 === 2) {
-    window.console = {
-      log: function () {},
-      warn: function () {},
-      error: function () {},
-    };
-  }
-
   const tagManagerArgs = {
     gtmId: "GTM-MW5N2QW",
   };
@@ -32,6 +23,7 @@ function App() {
   const gaTrackingId = "G-CYK8WPXW3S"; // 환경 변수에 저장된 추적ID 가져오기
   ReactGA.initialize(gaTrackingId, { debug: true }); // react-ga 초기화 및 debug 사용
   ReactGA.pageview(window.location.pathname); // 추적하려는 page 설정
+
 
   return (
     <Router>
