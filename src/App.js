@@ -12,6 +12,15 @@ import React, { useEffect } from "react";
 import ProjectDetailPage from "./pages/ProjectDetail";
 
 function App() {
+  
+  if (1+1 === 2) {
+    window.console = {
+      log: function () {},
+      warn: function () {},
+      error: function () {},
+    };
+  }
+
   const tagManagerArgs = {
     gtmId: "GTM-MW5N2QW",
   };
