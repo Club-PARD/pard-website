@@ -7,6 +7,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
+<br>
 
 ## 개발 환경 설정
 
@@ -18,6 +19,7 @@ npm install
 ```sh
 npm start
 ```
+<br>
 
 ## 업데이트 내역
 
@@ -30,15 +32,16 @@ npm start
 * 0.1.0
     * `첫 배포`
     * 수정: `커스텀 도메인 연결 (https://we-pard.com/)`
+* 0.1.1   
+    * 버그 수정: `Safari 환경 배경화면 동영상 자동 재생 수정`
 * 0.1.1
-    * 버그 수정: `Safari 환경 배경화면 동영상 자동 재생 수정`
-* 0.1.1
-    * 추가: `pard 1기 프로젝트 내용 추가 및 서버 연결`
+  * 추가: `pard 1기 프로젝트 내용 추가 및 서버 연결`
 * 0.1.2
-    * 추가: `리크루팅 홍보 배너 추가`
+  * 추가: `리크루팅 홍보 배너 추가`
 * 0.1.2
-    * 수정: `리크루팅 버튼 수정`
+  * 수정: `리크루팅 버튼 수정`
 
+<br>
 ## 사용 스택
 <div style={display:flex}>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
@@ -47,6 +50,7 @@ npm start
     <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black"/>
 </div>
 
+<br>
 
 ## 기여 방법
 
