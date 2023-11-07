@@ -140,7 +140,7 @@ function HomePart() {
     ];
 
     const handleClick = () => {
-        window.open("https://pard-recruiting.oopy.io", "_blank");
+        window.open("https://we-pard.com/About", "_blank");
       };
     return (
             <Div>
