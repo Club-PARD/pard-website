@@ -9,6 +9,8 @@ import AsanImg from "../../../assets/img/ASANImg.png";
 import MobitImg from "../../../assets/img/MobitImg.png";
 import NextChallengeImg from "../../../assets/img/NextChallengeImg.png";
 import PickPly from "../../../assets/img/Pickply_Img.png";
+import dCamp from "../../../assets/img/dCamp.PNG";
+import AWS from "../../../assets/img/AWS_logo.PNG";
 
 const Header7 = styled.div`
   font-size: ${(props) => props.theme.Mob_fontSizes.Header7};
@@ -32,66 +34,66 @@ const Subtitle3 = styled.div`
 `;
 
 const DisquietImage1 = styled.img`
-  width: 193px;
-  height: 40px;
+  width: 40%;
+  height: auto;
   padding-top: 60px;
   cursor: pointer;
 `;
 
 const LincImage2 = styled.img`
-  width: 120px;
-  height: 40px;
+  width: 40%;
+  height: auto;
   padding-top: 60px;
   cursor: pointer;
 `;
 
 const ImpactCampusImage3 = styled.img`
-  width: 260px;
-  height: 40px;
+  width: 40%;
+  height: auto;
   padding-top: 60px;
   cursor: pointer;
 `;
 
 const SImage4 = styled.img`
-  width: 230px;
-  height: 60px;
+  width: 40%;
+  height: auto;
   padding-top: 60px;
   cursor: pointer;
 `;
 
 const Spacklab = styled.img`
-  width: 182px;
-  height: 55px;
+  width: 40%;
+  height: auto;
   padding-top: 50px;
   margin-right: 25px;
   cursor: pointer;
 `;
 
 const AsanImgDiv = styled.img`
-  width: 200px;
-  height: 75px;
+  width: 40%;
+  height: auto;
   padding-top: 83px;
   cursor: pointer;
 `;
 
 const NextChallenge1Img = styled.img`
-  width: 223px;
-  height: 40px;
+  width: 40%;
+  height: auto;
   padding-top: 50px;
   cursor: pointer;
 `;
 
 const MobitDiv = styled.img`
-  width: 167px;
-  height: 50px;
+  width: 40%;
+  height: auto;
   padding-top: 50px;
   cursor: pointer;
 `;
 
 const PickPlyDiv = styled.img`
-width: 180px;
-height: 55px;
-padding-top: 50px;
+  width: 40%;
+  height: auto;
+  padding-top: 50px;
   cursor: pointer;
 `;
 
@@ -104,7 +106,8 @@ const Div = styled.div`
 `;
 const PartDiv = styled.div`
   padding-top: 131px;
-  height: 1180px;
+  min-height: 1580px;
+  height: auto;
   padding-left: 10px;
 `;
 
@@ -115,6 +118,19 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 43px;
+`;
+
+const AWSImg = styled.img`
+  width: 40%;
+  height: auto;
+  margin-top: -90px;
+  cursor: pointer;
+`;
+
+const Dcamp = styled.img`
+  width: 40%;
+  height: auto;
+  cursor: pointer;
 `;
 
 function HomePartnerMob() {
@@ -144,6 +160,12 @@ function HomePartnerMob() {
   };
   const handleClickPickPly = () => {
     window.open("https://pickply.com/company ", "_blank");
+  };
+  const handleClickDcamp = () => {
+    window.open("https://dcamp.kr/", "_blank");
+  };
+  const handleClickAWS = () => {
+    window.open("https://aws.amazon.com/ko/?nc2=h_lg", "_blank");
   };
 
   return (
@@ -177,7 +199,13 @@ function HomePartnerMob() {
             />
             <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
             <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" />
-            <PickPlyDiv onClick={handleClickPickPly} src={PickPly} alt="PickPly" />
+            <PickPlyDiv
+              onClick={handleClickPickPly}
+              src={PickPly}
+              alt="PickPly"
+            />
+            <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
+            <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
           </ContentWrapper>
         </ThemeProvider>
       </PartDiv>
