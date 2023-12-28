@@ -136,7 +136,7 @@ const ContentWrapper3 = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 30px;
   justify-content: center;
 `;
 
@@ -167,6 +167,12 @@ function HomePartner() {
   };
   const handleClickNextChallenge = () => {
     window.open("https://www.ncf.or.kr/", "_blank");
+  };
+  const handleClickDcamp = () => {
+    window.open("https://dcamp.kr/", "_blank");
+  };
+  const handleClickAWS = () => {
+    window.open("https://aws.amazon.com/ko/?nc2=h_lg", "_blank");
   };
 
   return (
@@ -204,8 +210,8 @@ function HomePartner() {
             src={PickPly}
             alt="PickPly"
           />
-          <Dcamp onClick={handleClickLink} src={dCamp} alt="dCamp" />
-          <AWSImg onClick={handleClickMobit} src={AWS} alt="AWS" />
+          <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
+          <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
         </ContentWrapper3>
       </ThemeProvider>
     </PartDiv>
