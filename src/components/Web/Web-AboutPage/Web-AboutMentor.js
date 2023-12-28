@@ -102,7 +102,7 @@ const CardsList = ({ cardsData }) => {
     return (
         <>
             <BandComponent mentorInfos={firstRow} src={bandImage1}></BandComponent>
-            <VerticalGap height={'50px'}></VerticalGap>
+            <VerticalGap height={'30px'}></VerticalGap>
             <BandComponent mentorInfos={secondRow} src={bandImage3} hasMargin={true}></BandComponent>
         </>
 
