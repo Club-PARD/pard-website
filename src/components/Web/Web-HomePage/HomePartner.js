@@ -9,6 +9,8 @@ import AsanImg from "../../../assets/img/ASANImg.png";
 import MobitImg from "../../../assets/img/MobitImg.png";
 import PickPly from "../../../assets/img/Pickply_Img.png";
 import NextChallengeImg from "../../../assets/img/NextChallengeImg.png";
+import dCamp from "../../../assets/img/dCamp.PNG";
+import AWS from "../../../assets/img/AWS_logo.PNG";
 
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
@@ -47,6 +49,20 @@ const DisquietImage1 = styled.img`
 const LincImage2 = styled.img`
   width: 150px;
   height: 50px;
+  padding-left: 90px;
+  cursor: pointer;
+`;
+
+const AWSImg = styled.img`
+  width: 140px;
+  height: auto;
+  padding-left: 90px;
+  cursor: pointer;
+`;
+
+const Dcamp = styled.img`
+  width: 180px;
+  height: 7%;
   padding-left: 90px;
   cursor: pointer;
 `;
@@ -92,8 +108,8 @@ const MobitDiv = styled.img`
 `;
 
 const PickPlyDiv = styled.img`
-width: 180px;
-height: 55px;
+  width: 180px;
+  height: 55px;
   margin-left: 65px;
   cursor: pointer;
 `;
@@ -113,6 +129,14 @@ const ContentWrapper2 = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top: 50px;
+  justify-content: center;
+`;
+const ContentWrapper3 = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
   justify-content: center;
 `;
 
@@ -173,8 +197,16 @@ function HomePartner() {
           <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
           <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
           <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" />
-          <PickPlyDiv onClick={handleClickPickPly} src={PickPly} alt="PickPly" />
         </ContentWrapper2>
+        <ContentWrapper3>
+          <PickPlyDiv
+            onClick={handleClickPickPly}
+            src={PickPly}
+            alt="PickPly"
+          />
+          <Dcamp onClick={handleClickLink} src={dCamp} alt="dCamp" />
+          <AWSImg onClick={handleClickMobit} src={AWS} alt="AWS" />
+        </ContentWrapper3>
       </ThemeProvider>
     </PartDiv>
   );
