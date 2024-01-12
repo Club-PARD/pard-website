@@ -42,6 +42,7 @@ npm start
   * 수정: `리크루팅 버튼 수정`
 
 <br>
+
 ## 사용 스택
 <div style={display:flex}>
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
