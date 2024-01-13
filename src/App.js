@@ -24,7 +24,6 @@ function App() {
   ReactGA.initialize(gaTrackingId, { debug: true }); // react-ga 초기화 및 debug 사용
   ReactGA.pageview(window.location.pathname); // 추적하려는 page 설정
 
-
   return (
     <Router>
       <ScrollToTop />
