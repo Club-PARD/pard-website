@@ -18,10 +18,10 @@ import FooterMov from "../components/FooterMov";
 import NavBar_About from "../components/NavBar_About";
 import NavBarMov_About from "../components/NavBarMob_About";
 import TemporaryPage from "../components/TemporaryPage";
-import BannerWeb from "../components/Web/Banner/Banner";
+import BannerWeb from "../components/Web/Banner/Banner"; // 제작중 페이지
 
 function AboutPage() {
-  const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
+  const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰 전환
 
   const AboutPageComponent = styled.div``;
 
@@ -52,7 +52,7 @@ function AboutPage() {
         </AboutPageComponent_Web>
       ) : (
         <AboutPageComponent_Mob>
-          {/* <TemporaryPage/> */}
+          {/* <TemporaryPage/> */} 
           <NavBarMov_About />
           <AboutFirst_Mob />
           <AboutVision_Mob />
