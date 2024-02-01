@@ -181,7 +181,7 @@ function AboutPart() {
     },
     {
       id: 3,
-      part: "앱(APP)",
+      part: "앱(iOS)",
       border_color: "#FF5C00",
       imgsrc: App,
       selected: false,

@@ -17,7 +17,7 @@ import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
 import NavBar_About from "../components/NavBar_About";
 import NavBarMov_About from "../components/NavBarMob_About";
-import TemporaryPage from "../components/TemporaryPage";
+import TemporaryPage from "../components/temporaryPage";
 import BannerWeb from "../components/Web/Banner/Banner"; // 제작중 페이지
 
 function AboutPage() {
@@ -52,7 +52,7 @@ function AboutPage() {
         </AboutPageComponent_Web>
       ) : (
         <AboutPageComponent_Mob>
-          {/* <TemporaryPage/> */} 
+          {/* <TemporaryPage/>  */}
           <NavBarMov_About />
           <AboutFirst_Mob />
           <AboutVision_Mob />

@@ -435,7 +435,7 @@ function InquiryManagemaentMob() {
           <Header8>
             거친 파도를 <br />
             뚫고 나가는
-            <br /> 파드 2기 운영진을
+            <br /> 파드 3기 운영진을
             <br />
             소개합니다.
           </Header8>

@@ -1,14 +1,14 @@
-import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
-import React from 'react';
-import AboutImage from '../../../assets/img/AboutLogo.png';
-import AboutFrame from '../../../assets/img/About_Mob_Bar.png';
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from "../../../styles/theme";
+import React from "react";
+import AboutImage from "../../../assets/img/AboutLogo.png";
+import AboutFrame from "../../../assets/img/About_Mob_Bar.png";
 
 const Header8 = styled.div`
-  font-size: ${props => props.theme.Web_fontSizes.Header8};
-  font-weight: ${props => props.theme.fontWeights.Header8};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
+  font-size: ${(props) => props.theme.Web_fontSizes.Header8};
+  font-weight: ${(props) => props.theme.fontWeights.Header8};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
   line-height: 42px;
   white-space: pre-line;
   text-align: center;
@@ -17,7 +17,7 @@ const Header8 = styled.div`
   height: 168px;
   position: relative;
   line-height: 140%;
-margin-bottom: 215px;
+  margin-bottom: 215px;
 `;
 
 const PartDiv = styled.div`
@@ -28,12 +28,12 @@ const PartDiv = styled.div`
   flex-direction: column;
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: center; /* 수평 가운데 정렬 */
-  background-color: #1A1A1A;
+  background-color: #1a1a1a;
 `;
 
 const Div = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   align-items: center;
 `;
@@ -66,7 +66,13 @@ function AboutFirst_Mob() {
         <ThemeProvider theme={theme}>
           <AboutLogo src={AboutImage} alt="AboutLogo" />
           <Header8>
-            Pay it forward<br/>문화를 실천하는<br/>대학생 IT 협업 동아리<br/>PARD
+            Pay it Forward
+            <br />
+            문화를 실천하는
+            <br />
+            대학생 IT 협업 동아리
+            <br />
+            PARD
           </Header8>
         </ThemeProvider>
         <AboutFrame1 src={AboutFrame} alt="AboutFrame" />

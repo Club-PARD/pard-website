@@ -112,7 +112,6 @@ const BoxText = styled.div`
   white-space: nowrap;
   margin-left: 60px;
   margin-top: 6px;
-  
 
   span.highlight {
     color: #64c59a;
@@ -245,8 +244,8 @@ function RecruitingSecond() {
           </Header8>
 
           <Subtitle2>
-            2023년도 9월부터 24년도 1월까지 활동할<br></br>2기 멤버들을
-            모집합니다.<br></br>* 일부 일정 변동 가능
+            2024년도 3월부터 7월까지 활동할<br></br>3기 멤버들을 모집합니다.
+            <br></br>* 일부 일정 변동 가능
           </Subtitle2>
 
           <Container>
@@ -266,7 +265,7 @@ function RecruitingSecond() {
                 </Icon1B>
               </IconWrap>
               <Box1>서류접수</Box1>
-              <BoxText>8/14(월) ~ 8/25(금)</BoxText>
+              <BoxText>2/21(수) ~ 2/29(목)</BoxText>
             </Box>
             <Box
               style={{
@@ -295,7 +294,7 @@ function RecruitingSecond() {
                 </Icon2B>
               </IconWrap>
               <Box2>서류 합격 발표</Box2>
-              <BoxText>8/27(일) 중</BoxText>
+              <BoxText>3/2(토) 중</BoxText>
             </Box>
             <Box
               style={{
@@ -312,7 +311,7 @@ function RecruitingSecond() {
                 </Icon3>
               </IconWrap>
               <Box3>면접</Box3>
-              <BoxText>8/28(월) ~ 9/02(토)</BoxText>
+              <BoxText>3/6(수) ~ 3/8(금)</BoxText>
             </Box>
             <Box
               style={{
@@ -339,7 +338,7 @@ function RecruitingSecond() {
                 </Icon4B>
               </IconWrap>
               <Box4>최종합격 발표</Box4>
-              <BoxText>9/3(일) 중</BoxText>
+              <BoxText>3/9(토) 중</BoxText>
             </Box>
           </Container>
 
@@ -365,9 +364,9 @@ function RecruitingSecond() {
                 <span className="highlight">01</span>
               </Number>
               <Body3>
-                <span className="highlight">원서 접수 마감 이후</span> 접수된
-                지원 서류 및<br></br>사전 과제는 접수가 어렵습니다.제시간 안
-                <br></br>에 꼭 제출 해주세요.
+                <span className="highlight">서류 접수 마감 이후</span> 접수된
+                지원 서류 및<br></br>사전 과제는 접수가 어려우니, 마감기한 안
+                <br></br>에 꼭 제출 해주시기 바랍니다.
               </Body3>
             </Container>
 
@@ -376,7 +375,7 @@ function RecruitingSecond() {
                 <span className="highlight">02</span>
               </Number>
               <Body3>
-                사전과제는 지원서 
+                사전과제는 지원서
                 <span className="highlight"> 접수 시작일</span>
                 <br></br>에 기획, 디자인 파트의{" "}
                 <span className="highlight">노션 페이지</span>에<br></br>{" "}
@@ -402,8 +401,7 @@ function RecruitingSecond() {
                 <span className="highlight">04</span>
               </Number>
               <Body3>
-                면접은{" "}
-<span className="highlight"> 2대다로 30분</span> 동안
+                면접은 <span className="highlight"> 2대다로 30분</span> 동안
                 진행되며, <br></br>면접 시간은 지원서 합격자에<br></br> 한하여
                 개별적으로 문자 안내 드립니다.
               </Body3>

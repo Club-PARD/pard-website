@@ -156,12 +156,12 @@ const RecruitingPart_Mob = () => {
       hoverColor: "#FF5C00",
       vectorImage: DevelopVector,
       selectedImage: SelectedVector,
-     /*
+      /*
       showButton: true,
       buttonText: "사전과제!",
 */
-      showButton2: true,
-      buttonText2: "New!",
+      // showButton2: true,
+      // buttonText2: "New!",
     },
     {
       title: "WEB",
@@ -182,8 +182,8 @@ const RecruitingPart_Mob = () => {
       hoverColor: "#FF5C00",
       vectorImage: DevelopVector,
       selectedImage: SelectedVector,
-      showButton: true,
-      buttonText: "New!",
+      // showButton: true,
+      // buttonText: "New!",
       showButton2: false,
       buttonText2: "",
     },

@@ -1,144 +1,144 @@
-import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
-import AboutFrame from '../../../assets/img/About_Mob_Bar_Last.png';
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from "../../../styles/theme";
+import AboutFrame from "../../../assets/img/About_Mob_Bar_Last.png";
 
-import React from 'react';
+import React from "react";
 
 const PartDiv = styled.div`
-    height: 500px;
-    width: 375px;
-    background: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    place-content: center;
-    margin: 0 auto;
-    /* position: relative; */
+  height: 500px;
+  width: 375px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+  margin: 0 auto;
+  /* position: relative; */
 `;
 
 const Div = styled.div`
-   display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  background : #FFFFFF;
+  background: #ffffff;
   align-items: center;
-  width: 100%;  
-
+  width: 100%;
 `;
 
 const Header7 = styled.div`
-  font-size: ${props => props.theme.Mob_fontSizes.Header7};
-  font-weight: ${props => props.theme.fontWeights.Header7};
+  font-size: ${(props) => props.theme.Mob_fontSizes.Header7};
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
   color: #000000;
-  font-family: 'NanumSquare Neo';
+  font-family: "NanumSquare Neo";
   line-height: 1.45;
   margin-bottom: 58px;
   white-space: pre-line;
-  text-align : center;
+  text-align: center;
   /* margin-top: 100px; */
-  `;
+`;
 
 const Shape1 = styled.div`
-font-size: ${props => props.theme.Mob_fontSizes.Header4};
-font-weight: ${props => props.theme.fontWeights.Header4};
-font-family: 'NanumSquare Neo';
-line-height: 53px;
-width:13px;
-height:33px;
-display: flex;
-color: #FF5C00;
-margin-right: 288px;
+  font-size: ${(props) => props.theme.Mob_fontSizes.Header4};
+  font-weight: ${(props) => props.theme.fontWeights.Header4};
+  font-family: "NanumSquare Neo";
+  line-height: 53px;
+  width: 13px;
+  height: 33px;
+  display: flex;
+  color: #ff5c00;
+  margin-right: 288px;
 `;
 
 const Shape2 = styled.div`
-  font-size: ${props => props.theme.Mob_fontSizes.Header4};
-  font-weight: ${props => props.theme.fontWeights.Header4};
-  font-family: 'NanumSquare Neo';
+  font-size: ${(props) => props.theme.Mob_fontSizes.Header4};
+  font-weight: ${(props) => props.theme.fontWeights.Header4};
+  font-family: "NanumSquare Neo";
   line-height: 53px;
-  width:13px;
-  height:33px;
+  width: 13px;
+  height: 33px;
   display: flex;
-  color: #FF5C00;
+  color: #ff5c00;
 `;
 
 const Line = styled.div`
-  display:flex;
+  display: flex;
 `;
 
 const Header6 = styled.div`
-  font-size: ${props => props.theme.Mob_fontSizes.Header6};
-  font-weight: ${props => props.theme.fontWeights.Header6};
+  font-size: ${(props) => props.theme.Mob_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
   color: #000000;
-  font-family: 'NanumSquare Neo';
+  font-family: "NanumSquare Neo";
   line-height: 1.45;
   margin-bottom: 18px;
   white-space: pre-line;
-  text-align : center;
-
-  `;
+  text-align: center;
+`;
 
 const Comment = styled.div`
-  width:104px;
+  width: 104px;
   height: 18px;
   font-size: 10px;
   font-weight: 400;
   color: #000000;
-  font-family: 'NanumSquare Neo';
+  font-family: "NanumSquare Neo";
   line-height: 1.45;
   white-space: pre-line;
-  text-align : center;
+  text-align: center;
   margin-bottom: 75px;
-  `
+`;
 
 const Button = styled.button`
-    font-size: ${props => props.theme.Mob_fontSizes.ButtonText1};
-    font-weight: ${props => props.theme.fontWeights.ButtonText1};
-    font-family: 'NanumSquare Neo';
-    white-space: pre-line;
-    display: flex;
-    align-items: center;
-    width: 220px;
-    height: 60px;
-    /* background-color: #FF5C00; */
-    background-color: #d3d1d8;
-    justify-content: center;
-    color: #FFFFFF;
-    border-radius: 10px;
-    border : none;
-    /* cursor: pointer; */
-    cursor: not-allowed;
-
-  `
+  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
+  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  height: 60px;
+  /* background-color: #FF5C00; */
+  background-color: #d3d1d8;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  /* cursor: pointer; */
+  cursor: not-allowed;
+`;
 
 const AboutFrame1 = styled.img`
-    height: 40px;
-    width: 100%;
-    border-radius: 0px;
-    margin-top: 160px;
-  `
-  ;
-
+  height: 40px;
+  width: 100%;
+  border-radius: 0px;
+  margin-top: 160px;
+`;
 function AboutLast_Mob() {
   const handleClick = () => {
     window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
   };
   return (
     <Div>
-    <PartDiv>
-      <ThemeProvider theme={theme}>
-        <Header7>진짜 협업<br></br>함께 경험해봐요</Header7>
-        <Line>
-          <Shape1>"</Shape1>
-          <Shape2>"</Shape2>
-        </Line>
-        <Header6>똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도<br></br>선수들의 역량이에요</Header6>
-        <Comment>송민 KBS 서핑 해설위원</Comment>
-        {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
-        <Button>2기 모집이 완료 되었습니다.</Button>
-      </ThemeProvider>
-    </PartDiv>
-    <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header7>
+            진짜 협업<br></br>함께 경험해봐요
+          </Header7>
+          <Line>
+            <Shape1>"</Shape1>
+            <Shape2>"</Shape2>
+          </Line>
+          <Header6>
+            똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도
+            <br></br>선수들의 역량이에요
+          </Header6>
+          <Comment>송민 KBS 서핑 해설위원</Comment>
+          {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
+          <Button>3기 모집이 완료 되었습니다.</Button>
+        </ThemeProvider>
+      </PartDiv>
+      <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
     </Div>
   );
 }
