@@ -9,7 +9,7 @@ import AsanImg from "../../../assets/img/ASANImg.png";
 import MobitImg from "../../../assets/img/MobitImg.png";
 import NextChallengeImg from "../../../assets/img/NextChallengeImg.png";
 import PickPly from "../../../assets/img/Pickply_Img.png";
-import dCamp from "../../../assets/img/dCamp.PNG";
+import dCamp from "../../../assets/img/dCamp.png";
 import AWS from "../../../assets/img/AWS_logo.PNG";
 
 const Header7 = styled.div`
@@ -121,15 +121,17 @@ const ContentWrapper = styled.div`
 `;
 
 const AWSImg = styled.img`
-  width: 40%;
+  width: 25%;
   height: auto;
   margin-top: -90px;
+  margin-top: 20px;
   cursor: pointer;
 `;
 
 const Dcamp = styled.img`
   width: 40%;
   height: auto;
+  margin-top: 50px;
   cursor: pointer;
 `;
 
@@ -191,19 +193,19 @@ function HomePartnerMob() {
               src={DisquietImage}
               alt="Disquiet"
             />
-            <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
+            {/* <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" /> */}
             <ImpactCampusImage3
               onClick={handleClickImpactCampus}
               src={ImpactCampusImage}
               alt="Impact Campus"
             />
             <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
-            <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" />
-            <PickPlyDiv
+            {/* <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" /> */}
+            {/* <PickPlyDiv
               onClick={handleClickPickPly}
               src={PickPly}
               alt="PickPly"
-            />
+            /> */}
             <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
             <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
           </ContentWrapper>

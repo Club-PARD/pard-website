@@ -9,7 +9,7 @@ import AsanImg from "../../../assets/img/ASANImg.png";
 import MobitImg from "../../../assets/img/MobitImg.png";
 import PickPly from "../../../assets/img/Pickply_Img.png";
 import NextChallengeImg from "../../../assets/img/NextChallengeImg.png";
-import dCamp from "../../../assets/img/dCamp.PNG";
+import dCamp from "../../../assets/img/dCamp.png";
 import AWS from "../../../assets/img/AWS_logo.PNG";
 
 const Header2 = styled.div`
@@ -201,10 +201,12 @@ function HomePartner() {
             alt="Disquiet"
           />
           <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
-          <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
-          <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" />
+          <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
+          <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
+          {/* <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
+          <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" /> */}
         </ContentWrapper2>
-        <ContentWrapper3>
+        {/* <ContentWrapper3>
           <PickPlyDiv
             onClick={handleClickPickPly}
             src={PickPly}
@@ -212,7 +214,7 @@ function HomePartner() {
           />
           <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
           <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
-        </ContentWrapper3>
+        </ContentWrapper3> */}
       </ThemeProvider>
     </PartDiv>
   );
