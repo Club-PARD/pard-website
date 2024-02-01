@@ -86,7 +86,7 @@ function RecruitingFirstMob() {
           </ButtonText1>
           <ButtonDiv>
             {/* <Button onClick={handleClick}>지금 바로 2기 지원하기</Button> */}
-            <Button>2기 모집이 완료 되었습니다.</Button>
+            <Button>지금 바로 3기 지원하기</Button>
           </ButtonDiv>
         </ThemeProvider>
       </PartDiv>

@@ -84,7 +84,7 @@ function RecruitingFirst() {
             실행해요.
           </Header5>
           {/* <Button onClick={handleClick}>지금 바로 2기 지원하기</Button> */}
-          <Button>2기 모집이 완료 되었습니다.</Button>
+          <Button>지금 바로 3기 지원하기</Button>
           <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
         </ThemeProvider>
       </PartDiv>

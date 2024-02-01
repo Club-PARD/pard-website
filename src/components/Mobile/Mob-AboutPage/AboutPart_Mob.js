@@ -1,11 +1,11 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React, { useState } from "react";
-import PM from "../../../assets/img/PMpart.png";
-import Web from "../../../assets/img/WebPart.png";
-import Design from "../../../assets/img/DesignPart.png";
-import App from "../../../assets/img/AppPart.png";
-import Server from "../../../assets/img/ServerPart.png";
+import PM from "../../../assets/img/PM_info.png";
+import Web from "../../../assets/img/Web_info.png";
+import Design from "../../../assets/img/Design_info.png";
+import App from "../../../assets/img/iOS_info.png";
+import Server from "../../../assets/img/Server_info.png";
 
 const Header8 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header8};
@@ -127,20 +127,30 @@ function AboutPart_Mob() {
       partEng: "Product Manager",
       context: (
         <>
-          사용자 중심 기반으로 서비스 기획 일련의 과정을
+          사용자의 문제를 찾고, 해결할 수 있는 서비스를
           <br />
-          배워 실제 서비스를 기획합니다. <br />
-          아이디어 발상에서 그치는 것이 아닌 실제 기획과 <br />
-          직결되는 IA, Flow-chart, 화면설계서 등의 <br />
-          기획 산출물을 작성해보고 실제 프로덕트 개발에서 <br />
-          어떻게 적용할 것인지 의견을 나눠요. <br />
+          기획합니다. 아이디어 발상에서 그치는 것이 아닌
           <br />
-          단순한 서비스 기획에 필요한 하드스킬만을 배우는
+          프로덕트 구현의 모든 과정에서 관리자 역할을
           <br />
-          것이 아니라 BM(비즈니스 모델), 데이터, 사용자
+          수행합니다. 이 과정에서 실무 기획에서 사용되는
           <br />
-          경험, 유저의 니즈에 기반해 근거 있는 기획을 할 수<br />
-          있는 기반과 마인드를 가질 수 있습니다.
+          IA, Flow-Chart, 화면 설계서 등의
+          <br />
+          기획 산출물을 작성하고 산출물 기반으로
+          <br />
+          디자이너/개발자와 소통합니다.
+          <br />
+          <br />
+          서비스 기획에 필요한 문제 정의, 데이터 기반
+          <br />
+          솔루션 도출, UX 설계 뿐만 아니라
+          <br />
+          프로젝트 매니징을 위한 프레임워크, 회고 방법
+          <br />
+          등에 기반해 서비스 기획자 및
+          <br />
+          PM의 마인드를 가질 수 있습니다.
         </>
       ),
       homework: "서비스 화면 설계서 작성",
@@ -184,27 +194,10 @@ function AboutPart_Mob() {
       border_color: "#FF5C00",
       imgsrc: App,
       selected: false,
-      partEng: "App Developer",
-      context: (
-        <>
-          모바일 앱과 서비스 개발을 위한 이론을 배우고 <br />
-          실습/협업 합니다. <br />
-          개인이 아닌 팀으로 이루어진 개발 과제와 <br />
-          프로젝트를 통해 Github의 활용과 응용은 물론 <br />
-          프로젝트 파일 생성부터 배포까지의 과정을 <br />
-          경험할 수 있습니다.
-          <br />
-          <br />
-          프레임 워크에 대한 깊은 분석과 역량을 키우고, <br />
-          IT 프로덕트 제작 과정을 경험함으로써 유의미한
-          <br />
-          포트폴리오를 가진 개발자로 성장합니다.
-          <br />
-          * 1기는 Flutter를, 2기부터는 iOS 기반으로 <br />
-          학습합니다.
-        </>
-      ),
-      homework: "당근마켓 앱 클론 코딩",
+      partEng: "iOS Developer",
+      context:
+        "iOS 앱과 서비스 개발을 위한 이론을 배우고\n실습/협업 합니다. 개인이 아닌 팀으로 이루어진 \n개발 과제와 프로젝트를 통해 Github의 활용과 \n응용은 물론 프로젝트 파일 생성부터 배포까지의\n전 과정을 경험할 수 있습니다.\n\n프레임 워크에 대한 깊은 분석과 역량을 키우고,\nIT 프로덕트 제작 과정을 경험함으로써\n유의미한 포트폴리오를 가진 개발자로 성장합니다.\n*1기는 Flutter를, 2기부터는 iOS 기반으로 \n  학습합니다.",
+      homework: "netflix 앱 클론 코딩",
     },
     {
       id: 4,
@@ -222,13 +215,14 @@ function AboutPart_Mob() {
           React 프레임워크 기반으로 웹 서비스를
           <br />
           개발합니다. <br />
-          기획, 디자인 직군과의 제대로 된 협업 경험을 <br />
-          통해서 인공지능이 대체할 수 없는 협업 능력을 <br />
-          갖추고, 기획자와 디자이너를 이해할 수 있는 <br />
+          기획, 디자인 직군과의 실제 배포를 위한 <br />
+          제대로 된 협업 경험을 통해서 <br />
+          인공지능이 대체할 수 없는 협업 능력을 갖추고, <br />
+          기획자와 디자이너를 이해할 수 있는 <br />
           개발자로 성장합니다.
         </>
       ),
-      homework: "페이스북 웹 클론코딩",
+      homework: "Instagram 웹 클론 코딩",
     },
     {
       id: 5,

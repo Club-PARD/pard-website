@@ -1,8 +1,8 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-import PlanerImage from "../../../assets/img/Planner_parts.png";
+import PlanerImage from "../../../assets/img/PM_part.png";
 import DesignerImage from "../../../assets/img/Designer_part.png";
-import APPImage from "../../../assets/img/App_part.png";
+import APPImage from "../../../assets/img/iOS_part.png";
 import WEBImage from "../../../assets/img/Web_part.png";
 import SERVERImage from "../../../assets/img/Server_part.png";
 
@@ -167,14 +167,14 @@ function HomePartsMob() {
       imageSrc: APPImage,
       title: "앱(iOS)",
       description:
-        "사용자를 위한 어플리케이션 \nUI를 설계하고  Flutter 기반 \n앱 서비스를 개발합니다.",
+        "사용자를 위한 어플리케이션 \nUI를 설계하고 swift Uikit 기반 \niOS 앱 서비스를 개발합니다.",
     },
     {
       id: 4,
       imageSrc: WEBImage,
       title: "웹(WEB)",
       description:
-        "사용자를 위한 웹 UI를 설계하고 \n문제를 해결하는 React 기반 \n웹 서비스를 개발합니다.",
+        "사용자를 위한 웹 UI를 설계하고,\n문제를 해결하는 React 기반\n웹 서비스를 개발합니다.",
     },
     {
       id: 5,
