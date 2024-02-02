@@ -9,11 +9,13 @@ import KYG from "../../../assets/img/김유진.png";
 import KGS from "../../../assets/img/김진서.png";
 import KHR from "../../../assets/img/김하람.png";
 import PJG from "../../../assets/img/박정규.png";
-import KHS from "../../../assets/img/김현서.png";
+import KCR from "../../../assets/img/김채린.png";
+import KSJ from "../../../assets/img/김성준.png";
 import KHSS from "../../../assets/img/김현승.png";
 import WBH from "../../../assets/img/우병희.png";
 import PJS from "../../../assets/img/박지성.png";
 import LJE from "../../../assets/img/이지은.png";
+import LJA from "../../../assets/img/이지애.png";
 import SGS from "../../../assets/img/신지수.png";
 import LSY from "../../../assets/img/이신영.png";
 import JSJ from "../../../assets/img/진세진.png";
@@ -192,8 +194,8 @@ function InquiryManagemaentMob() {
   const managerData = [
     {
       id: 1,
-      imgsrc: SYC,
-      name: "송예찬(회장)",
+      imgsrc: JSH,
+      name: "조세희(회장)",
       position: "Operator",
       site: [
         {
@@ -206,8 +208,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 2,
-      imgsrc: CHJ,
-      name: "최현종",
+      imgsrc: JH,
+      name: "조환(부회장)",
       position: "Operator",
       site: [
         {
@@ -224,8 +226,8 @@ function InquiryManagemaentMob() {
 
     {
       id: 3,
-      imgsrc: LSY,
-      name: "이신영",
+      imgsrc: KGS,
+      name: "김진서",
       position: "Operator",
       site: [
         {
@@ -238,8 +240,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 4,
-      imgsrc: KHS,
-      name: "김현서",
+      imgsrc: LJA,
+      name: "이지애",
       position: "Operator",
       site: [
         {
@@ -252,8 +254,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 5,
-      imgsrc: LJE,
-      name: "이지은",
+      imgsrc: KCR,
+      name: "김채린",
       position: "Operator",
       site: [
         { name: "linkedin", link: "www.linkedin.com/in/ezn" },
@@ -263,8 +265,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 6,
-      imgsrc: WBH,
-      name: "우병희",
+      imgsrc: KSJ,
+      name: "김성준",
       position: "Operator",
       site: [
         { name: "github", link: "https://github.com/dnqudgml12" },
