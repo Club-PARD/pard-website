@@ -5,19 +5,19 @@ import { SiNotion } from "react-icons/si";
 import { theme } from "../../../styles/theme";
 import CHJ from "../../../assets/img/최현종.png";
 import SYC from "../../../assets/img/송예찬(부회장).png";
-import KYG from "../../../assets/img/김유진.png";
+import KKI from "../../../assets/img/김광일.png";
 import KGS from "../../../assets/img/김진서.png";
 import KHR from "../../../assets/img/김하람.png";
 import PJG from "../../../assets/img/박정규.png";
 import KCR from "../../../assets/img/김채린.png";
 import KSJ from "../../../assets/img/김성준.png";
 import KHSS from "../../../assets/img/김현승.png";
-import WBH from "../../../assets/img/우병희.png";
-import PJS from "../../../assets/img/박지성.png";
+import PMJ from "../../../assets/img/박민지.png";
+import CJH from "../../../assets/img/천주현.png";
 import LJE from "../../../assets/img/이지은.png";
 import LJA from "../../../assets/img/이지애.png";
 import SGS from "../../../assets/img/신지수.png";
-import LSY from "../../../assets/img/이신영.png";
+import CYJ from "../../../assets/img/최영준.png";
 import JSJ from "../../../assets/img/진세진.png";
 import JSH from "../../../assets/img/조세희.png";
 import JH from "../../../assets/img/조환.png";
@@ -276,8 +276,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 7,
-      imgsrc: PJG,
-      name: "박정규",
+      imgsrc: KHR,
+      name: "김하람",
       position: "Developer",
       site: [
         {
@@ -290,8 +290,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 8,
-      imgsrc: KGS,
-      name: "김진서",
+      imgsrc: JSJ,
+      name: "진세진",
       position: "Developer",
       site: [
         {
@@ -304,8 +304,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 9,
-      imgsrc: KYG,
-      name: "김유진",
+      imgsrc: PMJ,
+      name: "박민지",
       position: "Developer",
       site: [
         {
@@ -318,8 +318,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 10,
-      imgsrc: PJS,
-      name: "박지성",
+      imgsrc: KKI,
+      name: "김광일",
       position: "Developer",
       site: [
         {
@@ -342,8 +342,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 12,
-      imgsrc: KHR,
-      name: "김하람",
+      imgsrc: CJH,
+      name: "천주현",
       position: "Developer",
       site: [
         {
@@ -360,9 +360,9 @@ function InquiryManagemaentMob() {
     },
     {
       id: 13,
-      imgsrc: JSJ,
-      name: "진세진",
-      position: "Developer",
+      imgsrc: SGS,
+      name: "신지수",
+      position: "Designer",
       site: [
         {
           name: "linkedin",
@@ -375,8 +375,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 14,
-      imgsrc: JSH,
-      name: "조세희",
+      imgsrc: CYJ,
+      name: "최영준",
       position: "Designer",
       site: [
         { name: "linkedin", link: "https://www.linkedin.com/in/sayjo2/" },
@@ -386,9 +386,9 @@ function InquiryManagemaentMob() {
     },
     {
       id: 15,
-      imgsrc: SGS,
-      name: "신지수",
-      position: "Designer",
+      imgsrc: PYY,
+      name: "백예은",
+      position: "Product Manager",
       site: [
         {
           name: "linkedin",
@@ -400,8 +400,8 @@ function InquiryManagemaentMob() {
     },
     {
       id: 17,
-      imgsrc: JH,
-      name: "조환",
+      imgsrc: LJE,
+      name: "이지은",
       position: "Product Manager",
       site: [
         {
@@ -413,20 +413,6 @@ function InquiryManagemaentMob() {
           link: "https://instagram.com/hwanjho__75?igshid=NTc4MTIwNjQ2YQ==",
         },
         { name: "disquiet", link: "https://disquiet.io/@jhohwan" },
-      ],
-    },
-    {
-      id: 18,
-      imgsrc: PYY,
-      name: "백예은",
-      position: "Product Manager",
-      site: [
-        {
-          name: "linkedin",
-          link: "https://www.linkedin.com/in/%EC%98%88%EC%9D%80-%EB%B0%B1-794b8a249/",
-        },
-        { name: "instagram", link: "https://www.instagram.com/100yeah._.e/" },
-        { name: "disquiet", link: "https://disquiet.io/@313dpdms" },
       ],
     },
   ];
