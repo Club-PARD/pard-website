@@ -355,7 +355,13 @@ function InquiryManagement() {
       imgsrc: CYJ,
       name: "최영준",
       position: "Designer",
-      site: [{ name: "disquiet", link: "https://disquiet.io/@cyj7230" }],
+      site: [
+        {
+          name: "instagram",
+          link: "https://www.instagram.com/iam_grit___._?igsh=MXRnMDA4MHlncjlzNA%3D%3D&utm_source=qr",
+        },
+        { name: "disquiet", link: "https://disquiet.io/@cyj7230" },
+      ],
     },
     {
       id: 15,
