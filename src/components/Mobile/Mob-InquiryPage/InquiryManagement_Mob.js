@@ -200,10 +200,10 @@ function InquiryManagemaentMob() {
       site: [
         {
           name: "linkedin",
-          link: "https://www.linkedin.com/in/yechan-song-impacter/",
+          link: "https://www.linkedin.com/in/sayjo2/",
         },
-        { name: "disquiet", link: "https://disquiet.io/@impact_yechan" },
-        { name: "web", link: "https://brunch.co.kr/@songyechan15" },
+        { name: "instagram", link: "https://www.instagram.com/say_chee2se/" },
+        { name: "disquiet", link: "https://disquiet.io/@sehijo" },
       ],
     },
     {
@@ -214,12 +214,12 @@ function InquiryManagemaentMob() {
       site: [
         {
           name: "linkedin",
-          link: "https://www.linkedin.com/in/hyunjong-choi/",
+          link: "https://www.linkedin.com/in/hwan-jho-조환-70491b200/",
         },
-        { name: "disquiet", link: "https://disquiet.io/@owen" },
+        { name: "instagram", link: "https://www.instagram.com/hwanjho__75/" },
         {
-          name: "instagram",
-          link: "https://www.instagram.com/hamjong_e/?hl=ko",
+          name: "disquiet",
+          link: "https://disquiet.io/@jhohwan",
         },
       ],
     },
@@ -232,10 +232,10 @@ function InquiryManagemaentMob() {
       site: [
         {
           name: "linkedin",
-          link: "https://www.linkedin.com/in/%EC%8B%A0%EC%98%81-%EC%9D%B4-4b4419269/",
+          link: "https://www.linkedin.com/in/jinseo-kim-51b575262/",
         },
-        { name: "disquiet", link: "https://disquiet.io/@dltlsdud0319" },
-        { name: "instagram", link: "https://www.instagram.com/shinyoung0319/" },
+        { name: "disquiet", link: "https://disquiet.io/@eunoia_" },
+        { name: "github", link: "https://github.com/eunoia-jason" },
       ],
     },
     {
@@ -244,12 +244,7 @@ function InquiryManagemaentMob() {
       name: "이지애",
       position: "Operator",
       site: [
-        {
-          name: "linkedin",
-          link: "https://www.linkedin.com/in/%ED%98%84%EC%84%9C-%EA%B9%80-91753923a",
-        },
-        { name: "disquiet", link: "disquiet.io/@hyun3582" },
-        { name: "instagram", link: "https://www.instagram.com/hyun._.seo_99/" },
+        { name: "instagram", link: "https://www.instagram.com/ana_jiae/" },
       ],
     },
     {
@@ -258,9 +253,9 @@ function InquiryManagemaentMob() {
       name: "김채린",
       position: "Operator",
       site: [
-        { name: "linkedin", link: "www.linkedin.com/in/ezn" },
-        { name: "disquiet", link: "https://disquiet.io/@twins24j" },
-        { name: "instagram", link: "https://www.instagram.com/ana_jieun/" },
+        { name: "instagram", link: "https://www.instagram.com/rlacofls_/" },
+        { name: "disquiet", link: "https://disquiet.io/@rlacofls" },
+        { name: "github", link: "https://github.com/seizethedaylyn" },
       ],
     },
     {
@@ -269,9 +264,7 @@ function InquiryManagemaentMob() {
       name: "김성준",
       position: "Operator",
       site: [
-        { name: "github", link: "https://github.com/dnqudgml12" },
-        { name: "disquiet", link: "https://disquiet.io/@21800454" },
-        { name: "instagram", link: "https://www.instagram.com/vang.ee/" },
+        { name: "instagram", link: "https://www.instagram.com/__lakewood_/" },
       ],
     },
     {
@@ -282,10 +275,10 @@ function InquiryManagemaentMob() {
       site: [
         {
           name: "linkedin",
-          link: "https://www.linkedin.com/in/정규-바ᄀ-1223a8263/",
+          link: "https://www.linkedin.com/in/하람-김-482773263/",
         },
-        { name: "disquiet", link: "https://disquiet.io/@quddkflty" },
-        { name: "github", link: "https://github.com/dasdfadssda" },
+        { name: "instagram", link: "https://www.instagram.com/ram2__dev/" },
+        { name: "github", link: "https://github.com/haram22" },
       ],
     },
     {
@@ -296,10 +289,10 @@ function InquiryManagemaentMob() {
       site: [
         {
           name: "linkedin",
-          link: "https://www.linkedin.com/in/jinseo-kim-51b575262/",
+          link: "https://www.linkedin.com/in/세진-진-309b11266/",
         },
-        { name: "disquiet", link: "https://disquiet.io/@eunoia_" },
-        { name: "github", link: "https://github.com/eunoia-jason" },
+        { name: "instagram", link: "https://www.instagram.com/jinsejin2/" },
+        { name: "github", link: "https://github.com/jinsejin" },
       ],
     },
     {
@@ -309,11 +302,11 @@ function InquiryManagemaentMob() {
       position: "Developer",
       site: [
         {
-          name: "linkedin",
-          link: "https://www.linkedin.com/in/학부생-김유진-4bb385252",
+          name: "instagram",
+          link: "https://www.instagram.com/__min.zzi/",
         },
-        { name: "disquiet", link: "https://disquiet.io/@22100164" },
-        { name: "github", link: "https://github.com/YujinKim164" },
+        { name: "disquiet", link: "https://disquiet.io/@minzzi0068" },
+        { name: "github", link: "https://github.com/minzziPark" },
       ],
     },
     {
@@ -323,10 +316,11 @@ function InquiryManagemaentMob() {
       position: "Developer",
       site: [
         {
-          name: "github",
-          link: "https://github.com/Park21700305",
+          name: "linkedin",
+          link: "https://www.linkedin.com/in/kwangil-kim-79822a2aa",
         },
-        { name: "instagram", link: "https://www.instagram.com/10_mandarin/" },
+        { name: "disquiet", link: "https://disquiet.io/@oksk6689" },
+        { name: "github", link: "https://github.com/pangil5634" },
       ],
     },
     {
@@ -347,15 +341,10 @@ function InquiryManagemaentMob() {
       position: "Developer",
       site: [
         {
-          name: "linkedin",
-          link: "https://www.linkedin.com/in/%ED%95%98%EB%9E%8C-%EA%B9%80-482773263",
-        },
-        {
           name: "instagram",
-          link: "https://instagram.com/ram2__dev?igshid=NTc4MTIwNjQ2YQ==",
+          link: "https://www.instagram.com/zoohyxnn/",
         },
-        { name: "github", link: "https://github.com/haram22  " },
-        ,
+        { name: "github", link: "https://github.com/millejuice" },
       ],
     },
     {
@@ -366,11 +355,10 @@ function InquiryManagemaentMob() {
       site: [
         {
           name: "linkedin",
-          link: "https://www.linkedin.com/in/%EC%84%B8%EC%A7%84-%EC%A7%84-309b11266/",
+          link: "https://www.linkedin.com/in/지수-신-a443b7219/",
         },
-        { name: "instagram", link: "https://www.instagram.com/jinsejin2/" },
-        { name: "github", link: "https://github.com/jinsejin" },
-        //    { name: 'disquiet', link: 'https://disquiet.io/@sehijo' },
+        { name: "instagram", link: "https://www.instagram.com/s.jisu001/" },
+        { name: "disquiet", link: "https://disquiet.io/@shinji0609" },
       ],
     },
     {
@@ -378,11 +366,7 @@ function InquiryManagemaentMob() {
       imgsrc: CYJ,
       name: "최영준",
       position: "Designer",
-      site: [
-        { name: "linkedin", link: "https://www.linkedin.com/in/sayjo2/" },
-        { name: "instagram", link: "https://instagram.com/say_chee2se/" },
-        { name: "disquiet", link: "https://disquiet.io/@sehijo" },
-      ],
+      site: [{ name: "disquiet", link: "https://disquiet.io/@cyj7230" }],
     },
     {
       id: 15,
@@ -392,10 +376,10 @@ function InquiryManagemaentMob() {
       site: [
         {
           name: "linkedin",
-          link: "https://www.linkedin.com/in/%EC%A7%80%EC%88%98-%EC%8B%A0-a443b7219/",
+          link: "https://www.linkedin.com/in/예은-백-794b8a249/",
         },
-        { name: "instagram", link: "https://www.instagram.com/s.jisu001/" },
-        { name: "disquiet", link: "https://disquiet.io/@shinji0609" },
+        { name: "instagram", link: "https://www.instagram.com/100yeah._.e/" },
+        { name: "disquiet", link: "https://disquiet.io/@313dpdms" },
       ],
     },
     {
@@ -406,13 +390,13 @@ function InquiryManagemaentMob() {
       site: [
         {
           name: "linkedin",
-          link: "https://www.linkedin.com/in/hwan-jho-%EC%A1%B0%ED%99%98-70491b200",
+          link: "https://www.linkedin.com/in/ezn/",
         },
         {
           name: "instagram",
-          link: "https://instagram.com/hwanjho__75?igshid=NTc4MTIwNjQ2YQ==",
+          link: "https://www.instagram.com/ana_jieun/",
         },
-        { name: "disquiet", link: "https://disquiet.io/@jhohwan" },
+        { name: "disquiet", link: "https://disquiet.io/@twins24j" },
       ],
     },
   ];
