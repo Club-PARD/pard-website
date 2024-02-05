@@ -24,7 +24,6 @@ const Header7 = styled.div`
   white-space: pre-line;
   text-align: start;
   line-height: 140%;
-  margin-right: 100px;
   margin-top: 3px;
 `;
 
@@ -36,7 +35,7 @@ const Body2 = styled.div`
   white-space: pre-line;
   text-align: start;
   line-height: 140%;
-  width: 190px;
+  /* width: 200px; */
   margin-top: 25px;
 `;
 
@@ -148,7 +147,8 @@ const ProjectGrid = () => {
       try {
         const data = await getDocs(collection(dbService, "Project"));
         const newData = data.docs.map((doc) => ({ ...doc.data() }));
-        setProjects(newData);
+        const sortedItems = newData.sort((a, b) => b.order - a.order);
+        setProjects(sortedItems);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
@@ -172,8 +172,14 @@ const ProjectGrid = () => {
                         {project.generation} | {project.part}
                       </Header6>
                     </ContentTextDiv>
-                    <Header7>{project.serviceName}</Header7>
-                    <Body2>{project.title}</Body2>
+                    <Header7 style={{ marginBottom: "10px" }}>
+                      {project.serviceName}
+                    </Header7>
+                    {project.mobTitle.map((title, index) => (
+                      <Body2 key={index} style={{ marginTop: "0px" }}>
+                        {title}
+                      </Body2>
+                    ))}
                   </ContentsWrap>
                 </TextDiv>
               </ContentDiv>

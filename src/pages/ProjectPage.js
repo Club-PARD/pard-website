@@ -32,14 +32,14 @@ function ProjectPage() {
         <ProgramPageComponent_Web>
           <Navbar />
           <Projectirst />
-          {/* <ProjectLast /> */}
+          <ProjectLast />
           <Footer />
         </ProgramPageComponent_Web>
       ) : (
         <ProgramPageComponent_Mob>
           <NavBarMov />
           <ProjectFirst_Mob />
-          {/* <ProjectLast_Mob /> */}
+          <ProjectLast_Mob />
           {/* <TemporaryPage/> */}
           <FooterMov />
         </ProgramPageComponent_Mob>

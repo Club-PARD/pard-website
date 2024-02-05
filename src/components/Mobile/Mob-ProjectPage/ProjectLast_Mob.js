@@ -57,10 +57,12 @@ const Body2 = styled.div`
 const PartDiv = styled.div`
   position: relative;
   width: 100%;
-  height: 2660px;
+  /* height: 2660px; */
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 40px;
 `;
 
 const Div = styled.div`
@@ -139,15 +141,22 @@ const ContentTextDiv = styled.div`
   margin-top: 210px;
 `;
 
+const DownLogo = styled.img`
+  width: 46px;
+  height: 49px;
+`;
+
 function ProjectLast_Mob() {
   const [projects, setProjects] = useState([]);
+  const [more, setMore] = useState(false);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const data = await getDocs(collection(dbService, "Project"));
         const newData = data.docs.map((doc) => ({ ...doc.data() }));
-        setProjects(newData);
+        const sortedItems = newData.sort((a, b) => b.order - a.order);
+        setProjects(sortedItems);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
@@ -156,6 +165,10 @@ function ProjectLast_Mob() {
     fetchProjects();
   }, []);
 
+  const handleMore = () => {
+    setMore(true);
+  };
+
   return (
     <Div>
       <PartDiv>
@@ -163,7 +176,67 @@ function ProjectLast_Mob() {
           <Header8>전체 프로젝트</Header8>
           <Container>
             {projects.map((project) => (
-              <Link to={`/Project/${project.id}`} key={project.id}>
+              <React.Fragment key={project.id}>
+                {project.generation == "2기" || more ? (
+                  <>
+                    <Link to={`/Project/${project.id}`} key={project.id}>
+                      <Column key={project.id}>
+                        <ContentDiv key={project.id}>
+                          <MainImg
+                            src={project.mainImg}
+                            alt={project.serviceName}
+                          />
+                          <TextDiv>
+                            <ContentsWrap>
+                              <ContentTextDiv>
+                                <Header6>
+                                  {project.generation} | {project.part}
+                                </Header6>
+                              </ContentTextDiv>
+                              <Header7
+                                marginTop={"0px"}
+                                marginRight={"0px"}
+                                marginBottom={"0px"}
+                                marginLeft={"20px"}
+                              >
+                                {project.serviceName}
+                              </Header7>
+                              <TitleTectDiv>
+                                {project.mobTitle && (
+                                  <>
+                                    {project.mobTitle.map((title, index) => (
+                                      <Body2 key={index}>{title}</Body2>
+                                    ))}
+                                  </>
+                                )}
+                              </TitleTectDiv>
+                            </ContentsWrap>
+                          </TextDiv>
+                        </ContentDiv>
+                      </Column>
+                    </Link>
+                  </>
+                ) : (
+                  <></>
+                )}
+              </React.Fragment>
+            ))}
+            {!more && (
+              <DownLogo
+                src={require("../../../assets/img/moreButton.png")}
+                onClick={handleMore}
+              />
+            )}
+          </Container>
+        </ThemeProvider>
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default ProjectLast_Mob;
+/*
+<Link to={`/Project/${project.id}`} key={project.id}>
                 <Column key={project.id}>
                   <ContentDiv key={project.id}>
                     <MainImg src={project.mainImg} alt={project.serviceName} />
@@ -196,12 +269,4 @@ function ProjectLast_Mob() {
                   </ContentDiv>
                 </Column>
               </Link>
-            ))}
-          </Container>
-        </ThemeProvider>
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default ProjectLast_Mob;
+							*/

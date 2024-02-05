@@ -15,6 +15,7 @@ const Body1 = styled.div`
   margin-top: ${(props) => props.marginTop};
   margin-right: ${(props) => props.marginright};
   opacity: ${(props) => props.opacity};
+  width: 59px;
 `;
 
 const Body2 = styled.div`
@@ -130,7 +131,10 @@ const Container = styled.div`
   display: grid;
   height: 45px;
   /* background-color: red; */
-  grid-template-columns: repeat(${props => props.numOfColumns || 2}, 1fr); /* prop으로 전달된 값 사용 */
+  grid-template-columns: repeat(
+    ${(props) => props.numOfColumns || 2},
+    1fr
+  ); /* prop으로 전달된 값 사용 */
   row-gap: 10px;
   column-gap: 1.5px;
   margin-top: 43px;
@@ -150,13 +154,13 @@ const PartText = styled.div`
 
 const PartTool = styled.div`
   display: inline-flex;
-  padding: 5px 20px;
+  padding: 7px 20px;
   justify-content: center;
   /* align-items: center; */
   border-radius: 15px;
   background-color: ${(props) => props.color || "#5262F5"};
-  font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
+  font-weight: ${(props) => props.theme.fontWeights.Body2};
   color: white;
   margin-right: 15px;
 `;
@@ -256,7 +260,7 @@ function ProjectDetail_Mob() {
             {detailProjects.tool && (
               <>
                 <PartText marginTop={"35px"}>
-                  <Body1 color="white" align="start" marginright={"28px"}>
+                  <Body1 color="white" align="start">
                     기획
                   </Body1>
                   {detailProjects.tool.planner.map((tool, index) => (
@@ -264,7 +268,7 @@ function ProjectDetail_Mob() {
                   ))}
                 </PartText>
                 <PartText marginTop={"22px"}>
-                  <Body1 color="white" align="start" marginright={"14px"}>
+                  <Body1 color="white" align="start">
                     디자인
                   </Body1>
                   {detailProjects.tool.designer.map((tool, index) => (
@@ -274,7 +278,7 @@ function ProjectDetail_Mob() {
                   ))}
                 </PartText>
                 <PartText marginTop={"22px"}>
-                  <Body1 color="white" align="start" marginright={"28px"}>
+                  <Body1 color="white" align="start">
                     개발
                   </Body1>
                   <Container>
@@ -292,31 +296,39 @@ function ProjectDetail_Mob() {
                   </Header8>
                 </TitleText>
                 <PartText marginTop={"35px"}>
-                  <Body1 color="white" align="start" marginright={"62px"}>
+                  <Body1 color="white" align="start">
                     기획
                   </Body1>
                   {detailProjects.member.planner.map((name, index) => (
-                    <Body1 key={index} opacity={0.6}>{name} </Body1>
+                    <Body1 key={index} opacity={0.6}>
+                      {name}{" "}
+                    </Body1>
                   ))}
                 </PartText>
                 <PartText marginTop={"20px"}>
-                  <Body1 color="white" align="start" marginright={"47px"}>
+                  <Body1 color="white" align="start">
                     디자인
                   </Body1>
                   {detailProjects.member.designer.map((name, index) => (
-                    <Body1 key={index} opacity={0.6}>{name}</Body1>
-                  ))}
-                </PartText>
-                <PartText marginTop={"20px"}>
-                  <Body1 color="white" align="start" marginright={"62px"}>
-                    개발
-                  </Body1>
-                  <Container numOfColumns={3} marginTop={"28px"} detailProjects={detailProjects}>
-                  {detailProjects.member.developer.map((name, index) => (
-                    <Body1 key={index} marginright={"15px"} opacity={0.6}>
+                    <Body1 key={index} opacity={0.6}>
                       {name}
                     </Body1>
                   ))}
+                </PartText>
+                <PartText marginTop={"20px"}>
+                  <Body1 color="white" align="start">
+                    개발
+                  </Body1>
+                  <Container
+                    numOfColumns={3}
+                    marginTop={"28px"}
+                    detailProjects={detailProjects}
+                  >
+                    {detailProjects.member.developer.map((name, index) => (
+                      <Body1 key={index} marginright={"15px"} opacity={0.6}>
+                        {name}
+                      </Body1>
+                    ))}
                   </Container>
                 </PartText>
               </>
@@ -363,6 +375,20 @@ function ProjectDetail_Mob() {
                     <IconBackground
                       key="github"
                       href={detailProjects.link.github}
+                      target="_blank"
+                    >
+                      <Icon
+                        src={require("../../../assets/img/ProjectPageimg/GitHubImg.png")}
+                        alt={"github"}
+                        width={"36px"}
+                        height={"36px"}
+                      />
+                    </IconBackground>
+                  )}
+                  {detailProjects.link.github_server && (
+                    <IconBackground
+                      key="github"
+                      href={detailProjects.link.github_server}
                       target="_blank"
                     >
                       <Icon

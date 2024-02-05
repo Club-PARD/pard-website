@@ -17,7 +17,7 @@ const Header8 = styled.div`
   /* height: 140px; */
   position: absolute;
   line-height: 140%;
-  top: 22%;
+  top: 20%;
 `;
 
 const ButtonText1 = styled.div`
@@ -75,25 +75,18 @@ const ProgramFrame1 = styled.img`
   bottom: 0px;
 `;
 
-const CenterText = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-
 function ProjectFirst_Mob() {
   return (
     <Div>
       <PartDiv>
         <ThemeProvider theme={theme}>
           <AboutLogo src={AboutImage} alt="AboutLogo" />
-          {/* <Header8>
-                        PARD가<br />진행한 프로젝트를<br />보여드릴게요
-                    </Header8> */}
-
           <Header8>
-            PARD의 프로젝트가
-            <br />곧 공개될 예정이에요
+            PARD가
+            <br />
+            진행한 프로젝트를
+            <br />
+            보여드릴게요
           </Header8>
           <ButtonText1>
             PARD는 기획자・디자이너・개발자 간<br />

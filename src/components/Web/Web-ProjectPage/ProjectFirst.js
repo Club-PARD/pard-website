@@ -90,14 +90,10 @@ function Projectirst() {
         <ThemeProvider theme={theme}>
           <AboutLogo src={AboutImage} alt="AboutLogo" />
           <TextContainer>
-            {/* <Header2>
+            <Header2>
               PARD가 진행한
               <br />
               프로젝트를 보여드릴게요
-            </Header2> */}
-            <Header2>
-              PARD의 프로젝트가
-              <br />곧 공개될 예정이에요
             </Header2>
             <Header5>
               PARD는 기획자・디자이너・개발자 간 협업을 바탕으로

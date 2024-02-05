@@ -14,6 +14,7 @@ const Body3 = styled.div`
   text-align: ${(props) => props.align};
   margin-top: ${(props) => props.marginTop};
   margin-right: ${(props) => props.marginright};
+  width: 100px;
 `;
 
 const Header5 = styled.div`
@@ -127,22 +128,24 @@ const PartText = styled.div`
   display: flex;
   margin-top: ${(props) => props.marginTop};
   /* background-color: yellow; */
-  height: 28px;
+  /* height: 28px; */
+  flex-wrap: wrap; // 복수의 행
   align-items: center;
-  justify-content: start;
+  /* justify-content: start; */
 `;
 
 const PartTool = styled.div`
   display: inline-flex;
   padding: 5px 20px;
+  width: auto;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
   background-color: ${(props) => props.color || "#5262F5"};
   font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
+  font-weight: ${(props) => props.theme.fontWeights.Body3};
   color: white;
-  margin-right: 15px;
+  margin: 5px 15px 5px 0px;
 `;
 
 const LeftContent = styled.div`
@@ -196,6 +199,20 @@ const Icon = styled.img`
   height: ${(props) => props.height};
 `;
 
+const Container = styled.div`
+  display: grid;
+  height: 36px;
+  /* background-color: red; */
+  grid-template-columns: repeat(
+    ${(props) => props.numOfColumns || 3},
+    1fr
+  ); /* prop으로 전달된 값 사용 */
+  /* row-gap: 10px; */
+  /* column-gap: 1.5px; */
+  /* margin-top: 43px; */
+  /* margin-top: ${(props) => props.marginTop || "18px"}; */
+`;
+
 function ProjectDetail() {
   const navigate = useNavigate();
 
@@ -231,7 +248,10 @@ function ProjectDetail() {
               alt={detailProjects.teamName}
             />
             <MainDiv>
-              <Body3 marginTop="34px" align="center">
+              <Body3
+                style={{ marginTop: "34px", width: "100%" }}
+                align="center"
+              >
                 {detailProjects.batch}
               </Body3>
               <HR />
@@ -244,15 +264,15 @@ function ProjectDetail() {
                   {detailProjects.tool && (
                     <>
                       <PartText marginTop={"35px"}>
-                        <Body3 color="white" align="start" marginright={"62px"}>
+                        <Body3 color="white" align="start">
                           기획
                         </Body3>
                         {detailProjects.tool.planner.map((tool, index) => (
                           <PartTool key={index}>{tool} </PartTool>
                         ))}
                       </PartText>
-                      <PartText marginTop={"20px"}>
-                        <Body3 color="white" align="start" marginright={"47px"}>
+                      <PartText marginTop={"10px"}>
+                        <Body3 color="white" align="start">
                           디자인
                         </Body3>
                         {detailProjects.tool.designer.map((tool, index) => (
@@ -261,42 +281,54 @@ function ProjectDetail() {
                           </PartTool>
                         ))}
                       </PartText>
-                      <PartText marginTop={"20px"}>
-                        <Body3 color="white" align="start" marginright={"62px"}>
+                      <PartText marginTop={"10px"}>
+                        <Body3 color="white" align="start">
                           개발
                         </Body3>
-                        {detailProjects.tool.developer.map((tool, index) => (
-                          <PartTool key={index} color={"#FF5C00"}>
-                            {tool}
-                          </PartTool>
-                        ))}
+                        <Container>
+                          {detailProjects.tool.developer.map((tool, index) => (
+                            <PartTool key={index} color={"#FF5C00"}>
+                              {tool}
+                            </PartTool>
+                          ))}
+                        </Container>
                       </PartText>
                       <TitleText marginTop={"86px"}>
                         <Header8>Team |</Header8>
                         <Header7>{detailProjects.teamName}</Header7>
                       </TitleText>
                       <PartText marginTop={"35px"}>
-                        <Body3 color="white" align="start" marginright={"62px"}>
+                        <Body3 color="white" align="start">
                           기획
                         </Body3>
                         {detailProjects.member.planner.map((tool, index) => (
-                          <Body3 key={index}>{tool} </Body3>
+                          <Body3 key={index} style={{ width: "auto" }}>
+                            {tool}{" "}
+                          </Body3>
                         ))}
                       </PartText>
                       <PartText marginTop={"20px"}>
-                        <Body3 color="white" align="start" marginright={"47px"}>
+                        <Body3 color="white" align="start">
                           디자인
                         </Body3>
                         {detailProjects.member.designer.map((tool, index) => (
-                          <Body3 key={index}>{tool}</Body3>
+                          <Body3
+                            key={index}
+                            style={{ width: "auto", marginRight: "15px" }}
+                          >
+                            {tool}
+                          </Body3>
                         ))}
                       </PartText>
                       <PartText marginTop={"20px"}>
-                        <Body3 color="white" align="start" marginright={"62px"}>
+                        <Body3 color="white" align="start">
                           개발
                         </Body3>
                         {detailProjects.member.developer.map((tool, index) => (
-                          <Body3 key={index} marginright={"15px"}>
+                          <Body3
+                            key={index}
+                            style={{ width: "auto", marginRight: "15px" }}
+                          >
                             {tool}
                           </Body3>
                         ))}
@@ -340,20 +372,6 @@ function ProjectDetail() {
                             />
                           </IconBackground>
                         )}
-                        {detailProjects.link.github && (
-                          <IconBackground
-                            key="github"
-                            href={detailProjects.link.github}
-                            target="_blank"
-                          >
-                            <Icon
-                              src={require("../../../assets/img/ProjectPageimg/GitHubImg.png")}
-                              alt={"github"}
-                              width={"36px"}
-                              height={"36px"}
-                            />
-                          </IconBackground>
-                        )}
                         {detailProjects.link.notion && (
                           <IconBackground
                             key="notion"
@@ -379,6 +397,34 @@ function ProjectDetail() {
                               alt={"figma"}
                               width={"32px"}
                               height={"32px"}
+                            />
+                          </IconBackground>
+                        )}
+                        {detailProjects.link.github && (
+                          <IconBackground
+                            key="github"
+                            href={detailProjects.link.github}
+                            target="_blank"
+                          >
+                            <Icon
+                              src={require("../../../assets/img/ProjectPageimg/GitHubImg.png")}
+                              alt={"github"}
+                              width={"36px"}
+                              height={"36px"}
+                            />
+                          </IconBackground>
+                        )}
+                        {detailProjects.link.github_server && (
+                          <IconBackground
+                            key="github"
+                            href={detailProjects.link.github_server}
+                            target="_blank"
+                          >
+                            <Icon
+                              src={require("../../../assets/img/ProjectPageimg/GitHubImg.png")}
+                              alt={"github"}
+                              width={"36px"}
+                              height={"36px"}
                             />
                           </IconBackground>
                         )}
