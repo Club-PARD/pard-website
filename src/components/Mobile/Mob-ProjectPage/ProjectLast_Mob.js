@@ -236,38 +236,3 @@ function ProjectLast_Mob() {
 }
 
 export default ProjectLast_Mob;
-/*
-<Link to={`/Project/${project.id}`} key={project.id}>
-                <Column key={project.id}>
-                  <ContentDiv key={project.id}>
-                    <MainImg src={project.mainImg} alt={project.serviceName} />
-                    <TextDiv>
-                      <ContentsWrap>
-                        <ContentTextDiv>
-                          <Header6>
-                            {project.generation} | {project.part}
-                          </Header6>
-                        </ContentTextDiv>
-                        <Header7
-                          marginTop={"0px"}
-                          marginRight={"0px"}
-                          marginBottom={"0px"}
-                          marginLeft={"20px"}
-                        >
-                          {project.serviceName}
-                        </Header7>
-                        <TitleTectDiv>
-                          {project.mobTitle && (
-                            <>
-                              {project.mobTitle.map((title, index) => (
-                                <Body2 key={index}>{title}</Body2>
-                              ))}
-                            </>
-                          )}
-                        </TitleTectDiv>
-                      </ContentsWrap>
-                    </TextDiv>
-                  </ContentDiv>
-                </Column>
-              </Link>
-							*/
