@@ -213,6 +213,13 @@ const Container = styled.div`
   /* margin-top: ${(props) => props.marginTop || "18px"}; */
 `;
 
+const ContainerTeam = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 58px;
+  align-items: center;
+`;
+
 function ProjectDetail() {
   const navigate = useNavigate();
 
@@ -345,6 +352,7 @@ function ProjectDetail() {
                       />
                     ))}
                   </ImgDiv>
+
                   <Header5 marginTop={"58px"}>{detailProjects.title}</Header5>
                   {detailProjects.contents && (
                     <>
@@ -355,6 +363,17 @@ function ProjectDetail() {
                       </ContentsText>
                     </>
                   )}
+                  {/* <ContainerTeam>
+                    <Header5 style={{ marginRight: "30px", color: "#7B3FEF" }}>
+                      팀소개
+                    </Header5>
+                    <Icon
+                      src={require("../../../assets/img/arrowButton.png")}
+                      width={"22px"}
+                      height={"33px"}
+                    />
+                  </ContainerTeam> */}
+
                   <ToolListDiv>
                     {detailProjects.link && (
                       <>
