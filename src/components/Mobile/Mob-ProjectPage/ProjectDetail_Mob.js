@@ -129,16 +129,16 @@ const TitleText = styled.div`
 
 const Container = styled.div`
   display: grid;
-  height: 45px;
+  /* height: 45px; */
   /* background-color: red; */
   grid-template-columns: repeat(
     ${(props) => props.numOfColumns || 2},
     1fr
   ); /* prop으로 전달된 값 사용 */
-  row-gap: 10px;
-  column-gap: 1.5px;
-  margin-top: 43px;
-  margin-top: ${(props) => props.marginTop || "18px"};
+  /* row-gap: 10px; */
+  /* column-gap: 1.5px; */
+  /* margin-bottom: 22px; */
+  /* margin-top: ${(props) => props.marginTop || "18px"}; */
 `;
 
 const PartText = styled.div`
@@ -146,15 +146,15 @@ const PartText = styled.div`
   width: 310px;
   margin-top: ${(props) => props.marginTop};
   /* background-color: yellow; */
-  height: 28px;
+  /* height: 28px; */
   align-items: center;
-  justify-content: start;
+  /* justify-content: start; */
   margin-left: 7px;
 `;
 
 const PartTool = styled.div`
   display: inline-flex;
-  padding: 7px 20px;
+  padding: 7px 15px;
   justify-content: center;
   /* align-items: center; */
   border-radius: 15px;
@@ -162,7 +162,7 @@ const PartTool = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
   font-weight: ${(props) => props.theme.fontWeights.Body2};
   color: white;
-  margin-right: 15px;
+  margin: 5px 15px 5px 0px;
 `;
 
 const ImgDiv = styled.div`
@@ -267,18 +267,26 @@ function ProjectDetail_Mob() {
                     <PartTool key={index}>{tool} </PartTool>
                   ))}
                 </PartText>
-                <PartText marginTop={"22px"}>
-                  <Body1 color="white" align="start">
+                <PartText marginTop={"12px"} style={{ alignItems: "start" }}>
+                  <Body1
+                    style={{ color: "white", marginTop: "12px" }}
+                    align="start"
+                  >
                     디자인
                   </Body1>
-                  {detailProjects.tool.designer.map((tool, index) => (
-                    <PartTool key={index} color={"#7B3FEF"}>
-                      {tool}
-                    </PartTool>
-                  ))}
+                  <Container style={{ marginBottom: "12px" }}>
+                    {detailProjects.tool.designer.map((tool, index) => (
+                      <PartTool key={index} color={"#7B3FEF"}>
+                        {tool}
+                      </PartTool>
+                    ))}
+                  </Container>
                 </PartText>
-                <PartText marginTop={"22px"}>
-                  <Body1 color="white" align="start">
+                <PartText style={{ alignItems: "start" }}>
+                  <Body1
+                    style={{ color: "white", marginTop: "12px" }}
+                    align="start"
+                  >
                     개발
                   </Body1>
                   <Container>
@@ -319,17 +327,11 @@ function ProjectDetail_Mob() {
                   <Body1 color="white" align="start">
                     개발
                   </Body1>
-                  <Container
-                    numOfColumns={3}
-                    marginTop={"28px"}
-                    detailProjects={detailProjects}
-                  >
-                    {detailProjects.member.developer.map((name, index) => (
-                      <Body1 key={index} marginright={"15px"} opacity={0.6}>
-                        {name}
-                      </Body1>
-                    ))}
-                  </Container>
+                  {detailProjects.member.developer.map((name, index) => (
+                    <Body1 key={index} marginleft={"15px"} opacity={0.6}>
+                      {name}
+                    </Body1>
+                  ))}
                 </PartText>
               </>
             )}

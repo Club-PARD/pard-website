@@ -144,7 +144,7 @@ const ContentTextDiv = styled.div`
 const DownLogo = styled.img`
   width: 46px;
   height: 49px;
-  margin: 100px 0px 60px 0px;
+  margin: 120px 0px 60px 0px;
 `;
 
 function ProjectLast_Mob() {

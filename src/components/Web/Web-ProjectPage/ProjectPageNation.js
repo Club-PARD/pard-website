@@ -107,7 +107,7 @@ const ButtonDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 100px;
+  margin: 111px 0px 100px 0px;
   /* width: 160px; */
   height: 40px;
   /* background-color: red; */
@@ -117,7 +117,7 @@ const NumButtonDiv = styled.div`
   display: flex;
   width: 40px;
   height: 40px;
-  margin: 0px 20px;
+  margin: 0px 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -136,8 +136,8 @@ const ArrowButtonDiv = styled.img`
   height: 30px;
   flex-shrink: 0;
   cursor: pointer;
-  margin-right: ${(props) => props.marginright};
-  margin-left: ${(props) => props.marginleft};
+  margin-right: 50px;
+  margin-left: 50px;
 `;
 
 const PAGE_SIZE = 9;
@@ -167,7 +167,13 @@ const ProjectGrid = () => {
 
   // 페이지 변경 함수
   const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
+    if (newPage === 0) {
+      setCurrentPage(1);
+    } else if (newPage === 3) {
+      setCurrentPage(2);
+    } else {
+      setCurrentPage(newPage);
+    }
   };
 
   return (
