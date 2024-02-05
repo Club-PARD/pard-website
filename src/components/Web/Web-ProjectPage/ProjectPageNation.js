@@ -107,8 +107,8 @@ const ButtonDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 450px;
-  width: 160px;
+  margin: 100px;
+  /* width: 160px; */
   height: 40px;
   /* background-color: red; */
 `;
@@ -117,12 +117,13 @@ const NumButtonDiv = styled.div`
   display: flex;
   width: 40px;
   height: 40px;
-  margin: 0;
+  margin: 0px 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background: var(--primary-purple, #7b3fef);
+  background: ${(props) => (props.active ? "#7b3fef" : "none")};
+  color: #ffffff;
   font-size: ${(props) => props.theme.Web_fontSizes.Body2};
   font-weight: ${(props) => props.theme.fontWeights.Body2};
   line-height: 140%;
@@ -205,8 +206,18 @@ const ProjectGrid = () => {
           marginright={"30px"}
           onClick={() => handlePageChange(currentPage - 1)}
         />
-        <NumButtonDiv onClick={() => handlePageChange(1)}>1</NumButtonDiv>
-        <NumButtonDiv onClick={() => handlePageChange(2)}>2</NumButtonDiv>
+        <NumButtonDiv
+          active={currentPage === 1}
+          onClick={() => handlePageChange(1)}
+        >
+          1
+        </NumButtonDiv>
+        <NumButtonDiv
+          active={currentPage === 2}
+          onClick={() => handlePageChange(2)}
+        >
+          2
+        </NumButtonDiv>
         <ArrowButtonDiv
           src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
           marginleft={"30px"}

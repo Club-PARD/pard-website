@@ -144,6 +144,7 @@ const ContentTextDiv = styled.div`
 const DownLogo = styled.img`
   width: 46px;
   height: 49px;
+  margin: 100px 0px 60px 0px;
 `;
 
 function ProjectLast_Mob() {
@@ -221,14 +222,14 @@ function ProjectLast_Mob() {
                 )}
               </React.Fragment>
             ))}
-            {!more && (
-              <DownLogo
-                src={require("../../../assets/img/moreButton.png")}
-                onClick={handleMore}
-              />
-            )}
           </Container>
         </ThemeProvider>
+        {!more && (
+          <DownLogo
+            src={require("../../../assets/img/moreButton.png")}
+            onClick={handleMore}
+          />
+        )}
       </PartDiv>
     </Div>
   );

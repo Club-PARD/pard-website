@@ -1,11 +1,11 @@
-
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React from "react";
 import ProjectGrid from "./ProjectPageNation";
 
 const PartDiv = styled.div`
-  height: 1800px;
+  /* height: 1800px; */
+  height: auto;
   position: relative;
   width: 100%;
   display: flex;
