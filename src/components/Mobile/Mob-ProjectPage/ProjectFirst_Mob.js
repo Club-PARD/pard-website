@@ -13,11 +13,11 @@ const Header8 = styled.div`
   white-space: pre-line;
   text-align: center;
   font-style: normal;
-  width: 300px;
-  height: 140px;
+  width: 100%;
+  /* height: 140px; */
   position: absolute;
   line-height: 140%;
-  top: 13%;
+  top: 22%;
 `;
 
 const ButtonText1 = styled.div`
@@ -36,7 +36,7 @@ const ButtonText1 = styled.div`
 
 const PartDiv = styled.div`
   /* height: 500px; */
-  height: 68vh;
+  height: 100vh;
   margin-top: 100px;
   position: relative;
   width: 100%;
@@ -75,6 +75,12 @@ const ProgramFrame1 = styled.img`
   bottom: 0px;
 `;
 
+const CenterText = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
 function ProjectFirst_Mob() {
   return (
     <Div>
@@ -84,8 +90,8 @@ function ProjectFirst_Mob() {
           {/* <Header8>
                         PARD가<br />진행한 프로젝트를<br />보여드릴게요
                     </Header8> */}
+
           <Header8>
-            <br />
             PARD의 프로젝트가
             <br />곧 공개될 예정이에요
           </Header8>
