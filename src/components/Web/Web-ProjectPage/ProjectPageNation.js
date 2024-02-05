@@ -139,8 +139,10 @@ const ArrowButtonDiv = styled.img`
   margin-left: ${(props) => props.marginleft};
 `;
 
+const PAGE_SIZE = 9;
 const ProjectGrid = () => {
   const [projects, setProjects] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -157,10 +159,20 @@ const ProjectGrid = () => {
     fetchProjects();
   }, []);
 
+  // 현재 페이지의 프로젝트 목록을 계산합니다.
+  const startIndex = (currentPage - 1) * PAGE_SIZE;
+  const endIndex = startIndex + PAGE_SIZE;
+  const currentProjects = projects.slice(startIndex, endIndex);
+
+  // 페이지 변경 함수
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
   return (
     <>
       <Container>
-        {projects.map((project) => (
+        {currentProjects.map((project) => (
           <Link to={`/Project/${project.id}`} key={project.id}>
             <Column key={project.id}>
               <ContentDiv key={project.id}>
@@ -191,11 +203,14 @@ const ProjectGrid = () => {
         <ArrowButtonDiv
           src={require("../../../assets/img/ProjectPageimg/LeftArrow.png")}
           marginright={"30px"}
+          onClick={() => handlePageChange(currentPage - 1)}
         />
-        <NumButtonDiv>1</NumButtonDiv>
+        <NumButtonDiv onClick={() => handlePageChange(1)}>1</NumButtonDiv>
+        <NumButtonDiv onClick={() => handlePageChange(2)}>2</NumButtonDiv>
         <ArrowButtonDiv
           src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
           marginleft={"30px"}
+          onClick={() => handlePageChange(currentPage + 1)}
         />
       </ButtonDiv>
     </>
