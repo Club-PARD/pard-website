@@ -78,11 +78,15 @@ const Div = styled.div`
   height: 100%;
 `;
 
-const MainBackImg = styled.img`
+const MainBackImg = styled.div`
   width: 100%;
   height: 647px;
   border: none;
   /* object-fit: cover; */
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `;
 
 const MainDiv = styled.div`
