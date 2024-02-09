@@ -28,8 +28,9 @@ const NavBarWrapper = styled.nav`
 `;
 
 const NavDiv = styled.div`
-  min-width: 1600px;
-  max-width: 2000px;
+  /* min-width: 1600px;
+  max-width: 2000px; */
+  width: 95.5%;
   display: flex;
   align-items: center;
   justify-content: space-around;

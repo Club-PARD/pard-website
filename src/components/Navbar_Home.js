@@ -1,45 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { theme } from '../styles/theme';
-import styled, { ThemeProvider } from 'styled-components';
-import { useState, useEffect } from 'react';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import { theme } from "../styles/theme";
+import styled, { ThemeProvider } from "styled-components";
+import { useState, useEffect } from "react";
 
 const Div = styled.div`
-    margin: 0px auto;
-    
+  margin: 0px auto;
 `;
 
 const NavBarWrapper = styled.nav`
- background-color: ${props => props.isScrolled ? (props.scrollPosition >= 19650 ? '#1A1A1A' : 'rgba(0,0,0,0)') : 'rgba(0,0,0,0)'};
+  background-color: ${(props) =>
+    props.isScrolled
+      ? props.scrollPosition >= 19650
+        ? "#1A1A1A"
+        : "rgba(0,0,0,0)"
+      : "rgba(0,0,0,0)"};
   height: 70px;
   display: flex;
   justify-content: center;
-position: fixed;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
   transition: background-color 0.3s ease;
-  transform: translateY(${props => props.isScrolled ? '0' : '-100%'});
-
+  transform: translateY(${(props) => (props.isScrolled ? "0" : "-100%")});
 `;
 
 const NavDiv = styled.div`
-  min-width: 1600px;
-  max-width: 2000px;
+  /* min-width: 1600px;
+  max-width: 2000px; */
+  width: 95.5%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-`
-
+`;
 
 const Subtitle1 = styled.p`
-  font-size: ${props => props.theme.Web_fontSizes.Subtitle1};
-  font-weight: ${props => props.theme.fontWeights.Subtitle1};
-  color: #FFFFFF;
-  font-family: 'NanumSquare Neo';
-  &:hover{
-    color: #FFFFFF;
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle1};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle1};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  &:hover {
+    color: #ffffff;
   }
 `;
 
@@ -81,7 +83,10 @@ const NavBar_Home = () => {
 
   return (
     <Div>
-      <NavBarWrapper isScrolled={scrollPosition >= 30} scrollPosition={scrollPosition}>
+      <NavBarWrapper
+        isScrolled={scrollPosition >= 30}
+        scrollPosition={scrollPosition}
+      >
         <ThemeProvider theme={theme}>
           <NavDiv>
             <Logo>
@@ -92,22 +97,22 @@ const NavBar_Home = () => {
             <NavLinks>
               <NavItem>
                 <Link to="/About" style={{ textDecoration: "none" }}>
-                  <Subtitle1 >소개</Subtitle1>
+                  <Subtitle1>소개</Subtitle1>
                 </Link>
               </NavItem>
               <NavItem>
                 <Link to="/Project" style={{ textDecoration: "none" }}>
-                  <Subtitle1 >프로젝트</Subtitle1>
+                  <Subtitle1>프로젝트</Subtitle1>
                 </Link>
               </NavItem>
               <NavItem>
                 <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-                  <Subtitle1 >문의</Subtitle1>
+                  <Subtitle1>문의</Subtitle1>
                 </Link>
               </NavItem>
               <NavItem>
                 <Link to="/Recruting" style={{ textDecoration: "none" }}>
-                  <Subtitle1 >리쿠르팅</Subtitle1>
+                  <Subtitle1>리쿠르팅</Subtitle1>
                 </Link>
               </NavItem>
             </NavLinks>
@@ -117,6 +122,5 @@ const NavBar_Home = () => {
     </Div>
   );
 };
-
 
 export default NavBar_Home;

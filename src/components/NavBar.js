@@ -1,5 +1,5 @@
 import React from "react";
-import { Link,NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { theme } from "../styles/theme";
 import styled, { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
@@ -27,8 +27,9 @@ const NavBarWrapper = styled.nav`
 `;
 
 const NavDiv = styled.div`
-  min-width: 1600px;
-  max-width: 2000px;
+  /* min-width: 1600px;
+  max-width: 2000px; */
+  width: 95.5%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -73,7 +74,7 @@ const MainText = styled.div`
   font-weight: 700;
   line-height: 110%;
   letter-spacing: 1.933px;
-  text-decoration-line:none;
+  text-decoration-line: none;
   text-decoration: none;
 `;
 
@@ -86,7 +87,7 @@ const SubText = styled.div`
   font-weight: 500;
   line-height: 110%;
   margin-top: 8px;
-  text-decoration-line:none;
+  text-decoration-line: none;
   text-decoration: none;
 `;
 
@@ -101,9 +102,8 @@ const BannerDiv = styled.div`
   background-image: url(${backgroundImg});
   cursor: pointer;
   text-decoration: none;
-    text-decoration-line:none;
-    pointer-events: none;
-
+  text-decoration-line: none;
+  pointer-events: none;
 `;
 
 const CloseButton = styled.img`
@@ -167,9 +167,9 @@ const NavBar = () => {
         )} */}
       </>
       <NavBarWrapper
-        // scrollPosition={scrollPosition}
-        // isSticky={isSticky}
-        // isBannerVisible={isBannerVisible}
+      // scrollPosition={scrollPosition}
+      // isSticky={isSticky}
+      // isBannerVisible={isBannerVisible}
       >
         <ThemeProvider theme={theme}>
           <NavDiv>
