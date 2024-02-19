@@ -27,7 +27,7 @@ const PartDiv = styled.div`
   justify-content: center;
 `;
 
-const Button1 = styled.button`
+const Button = styled.button`
   margin-left: 77px;
   font-size: ${(props) => props.theme.Mob_fontSizes.Subtitle1};
   font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
@@ -50,9 +50,30 @@ const Button1 = styled.button`
   cursor: not-allowed;
 `;
 
+const Button1 = styled.button`
+  margin-left: 77px;
+  font-size: ${(props) => props.theme.Mob_fontSizes.Subtitle1};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
+  font-family: "NanumSquare Neo";
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  gap: 10px;
+  width: 220px;
+  height: 52px;
+  background-color: #64c59a;
+  color: #ffffff;
+  /* color: black; */
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+`;
+
 function RecruitingLastMob() {
   const handleClick = () => {
-    window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
+    window.open("https://pard-notice.oopy.io", "_blank");
   };
 
   return (
@@ -62,8 +83,8 @@ function RecruitingLastMob() {
           <Header8>
             협업에 미친<br></br>파드의 여정에<br></br>동참하고 싶다면
           </Header8>
-          {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
-          <Button1>지금 바로 3기 지원하기</Button1>
+          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
+          {/* <Button>지금 바로 3기 지원하기</Button> */}
         </ThemeProvider>
       </PartDiv>
     </Div>

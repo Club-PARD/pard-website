@@ -61,6 +61,24 @@ const Button = styled.button`
   cursor: not-allowed;
 `;
 
+const Button1 = styled.button`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  font-family: "NanumSquare Neo";
+  display: flex;
+  align-items: center;
+  width: 440px;
+  height: 58px;
+  background-color: #64c59a;
+  color: #ffffff;
+  justify-content: center;
+  margin-top: 110px;
+  /* color: #000000; */
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+`;
+
 const DownLogo = styled.img`
   width: 80px;
   height: 63px;
@@ -68,9 +86,9 @@ const DownLogo = styled.img`
 `;
 
 function RecruitingFirst() {
-  // const handleClick = () => {
-  //   window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
-  // };
+  const handleClick = () => {
+    window.open("https://pard-notice.oopy.io", "_blank");
+  };
 
   return (
     <Div>
@@ -83,8 +101,8 @@ function RecruitingFirst() {
             PARD에서 서로의 전문성을 이해하고, 솔직하게 대립하고, 빠르게
             실행해요.
           </Header5>
-          {/* <Button onClick={handleClick}>지금 바로 2기 지원하기</Button> */}
-          <Button>지금 바로 3기 지원하기</Button>
+          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
+          {/* <Button>지금 바로 3기 지원하기</Button> */}
           <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
         </ThemeProvider>
       </PartDiv>

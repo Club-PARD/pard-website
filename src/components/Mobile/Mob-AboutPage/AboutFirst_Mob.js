@@ -18,6 +18,7 @@ const Header8 = styled.div`
   position: relative;
   line-height: 140%;
   margin-bottom: 215px;
+  margin-top: 50px; //3기 리쿠르팅
 `;
 
 const PartDiv = styled.div`

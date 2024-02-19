@@ -55,6 +55,24 @@ const Button = styled.button`
   cursor: not-allowed;
 `;
 
+const Button1 = styled.button`
+  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
+  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  height: 60px;
+  background-color: #64c59a;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  /* color: black; */
+  cursor: pointer;
+`;
+
 const ButtonDiv = styled.div`
   width: 100%;
   display: flex;
@@ -64,7 +82,7 @@ const ButtonDiv = styled.div`
 
 function RecruitingFirstMob() {
   const handleClick = () => {
-    window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
+    window.open("https://pard-notice.oopy.io", "_blank");
   };
 
   return (
@@ -85,8 +103,8 @@ function RecruitingFirstMob() {
             <br /> 솔직하게 대립하고, 빠르게 실행해요.
           </ButtonText1>
           <ButtonDiv>
-            {/* <Button onClick={handleClick}>지금 바로 2기 지원하기</Button> */}
-            <Button>지금 바로 3기 지원하기</Button>
+            <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
+            {/* <Button>지금 바로 3기 지원하기</Button> */}
           </ButtonDiv>
         </ThemeProvider>
       </PartDiv>

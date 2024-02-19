@@ -108,6 +108,23 @@ const Button = styled.button`
   cursor: not-allowed;
 `;
 
+const Button1 = styled.button`
+  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
+  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  height: 60px;
+  background-color: #ff5c00;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+`;
+
 const AboutFrame1 = styled.img`
   height: 40px;
   width: 100%;
@@ -116,7 +133,7 @@ const AboutFrame1 = styled.img`
 `;
 function AboutLast_Mob() {
   const handleClick = () => {
-    window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
+    window.open("https://pard-notice.oopy.io", "_blank");
   };
   return (
     <Div>
@@ -134,8 +151,8 @@ function AboutLast_Mob() {
             <br></br>선수들의 역량이에요
           </Header6>
           <Comment>송민 KBS 서핑 해설위원</Comment>
-          {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
-          <Button>지금 바로 3기 지원하기</Button>
+          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
+          {/* <Button>지금 바로 3기 지원하기</Button> */}
         </ThemeProvider>
       </PartDiv>
       <AboutFrame1 src={AboutFrame} alt="AboutFrame" />

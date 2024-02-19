@@ -117,7 +117,7 @@ const Button = styled.button`
 
 function HomeLastMob() {
   const handleClick = () => {
-    window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
+    window.open("https://pard-notice.oopy.io", "_blank");
   };
   return (
     <Div>
@@ -135,8 +135,8 @@ function HomeLastMob() {
             <br></br>선수들의 역량이에요
           </Header6>
           <Subtitle2>송민 KBS 서핑 해설위원</Subtitle2>
-          {/* <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1> */}
-          <Button>지금 바로 3기 지원하기</Button>
+          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
+          {/* <Button>지금 바로 3기 지원하기</Button> */}
         </ThemeProvider>
       </PartDiv>
     </Div>

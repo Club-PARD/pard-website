@@ -50,17 +50,36 @@ const Button = styled.button`
   cursor: not-allowed;
 `;
 
+const Button1 = styled.button`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  font-family: "NanumSquare Neo";
+  display: flex;
+  align-items: center;
+  width: 440px;
+  height: 58px;
+  background-color: #64c59a;
+  justify-content: center;
+  margin-top: 100px;
+  /* color: #000000; */
+  background-color: #64c59a;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+`;
+
 function RecruitingLast() {
   const handleClick = () => {
-    window.open("https://forms.gle/oXnAxHnAgSnCEarg7", "_blank");
+    window.open("https://pard-notice.oopy.io", "_blank");
   };
   return (
     <Div>
       <PartDiv>
         <ThemeProvider theme={theme}>
           <Header7>협업에 미친 파드의 여정에 동참하고 싶다면</Header7>
-          {/* <Button onClick={handleClick}>2기 모집 알림 신청하기</Button> */}
-          <Button>지금 바로 3기 지원하기</Button>
+          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
+          {/* <Button>지금 바로 3기 지원하기</Button> */}
         </ThemeProvider>
       </PartDiv>
     </Div>
