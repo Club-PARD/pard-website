@@ -76,8 +76,14 @@ const LogoImg = styled.img`
 const BannerImg = styled.div`
   width: 100%;
   height: 100px;
-  background-image: url(${bannerImg});
-  background-size: cover;
+
+  img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    text-align: center;
+  }
+
   z-index: 1000;
   position: fixed;
   cursor: pointer;
@@ -91,7 +97,9 @@ const NavBarMov = () => {
 
   return (
     <>
-      <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")} />
+      <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+        <img src={bannerImg} />
+      </BannerImg>
       <Nav isOpen={isOpen}>
         <ThemeProvider theme={theme}>
           <Logo>
