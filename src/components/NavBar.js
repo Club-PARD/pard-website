@@ -5,18 +5,24 @@ import styled, { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
 import backgroundImg from "../assets/img/BannerImg/BannerImg.png";
 import closeButtonImg from "../assets/img/BannerImg/XButton.png";
+import bannerImg from "../assets/img/web_banner_3기.png";
 
 const Div = styled.div`
+  top: 0;
   margin: 0px auto;
+  display: fixed;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10000;
 `;
 
 const NavBarWrapper = styled.nav`
   height: 70px;
   display: flex;
   justify-content: center;
-  position: fixed;
+
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 999;
   background-color: #1a1a1a;
   border: 1px #263af3;
@@ -24,6 +30,8 @@ const NavBarWrapper = styled.nav`
   border-right: none;
   top: ${({ isSticky, isBannerVisible }) =>
     isBannerVisible ? (isSticky ? "0" : "12%") : "0%"};
+  margin-top: 100px;
+  position: relative;
 `;
 
 const NavDiv = styled.div`
@@ -115,6 +123,22 @@ const CloseButton = styled.img`
   cursor: pointer;
 `;
 
+const BannerImg = styled.div`
+  width: 100vw;
+  height: 100px;
+
+  img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    text-align: center;
+  }
+
+  z-index: 1000;
+  position: fixed;
+  cursor: pointer;
+`;
+
 const NavBar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -130,7 +154,7 @@ const NavBar = () => {
   };
 
   useEffect(() => {
-    setIsBannerVisible(true);
+    setIsBannerVisible();
     function handleScroll() {
       const position = window.pageYOffset;
       setScrollPosition(position);
@@ -151,8 +175,7 @@ const NavBar = () => {
 
   return (
     <Div>
-      <>
-        {/* {isBannerVisible && (
+      {/* {isBannerVisible && (
         <NavLink to="/Recruting" style={{ textDecoration: "none" }}>
         <BannerDiv>
             <CloseButton
@@ -165,11 +188,14 @@ const NavBar = () => {
           </BannerDiv>
           </NavLink>
         )} */}
-      </>
+
+      <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+        <img src={bannerImg}></img>
+      </BannerImg>
       <NavBarWrapper
-      // scrollPosition={scrollPosition}
-      // isSticky={isSticky}
-      // isBannerVisible={isBannerVisible}
+        scrollPosition={scrollPosition}
+        isSticky={isSticky}
+        isBannerVisible={isBannerVisible}
       >
         <ThemeProvider theme={theme}>
           <NavDiv>

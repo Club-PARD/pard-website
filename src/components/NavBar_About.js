@@ -7,6 +7,9 @@ import backgroundImg from "../assets/img/BannerImg/BannerImg.png";
 import closeButtonImg from "../assets/img/BannerImg/XButton.png";
 
 const Div = styled.div`
+  /* position: fixed;
+  display: flex;
+  flex-direction: column; */
   margin: 0px auto;
 `;
 
@@ -152,8 +155,7 @@ const NavBar_About = () => {
 
   return (
     <Div>
-      <>
-        {/* {isBannerVisible && (
+      {/* {isBannerVisible && (
           <NavLink to="/Recruting" style={{ textDecoration: "none" }}>
             <BannerDiv>
               <CloseButton
@@ -166,7 +168,7 @@ const NavBar_About = () => {
             </BannerDiv>
           </NavLink>
         )} */}
-      </>
+
       <NavBarWrapper
         scrollPosition={scrollPosition}
         isSticky={isSticky}

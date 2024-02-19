@@ -22,7 +22,9 @@ import TemporaryPage from "../components/temporaryPage";
 
 function RecruitingPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
-  const RecruitingPageComponent = styled.div``;
+  const RecruitingPageComponent = styled.div`
+    width: 100vw;
+  `;
 
   const RecruitingPageComponent_WEB = styled.div`
     justify-content: center;

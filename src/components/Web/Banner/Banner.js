@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { theme } from '../../../styles/theme';
-import backgroundImg from '../../../assets/img/BannerImg/BannerImg.png';
-import closeButtonImg from '../../../assets/img/BannerImg/XButton.png';
+import React, { useState } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { theme } from "../../../styles/theme";
+import backgroundImg from "../../../assets/img/BannerImg/BannerImg.png";
+import closeButtonImg from "../../../assets/img/BannerImg/XButton.png";
+
+function BannerWeb() {
+  const [isBannerVisible, setIsBannerVisible] = useState(true);
+
+  const handleCloseBanner = () => {
+    setIsBannerVisible(false);
+  };
+
+  return (
+    <>
+      {isBannerVisible && (
+        <Div>
+          <ThemeProvider theme={theme}>
+            <CloseButton src={closeButtonImg} onClick={handleCloseBanner} />
+            <MainText>PARD 2기 신입기수 리쿠르팅 시작</MainText>
+            <SubText>지원서 접수 기간 : 08.14(월) - 08.25(금)</SubText>
+          </ThemeProvider>
+        </Div>
+      )}
+    </>
+  );
+}
 
 const MainText = styled.div`
-  color: #FFF;
+  color: #fff;
   text-align: center;
-  font-family: 'NanumSquare Neo variable';
+  font-family: "NanumSquare Neo variable";
   font-size: 19.333px;
   font-style: normal;
   font-weight: 700;
@@ -16,9 +38,9 @@ const MainText = styled.div`
 `;
 
 const SubText = styled.div`
-  color: #FFF;
+  color: #fff;
   text-align: center;
-  font-family: 'NanumSquare Neo variable';
+  font-family: "NanumSquare Neo variable";
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -46,31 +68,5 @@ const CloseButton = styled.img`
   height: 14px;
   cursor: pointer;
 `;
-
-function BannerWeb() {
-  const [isBannerVisible, setIsBannerVisible] = useState(true);
-
-  const handleCloseBanner = () => {
-    setIsBannerVisible(false);
-  };
-
-  return (
-    <>
-      {isBannerVisible && (
-        <Div>
-          <ThemeProvider theme={theme}>
-            <CloseButton src={closeButtonImg} onClick={handleCloseBanner} />
-            <MainText>
-              PARD 2기 신입기수 리쿠르팅 시작
-            </MainText>
-            <SubText>
-              지원서 접수 기간 : 08.14(월) - 08.25(금)
-            </SubText>
-          </ThemeProvider>
-        </Div>
-      )}
-    </>
-  );
-}
 
 export default BannerWeb;
