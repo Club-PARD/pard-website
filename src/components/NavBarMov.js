@@ -20,7 +20,7 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border-bottom: none;
-  margin-top: 100px;
+  margin-top: 100px; //3기 리쿠르팅
 `;
 
 const Logo = styled.div`
@@ -50,7 +50,8 @@ const Menu = styled.div`
   padding: 1rem 5rem;
   text-align: center;
   height: 237px;
-  margin-top: 4px;
+  /* margin-top: 4px; */
+  margin-top: 84px; //임시
 `;
 
 const Subtitle2 = styled.div`

@@ -5,29 +5,37 @@ import styled, { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
 import backgroundImg from "../assets/img/BannerImg/BannerImg.png";
 import closeButtonImg from "../assets/img/BannerImg/XButton.png";
+import bannerImg from "../assets/img/web_banner_3기.png";
+
+// scroll위치 800px
+// 3기 리쿠르팅 배너로인한 위치 620px
 
 const Div = styled.div`
-  /* position: fixed;
-  display: flex;
-  flex-direction: column; */
+  top: 0;
   margin: 0px auto;
+  display: fixed;
+  flex-direction: column;
+  position: fixed;
+  z-index: 10000;
 `;
 
 const NavBarWrapper = styled.nav`
   background-color: ${({ scrollPosition }) =>
-    scrollPosition >= 800 ? "#FFFFFF" : "#1A1A1A"};
+    scrollPosition >= 620 ? "#FFFFFF" : "#1A1A1A"};
   height: 70px;
   display: flex;
   justify-content: center;
-  position: fixed;
-  width: 100%;
+  position: relative;
+  width: 100vw;
   z-index: 999;
   transition: background-color 0.3s ease;
   border: 1px #263af3;
   border-left: none;
   border-right: none;
+
   top: ${({ isSticky, isBannerVisible }) =>
     isBannerVisible ? (isSticky ? "0" : "12%") : "0%"};
+  margin-top: 100px;
 `;
 
 const NavDiv = styled.div`
@@ -125,6 +133,21 @@ const CloseButton = styled.img`
   cursor: pointer;
 `;
 
+const BannerImg = styled.div`
+  width: 100vw;
+  height: 100px;
+
+  img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    text-align: center;
+  }
+
+  position: fixed;
+  cursor: pointer;
+`;
+
 const NavBar_About = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { pathname } = useLocation();
@@ -155,20 +178,9 @@ const NavBar_About = () => {
 
   return (
     <Div>
-      {/* {isBannerVisible && (
-          <NavLink to="/Recruting" style={{ textDecoration: "none" }}>
-            <BannerDiv>
-              <CloseButton
-                src={closeButtonImg}
-                onClick={handleCloseBanner}
-                isBannerVisible={isBannerVisible}
-              />
-              <MainText>PARD 2기 신입기수 리쿠르팅 시작</MainText>
-              <SubText>지원서 접수 기간 : 08.14(월) - 08.25(금)</SubText>
-            </BannerDiv>
-          </NavLink>
-        )} */}
-
+      <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+        <img src={bannerImg}></img>
+      </BannerImg>
       <NavBarWrapper
         scrollPosition={scrollPosition}
         isSticky={isSticky}
@@ -186,7 +198,7 @@ const NavBar_About = () => {
                 <Link to="/About" style={{ textDecoration: "none" }}>
                   <Subtitle1
                     active={pathname === "/About"}
-                    isScrolled={scrollPosition >= 800}
+                    isScrolled={scrollPosition >= 620}
                   >
                     소개
                   </Subtitle1>
@@ -196,7 +208,7 @@ const NavBar_About = () => {
                 <Link to="/Project" style={{ textDecoration: "none" }}>
                   <Subtitle1
                     active={pathname === "/Project"}
-                    isScrolled={scrollPosition >= 800}
+                    isScrolled={scrollPosition >= 620}
                   >
                     프로젝트
                   </Subtitle1>
@@ -206,7 +218,7 @@ const NavBar_About = () => {
                 <Link to="/Inquiry" style={{ textDecoration: "none" }}>
                   <Subtitle1
                     active={pathname === "/Inquiry"}
-                    isScrolled={scrollPosition >= 800}
+                    isScrolled={scrollPosition >= 620}
                   >
                     문의
                   </Subtitle1>
@@ -216,7 +228,7 @@ const NavBar_About = () => {
                 <Link to="/Recruting" style={{ textDecoration: "none" }}>
                   <Subtitle1
                     active={pathname === "/Recruting"}
-                    isScrolled={scrollPosition >= 800}
+                    isScrolled={scrollPosition >= 620}
                   >
                     리쿠르팅
                   </Subtitle1>
