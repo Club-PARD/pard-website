@@ -127,7 +127,7 @@ const RecruitingPart_Mob = () => {
   const buttons = [
     {
       title: "서비스 기획",
-      link: "https://pard-recruiting.oopy.io/part/pm",
+      link: "https://pard-notice.oopy.io/pm",
       textColor: "#000000",
       hoverColor: "#5262F5",
       vectorImage: ServiceVector,
@@ -139,7 +139,7 @@ const RecruitingPart_Mob = () => {
     },
     {
       title: "디자인",
-      link: "https://pard-recruiting.oopy.io/part/design",
+      link: "https://pard-notice.oopy.io/design",
       textColor: "#000000",
       hoverColor: "#7B3FEF",
       vectorImage: DesignVector,
@@ -151,7 +151,7 @@ const RecruitingPart_Mob = () => {
     },
     {
       title: "APP(iOS)",
-      link: "https://pard-recruiting.oopy.io/part/app",
+      link: "https://pard-notice.oopy.io/ios",
       textColor: "#000000",
       hoverColor: "#FF5C00",
       vectorImage: DevelopVector,
@@ -165,7 +165,7 @@ const RecruitingPart_Mob = () => {
     },
     {
       title: "WEB",
-      link: "https://pard-recruiting.oopy.io/part/web",
+      link: "https://pard-notice.oopy.io/web",
       textColor: "#000000",
       hoverColor: "#FF5C00",
       vectorImage: DevelopVector,
@@ -177,7 +177,7 @@ const RecruitingPart_Mob = () => {
     },
     {
       title: "SERVER",
-      link: "https://pard-recruiting.oopy.io/part/server",
+      link: "https://pard-notice.oopy.io/server",
       textColor: "#000000",
       hoverColor: "#FF5C00",
       vectorImage: DevelopVector,

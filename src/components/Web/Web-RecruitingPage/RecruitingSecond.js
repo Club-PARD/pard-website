@@ -243,7 +243,7 @@ const Plus = styled.div`
 
 function RecruitingSecond() {
   const handleClick = () => {
-    window.open("https://pard-recruiting.oopy.io/schedule", "_blank");
+    window.open("https://pard-notice.oopy.io/schedule", "_blank");
   };
   return (
     <Div>
