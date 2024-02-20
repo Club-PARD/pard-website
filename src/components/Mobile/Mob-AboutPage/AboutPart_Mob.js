@@ -212,7 +212,7 @@ function AboutPart_Mob() {
           실습/협업 합니다. <br />
           HTML/CSS/JS에 대해 기초를 빠르게 다지고,
           <br />
-          React 프레임워크 기반으로 웹 서비스를
+          React 라이브러리를 기반으로 웹 서비스를
           <br />
           개발합니다. <br />
           기획, 디자인 직군과의 실제 배포를 위한 <br />
