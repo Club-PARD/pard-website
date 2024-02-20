@@ -169,14 +169,14 @@ const NavBar = () => {
   }, []);
 
   useEffect(() => {
-    // URL 경로가 "/Recruting"인 경우에만 isBannerVisible를 false로 설정
-    setIsBannerVisible(pathname !== "/Recruting");
+    // URL 경로가 "/Recruiting"인 경우에만 isBannerVisible를 false로 설정
+    setIsBannerVisible(pathname !== "/Recruiting");
   }, [pathname]);
 
   return (
     <Div>
       {/* {isBannerVisible && (
-        <NavLink to="/Recruting" style={{ textDecoration: "none" }}>
+        <NavLink to="/Recruiting" style={{ textDecoration: "none" }}>
         <BannerDiv>
             <CloseButton
               src={closeButtonImg}
@@ -223,8 +223,8 @@ const NavBar = () => {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link to="/Recruting" style={{ textDecoration: "none" }}>
-                  <Subtitle1 active={pathname === "/Recruting"}>
+                <Link to="/Recruiting" style={{ textDecoration: "none" }}>
+                  <Subtitle1 active={pathname === "/Recruiting"}>
                     리쿠르팅
                   </Subtitle1>
                 </Link>

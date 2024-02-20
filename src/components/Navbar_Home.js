@@ -111,7 +111,7 @@ const NavBar_Home = () => {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link to="/Recruting" style={{ textDecoration: "none" }}>
+                <Link to="/Recruiting" style={{ textDecoration: "none" }}>
                   <Subtitle1>리쿠르팅</Subtitle1>
                 </Link>
               </NavItem>

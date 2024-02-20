@@ -225,9 +225,9 @@ const NavBar_About = () => {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link to="/Recruting" style={{ textDecoration: "none" }}>
+                <Link to="/Recruiting" style={{ textDecoration: "none" }}>
                   <Subtitle1
-                    active={pathname === "/Recruting"}
+                    active={pathname === "/Recruiting"}
                     isScrolled={scrollPosition >= 620}
                   >
                     리쿠르팅

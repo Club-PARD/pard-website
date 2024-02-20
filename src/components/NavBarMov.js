@@ -129,7 +129,7 @@ const NavBarMov = () => {
               <Subtitle2>문의</Subtitle2>
             </Link>
             <Hr />
-            <Link to="/Recruting" style={{ textDecoration: "none" }}>
+            <Link to="/Recruiting" style={{ textDecoration: "none" }}>
               <Subtitle2>리쿠르팅</Subtitle2>
             </Link>
           </Menu>

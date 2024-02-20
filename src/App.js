@@ -31,7 +31,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/About" element={<AboutPage />} />
         <Route path="/Inquiry" element={<InquiryPage />} />
-        <Route path="/Recruting" element={<RecruitingPage />} />
+        <Route path="/Recruiting" element={<RecruitingPage />} />
         <Route path="/Project" element={<ProjectPage />} />
         <Route path="/Project/:projectId" element={<ProjectDetailPage />} />
         <Route path="/pard-website" element={<HomePage />} />
