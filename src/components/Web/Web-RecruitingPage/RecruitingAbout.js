@@ -145,10 +145,9 @@ function RecruitingAbout() {
               A. 다양한 분야로 관심이 많으신 예비 지원자님 정말 멋지십니다!
               <br />
               &nbsp; &nbsp; &nbsp;하지만 아쉽게도 중복 지원은 어렵습니다. 3기는
-              YB로 먼저 배우고 싶은 파트를,
+              먼저 배우고 싶은 파트를,
               <br />
-              &nbsp; &nbsp; &nbsp;4기에는 OB로 다른 파트에 지원해 보시는 건
-              어떨까요?
+              &nbsp; &nbsp; &nbsp;4기에는 다른 파트에 지원해 보시는 건 어떨까요?
             </>
           ),
           select: false,
@@ -173,8 +172,8 @@ function RecruitingAbout() {
           quest: "Q. YB와 OB의 구체적인 차이가 있나요?",
           answer: (
             <>
-              A. OB는 YB를 수료한 멤버들로, 거친파도(활동OB)와
-              잔잔파도(수료OB)로 나뉘어 활동 여부를 선택할 수 있습니다.
+              A. OB는 YB를 수료한 멤버들로, PARD Alumni(알럼나이)에 속하게
+              됩니다.
               <br />
               &nbsp; &nbsp; &nbsp;OB와 YB가 함께하는 프로그램과 OB만의
               프로그램들이 준비되어 있습니다.
