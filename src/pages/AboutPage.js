@@ -18,7 +18,6 @@ import FooterMov from "../components/FooterMov";
 import NavBar_About from "../components/NavBar_About";
 import NavBarMov_About from "../components/NavBarMob_About";
 import TemporaryPage from "../components/temporaryPage";
-import BannerWeb from "../components/Web/Banner/Banner"; // 제작중 페이지
 
 function AboutPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰 전환
@@ -41,7 +40,6 @@ function AboutPage() {
       {isDesktopOrMobile !== true ? (
         <AboutPageComponent_Web>
           <NavBar_About />
-          {/* <BannerWeb /> */}
           <AboutFirst />
           <AboutVision />
           <AboutPart />
