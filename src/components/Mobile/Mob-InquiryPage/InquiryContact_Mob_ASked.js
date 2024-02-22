@@ -70,7 +70,7 @@ const handleInformbox1Click = () => {
 
 const Mail = styled.div`
   white-space: nowrap;
-  width: 38px; //widht 1vw높임
+  width: 38px;
   height: 28px;
   margin-top: 0px;
   margin-left: 0px;
