@@ -228,7 +228,7 @@ function RecruitingReview() {
         <ThemeProvider theme={theme}>
           <Header7>파드 어땠나요?</Header7>
           <Header6>
-            여전히 지원하기 망설여지나요? 먼저 파드를 경험한 1기 파디들의 진짜
+            여전히 지원하기 망설여지나요? 먼저 파드를 경험한 2기 파디들의 진짜
             이야기를 들어보세요!
           </Header6>
           <Container>
