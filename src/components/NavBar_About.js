@@ -21,7 +21,7 @@ const Div = styled.div`
 
 const NavBarWrapper = styled.nav`
   background-color: ${({ scrollPosition }) =>
-    scrollPosition >= 620 ? "#FFFFFF" : "#1A1A1A"};
+    scrollPosition >= 700 ? "#FFFFFF" : "#1A1A1A"};
   height: 70px;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@ const NavBarWrapper = styled.nav`
 
   top: ${({ isSticky, isBannerVisible }) =>
     isBannerVisible ? (isSticky ? "0" : "12%") : "0%"};
-  margin-top: 100px;
+  /* margin-top: 100px; // 배너용 */
 `;
 
 const NavDiv = styled.div`
@@ -151,6 +151,7 @@ const BannerImg = styled.div`
 const NavBar_About = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { pathname } = useLocation();
+  const animatedPosition = 700; //리쿠르팅배너용 : 620px
 
   // 배너 관련 코드.. 이때 총학 웹사이트 하고 바빴어서
   // 유지보수 생각 안하고 코드 짬요.. 다음 개발 파트장님 죄송합니다..
@@ -178,9 +179,9 @@ const NavBar_About = () => {
 
   return (
     <Div>
-      <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
         <img src={bannerImg}></img>
-      </BannerImg>
+      </BannerImg> */}
       <NavBarWrapper
         scrollPosition={scrollPosition}
         isSticky={isSticky}
@@ -198,7 +199,7 @@ const NavBar_About = () => {
                 <Link to="/About" style={{ textDecoration: "none" }}>
                   <Subtitle1
                     active={pathname === "/About"}
-                    isScrolled={scrollPosition >= 620}
+                    isScrolled={scrollPosition >= animatedPosition}
                   >
                     소개
                   </Subtitle1>
@@ -208,7 +209,7 @@ const NavBar_About = () => {
                 <Link to="/Project" style={{ textDecoration: "none" }}>
                   <Subtitle1
                     active={pathname === "/Project"}
-                    isScrolled={scrollPosition >= 620}
+                    isScrolled={scrollPosition >= animatedPosition}
                   >
                     프로젝트
                   </Subtitle1>
@@ -218,7 +219,7 @@ const NavBar_About = () => {
                 <Link to="/Inquiry" style={{ textDecoration: "none" }}>
                   <Subtitle1
                     active={pathname === "/Inquiry"}
-                    isScrolled={scrollPosition >= 620}
+                    isScrolled={scrollPosition >= animatedPosition}
                   >
                     문의
                   </Subtitle1>
@@ -228,7 +229,7 @@ const NavBar_About = () => {
                 <Link to="/Recruiting" style={{ textDecoration: "none" }}>
                   <Subtitle1
                     active={pathname === "/Recruiting"}
-                    isScrolled={scrollPosition >= 620}
+                    isScrolled={scrollPosition >= animatedPosition}
                   >
                     리쿠르팅
                   </Subtitle1>
