@@ -30,7 +30,7 @@ const NavBarWrapper = styled.nav`
   border-right: none;
   top: ${({ isSticky, isBannerVisible }) =>
     isBannerVisible ? (isSticky ? "0" : "12%") : "0%"};
-  margin-top: 100px;
+  /* margin-top: 100px; //배너 */
   position: relative;
 `;
 
@@ -189,9 +189,9 @@ const NavBar = () => {
           </NavLink>
         )} */}
 
-      <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
         <img src={bannerImg}></img>
-      </BannerImg>
+      </BannerImg> */}
       <NavBarWrapper
         scrollPosition={scrollPosition}
         isSticky={isSticky}

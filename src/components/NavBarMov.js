@@ -20,7 +20,7 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border-bottom: none;
-  margin-top: 100px; //3기 리쿠르팅
+  /* margin-top: 100px; //3기 리쿠르팅 */
 `;
 
 const Logo = styled.div`
@@ -98,9 +98,9 @@ const NavBarMov = () => {
 
   return (
     <>
-      <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
         <img src={bannerImg} />
-      </BannerImg>
+      </BannerImg> */}
       <Nav isOpen={isOpen}>
         <ThemeProvider theme={theme}>
           <Logo>
