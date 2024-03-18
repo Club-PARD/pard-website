@@ -103,8 +103,8 @@ function RecruitingFirstMob() {
             <br /> 솔직하게 대립하고, 빠르게 실행해요.
           </ButtonText1>
           <ButtonDiv>
-            <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
-            {/* <Button>지금 바로 3기 지원하기</Button> */}
+            {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+            <Button>3기 모집이 완료되었습니다</Button>
           </ButtonDiv>
         </ThemeProvider>
       </PartDiv>

@@ -36,7 +36,7 @@ const Button = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 15px 30px;
+  /* padding: 15px 30px; */
   gap: 10px;
   width: 220px;
   height: 52px;
@@ -83,8 +83,8 @@ function RecruitingLastMob() {
           <Header8>
             협업에 미친<br></br>파드의 여정에<br></br>동참하고 싶다면
           </Header8>
-          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
-          {/* <Button>지금 바로 3기 지원하기</Button> */}
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>3기 모집이 완료되었습니다</Button>
         </ThemeProvider>
       </PartDiv>
     </Div>

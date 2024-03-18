@@ -78,8 +78,8 @@ function RecruitingLast() {
       <PartDiv>
         <ThemeProvider theme={theme}>
           <Header7>협업에 미친 파드의 여정에 동참하고 싶다면</Header7>
-          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
-          {/* <Button>지금 바로 3기 지원하기</Button> */}
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>3기 모집이 완료되었습니다</Button>
         </ThemeProvider>
       </PartDiv>
     </Div>

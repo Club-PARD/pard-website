@@ -101,8 +101,8 @@ function RecruitingFirst() {
             PARD에서 서로의 전문성을 이해하고, 솔직하게 대립하고, 빠르게
             실행해요.
           </Header5>
-          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
-          {/* <Button>지금 바로 3기 지원하기</Button> */}
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>3기 모집이 완료되었습니다</Button>
           <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
         </ThemeProvider>
       </PartDiv>
