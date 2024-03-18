@@ -27,7 +27,7 @@ const Nav = styled.nav`
   right: 0;
   height: 69px;
   z-index: 999;
-  border-bottom: none;
+  border: none;
   /* margin-top: 100px; //3기 리쿠르팅 */
 `;
 
@@ -132,7 +132,7 @@ const NavBarMov_About = () => {
               src={
                 isOpen
                   ? MenuBar_white
-                  : scrollPosition >= 550
+                  : scrollPosition >= 650
                   ? MenuBar_black
                   : MenuBar_white
               }
