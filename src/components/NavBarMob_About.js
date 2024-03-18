@@ -12,11 +12,7 @@ import bannerImg from "../assets/img/mob_banner_3기.png";
 
 const Nav = styled.nav`
   background-color: ${({ isOpen, scrollPosition }) =>
-    isOpen
-      ? "rgba(26, 26, 26, 0.8)"
-      : scrollPosition <= 650
-      ? "#1A1A1A"
-      : "#FFFFFF"};
+    isOpen ? "#1A1A1A" : scrollPosition <= 650 ? "#1A1A1A" : "#FFFFFF"};
   color: white;
   display: flex;
   align-items: center;
