@@ -7,14 +7,14 @@ import MenuBar_white from "../assets/img/MenuBar_white.png";
 import MenuBar_black from "../assets/img/MenuBar_black.png";
 import bannerImg from "../assets/img/mob_banner_3기.png";
 
-//scroll 위치 : 650px
+//scroll default 위치 : 650px
 //3기 리쿠르팅 배너 기준 scroll 위치 :550
 
 const Nav = styled.nav`
   background-color: ${({ isOpen, scrollPosition }) =>
     isOpen
       ? "rgba(26, 26, 26, 0.8)"
-      : scrollPosition <= 550
+      : scrollPosition <= 650
       ? "#1A1A1A"
       : "#FFFFFF"};
   color: white;
@@ -28,7 +28,7 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border-bottom: none;
-  margin-top: 100px; //3기 리쿠르팅
+  /* margin-top: 100px; //3기 리쿠르팅 */
 `;
 
 const Logo = styled.div`
@@ -58,8 +58,8 @@ const Menu = styled.div`
   padding: 1rem 5rem;
   text-align: center;
   height: 237px;
-  /* margin-top: 4px; */
-  margin-top: 84px; //임시
+  margin-top: 4px; // default
+  /* margin-top: 84px; //3기 리쿠르팅 */
 `;
 
 const Subtitle2 = styled.div`
@@ -117,9 +117,9 @@ const NavBarMov_About = () => {
 
   return (
     <>
-      <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
         <img src={bannerImg} />
-      </BannerImg>
+      </BannerImg> */}
       <Nav scrollPosition={scrollPosition} isOpen={isOpen}>
         <ThemeProvider theme={theme}>
           <Logo>
