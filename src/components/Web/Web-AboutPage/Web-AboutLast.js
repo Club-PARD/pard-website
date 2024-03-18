@@ -149,8 +149,8 @@ function AboutLast() {
             선수들의 역량이에요
           </Subtitle3>
           <Body2>송민 KBS 서핑 해설위원</Body2>
-          <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1>
-          {/* <Button>지금 바로 3기 지원하기</Button> */}
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>3기 모집이 완료되었습니다</Button>
           <AboutFrame1 src={AboutFrame_Down} alt="AboutFrame" />
         </ThemeProvider>
       </PartDiv>
