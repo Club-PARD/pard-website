@@ -50,8 +50,8 @@ const Menu = styled.div`
   padding: 1rem 5rem;
   text-align: center;
   height: 237px;
-  /* margin-top: 4px; */
-  margin-top: 84px; //임시
+  margin-top: 4px;
+  /* margin-top: 84px; //임시 */
 `;
 
 const Subtitle2 = styled.div`
