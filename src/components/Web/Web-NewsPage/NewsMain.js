@@ -11,7 +11,7 @@ const news = [
     title:
       "2기 iOS 파트 이신원, 수천명 경쟁뚫고\n팀 쿡 만났다, 한국 대학생 개발자가 선보인 앱",
     description:
-      "대학생이 자력으로 만든 앱 중 아이디어가 훌륭한 작품을 선정…수천건의 작품 중 총 350개 작품이\n수상했고, 그 중 50개가 ‘우수작’으로 선정… 우수작 중에서도 쿡 CEO에게 직접 시연을 할 수 있는\n기회를 갖게 된 작품은 14개에 불과…쿡 CEO, 이 학생의 제품이 특히 인상적”이라며\n“앞으로 그가 보여줄 새로운 아이디어도 기대된다”고 했다.",
+      "수천건의 작품 중 총 350개 작품이 수상했고, 그 중 50개가 ‘우수작’으로 선정... 쿡 CEO,\n“이 학생의 제품이 특히 인상적”이라며 “앞으로 그가 보여줄 새로운 아이디어도 기대된다”고 했다.",
     url: "https://www.chosun.com/economy/tech_it/2024/06/10/UJWXOOESWFHBZN6PR3RU3RI3GY/",
     img: news1,
   },
@@ -83,6 +83,7 @@ const Title = styled.div`
 const NewsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  /* height: 246px; */
 `;
 
 const LeftContent = styled.div`
@@ -100,14 +101,14 @@ const LeftContent = styled.div`
   .title {
     font-size: 30px;
     font-weight: 700;
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 0px 0px;
     line-height: 140%;
     white-space: pre-wrap;
   }
   .description {
     font-size: 14px;
     font-weight: 200;
-    margin: 0px 0px 18px 0px;
+    margin: 30px 0px 30px 0px;
     line-height: 140%;
     white-space: pre-wrap;
   }
@@ -118,6 +119,7 @@ const UrlContainer = styled.div`
   flex-direction: row;
   align-items: center;
   margin-bottom: 94px;
+  text-align: s;
   .url {
     text-decoration-line: none;
     color: #ffffff;
