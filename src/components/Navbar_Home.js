@@ -115,6 +115,11 @@ const NavBar_Home = () => {
                   <Subtitle1>리쿠르팅</Subtitle1>
                 </Link>
               </NavItem>
+              <NavItem>
+                <Link to="/news" style={{ textDecoration: "none" }}>
+                  <Subtitle1>성과</Subtitle1>
+                </Link>
+              </NavItem>
             </NavLinks>
           </NavDiv>
         </ThemeProvider>

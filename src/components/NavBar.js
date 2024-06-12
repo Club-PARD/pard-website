@@ -229,6 +229,11 @@ const NavBar = () => {
                   </Subtitle1>
                 </Link>
               </NavItem>
+              <NavItem>
+                <Link to="/news" style={{ textDecoration: "none" }}>
+                  <Subtitle1 active={pathname === "/news"}>성과</Subtitle1>
+                </Link>
+              </NavItem>
             </NavLinks>
           </NavDiv>
         </ThemeProvider>

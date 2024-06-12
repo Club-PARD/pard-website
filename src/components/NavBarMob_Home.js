@@ -57,7 +57,6 @@ const Menu = styled.div`
   background-color: rgba(26, 26, 26, 0.8); // 여기가 NavBar 투명도
   padding: 0rem 7rem;
   text-align: center;
-  height: 237px;
   margin-top: 4px;
 `;
 
@@ -123,6 +122,10 @@ const NavBarMob_Home = () => {
           <Hr />
           <Link to="/Recruiting" style={{ textDecoration: "none" }}>
             <Subtitle2>리쿠르팅</Subtitle2>
+          </Link>
+          <Hr />
+          <Link to="/news" style={{ textDecoration: "none" }}>
+            <Subtitle2>성과</Subtitle2>
           </Link>
         </Menu>
       </ThemeProvider>
