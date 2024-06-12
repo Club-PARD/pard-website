@@ -4,6 +4,12 @@ import NavBar from "../components/NavBar";
 import NavBarMov from "../components/NavBarMov";
 import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
+import NewsTop from "../components/Web/Web-NewsPage/NewsTop";
+import NewsMain from "../components/Web/Web-NewsPage/NewsMain";
+import NewsBottom from "../components/Web/Web-NewsPage/NewsBottom";
+import NewsTopMob from "../components/Mobile/Mob-NewsPage/NewsTop_Mob";
+import NewsMainMob from "../components/Mobile/Mob-NewsPage/NewsMain_Mob";
+import NewsBottomMob from "../components/Mobile/Mob-NewsPage/NewsBottom_Mob";
 
 export default function NewsPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -13,11 +19,17 @@ export default function NewsPage() {
         {isDesktopOrMobile !== true ? (
           <NewsPageComponent_Web>
             <NavBar />
+            <NewsTop />
+            <NewsMain />
+            <NewsBottom />
             <Footer />
           </NewsPageComponent_Web>
         ) : (
           <NewsPageComponent_Mob>
             <NavBarMov />
+            <NewsTopMob />
+            <NewsMainMob />
+            <NewsBottomMob />
             <FooterMov />
           </NewsPageComponent_Mob>
         )}
