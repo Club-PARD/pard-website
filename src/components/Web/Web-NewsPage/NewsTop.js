@@ -8,9 +8,8 @@ export default function NewsTop() {
     <TopContainer>
       <Image src={top_logo} />
       <TextContainer>
-        <div className="main">PARD를 통해 성장한</div>
-        <div className="main">열매들을 만나보세요</div>
-        <p>PARD 구성원들이 만들어나가는 성과들을 기록합니다.</p>
+        <p className="main">{"PARD를 통해 성장한\n열매들을 만나보세요"}</p>
+        <p className="sub">PARD 구성원들이 만들어나가는 성과들을 기록합니다.</p>
       </TextContainer>
       <Scroll src={scroll} />
       <Separator src={blue_line} />
@@ -19,7 +18,7 @@ export default function NewsTop() {
 }
 
 const TopContainer = styled.div`
-  height: 800px;
+  /* height: 800px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,10 +41,10 @@ const Scroll = styled.img`
 `;
 
 const Separator = styled.img`
-  width: 100vw;
+  width: 100%;
   display: block;
   margin-top: 40px;
-  position: relative;
+  /* position: relative; */
 `;
 
 const TextContainer = styled.div`
@@ -59,13 +58,15 @@ const TextContainer = styled.div`
   color: #ffffff;
 
   .main {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 60px;
     line-height: 140%;
+    white-space: pre-wrap;
+    margin: 0;
   }
 
-  p {
-    margin-top: 40px;
+  .sub {
+    margin: 40px 0px 0px 0px;
     font-weight: 500;
     font-size: 24px;
     line-height: 160%;
