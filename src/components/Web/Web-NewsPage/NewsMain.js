@@ -2,7 +2,7 @@ import styled from "styled-components";
 import news1 from "../../../assets/img/news_page/news1.png";
 import news2 from "../../../assets/img/news_page/news2.png";
 import arrow from "../../../assets/img/news_page/right_arrow.png";
-import blue_line from "../../../assets/img/news_page/blue_line.png";
+import blue_line from "../../../assets/img/news_page/blue_line_reverse.png";
 
 const news = [
   {
@@ -42,7 +42,9 @@ export default function NewsMain() {
                   <a className="url" href={item.url}>
                     기사 원문 확인하기
                   </a>
-                  <img src={arrow} />
+                  <a href={item.url}>
+                    <img src={arrow} />
+                  </a>
                 </UrlContainer>
               </LeftContent>
               <RightContent>
