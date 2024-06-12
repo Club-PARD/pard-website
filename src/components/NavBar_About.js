@@ -41,7 +41,7 @@ const NavBarWrapper = styled.nav`
 const NavDiv = styled.div`
   /* min-width: 1600px;
   max-width: 2000px; */
-  width: 95.5%;
+  width: 90.3%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -232,6 +232,16 @@ const NavBar_About = () => {
                     isScrolled={scrollPosition >= animatedPosition}
                   >
                     리쿠르팅
+                  </Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/news" style={{ textDecoration: "none" }}>
+                  <Subtitle1
+                    active={pathname === "/news"}
+                    isScrolled={scrollPosition >= animatedPosition}
+                  >
+                    성과
                   </Subtitle1>
                 </Link>
               </NavItem>
