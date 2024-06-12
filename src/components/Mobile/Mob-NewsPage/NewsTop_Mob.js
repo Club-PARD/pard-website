@@ -32,6 +32,7 @@ const Image = styled.img`
   display: block;
   margin-top: 260px;
   position: absolute;
+  z-index: -1;
 `;
 
 const Scroll = styled.img`
@@ -54,7 +55,6 @@ const TextContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 253px;
-  z-index: 999;
   font-family: "NanumSquare Neo";
   font-style: normal;
   color: #ffffff;
