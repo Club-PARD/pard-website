@@ -42,7 +42,7 @@ export default function NewsMain() {
                   <a className="url" href={item.url}>
                     기사 원문 확인하기
                   </a>
-                  <a href={item.url}>
+                  <a className="arrow" href={item.url}>
                     <img src={arrow} />
                   </a>
                 </UrlContainer>
@@ -121,7 +121,6 @@ const UrlContainer = styled.div`
   flex-direction: row;
   align-items: center;
   margin-bottom: 94px;
-  text-align: s;
   .url {
     text-decoration-line: none;
     color: #ffffff;
@@ -130,9 +129,14 @@ const UrlContainer = styled.div`
     margin: 0px 20px 0px 0px;
     line-height: 140%;
   }
-  img {
-    width: 11px;
-    height: 17px;
+  .arrow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    img {
+      width: 11px;
+      height: 17px;
+    }
   }
 `;
 
