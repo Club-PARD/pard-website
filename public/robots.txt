@@ -1,3 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow: https://we-pard.com/sitemap.xml
+Disallow: 
+
+sitemap:https://we-pard.com/sitemap.xml
