@@ -96,7 +96,7 @@ const NavBarMov = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <>
+    <div>
       {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
         <img src={bannerImg} />
       </BannerImg> */}
@@ -138,7 +138,7 @@ const NavBarMov = () => {
           </Menu>
         </ThemeProvider>
       </Nav>
-    </>
+    </div>
   );
 };
 
