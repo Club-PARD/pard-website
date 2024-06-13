@@ -43,18 +43,18 @@ export default function NewsMain() {
                     기사 원문 확인하기
                   </a>
                   <a className="arrow" href={item.url}>
-                    <img src={arrow} />
+                    <img src={arrow} alt="arrow" />
                   </a>
                 </UrlContainer>
               </LeftContent>
               <RightContent>
-                <img src={item.img} />
+                <img src={item.img} alt="right_img" />
               </RightContent>
             </NewsContainer>
           );
         })}
       </MainContainer>
-      <Separator src={blue_line} />
+      <Separator src={blue_line} alt="separator" />
     </MainWrapper>
   );
 }

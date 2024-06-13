@@ -6,15 +6,15 @@ import blue_line from "../../../assets/img/news_page/blue_line_mob.png";
 export default function NewsTopMob() {
   return (
     <TopContainer>
-      <Image src={top_logo} />
+      <Image src={top_logo} alt="logo" />
       <TextContainer>
         <div className="main">PARD를 통해 성장한</div>
         <div className="main">열매들을 만나보세요</div>
         <p style={{ marginTop: "40px" }}>PARD 구성원들이 만들어나가는</p>
         <p>성과들을 기록합니다.</p>
       </TextContainer>
-      <Scroll src={scroll} />
-      <Separator src={blue_line} />
+      <Scroll src={scroll} alt="scroll" />
+      <Separator src={blue_line} alt="separator" />
     </TopContainer>
   );
 }

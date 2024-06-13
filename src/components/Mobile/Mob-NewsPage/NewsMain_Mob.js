@@ -41,15 +41,15 @@ export default function NewsMainMob() {
                   기사 원문 확인하기
                 </a>
                 <a href={item.url}>
-                  <img src={arrow} />
+                  <img src={arrow} alt="arrow" />
                 </a>
               </UrlContainer>
-              <MainImg src={item.img} />
+              <MainImg src={item.img} alt="main_img" />
             </Content>
           );
         })}
       </MainContainer>
-      <Separator src={blue_line} />
+      <Separator src={blue_line} alt="separator" />
     </MainWrapper>
   );
 }

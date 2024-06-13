@@ -6,13 +6,13 @@ import blue_line from "../../../assets/img/news_page/blue_line.png";
 export default function NewsTop() {
   return (
     <TopContainer>
-      <Image src={top_logo} />
+      <Image src={top_logo} alt="logo" />
       <TextContainer>
         <p className="main">{"PARD를 통해 성장한\n열매들을 만나보세요"}</p>
         <p className="sub">PARD 구성원들이 만들어나가는 성과들을 기록합니다.</p>
       </TextContainer>
-      <Scroll src={scroll} />
-      <Separator src={blue_line} />
+      <Scroll src={scroll} alt="scroll" />
+      <Separator src={blue_line} alt="separator" />
     </TopContainer>
   );
 }
