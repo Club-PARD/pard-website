@@ -1,16 +1,16 @@
-import styled, { css, keyframes } from 'styled-components';
-import React, { useState, useEffect, useRef } from 'react';
+import styled, { css, keyframes } from "styled-components";
+import React, { useState, useEffect, useRef } from "react";
 
 const VideoContainer = styled.div`
-
-  /* position:${({ isFixed }) => (isFixed ? 'sticky' : 'relative')}; */
+  /* position:${({ isFixed }) => (isFixed ? "sticky" : "relative")}; */
   position: sticky;
-  top:0;
+  top: 0;
   width: 100%;
   height: 100vh;
-  max-width: 100vw; 
+  max-width: 100vw;
   min-width: 1440px; // 아무리 줄여도 1440px로 유지됨
-  background-color: ${({ isColor }) => (isColor ? ' rgba(0, 0, 0, 0.4)' : ' rgba(0, 0, 0, 0.4)')};
+  background-color: ${({ isColor }) =>
+    isColor ? " rgba(0, 0, 0, 0.4)" : " rgba(0, 0, 0, 0.4)"};
 `;
 
 //inline-block으로 stickybox를 위로 올리는 역할을한다.
@@ -20,8 +20,6 @@ const DIVVVV = styled.div`
   width: 100%;
 `;
 
-
-
 function useScrollPosition() {
   const [scrollPos, setScrollPos] = useState(0);
 
@@ -30,17 +28,15 @@ function useScrollPosition() {
       setScrollPos(window.pageYOffset);
     };
 
-    window.addEventListener('scroll', updateScrollPos);
+    window.addEventListener("scroll", updateScrollPos);
 
     return () => {
-      window.removeEventListener('scroll', updateScrollPos);
+      window.removeEventListener("scroll", updateScrollPos);
     };
   }, []);
 
   return scrollPos;
 }
-
-
 
 const expandAnimation = keyframes`
 0% {
@@ -67,150 +63,153 @@ const VideoBackground = styled.video`
 `;
 
 const VideoBackgroundImg = styled.img`
- width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: fill;
   z-index: -1;
 `;
 
-
 const SplitTextContainer = styled.div`
-
-position: absolute;
-width: 1040px;
-height: 112px;
+  position: absolute;
+  width: 1040px;
+  height: 112px;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
- text-align: center;
+  text-align: center;
   z-index: 4;
 
-  opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
   transition: opacity 0.5s ease-in;
-
 `;
 
-
 const TextContainer1 = styled.div`
-
-width: 1040px;
-height: 112px;
+  width: 1040px;
+  height: 112px;
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 4;
-  opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
   transition: opacity 0.5s ease-in;
   animation: ${({ isAnimation }) =>
     isAnimation &&
     css`
-      ${css`${expandAnimation} 1s ease-in-out`}
+      ${css`
+        ${expandAnimation} 1s ease-in-out
+      `}
     `};
 `;
 
 const TextContainer2 = styled.div`
-
- display: flex;
-width: 616px;
-height: 84px;
+  display: flex;
+  width: 616px;
+  height: 84px;
   position: absolute;
-  top:53%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 4;
-  opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
   transition: opacity 0.5s ease-in;
-
-
 `;
 
 const TextContainer3 = styled.div`
-width: 1040px;
-height: 112px;
+  width: 1040px;
+  height: 112px;
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 4;
-  opacity: ${({ isVisible }) => (isVisible ? '1' : '0')};
-   transition: opacity 0.5s ease-in;
-
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+  transition: opacity 0.5s ease-in;
 `;
 const Text = styled.p`
-font-family: 'NanumSquare Neo';
-font-style: normal;
-font-weight: 900;
-font-size: 120px;
-line-height: 140%;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 120px;
+  line-height: 140%;
   color: white;
-
-
 `;
 const Text1 = styled.p`
-font-family: 'NanumSquare Neo';
-font-style: normal;
-font-weight: 900;
-font-size: 120px;
-line-height: 140%;
-color: white;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 120px;
+  line-height: 140%;
+  color: white;
 
   transition: transform 2s ease-in-out forwards;
-//animation: ${({ isAnimation }) => (isAnimation ? css`${moveLeft} 1s ease-in-out forwards` : 'none')};
-// forwards로 벌리고 난 뒤에 고정
+  animation: ${({ isAnimation }) =>
+    isAnimation
+      ? css`
+          ${moveLeft} 1s ease-in-out forwards
+        `
+      : "none"};
+  // forwards로 벌리고 난 뒤에 고정
 `;
 
 const Text2 = styled(Text)`
-font-family: 'NanumSquare Neo';
-font-style: normal;
-font-weight: 900;
-font-size: 120px;
-line-height: 140%;
-color: white;
-transition: transform 0.5s ease-in-out forwards;
-//animation: ${({ isAnimation }) => (isAnimation ? css`${moveRight} 1s ease-in-out forwards` : 'none')};
-// forwards로 벌리고 난 뒤에 고정
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 120px;
+  line-height: 140%;
+  color: white;
+  transition: transform 0.5s ease-in-out forwards;
+  animation: ${({ isAnimation }) =>
+    isAnimation
+      ? css`
+          ${moveRight} 1s ease-in-out forwards
+        `
+      : "none"};
+  // forwards로 벌리고 난 뒤에 고정
 `;
 const Textchanged1 = styled.p`
-font-family: 'NanumSquare Neo';
-font-style: normal;
-font-weight: 800;
-font-size: 60px;
-line-height: 140%;
-/* identical to box height, or 84px */
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 140%;
+  /* identical to box height, or 84px */
 
-text-align: center;
-color: #FFFFFF;
+  text-align: center;
+  color: #ffffff;
   animation: ${({ isAnimation }) =>
     isAnimation &&
     css`
-      ${css`${expandAnimation}  1s ease-in-out forwards`}
-      //2초만에 나타나서 고정이 된다
+      ${css`
+        ${expandAnimation} 1s ease-in-out forwards
+      `}//2초만에 나타나서 고정이 된다
       // forwards
     `};
-
 `;
 const Textchanged2 = styled.p`
-font-family: 'NanumSquare Neo';
-font-style: normal;
-font-weight: 800;
-font-size: 40px;
-line-height: 140%;
-/* or 56px */
-color: #FFFFFF;
-text-align: center;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 140%;
+  /* or 56px */
+  color: #ffffff;
+  text-align: center;
   animation: ${({ isAnimation }) =>
     isAnimation &&
     css`
-      ${css`${expandAnimation} 1s ease-in-out forwards`}
+      ${css`
+        ${expandAnimation} 1s ease-in-out forwards
+      `}
     `};
 
-  //letter-spacing: ${({ isExpanded }) => (isExpanded ? '0.5em' : '0')};
+  //letter-spacing: ${({ isExpanded }) => (isExpanded ? "0.5em" : "0")};
 `;
 
 const BackgroundOverlay = styled.div`
@@ -219,14 +218,14 @@ const BackgroundOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${({ backcolor }) => (backcolor ? 'rgba(0, 0, 0, 0.4)' : null)};
+  background: ${({ backcolor }) => (backcolor ? "rgba(0, 0, 0, 0.4)" : null)};
   z-index: 2;
 `;
 
 const DownLogo = styled.img`
   width: 80px;
   height: 63px;
-  padding-top:  8px;
+  padding-top: 8px;
 `;
 
 const LogoDiv = styled.div`
@@ -272,22 +271,28 @@ const MovedText = styled.div`
   display: flex;
   width: 1000px;
   position: absolute;
-  top: 107%;  // adjust this value to control the initial position
-  left: 15%;  // position it in the middle of its parent
-  transform: translate(-50%, -50%);  // change the origin of transformation
+  top: 107%; // adjust this value to control the initial position
+  left: 15%; // position it in the middle of its parent
+  transform: translate(-50%, -50%); // change the origin of transformation
   transition: transform 0.5s ease-in-out forwards;
-    animation: ${({ isAnimation }) =>
+  animation: ${({ isAnimation }) =>
     isAnimation &&
     css`
-      ${css`${expandAnimation}  1s ease-in-out forwards`}
-      //2초만에 나타나서 고정이 된다
+      ${css`
+        ${expandAnimation} 1s ease-in-out forwards
+      `}//2초만에 나타나서 고정이 된다
       // forwards
     `};
-  //animation: ${({ isAnimation }) => (isAnimation ? css`${moveUp} 1s ease-in-out both 0.5s` : 'none')};
-  //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다. 
+  animation: ${({ isAnimation }) =>
+    isAnimation
+      ? css`
+          ${moveUp} 1s ease-in-out both 0.5s
+        `
+      : "none"};
+  //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다.
   // forwards 0.5s는 added 0.5s delay
   // 위에 태그들 즉 Text1,Text2 가 끝나고 0.5s뒤에 실행
-  font-family: 'NanumSquare Neo';
+  font-family: "NanumSquare Neo";
   font-style: normal;
   z-index: 4;
   font-weight: 900;
@@ -296,27 +301,21 @@ const MovedText = styled.div`
   color: white;
 `;
 
-
 const HomeFirst = () => {
-  const [text, setText] = useState('PARD'); // text변화
+  const [text, setText] = useState("PARD"); // text변화
   const [isFixed, setIsFixed] = useState(true); // 스크롤 변화에 따른 비디오 고정
-  const [isVisible, setIsVisible] = useState(true);// 보이는거 opacity조절
-  const [backcolor, setbackcolor] = useState(true);// 배경색 조절
+  const [isVisible, setIsVisible] = useState(true); // 보이는거 opacity조절
+  const [backcolor, setbackcolor] = useState(true); // 배경색 조절
   const [isAnimation, setIsAnimation] = useState(true); // 사라지는거 조절
-  const [isExpanded,setisExpanded] = useState(null); // 글자확장 조절
-  const [changed,setchanged]= useState('a'); //글자 크기,위치 변하는거 조절
-  const [text3, setText3] = useState(''); // text변화
-  const [text1, setText1] = useState('PA'); // 텍스트 1
-  const [text2, setText2] = useState('RD'); // 텍스트 2
+  const [isExpanded, setisExpanded] = useState(null); // 글자확장 조절
+  const [changed, setchanged] = useState("a"); //글자 크기,위치 변하는거 조절
+  const [text3, setText3] = useState(""); // text변화
+  const [text1, setText1] = useState("PA"); // 텍스트 1
+  const [text2, setText2] = useState("RD"); // 텍스트 2
   const [isSplitTextVisible, setIsSplitTextVisible] = useState(false);
   const [isSafari, setIsSafari] = useState(false); // 사파리인지 아닌지 구분
 
-
-
-
-
   const position = useScrollPosition();
- 
 
   useEffect(() => {
     const absPosition = Math.abs(position);
@@ -325,113 +324,97 @@ const HomeFirst = () => {
 
     setIsSafari(isSafariBrowser);
     if (absPosition < 100) {
-      setchanged('aaa');
+      setchanged("aaa");
       setbackcolor(false);
       setIsFixed(true);
       setIsVisible(false);
-    } else if (position >= 100 && position <650) { 
-      setchanged('a');
-      setText('PARD');
-    
+    } else if (position >= 100 && position < 650) {
+      setchanged("a");
+      setText("PARD");
+
       setIsFixed(true);
       setIsVisible(true);
       setbackcolor(true);
-   
-   
-     //keyframse에 따른 animation 값을 스크롤에 따른 값으로 설정
-     // position으로 설정한다 이를
-      
-    } else if (position >= 650 && position <2250) {
-      setchanged('b');
- setisExpanded(true);
-      setText1('PA');
-      setText2('RD');
-      setText3('Y it FORWA');
+
+      //keyframse에 따른 animation 값을 스크롤에 따른 값으로 설정
+      // position으로 설정한다 이를
+    } else if (position >= 650 && position < 2250) {
+      setchanged("b");
+      setisExpanded(true);
+      setText1("PA");
+      setText2("RD");
+      setText3("Y it FORWA");
       setIsFixed(true);
       setIsVisible(true);
       setbackcolor(true);
       setIsAnimation(true);
-   // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
-
-
+      // 스크롤 간격을 넓혀서 내려갔을 때 PAY if FORWARD가 더 길게 있도록 한다.
     } else if (position >= 2250 && position < 2650) {
-      setchanged('c');
+      setchanged("c");
       setisExpanded(true);
-      setText1('PA');
-      setText2('RD');
-      setText3('Y it FORWA');
-           setIsFixed(true);
-           setIsVisible(true);
-           setbackcolor(true);
-           setIsAnimation(true);
-          
-
-
-    }else if (position >= 2650 && position < 3300) {
-      setchanged('cd');
+      setText1("PA");
+      setText2("RD");
+      setText3("Y it FORWA");
+      setIsFixed(true);
+      setIsVisible(true);
+      setbackcolor(true);
+      setIsAnimation(true);
+    } else if (position >= 2650 && position < 3300) {
+      setchanged("cd");
       setisExpanded(true);
-      setText1('PA');
-      setText2('RD');
-      setText3('Y it FORWA');
-           setIsFixed(true);
-           setIsVisible(true);
-           setbackcolor(true);
-           setIsAnimation(true);
-
-    
-
-    }  else if (position >=3300 && position < 5500) {
-      setchanged('cdd');
+      setText1("PA");
+      setText2("RD");
+      setText3("Y it FORWA");
+      setIsFixed(true);
+      setIsVisible(true);
+      setbackcolor(true);
+      setIsAnimation(true);
+    } else if (position >= 3300 && position < 5500) {
+      setchanged("cdd");
       setisExpanded(true);
-      setText1('PA');
-      setText2('RD');
-      setText3('Y it FORWA');
-           setIsFixed(true);
-           setIsVisible(true);
-           setbackcolor(true);
-           setIsAnimation(true);
-           setText('실천하는 IT 협업 동아리');
-     setIsSplitTextVisible(true);
-
-    } else if (position >= 5500 && position <6100) {
+      setText1("PA");
+      setText2("RD");
+      setText3("Y it FORWA");
+      setIsFixed(true);
+      setIsVisible(true);
+      setbackcolor(true);
+      setIsAnimation(true);
+      setText("실천하는 IT 협업 동아리");
+      setIsSplitTextVisible(true);
+    } else if (position >= 5500 && position < 6100) {
       setIsVisible(false);
       setbackcolor(true);
       // 공백이 생기게 하는 구간 자연스러운 연결을 위하여
       setIsSplitTextVisible(false);
-
-    } else if (position >= 6100 && position <8300){
-      setchanged('d');
-      setText('함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?' );
+    } else if (position >= 6100 && position < 8300) {
+      setchanged("d");
+      setText(
+        "함께 성장하고 싶은 기획자, 디자이너, 개발자 대학생들이 모여 세상을 바꾸는 IT제품을 어떻게 만들 수 있을까요?"
+      );
       setIsFixed(true);
       setIsVisible(true);
       setbackcolor(true);
       setIsSplitTextVisible(true);
-
-    }
-    else if (position >= 8300 && position <9200 ) {
+    } else if (position >= 8300 && position < 9200) {
       //아무 구역 없는 곳으로 가야 animation이 싸악 사라짐
       // 특정 changed로 가면 거기로넘어가므로 바로 없어짐
       setIsVisible(false);
       setIsSplitTextVisible(false);
-    
+
       setbackcolor(true);
-      
-    } 
-    else if (position >= 9200 ) {
+    } else if (position >= 9200) {
       setbackcolor(true);
-      setchanged('ddd');
-    } 
+      setchanged("ddd");
+    }
+  }, [position, isVisible]);
 
-  }, [position,isVisible]);
-
-
-    /*
+  /*
     if (position >= 750 && position < 1200 && isVisible) {
       setIsAnimation(true);
       setIsVisible(true);
     } }, [position,isVisible]);
     */
-    document.documentElement.style.overflowX = 'hidden';
+  document.documentElement.style.overflowX = "hidden";
   return (
     <>
       <DIVVVV>
@@ -439,6 +422,7 @@ const HomeFirst = () => {
           {isSafari ? (
             <VideoBackgroundImg
               src={require("../../../assets/img/BackgroundImg_Web.png")}
+              alt="logo"
             />
           ) : (
             <VideoBackground autoPlay loop muted playsInline>
@@ -453,7 +437,10 @@ const HomeFirst = () => {
           )}
 
           <LogoDiv>
-            <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
+            <DownLogo
+              src={require("../../../assets/img/DownScrollLogo.png")}
+              alt="logo"
+            />
           </LogoDiv>
 
           {isFixed && (
