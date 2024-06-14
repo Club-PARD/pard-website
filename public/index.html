@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="%PUBLIC_URL%/Web-Icon.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Pay it forward를 실천하는 IT협업동아리" />
 
-<head>
-  <meta charset="utf-8" />
-  <!-- <link rel="icon" href="%PUBLIC_URL%/Web-Icon.png" /> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Pay it forward를 실천하는 IT협업동아리" />
-
-  <meta property="og:title" content="PARD" />
-  <meta property="og:description" content="Pay it forward를 실천하는 IT협업동아리" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://we-pard.com//" />
-  <meta property="og:image"
-    content="https://firebasestorage.googleapis.com/v0/b/pard-website-acfdd.appspot.com/o/metaimgae.png?alt=media&token=6c349d6f-6051-4488-baf9-69035c1ba09b&_gl=1*ezegjo*_ga*ODQ3Mzg1MDQwLjE2NzM5Mjg0NDc.*_ga_CW55HF8NVT*MTY4NTk4NjMxOC4yMC4xLjE2ODU5ODc2NjAuMC4wLjA." />
-    <meta name="naver-site-verification" content="82cb1cc7ab01b2573c704f81e161e8db30c08977" />
-  <!--
+    <meta property="og:title" content="PARD" />
+    <meta
+      property="og:description"
+      content="Pay it forward를 실천하는 IT협업동아리"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://we-pard.com//" />
+    <meta
+      property="og:image"
+      content="https://firebasestorage.googleapis.com/v0/b/pard-website-acfdd.appspot.com/o/metaimgae.png?alt=media&token=6c349d6f-6051-4488-baf9-69035c1ba09b&_gl=1*ezegjo*_ga*ODQ3Mzg1MDQwLjE2NzM5Mjg0NDc.*_ga_CW55HF8NVT*MTY4NTk4NjMxOC4yMC4xLjE2ODU5ODc2NjAuMC4wLjA."
+    />
+    <meta
+      name="naver-site-verification"
+      content="82cb1cc7ab01b2573c704f81e161e8db30c08977"
+    />
+    <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -29,31 +36,53 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>PARD</title>
-</head>
+    <title>PARD</title>
+  </head>
 
-<body>
-  <script>
-    (function () { var w = window; if (w.ChannelIO) { return w.console.error("ChannelIO script included twice."); } var ch = function () { ch.c(arguments); }; ch.q = []; ch.c = function (args) { ch.q.push(args); }; w.ChannelIO = ch; function l() { if (w.ChannelIOInitialized) { return; } w.ChannelIOInitialized = true; var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js"; var x = document.getElementsByTagName("script")[0]; if (x.parentNode) { x.parentNode.insertBefore(s, x); } } if (document.readyState === "complete") { l(); } else { w.addEventListener("DOMContentLoaded", l); w.addEventListener("load", l); } })();
+  <body>
+    <script>
+      (function () {
+        var w = window;
+        if (w.ChannelIO) {
+          return w.console.error("ChannelIO script included twice.");
+        }
+        var ch = function () {
+          ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function (args) {
+          ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+          if (w.ChannelIOInitialized) {
+            return;
+          }
+          w.ChannelIOInitialized = true;
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://cdn.channel.io/plugin/ch-plugin-web.js";
+          var x = document.getElementsByTagName("script")[0];
+          if (x.parentNode) {
+            x.parentNode.insertBefore(s, x);
+          }
+        }
+        if (document.readyState === "complete") {
+          l();
+        } else {
+          w.addEventListener("DOMContentLoaded", l);
+          w.addEventListener("load", l);
+        }
+      })();
 
-    ChannelIO('boot', {
-      "pluginKey": "2a312068-646c-4894-b63c-2654e05556a2"
-    });
-  </script>
-  <script type="text/javascript">
-    (function(w, d, a){
-        w.__beusablerumclient__ = {
-            load : function(src){
-                var b = d.createElement("script");
-                b.src = src; b.async=true; b.type = "text/javascript";
-                d.getElementsByTagName("head")[0].appendChild(b);
-            }
-        };w.__beusablerumclient__.load(a + "?url=" + encodeURIComponent(d.URL));
-    })(window, document, "//rum.beusable.net/load/b240126e112421u686");
-  </script>
-  
-  <div id="root"></div>
-  <!--
+      ChannelIO("boot", {
+        pluginKey: "7e388551-925b-4159-aa73-f43ef28c74fd",
+      });
+    </script>
+
+    <div id="root"></div>
+    <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -63,7 +92,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-</body>
-
+  </body>
 </html>
-

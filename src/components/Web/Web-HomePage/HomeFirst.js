@@ -148,12 +148,12 @@ const Text1 = styled.p`
   color: white;
 
   transition: transform 2s ease-in-out forwards;
-  animation: ${({ isAnimation }) =>
+  /* animation: ${({ isAnimation }) =>
     isAnimation
       ? css`
           ${moveLeft} 1s ease-in-out forwards
         `
-      : "none"};
+      : "none"}; */
   // forwards로 벌리고 난 뒤에 고정
 `;
 
@@ -165,12 +165,12 @@ const Text2 = styled(Text)`
   line-height: 140%;
   color: white;
   transition: transform 0.5s ease-in-out forwards;
-  animation: ${({ isAnimation }) =>
+  /* animation: ${({ isAnimation }) =>
     isAnimation
       ? css`
           ${moveRight} 1s ease-in-out forwards
         `
-      : "none"};
+      : "none"}; */
   // forwards로 벌리고 난 뒤에 고정
 `;
 const Textchanged1 = styled.p`
@@ -283,12 +283,12 @@ const MovedText = styled.div`
       `}//2초만에 나타나서 고정이 된다
       // forwards
     `};
-  animation: ${({ isAnimation }) =>
+  /* animation: ${({ isAnimation }) =>
     isAnimation
       ? css`
           ${moveUp} 1s ease-in-out both 0.5s
         `
-      : "none"};
+      : "none"}; */
   //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다.
   // forwards 0.5s는 added 0.5s delay
   // 위에 태그들 즉 Text1,Text2 가 끝나고 0.5s뒤에 실행
@@ -422,7 +422,6 @@ const HomeFirst = () => {
           {isSafari ? (
             <VideoBackgroundImg
               src={require("../../../assets/img/BackgroundImg_Web.png")}
-              alt="logo"
             />
           ) : (
             <VideoBackground autoPlay loop muted playsInline>
@@ -437,10 +436,7 @@ const HomeFirst = () => {
           )}
 
           <LogoDiv>
-            <DownLogo
-              src={require("../../../assets/img/DownScrollLogo.png")}
-              alt="logo"
-            />
+            <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
           </LogoDiv>
 
           {isFixed && (
