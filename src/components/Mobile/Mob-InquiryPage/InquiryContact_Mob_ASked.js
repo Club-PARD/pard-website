@@ -242,7 +242,7 @@ const Askmobile = () => {
             <Mail hovered={informbox1Hovered}>메일</Mail>
             <EMail hovered={informbox1Hovered}>official@we-pard.com</EMail>
             <Vectorbox1>
-              <Vector src={informbox1Hovered ? Vec_p : Vec} />
+              <Vector src={informbox1Hovered ? Vec_p : Vec} alt="vector" />
             </Vectorbox1>
           </Informbox1>
           <Informbox2
@@ -255,7 +255,7 @@ const Askmobile = () => {
             <Instagram hovered={informbox2Hovered}>인스타그램</Instagram>
             <Instaid hovered={informbox2Hovered}>@official_pard_</Instaid>
             <Vectorbox2>
-              <Vector src={informbox2Hovered ? Vec_p : Vec} />
+              <Vector src={informbox2Hovered ? Vec_p : Vec} alt="vector" />
             </Vectorbox2>
           </Informbox2>
           <Linedown />
@@ -273,7 +273,10 @@ const Askmobile = () => {
         </Business>
       </Margin>
       <LogoDiv>
-        <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
+        <DownLogo
+          src={require("../../../assets/img/DownScrollLogo.png")}
+          alt="downLogo"
+        />
       </LogoDiv>
     </ThemeProvider>
   );

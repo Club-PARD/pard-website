@@ -228,6 +228,7 @@ function ProjectLast_Mob() {
           <DownLogo
             src={require("../../../assets/img/moreButton.png")}
             onClick={handleMore}
+            alt="downLogo"
           />
         )}
       </PartDiv>

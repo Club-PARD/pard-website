@@ -340,6 +340,7 @@ function ProjectDetail_Mob() {
                 <ArrowImg
                   key={index}
                   src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
+                  alt="arrowImg"
                 />
               ))}
             </ImgDiv>

@@ -142,7 +142,7 @@ const ScrollIcon = styled.img`
 `;
 
 const Text1 = styled.div`
- line-height: 140%;
+  line-height: 140%;
   font-size: ${({ textInfo, theme }) => textFontSizeLogic(textInfo, theme)};
   font-weight: ${({ textInfo, theme }) => textFontWeightLogic(textInfo, theme)};
   color: #ffffff;
@@ -350,7 +350,7 @@ const HomeSecondMob = () => {
             textInfos={textDB.slice(3, 5)}
             position={position}
           ></Animation1>
-          <ScrollIcon src={downScrollImage}></ScrollIcon>
+          <ScrollIcon src={downScrollImage} alt="scroll"></ScrollIcon>
         </Background>
         <div style={{ height: pageLength[2] + "px" }}></div>
       </ThemeProvider>

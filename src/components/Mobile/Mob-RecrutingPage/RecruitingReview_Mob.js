@@ -233,12 +233,12 @@ function RecruitingReviewMob() {
                     moveSlide(-1);
                   }}
                 >
-                  <LeftVector src={leftvector} />
+                  <LeftVector src={leftvector} alt="leftvector" />
                 </BTNL>
               )}
               {current === 0 && (
                 <BTNL>
-                  <LeftVector src={noleftvector} />
+                  <LeftVector src={noleftvector} alt="leftvector" />
                 </BTNL>
               )}
               {current < 1 && (
@@ -247,12 +247,12 @@ function RecruitingReviewMob() {
                     moveSlide(1);
                   }}
                 >
-                  <RightVector src={rightvector} />
+                  <RightVector src={rightvector} alt="rightvector" />
                 </BTNR>
               )}
               {current >= 1 && (
                 <BTNR>
-                  <RightVector src={norightvector} />
+                  <RightVector src={norightvector} alt="rightvector" />
                 </BTNR>
               )}
             </Wrapper>

@@ -428,6 +428,7 @@ const HomeVideoMob = () => {
             {isSafari ? (
               <VideoBackgroundImg
                 src={require("../../../assets/img/BackgroundImg_Mob.png")}
+                alt="backImg"
               />
             ) : (
               <VideoBackground autoPlay loop muted playsInline>
@@ -444,6 +445,7 @@ const HomeVideoMob = () => {
             <LogoDiv>
               <DownLogo
                 src={require("../../../assets/img/DownScrollLogo.png")}
+                alt="downLogo"
               />
             </LogoDiv>
 

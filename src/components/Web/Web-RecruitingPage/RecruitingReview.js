@@ -240,12 +240,12 @@ function RecruitingReview() {
                   }}
                   style={{ marginRight: "32px" }}
                 >
-                  <LeftVector src={leftvector} />
+                  <LeftVector src={leftvector} alt="leftVector" />
                 </BTNL>
               )}
               {current === 0 && (
                 <BTNL>
-                  <LeftVector src={noleftvector} />
+                  <LeftVector src={noleftvector} alt="leftVector" />
                 </BTNL>
               )}
               <Window>
@@ -291,12 +291,12 @@ function RecruitingReview() {
                   }}
                   style={{ marginLeft: "32px" }}
                 >
-                  <RightVector src={rightvector} />
+                  <RightVector src={rightvector} alt="rightVector" />
                 </BTNR>
               )}
               {current >= 1 && (
                 <BTNR>
-                  <RightVector src={norightvector} />
+                  <RightVector src={norightvector} alt="rightVector" />
                 </BTNR>
               )}
             </Slide>

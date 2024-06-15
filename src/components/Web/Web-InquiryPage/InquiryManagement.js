@@ -379,7 +379,7 @@ function InquiryManagement() {
     },
     {
       id: 17,
-      imgsrc: LJE,
+      src: LJE,
       name: "이지은",
       position: "Product Manager",
       site: [
@@ -408,7 +408,7 @@ function InquiryManagement() {
           {managerData.map((content) => (
             <Column key={content.id}>
               <ImageWrapper>
-                <Image src={content.imgsrc} alt={`Image ${content.id}`}></Image>
+                <Image src={content.src} alt={`Image ${content.id}`}></Image>
                 <TextWrap position={content.position}>
                   <Subtitle1>{content.name}</Subtitle1>
                   <Caption>{content.position}</Caption>

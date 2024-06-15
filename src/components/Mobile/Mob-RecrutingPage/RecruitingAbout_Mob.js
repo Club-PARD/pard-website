@@ -457,7 +457,10 @@ function RecruitingAbout() {
                 onClick={() => handleButtonClick(item.id)}
                 selected={item.selected}
               >
-                <Vector src={item.selected ? selectVector : vector}></Vector>
+                <Vector
+                  src={item.selected ? selectVector : vector}
+                  alt="vector"
+                ></Vector>
                 {item.item}
               </QuestionItem>
             ))}

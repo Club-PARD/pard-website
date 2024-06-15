@@ -16,7 +16,11 @@ function BannerWeb() {
       {isBannerVisible && (
         <Div>
           <ThemeProvider theme={theme}>
-            <CloseButton src={closeButtonImg} onClick={handleCloseBanner} />
+            <CloseButton
+              src={closeButtonImg}
+              onClick={handleCloseBanner}
+              alt="closebutton"
+            />
             <MainText>PARD 2기 신입기수 리쿠르팅 시작</MainText>
             <SubText>지원서 접수 기간 : 08.14(월) - 08.25(금)</SubText>
           </ThemeProvider>

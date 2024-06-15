@@ -422,6 +422,7 @@ const HomeFirst = () => {
           {isSafari ? (
             <VideoBackgroundImg
               src={require("../../../assets/img/BackgroundImg_Web.png")}
+              alt="background"
             />
           ) : (
             <VideoBackground autoPlay loop muted playsInline>
@@ -436,7 +437,10 @@ const HomeFirst = () => {
           )}
 
           <LogoDiv>
-            <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
+            <DownLogo
+              src={require("../../../assets/img/DownScrollLogo.png")}
+              alt="downLogo"
+            />
           </LogoDiv>
 
           {isFixed && (

@@ -211,6 +211,7 @@ const ProjectGrid = () => {
           src={require("../../../assets/img/ProjectPageimg/LeftArrow.png")}
           marginright={"30px"}
           onClick={() => handlePageChange(currentPage - 1)}
+          alt="arrowButton"
         />
         <NumButtonDiv
           active={currentPage === 1}
@@ -228,6 +229,7 @@ const ProjectGrid = () => {
           src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
           marginleft={"30px"}
           onClick={() => handlePageChange(currentPage + 1)}
+          alt="arrowButton"
         />
       </ButtonDiv>
     </>

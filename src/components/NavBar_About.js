@@ -180,7 +180,7 @@ const NavBar_About = () => {
   return (
     <Div>
       {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg}></img>
+        <img src={bannerImg} alt="banner"></img>
       </BannerImg> */}
       <NavBarWrapper
         scrollPosition={scrollPosition}

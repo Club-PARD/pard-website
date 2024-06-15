@@ -220,6 +220,7 @@ const RecruitingPart_Mob = () => {
                 <Vector
                   src={button.vectorImage}
                   isHovered={isHovered === index}
+                  alt="vector"
                 />
                 <Header6 textColor={button.textColor}>
                   {button.title}

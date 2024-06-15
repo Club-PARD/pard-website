@@ -8,7 +8,6 @@ import SYC from "../../../assets/img/송예찬(부회장).png";
 import KKI from "../../../assets/img/김광일.png";
 import KGS from "../../../assets/img/김진서.png";
 import KHR from "../../../assets/img/김하람.png";
-import PJG from "../../../assets/img/박정규.png";
 import KCR from "../../../assets/img/김채린.png";
 import KSJ from "../../../assets/img/김성준.png";
 import KHSS from "../../../assets/img/김현승.png";

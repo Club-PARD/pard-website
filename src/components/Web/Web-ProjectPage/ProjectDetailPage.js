@@ -353,6 +353,7 @@ function ProjectDetail() {
                       <ArrowImg
                         key={index}
                         src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
+                        alt="arrowImg"
                       />
                     ))}
                   </ImgDiv>

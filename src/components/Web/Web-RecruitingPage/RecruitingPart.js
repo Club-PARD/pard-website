@@ -231,6 +231,7 @@ const RecruitingPart = () => {
                   <Vector
                     src={button.vectorImage}
                     isHovered={isHovered === index}
+                    alt="vector"
                   />
                   <Header5 textColor={button.textColor}>
                     {button.title}
@@ -265,7 +266,7 @@ const RecruitingPart = () => {
                   hoverColor={button.hoverColor}
                   selectedImage={button.selectedImage}
                 >
-                  <Vector src={button.vectorImage} />
+                  <Vector src={button.vectorImage} alt="vector" />
                   <Header5 textColor={button.textColor}>
                     {button.title}
                     {button.showButton && (

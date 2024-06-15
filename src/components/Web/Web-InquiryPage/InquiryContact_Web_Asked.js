@@ -248,7 +248,7 @@ const Ask = () => {
             <Mail>메일</Mail>
             <EMail>official@we-pard.com</EMail>
             <Vectorbox2>
-              <Vector src={Vec} />
+              <Vector src={Vec} alt="vector" />
             </Vectorbox2>
           </InformBox1>
           <InformBox2
@@ -258,7 +258,7 @@ const Ask = () => {
             <Instagram>인스타그램</Instagram>
             <InstagramId>@official_pard_</InstagramId>
             <Vectorbox2>
-              <Vector src={Vec} />
+              <Vector src={Vec} alt="vector" />
             </Vectorbox2>
           </InformBox2>
           <Linedown />
@@ -269,7 +269,10 @@ const Ask = () => {
         </Informationstyle>
       </Margin>
       <LogoDiv>
-        <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
+        <DownLogo
+          src={require("../../../assets/img/DownScrollLogo.png")}
+          alt="downLogo"
+        />
       </LogoDiv>
     </ThemeProvider>
   );

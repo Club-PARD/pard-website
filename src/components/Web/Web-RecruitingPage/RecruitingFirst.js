@@ -103,7 +103,10 @@ function RecruitingFirst() {
           </Header5>
           {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
           <Button>3기 모집이 완료되었습니다</Button>
-          <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} />
+          <DownLogo
+            src={require("../../../assets/img/DownScrollLogo.png")}
+            alt="downLogo"
+          />
         </ThemeProvider>
       </PartDiv>
     </Div>
