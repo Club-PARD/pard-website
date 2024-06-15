@@ -181,7 +181,7 @@ function HomePartner() {
         <Header2>PARTNERS</Header2>
         <Header4>함께하는 성장을 돕는 후원사</Header4>
         <ContentWrapper>
-          <AsanImgDiv onClick={handleClickAsan} src={AsanImg} ast="Asan" />
+          <AsanImgDiv onClick={handleClickAsan} src={AsanImg} alt="Asan" />
           <NextChallenge1Img
             onClick={handleClickNextChallenge}
             src={NextChallengeImg}
