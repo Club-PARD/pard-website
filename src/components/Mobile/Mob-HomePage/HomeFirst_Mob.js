@@ -1,6 +1,9 @@
 import styled, { css, keyframes, ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React, { useState, useEffect, useRef } from "react";
+import { detect } from "detect-browser";
+
+const browser = detect();
 
 const VideoContainer = styled.div`
   /* position:${({ isFixed }) => (isFixed ? "sticky" : "relative")}; */
@@ -318,17 +321,20 @@ const HomeVideoMob = () => {
   const [text1, setText1] = useState("PA"); // 텍스트 1
   const [text2, setText2] = useState("RD"); // 텍스트 2
   const [isSplitTextVisible, setIsSplitTextVisible] = useState(false);
-  const [isSafari, setIsSafari] = useState(false); // 사파리인지 아닌지 구분
+  const [isChrome, setIsChrome] = useState(false); // 사파리인지 아닌지 구분
 
   const position = useScrollPosition();
   const stopPosition = 1200;
 
   useEffect(() => {
     const absPosition = Math.abs(position);
+    // var userAgent = navigator.userAgent.toLowerCase();
     const userAgent = window.navigator.userAgent;
-    const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(userAgent);
+    // const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(userAgent);
+    const isChromeBrowser =
+      browser.name === "chrome" || browser.name === "ios" ? true : false;
 
-    setIsSafari(isSafariBrowser);
+    setIsChrome(isChromeBrowser);
 
     if (absPosition < 100) {
       setchanged("aaa");
@@ -424,13 +430,8 @@ const HomeVideoMob = () => {
     <>
       <DIVVVV>
         <ThemeProvider theme={theme}>
-          <VideoContainer isColor={backcolor}>
-            {isSafari ? (
-              <VideoBackgroundImg
-                src={require("../../../assets/img/BackgroundImg_Mob.png")}
-                alt="backImg"
-              />
-            ) : (
+          <VideoContainer isColor={backcolor} isFixed={isFixed}>
+            {isChrome ? (
               <VideoBackground autoPlay loop muted playsInline>
                 <source
                   playsInline
@@ -440,6 +441,11 @@ const HomeVideoMob = () => {
                   type="video/mp4"
                 />
               </VideoBackground>
+            ) : (
+              <VideoBackgroundImg
+                src={require("../../../assets/img/BackgroundImg_Mob.png")}
+                alt="backImg"
+              />
             )}
 
             <LogoDiv>

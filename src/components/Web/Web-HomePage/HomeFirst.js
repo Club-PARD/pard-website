@@ -321,6 +321,7 @@ const HomeFirst = () => {
     const absPosition = Math.abs(position);
     const userAgent = window.navigator.userAgent;
     const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(userAgent);
+    console.log("사파리인가 ", isSafariBrowser);
 
     setIsSafari(isSafariBrowser);
     if (absPosition < 100) {
