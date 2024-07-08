@@ -23,6 +23,7 @@ import PYY from "../../../assets/img/백예은.png";
 import disquiet from "../../../assets/img/disquiet.png";
 import LinkedIn from "../../../assets/img/LinkedInLogo.png";
 import WebLogo from "../../../assets/img/WebLogo.png";
+import { pardDATA } from "../../../utils/data.constant";
 
 const Header7 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header7};
@@ -398,7 +399,8 @@ function InquiryManagement() {
     <PartDiv>
       <ThemeProvider theme={theme}>
         <Header7>
-          거친 파도를 뚫고 나가는<br></br>파드 3기 운영진을 소개합니다.
+          거친 파도를 뚫고 나가는<br></br>파드 {pardDATA.currentGeneration}기
+          운영진을 소개합니다.
         </Header7>
         <Subtitle3>
           함께 했을 때 더 큰 일을<br></br>이룰 수 있음을 강하게 믿고 있어요.

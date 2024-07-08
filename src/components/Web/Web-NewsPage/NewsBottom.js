@@ -1,12 +1,13 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
+import { pardDATA } from "../../../utils/data.constant";
 
 export default function NewsBottom() {
   return (
     <ThemeProvider theme={theme}>
       <BottomContainer>
         <Header7>협업에 미친 파드의 여정에 동참하고 싶다면</Header7>
-        <Button>3기 모집이 완료되었습니다</Button>
+        <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
       </BottomContainer>
     </ThemeProvider>
   );

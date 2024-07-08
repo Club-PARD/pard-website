@@ -1,6 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React from "react";
+import { pardDATA } from "../../../utils/data.constant";
 
 const PartDiv = styled.div`
   height: 950px;
@@ -102,7 +103,7 @@ function RecruitingFirst() {
             실행해요.
           </Header5>
           {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>3기 모집이 완료되었습니다</Button>
+          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
           <DownLogo
             src={require("../../../assets/img/DownScrollLogo.png")}
             alt="downLogo"

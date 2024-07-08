@@ -23,6 +23,7 @@ import JH from "../../../assets/img/조환.png";
 import PYY from "../../../assets/img/백예은.png";
 import disquiet from "../../../assets/img/disquiet.png";
 import WebLogo from "../../../assets/img/WebLogo.png";
+import { pardDATA } from "../../../utils/data.constant";
 
 const Header8 = styled.div`
   font-size: ${(props) => props.theme.Mob_fontSizes.Header8};
@@ -412,7 +413,7 @@ function InquiryManagemaentMob() {
           <Header8>
             거친 파도를 <br />
             뚫고 나가는
-            <br /> 파드 3기 운영진을
+            <br /> 파드 {pardDATA.currentGeneration}기 운영진을
             <br />
             소개합니다.
           </Header8>

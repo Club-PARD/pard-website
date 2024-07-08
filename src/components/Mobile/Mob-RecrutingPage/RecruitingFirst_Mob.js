@@ -1,5 +1,6 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
+import { pardDATA } from "../../../utils/data.constant";
 
 const Header8 = styled.div`
   font-size: ${(props) => props.theme.Mob_fontSizes.Header8};
@@ -104,7 +105,9 @@ function RecruitingFirstMob() {
           </ButtonText1>
           <ButtonDiv>
             {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-            <Button>3기 모집이 완료되었습니다</Button>
+            <Button>
+              {pardDATA.currentGeneration}기 모집이 완료되었습니다
+            </Button>
           </ButtonDiv>
         </ThemeProvider>
       </PartDiv>
