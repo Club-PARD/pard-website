@@ -4,118 +4,6 @@ import React, { useState } from "react";
 import vector from "../../../assets/img/vector.png";
 import selectVector from "../../../assets/img/vector_Green.png";
 
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 150px 36px 100px;
-`;
-const PartDiv = styled.div`
-  height: 800px;
-  position: relative;
-`;
-
-const Header7 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header8};
-  font-weight: ${(props) => props.theme.fontWeights.Header8};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  line-height: 140%;
-  margin-bottom: 100px;
-`;
-
-const QuestionItem = styled.div`
-  cursor: pointer;
-  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
-  color: ${(props) => (props.selected ? "#64C59A" : "#fff")};
-  font-family: "NanumSquare Neo";
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-  flex: 1;
-`;
-
-const Question = styled.div`
-  width: 303px;
-  height: 100%;
-  padding: 13px 0px 13px 29px;
-  line-height: 25.6px;
-  font-size: 16px;
-  font-weight: ${(props) => props.theme.fontWeights.Body1};
-  font-family: "NanumSquare Neo";
-  background-color: white;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-  z-index: 3;
-  position: relative;
-  cursor: pointer;
-  :hover {
-    font-weight: bold;
-    color: #64c59a;
-  }
-`;
-const Vector = styled.img`
-  height: 20px;
-  width: 14px;
-  margin-right: 10px;
-`;
-const Answer = styled.div`
-  background-color: #64c59a;
-  margin-top: -40px;
-  margin-bottom: 30px;
-  padding: 20px 0px 15px 29px;
-  width: 303px;
-  display: flex;
-  align-items: center;
-  border-radius: 0px 0px 10px 10px;
-  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
-  font-family: "NanumSquare Neo";
-  line-height: 140%;
-  z-index: -1;
-  color: #1f1f1f;
-  white-space: pre-wrap;
-  height: 100%;
-`;
-const Button = styled.a`
-  cursor: pointer;
-  color: black;
-  text-decoration-line: none;
-  width: 138px;
-  height: 42px;
-  background-color: #64c59a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
-  font-family: "NanumSquare Neo";
-  border-radius: 10px;
-`;
-const Body2 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Caption};
-  font-weight: ${(props) => props.theme.fontWeights.Caption};
-  font-family: "NanumSquare Neo";
-  color: white;
-  line-height: 140%;
-  display: flex;
-  align-items: center;
-  margin-right: 16px;
-  width: 178px;
-`;
-const Extra = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-const QuestionWrap = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 function RecruitingAbout() {
   const [question, setQuestion] = useState([
     {
@@ -505,3 +393,115 @@ function RecruitingAbout() {
 }
 
 export default RecruitingAbout;
+
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 36px 100px;
+`;
+const PartDiv = styled.div`
+  height: 800px;
+  position: relative;
+`;
+
+const Header7 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header8};
+  font-weight: ${(props) => props.theme.fontWeights.Header8};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  line-height: 140%;
+  margin-bottom: 100px;
+`;
+
+const QuestionItem = styled.div`
+  cursor: pointer;
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
+  color: ${(props) => (props.selected ? "#64C59A" : "#fff")};
+  font-family: "NanumSquare Neo";
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  flex: 1;
+`;
+
+const Question = styled.div`
+  width: 303px;
+  height: 100%;
+  padding: 13px 0px 13px 29px;
+  line-height: 25.6px;
+  font-size: 16px;
+  font-weight: ${(props) => props.theme.fontWeights.Body1};
+  font-family: "NanumSquare Neo";
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  z-index: 3;
+  position: relative;
+  cursor: pointer;
+  :hover {
+    font-weight: bold;
+    color: #64c59a;
+  }
+`;
+const Vector = styled.img`
+  height: 20px;
+  width: 14px;
+  margin-right: 10px;
+`;
+const Answer = styled.div`
+  background-color: #64c59a;
+  margin-top: -40px;
+  margin-bottom: 30px;
+  padding: 20px 0px 15px 29px;
+  width: 303px;
+  display: flex;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px;
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
+  font-family: "NanumSquare Neo";
+  line-height: 140%;
+  z-index: -1;
+  color: #1f1f1f;
+  white-space: pre-wrap;
+  height: 100%;
+`;
+const Button = styled.a`
+  cursor: pointer;
+  color: black;
+  text-decoration-line: none;
+  width: 138px;
+  height: 42px;
+  background-color: #64c59a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
+  font-family: "NanumSquare Neo";
+  border-radius: 10px;
+`;
+const Body2 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Caption};
+  font-weight: ${(props) => props.theme.fontWeights.Caption};
+  font-family: "NanumSquare Neo";
+  color: white;
+  line-height: 140%;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  width: 178px;
+`;
+const Extra = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+const QuestionWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+`;

@@ -1,9 +1,39 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import AboutFrame from "../../../assets/img/About_Mob_Bar_Last.png";
-
 import React from "react";
 import { pardDATA } from "../../../utils/data.constant";
+
+function AboutLast_Mob() {
+  const handleClick = () => {
+    window.open("https://pard-notice.oopy.io", "_blank");
+  };
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header7>
+            진짜 협업<br></br>함께 경험해봐요
+          </Header7>
+          <Line>
+            <Shape1>"</Shape1>
+            <Shape2>"</Shape2>
+          </Line>
+          <Header6>
+            똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도
+            <br></br>선수들의 역량이에요
+          </Header6>
+          <Comment>송민 KBS 서핑 해설위원</Comment>
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+        </ThemeProvider>
+      </PartDiv>
+      <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
+    </Div>
+  );
+}
+
+export default AboutLast_Mob;
 
 const PartDiv = styled.div`
   height: 500px;
@@ -132,33 +162,3 @@ const AboutFrame1 = styled.img`
   border-radius: 0px;
   margin-top: 160px;
 `;
-function AboutLast_Mob() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header7>
-            진짜 협업<br></br>함께 경험해봐요
-          </Header7>
-          <Line>
-            <Shape1>"</Shape1>
-            <Shape2>"</Shape2>
-          </Line>
-          <Header6>
-            똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도
-            <br></br>선수들의 역량이에요
-          </Header6>
-          <Comment>송민 KBS 서핑 해설위원</Comment>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
-        </ThemeProvider>
-      </PartDiv>
-      <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
-    </Div>
-  );
-}
-
-export default AboutLast_Mob;

@@ -4,6 +4,35 @@ import React from "react";
 import AboutImage from "../../../assets/img/AboutLogo.png";
 import ProgramFrame from "../../../assets/img/Program_Mob_Bar.png";
 
+function ProjectFirst_Mob() {
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <AboutLogo src={AboutImage} alt="AboutLogo" />
+          <Header8>
+            PARD가
+            <br />
+            진행한 프로젝트를
+            <br />
+            보여드릴게요
+          </Header8>
+          <ButtonText1>
+            PARD는 기획자・디자이너・개발자 간<br />
+            협업을 바탕으로 독창적이면서도 <br />
+            사용자의 문제를 효과적으로 해결할 수 있는 <br />
+            다양한 프로젝트들을 선보이고 있습니다.
+            <br />
+          </ButtonText1>
+        </ThemeProvider>
+        <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default ProjectFirst_Mob;
+
 const Header8 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header8};
   font-weight: ${(props) => props.theme.fontWeights.Header8};
@@ -74,32 +103,3 @@ const ProgramFrame1 = styled.img`
   left: 0px;
   bottom: 0px;
 `;
-
-function ProjectFirst_Mob() {
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <AboutLogo src={AboutImage} alt="AboutLogo" />
-          <Header8>
-            PARD가
-            <br />
-            진행한 프로젝트를
-            <br />
-            보여드릴게요
-          </Header8>
-          <ButtonText1>
-            PARD는 기획자・디자이너・개발자 간<br />
-            협업을 바탕으로 독창적이면서도 <br />
-            사용자의 문제를 효과적으로 해결할 수 있는 <br />
-            다양한 프로젝트들을 선보이고 있습니다.
-            <br />
-          </ButtonText1>
-        </ThemeProvider>
-        <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default ProjectFirst_Mob;

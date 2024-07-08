@@ -7,115 +7,6 @@ import Design from "../../../assets/img/Design_info.png";
 import App from "../../../assets/img/iOS_info.png";
 import Server from "../../../assets/img/Server_info.png";
 
-const Header8 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header8};
-  font-weight: ${(props) => props.theme.fontWeights.Header8};
-  color: #000000;
-  font-family: "NanumSquare Neo";
-  line-height: 1.45;
-  margin-bottom: 73px;
-  white-space: pre-line;
-`;
-
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  background-color: #ffffff;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-`;
-
-const PartDiv = styled.div`
-  padding-top: 133px;
-  width: 100%;
-  height: 950px;
-  background-color: #ffffff;
-  position: relative;
-  display: grid;
-  place-content: center;
-  align-content: start;
-  justify-content: center;
-`;
-const ButtonText1 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
-  color: ${(props) => props.color};
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-  position: absolute;
-  white-space: pre-wrap;
-  margin-top: 313px;
-  text-align: left;
-`;
-
-const Body2 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
-  font-weight: ${(props) => props.theme.fontWeights.Body2};
-  font-family: "NanumSquare Neo";
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-  position: absolute;
-  white-space: pre-wrap;
-  margin-top: 350px;
-  line-height: 140%;
-`;
-
-const ListWrap = styled.ul`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 303px;
-  list-style: none;
-  padding: 0;
-  justify-content: center;
-`;
-
-const List = styled.li`
-  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  color: ${(props) => (props.selected ? "#fff" : "#000")};
-`;
-const ImageBorder = styled.div`
-  width: 303px;
-  height: 30px;
-  position: absolute;
-  border-radius: 0px 0px 13px 13px;
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-  background-color: ${(props) => (props.selected ? props.color : "#ff0")};
-  margin-top: 253px;
-`;
-const ImageText = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Caption1};
-  font-weight: ${(props) => props.theme.fontWeights.Caption1};
-  margin-left: 17px;
-  margin-top: 9px;
-  color: white;
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-`;
-
-const ListButton = styled.button`
-  width: 101px;
-  border: none;
-  background-color: ${(props) => (props.selected ? props.color : "#fff")};
-  height: auto;
-  min-height: 40px;
-  line-height: 1.2;
-  border-radius: 15px;
-  cursor: pointer;
-`;
-const Image = styled.img`
-  width: 303px;
-  height: 243px;
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-  position: absolute;
-  margin-top: 40px;
-`;
-
-const Down = styled.div`
-  width: 303px;
-`;
-
 function AboutPart_Mob() {
   const [part, setPart] = useState([
     {
@@ -315,3 +206,112 @@ function AboutPart_Mob() {
 }
 
 export default AboutPart_Mob;
+
+const Header8 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header8};
+  font-weight: ${(props) => props.theme.fontWeights.Header8};
+  color: #000000;
+  font-family: "NanumSquare Neo";
+  line-height: 1.45;
+  margin-bottom: 73px;
+  white-space: pre-line;
+`;
+
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const PartDiv = styled.div`
+  padding-top: 133px;
+  width: 100%;
+  height: 950px;
+  background-color: #ffffff;
+  position: relative;
+  display: grid;
+  place-content: center;
+  align-content: start;
+  justify-content: center;
+`;
+const ButtonText1 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
+  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
+  color: ${(props) => props.color};
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+  position: absolute;
+  white-space: pre-wrap;
+  margin-top: 313px;
+  text-align: left;
+`;
+
+const Body2 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
+  font-weight: ${(props) => props.theme.fontWeights.Body2};
+  font-family: "NanumSquare Neo";
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+  position: absolute;
+  white-space: pre-wrap;
+  margin-top: 350px;
+  line-height: 140%;
+`;
+
+const ListWrap = styled.ul`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 303px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+`;
+
+const List = styled.li`
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  color: ${(props) => (props.selected ? "#fff" : "#000")};
+`;
+const ImageBorder = styled.div`
+  width: 303px;
+  height: 30px;
+  position: absolute;
+  border-radius: 0px 0px 13px 13px;
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+  background-color: ${(props) => (props.selected ? props.color : "#ff0")};
+  margin-top: 253px;
+`;
+const ImageText = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Caption1};
+  font-weight: ${(props) => props.theme.fontWeights.Caption1};
+  margin-left: 17px;
+  margin-top: 9px;
+  color: white;
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+`;
+
+const ListButton = styled.button`
+  width: 101px;
+  border: none;
+  background-color: ${(props) => (props.selected ? props.color : "#fff")};
+  height: auto;
+  min-height: 40px;
+  line-height: 1.2;
+  border-radius: 15px;
+  cursor: pointer;
+`;
+const Image = styled.img`
+  width: 303px;
+  height: 243px;
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+  position: absolute;
+  margin-top: 40px;
+`;
+
+const Down = styled.div`
+  width: 303px;
+`;

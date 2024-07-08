@@ -12,6 +12,88 @@ import PickPly from "../../../assets/img/Pickply_Img.png";
 import dCamp from "../../../assets/img/dCamp.png";
 import AWS from "../../../assets/img/AWS_logo.PNG";
 
+function HomePartnerMob() {
+  const handleClickSpark = () => {
+    window.open("https://sparklabs.co.kr/lb/index.php", "_blank");
+  };
+  const handleClickDiquiet = () => {
+    window.open("https://disquiet.io/", "_blank");
+  };
+  const handleClickImpactCampus = () => {
+    window.open("https://impact.career/", "_blank");
+  };
+  const handleClickLink = () => {
+    window.open("https://linc30.handong.edu/", "_blank");
+  };
+  const handleClickSwyg = () => {
+    window.open("https://www.swygbro.com", "_blank");
+  };
+  const handleClickAsan = () => {
+    window.open("https://asan-nanum.org", "_blank");
+  };
+  const handleClickMobit = () => {
+    window.open("https://www.momit.co.kr", "_blank");
+  };
+  const handleClickNextChallenge = () => {
+    window.open("https://www.ncf.or.kr/", "_blank");
+  };
+  const handleClickPickPly = () => {
+    window.open("https://pickply.com/company ", "_blank");
+  };
+  const handleClickDcamp = () => {
+    window.open("https://dcamp.kr/", "_blank");
+  };
+  const handleClickAWS = () => {
+    window.open("https://aws.amazon.com/ko/?nc2=h_lg", "_blank");
+  };
+
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header7>PARTNERS</Header7>
+          <Subtitle3>함께하는 성장을 돕는 후원사</Subtitle3>
+          <ContentWrapper>
+            <AsanImgDiv onClick={handleClickAsan} src={AsanImg} alt="Asan" />
+            <NextChallenge1Img
+              onClick={handleClickNextChallenge}
+              src={NextChallengeImg}
+              alt="NextChallenge"
+            />
+            <Spacklab
+              onClick={handleClickSpark}
+              src={SpackImg}
+              alt="SparkLab"
+            />
+            <DisquietImage1
+              onClick={handleClickDiquiet}
+              src={DisquietImage}
+              alt="Disquiet"
+            />
+            {/* <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" /> */}
+            <ImpactCampusImage3
+              onClick={handleClickImpactCampus}
+              src={ImpactCampusImage}
+              alt="Impact Campus"
+            />
+            <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
+            {/* <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" /> */}
+            {/* <PickPlyDiv
+              onClick={handleClickPickPly}
+              src={PickPly}
+              alt="PickPly"
+            /> */}
+            <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
+            <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
+          </ContentWrapper>
+        </ThemeProvider>
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default HomePartnerMob;
+
 const Header7 = styled.div`
   font-size: ${(props) => props.theme.Mob_fontSizes.Header7};
   font-weight: ${(props) => props.theme.fontWeights.Header7};
@@ -134,85 +216,3 @@ const Dcamp = styled.img`
   margin-top: 50px;
   cursor: pointer;
 `;
-
-function HomePartnerMob() {
-  const handleClickSpark = () => {
-    window.open("https://sparklabs.co.kr/lb/index.php", "_blank");
-  };
-  const handleClickDiquiet = () => {
-    window.open("https://disquiet.io/", "_blank");
-  };
-  const handleClickImpactCampus = () => {
-    window.open("https://impact.career/", "_blank");
-  };
-  const handleClickLink = () => {
-    window.open("https://linc30.handong.edu/", "_blank");
-  };
-  const handleClickSwyg = () => {
-    window.open("https://www.swygbro.com", "_blank");
-  };
-  const handleClickAsan = () => {
-    window.open("https://asan-nanum.org", "_blank");
-  };
-  const handleClickMobit = () => {
-    window.open("https://www.momit.co.kr", "_blank");
-  };
-  const handleClickNextChallenge = () => {
-    window.open("https://www.ncf.or.kr/", "_blank");
-  };
-  const handleClickPickPly = () => {
-    window.open("https://pickply.com/company ", "_blank");
-  };
-  const handleClickDcamp = () => {
-    window.open("https://dcamp.kr/", "_blank");
-  };
-  const handleClickAWS = () => {
-    window.open("https://aws.amazon.com/ko/?nc2=h_lg", "_blank");
-  };
-
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header7>PARTNERS</Header7>
-          <Subtitle3>함께하는 성장을 돕는 후원사</Subtitle3>
-          <ContentWrapper>
-            <AsanImgDiv onClick={handleClickAsan} src={AsanImg} alt="Asan" />
-            <NextChallenge1Img
-              onClick={handleClickNextChallenge}
-              src={NextChallengeImg}
-              alt="NextChallenge"
-            />
-            <Spacklab
-              onClick={handleClickSpark}
-              src={SpackImg}
-              alt="SparkLab"
-            />
-            <DisquietImage1
-              onClick={handleClickDiquiet}
-              src={DisquietImage}
-              alt="Disquiet"
-            />
-            {/* <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" /> */}
-            <ImpactCampusImage3
-              onClick={handleClickImpactCampus}
-              src={ImpactCampusImage}
-              alt="Impact Campus"
-            />
-            <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
-            {/* <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" /> */}
-            {/* <PickPlyDiv
-              onClick={handleClickPickPly}
-              src={PickPly}
-              alt="PickPly"
-            /> */}
-            <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
-            <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
-          </ContentWrapper>
-        </ThemeProvider>
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default HomePartnerMob;

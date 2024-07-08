@@ -4,6 +4,30 @@ import React from "react";
 import AboutImage from "../../../assets/img/AboutLogo.png";
 import AboutFrame from "../../../assets/img/About_Mob_Bar.png";
 
+function AboutFirst_Mob() {
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <AboutLogo src={AboutImage} alt="AboutLogo" />
+          <Header8>
+            Pay it Forward
+            <br />
+            문화를 실천하는
+            <br />
+            대학생 IT 협업 동아리
+            <br />
+            PARD
+          </Header8>
+        </ThemeProvider>
+        <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default AboutFirst_Mob;
+
 const Header8 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header8};
   font-weight: ${(props) => props.theme.fontWeights.Header8};
@@ -59,27 +83,3 @@ const AboutFrame1 = styled.img`
   left: 0px;
   bottom: 0px;
 `;
-
-function AboutFirst_Mob() {
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <AboutLogo src={AboutImage} alt="AboutLogo" />
-          <Header8>
-            Pay it Forward
-            <br />
-            문화를 실천하는
-            <br />
-            대학생 IT 협업 동아리
-            <br />
-            PARD
-          </Header8>
-        </ThemeProvider>
-        <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default AboutFirst_Mob;

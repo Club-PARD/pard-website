@@ -5,6 +5,97 @@ import { dbService } from "../../../fbase";
 import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
+function ProjectLast_Mob() {
+  const [projects, setProjects] = useState([]);
+  const [more, setMore] = useState(false);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const data = await getDocs(collection(dbService, "Project"));
+        const newData = data.docs.map((doc) => ({ ...doc.data() }));
+        const sortedItems = newData.sort((a, b) => b.order - a.order);
+        setProjects(sortedItems);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  const handleMore = () => {
+    setMore(true);
+  };
+
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header8>전체 프로젝트</Header8>
+          <Container>
+            {projects.map((project) => (
+              <React.Fragment key={project.id}>
+                {project.generation == "2기" || more ? (
+                  <>
+                    <Link to={`/Project/${project.id}`} key={project.id}>
+                      <Column key={project.id}>
+                        <ContentDiv key={project.id}>
+                          <MainImg
+                            src={project.mainImg}
+                            alt={project.serviceName}
+                          />
+                          <TextDiv>
+                            <ContentsWrap>
+                              <ContentTextDiv>
+                                <Header6>
+                                  {project.generation} | {project.part}
+                                </Header6>
+                              </ContentTextDiv>
+                              <Header7
+                                marginTop={"0px"}
+                                marginRight={"0px"}
+                                marginBottom={"0px"}
+                                marginLeft={"20px"}
+                              >
+                                {project.serviceName}
+                              </Header7>
+                              <TitleTectDiv>
+                                {project.mobTitle && (
+                                  <>
+                                    {project.mobTitle.map((title, index) => (
+                                      <Body2 key={index}>{title}</Body2>
+                                    ))}
+                                  </>
+                                )}
+                              </TitleTectDiv>
+                            </ContentsWrap>
+                          </TextDiv>
+                        </ContentDiv>
+                      </Column>
+                    </Link>
+                  </>
+                ) : (
+                  <></>
+                )}
+              </React.Fragment>
+            ))}
+          </Container>
+        </ThemeProvider>
+        {!more && (
+          <DownLogo
+            src={require("../../../assets/img/moreButton.png")}
+            onClick={handleMore}
+            alt="downLogo"
+          />
+        )}
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default ProjectLast_Mob;
+
 const Header6 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header6};
   font-weight: ${(props) => props.theme.fontWeights.Header6};
@@ -146,94 +237,3 @@ const DownLogo = styled.img`
   height: 49px;
   margin: 120px 0px 60px 0px;
 `;
-
-function ProjectLast_Mob() {
-  const [projects, setProjects] = useState([]);
-  const [more, setMore] = useState(false);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const data = await getDocs(collection(dbService, "Project"));
-        const newData = data.docs.map((doc) => ({ ...doc.data() }));
-        const sortedItems = newData.sort((a, b) => b.order - a.order);
-        setProjects(sortedItems);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  const handleMore = () => {
-    setMore(true);
-  };
-
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header8>전체 프로젝트</Header8>
-          <Container>
-            {projects.map((project) => (
-              <React.Fragment key={project.id}>
-                {project.generation == "2기" || more ? (
-                  <>
-                    <Link to={`/Project/${project.id}`} key={project.id}>
-                      <Column key={project.id}>
-                        <ContentDiv key={project.id}>
-                          <MainImg
-                            src={project.mainImg}
-                            alt={project.serviceName}
-                          />
-                          <TextDiv>
-                            <ContentsWrap>
-                              <ContentTextDiv>
-                                <Header6>
-                                  {project.generation} | {project.part}
-                                </Header6>
-                              </ContentTextDiv>
-                              <Header7
-                                marginTop={"0px"}
-                                marginRight={"0px"}
-                                marginBottom={"0px"}
-                                marginLeft={"20px"}
-                              >
-                                {project.serviceName}
-                              </Header7>
-                              <TitleTectDiv>
-                                {project.mobTitle && (
-                                  <>
-                                    {project.mobTitle.map((title, index) => (
-                                      <Body2 key={index}>{title}</Body2>
-                                    ))}
-                                  </>
-                                )}
-                              </TitleTectDiv>
-                            </ContentsWrap>
-                          </TextDiv>
-                        </ContentDiv>
-                      </Column>
-                    </Link>
-                  </>
-                ) : (
-                  <></>
-                )}
-              </React.Fragment>
-            ))}
-          </Container>
-        </ThemeProvider>
-        {!more && (
-          <DownLogo
-            src={require("../../../assets/img/moreButton.png")}
-            onClick={handleMore}
-            alt="downLogo"
-          />
-        )}
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default ProjectLast_Mob;

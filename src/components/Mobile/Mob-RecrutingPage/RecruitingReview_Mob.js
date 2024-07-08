@@ -10,109 +10,6 @@ import review2Image from "../../../assets/img/review2Image.png";
 import review3Image from "../../../assets/img/review3Image.png";
 import review4Image from "../../../assets/img/review4Image.png";
 
-const Header7 = styled.div`
-  font-size: ${(props) => props.theme.Mob_fontSizes.Header7};
-  font-weight: ${(props) => props.theme.fontWeights.Header7};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  margin-bottom: 68px;
-  font-size: 30px;
-  margin-left: 36px;
-`;
-const Subtitle2 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-`;
-const CardOneDiv = styled.div`
-  margin-left: 32px;
-`;
-const Caption1 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
-  font-weight: ${(props) => props.theme.fontWeights.Body2};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  line-height: 180%;
-`;
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const Slide = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const Window = styled.div`
-  width: 350px;
-  height: 650px;
-  overflow: hidden;
-`;
-const Image = styled.div`
-  width: 273px;
-  height: 155px;
-  margin-top: 40px;
-  margin-bottom: 13px;
-  background-size: contain;
-  background-repeat: no-repeat;
-`;
-const LeftVector = styled.img`
-  height: 30px;
-  width: 20px;
-`;
-const RightVector = styled.img`
-  height: 30px;
-  width: 20px;
-`;
-const Div = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-const PartDiv = styled.div`
-  height: 850px;
-  width: 375px;
-  justify-content: center;
-`;
-const FlexBox = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`;
-const CardDiv = styled.div`
-  cursor: pointer;
-`;
-//아래 버튼 부분
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const BTNL = styled.div`
-  align-items: center;
-  cursor: pointer;
-  font-size: 3.3rem;
-  color: gray;
-  margin-right: 16px;
-`;
-const BTNR = styled.div`
-  align-items: center;
-  cursor: pointer;
-  font-size: 3.3rem;
-  color: gray;
-  margin-left: 16px;
-`;
-
 function RecruitingReviewMob() {
   const cards = useRef([
     {
@@ -264,3 +161,106 @@ function RecruitingReviewMob() {
 }
 
 export default RecruitingReviewMob;
+
+const Header7 = styled.div`
+  font-size: ${(props) => props.theme.Mob_fontSizes.Header7};
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  margin-bottom: 68px;
+  font-size: 30px;
+  margin-left: 36px;
+`;
+const Subtitle2 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+`;
+const CardOneDiv = styled.div`
+  margin-left: 32px;
+`;
+const Caption1 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
+  font-weight: ${(props) => props.theme.fontWeights.Body2};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  line-height: 180%;
+`;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const Slide = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Window = styled.div`
+  width: 350px;
+  height: 650px;
+  overflow: hidden;
+`;
+const Image = styled.div`
+  width: 273px;
+  height: 155px;
+  margin-top: 40px;
+  margin-bottom: 13px;
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
+const LeftVector = styled.img`
+  height: 30px;
+  width: 20px;
+`;
+const RightVector = styled.img`
+  height: 30px;
+  width: 20px;
+`;
+const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const PartDiv = styled.div`
+  height: 850px;
+  width: 375px;
+  justify-content: center;
+`;
+const FlexBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+const CardDiv = styled.div`
+  cursor: pointer;
+`;
+//아래 버튼 부분
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const BTNL = styled.div`
+  align-items: center;
+  cursor: pointer;
+  font-size: 3.3rem;
+  color: gray;
+  margin-right: 16px;
+`;
+const BTNR = styled.div`
+  align-items: center;
+  cursor: pointer;
+  font-size: 3.3rem;
+  color: gray;
+  margin-left: 16px;
+`;

@@ -1,4 +1,17 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+const Slideritem5 = ({ title, src }) => {
+  return (
+    <SliderItem1>
+      <SliderImage src={src} alt="SliderImg" />
+      <SliderContent>
+        <Body2>{title}</Body2>
+      </SliderContent>
+    </SliderItem1>
+  );
+};
+
+export default Slideritem5;
 
 const SliderItem1 = styled.div`
   width: 330px;
@@ -17,14 +30,14 @@ const SliderContent = styled.div`
   justify-items: center;
   align-items: center;
   height: 20%;
-  background-color: #7B3FEF;
+  background-color: #7b3fef;
   border-radius: 0px 0px 20px 20px;
 `;
 
 const SliderImage = styled.img`
-width: 100%;
-height: 80%;
-border-radius: 20px 20px 0px 0px;
+  width: 100%;
+  height: 80%;
+  border-radius: 20px 20px 0px 0px;
 `;
 
 const Body2 = styled.div`
@@ -40,18 +53,3 @@ const Body2 = styled.div`
   align-items: center;
   margin-top: 10px;
 `;
-
-
-const Slideritem5 = ({ title, src }) => {
-
-    return (
-        <SliderItem1>
-            <SliderImage src={src} alt="SliderImg" />
-          <SliderContent>
-                <Body2>{title}</Body2>
-            </SliderContent>
-        </SliderItem1>
-    );
-};
-
-export default Slideritem5;

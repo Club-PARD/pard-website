@@ -4,28 +4,6 @@ import news2 from "../../../assets/img/news_page/news2.png";
 import arrow from "../../../assets/img/news_page/right_arrow.png";
 import blue_line from "../../../assets/img/news_page/blue_line_reverse_mob.png";
 
-const news = [
-  {
-    id: 1,
-    date: "2024년 6월 10일",
-    title:
-      "2기 iOS 파트 이신원,\n수천명 경쟁뚫고 팀 쿡\n만났다, 한국 대학생\n개발자가 선보인 앱",
-    description:
-      "수천건의 작품 중 총 350개 작품이 수상했고, 그 중 50개가 ‘우수작’으로 선정... 쿡 CEO,\n“이 학생의 제품이 특히 인상적”이라며 “앞으로 그가 보여줄 새로운 아이디어도 기대된다”고 했다.",
-    url: "https://www.chosun.com/economy/tech_it/2024/06/10/UJWXOOESWFHBZN6PR3RU3RI3GY/",
-    img: news1,
-  },
-  {
-    id: 2,
-    date: "2023년 12월 28일",
-    title: "2기 운영진,\n‘임팩트 캠퍼스 IT\n서비스 공모전‘\n대상ㆍ우수상 수상",
-    description:
-      "이브(EVE)팀은 장애인의 관광 접근성 불등을 해소하기 위한 무장애 여행 정보 웹서비스(무블)\n로 대상을 수상했다. 우수상을 수상한 라이트유(Light you)팀은 시각장애인들을 위한 대체자료\n구매 플랫폼(점차점자)을 소개했다. ",
-    url: "https://www.joongang.co.kr/article/25218287#home",
-    img: news2,
-  },
-];
-
 export default function NewsMainMob() {
   return (
     <MainWrapper>
@@ -53,6 +31,28 @@ export default function NewsMainMob() {
     </MainWrapper>
   );
 }
+
+const news = [
+  {
+    id: 1,
+    date: "2024년 6월 10일",
+    title:
+      "2기 iOS 파트 이신원,\n수천명 경쟁뚫고 팀 쿡\n만났다, 한국 대학생\n개발자가 선보인 앱",
+    description:
+      "수천건의 작품 중 총 350개 작품이 수상했고, 그 중 50개가 ‘우수작’으로 선정... 쿡 CEO,\n“이 학생의 제품이 특히 인상적”이라며 “앞으로 그가 보여줄 새로운 아이디어도 기대된다”고 했다.",
+    url: "https://www.chosun.com/economy/tech_it/2024/06/10/UJWXOOESWFHBZN6PR3RU3RI3GY/",
+    img: news1,
+  },
+  {
+    id: 2,
+    date: "2023년 12월 28일",
+    title: "2기 운영진,\n‘임팩트 캠퍼스 IT\n서비스 공모전‘\n대상ㆍ우수상 수상",
+    description:
+      "이브(EVE)팀은 장애인의 관광 접근성 불등을 해소하기 위한 무장애 여행 정보 웹서비스(무블)\n로 대상을 수상했다. 우수상을 수상한 라이트유(Light you)팀은 시각장애인들을 위한 대체자료\n구매 플랫폼(점차점자)을 소개했다. ",
+    url: "https://www.joongang.co.kr/article/25218287#home",
+    img: news2,
+  },
+];
 
 const MainWrapper = styled.div`
   width: 100%;

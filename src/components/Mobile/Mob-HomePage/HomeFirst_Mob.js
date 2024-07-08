@@ -5,310 +5,6 @@ import { detect } from "detect-browser";
 
 const browser = detect();
 
-const VideoContainer = styled.div`
-  /* position:${({ isFixed }) => (isFixed ? "sticky" : "relative")}; */
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 110vh;
-  //min-width: 420px; // 아무리 줄여도 1440px로 유지됨
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: ${({ isColor }) =>
-    isColor ? " rgba(0, 0, 0, 0.4)" : " rgba(0, 0, 0, 0.4)"};
-`;
-
-//inline-block으로 stickybox를 위로 올리는 역할을한다.
-const DIVVVV = styled.div`
-  display: inline-block;
-  height: 13500px;
-  width: 100%;
-`;
-
-function useScrollPosition() {
-  const [scrollPos, setScrollPos] = useState(0);
-
-  useEffect(() => {
-    const updateScrollPos = () => {
-      setScrollPos(window.pageYOffset);
-    };
-
-    window.addEventListener("scroll", updateScrollPos);
-
-    return () => {
-      window.removeEventListener("scroll", updateScrollPos);
-    };
-  }, []);
-
-  return scrollPos;
-}
-
-const expandAnimation = keyframes`
-0% {
-    opacity: 0;
-    letter-spacing: 0;
-  }
-  /*
-  50% {
-    opacity: 1;
-    letter-spacing: 0;
-  }
- */ 
-  100% {
-    opacity: 1;
-    letter-spacing: 0;
-  }
-`;
-
-const VideoBackground = styled.video`
-  min-width: 420px;
-  height: 100%;
-  object-fit: fill;
-  z-index: -1;
-  width: 100%;
-`;
-
-const VideoBackgroundImg = styled.img`
-  min-width: 420px;
-  height: 100%;
-  object-fit: fill;
-  z-index: -1;
-  width: 100%;
-`;
-
-const SplitTextContainer = styled.div`
-  position: absolute;
-  width: 324px;
-  height: 56px;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  z-index: 4;
-
-  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
-  transition: opacity 0.5s ease-in;
-`;
-
-const TextContainer1 = styled.div`
-  width: 324px;
-  height: 56px;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 4;
-  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
-  transition: opacity 0.5s ease-in;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`
-        ${expandAnimation} 1s ease-in-out
-      `}
-    `};
-`;
-
-const TextContainer2 = styled.div`
-  display: flex;
-  width: 616px;
-  height: 84px;
-  position: absolute; // 전체 태그에 대한거임 absolute니까 당연히!
-  top: 190%;
-  left: 97%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 4;
-  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
-  transition: opacity 0.5s ease-in;
-`;
-
-const TextContainer3 = styled.div`
-  width: 283px;
-  height: 104px;
-  position: absolute;
-  top: 46%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 4;
-  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
-  transition: opacity 0.5s ease-in;
-`;
-const Text = styled.p`
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.Header7};
-  font-size: 42px;
-  line-height: 140%;
-  color: white;
-`;
-const Text1 = styled.p`
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.Header7};
-  font-size: 42px;
-  line-height: 140%;
-  color: white;
-
-  transition: transform 6s ease-in-out forwards;
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveLeft} 1s ease-in-out forwards
-        `
-      : "none"}; */
-  // forwards로 벌리고 난 뒤에 고정
-`;
-
-const Text2 = styled(Text)`
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.Header7};
-  font-size: 42px;
-  line-height: 140%;
-  color: white;
-  transition: transform 0.5s ease-in-out forwards;
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveRight} 1s ease-in-out forwards
-        `
-      : "none"}; */
-  // forwards로 벌리고 난 뒤에 고정
-`;
-const Textchanged1 = styled.p`
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.Header8};
-  font-size: ${(props) => props.theme.Mob_fontSizes.Header8};
-  line-height: 140%;
-  /* identical to box height, or 84px */
-
-  text-align: center;
-  color: #ffffff;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`
-        ${expandAnimation} 1s ease-in-out forwards
-      `}//2초만에 나타나서 고정이 된다
-      // forwards
-    `};
-`;
-const Textchanged2 = styled.p`
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 16px;
-  line-height: 160%;
-  /* or 56px */
-  color: #ffffff;
-  text-align: center;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`
-        ${expandAnimation} 0.5s ease-in-out
-      `}
-    `};
-
-  //letter-spacing: ${({ isExpanded }) => (isExpanded ? "0.5em" : "0")};
-`;
-
-const BackgroundOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 420px;
-  height: 100%;
-  background: ${({ backcolor }) => (backcolor ? "rgba(0, 0, 0, 0.4)" : null)};
-  z-index: 2;
-`;
-
-const DownLogo = styled.img`
-  width: 80px;
-  height: 63px;
-  padding-top: 100px;
-`;
-
-const LogoDiv = styled.div`
-  position: absolute;
-  top: 66%;
-  width: 100%;
-  justify-content: center;
-  display: flex;
-  z-index: 0;
-`;
-
-const moveLeft = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-300px); // adjust this value to control the distance of expansion
-  }
-`;
-// 왼쪽으로 움직이는거 PA가
-
-const moveRight = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(400px); // adjust this value to control the distance of expansion
-  }
-`;
-//// 오른쪽으로 움직이는거 RD가
-
-const moveUp = keyframes`
-  from {
-    transform: translateY(50%); // adjust this value to control the distance of movement
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`; // Y if FORWA가 올라가는 위치 조정, opacity로 보이는 거 조절
-const MovedText = styled.div`
-  display: flex;
-  width: 306px;
-  position: absolute;
-  top: 75%; // adjust this value to control the initial position
-  left: 10%; // position it in the middle of its parent
-  transform: translate(-50%, -50%); // change the origin of transformation
-  transition: transform 0.5s ease-in-out forwards;
-  animation: ${({ isAnimation }) =>
-    isAnimation &&
-    css`
-      ${css`
-        ${expandAnimation} 1s ease-in-out forwards
-      `}//2초만에 나타나서 고정이 된다
-      // forwards
-    `};
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveUp} 1s ease-in-out both 0.5s
-        `
-      : "none"}; */
-  //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다.
-  // forwards 0.5s는 added 0.5s delay
-  // 위에 태그들 즉 Text1,Text2 가 끝나고 0.5s뒤에 실행
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  z-index: 4;
-  font-weight: 800;
-  font-size: 42px;
-  line-height: 140%;
-  color: white;
-`;
-
 const HomeVideoMob = () => {
   const [text, setText] = useState("PARD"); // text변화
   const [isFixed, setIsFixed] = useState(true); // 스크롤 변화에 따른 비디오 고정
@@ -617,3 +313,307 @@ const HomeVideoMob = () => {
 };
 
 export default HomeVideoMob;
+
+const VideoContainer = styled.div`
+  /* position:${({ isFixed }) => (isFixed ? "sticky" : "relative")}; */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 110vh;
+  //min-width: 420px; // 아무리 줄여도 1440px로 유지됨
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: ${({ isColor }) =>
+    isColor ? " rgba(0, 0, 0, 0.4)" : " rgba(0, 0, 0, 0.4)"};
+`;
+
+//inline-block으로 stickybox를 위로 올리는 역할을한다.
+const DIVVVV = styled.div`
+  display: inline-block;
+  height: 13500px;
+  width: 100%;
+`;
+
+function useScrollPosition() {
+  const [scrollPos, setScrollPos] = useState(0);
+
+  useEffect(() => {
+    const updateScrollPos = () => {
+      setScrollPos(window.pageYOffset);
+    };
+
+    window.addEventListener("scroll", updateScrollPos);
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollPos);
+    };
+  }, []);
+
+  return scrollPos;
+}
+
+const expandAnimation = keyframes`
+0% {
+    opacity: 0;
+    letter-spacing: 0;
+  }
+  /*
+  50% {
+    opacity: 1;
+    letter-spacing: 0;
+  }
+ */ 
+  100% {
+    opacity: 1;
+    letter-spacing: 0;
+  }
+`;
+
+const VideoBackground = styled.video`
+  min-width: 420px;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+  width: 100%;
+`;
+
+const VideoBackgroundImg = styled.img`
+  min-width: 420px;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+  width: 100%;
+`;
+
+const SplitTextContainer = styled.div`
+  position: absolute;
+  width: 324px;
+  height: 56px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  z-index: 4;
+
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+  transition: opacity 0.5s ease-in;
+`;
+
+const TextContainer1 = styled.div`
+  width: 324px;
+  height: 56px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 4;
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+  transition: opacity 0.5s ease-in;
+  animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`
+        ${expandAnimation} 1s ease-in-out
+      `}
+    `};
+`;
+
+const TextContainer2 = styled.div`
+  display: flex;
+  width: 616px;
+  height: 84px;
+  position: absolute; // 전체 태그에 대한거임 absolute니까 당연히!
+  top: 190%;
+  left: 97%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 4;
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+  transition: opacity 0.5s ease-in;
+`;
+
+const TextContainer3 = styled.div`
+  width: 283px;
+  height: 104px;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 4;
+  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+  transition: opacity 0.5s ease-in;
+`;
+const Text = styled.p`
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  font-size: 42px;
+  line-height: 140%;
+  color: white;
+`;
+const Text1 = styled.p`
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  font-size: 42px;
+  line-height: 140%;
+  color: white;
+
+  transition: transform 6s ease-in-out forwards;
+  /* animation: ${({ isAnimation }) =>
+    isAnimation
+      ? css`
+          ${moveLeft} 1s ease-in-out forwards
+        `
+      : "none"}; */
+  // forwards로 벌리고 난 뒤에 고정
+`;
+
+const Text2 = styled(Text)`
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  font-size: 42px;
+  line-height: 140%;
+  color: white;
+  transition: transform 0.5s ease-in-out forwards;
+  /* animation: ${({ isAnimation }) =>
+    isAnimation
+      ? css`
+          ${moveRight} 1s ease-in-out forwards
+        `
+      : "none"}; */
+  // forwards로 벌리고 난 뒤에 고정
+`;
+const Textchanged1 = styled.p`
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: ${(props) => props.theme.fontWeights.Header8};
+  font-size: ${(props) => props.theme.Mob_fontSizes.Header8};
+  line-height: 140%;
+  /* identical to box height, or 84px */
+
+  text-align: center;
+  color: #ffffff;
+  animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`
+        ${expandAnimation} 1s ease-in-out forwards
+      `}//2초만에 나타나서 고정이 된다
+      // forwards
+    `};
+`;
+const Textchanged2 = styled.p`
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 160%;
+  /* or 56px */
+  color: #ffffff;
+  text-align: center;
+  animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`
+        ${expandAnimation} 0.5s ease-in-out
+      `}
+    `};
+
+  //letter-spacing: ${({ isExpanded }) => (isExpanded ? "0.5em" : "0")};
+`;
+
+const BackgroundOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 420px;
+  height: 100%;
+  background: ${({ backcolor }) => (backcolor ? "rgba(0, 0, 0, 0.4)" : null)};
+  z-index: 2;
+`;
+
+const DownLogo = styled.img`
+  width: 80px;
+  height: 63px;
+  padding-top: 100px;
+`;
+
+const LogoDiv = styled.div`
+  position: absolute;
+  top: 66%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  z-index: 0;
+`;
+
+const moveLeft = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-300px); // adjust this value to control the distance of expansion
+  }
+`;
+// 왼쪽으로 움직이는거 PA가
+
+const moveRight = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(400px); // adjust this value to control the distance of expansion
+  }
+`;
+//// 오른쪽으로 움직이는거 RD가
+
+const moveUp = keyframes`
+  from {
+    transform: translateY(50%); // adjust this value to control the distance of movement
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`; // Y if FORWA가 올라가는 위치 조정, opacity로 보이는 거 조절
+const MovedText = styled.div`
+  display: flex;
+  width: 306px;
+  position: absolute;
+  top: 75%; // adjust this value to control the initial position
+  left: 10%; // position it in the middle of its parent
+  transform: translate(-50%, -50%); // change the origin of transformation
+  transition: transform 0.5s ease-in-out forwards;
+  animation: ${({ isAnimation }) =>
+    isAnimation &&
+    css`
+      ${css`
+        ${expandAnimation} 1s ease-in-out forwards
+      `}//2초만에 나타나서 고정이 된다
+      // forwards
+    `};
+  /* animation: ${({ isAnimation }) =>
+    isAnimation
+      ? css`
+          ${moveUp} 1s ease-in-out both 0.5s
+        `
+      : "none"}; */
+  //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다.
+  // forwards 0.5s는 added 0.5s delay
+  // 위에 태그들 즉 Text1,Text2 가 끝나고 0.5s뒤에 실행
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  z-index: 4;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 140%;
+  color: white;
+`;

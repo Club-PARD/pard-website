@@ -5,6 +5,83 @@ import { theme } from "../../../styles/theme";
 import Vec from "../../../assets/img/vector.png";
 import Vec_p from "../../../assets/img/vector_purple.png";
 
+const Askmobile = () => {
+  const [informbox1Hovered, setInformbox1Hovered] = useState();
+  const [informbox2Hovered, setInformbox2Hovered] = useState();
+  const [BusinessHovered, setBusinessHoveredHovered] = useState();
+
+  const handleInformbox2Hover = (isHovered) => {
+    setInformbox2Hovered(isHovered);
+  };
+
+  const handleInformbox1Hover = (isHovered) => {
+    setInformbox1Hovered(isHovered);
+  };
+
+  const BusinessHoveredHover = (isHovered) => {
+    setBusinessHoveredHovered(isHovered);
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Margin>
+        <Askstyledd>
+          PARD에 대해
+          <br />
+          무엇이든 물어보세요!
+        </Askstyledd>
+        <Informbox>
+          <Lineup />
+          <Informbox1
+            href="mailto:official@we-pard.com"
+            onMouseEnter={() => handleInformbox1Hover(true)}
+            onMouseLeave={() => handleInformbox1Hover()}
+          >
+            <Mail hovered={informbox1Hovered}>메일</Mail>
+            <EMail hovered={informbox1Hovered}>official@we-pard.com</EMail>
+            <Vectorbox1>
+              <Vector src={informbox1Hovered ? Vec_p : Vec} alt="vector" />
+            </Vectorbox1>
+          </Informbox1>
+          <Informbox2
+            href="https://www.instagram.com/official_pard_/"
+            target="_blank"
+            onMouseEnter={() => handleInformbox2Hover(true)}
+            onMouseLeave={() => handleInformbox2Hover()}
+            hovered={informbox2Hovered}
+          >
+            <Instagram hovered={informbox2Hovered}>인스타그램</Instagram>
+            <Instaid hovered={informbox2Hovered}>@official_pard_</Instaid>
+            <Vectorbox2>
+              <Vector src={informbox2Hovered ? Vec_p : Vec} alt="vector" />
+            </Vectorbox2>
+          </Informbox2>
+          <Linedown />
+        </Informbox>
+
+        <Business
+          onMouseEnter={() => BusinessHoveredHover(true)}
+          onMouseLeave={() => BusinessHoveredHover()}
+          hovered={BusinessHovered}
+        >
+          비즈니스 문의는 &nbsp;
+          <Here href="mailto:official@we-pard.com" hovered={informbox2Hovered}>
+            여기로
+          </Here>
+        </Business>
+      </Margin>
+      <LogoDiv>
+        <DownLogo
+          src={require("../../../assets/img/DownScrollLogo.png")}
+          alt="downLogo"
+        />
+      </LogoDiv>
+    </ThemeProvider>
+  );
+};
+
+export default Askmobile;
+
 const Margin = styled.div`
   display: flex;
   flex-direction: column;
@@ -206,80 +283,3 @@ const LogoDiv = styled.div`
   display: flex;
   margin-top: 79px;
 `;
-
-const Askmobile = () => {
-  const [informbox1Hovered, setInformbox1Hovered] = useState();
-  const [informbox2Hovered, setInformbox2Hovered] = useState();
-  const [BusinessHovered, setBusinessHoveredHovered] = useState();
-
-  const handleInformbox2Hover = (isHovered) => {
-    setInformbox2Hovered(isHovered);
-  };
-
-  const handleInformbox1Hover = (isHovered) => {
-    setInformbox1Hovered(isHovered);
-  };
-
-  const BusinessHoveredHover = (isHovered) => {
-    setBusinessHoveredHovered(isHovered);
-  };
-
-  return (
-    <ThemeProvider theme={theme}>
-      <Margin>
-        <Askstyledd>
-          PARD에 대해
-          <br />
-          무엇이든 물어보세요!
-        </Askstyledd>
-        <Informbox>
-          <Lineup />
-          <Informbox1
-            href="mailto:official@we-pard.com"
-            onMouseEnter={() => handleInformbox1Hover(true)}
-            onMouseLeave={() => handleInformbox1Hover()}
-          >
-            <Mail hovered={informbox1Hovered}>메일</Mail>
-            <EMail hovered={informbox1Hovered}>official@we-pard.com</EMail>
-            <Vectorbox1>
-              <Vector src={informbox1Hovered ? Vec_p : Vec} alt="vector" />
-            </Vectorbox1>
-          </Informbox1>
-          <Informbox2
-            href="https://www.instagram.com/official_pard_/"
-            target="_blank"
-            onMouseEnter={() => handleInformbox2Hover(true)}
-            onMouseLeave={() => handleInformbox2Hover()}
-            hovered={informbox2Hovered}
-          >
-            <Instagram hovered={informbox2Hovered}>인스타그램</Instagram>
-            <Instaid hovered={informbox2Hovered}>@official_pard_</Instaid>
-            <Vectorbox2>
-              <Vector src={informbox2Hovered ? Vec_p : Vec} alt="vector" />
-            </Vectorbox2>
-          </Informbox2>
-          <Linedown />
-        </Informbox>
-
-        <Business
-          onMouseEnter={() => BusinessHoveredHover(true)}
-          onMouseLeave={() => BusinessHoveredHover()}
-          hovered={BusinessHovered}
-        >
-          비즈니스 문의는 &nbsp;
-          <Here href="mailto:official@we-pard.com" hovered={informbox2Hovered}>
-            여기로
-          </Here>
-        </Business>
-      </Margin>
-      <LogoDiv>
-        <DownLogo
-          src={require("../../../assets/img/DownScrollLogo.png")}
-          alt="downLogo"
-        />
-      </LogoDiv>
-    </ThemeProvider>
-  );
-};
-
-export default Askmobile;
