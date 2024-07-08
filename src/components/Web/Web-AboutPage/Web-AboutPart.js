@@ -7,120 +7,6 @@ import Design from "../../../assets/img/Design_info.png";
 import App from "../../../assets/img/iOS_info.png";
 import Server from "../../../assets/img/Server_info.png";
 
-const Header7 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
-  font-weight: ${(props) => props.theme.fontWeights.Header7};
-  color: #000000;
-  font-family: "NanumSquare Neo";
-  line-height: 1.45;
-  margin-bottom: 745px;
-  text-align: left;
-  position: absolute;
-  bottom: 0;
-`;
-
-const Header5 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header5};
-  font-weight: ${(props) => props.theme.fontWeights.Header5};
-  color: ${(props) => props.color};
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-  margin-left: 648px;
-  position: absolute;
-  margin-bottom: 461px;
-  bottom: 0;
-  white-space: pre-wrap;
-`;
-
-const Body1 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Body1};
-  font-weight: ${(props) => props.theme.fontWeights.Body1};
-  font-family: "NanumSquare Neo";
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-  position: absolute;
-  margin-left: 648px;
-  bottom: 0;
-  white-space: pre-wrap;
-  margin-bottom: 144px;
-  line-height: 160%;
-`;
-
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  background: #ffffff;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
-`;
-
-const PartDiv = styled.div`
-  padding-top: 150px;
-  padding-left: 110px;
-  padding-right: 112px;
-  padding-bottom: 114px;
-  height: 720px;
-  background-color: #ffffff;
-  position: relative;
-  display: block;
-  width: 1072px;
-  margin: 0 auto;
-`;
-
-const ListWrap = styled.ul`
-  display: flex;
-  width: 87%;
-  list-style: none;
-  padding: 0;
-  margin-bottom: 641px;
-  position: absolute;
-  bottom: 0;
-`;
-const ImageBorder = styled.div`
-  width: 550px;
-  height: 30px;
-  position: absolute;
-  bottom: 0;
-  border-radius: 0px 0px 21px 21px;
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-  background-color: ${(props) => (props.selected ? props.color : "#ff0")};
-  margin-bottom: 144px;
-`;
-const ImageText = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Caption1};
-  font-weight: ${(props) => props.theme.fontWeights.Caption1};
-  margin-left: 32px;
-  margin-top: 9px;
-  color: white;
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-`;
-
-const List = styled.li`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  display: inline-block;
-  color: ${(props) => (props.selected ? "#fff" : "#000")};
-`;
-const ListButton = styled.button`
-  width: 20%;
-  border: none;
-  background-color: ${(props) => (props.selected ? props.color : "#fff")};
-  height: 40px;
-  border-radius: 15px;
-  cursor: pointer;
-`;
-const Image = styled.img`
-  width: 550px;
-  height: 440px;
-  opacity: ${(props) => (props.selected ? "1" : "0")};
-  position: absolute;
-  float: left;
-  bottom: 0;
-
-  margin-bottom: 144px;
-`;
-const Down = styled.div``;
 function AboutPart() {
   const [part, setPart] = useState([
     {
@@ -328,3 +214,118 @@ function AboutPart() {
 }
 
 export default AboutPart;
+
+const Header7 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  color: #000000;
+  font-family: "NanumSquare Neo";
+  line-height: 1.45;
+  margin-bottom: 745px;
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+`;
+
+const Header5 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header5};
+  font-weight: ${(props) => props.theme.fontWeights.Header5};
+  color: ${(props) => props.color};
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+  margin-left: 648px;
+  position: absolute;
+  margin-bottom: 461px;
+  bottom: 0;
+  white-space: pre-wrap;
+`;
+
+const Body1 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Body1};
+  font-weight: ${(props) => props.theme.fontWeights.Body1};
+  font-family: "NanumSquare Neo";
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+  position: absolute;
+  margin-left: 648px;
+  bottom: 0;
+  white-space: pre-wrap;
+  margin-bottom: 144px;
+  line-height: 160%;
+`;
+
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+`;
+
+const PartDiv = styled.div`
+  padding-top: 150px;
+  padding-left: 110px;
+  padding-right: 112px;
+  padding-bottom: 114px;
+  height: 720px;
+  background-color: #ffffff;
+  position: relative;
+  display: block;
+  width: 1072px;
+  margin: 0 auto;
+`;
+
+const ListWrap = styled.ul`
+  display: flex;
+  width: 87%;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 641px;
+  position: absolute;
+  bottom: 0;
+`;
+const ImageBorder = styled.div`
+  width: 550px;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0px 0px 21px 21px;
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+  background-color: ${(props) => (props.selected ? props.color : "#ff0")};
+  margin-bottom: 144px;
+`;
+const ImageText = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Caption1};
+  font-weight: ${(props) => props.theme.fontWeights.Caption1};
+  margin-left: 32px;
+  margin-top: 9px;
+  color: white;
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+`;
+
+const List = styled.li`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  display: inline-block;
+  color: ${(props) => (props.selected ? "#fff" : "#000")};
+`;
+const ListButton = styled.button`
+  width: 20%;
+  border: none;
+  background-color: ${(props) => (props.selected ? props.color : "#fff")};
+  height: 40px;
+  border-radius: 15px;
+  cursor: pointer;
+`;
+const Image = styled.img`
+  width: 550px;
+  height: 440px;
+  opacity: ${(props) => (props.selected ? "1" : "0")};
+  position: absolute;
+  float: left;
+  bottom: 0;
+
+  margin-bottom: 144px;
+`;
+const Down = styled.div``;

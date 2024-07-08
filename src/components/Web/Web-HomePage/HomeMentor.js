@@ -6,6 +6,94 @@ import 주영민 from "../../../assets/img/주영민.png";
 import 김강학 from "../../../assets/img/김강학.png";
 import 김선엽 from "../../../assets/img/김선엽.png";
 
+function MentorCard(props) {
+  return (
+    <ContentWrapper
+      key={props.content.id}
+      marginTop={props.content.id % 2 !== 0}
+    >
+      <Image
+        src={props.content.imageSrc}
+        alt={`Image ${props.content.id}`}
+        color={props.content.color}
+      />
+      <TextWrapper2>
+        <Header7 color={props.content.color}>"</Header7>
+        <Header7 color={props.content.color}>"</Header7>
+      </TextWrapper2>
+      <TextWrapper>
+        <Header6 id={props.content.id} color={props.content.color}>
+          {props.content.title}
+        </Header6>
+      </TextWrapper>
+      <TextWrapper3 id={props.content.id}>
+        <Body2 isname={true} id={props.content.id}>
+          {props.content.mentor_name}
+        </Body2>
+        <Body2 isname={false} id={props.content.id}>
+          {props.content.mentor_from}
+        </Body2>
+      </TextWrapper3>
+    </ContentWrapper>
+  );
+}
+
+function HomeMentor() {
+  const contentsData = [
+    {
+      id: 1,
+      imageSrc: 주영민,
+      title: "Think Big,\nStart Small,\nMove fast,\nPard",
+      mentor_name: "주영민",
+      mentor_from: "(주)히든피겨스 CEO",
+      color: "#7B3FEF",
+    },
+    {
+      id: 2,
+      imageSrc: 하조은,
+      title: " 1인분 해내는 주니어가 되기 위한 최고의 선택",
+      mentor_name: "하조은",
+      mentor_from: "당근마켓 Software Engineer",
+      color: "#FF5C00",
+    },
+    {
+      id: 3,
+      imageSrc: 김강학,
+      title:
+        "스펙 쌓기용이 아닌, 정말 문제를 해결하고 싶은 사람들이 모여 함께 몰입하고 있습니다",
+      mentor_name: "김강학",
+      mentor_from: "토스 Product Owner",
+      color: "#64C59A",
+    },
+    {
+      id: 4,
+      imageSrc: 김선엽,
+      title: "실무 경험을 가장 의미있게 해볼 수 있는 놀이터 ",
+      mentor_name: "김선엽",
+      mentor_from: "CJ OliveNetworks 신사업 전략",
+      color: "#5262F5",
+    },
+  ];
+
+  return (
+    <Div>
+      <ThemeProvider theme={theme}>
+        <Header2>멘토 추천사</Header2>
+        <Header4>함께 할 수 밖에 없는 이유</Header4>
+        <PartContents>
+          {contentsData.map((content) => (
+            <PartWrapper key={content.id}>
+              <MentorCard key={content.id} content={content}></MentorCard>
+            </PartWrapper>
+          ))}
+        </PartContents>
+      </ThemeProvider>
+    </Div>
+  );
+}
+
+export default HomeMentor;
+
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
   font-weight: ${(props) => props.theme.fontWeights.Header2};
@@ -132,91 +220,3 @@ const Div = styled.div`
   justify-content: center;
   width: 1330px;
 `;
-
-function MentorCard(props) {
-  return (
-    <ContentWrapper
-      key={props.content.id}
-      marginTop={props.content.id % 2 !== 0}
-    >
-      <Image
-        src={props.content.imageSrc}
-        alt={`Image ${props.content.id}`}
-        color={props.content.color}
-      />
-      <TextWrapper2>
-        <Header7 color={props.content.color}>"</Header7>
-        <Header7 color={props.content.color}>"</Header7>
-      </TextWrapper2>
-      <TextWrapper>
-        <Header6 id={props.content.id} color={props.content.color}>
-          {props.content.title}
-        </Header6>
-      </TextWrapper>
-      <TextWrapper3 id={props.content.id}>
-        <Body2 isname={true} id={props.content.id}>
-          {props.content.mentor_name}
-        </Body2>
-        <Body2 isname={false} id={props.content.id}>
-          {props.content.mentor_from}
-        </Body2>
-      </TextWrapper3>
-    </ContentWrapper>
-  );
-}
-
-function HomeMentor() {
-  const contentsData = [
-    {
-      id: 1,
-      imageSrc: 주영민,
-      title: "Think Big,\nStart Small,\nMove fast,\nPard",
-      mentor_name: "주영민",
-      mentor_from: "(주)히든피겨스 CEO",
-      color: "#7B3FEF",
-    },
-    {
-      id: 2,
-      imageSrc: 하조은,
-      title: " 1인분 해내는 주니어가 되기 위한 최고의 선택",
-      mentor_name: "하조은",
-      mentor_from: "당근마켓 Software Engineer",
-      color: "#FF5C00",
-    },
-    {
-      id: 3,
-      imageSrc: 김강학,
-      title:
-        "스펙 쌓기용이 아닌, 정말 문제를 해결하고 싶은 사람들이 모여 함께 몰입하고 있습니다",
-      mentor_name: "김강학",
-      mentor_from: "토스 Product Owner",
-      color: "#64C59A",
-    },
-    {
-      id: 4,
-      imageSrc: 김선엽,
-      title: "실무 경험을 가장 의미있게 해볼 수 있는 놀이터 ",
-      mentor_name: "김선엽",
-      mentor_from: "CJ OliveNetworks 신사업 전략",
-      color: "#5262F5",
-    },
-  ];
-
-  return (
-    <Div>
-      <ThemeProvider theme={theme}>
-        <Header2>멘토 추천사</Header2>
-        <Header4>함께 할 수 밖에 없는 이유</Header4>
-        <PartContents>
-          {contentsData.map((content) => (
-            <PartWrapper key={content.id}>
-              <MentorCard key={content.id} content={content}></MentorCard>
-            </PartWrapper>
-          ))}
-        </PartContents>
-      </ThemeProvider>
-    </Div>
-  );
-}
-
-export default HomeMentor;

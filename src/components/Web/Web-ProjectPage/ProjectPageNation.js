@@ -5,6 +5,104 @@ import { dbService } from "../../../fbase";
 import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
+const PAGE_SIZE = 9;
+const ProjectGrid = () => {
+  const [projects, setProjects] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const data = await getDocs(collection(dbService, "Project"));
+        const newData = data.docs.map((doc) => ({ ...doc.data() }));
+        const sortedItems = newData.sort((a, b) => b.order - a.order);
+        setProjects(sortedItems);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  // 현재 페이지의 프로젝트 목록을 계산합니다.
+  const startIndex = (currentPage - 1) * PAGE_SIZE;
+  const endIndex = startIndex + PAGE_SIZE;
+  const currentProjects = projects.slice(startIndex, endIndex);
+
+  // 페이지 변경 함수
+  const handlePageChange = (newPage) => {
+    if (newPage === 0) {
+      setCurrentPage(1);
+    } else if (newPage === 3) {
+      setCurrentPage(2);
+    } else {
+      setCurrentPage(newPage);
+    }
+  };
+
+  return (
+    <>
+      <Container>
+        {currentProjects.map((project) => (
+          <Link to={`/Project/${project.id}`} key={project.id}>
+            <Column key={project.id}>
+              <ContentDiv key={project.id}>
+                <MainImg src={project.mainImg} alt={project.serviceName} />
+                <TextDiv>
+                  <ContentsWrap>
+                    <ContentTextDiv>
+                      <Header6>
+                        {project.generation} | {project.part}
+                      </Header6>
+                    </ContentTextDiv>
+                    <Header7 style={{ marginBottom: "10px" }}>
+                      {project.serviceName}
+                    </Header7>
+                    {project.mobTitle.map((title, index) => (
+                      <Body2 key={index} style={{ marginTop: "0px" }}>
+                        {title}
+                      </Body2>
+                    ))}
+                  </ContentsWrap>
+                </TextDiv>
+              </ContentDiv>
+            </Column>
+          </Link>
+        ))}
+      </Container>
+      <ButtonDiv>
+        <ArrowButtonDiv
+          src={require("../../../assets/img/ProjectPageimg/LeftArrow.png")}
+          marginright={"30px"}
+          onClick={() => handlePageChange(currentPage - 1)}
+          alt="arrowButton"
+        />
+        <NumButtonDiv
+          active={currentPage === 1}
+          onClick={() => handlePageChange(1)}
+        >
+          1
+        </NumButtonDiv>
+        <NumButtonDiv
+          active={currentPage === 2}
+          onClick={() => handlePageChange(2)}
+        >
+          2
+        </NumButtonDiv>
+        <ArrowButtonDiv
+          src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
+          marginleft={"30px"}
+          onClick={() => handlePageChange(currentPage + 1)}
+          alt="arrowButton"
+        />
+      </ButtonDiv>
+    </>
+  );
+};
+
+export default ProjectGrid;
+
 const Header6 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header6};
   font-weight: ${(props) => props.theme.fontWeights.Header6};
@@ -139,101 +237,3 @@ const ArrowButtonDiv = styled.img`
   margin-right: 50px;
   margin-left: 50px;
 `;
-
-const PAGE_SIZE = 9;
-const ProjectGrid = () => {
-  const [projects, setProjects] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const data = await getDocs(collection(dbService, "Project"));
-        const newData = data.docs.map((doc) => ({ ...doc.data() }));
-        const sortedItems = newData.sort((a, b) => b.order - a.order);
-        setProjects(sortedItems);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      }
-    };
-
-    fetchProjects();
-  }, []);
-
-  // 현재 페이지의 프로젝트 목록을 계산합니다.
-  const startIndex = (currentPage - 1) * PAGE_SIZE;
-  const endIndex = startIndex + PAGE_SIZE;
-  const currentProjects = projects.slice(startIndex, endIndex);
-
-  // 페이지 변경 함수
-  const handlePageChange = (newPage) => {
-    if (newPage === 0) {
-      setCurrentPage(1);
-    } else if (newPage === 3) {
-      setCurrentPage(2);
-    } else {
-      setCurrentPage(newPage);
-    }
-  };
-
-  return (
-    <>
-      <Container>
-        {currentProjects.map((project) => (
-          <Link to={`/Project/${project.id}`} key={project.id}>
-            <Column key={project.id}>
-              <ContentDiv key={project.id}>
-                <MainImg src={project.mainImg} alt={project.serviceName} />
-                <TextDiv>
-                  <ContentsWrap>
-                    <ContentTextDiv>
-                      <Header6>
-                        {project.generation} | {project.part}
-                      </Header6>
-                    </ContentTextDiv>
-                    <Header7 style={{ marginBottom: "10px" }}>
-                      {project.serviceName}
-                    </Header7>
-                    {project.mobTitle.map((title, index) => (
-                      <Body2 key={index} style={{ marginTop: "0px" }}>
-                        {title}
-                      </Body2>
-                    ))}
-                  </ContentsWrap>
-                </TextDiv>
-              </ContentDiv>
-            </Column>
-          </Link>
-        ))}
-      </Container>
-      <ButtonDiv>
-        <ArrowButtonDiv
-          src={require("../../../assets/img/ProjectPageimg/LeftArrow.png")}
-          marginright={"30px"}
-          onClick={() => handlePageChange(currentPage - 1)}
-          alt="arrowButton"
-        />
-        <NumButtonDiv
-          active={currentPage === 1}
-          onClick={() => handlePageChange(1)}
-        >
-          1
-        </NumButtonDiv>
-        <NumButtonDiv
-          active={currentPage === 2}
-          onClick={() => handlePageChange(2)}
-        >
-          2
-        </NumButtonDiv>
-        <ArrowButtonDiv
-          src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
-          marginleft={"30px"}
-          onClick={() => handlePageChange(currentPage + 1)}
-          alt="arrowButton"
-        />
-      </ButtonDiv>
-    </>
-  );
-};
-
-export default ProjectGrid;

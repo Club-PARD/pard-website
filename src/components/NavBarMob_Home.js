@@ -5,6 +5,61 @@ import { theme } from "../styles/theme";
 import { Link } from "react-router-dom";
 import MenuBar_white from "../assets/img/MenuBar_white.png";
 
+const NavBarMob_Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <Nav scrollPosition={scrollPosition} isOpen={isOpen}>
+      <ThemeProvider theme={theme}>
+        <Logo>
+          <Link to="/">
+            <LogoImg src={require("../assets/img/Logo.png")} alt="Logo" />
+          </Link>
+        </Logo>
+        <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
+          <img src={MenuBar_white} alt="menu" height={"50px"} width3={"25px"} />
+        </MenuButton>
+        <Menu isOpen={isOpen}>
+          <Link to="/About" style={{ textDecoration: "none" }}>
+            <Subtitle2>소개</Subtitle2>
+          </Link>
+          <Hr />
+          <Link to="/Project" style={{ textDecoration: "none" }}>
+            <Subtitle2>프로젝트</Subtitle2>
+          </Link>
+          <Hr />
+          <Link to="/Inquiry" style={{ textDecoration: "none" }}>
+            <Subtitle2>문의</Subtitle2>
+          </Link>
+          <Hr />
+          <Link to="/Recruiting" style={{ textDecoration: "none" }}>
+            <Subtitle2>리쿠르팅</Subtitle2>
+          </Link>
+          <Hr />
+          <Link to="/news" style={{ textDecoration: "none" }}>
+            <Subtitle2>성과</Subtitle2>
+          </Link>
+        </Menu>
+      </ThemeProvider>
+    </Nav>
+  );
+};
+
+export default NavBarMob_Home;
+
 const Nav = styled.nav`
   /* background-color: ${(props) =>
     props.isOpen
@@ -79,58 +134,3 @@ const LogoImg = styled.img`
   width: 120px;
   height: 25px;
 `;
-
-const NavBarMob_Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  return (
-    <Nav scrollPosition={scrollPosition} isOpen={isOpen}>
-      <ThemeProvider theme={theme}>
-        <Logo>
-          <Link to="/">
-            <LogoImg src={require("../assets/img/Logo.png")} alt="Logo" />
-          </Link>
-        </Logo>
-        <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
-          <img src={MenuBar_white} alt="menu" height={"50px"} width3={"25px"} />
-        </MenuButton>
-        <Menu isOpen={isOpen}>
-          <Link to="/About" style={{ textDecoration: "none" }}>
-            <Subtitle2>소개</Subtitle2>
-          </Link>
-          <Hr />
-          <Link to="/Project" style={{ textDecoration: "none" }}>
-            <Subtitle2>프로젝트</Subtitle2>
-          </Link>
-          <Hr />
-          <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-            <Subtitle2>문의</Subtitle2>
-          </Link>
-          <Hr />
-          <Link to="/Recruiting" style={{ textDecoration: "none" }}>
-            <Subtitle2>리쿠르팅</Subtitle2>
-          </Link>
-          <Hr />
-          <Link to="/news" style={{ textDecoration: "none" }}>
-            <Subtitle2>성과</Subtitle2>
-          </Link>
-        </Menu>
-      </ThemeProvider>
-    </Nav>
-  );
-};
-
-export default NavBarMob_Home;

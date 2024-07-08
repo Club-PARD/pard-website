@@ -23,10 +23,6 @@ import TemporaryPage from "../components/temporaryPage";
 
 function HomePage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
-  const HomePageComponent = styled.div``;
-  const HomePageComponent_Mob = styled.div`
-    width: 100%;
-  `;
 
   return (
     <HomePageComponent>
@@ -61,3 +57,8 @@ function HomePage() {
 }
 
 export default HomePage;
+
+const HomePageComponent = styled.div``;
+const HomePageComponent_Mob = styled.div`
+  width: 100%;
+`;

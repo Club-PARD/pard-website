@@ -4,67 +4,6 @@ import { theme } from "../styles/theme";
 import styled, { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
 
-const Div = styled.div`
-  margin: 0px auto;
-`;
-
-const NavBarWrapper = styled.nav`
-  background-color: ${(props) =>
-    props.isScrolled
-      ? props.scrollPosition >= 19650
-        ? "#1A1A1A"
-        : "rgba(0,0,0,0)"
-      : "rgba(0,0,0,0)"};
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  transition: background-color 0.3s ease;
-  transform: translateY(${(props) => (props.isScrolled ? "0" : "-100%")});
-`;
-
-const NavDiv = styled.div`
-  /* min-width: 1600px;
-  max-width: 2000px; */
-  width: 90.3%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-`;
-
-const Subtitle1 = styled.p`
-  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle1};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle1};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  &:hover {
-    color: #ffffff;
-  }
-`;
-
-const Logo = styled.div`
-  img {
-    height: 45px;
-    width: 140px;
-  }
-  /* margin-left: 100px; */
-  /* margin-right: 500px; */
-`;
-
-const NavLinks = styled.ul`
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  margin-right: 10px;
-`;
-
-const NavItem = styled.li`
-  margin-left: 50px;
-`;
-
 const NavBar_Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -129,3 +68,64 @@ const NavBar_Home = () => {
 };
 
 export default NavBar_Home;
+
+const Div = styled.div`
+  margin: 0px auto;
+`;
+
+const NavBarWrapper = styled.nav`
+  background-color: ${(props) =>
+    props.isScrolled
+      ? props.scrollPosition >= 19650
+        ? "#1A1A1A"
+        : "rgba(0,0,0,0)"
+      : "rgba(0,0,0,0)"};
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+  transform: translateY(${(props) => (props.isScrolled ? "0" : "-100%")});
+`;
+
+const NavDiv = styled.div`
+  /* min-width: 1600px;
+  max-width: 2000px; */
+  width: 90.3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+const Subtitle1 = styled.p`
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle1};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle1};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  &:hover {
+    color: #ffffff;
+  }
+`;
+
+const Logo = styled.div`
+  img {
+    height: 45px;
+    width: 140px;
+  }
+  /* margin-left: 100px; */
+  /* margin-right: 500px; */
+`;
+
+const NavLinks = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin-right: 10px;
+`;
+
+const NavItem = styled.li`
+  margin-left: 50px;
+`;

@@ -10,130 +10,6 @@ import review2Image from "../../../assets/img/review2Image.png";
 import review3Image from "../../../assets/img/review3Image.png";
 import review4Image from "../../../assets/img/review4Image.png";
 
-const PartDiv = styled.div`
-  height: 800px;
-  position: relative;
-`;
-
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 150px;
-`;
-
-const Header7 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
-  font-weight: ${(props) => props.theme.fontWeights.Header7};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 40px;
-  margin-bottom: 20px;
-`;
-
-const Header6 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-`;
-
-const Body2 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
-  font-weight: ${(props) => props.theme.fontWeights.Body2};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  margin-top: 10px;
-  line-height: 140%;
-`;
-
-const LeftVector = styled.img`
-  height: 45px;
-  width: 30px;
-`;
-
-const RightVector = styled.img`
-  height: 45px;
-  width: 30px;
-`;
-
-const DivButton = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-`;
-
-const Button = styled.button`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-family: "NanumSquare Neo";
-  display: flex;
-  align-items: center;
-  width: 248px;
-  height: 48px;
-  background-color: #64c59a;
-  justify-content: center;
-  color: #000000;
-  border-radius: 10px;
-  border: none;
-  margin-top: 70px;
-`;
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-const Slide = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const Window = styled.div`
-  width: 990px;
-  height: 500px;
-  overflow: hidden;
-`;
-const CardDiv = styled.div`
-  cursor: pointer;
-`;
-const Image = styled.div`
-  width: 464px;
-  height: 260px;
-  margin-top: 100px;
-  margin-bottom: 21px;
-  background-position: 50% 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  flex: none;
-`;
-
-const BTNL = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 3.3rem;
-  color: gray;
-`;
-const BTNR = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 3.3rem;
-  color: gray;
-`;
-
-const FlexBox = styled.div`
-  display: flex;
-`;
-
 function RecruitingReview() {
   const cards = useRef([
     {
@@ -313,3 +189,127 @@ function RecruitingReview() {
 }
 
 export default RecruitingReview;
+
+const PartDiv = styled.div`
+  height: 800px;
+  position: relative;
+`;
+
+const Div = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+`;
+
+const Header7 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  margin-bottom: 20px;
+`;
+
+const Header6 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+`;
+
+const Body2 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
+  font-weight: ${(props) => props.theme.fontWeights.Body2};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 140%;
+`;
+
+const LeftVector = styled.img`
+  height: 45px;
+  width: 30px;
+`;
+
+const RightVector = styled.img`
+  height: 45px;
+  width: 30px;
+`;
+
+const DivButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+`;
+
+const Button = styled.button`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  font-family: "NanumSquare Neo";
+  display: flex;
+  align-items: center;
+  width: 248px;
+  height: 48px;
+  background-color: #64c59a;
+  justify-content: center;
+  color: #000000;
+  border-radius: 10px;
+  border: none;
+  margin-top: 70px;
+`;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const Slide = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Window = styled.div`
+  width: 990px;
+  height: 500px;
+  overflow: hidden;
+`;
+const CardDiv = styled.div`
+  cursor: pointer;
+`;
+const Image = styled.div`
+  width: 464px;
+  height: 260px;
+  margin-top: 100px;
+  margin-bottom: 21px;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex: none;
+`;
+
+const BTNL = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 3.3rem;
+  color: gray;
+`;
+const BTNR = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 3.3rem;
+  color: gray;
+`;
+
+const FlexBox = styled.div`
+  display: flex;
+`;

@@ -5,225 +5,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { dbService } from "../../../fbase";
 import { doc, getDoc } from "firebase/firestore";
 
-const Body3 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Body3};
-  font-weight: ${(props) => props.theme.fontWeights.Body3};
-  color: ${(props) => props.color || "white"};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  text-align: ${(props) => props.align};
-  margin-top: ${(props) => props.marginTop};
-  margin-right: ${(props) => props.marginright};
-  width: 100px;
-`;
-
-const Header5 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header5};
-  font-weight: ${(props) => props.theme.fontWeights.Header5};
-  margin-top: ${(props) => props.marginTop};
-  color: white;
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  text-align: start;
-`;
-
-const Header6 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  margin-top: ${(props) => props.marginTop};
-  color: white;
-  font-family: "NanumSquare Neo";
-  line-height: 160%;
-  white-space: pre-line;
-  text-align: start;
-  width: 590px;
-`;
-
-const Header7 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
-  font-weight: ${(props) => props.theme.fontWeights.Header7};
-  color: white;
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  text-align: start;
-`;
-
-const Header8 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header8};
-  font-weight: ${(props) => props.theme.fontWeights.Header8};
-  padding-top: 5px;
-  color: white;
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  text-align: start;
-  margin-right: 7px;
-`;
-
-const PartDiv = styled.div`
-  position: relative;
-  padding-top: 70px;
-  height: 1450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow-x: hidden;
-  /* background-color: red; */
-`;
-
-const Div = styled.div`
-  margin: 0 auto;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-`;
-
-const MainBackImg = styled.div`
-  width: 100%;
-  height: 647px;
-  border: none;
-  /* object-fit: cover; */
-  background-image: url(${(props) => props.src});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-`;
-
-const MainDiv = styled.div`
-  width: 100%;
-  height: 800px;
-  /* background-color: green; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const HR = styled.hr`
-  width: 1216px;
-  height: 1px;
-  background-color: #fff;
-  margin-top: 34px;
-  border: none;
-`;
-
-const ContentsDiv = styled.div`
-  display: flex;
-  /* background-color: blue; */
-  width: 1216px;
-  height: 100%;
-  margin-top: 50px;
-`;
-
-const RightContent = styled.div`
-  width: 624px;
-  /* background-color: beige; */
-  padding-left: 72px;
-`;
-
-const TitleText = styled.div`
-  display: flex;
-  height: 56px;
-  align-items: center;
-  margin-top: ${(props) => props.marginTop};
-`;
-
-const PartText = styled.div`
-  display: flex;
-  margin-top: ${(props) => props.marginTop};
-  /* background-color: yellow; */
-  /* height: 28px; */
-  flex-wrap: wrap; // 복수의 행
-  align-items: center;
-  /* justify-content: start; */
-`;
-
-const PartTool = styled.div`
-  display: inline-flex;
-  padding: 5px 20px;
-  width: auto;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  background-color: ${(props) => props.color || "#5262F5"};
-  font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.Body3};
-  color: white;
-  margin: 5px 15px 5px 0px;
-`;
-
-const LeftContent = styled.div`
-  width: 591px;
-  /* background-color: brown; */
-`;
-
-const ImgDiv = styled.div`
-  height: 33px;
-  width: 100%;
-  display: flex;
-  text-align: start;
-  justify-content: start;
-  margin-left: 1px;
-`;
-
-const ArrowImg = styled.img`
-  width: 22px;
-  height: 33px;
-  flex-shrink: 0;
-  margin-right: 30px;
-`;
-
-const ContentsText = styled.div`
-  margin-top: 20px;
-`;
-
-const ToolListDiv = styled.div`
-  margin-top: 175px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-`;
-
-const IconBackground = styled.a`
-  width: 60px;
-  height: 60px;
-  margin-right: 15px;
-  text-decoration: none;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-
-const Icon = styled.img`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-`;
-
-const Container = styled.div`
-  display: grid;
-  height: 36px;
-  /* background-color: red; */
-  grid-template-columns: repeat(
-    ${(props) => props.numOfColumns || 3},
-    1fr
-  ); /* prop으로 전달된 값 사용 */
-  /* row-gap: 10px; */
-  /* column-gap: 1.5px; */
-  /* margin-top: 43px; */
-  /* margin-top: ${(props) => props.marginTop || "18px"}; */
-`;
-
-const ContainerTeam = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-top: 58px;
-  align-items: center;
-`;
-
 function ProjectDetail() {
   const navigate = useNavigate();
 
@@ -466,3 +247,222 @@ function ProjectDetail() {
 }
 
 export default ProjectDetail;
+
+const Body3 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Body3};
+  font-weight: ${(props) => props.theme.fontWeights.Body3};
+  color: ${(props) => props.color || "white"};
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: ${(props) => props.align};
+  margin-top: ${(props) => props.marginTop};
+  margin-right: ${(props) => props.marginright};
+  width: 100px;
+`;
+
+const Header5 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header5};
+  font-weight: ${(props) => props.theme.fontWeights.Header5};
+  margin-top: ${(props) => props.marginTop};
+  color: white;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: start;
+`;
+
+const Header6 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  margin-top: ${(props) => props.marginTop};
+  color: white;
+  font-family: "NanumSquare Neo";
+  line-height: 160%;
+  white-space: pre-line;
+  text-align: start;
+  width: 590px;
+`;
+
+const Header7 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
+  font-weight: ${(props) => props.theme.fontWeights.Header7};
+  color: white;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: start;
+`;
+
+const Header8 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header8};
+  font-weight: ${(props) => props.theme.fontWeights.Header8};
+  padding-top: 5px;
+  color: white;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: start;
+  margin-right: 7px;
+`;
+
+const PartDiv = styled.div`
+  position: relative;
+  padding-top: 70px;
+  height: 1450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+  /* background-color: red; */
+`;
+
+const Div = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
+
+const MainBackImg = styled.div`
+  width: 100%;
+  height: 647px;
+  border: none;
+  /* object-fit: cover; */
+  background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
+
+const MainDiv = styled.div`
+  width: 100%;
+  height: 800px;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const HR = styled.hr`
+  width: 1216px;
+  height: 1px;
+  background-color: #fff;
+  margin-top: 34px;
+  border: none;
+`;
+
+const ContentsDiv = styled.div`
+  display: flex;
+  /* background-color: blue; */
+  width: 1216px;
+  height: 100%;
+  margin-top: 50px;
+`;
+
+const RightContent = styled.div`
+  width: 624px;
+  /* background-color: beige; */
+  padding-left: 72px;
+`;
+
+const TitleText = styled.div`
+  display: flex;
+  height: 56px;
+  align-items: center;
+  margin-top: ${(props) => props.marginTop};
+`;
+
+const PartText = styled.div`
+  display: flex;
+  margin-top: ${(props) => props.marginTop};
+  /* background-color: yellow; */
+  /* height: 28px; */
+  flex-wrap: wrap; // 복수의 행
+  align-items: center;
+  /* justify-content: start; */
+`;
+
+const PartTool = styled.div`
+  display: inline-flex;
+  padding: 5px 20px;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: ${(props) => props.color || "#5262F5"};
+  font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
+  font-weight: ${(props) => props.theme.fontWeights.Body3};
+  color: white;
+  margin: 5px 15px 5px 0px;
+`;
+
+const LeftContent = styled.div`
+  width: 591px;
+  /* background-color: brown; */
+`;
+
+const ImgDiv = styled.div`
+  height: 33px;
+  width: 100%;
+  display: flex;
+  text-align: start;
+  justify-content: start;
+  margin-left: 1px;
+`;
+
+const ArrowImg = styled.img`
+  width: 22px;
+  height: 33px;
+  flex-shrink: 0;
+  margin-right: 30px;
+`;
+
+const ContentsText = styled.div`
+  margin-top: 20px;
+`;
+
+const ToolListDiv = styled.div`
+  margin-top: 175px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+`;
+
+const IconBackground = styled.a`
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+const Icon = styled.img`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+`;
+
+const Container = styled.div`
+  display: grid;
+  height: 36px;
+  /* background-color: red; */
+  grid-template-columns: repeat(
+    ${(props) => props.numOfColumns || 3},
+    1fr
+  ); /* prop으로 전달된 값 사용 */
+  /* row-gap: 10px; */
+  /* column-gap: 1.5px; */
+  /* margin-top: 43px; */
+  /* margin-top: ${(props) => props.marginTop || "18px"}; */
+`;
+
+const ContainerTeam = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 58px;
+  align-items: center;
+`;

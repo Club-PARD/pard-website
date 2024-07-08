@@ -3,6 +3,36 @@ import { theme } from "../../../styles/theme";
 import AboutFrame_Down from "../../../assets/img/AboutFrame_Down.png";
 import { pardDATA } from "../../../utils/data.constant";
 
+function AboutLast() {
+  const handleClick = () => {
+    window.open("https://pard-notice.oopy.io", "_blank");
+  };
+
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header7>진짜 협업을 경험하고 싶다면</Header7>
+          <Line>
+            <Shape1>"</Shape1>
+            <Shape2>"</Shape2>
+          </Line>
+          <Subtitle3>
+            똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도
+            선수들의 역량이에요
+          </Subtitle3>
+          <Body2>송민 KBS 서핑 해설위원</Body2>
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+          <AboutFrame1 src={AboutFrame_Down} alt="AboutFrame" />
+        </ThemeProvider>
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default AboutLast;
+
 const PartDiv = styled.div`
   height: 620px;
   background-color: #ffffff;
@@ -130,33 +160,3 @@ const Shape2 = styled.div`
 const Line = styled.div`
   display: flex;
 `;
-
-function AboutLast() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header7>진짜 협업을 경험하고 싶다면</Header7>
-          <Line>
-            <Shape1>"</Shape1>
-            <Shape2>"</Shape2>
-          </Line>
-          <Subtitle3>
-            똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도
-            선수들의 역량이에요
-          </Subtitle3>
-          <Body2>송민 KBS 서핑 해설위원</Body2>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
-          <AboutFrame1 src={AboutFrame_Down} alt="AboutFrame" />
-        </ThemeProvider>
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default AboutLast;

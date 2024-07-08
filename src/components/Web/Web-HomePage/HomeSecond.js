@@ -7,6 +7,102 @@ import backgroundImage3 from "../../../assets/img/homeBackgroundImg3.svg";
 import backgroundImage3op from "../../../assets/img/homeBackgroundImg3_op.svg";
 import downScrollImage from "../../../assets/img/DownScrollLogo.svg";
 
+const Animation1 = ({ isTextVisible, textInfos, position }) => {
+  const targetRef = useRef(null);
+
+  return (
+    <div style={{ justifyContent: "center", display: "flex" }}>
+      {textInfos.map((textInfo) => (
+        <Text1
+          ref={targetRef}
+          key={textInfo.id}
+          isVisible={isTextVisible[textInfo.id]}
+          textInfo={textInfo}
+          position={position}
+        >
+          {textInfo.text}
+        </Text1>
+      ))}
+    </div>
+  );
+};
+function useScrollPosition() {
+  const [scrollPos, setScrollPos] = useState(0);
+
+  useEffect(() => {
+    const updateScrollPos = () => {
+      setScrollPos(window.pageYOffset);
+    };
+
+    window.addEventListener("scroll", updateScrollPos);
+
+    return () => {
+      window.removeEventListener("scroll", updateScrollPos);
+    };
+  }, []);
+
+  return scrollPos;
+}
+
+const HomeSecond = () => {
+  const [text1, setText1] = useState(false);
+  const [text2, setText2] = useState(false);
+  const [text3, setText3] = useState(false);
+  const [text4, setText4] = useState(false);
+  const [text5, setText5] = useState(false);
+
+  const setList = [setText1, setText2, setText3, setText4, setText5];
+  const list1 = [text1, text2, text3, text4, text5];
+  const position = useScrollPosition();
+
+  useEffect(() => {
+    textDB.forEach((textInfo) => {
+      setList[textInfo.id](
+        position > textInfo.breakPoint &&
+          position < textInfo.breakPoint + textInfo.period
+      );
+    });
+  }, [position, text1, text2, text3, text4, text5]);
+
+  return (
+    <Div>
+      <ThemeProvider theme={theme}>
+        <Background
+          src={backgroundImage1}
+          breakPointInfos={breakPointInfos}
+          position={position}
+          id={0}
+        >
+          <Animation1
+            isTextVisible={list1}
+            textInfos={textDB.slice(0, 3)}
+            position={position}
+          ></Animation1>
+        </Background>
+        <div style={{ height: pageLength[0] + "px" }}></div>
+        <Background src={backgroundImage2}></Background>
+        <div style={{ height: pageLength[1] + "px" }}></div>
+        <Background
+          src={backgroundImage3}
+          breakPointInfos={breakPointInfos}
+          position={position}
+          id={1}
+        >
+          <Animation1
+            isTextVisible={list1}
+            textInfos={textDB.slice(3, 5)}
+            position={position}
+          ></Animation1>
+          <ScrollIcon src={downScrollImage} alt="scroll"></ScrollIcon>
+        </Background>
+        <div style={{ height: pageLength[2] + "px" }}></div>
+      </ThemeProvider>
+    </Div>
+  );
+};
+
+export default HomeSecond;
+
 const request1 = false;
 
 const firstScrollPoint = 11000; //homesecond 시작 스크롤 위치
@@ -262,99 +358,3 @@ const textTransformLogic = (textInfo, position) => {
       return translate3d(0, 0, 0);
   }
 };
-
-const Animation1 = ({ isTextVisible, textInfos, position }) => {
-  const targetRef = useRef(null);
-
-  return (
-    <div style={{ justifyContent: "center", display: "flex" }}>
-      {textInfos.map((textInfo) => (
-        <Text1
-          ref={targetRef}
-          key={textInfo.id}
-          isVisible={isTextVisible[textInfo.id]}
-          textInfo={textInfo}
-          position={position}
-        >
-          {textInfo.text}
-        </Text1>
-      ))}
-    </div>
-  );
-};
-function useScrollPosition() {
-  const [scrollPos, setScrollPos] = useState(0);
-
-  useEffect(() => {
-    const updateScrollPos = () => {
-      setScrollPos(window.pageYOffset);
-    };
-
-    window.addEventListener("scroll", updateScrollPos);
-
-    return () => {
-      window.removeEventListener("scroll", updateScrollPos);
-    };
-  }, []);
-
-  return scrollPos;
-}
-
-const HomeSecond = () => {
-  const [text1, setText1] = useState(false);
-  const [text2, setText2] = useState(false);
-  const [text3, setText3] = useState(false);
-  const [text4, setText4] = useState(false);
-  const [text5, setText5] = useState(false);
-
-  const setList = [setText1, setText2, setText3, setText4, setText5];
-  const list1 = [text1, text2, text3, text4, text5];
-  const position = useScrollPosition();
-
-  useEffect(() => {
-    textDB.forEach((textInfo) => {
-      setList[textInfo.id](
-        position > textInfo.breakPoint &&
-          position < textInfo.breakPoint + textInfo.period
-      );
-    });
-  }, [position, text1, text2, text3, text4, text5]);
-
-  return (
-    <Div>
-      <ThemeProvider theme={theme}>
-        <Background
-          src={backgroundImage1}
-          breakPointInfos={breakPointInfos}
-          position={position}
-          id={0}
-        >
-          <Animation1
-            isTextVisible={list1}
-            textInfos={textDB.slice(0, 3)}
-            position={position}
-          ></Animation1>
-        </Background>
-        <div style={{ height: pageLength[0] + "px" }}></div>
-        <Background src={backgroundImage2}></Background>
-        <div style={{ height: pageLength[1] + "px" }}></div>
-        <Background
-          src={backgroundImage3}
-          breakPointInfos={breakPointInfos}
-          position={position}
-          id={1}
-        >
-          <Animation1
-            isTextVisible={list1}
-            textInfos={textDB.slice(3, 5)}
-            position={position}
-          ></Animation1>
-          <ScrollIcon src={downScrollImage} alt="scroll"></ScrollIcon>
-        </Background>
-        <div style={{ height: pageLength[2] + "px" }}></div>
-      </ThemeProvider>
-    </Div>
-  );
-};
-
-export default HomeSecond;

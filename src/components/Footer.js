@@ -3,6 +3,56 @@ import { Link } from "react-router-dom";
 import { theme } from "../styles/theme";
 import styled, { ThemeProvider } from "styled-components";
 
+function Footer() {
+  return (
+    <Div>
+      <ThemeProvider theme={theme}>
+        <FooterWrapper>
+          <LeftFooter>
+            <LeftComponent>
+              <FooterLogoRules>
+                <PardLogo>
+                  <img src={require("../assets/img/Logo.png")} alt="Logo" />
+                </PardLogo>
+                <Rules
+                  href="https://pardhgu.notion.site/PARD-v1-7c576d9d8d42441790ad10c23b35c1e3"
+                  target="_blank"
+                >
+                  회칙{" >"}
+                </Rules>
+              </FooterLogoRules>
+              <Information>
+                PARD (파드, Pay it forward를 실천하는 IT협업 동아리) ⓒPARD.
+                2024.All rights reserved.
+              </Information>
+            </LeftComponent>
+            <RightFooter>
+              <EmailLink href="mailto:official@we-pard.com">EMAIL</EmailLink>
+              <Instagram
+                href="https://www.instagram.com/official_pard_/"
+                target="_blank"
+              >
+                INSTAGRAM
+              </Instagram>
+              <Youtube
+                href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA"
+                target="_blank"
+              >
+                YOUTUBE
+              </Youtube>
+              <Disquiet href="https://disquiet.io/club/pard" target="_blank">
+                DISQUIET
+              </Disquiet>
+            </RightFooter>
+          </LeftFooter>
+        </FooterWrapper>
+      </ThemeProvider>
+    </Div>
+  );
+}
+
+export default Footer;
+
 const Div = styled.footer`
   background-color: #2a2a2a;
   width: 100%;
@@ -218,53 +268,3 @@ const Disquiet = styled.a`
   order: 3;
   flex-grow: 0;
 `;
-
-function Footer() {
-  return (
-    <Div>
-      <ThemeProvider theme={theme}>
-        <FooterWrapper>
-          <LeftFooter>
-            <LeftComponent>
-              <FooterLogoRules>
-                <PardLogo>
-                  <img src={require("../assets/img/Logo.png")} alt="Logo" />
-                </PardLogo>
-                <Rules
-                  href="https://pardhgu.notion.site/PARD-v1-7c576d9d8d42441790ad10c23b35c1e3"
-                  target="_blank"
-                >
-                  회칙{" >"}
-                </Rules>
-              </FooterLogoRules>
-              <Information>
-                PARD (파드, Pay it forward를 실천하는 IT협업 동아리) ⓒPARD.
-                2024.All rights reserved.
-              </Information>
-            </LeftComponent>
-            <RightFooter>
-              <EmailLink href="mailto:official@we-pard.com">EMAIL</EmailLink>
-              <Instagram
-                href="https://www.instagram.com/official_pard_/"
-                target="_blank"
-              >
-                INSTAGRAM
-              </Instagram>
-              <Youtube
-                href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA"
-                target="_blank"
-              >
-                YOUTUBE
-              </Youtube>
-              <Disquiet href="https://disquiet.io/club/pard" target="_blank">
-                DISQUIET
-              </Disquiet>
-            </RightFooter>
-          </LeftFooter>
-        </FooterWrapper>
-      </ThemeProvider>
-    </Div>
-  );
-}
-
-export default Footer;

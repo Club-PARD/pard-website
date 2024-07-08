@@ -7,57 +7,6 @@ import ProgramsTrain2 from "./ProgramsTrain2";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Header2 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header2};
-  font-weight: ${(props) => props.theme.fontWeights.Header2};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  margin-bottom: 50px;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  transition: opacity 0.5s ease-in-out;
-`;
-
-const Header2_1 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header2};
-  font-weight: ${(props) => props.theme.fontWeights.Header2};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  margin-bottom: 90px;
-`;
-
-const HeaderDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: 15%;
-  // background-color: blue;
-  &.unfixed {
-    position: relative;
-  }
-`;
-
-const Div1 = styled.div`
-  display: flex;
-  flex-direction: column;
-  scroll-behavior: smooth;
-  margin-bottom: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1080px;
-
-  // background-color: green;
-`;
-
-const HeaderDiv2 = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0px auto;
-  width: 1080px;
-  // background-color: red;
-`;
-
 function ProgramsTrain() {
   const Headers2 = ["세미나", "스터디", "서핑데이", "숏커톤", "롱커톤"];
   const [Header2Index, setHeader2Index] = useState(0);
@@ -126,3 +75,54 @@ function ProgramsTrain() {
 }
 
 export default ProgramsTrain;
+
+const Header2 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header2};
+  font-weight: ${(props) => props.theme.fontWeights.Header2};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  margin-bottom: 50px;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  transition: opacity 0.5s ease-in-out;
+`;
+
+const Header2_1 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header2};
+  font-weight: ${(props) => props.theme.fontWeights.Header2};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  margin-bottom: 90px;
+`;
+
+const HeaderDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 15%;
+  // background-color: blue;
+  &.unfixed {
+    position: relative;
+  }
+`;
+
+const Div1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  margin-bottom: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px;
+
+  // background-color: green;
+`;
+
+const HeaderDiv2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 1080px;
+  // background-color: red;
+`;

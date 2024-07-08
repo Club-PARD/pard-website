@@ -4,6 +4,48 @@ import { FaBars } from "react-icons/fa";
 import { theme } from "../styles/theme";
 import { Link } from "react-router-dom";
 
+function FooterMov() {
+  return (
+    <FooterMovWrapper>
+      <TopComponent>
+        <PardLogo>
+          <img src={require("../assets/img/Logo.png")} alt="Logo" />
+        </PardLogo>
+        <Rules
+          href="https://pardhgu.notion.site/PARD-v1-7c576d9d8d42441790ad10c23b35c1e3"
+          target="_blank"
+        >
+          회칙{" >"}
+        </Rules>
+      </TopComponent>
+      <Information>
+        PARD (파드, Pay it forward를 실천하는 IT협업 동아리) ⓒPARD. 2024.All
+        rights reserved.
+      </Information>
+      <Links>
+        <EmailLink href="mailto:official@we-pard.com">EMAIL</EmailLink>
+        <Instagram
+          href="https://www.instagram.com/official_pard_/"
+          target="_blank"
+        >
+          INSTAGRAM
+        </Instagram>
+        <Youtube
+          href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA"
+          target="_blank"
+        >
+          YOUTUBE
+        </Youtube>
+        <Disquiet href="https://disquiet.io/club/pard" target="_blank">
+          DISQUIET
+        </Disquiet>
+      </Links>
+    </FooterMovWrapper>
+  );
+}
+
+export default FooterMov;
+
 const FooterMovWrapper = styled.div`
   width: 100%;
   height: 222px;
@@ -185,45 +227,3 @@ const Disquiet = styled.a`
   flex-grow: 0;
   margin-right: 16px;
 `;
-
-function FooterMov() {
-  return (
-    <FooterMovWrapper>
-      <TopComponent>
-        <PardLogo>
-          <img src={require("../assets/img/Logo.png")} alt="Logo" />
-        </PardLogo>
-        <Rules
-          href="https://pardhgu.notion.site/PARD-v1-7c576d9d8d42441790ad10c23b35c1e3"
-          target="_blank"
-        >
-          회칙{" >"}
-        </Rules>
-      </TopComponent>
-      <Information>
-        PARD (파드, Pay it forward를 실천하는 IT협업 동아리) ⓒPARD. 2024.All
-        rights reserved.
-      </Information>
-      <Links>
-        <EmailLink href="mailto:official@we-pard.com">EMAIL</EmailLink>
-        <Instagram
-          href="https://www.instagram.com/official_pard_/"
-          target="_blank"
-        >
-          INSTAGRAM
-        </Instagram>
-        <Youtube
-          href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA"
-          target="_blank"
-        >
-          YOUTUBE
-        </Youtube>
-        <Disquiet href="https://disquiet.io/club/pard" target="_blank">
-          DISQUIET
-        </Disquiet>
-      </Links>
-    </FooterMovWrapper>
-  );
-}
-
-export default FooterMov;

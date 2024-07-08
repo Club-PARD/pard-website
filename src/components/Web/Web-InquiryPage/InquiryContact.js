@@ -2,6 +2,18 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import Ask from "./InquiryContact_Web_Asked";
 
+function InquiryContact() {
+  return (
+    <PartDiv>
+      <ThemeProvider theme={theme}>
+        <Ask />
+      </ThemeProvider>
+    </PartDiv>
+  );
+}
+
+export default InquiryContact;
+
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
   font-weight: ${(props) => props.theme.fontWeights.Header2};
@@ -18,15 +30,3 @@ const PartDiv = styled.div`
   height: 893px;
   width: 1440px;
 `;
-
-function InquiryContact() {
-  return (
-    <PartDiv>
-      <ThemeProvider theme={theme}>
-        <Ask />
-      </ThemeProvider>
-    </PartDiv>
-  );
-}
-
-export default InquiryContact;

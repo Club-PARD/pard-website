@@ -3,24 +3,10 @@ import { useState, useEffect } from "react";
 import { theme } from "../../../styles/theme";
 import { gsap } from "gsap/all";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Programsasdf from "../Web-ProjectPage/Programsasdf"
+import Programsasdf from "../Web-ProjectPage/Programsasdf";
 gsap.registerPlugin(ScrollTrigger);
 
-const Div1 = styled.div`
-  display: flex;
-  flex-direction: column;
-  scroll-behavior: smooth;
-  margin-bottom: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1080px;
-  // overflow-x: hidden;
-  // background-color: green;
-`;
-
-
 function SmallPage() {
-
   useEffect(() => {
     const horizontalScrollAnimation = gsap.to(".div1", {
       x: () =>
@@ -31,8 +17,7 @@ function SmallPage() {
       scrollTrigger: {
         trigger: ".div1",
         start: "top+=50 center",
-        end: () =>
-          `+=${document.querySelector(".div1").scrollWidth}`,
+        end: () => `+=${document.querySelector(".div1").scrollWidth}`,
         scrub: 0.4,
         // markers: true,
         pin: true,
@@ -48,12 +33,10 @@ function SmallPage() {
     };
   }, []);
 
-
   return (
     <div>
-        <ThemeProvider theme={theme}>
-      <Div1 className="div1">
-      </Div1>
+      <ThemeProvider theme={theme}>
+        <Div1 className="div1"></Div1>
       </ThemeProvider>
     </div>
   );
@@ -61,3 +44,14 @@ function SmallPage() {
 
 export default SmallPage;
 
+const Div1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  margin-bottom: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px;
+  // overflow-x: hidden;
+  // background-color: green;
+`;

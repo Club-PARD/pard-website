@@ -7,6 +7,113 @@ import backgroundImg from "../assets/img/BannerImg/BannerImg.png";
 import closeButtonImg from "../assets/img/BannerImg/XButton.png";
 import bannerImg from "../assets/img/web_banner_3기.png";
 
+const NavBar_About = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const { pathname } = useLocation();
+  const animatedPosition = 700; //리쿠르팅배너용 : 620px
+
+  // 배너 관련 코드.. 이때 총학 웹사이트 하고 바빴어서
+  // 유지보수 생각 안하고 코드 짬요.. 다음 개발 파트장님 죄송합니다..
+  const [isBannerVisible, setIsBannerVisible] = useState(false); // 여기 true로
+  const [isSticky, setIsSticky] = useState(false);
+
+  const handleCloseBanner = () => {
+    setIsBannerVisible(false);
+    setIsSticky(false); // 여기 true로
+  };
+
+  useEffect(() => {
+    function handleScroll() {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+      setIsSticky(position >= 0); // 여기 49로
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: false }); // 여기 true로
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <Div>
+      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+        <img src={bannerImg} alt="banner"></img>
+      </BannerImg> */}
+      <NavBarWrapper
+        scrollPosition={scrollPosition}
+        isSticky={isSticky}
+        isBannerVisible={isBannerVisible}
+      >
+        <ThemeProvider theme={theme}>
+          <NavDiv>
+            <Logo>
+              <Link to="/">
+                <img src={require("../assets/img/Logo.png")} alt="Logo" />
+              </Link>
+            </Logo>
+            <NavLinks>
+              <NavItem>
+                <Link to="/About" style={{ textDecoration: "none" }}>
+                  <Subtitle1
+                    active={pathname === "/About"}
+                    isScrolled={scrollPosition >= animatedPosition}
+                  >
+                    소개
+                  </Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/Project" style={{ textDecoration: "none" }}>
+                  <Subtitle1
+                    active={pathname === "/Project"}
+                    isScrolled={scrollPosition >= animatedPosition}
+                  >
+                    프로젝트
+                  </Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/Inquiry" style={{ textDecoration: "none" }}>
+                  <Subtitle1
+                    active={pathname === "/Inquiry"}
+                    isScrolled={scrollPosition >= animatedPosition}
+                  >
+                    문의
+                  </Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/Recruiting" style={{ textDecoration: "none" }}>
+                  <Subtitle1
+                    active={pathname === "/Recruiting"}
+                    isScrolled={scrollPosition >= animatedPosition}
+                  >
+                    리쿠르팅
+                  </Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/news" style={{ textDecoration: "none" }}>
+                  <Subtitle1
+                    active={pathname === "/news"}
+                    isScrolled={scrollPosition >= animatedPosition}
+                  >
+                    성과
+                  </Subtitle1>
+                </Link>
+              </NavItem>
+            </NavLinks>
+          </NavDiv>
+        </ThemeProvider>
+      </NavBarWrapper>
+    </Div>
+  );
+};
+
+export default NavBar_About;
+
 // scroll위치 800px
 // 3기 리쿠르팅 배너로인한 위치 620px
 
@@ -147,110 +254,3 @@ const BannerImg = styled.div`
   position: fixed;
   cursor: pointer;
 `;
-
-const NavBar_About = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const { pathname } = useLocation();
-  const animatedPosition = 700; //리쿠르팅배너용 : 620px
-
-  // 배너 관련 코드.. 이때 총학 웹사이트 하고 바빴어서
-  // 유지보수 생각 안하고 코드 짬요.. 다음 개발 파트장님 죄송합니다..
-  const [isBannerVisible, setIsBannerVisible] = useState(false); // 여기 true로
-  const [isSticky, setIsSticky] = useState(false);
-
-  const handleCloseBanner = () => {
-    setIsBannerVisible(false);
-    setIsSticky(false); // 여기 true로
-  };
-
-  useEffect(() => {
-    function handleScroll() {
-      const position = window.pageYOffset;
-      setScrollPosition(position);
-      setIsSticky(position >= 0); // 여기 49로
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: false }); // 여기 true로
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return (
-    <Div>
-      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg} alt="banner"></img>
-      </BannerImg> */}
-      <NavBarWrapper
-        scrollPosition={scrollPosition}
-        isSticky={isSticky}
-        isBannerVisible={isBannerVisible}
-      >
-        <ThemeProvider theme={theme}>
-          <NavDiv>
-            <Logo>
-              <Link to="/">
-                <img src={require("../assets/img/Logo.png")} alt="Logo" />
-              </Link>
-            </Logo>
-            <NavLinks>
-              <NavItem>
-                <Link to="/About" style={{ textDecoration: "none" }}>
-                  <Subtitle1
-                    active={pathname === "/About"}
-                    isScrolled={scrollPosition >= animatedPosition}
-                  >
-                    소개
-                  </Subtitle1>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/Project" style={{ textDecoration: "none" }}>
-                  <Subtitle1
-                    active={pathname === "/Project"}
-                    isScrolled={scrollPosition >= animatedPosition}
-                  >
-                    프로젝트
-                  </Subtitle1>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-                  <Subtitle1
-                    active={pathname === "/Inquiry"}
-                    isScrolled={scrollPosition >= animatedPosition}
-                  >
-                    문의
-                  </Subtitle1>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/Recruiting" style={{ textDecoration: "none" }}>
-                  <Subtitle1
-                    active={pathname === "/Recruiting"}
-                    isScrolled={scrollPosition >= animatedPosition}
-                  >
-                    리쿠르팅
-                  </Subtitle1>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/news" style={{ textDecoration: "none" }}>
-                  <Subtitle1
-                    active={pathname === "/news"}
-                    isScrolled={scrollPosition >= animatedPosition}
-                  >
-                    성과
-                  </Subtitle1>
-                </Link>
-              </NavItem>
-            </NavLinks>
-          </NavDiv>
-        </ThemeProvider>
-      </NavBarWrapper>
-    </Div>
-  );
-};
-
-export default NavBar_About;

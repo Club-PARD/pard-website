@@ -6,6 +6,162 @@ import DesignVector from "../../../assets/img/DesignVector.png";
 import DevelopVector from "../../../assets/img/DevelopVector.png";
 import SelectedVector from "../../../assets/img/SelectedVector.png";
 
+const RecruitingPart = () => {
+  const openLink = (link) => {
+    window.open(link, "_blank");
+  };
+
+  const [isHovered, setIsHovered] = React.useState(null);
+
+  const handleHover = (index) => {
+    setIsHovered(index);
+  };
+
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header7>5개의 파트가 여러분을 기다리고 있어요</Header7>
+          <Container>
+            <ButtonRow>
+              {buttons.slice(0, 3).map((button, index) => (
+                <Button
+                  key={index}
+                  onClick={() => openLink(button.link)}
+                  hoverColor={button.hoverColor}
+                  selectedImage={button.selectedImage}
+                  onMouseEnter={() => handleHover(index)}
+                  onMouseLeave={() => handleHover(null)}
+                >
+                  <Vector
+                    src={button.vectorImage}
+                    isHovered={isHovered === index}
+                    alt="vector"
+                  />
+                  <Header5 textColor={button.textColor}>
+                    {button.title}
+                    {button.showButton && (
+                      <SmallButton
+                        textColor={button.textColor}
+                        hoverColor={button.hoverColor}
+                        left={12}
+                      >
+                        <BtnText>{button.buttonText}</BtnText>
+                      </SmallButton>
+                    )}
+                    {button.showButton2 && (
+                      <SmallButton
+                        textColor={button.textColor}
+                        hoverColor={button.hoverColor}
+                        left={10}
+                      >
+                        <BtnText>{button.buttonText2}</BtnText>
+                      </SmallButton>
+                    )}
+                  </Header5>
+                  <Body1>자세히 보기</Body1>
+                </Button>
+              ))}
+            </ButtonRow>
+            <ButtonRow>
+              {buttons.slice(3).map((button, index) => (
+                <Button
+                  key={index}
+                  onClick={() => openLink(button.link)}
+                  hoverColor={button.hoverColor}
+                  selectedImage={button.selectedImage}
+                >
+                  <Vector src={button.vectorImage} alt="vector" />
+                  <Header5 textColor={button.textColor}>
+                    {button.title}
+                    {button.showButton && (
+                      <SmallButton
+                        textColor={button.textColor}
+                        hoverColor={button.hoverColor}
+                        left={12}
+                      >
+                        <BtnText>{button.buttonText}</BtnText>
+                      </SmallButton>
+                    )}
+                  </Header5>
+                  <Body1>자세히 보기</Body1>
+                </Button>
+              ))}
+            </ButtonRow>
+          </Container>
+        </ThemeProvider>
+      </PartDiv>
+    </Div>
+  );
+};
+
+export default RecruitingPart;
+
+const buttons = [
+  {
+    title: "서비스 기획",
+    link: "https://pard-notice.oopy.io/pm",
+    textColor: "#000000",
+    hoverColor: "#5262F5",
+    vectorImage: ServiceVector,
+    selectedImage: SelectedVector,
+    showButton: true,
+    buttonText: "사전과제",
+    showButton2: false,
+    buttonText2: "",
+  },
+  {
+    title: "디자인",
+    link: "https://pard-notice.oopy.io/design",
+    textColor: "#000000",
+    hoverColor: "#7B3FEF",
+    vectorImage: DesignVector,
+    selectedImage: SelectedVector,
+    showButton: true,
+    buttonText: "사전과제",
+    showButton2: false,
+    buttonText2: "",
+  },
+  {
+    title: "APP(iOS)",
+    link: "https://pard-notice.oopy.io/ios",
+    textColor: "#000000",
+    hoverColor: "#FF5C00",
+    vectorImage: DevelopVector,
+    selectedImage: SelectedVector,
+    /*
+		showButton: true,
+		buttonText: "사전과제!",
+*/
+    // showButton2: true,
+    // buttonText2: "New!",
+  },
+  {
+    title: "WEB",
+    link: "https://pard-notice.oopy.io/web",
+    textColor: "#000000",
+    hoverColor: "#FF5C00",
+    vectorImage: DevelopVector,
+    selectedImage: SelectedVector,
+    showButton: false,
+    buttonText: false,
+    showButton2: false,
+    buttonText2: "",
+  },
+  {
+    title: "SERVER",
+    link: "https://pard-notice.oopy.io/server",
+    textColor: "#000000",
+    hoverColor: "#FF5C00",
+    vectorImage: DevelopVector,
+    selectedImage: SelectedVector,
+    // showButton: true,
+    // buttonText: "New!",
+    showButton2: false,
+    buttonText2: "",
+  },
+];
+
 const PartDiv = styled.div`
   height: 600px;
   position: relative;
@@ -135,159 +291,3 @@ const ButtonRow = styled.div`
   margin-right: 70px;
   flex-wrap: wrap;
 `;
-
-const RecruitingPart = () => {
-  const buttons = [
-    {
-      title: "서비스 기획",
-      link: "https://pard-notice.oopy.io/pm",
-      textColor: "#000000",
-      hoverColor: "#5262F5",
-      vectorImage: ServiceVector,
-      selectedImage: SelectedVector,
-      showButton: true,
-      buttonText: "사전과제",
-      showButton2: false,
-      buttonText2: "",
-    },
-    {
-      title: "디자인",
-      link: "https://pard-notice.oopy.io/design",
-      textColor: "#000000",
-      hoverColor: "#7B3FEF",
-      vectorImage: DesignVector,
-      selectedImage: SelectedVector,
-      showButton: true,
-      buttonText: "사전과제",
-      showButton2: false,
-      buttonText2: "",
-    },
-    {
-      title: "APP(iOS)",
-      link: "https://pard-notice.oopy.io/ios",
-      textColor: "#000000",
-      hoverColor: "#FF5C00",
-      vectorImage: DevelopVector,
-      selectedImage: SelectedVector,
-      /*
-      showButton: true,
-      buttonText: "사전과제!",
-*/
-      // showButton2: true,
-      // buttonText2: "New!",
-    },
-    {
-      title: "WEB",
-      link: "https://pard-notice.oopy.io/web",
-      textColor: "#000000",
-      hoverColor: "#FF5C00",
-      vectorImage: DevelopVector,
-      selectedImage: SelectedVector,
-      showButton: false,
-      buttonText: false,
-      showButton2: false,
-      buttonText2: "",
-    },
-    {
-      title: "SERVER",
-      link: "https://pard-notice.oopy.io/server",
-      textColor: "#000000",
-      hoverColor: "#FF5C00",
-      vectorImage: DevelopVector,
-      selectedImage: SelectedVector,
-      // showButton: true,
-      // buttonText: "New!",
-      showButton2: false,
-      buttonText2: "",
-    },
-  ];
-
-  const openLink = (link) => {
-    window.open(link, "_blank");
-  };
-
-  const [isHovered, setIsHovered] = React.useState(null);
-
-  const handleHover = (index) => {
-    setIsHovered(index);
-  };
-
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header7>5개의 파트가 여러분을 기다리고 있어요</Header7>
-          <Container>
-            <ButtonRow>
-              {buttons.slice(0, 3).map((button, index) => (
-                <Button
-                  key={index}
-                  onClick={() => openLink(button.link)}
-                  hoverColor={button.hoverColor}
-                  selectedImage={button.selectedImage}
-                  onMouseEnter={() => handleHover(index)}
-                  onMouseLeave={() => handleHover(null)}
-                >
-                  <Vector
-                    src={button.vectorImage}
-                    isHovered={isHovered === index}
-                    alt="vector"
-                  />
-                  <Header5 textColor={button.textColor}>
-                    {button.title}
-                    {button.showButton && (
-                      <SmallButton
-                        textColor={button.textColor}
-                        hoverColor={button.hoverColor}
-                        left={12}
-                      >
-                        <BtnText>{button.buttonText}</BtnText>
-                      </SmallButton>
-                    )}
-                    {button.showButton2 && (
-                      <SmallButton
-                        textColor={button.textColor}
-                        hoverColor={button.hoverColor}
-                        left={10}
-                      >
-                        <BtnText>{button.buttonText2}</BtnText>
-                      </SmallButton>
-                    )}
-                  </Header5>
-                  <Body1>자세히 보기</Body1>
-                </Button>
-              ))}
-            </ButtonRow>
-            <ButtonRow>
-              {buttons.slice(3).map((button, index) => (
-                <Button
-                  key={index}
-                  onClick={() => openLink(button.link)}
-                  hoverColor={button.hoverColor}
-                  selectedImage={button.selectedImage}
-                >
-                  <Vector src={button.vectorImage} alt="vector" />
-                  <Header5 textColor={button.textColor}>
-                    {button.title}
-                    {button.showButton && (
-                      <SmallButton
-                        textColor={button.textColor}
-                        hoverColor={button.hoverColor}
-                        left={12}
-                      >
-                        <BtnText>{button.buttonText}</BtnText>
-                      </SmallButton>
-                    )}
-                  </Header5>
-                  <Body1>자세히 보기</Body1>
-                </Button>
-              ))}
-            </ButtonRow>
-          </Container>
-        </ThemeProvider>
-      </PartDiv>
-    </Div>
-  );
-};
-
-export default RecruitingPart;

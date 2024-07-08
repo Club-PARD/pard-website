@@ -4,6 +4,53 @@ import { theme } from "../../../styles/theme";
 import Vec from "../../../assets/img/vector.png";
 import Vec_p from "../../../assets/img/vector_purple.png";
 
+const Ask = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Margin>
+        <Askedstyled>
+          PARD에 대해
+          <br />
+          무엇이든 물어보세요!
+        </Askedstyled>
+        <Informationstyle>
+          <Lineup />
+          <InformBox1 href="mailto:official@we-pard.com">
+            <Mail>메일</Mail>
+            <EMail>official@we-pard.com</EMail>
+            <Vectorbox2>
+              <Vector src={Vec} alt="vector" />
+            </Vectorbox2>
+          </InformBox1>
+          <InformBox2
+            href="https://www.instagram.com/official_pard_/"
+            target="_blank"
+          >
+            <Instagram>인스타그램</Instagram>
+            <InstagramId>@official_pard_</InstagramId>
+            <Vectorbox2>
+              <Vector src={Vec} alt="vector" />
+            </Vectorbox2>
+          </InformBox2>
+          <Linedown />
+          <Business>
+            비즈니스 문의는 &nbsp;
+            <Here href="mailto:official@we-pard.com">여기로!</Here>
+          </Business>
+        </Informationstyle>
+      </Margin>
+      <LogoDiv>
+        <DownLogo
+          src={require("../../../assets/img/DownScrollLogo.png")}
+          alt="downLogo"
+        />
+      </LogoDiv>
+    </ThemeProvider>
+  );
+};
+
+export default Ask;
+
 const Margin = styled.div`
   display: flex;
   margin: 0 auto;
@@ -232,50 +279,3 @@ const InformBox2 = styled.a`
     }
   }
 `;
-
-const Ask = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Margin>
-        <Askedstyled>
-          PARD에 대해
-          <br />
-          무엇이든 물어보세요!
-        </Askedstyled>
-        <Informationstyle>
-          <Lineup />
-          <InformBox1 href="mailto:official@we-pard.com">
-            <Mail>메일</Mail>
-            <EMail>official@we-pard.com</EMail>
-            <Vectorbox2>
-              <Vector src={Vec} alt="vector" />
-            </Vectorbox2>
-          </InformBox1>
-          <InformBox2
-            href="https://www.instagram.com/official_pard_/"
-            target="_blank"
-          >
-            <Instagram>인스타그램</Instagram>
-            <InstagramId>@official_pard_</InstagramId>
-            <Vectorbox2>
-              <Vector src={Vec} alt="vector" />
-            </Vectorbox2>
-          </InformBox2>
-          <Linedown />
-          <Business>
-            비즈니스 문의는 &nbsp;
-            <Here href="mailto:official@we-pard.com">여기로!</Here>
-          </Business>
-        </Informationstyle>
-      </Margin>
-      <LogoDiv>
-        <DownLogo
-          src={require("../../../assets/img/DownScrollLogo.png")}
-          alt="downLogo"
-        />
-      </LogoDiv>
-    </ThemeProvider>
-  );
-};
-
-export default Ask;

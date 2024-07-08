@@ -4,6 +4,33 @@ import React from "react";
 import AboutImage from "../assets/img/임시화면로고.png";
 import ProgramFrame from "../assets/img/HomeEditFrame.png";
 
+function TemporaryPage() {
+  const handleClick = () => {
+    window.open("https://tally.so/r/w4BxRd", "_blank");
+  };
+
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <AboutLogo src={AboutImage} alt="AboutLogo" />
+          <Header6>모바일 페이지는 제작 중이에요! </Header6>
+          <Body1>
+            파드의 자세한 내용이 궁금하시다면
+            <br />
+            PC로 확인해주세요
+          </Body1>
+          <Header6>진짜 협업을 경험하고 싶다면</Header6>
+          <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1>
+        </ThemeProvider>
+        <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default TemporaryPage;
+
 const Header6 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header6};
   font-weight: ${(props) => props.theme.fontWeights.Header6};
@@ -87,30 +114,3 @@ const ProgramFrame1 = styled.img`
   left: 0px;
   bottom: 0px;
 `;
-
-function TemporaryPage() {
-  const handleClick = () => {
-    window.open("https://tally.so/r/w4BxRd", "_blank");
-  };
-
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <AboutLogo src={AboutImage} alt="AboutLogo" />
-          <Header6>모바일 페이지는 제작 중이에요! </Header6>
-          <Body1>
-            파드의 자세한 내용이 궁금하시다면
-            <br />
-            PC로 확인해주세요
-          </Body1>
-          <Header6>진짜 협업을 경험하고 싶다면</Header6>
-          <Button1 onClick={handleClick}>지금 바로 2기 지원하기</Button1>
-        </ThemeProvider>
-        <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default TemporaryPage;

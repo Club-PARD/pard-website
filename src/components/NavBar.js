@@ -7,6 +7,111 @@ import backgroundImg from "../assets/img/BannerImg/BannerImg.png";
 import closeButtonImg from "../assets/img/BannerImg/XButton.png";
 import bannerImg from "../assets/img/web_banner_3기.png";
 
+const NavBar = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  // 배너 관련 코드.. 이때 총학 웹사이트 하고 바빴어서
+  // 유지보수 생각 안하고 코드 짬요.. 다음 개발 파트장님 죄송합니다..
+  const [isBannerVisible, setIsBannerVisible] = useState(false); // 여기 true로
+  const [isSticky, setIsSticky] = useState(false);
+  const { pathname } = useLocation(); // 현재 페이지의 URL을 가져옴
+
+  const handleCloseBanner = () => {
+    setIsBannerVisible(false);
+    setIsSticky(false); // 여기 true로
+  };
+
+  useEffect(() => {
+    setIsBannerVisible();
+    function handleScroll() {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+      setIsSticky(position >= 0);
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: false }); // 여기 true로
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    // URL 경로가 "/Recruiting"인 경우에만 isBannerVisible를 false로 설정
+    setIsBannerVisible(pathname !== "/Recruiting");
+  }, [pathname]);
+
+  return (
+    <Div>
+      {/* {isBannerVisible && (
+        <NavLink to="/Recruiting" style={{ textDecoration: "none" }}>
+        <BannerDiv>
+            <CloseButton
+              src={closeButtonImg}
+              onClick={handleCloseBanner}
+              isBannerVisible={isBannerVisible}
+            />
+            <MainText>PARD 2기 신입기수 리쿠르팅 시작</MainText>
+            <SubText>지원서 접수 기간 : 08.14(월) - 08.25(금)</SubText>
+          </BannerDiv>
+          </NavLink>
+        )} */}
+
+      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+        <img src={bannerImg}></img>
+      </BannerImg> */}
+      <NavBarWrapper
+        scrollPosition={scrollPosition}
+        isSticky={isSticky}
+        isBannerVisible={isBannerVisible}
+      >
+        <ThemeProvider theme={theme}>
+          <NavDiv>
+            <Logo>
+              <Link to="/">
+                <img src={require("../assets/img/Logo.png")} alt="Logo" />
+              </Link>
+            </Logo>
+            <NavLinks>
+              <NavItem>
+                <Link to="/About" style={{ textDecoration: "none" }}>
+                  <Subtitle1 active={pathname === "/About"}>소개</Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/Project" style={{ textDecoration: "none" }}>
+                  <Subtitle1 active={pathname.startsWith("/Project")}>
+                    프로젝트
+                  </Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/Inquiry" style={{ textDecoration: "none" }}>
+                  <Subtitle1 active={pathname === "/Inquiry"}>문의</Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/Recruiting" style={{ textDecoration: "none" }}>
+                  <Subtitle1 active={pathname === "/Recruiting"}>
+                    리쿠르팅
+                  </Subtitle1>
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/news" style={{ textDecoration: "none" }}>
+                  <Subtitle1 active={pathname === "/news"}>성과</Subtitle1>
+                </Link>
+              </NavItem>
+            </NavLinks>
+          </NavDiv>
+        </ThemeProvider>
+      </NavBarWrapper>
+    </Div>
+  );
+};
+
+export default NavBar;
+
 const Div = styled.div`
   top: 0;
   margin: 0px auto;
@@ -138,108 +243,3 @@ const BannerImg = styled.div`
   position: fixed;
   cursor: pointer;
 `;
-
-const NavBar = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  // 배너 관련 코드.. 이때 총학 웹사이트 하고 바빴어서
-  // 유지보수 생각 안하고 코드 짬요.. 다음 개발 파트장님 죄송합니다..
-  const [isBannerVisible, setIsBannerVisible] = useState(false); // 여기 true로
-  const [isSticky, setIsSticky] = useState(false);
-  const { pathname } = useLocation(); // 현재 페이지의 URL을 가져옴
-
-  const handleCloseBanner = () => {
-    setIsBannerVisible(false);
-    setIsSticky(false); // 여기 true로
-  };
-
-  useEffect(() => {
-    setIsBannerVisible();
-    function handleScroll() {
-      const position = window.pageYOffset;
-      setScrollPosition(position);
-      setIsSticky(position >= 0);
-    }
-
-    window.addEventListener("scroll", handleScroll, { passive: false }); // 여기 true로
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    // URL 경로가 "/Recruiting"인 경우에만 isBannerVisible를 false로 설정
-    setIsBannerVisible(pathname !== "/Recruiting");
-  }, [pathname]);
-
-  return (
-    <Div>
-      {/* {isBannerVisible && (
-        <NavLink to="/Recruiting" style={{ textDecoration: "none" }}>
-        <BannerDiv>
-            <CloseButton
-              src={closeButtonImg}
-              onClick={handleCloseBanner}
-              isBannerVisible={isBannerVisible}
-            />
-            <MainText>PARD 2기 신입기수 리쿠르팅 시작</MainText>
-            <SubText>지원서 접수 기간 : 08.14(월) - 08.25(금)</SubText>
-          </BannerDiv>
-          </NavLink>
-        )} */}
-
-      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg}></img>
-      </BannerImg> */}
-      <NavBarWrapper
-        scrollPosition={scrollPosition}
-        isSticky={isSticky}
-        isBannerVisible={isBannerVisible}
-      >
-        <ThemeProvider theme={theme}>
-          <NavDiv>
-            <Logo>
-              <Link to="/">
-                <img src={require("../assets/img/Logo.png")} alt="Logo" />
-              </Link>
-            </Logo>
-            <NavLinks>
-              <NavItem>
-                <Link to="/About" style={{ textDecoration: "none" }}>
-                  <Subtitle1 active={pathname === "/About"}>소개</Subtitle1>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/Project" style={{ textDecoration: "none" }}>
-                  <Subtitle1 active={pathname.startsWith("/Project")}>
-                    프로젝트
-                  </Subtitle1>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-                  <Subtitle1 active={pathname === "/Inquiry"}>문의</Subtitle1>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/Recruiting" style={{ textDecoration: "none" }}>
-                  <Subtitle1 active={pathname === "/Recruiting"}>
-                    리쿠르팅
-                  </Subtitle1>
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/news" style={{ textDecoration: "none" }}>
-                  <Subtitle1 active={pathname === "/news"}>성과</Subtitle1>
-                </Link>
-              </NavItem>
-            </NavLinks>
-          </NavDiv>
-        </ThemeProvider>
-      </NavBarWrapper>
-    </Div>
-  );
-};
-
-export default NavBar;

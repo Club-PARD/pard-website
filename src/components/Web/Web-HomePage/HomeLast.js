@@ -2,6 +2,34 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import { pardDATA } from "../../../utils/data.constant";
 
+function HomeLast() {
+  const handleClick = () => {
+    window.open("https://pard-notice.oopy.io", "_blank");
+  };
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header2>진짜 협업을 경험하고 싶다면</Header2>
+          <Line>
+            <Shape1>"</Shape1>
+            <Shape2>"</Shape2>
+          </Line>
+          <Header4>
+            똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도
+            선수들의 역량이에요
+          </Header4>
+          <Subtitle2>송민 KBS 서핑 해설위원</Subtitle2>
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+        </ThemeProvider>
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default HomeLast;
+
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
   font-weight: ${(props) => props.theme.fontWeights.Header2};
@@ -119,34 +147,6 @@ const Button = styled.button`
   /* color: black; */
   cursor: not-allowed;
 `;
-
-function HomeLast() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header2>진짜 협업을 경험하고 싶다면</Header2>
-          <Line>
-            <Shape1>"</Shape1>
-            <Shape2>"</Shape2>
-          </Line>
-          <Header4>
-            똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도
-            선수들의 역량이에요
-          </Header4>
-          <Subtitle2>송민 KBS 서핑 해설위원</Subtitle2>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
-        </ThemeProvider>
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default HomeLast;
 
 // import styled, { ThemeProvider } from 'styled-components';
 // import { theme } from '../../../styles/theme';

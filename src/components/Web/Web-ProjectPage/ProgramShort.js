@@ -3,6 +3,57 @@ import img1 from "../../../assets/img/숏커톤1.png";
 import img2 from "../../../assets/img/숏커톤2.png";
 import img3 from "../../../assets/img/숏커톤3.png";
 
+function ProgramShort() {
+  const cardData = [
+    {
+      id: 1,
+      image: img1,
+      description: "Design Thinking을 통한\n빠른 의사결정 및 MVP 제작",
+    },
+    {
+      id: 2,
+      image: img2,
+      description:
+        "다양한 협업 방법론을 적용하면서\n더 나은 커뮤니케이션을 위한 회고",
+    },
+    {
+      id: 3,
+      image: img3,
+      description: "문제 해결부터 리소스 관리까지의\n프로젝트 매니징 경험",
+    },
+  ];
+
+  return (
+    <ShortDiv>
+      <FirstCard>
+        <Header4>빠른 실패와 검증</Header4>
+        <Box />
+        <Body2_1>PARD는 빠르고 작은 성공을 수집합니다.</Body2_1>
+        <Body2>
+          무박 2일 간의 해커톤을 통해<br></br>
+          기획자, 디자이너, 개발자가 함께 소통하여<br></br>
+          최소 기능 제품을 구현하며<br></br>
+          제품 개발 협업의 첫발을 내딛습니다.
+        </Body2>
+      </FirstCard>
+      {cardData.map((content) => (
+        <Card key={content.id}>
+          <CardImage
+            src={content.image}
+            alt={`Card ${content.id}`}
+            isCover={content.id === 3}
+          />
+          <CardContent>
+            <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
+          </CardContent>
+        </Card>
+      ))}
+    </ShortDiv>
+  );
+}
+
+export default ProgramShort;
+
 const Header4 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header4};
   font-weight: ${(props) => props.theme.fontWeights.Header4};
@@ -86,54 +137,3 @@ const Box = styled.div`
   height: 70%;
   background-color: #1a1a1a;
 `;
-
-function ProgramShort() {
-  const cardData = [
-    {
-      id: 1,
-      image: img1,
-      description: "Design Thinking을 통한\n빠른 의사결정 및 MVP 제작",
-    },
-    {
-      id: 2,
-      image: img2,
-      description:
-        "다양한 협업 방법론을 적용하면서\n더 나은 커뮤니케이션을 위한 회고",
-    },
-    {
-      id: 3,
-      image: img3,
-      description: "문제 해결부터 리소스 관리까지의\n프로젝트 매니징 경험",
-    },
-  ];
-
-  return (
-    <ShortDiv>
-      <FirstCard>
-        <Header4>빠른 실패와 검증</Header4>
-        <Box />
-        <Body2_1>PARD는 빠르고 작은 성공을 수집합니다.</Body2_1>
-        <Body2>
-          무박 2일 간의 해커톤을 통해<br></br>
-          기획자, 디자이너, 개발자가 함께 소통하여<br></br>
-          최소 기능 제품을 구현하며<br></br>
-          제품 개발 협업의 첫발을 내딛습니다.
-        </Body2>
-      </FirstCard>
-      {cardData.map((content) => (
-        <Card key={content.id}>
-          <CardImage
-            src={content.image}
-            alt={`Card ${content.id}`}
-            isCover={content.id === 3}
-          />
-          <CardContent>
-            <Body2 style={{ textAlign: "center" }}>{content.description}</Body2>
-          </CardContent>
-        </Card>
-      ))}
-    </ShortDiv>
-  );
-}
-
-export default ProgramShort;

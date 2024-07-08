@@ -3,6 +3,25 @@ import { theme } from "../../../styles/theme";
 import React from "react";
 import { pardDATA } from "../../../utils/data.constant";
 
+function RecruitingLast() {
+  const handleClick = () => {
+    window.open("https://pard-notice.oopy.io", "_blank");
+  };
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header7>협업에 미친 파드의 여정에 동참하고 싶다면</Header7>
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+        </ThemeProvider>
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default RecruitingLast;
+
 const PartDiv = styled.div`
   height: 624px;
   position: relative;
@@ -69,22 +88,3 @@ const Button1 = styled.button`
   border: none;
   cursor: pointer;
 `;
-
-function RecruitingLast() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header7>협업에 미친 파드의 여정에 동참하고 싶다면</Header7>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
-        </ThemeProvider>
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default RecruitingLast;

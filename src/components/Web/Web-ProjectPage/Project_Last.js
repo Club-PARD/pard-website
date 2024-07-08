@@ -3,6 +3,21 @@ import { theme } from "../../../styles/theme";
 import React from "react";
 import ProjectGrid from "./ProjectPageNation";
 
+function ProjectLast() {
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header7>전체 프로젝트</Header7>
+          <ProjectGrid />
+        </ThemeProvider>
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default ProjectLast;
+
 const PartDiv = styled.div`
   /* height: 1800px; */
   height: auto;
@@ -37,18 +52,3 @@ const Header7 = styled.div`
   margin-right: 840px;
   margin-bottom: 90px;
 `;
-
-function ProjectLast() {
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header7>전체 프로젝트</Header7>
-          <ProjectGrid />
-        </ThemeProvider>
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default ProjectLast;

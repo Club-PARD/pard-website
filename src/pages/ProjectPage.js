@@ -14,20 +14,6 @@ import FooterMov from "../components/FooterMov";
 function ProjectPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
 
-  const AboutPageComponent = styled.div`
-    width: 100vw;
-  `;
-
-  const ProgramPageComponent_Web = styled.div`
-    justify-content: center;
-    width: 100%;
-    min-width: 1440px;
-  `;
-
-  const ProgramPageComponent_Mob = styled.div`
-    width: 100%;
-  `;
-
   return (
     <AboutPageComponent>
       {isDesktopOrMobile !== true ? (
@@ -51,3 +37,17 @@ function ProjectPage() {
 }
 
 export default ProjectPage;
+
+const AboutPageComponent = styled.div`
+  width: 100vw;
+`;
+
+const ProgramPageComponent_Web = styled.div`
+  justify-content: center;
+  width: 100%;
+  min-width: 1440px;
+`;
+
+const ProgramPageComponent_Mob = styled.div`
+  width: 100%;
+`;

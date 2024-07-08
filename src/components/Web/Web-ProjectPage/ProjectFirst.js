@@ -4,6 +4,35 @@ import AboutImage from "../../../assets/img/AboutLogo.png";
 import ProgramFrame from "../../../assets/img/ProgramFrame.png";
 import React, { useState, useEffect } from "react";
 
+function Projectirst() {
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <AboutLogo src={AboutImage} alt="AboutLogo" />
+          <TextContainer>
+            <Header2>
+              PARD가 진행한
+              <br />
+              프로젝트를 보여드릴게요
+            </Header2>
+            <Header5>
+              PARD는 기획자・디자이너・개발자 간 협업을 바탕으로
+              <br />
+              독창적이면서도 사용자의 문제를 효과적으로 해결할 수 있는
+              <br />
+              다양한 프로젝트들을 선보이고 있습니다.
+            </Header5>
+          </TextContainer>
+        </ThemeProvider>
+        <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default Projectirst;
+
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
   font-weight: ${(props) => props.theme.fontWeights.Header2};
@@ -82,32 +111,3 @@ const Header5 = styled.div`
 
   text-align: center;
 `;
-
-function Projectirst() {
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <AboutLogo src={AboutImage} alt="AboutLogo" />
-          <TextContainer>
-            <Header2>
-              PARD가 진행한
-              <br />
-              프로젝트를 보여드릴게요
-            </Header2>
-            <Header5>
-              PARD는 기획자・디자이너・개발자 간 협업을 바탕으로
-              <br />
-              독창적이면서도 사용자의 문제를 효과적으로 해결할 수 있는
-              <br />
-              다양한 프로젝트들을 선보이고 있습니다.
-            </Header5>
-          </TextContainer>
-        </ThemeProvider>
-        <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default Projectirst;

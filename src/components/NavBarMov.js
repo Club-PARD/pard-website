@@ -7,6 +7,61 @@ import MenuBar_white from "../assets/img/MenuBar_white.png";
 import MenuBar_black from "../assets/img/MenuBar_black.png";
 import bannerImg from "../assets/img/mob_banner_3기.png";
 
+const NavBarMov = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <div>
+      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+        <img src={bannerImg} />
+      </BannerImg> */}
+      <Nav isOpen={isOpen}>
+        <ThemeProvider theme={theme}>
+          <Logo>
+            <Link to="/">
+              <LogoImg src={require("../assets/img/Logo.png")} alt="Logo" />
+            </Link>
+          </Logo>
+          <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
+            <img
+              src={MenuBar_white}
+              alt="menu"
+              height={"50px"}
+              width3={"25px"}
+            />
+          </MenuButton>
+          <Menu isOpen={isOpen}>
+            <Link to="/About" style={{ textDecoration: "none" }}>
+              <Subtitle2>소개</Subtitle2>
+            </Link>
+            <Hr />
+            <Link to="/Project" style={{ textDecoration: "none" }}>
+              <Subtitle2>프로젝트</Subtitle2>
+            </Link>
+            <Hr />
+            <Link to="/Inquiry" style={{ textDecoration: "none" }}>
+              <Subtitle2>문의</Subtitle2>
+            </Link>
+            <Hr />
+            <Link to="/Recruiting" style={{ textDecoration: "none" }}>
+              <Subtitle2>리쿠르팅</Subtitle2>
+            </Link>
+            <Hr />
+            <Link to="/news" style={{ textDecoration: "none" }}>
+              <Subtitle2>성과</Subtitle2>
+            </Link>
+          </Menu>
+        </ThemeProvider>
+      </Nav>
+    </div>
+  );
+};
+
+export default NavBarMov;
+
 const Nav = styled.nav`
   background-color: #1a1a1a;
   color: white;
@@ -88,58 +143,3 @@ const BannerImg = styled.div`
   position: fixed;
   cursor: pointer;
 `;
-
-const NavBarMov = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  return (
-    <div>
-      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg} />
-      </BannerImg> */}
-      <Nav isOpen={isOpen}>
-        <ThemeProvider theme={theme}>
-          <Logo>
-            <Link to="/">
-              <LogoImg src={require("../assets/img/Logo.png")} alt="Logo" />
-            </Link>
-          </Logo>
-          <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
-            <img
-              src={MenuBar_white}
-              alt="menu"
-              height={"50px"}
-              width3={"25px"}
-            />
-          </MenuButton>
-          <Menu isOpen={isOpen}>
-            <Link to="/About" style={{ textDecoration: "none" }}>
-              <Subtitle2>소개</Subtitle2>
-            </Link>
-            <Hr />
-            <Link to="/Project" style={{ textDecoration: "none" }}>
-              <Subtitle2>프로젝트</Subtitle2>
-            </Link>
-            <Hr />
-            <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-              <Subtitle2>문의</Subtitle2>
-            </Link>
-            <Hr />
-            <Link to="/Recruiting" style={{ textDecoration: "none" }}>
-              <Subtitle2>리쿠르팅</Subtitle2>
-            </Link>
-            <Hr />
-            <Link to="/news" style={{ textDecoration: "none" }}>
-              <Subtitle2>성과</Subtitle2>
-            </Link>
-          </Menu>
-        </ThemeProvider>
-      </Nav>
-    </div>
-  );
-};
-
-export default NavBarMov;

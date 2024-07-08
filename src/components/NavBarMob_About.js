@@ -7,6 +7,74 @@ import MenuBar_white from "../assets/img/MenuBar_white.png";
 import MenuBar_black from "../assets/img/MenuBar_black.png";
 import bannerImg from "../assets/img/mob_banner_3기.png";
 
+const NavBarMov_About = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <>
+      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+        <img src={bannerImg} />
+      </BannerImg> */}
+      <Nav scrollPosition={scrollPosition} isOpen={isOpen}>
+        <ThemeProvider theme={theme}>
+          <Logo>
+            <Link to="/">
+              <LogoImg src={require("../assets/img/Logo.png")} alt="Logo" />
+            </Link>
+          </Logo>
+          <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
+            <img
+              src={
+                isOpen
+                  ? MenuBar_white
+                  : scrollPosition >= 650
+                  ? MenuBar_black
+                  : MenuBar_white
+              }
+              alt="menu"
+              height={"50px"}
+              width={"50px"}
+            />
+          </MenuButton>
+          <Menu isOpen={isOpen}>
+            <Link to="/About" style={{ textDecoration: "none" }}>
+              <Subtitle2>소개</Subtitle2>
+            </Link>
+            <Hr />
+            <Link to="/Project" style={{ textDecoration: "none" }}>
+              <Subtitle2>프로젝트</Subtitle2>
+            </Link>
+            <Hr />
+            <Link to="/Inquiry" style={{ textDecoration: "none" }}>
+              <Subtitle2>문의</Subtitle2>
+            </Link>
+            <Hr />
+            <Link to="/Recruiting" style={{ textDecoration: "none" }}>
+              <Subtitle2>리쿠르팅</Subtitle2>
+            </Link>
+          </Menu>
+        </ThemeProvider>
+      </Nav>
+    </>
+  );
+};
+
+export default NavBarMov_About;
+
 //scroll default 위치 : 650px
 //3기 리쿠르팅 배너 기준 scroll 위치 :550
 
@@ -93,71 +161,3 @@ const BannerImg = styled.div`
   position: fixed;
   cursor: pointer;
 `;
-
-const NavBarMov_About = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
-  return (
-    <>
-      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg} />
-      </BannerImg> */}
-      <Nav scrollPosition={scrollPosition} isOpen={isOpen}>
-        <ThemeProvider theme={theme}>
-          <Logo>
-            <Link to="/">
-              <LogoImg src={require("../assets/img/Logo.png")} alt="Logo" />
-            </Link>
-          </Logo>
-          <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
-            <img
-              src={
-                isOpen
-                  ? MenuBar_white
-                  : scrollPosition >= 650
-                  ? MenuBar_black
-                  : MenuBar_white
-              }
-              alt="menu"
-              height={"50px"}
-              width={"50px"}
-            />
-          </MenuButton>
-          <Menu isOpen={isOpen}>
-            <Link to="/About" style={{ textDecoration: "none" }}>
-              <Subtitle2>소개</Subtitle2>
-            </Link>
-            <Hr />
-            <Link to="/Project" style={{ textDecoration: "none" }}>
-              <Subtitle2>프로젝트</Subtitle2>
-            </Link>
-            <Hr />
-            <Link to="/Inquiry" style={{ textDecoration: "none" }}>
-              <Subtitle2>문의</Subtitle2>
-            </Link>
-            <Hr />
-            <Link to="/Recruiting" style={{ textDecoration: "none" }}>
-              <Subtitle2>리쿠르팅</Subtitle2>
-            </Link>
-          </Menu>
-        </ThemeProvider>
-      </Nav>
-    </>
-  );
-};
-
-export default NavBarMov_About;

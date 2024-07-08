@@ -3,6 +3,36 @@ import { theme } from "../../../styles/theme";
 import React from "react";
 import { pardDATA } from "../../../utils/data.constant";
 
+function RecruitingFirst() {
+  const handleClick = () => {
+    window.open("https://pard-notice.oopy.io", "_blank");
+  };
+
+  return (
+    <Div>
+      <PartDiv>
+        <ThemeProvider theme={theme}>
+          <Header2>함께 성장하며 최고의 팀을 만들어가는 곳</Header2>
+          <Header5>
+            단순히 같이 일하는 것이 협업이라고 생각하시나요?
+            <br />
+            PARD에서 서로의 전문성을 이해하고, 솔직하게 대립하고, 빠르게
+            실행해요.
+          </Header5>
+          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
+          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+          <DownLogo
+            src={require("../../../assets/img/DownScrollLogo.png")}
+            alt="downLogo"
+          />
+        </ThemeProvider>
+      </PartDiv>
+    </Div>
+  );
+}
+
+export default RecruitingFirst;
+
 const PartDiv = styled.div`
   height: 950px;
   position: relative;
@@ -85,33 +115,3 @@ const DownLogo = styled.img`
   height: 63px;
   margin-top: 101px;
 `;
-
-function RecruitingFirst() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-
-  return (
-    <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
-          <Header2>함께 성장하며 최고의 팀을 만들어가는 곳</Header2>
-          <Header5>
-            단순히 같이 일하는 것이 협업이라고 생각하시나요?
-            <br />
-            PARD에서 서로의 전문성을 이해하고, 솔직하게 대립하고, 빠르게
-            실행해요.
-          </Header5>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
-          <DownLogo
-            src={require("../../../assets/img/DownScrollLogo.png")}
-            alt="downLogo"
-          />
-        </ThemeProvider>
-      </PartDiv>
-    </Div>
-  );
-}
-
-export default RecruitingFirst;

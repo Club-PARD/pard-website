@@ -2,6 +2,30 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React from "react";
 
+function InquiryLast() {
+  const handleClick = () => {
+    window.open("https://pard.channel.io/lounge", "_blank");
+  };
+
+  return (
+    <PartDiv>
+      <ThemeProvider theme={theme}>
+        <Header7>
+          더 궁금하신 내용이 있거나<br></br>문의사항이 있으신가요?
+        </Header7>
+        <Subtitle3>
+          동아리 관련, 프로젝트, 후원 등 언제든지 문의해 주세요.
+        </Subtitle3>
+        <Frame15 onClick={handleClick}>
+          <Header5>문의하기</Header5>
+        </Frame15>
+      </ThemeProvider>
+    </PartDiv>
+  );
+}
+
+export default InquiryLast;
+
 const Header7 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header7};
   font-weight: ${(props) => props.theme.fontWeights.Header7};
@@ -57,27 +81,3 @@ const Header5 = styled.div`
   text-align: center;
   white-space: nowrap;
 `;
-
-function InquiryLast() {
-  const handleClick = () => {
-    window.open("https://pard.channel.io/lounge", "_blank");
-  };
-
-  return (
-    <PartDiv>
-      <ThemeProvider theme={theme}>
-        <Header7>
-          더 궁금하신 내용이 있거나<br></br>문의사항이 있으신가요?
-        </Header7>
-        <Subtitle3>
-          동아리 관련, 프로젝트, 후원 등 언제든지 문의해 주세요.
-        </Subtitle3>
-        <Frame15 onClick={handleClick}>
-          <Header5>문의하기</Header5>
-        </Frame15>
-      </ThemeProvider>
-    </PartDiv>
-  );
-}
-
-export default InquiryLast;

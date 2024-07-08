@@ -17,21 +17,6 @@ import TemporaryPage from "../components/temporaryPage";
 function InquiryPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
 
-  const InquiryPageComponent = styled.div`
-    width: 100vw;
-  `;
-
-  const InquiryPageComponent_Web = styled.div`
-    justify-content: center;
-    width: 100%;
-    min-width: 1440px;
-  `;
-
-  const InquiryPageComponent_Mob = styled.div`
-    width: 100%;
-    justify-content: center;
-  `;
-
   return (
     <InquiryPageComponent>
       {isDesktopOrMobile !== true ? (
@@ -57,3 +42,18 @@ function InquiryPage() {
 }
 
 export default InquiryPage;
+
+const InquiryPageComponent = styled.div`
+  width: 100vw;
+`;
+
+const InquiryPageComponent_Web = styled.div`
+  justify-content: center;
+  width: 100%;
+  min-width: 1440px;
+`;
+
+const InquiryPageComponent_Mob = styled.div`
+  width: 100%;
+  justify-content: center;
+`;

@@ -22,20 +22,6 @@ import TemporaryPage from "../components/temporaryPage";
 
 function RecruitingPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
-  const RecruitingPageComponent = styled.div`
-    width: 100vw;
-  `;
-
-  const RecruitingPageComponent_WEB = styled.div`
-    justify-content: center;
-    width: 100%;
-    min-width: 1440px;
-  `;
-
-  const RecruitingPageComponent_Mob = styled.div`
-    width: 100%;
-    justify-content: center;
-  `;
 
   return (
     <RecruitingPageComponent>
@@ -70,3 +56,18 @@ function RecruitingPage() {
 }
 
 export default RecruitingPage;
+
+const RecruitingPageComponent = styled.div`
+  width: 100vw;
+`;
+
+const RecruitingPageComponent_WEB = styled.div`
+  justify-content: center;
+  width: 100%;
+  min-width: 1440px;
+`;
+
+const RecruitingPageComponent_Mob = styled.div`
+  width: 100%;
+  justify-content: center;
+`;
