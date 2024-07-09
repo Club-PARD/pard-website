@@ -3,6 +3,7 @@ import { theme } from "../../../styles/theme";
 import AboutFrame from "../../../assets/img/About_Mob_Bar_Last.png";
 import React from "react";
 import { pardDATA } from "../../../utils/data.constant";
+import { RecruitmentStatusButtonMob } from "../Components/RecruitmentStatusButtonMob";
 
 function AboutLast_Mob() {
   const handleClick = () => {
@@ -24,8 +25,10 @@ function AboutLast_Mob() {
             <br></br>선수들의 역량이에요
           </Header6>
           <Comment>송민 KBS 서핑 해설위원</Comment>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+          <RecruitmentStatusButtonMob
+            theme={theme}
+            backgroundColor={theme.MainColor.PrimaryOrange}
+          />
         </ThemeProvider>
       </PartDiv>
       <AboutFrame1 src={AboutFrame} alt="AboutFrame" />
@@ -118,42 +121,6 @@ const Comment = styled.div`
   white-space: pre-line;
   text-align: center;
   margin-bottom: 75px;
-`;
-
-const Button = styled.button`
-  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  display: flex;
-  align-items: center;
-  width: 220px;
-  height: 60px;
-  /* background-color: #FF5C00; */
-  background-color: #d3d1d8;
-  justify-content: center;
-  color: #ffffff;
-  border-radius: 10px;
-  border: none;
-  /* cursor: pointer; */
-  cursor: not-allowed;
-`;
-
-const Button1 = styled.button`
-  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  display: flex;
-  align-items: center;
-  width: 220px;
-  height: 60px;
-  background-color: #ff5c00;
-  justify-content: center;
-  color: #ffffff;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
 `;
 
 const AboutFrame1 = styled.img`

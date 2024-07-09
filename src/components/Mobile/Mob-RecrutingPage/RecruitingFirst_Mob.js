@@ -1,6 +1,6 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-import { pardDATA } from "../../../utils/data.constant";
+import { RecruitmentStatusButtonMob } from "../Components/RecruitmentStatusButtonMob";
 
 function RecruitingFirstMob() {
   const handleClick = () => {
@@ -25,10 +25,10 @@ function RecruitingFirstMob() {
             <br /> 솔직하게 대립하고, 빠르게 실행해요.
           </ButtonText1>
           <ButtonDiv>
-            {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-            <Button>
-              {pardDATA.currentGeneration}기 모집이 완료되었습니다
-            </Button>
+            <RecruitmentStatusButtonMob
+              theme={theme}
+              backgroundColor={theme.MainColor.PrimaryGreen}
+            />
           </ButtonDiv>
         </ThemeProvider>
       </PartDiv>
@@ -71,43 +71,6 @@ const PartDiv = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
-`;
-
-const Button = styled.button`
-  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  display: flex;
-  align-items: center;
-  width: 220px;
-  height: 60px;
-  /* background-color: #64C59A; */
-  background-color: #d3d1d8;
-  justify-content: center;
-  color: #ffffff;
-  border-radius: 10px;
-  border: none;
-  /* color: black; */
-  cursor: not-allowed;
-`;
-
-const Button1 = styled.button`
-  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  display: flex;
-  align-items: center;
-  width: 220px;
-  height: 60px;
-  background-color: #64c59a;
-  justify-content: center;
-  color: #ffffff;
-  border-radius: 10px;
-  border: none;
-  /* color: black; */
-  cursor: pointer;
 `;
 
 const ButtonDiv = styled.div`

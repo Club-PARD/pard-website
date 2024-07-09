@@ -1,6 +1,6 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-import { pardDATA } from "../../../utils/data.constant";
+import { RecruitmentStatusButtonMob } from "../Components/RecruitmentStatusButtonMob";
 
 function RecruitingLastMob() {
   const handleClick = () => {
@@ -14,8 +14,12 @@ function RecruitingLastMob() {
           <Header8>
             협업에 미친<br></br>파드의 여정에<br></br>동참하고 싶다면
           </Header8>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+          <ButtonDiv>
+            <RecruitmentStatusButtonMob
+              theme={theme}
+              backgroundColor={theme.MainColor.PrimaryGreen}
+            />
+          </ButtonDiv>
         </ThemeProvider>
       </PartDiv>
     </Div>
@@ -50,46 +54,9 @@ const PartDiv = styled.div`
   justify-content: center;
 `;
 
-const Button = styled.button`
-  margin-left: 77px;
-  font-size: ${(props) => props.theme.Mob_fontSizes.Subtitle1};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
-  font-family: "NanumSquare Neo";
+const ButtonDiv = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  /* padding: 15px 30px; */
-  gap: 10px;
-  width: 220px;
-  height: 52px;
-  /* background-color: #64C59A; */
-  background-color: #d3d1d8;
-  color: #ffffff;
-  /* color: black; */
-  border-radius: 10px;
-  border: none;
-  /* cursor: pointer; */
-  cursor: not-allowed;
-`;
-
-const Button1 = styled.button`
-  margin-left: 77px;
-  font-size: ${(props) => props.theme.Mob_fontSizes.Subtitle1};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
-  font-family: "NanumSquare Neo";
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 30px;
-  gap: 10px;
-  width: 220px;
-  height: 52px;
-  background-color: #64c59a;
-  color: #ffffff;
-  /* color: black; */
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+  margin-top: 110px;
 `;

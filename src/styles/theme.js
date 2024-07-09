@@ -1,3 +1,4 @@
+import { SiPrisma } from "react-icons/si";
 import { createGlobalStyle } from "styled-components";
 
 // GlobalStyle을 생성합니다.
@@ -125,5 +126,11 @@ export const theme = {
   },
   NavBarColor: {
     navbarColor: "#1A1A1A", // Navbar의 색상
+  },
+  MainColor: {
+    PrimaryOrange: "#FF5C00",
+    PrimaryPurple: "#7B3FEF",
+    PrimaryGreen: "#64C59A",
+    PrimaryBlue: "#5262F5",
   },
 };

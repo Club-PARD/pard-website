@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React from "react";
-import { pardDATA } from "../../../utils/data.constant";
+import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButtonWeb";
 
 function RecruitingFirst() {
   const handleClick = () => {
@@ -19,8 +19,10 @@ function RecruitingFirst() {
             PARD에서 서로의 전문성을 이해하고, 솔직하게 대립하고, 빠르게
             실행해요.
           </Header5>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+          <RecruitmentStatusButtonWeb
+            theme={theme}
+            backgroundColor={theme.MainColor.PrimaryGreen}
+          />
           <DownLogo
             src={require("../../../assets/img/DownScrollLogo.png")}
             alt="downLogo"
@@ -70,44 +72,7 @@ const Header5 = styled.div`
   line-height: 140%;
   text-align: center;
   margin-top: 40px;
-`;
-
-const Button = styled.button`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-family: "NanumSquare Neo";
-  display: flex;
-  align-items: center;
-  width: 440px;
-  height: 58px;
-  /* background-color: #64C59A; */
-  background-color: #d3d1d8;
-  color: #ffffff;
-  justify-content: center;
-  margin-top: 110px;
-  /* color: #000000; */
-  border-radius: 10px;
-  border: none;
-  /* cursor:pointer; */
-  cursor: not-allowed;
-`;
-
-const Button1 = styled.button`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-family: "NanumSquare Neo";
-  display: flex;
-  align-items: center;
-  width: 440px;
-  height: 58px;
-  background-color: #64c59a;
-  color: #ffffff;
-  justify-content: center;
-  margin-top: 110px;
-  /* color: #000000; */
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+  margin-bottom: 102px;
 `;
 
 const DownLogo = styled.img`

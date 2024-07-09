@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import AboutFrame_Down from "../../../assets/img/AboutFrame_Down.png";
-import { pardDATA } from "../../../utils/data.constant";
+import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButtonWeb";
 
 function AboutLast() {
   const handleClick = () => {
@@ -22,8 +22,10 @@ function AboutLast() {
             선수들의 역량이에요
           </Subtitle3>
           <Body2>송민 KBS 서핑 해설위원</Body2>
-          {/* <Button1 onClick={handleClick}>지금 바로 3기 지원하기</Button1> */}
-          <Button>{pardDATA.currentGeneration}기 모집이 완료되었습니다</Button>
+          <RecruitmentStatusButtonWeb
+            theme={theme}
+            backgroundColor={theme.MainColor.PrimaryOrange}
+          />
           <AboutFrame1 src={AboutFrame_Down} alt="AboutFrame" />
         </ThemeProvider>
       </PartDiv>
@@ -88,46 +90,6 @@ const Body2 = styled.div`
   text-align: center;
   color: #000000;
   margin-bottom: 95px;
-`;
-
-const Button = styled.button`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  display: flex;
-  align-items: center;
-  line-height: 140%;
-  width: 440px;
-  height: 64px;
-  /* background-color: #FF5C00; */
-  background-color: #d3d1d8;
-  justify-content: center;
-  margin-top: 15px;
-  color: #ffffff;
-  border-radius: 10px;
-  border: none;
-  /* cursor:pointer; */
-  cursor: not-allowed;
-`;
-
-const Button1 = styled.button`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  display: flex;
-  align-items: center;
-  line-height: 140%;
-  width: 440px;
-  height: 64px;
-  background-color: #ff5c00;
-  justify-content: center;
-  margin-top: 15px;
-  color: #ffffff;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
 `;
 
 const Shape1 = styled.div`

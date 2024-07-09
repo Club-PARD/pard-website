@@ -12,6 +12,9 @@ import React, { useEffect } from "react";
 import ProjectDetailPage from "./pages/ProjectDetail";
 import NewsPage from "./pages/NewsPage";
 
+// TODO : 배너 모듈화
+// TODO : 이외 모듈화 필요한 부분 정리
+
 function App() {
   const tagManagerArgs = {
     gtmId: "GTM-MW5N2QW",
