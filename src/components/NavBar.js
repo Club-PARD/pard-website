@@ -4,29 +4,17 @@ import { theme } from "../styles/theme";
 import styled, { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
 import backgroundImg from "../assets/img/BannerImg/BannerImg.png";
-import closeButtonImg from "../assets/img/BannerImg/XButton.png";
-import bannerImg from "../assets/img/web_banner_3기.png";
+import { BannerWeb } from "./Web/Components/BannerWeb";
+import { pardDATA } from "../utils/data.constant";
 
 const NavBar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  // 배너 관련 코드.. 이때 총학 웹사이트 하고 바빴어서
-  // 유지보수 생각 안하고 코드 짬요.. 다음 개발 파트장님 죄송합니다..
-  const [isBannerVisible, setIsBannerVisible] = useState(false); // 여기 true로
-  const [isSticky, setIsSticky] = useState(false);
   const { pathname } = useLocation(); // 현재 페이지의 URL을 가져옴
 
-  const handleCloseBanner = () => {
-    setIsBannerVisible(false);
-    setIsSticky(false); // 여기 true로
-  };
-
   useEffect(() => {
-    setIsBannerVisible();
     function handleScroll() {
       const position = window.pageYOffset;
       setScrollPosition(position);
-      setIsSticky(position >= 0);
     }
 
     window.addEventListener("scroll", handleScroll, { passive: false }); // 여기 true로
@@ -36,18 +24,10 @@ const NavBar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // URL 경로가 "/Recruiting"인 경우에만 isBannerVisible를 false로 설정
-    setIsBannerVisible(pathname !== "/Recruiting");
-  }, [pathname]);
-
   return (
     <Div>
-      <NavBarWrapper
-        scrollPosition={scrollPosition}
-        isSticky={isSticky}
-        isBannerVisible={isBannerVisible}
-      >
+      {pardDATA.displayBanner ? <BannerWeb /> : null}
+      <NavBarWrapper scrollPosition={scrollPosition}>
         <ThemeProvider theme={theme}>
           <NavDiv>
             <Logo>
@@ -116,15 +96,11 @@ const NavBarWrapper = styled.nav`
   border: 1px #263af3;
   border-left: none;
   border-right: none;
-  top: ${({ isSticky, isBannerVisible }) =>
-    isBannerVisible ? (isSticky ? "0" : "12%") : "0%"};
-  /* margin-top: 100px; //배너 */
+  margin-top: ${pardDATA.displayBanner ? "100px" : "none"};
   position: relative;
 `;
 
 const NavDiv = styled.div`
-  /* min-width: 1600px;
-  max-width: 2000px; */
   width: 90.3%;
   display: flex;
   align-items: center;

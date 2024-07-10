@@ -3,6 +3,7 @@ import { theme } from "../../../styles/theme";
 import AboutImage from "../../../assets/img/AboutLogo.png";
 import ProgramFrame from "../../../assets/img/ProgramFrame.png";
 import React, { useState, useEffect } from "react";
+import { pardDATA } from "../../../utils/data.constant";
 
 function Projectirst() {
   return (
@@ -52,12 +53,13 @@ const PartDiv = styled.div`
   position: relative;
   padding-left: 268px;
   padding-right: 268px;
-  padding-bottom: 130px;
+  padding-bottom: ${pardDATA.displayBanner ? "230px" : "130px"};
   padding-top: 230px;
   /* height: 390px; */
   height: 48vh;
   display: flex;
   justify-content: center;
+
   overflow-x: hidden;
   background-color: #1a1a1a;
   transition: background-color 0.3s ease;
@@ -68,7 +70,7 @@ const AboutLogo = styled.img`
   width: 1020.27px;
   height: 390px;
   margin-left: 1005px;
-  margin-top: 140px;
+  margin-top: ${pardDATA.displayBanner ? "240px" : "140px"};
   transform: translate(-50%, -50%);
   opacity: 1;
 `;
@@ -93,7 +95,7 @@ const ProgramFrame1 = styled.img`
 
 const TextContainer = styled.div`
   position: absolute;
-  top: 47%;
+  top: ${pardDATA.displayBanner ? "475px" : "375px"};
   left: 50%;
   transform: translate(-50%, -50%);
 `;

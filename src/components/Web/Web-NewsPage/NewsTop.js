@@ -2,6 +2,7 @@ import styled from "styled-components";
 import top_logo from "../../../assets/img/news_page/news_pard_logo.png";
 import scroll from "../../../assets/img/news_page/scroll.png";
 import blue_line from "../../../assets/img/news_page/blue_line.png";
+import { pardDATA } from "../../../utils/data.constant";
 
 export default function NewsTop() {
   return (
@@ -22,6 +23,7 @@ const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: ${pardDATA.displayBanner ? "100px" : "none"};
 `;
 
 const Image = styled.img`

@@ -2,6 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React from "react";
 import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButtonWeb";
+import { pardDATA } from "../../../utils/data.constant";
 
 function RecruitingFirst() {
   const handleClick = () => {
@@ -60,7 +61,7 @@ const Header2 = styled.div`
   font-family: "NanumSquare Neo";
   font-style: normal;
   line-height: 140%;
-  margin-top: 0px;
+  margin-top: ${pardDATA.displayBanner ? "100px" : "0px"};
 `;
 
 const Header5 = styled.div`

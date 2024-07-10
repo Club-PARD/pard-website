@@ -1,6 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import Ask from "./InquiryContact_Web_Asked";
+import { pardDATA } from "../../../utils/data.constant";
 
 function InquiryContact() {
   return (
@@ -26,7 +27,7 @@ const Header2 = styled.div`
 const PartDiv = styled.div`
   margin: 0px auto;
   justify-content: center;
-  margin-top: 130px;
+  margin-top: ${pardDATA.displayBanner ? "230px" : "130px"};
   height: 893px;
   width: 1440px;
 `;
