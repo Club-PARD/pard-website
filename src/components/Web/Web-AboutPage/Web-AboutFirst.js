@@ -3,6 +3,7 @@ import { theme } from "../../../styles/theme";
 import AboutImage from "../../../assets/img/AboutLogo.png";
 import AboutFrame from "../../../assets/img/AboutFrame.png";
 import React, { useState, useEffect } from "react";
+import { pardDATA } from "../../../utils/data.constant";
 
 function AboutFirst() {
   return (
@@ -46,7 +47,7 @@ const PartDiv = styled.div`
   padding-left: 268px;
   padding-right: 268px;
   padding-bottom: 130px;
-  padding-top: 230px;
+  padding-top: ${pardDATA.displayBanner ? "330px" : "230px"};
   height: 390px;
   display: flex;
   justify-content: center;
@@ -85,7 +86,7 @@ const AboutFrame1 = styled.img`
 
 const TextContainer = styled.div`
   position: absolute;
-  top: 45%;
+  top: ${pardDATA.displayBanner ? "calc(45% + 100px)" : "45%"};
   left: 50%;
   transform: translate(-50%, -50%);
 `;

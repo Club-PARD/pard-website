@@ -9,7 +9,7 @@ import { pardDATA } from "../utils/data.constant";
 const NavBar_About = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { pathname } = useLocation();
-  const animatedPosition = pardDATA.displayBanner ? 588 : 685;
+  const animatedPosition = 688;
 
   useEffect(() => {
     function handleScroll() {
