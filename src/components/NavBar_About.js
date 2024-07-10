@@ -3,30 +3,18 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { theme } from "../styles/theme";
 import styled, { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
-import backgroundImg from "../assets/img/BannerImg/BannerImg.png";
-import closeButtonImg from "../assets/img/BannerImg/XButton.png";
-import bannerImg from "../assets/img/web_banner_3기.png";
+import { BannerWeb } from "./Web/Components/BannerWeb";
+import { pardDATA } from "../utils/data.constant";
 
 const NavBar_About = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { pathname } = useLocation();
-  const animatedPosition = 700; //리쿠르팅배너용 : 620px
-
-  // 배너 관련 코드.. 이때 총학 웹사이트 하고 바빴어서
-  // 유지보수 생각 안하고 코드 짬요.. 다음 개발 파트장님 죄송합니다..
-  const [isBannerVisible, setIsBannerVisible] = useState(false); // 여기 true로
-  const [isSticky, setIsSticky] = useState(false);
-
-  const handleCloseBanner = () => {
-    setIsBannerVisible(false);
-    setIsSticky(false); // 여기 true로
-  };
+  const animatedPosition = pardDATA.displayBanner ? 588 : 685;
 
   useEffect(() => {
     function handleScroll() {
       const position = window.pageYOffset;
       setScrollPosition(position);
-      setIsSticky(position >= 0); // 여기 49로
     }
 
     window.addEventListener("scroll", handleScroll, { passive: false }); // 여기 true로
@@ -38,13 +26,10 @@ const NavBar_About = () => {
 
   return (
     <Div>
-      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg} alt="banner"></img>
-      </BannerImg> */}
+      {pardDATA.displayBanner ? <BannerWeb /> : null}
       <NavBarWrapper
         scrollPosition={scrollPosition}
-        isSticky={isSticky}
-        isBannerVisible={isBannerVisible}
+        animatedPosition={animatedPosition}
       >
         <ThemeProvider theme={theme}>
           <NavDiv>
@@ -114,9 +99,6 @@ const NavBar_About = () => {
 
 export default NavBar_About;
 
-// scroll위치 800px
-// 3기 리쿠르팅 배너로인한 위치 620px
-
 const Div = styled.div`
   top: 0;
   margin: 0px auto;
@@ -127,8 +109,8 @@ const Div = styled.div`
 `;
 
 const NavBarWrapper = styled.nav`
-  background-color: ${({ scrollPosition }) =>
-    scrollPosition >= 700 ? "#FFFFFF" : "#1A1A1A"};
+  background-color: ${({ scrollPosition, animatedPosition }) =>
+    scrollPosition >= animatedPosition ? "#FFFFFF" : "#1A1A1A"};
   height: 70px;
   display: flex;
   justify-content: center;
@@ -139,15 +121,10 @@ const NavBarWrapper = styled.nav`
   border: 1px #263af3;
   border-left: none;
   border-right: none;
-
-  top: ${({ isSticky, isBannerVisible }) =>
-    isBannerVisible ? (isSticky ? "0" : "12%") : "0%"};
-  /* margin-top: 100px; // 배너용 */
+  margin-top: ${pardDATA.displayBanner ? "100px" : "none"};
 `;
 
 const NavDiv = styled.div`
-  /* min-width: 1600px;
-  max-width: 2000px; */
   width: 90.3%;
   display: flex;
   align-items: center;
@@ -191,66 +168,4 @@ const NavLinks = styled.ul`
 
 const NavItem = styled.li`
   margin-left: 50px;
-`;
-
-// 배너 관련 Style-components
-
-const MainText = styled.div`
-  color: #fff;
-  text-align: center;
-  font-family: "NanumSquare Neo variable";
-  font-size: 19.333px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 110%;
-  letter-spacing: 1.933px;
-`;
-
-const SubText = styled.div`
-  color: #fff;
-  text-align: center;
-  font-family: "NanumSquare Neo variable";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 110%;
-  margin-top: 8px;
-`;
-
-const BannerDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 120px;
-  position: absolute;
-  background-image: url(${backgroundImg});
-  background-size: contain;
-  pointer-events: none;
-`;
-
-const CloseButton = styled.img`
-  position: absolute;
-  top: 20px;
-  right: 31px;
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
-`;
-
-const BannerImg = styled.div`
-  width: 100vw;
-  height: 100px;
-
-  img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    text-align: center;
-  }
-
-  position: fixed;
-  cursor: pointer;
 `;

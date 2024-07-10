@@ -43,23 +43,6 @@ const NavBar = () => {
 
   return (
     <Div>
-      {/* {isBannerVisible && (
-        <NavLink to="/Recruiting" style={{ textDecoration: "none" }}>
-        <BannerDiv>
-            <CloseButton
-              src={closeButtonImg}
-              onClick={handleCloseBanner}
-              isBannerVisible={isBannerVisible}
-            />
-            <MainText>PARD 2기 신입기수 리쿠르팅 시작</MainText>
-            <SubText>지원서 접수 기간 : 08.14(월) - 08.25(금)</SubText>
-          </BannerDiv>
-          </NavLink>
-        )} */}
-
-      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg}></img>
-      </BannerImg> */}
       <NavBarWrapper
         scrollPosition={scrollPosition}
         isSticky={isSticky}
