@@ -78,7 +78,6 @@ const AboutFrame1 = styled.img`
   position: absolute;
   height: 40px;
   width: 100%;
-  /* margin-top: 550px; */
   bottom: 0%;
   border-radius: 0px;
   padding: 0px 30px;

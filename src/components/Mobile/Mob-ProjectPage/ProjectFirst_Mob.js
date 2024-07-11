@@ -3,6 +3,7 @@ import { theme } from "../../../styles/theme";
 import React from "react";
 import AboutImage from "../../../assets/img/AboutLogo.png";
 import ProgramFrame from "../../../assets/img/Program_Mob_Bar.png";
+import { pardDATA } from "../../../utils/data.constant";
 
 function ProjectFirst_Mob() {
   return (
@@ -66,7 +67,7 @@ const ButtonText1 = styled.div`
 const PartDiv = styled.div`
   /* height: 500px; */
   height: 100vh;
-  margin-top: 100px;
+  margin-top: ${pardDATA.displayBanner ? "200px" : "100px"};
   position: relative;
   width: 100%;
   display: flex;

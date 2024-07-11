@@ -1,6 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import Askmobile from "./InquiryContact_Mob_ASked";
+import { pardDATA } from "../../../utils/data.constant";
 
 function InquiryContactMob() {
   return (
@@ -20,6 +21,6 @@ const PartDiv = styled.div`
 
   margin: 0px auto;
   padding-right: 6px;
-  padding-top: 45px;
+  padding-top: ${pardDATA.displayBanner ? "145px" : "45px"};
   height: 800px;
 `;

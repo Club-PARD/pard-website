@@ -1,12 +1,9 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import { RecruitmentStatusButtonMob } from "../Components/RecruitmentStatusButtonMob";
+import { pardDATA } from "../../../utils/data.constant";
 
 function RecruitingFirstMob() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-
   return (
     <Div>
       <PartDiv>
@@ -70,7 +67,7 @@ const PartDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: ${pardDATA.displayBanner ? "120px" : "20px"};
 `;
 
 const ButtonDiv = styled.div`

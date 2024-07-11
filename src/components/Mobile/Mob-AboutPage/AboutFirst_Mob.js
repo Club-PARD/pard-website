@@ -3,6 +3,7 @@ import { theme } from "../../../styles/theme";
 import React from "react";
 import AboutImage from "../../../assets/img/AboutLogo.png";
 import AboutFrame from "../../../assets/img/About_Mob_Bar.png";
+import { pardDATA } from "../../../utils/data.constant";
 
 function AboutFirst_Mob() {
   return (
@@ -42,7 +43,6 @@ const Header8 = styled.div`
   position: relative;
   line-height: 140%;
   margin-bottom: 215px;
-  margin-top: 50px; //3기 리쿠르팅
 `;
 
 const PartDiv = styled.div`
@@ -54,6 +54,7 @@ const PartDiv = styled.div`
   align-items: center; /* 수직 가운데 정렬 */
   justify-content: center; /* 수평 가운데 정렬 */
   background-color: #1a1a1a;
+  margin-top: ${pardDATA.displayBanner ? "100px" : "none"};
 `;
 
 const Div = styled.div`

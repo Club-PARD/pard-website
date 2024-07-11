@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import MenuBar_white from "../assets/img/MenuBar_white.png";
 import MenuBar_black from "../assets/img/MenuBar_black.png";
 import bannerImg from "../assets/img/mob_banner_3기.png";
+import { pardDATA } from "../utils/data.constant";
+import { BannerMob } from "./Mobile/Components/BannerMob";
 
 const NavBarMov = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,9 +17,7 @@ const NavBarMov = () => {
 
   return (
     <div>
-      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg} />
-      </BannerImg> */}
+      {pardDATA.displayBanner ? <BannerMob /> : null}
       <Nav isOpen={isOpen}>
         <ThemeProvider theme={theme}>
           <Logo>
@@ -25,6 +25,7 @@ const NavBarMov = () => {
               <LogoImg src={require("../assets/img/Logo.png")} alt="Logo" />
             </Link>
           </Logo>
+          {/* TODO : button 모듈화 */}
           <MenuButton scrollPosition={scrollPosition} onClick={toggleMenu}>
             <img
               src={MenuBar_white}
@@ -34,6 +35,7 @@ const NavBarMov = () => {
             />
           </MenuButton>
           <Menu isOpen={isOpen}>
+            {/* TODO: map */}
             <Link to="/About" style={{ textDecoration: "none" }}>
               <Subtitle2>소개</Subtitle2>
             </Link>
@@ -75,7 +77,7 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border-bottom: none;
-  /* margin-top: 100px; //3기 리쿠르팅 */
+  margin-top: ${pardDATA.displayBanner ? "100px" : "none"};
 `;
 
 const Logo = styled.div`
@@ -105,7 +107,7 @@ const Menu = styled.div`
   padding: 1rem 5rem;
   text-align: center;
   margin-top: 4px;
-  /* margin-top: 84px; //임시 */
+  margin-top: ${pardDATA.displayBanner ? "84px" : "none"};
 `;
 
 const Subtitle2 = styled.div`

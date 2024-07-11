@@ -5,12 +5,13 @@ import { theme } from "../styles/theme";
 import { Link } from "react-router-dom";
 import MenuBar_white from "../assets/img/MenuBar_white.png";
 import MenuBar_black from "../assets/img/MenuBar_black.png";
-import bannerImg from "../assets/img/mob_banner_3기.png";
+import { pardDATA } from "../utils/data.constant";
+import { BannerMob } from "./Mobile/Components/BannerMob";
 
 const NavBarMov_About = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
-
+  const animatedPosition = 630;
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
@@ -26,10 +27,12 @@ const NavBarMov_About = () => {
 
   return (
     <>
-      {/* <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
-        <img src={bannerImg} />
-      </BannerImg> */}
-      <Nav scrollPosition={scrollPosition} isOpen={isOpen}>
+      {pardDATA.displayBanner ? <BannerMob /> : null}
+      <Nav
+        scrollPosition={scrollPosition}
+        animatedPosition={animatedPosition}
+        isOpen={isOpen}
+      >
         <ThemeProvider theme={theme}>
           <Logo>
             <Link to="/">
@@ -41,7 +44,7 @@ const NavBarMov_About = () => {
               src={
                 isOpen
                   ? MenuBar_white
-                  : scrollPosition >= 650
+                  : scrollPosition >= animatedPosition
                   ? MenuBar_black
                   : MenuBar_white
               }
@@ -51,6 +54,7 @@ const NavBarMov_About = () => {
             />
           </MenuButton>
           <Menu isOpen={isOpen}>
+            {/* TODO : map */}
             <Link to="/About" style={{ textDecoration: "none" }}>
               <Subtitle2>소개</Subtitle2>
             </Link>
@@ -75,12 +79,13 @@ const NavBarMov_About = () => {
 
 export default NavBarMov_About;
 
-//scroll default 위치 : 650px
-//3기 리쿠르팅 배너 기준 scroll 위치 :550
-
 const Nav = styled.nav`
-  background-color: ${({ isOpen, scrollPosition }) =>
-    isOpen ? "#1A1A1A" : scrollPosition <= 650 ? "#1A1A1A" : "#FFFFFF"};
+  background-color: ${({ isOpen, scrollPosition, animatedPosition }) =>
+    isOpen
+      ? "#1A1A1A"
+      : scrollPosition <= animatedPosition
+      ? "#1A1A1A"
+      : "#FFFFFF"};
   color: white;
   display: flex;
   align-items: center;
@@ -92,7 +97,7 @@ const Nav = styled.nav`
   height: 69px;
   z-index: 999;
   border: none;
-  /* margin-top: 100px; //3기 리쿠르팅 */
+  margin-top: ${pardDATA.displayBanner ? "100px" : "none"};
 `;
 
 const Logo = styled.div`
@@ -122,8 +127,7 @@ const Menu = styled.div`
   padding: 1rem 5rem;
   text-align: center;
   height: 237px;
-  margin-top: 4px; // default
-  /* margin-top: 84px; //3기 리쿠르팅 */
+  margin-top: ${pardDATA.displayBanner ? "84px" : "4px"};
 `;
 
 const Subtitle2 = styled.div`
@@ -144,20 +148,4 @@ const Hr = styled.hr`
 const LogoImg = styled.img`
   width: 120px;
   height: 25px;
-`;
-
-const BannerImg = styled.div`
-  width: 100%;
-  height: 100px;
-
-  img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    text-align: center;
-  }
-
-  z-index: 1000;
-  position: fixed;
-  cursor: pointer;
 `;
