@@ -70,6 +70,10 @@ const NavBarMov_About = () => {
             <Link to="/Recruiting" style={{ textDecoration: "none" }}>
               <Subtitle2>리쿠르팅</Subtitle2>
             </Link>
+            <Hr />
+            <Link to="/news" style={{ textDecoration: "none" }}>
+              <Subtitle2>성과</Subtitle2>
+            </Link>
           </Menu>
         </ThemeProvider>
       </Nav>
