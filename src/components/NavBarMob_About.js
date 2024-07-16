@@ -130,7 +130,7 @@ const Menu = styled.div`
   background-color: rgba(26, 26, 26, 0.8); // 여기가 NavBar 투명도
   padding: 1rem 5rem;
   text-align: center;
-  height: 237px;
+  height: 270px;
   margin-top: ${pardDATA.displayBanner ? "84px" : "4px"};
 `;
 
