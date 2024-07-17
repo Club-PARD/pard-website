@@ -1,8 +1,5 @@
-import React, { useState } from "react";
-import styled, { ThemeProvider } from "styled-components";
-import { FaBars } from "react-icons/fa";
-import { theme } from "../styles/theme";
-import { Link } from "react-router-dom";
+import React from "react";
+import styled from "styled-components";
 
 function FooterMov() {
   return (

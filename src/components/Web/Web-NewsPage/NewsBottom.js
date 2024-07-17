@@ -33,7 +33,3 @@ const BottomContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-// const Text = styled.p`
-// 	margin
-// `;

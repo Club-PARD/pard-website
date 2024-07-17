@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { FaBars } from "react-icons/fa";
 import { theme } from "../styles/theme";
 import { Link } from "react-router-dom";
 import MenuBar_white from "../assets/img/MenuBar_white.png";

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
-import NavBarMov from "../components/NavBarMov";
 import AboutVision from "../components/Web/Web-AboutPage/Web-AboutVision";
 import AboutFirst from "../components/Web/Web-AboutPage/Web-AboutFirst";
 import AboutPart from "../components/Web/Web-AboutPage/Web-AboutPart";
@@ -17,7 +16,6 @@ import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
 import NavBar_About from "../components/NavBar_About";
 import NavBarMov_About from "../components/NavBarMob_About";
-import TemporaryPage from "../components/temporaryPage";
 
 function AboutPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰 전환
@@ -50,7 +48,6 @@ function AboutPage() {
         </AboutPageComponent_Web>
       ) : (
         <AboutPageComponent_Mob>
-          {/* <TemporaryPage/>  */}
           <NavBarMov_About />
           <AboutFirst_Mob />
           <AboutVision_Mob />

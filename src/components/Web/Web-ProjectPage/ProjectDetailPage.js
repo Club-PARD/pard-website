@@ -18,7 +18,6 @@ function ProjectDetail() {
     const docRef = doc(dbService, "Project", id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      // console.log("Document data:", docSnap.data());
       setDetailProjects(docSnap.data());
     } else {
       navigate("*");
@@ -26,7 +25,6 @@ function ProjectDetail() {
   };
 
   useEffect(() => {
-    // console.log("id :", id);
     fetchProjects();
   }, []);
 
@@ -149,17 +147,6 @@ function ProjectDetail() {
                       </ContentsText>
                     </>
                   )}
-                  {/* <ContainerTeam>
-                    <Header5 style={{ marginRight: "30px", color: "#7B3FEF" }}>
-                      팀소개
-                    </Header5>
-                    <Icon
-                      src={require("../../../assets/img/arrowButton.png")}
-                      width={"22px"}
-                      height={"33px"}
-                    />
-                  </ContainerTeam> */}
-
                   <ToolListDiv>
                     {detailProjects.link && (
                       <>
@@ -450,14 +437,7 @@ const Container = styled.div`
   display: grid;
   height: 36px;
   /* background-color: red; */
-  grid-template-columns: repeat(
-    ${(props) => props.numOfColumns || 3},
-    1fr
-  ); /* prop으로 전달된 값 사용 */
-  /* row-gap: 10px; */
-  /* column-gap: 1.5px; */
-  /* margin-top: 43px; */
-  /* margin-top: ${(props) => props.marginTop || "18px"}; */
+  grid-template-columns: repeat(${(props) => props.numOfColumns || 3}, 1fr);
 `;
 
 const ContainerTeam = styled.div`

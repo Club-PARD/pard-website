@@ -129,12 +129,6 @@ const buttons = [
     hoverColor: "#FF5C00",
     vectorImage: DevelopVector,
     selectedImage: SelectedVector,
-    /*
-		showButton: true,
-		buttonText: "사전과제!",
-*/
-    // showButton2: true,
-    // buttonText2: "New!",
   },
   {
     title: "WEB",

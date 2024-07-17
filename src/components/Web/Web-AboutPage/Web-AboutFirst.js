@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import AboutImage from "../../../assets/img/AboutLogo.png";
 import AboutFrame from "../../../assets/img/AboutFrame.png";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { pardDATA } from "../../../utils/data.constant";
 
 function AboutFirst() {

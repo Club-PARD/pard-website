@@ -4,9 +4,6 @@ import React from "react";
 import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButtonWeb";
 
 function RecruitingLast() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
   return (
     <Div>
       <PartDiv>

@@ -26,8 +26,6 @@ const PartDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-image: url(${require("../../../assets/img/ProjectLast.png")}); */
-  /* background-size: cover; */
   background-repeat: no-repeat;
   text-align: center;
 `;

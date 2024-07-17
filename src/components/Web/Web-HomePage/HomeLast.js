@@ -3,9 +3,6 @@ import { theme } from "../../../styles/theme";
 import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButtonWeb";
 
 function HomeLast() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
   return (
     <Div>
       <PartDiv>

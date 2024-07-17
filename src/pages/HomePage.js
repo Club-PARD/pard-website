@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import HomePartWeb from "../components/Web/Web-HomePage/HomePart";
-import HomeProgramWeb from "../components/Web/Web-HomePage/HomeProgram";
 import HomePartnerWeb from "../components/Web/Web-HomePage/HomePartner";
 import HomeLastWeb from "../components/Web/Web-HomePage/HomeLast";
 import HomeMentorWeb from "../components/Web/Web-HomePage/HomeMentor";
@@ -19,7 +18,6 @@ import FooterMov from "../components/FooterMov";
 import HomeSecondMob from "../components/Mobile/Mob-HomePage/HomeSecond_Mob";
 import ProgramsTrain from "../components/Web/Web-ProjectPage/ProgramsTrain";
 import NavBarMob_Home from "../components/NavBarMob_Home";
-import TemporaryPage from "../components/temporaryPage";
 
 function HomePage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -41,7 +39,6 @@ function HomePage() {
       ) : (
         <HomePageComponent_Mob>
           <NavBarMob_Home />
-          {/* <TemporaryPage /> */}
           <HomeVideoMob />
           <HomeSecondMob />
           <HomePartsMob />

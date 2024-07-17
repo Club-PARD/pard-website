@@ -18,7 +18,6 @@ import RecruitingReviewMob from "../components/Mobile/Mob-RecrutingPage/Recruiti
 import RecruitingAboutMob from "../components/Mobile/Mob-RecrutingPage/RecruitingAbout_Mob";
 import RecruitingLastMob from "../components/Mobile/Mob-RecrutingPage/RecruitingLast_Mob";
 import FooterMov from "../components/FooterMov";
-import TemporaryPage from "../components/temporaryPage";
 
 function RecruitingPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -47,7 +46,6 @@ function RecruitingPage() {
           <RecruitingReviewMob />
           <RecruitingAboutMob />
           <RecruitingLastMob />
-          {/* <TemporaryPage/> */}
           <FooterMov />
         </RecruitingPageComponent_Mob>
       )}

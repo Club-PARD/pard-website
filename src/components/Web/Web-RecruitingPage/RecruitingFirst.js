@@ -5,10 +5,6 @@ import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButto
 import { pardDATA } from "../../../utils/data.constant";
 
 function RecruitingFirst() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-
   return (
     <Div>
       <PartDiv>

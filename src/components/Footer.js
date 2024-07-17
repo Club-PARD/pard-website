@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { theme } from "../styles/theme";
 import styled, { ThemeProvider } from "styled-components";
 

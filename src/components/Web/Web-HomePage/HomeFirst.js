@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 const HomeFirst = () => {
   const [text, setText] = useState("PARD"); // text변화
@@ -32,7 +32,6 @@ const HomeFirst = () => {
     } else if (position >= 100 && position < 650) {
       setchanged("a");
       setText("PARD");
-
       setIsFixed(true);
       setIsVisible(true);
       setbackcolor(true);
@@ -108,13 +107,6 @@ const HomeFirst = () => {
       setchanged("ddd");
     }
   }, [position, isVisible]);
-
-  /*
-    if (position >= 750 && position < 1200 && isVisible) {
-      setIsAnimation(true);
-      setIsVisible(true);
-    } }, [position,isVisible]);
-    */
   document.documentElement.style.overflowX = "hidden";
   return (
     <>
@@ -180,20 +172,7 @@ const HomeFirst = () => {
                     </Text2>
                   </SplitTextContainer>
                 </>
-              ) : /*
-:changed==='bc' ?  
-<>
-
-<SplitTextContainer isVisible={isVisible}>
-<Text1 style={{ transform: `translateX(-${position-250}px)` }}>{text1}</Text1>
-<Text2 isAnimation={isAnimation}>{text2}</Text2>
-<MovedText isAnimation={isAnimation}>{text3}</MovedText> 
-</SplitTextContainer>
-
-</>
-*/
-
-              changed === "c" ? (
+              ) : changed === "c" ? (
                 <>
                   <SplitTextContainer isVisible={isVisible}>
                     <Text1 style={{ transform: `translateX(-${338}px)` }}>
@@ -203,15 +182,6 @@ const HomeFirst = () => {
                       {text2}
                     </Text2>
                   </SplitTextContainer>
-                  {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
-
-                  {/*isSplitTextVisible && (
-<TextContainer2 isVisible={isVisible}>
-<Textchanged1 isAnimation={isAnimation} isExpanded={isExpanded}>
-{text}
-</Textchanged1>
-</TextContainer2>
-)*/}
                 </>
               ) : changed === "cd" ? (
                 <>
@@ -229,7 +199,6 @@ const HomeFirst = () => {
                       {text3}
                     </MovedText>
                   </SplitTextContainer>
-                  {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
                 </>
               ) : changed === "cdd" ? (
                 <>
@@ -247,10 +216,6 @@ const HomeFirst = () => {
                       {text3}
                     </MovedText>
                   </SplitTextContainer>
-                  {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
-
-                  {/*위에 컴포넌트 그전 스크롤에서 나타난것들 고정되게 하고 스크롤 내리면 딱 animation으로 나타난다*/}
-
                   <TextContainer2 isVisible={isVisible}>
                     <Textchanged1
                       isAnimation={isSplitTextVisible}
@@ -259,9 +224,6 @@ const HomeFirst = () => {
                       {text}
                     </Textchanged1>
                   </TextContainer2>
-                  {/*컴포넌트를 감싸는 조건문으로 설정하니까 animation이 안먹었음
-근데 애초에 택스트에 애니메이션을 걸어놔야 되는 것 같기도 하고
-그래서 Textchanged1에 애니메이션 넣음*/}
                 </>
               ) : changed === "d" ? (
                 <TextContainer3 isVisible={isVisible}>
@@ -290,7 +252,6 @@ const HomeFirst = () => {
 export default HomeFirst;
 
 const VideoContainer = styled.div`
-  /* position:${({ isFixed }) => (isFixed ? "sticky" : "relative")}; */
   position: sticky;
   top: 0;
   width: 100%;
@@ -331,12 +292,6 @@ const expandAnimation = keyframes`
     opacity: 0;
     letter-spacing: 0;
   }
-  /*
-  50% {
-    opacity: 1;
-    letter-spacing: 0;
-  }
- */ 
   100% {
     opacity: 1;
     letter-spacing: 0;
@@ -436,13 +391,6 @@ const Text1 = styled.p`
   color: white;
 
   transition: transform 2s ease-in-out forwards;
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveLeft} 1s ease-in-out forwards
-        `
-      : "none"}; */
-  // forwards로 벌리고 난 뒤에 고정
 `;
 
 const Text2 = styled(Text)`
@@ -453,13 +401,6 @@ const Text2 = styled(Text)`
   line-height: 140%;
   color: white;
   transition: transform 0.5s ease-in-out forwards;
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveRight} 1s ease-in-out forwards
-        `
-      : "none"}; */
-  // forwards로 벌리고 난 뒤에 고정
 `;
 const Textchanged1 = styled.p`
   font-family: "NanumSquare Neo";
@@ -496,8 +437,6 @@ const Textchanged2 = styled.p`
         ${expandAnimation} 1s ease-in-out forwards
       `}
     `};
-
-  //letter-spacing: ${({ isExpanded }) => (isExpanded ? "0.5em" : "0")};
 `;
 
 const BackgroundOverlay = styled.div`
@@ -525,26 +464,6 @@ const LogoDiv = styled.div`
   z-index: 0;
 `;
 
-const moveLeft = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-300px); // adjust this value to control the distance of expansion
-  }
-`;
-// 왼쪽으로 움직이는거 PA가
-
-const moveRight = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(400px); // adjust this value to control the distance of expansion
-  }
-`;
-//// 오른쪽으로 움직이는거 RD가
-
 const moveUp = keyframes`
   from {
     transform: translateY(50%); // adjust this value to control the distance of movement
@@ -571,12 +490,6 @@ const MovedText = styled.div`
       `}//2초만에 나타나서 고정이 된다
       // forwards
     `};
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveUp} 1s ease-in-out both 0.5s
-        `
-      : "none"}; */
   //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다.
   // forwards 0.5s는 added 0.5s delay
   // 위에 태그들 즉 Text1,Text2 가 끝나고 0.5s뒤에 실행

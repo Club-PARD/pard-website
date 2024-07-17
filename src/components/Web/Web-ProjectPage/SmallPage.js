@@ -1,9 +1,8 @@
 import styled, { ThemeProvider } from "styled-components";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { theme } from "../../../styles/theme";
 import { gsap } from "gsap/all";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Programsasdf from "../Web-ProjectPage/Programsasdf";
 gsap.registerPlugin(ScrollTrigger);
 
 function SmallPage() {

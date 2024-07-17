@@ -1,5 +1,3 @@
-// import { useParams } from "react-router-dom";
-// import { useState, useEffect } from "react";
 import Navbar from "../components/NavBar";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";

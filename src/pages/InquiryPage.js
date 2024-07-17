@@ -1,5 +1,3 @@
-// import { useParams } from "react-router-dom";
-// import { useState, useEffect } from "react";
 import Navbar from "../components/NavBar";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
@@ -12,7 +10,6 @@ import InquiryLastMob from "../components/Mobile/Mob-InquiryPage/InquiryLast_Mob
 import NavBarMov from "../components/NavBarMov";
 import Footer from "../components/Footer";
 import FooterMov from "../components/FooterMov";
-import TemporaryPage from "../components/temporaryPage";
 
 function InquiryPage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -33,7 +30,6 @@ function InquiryPage() {
           <InquiryContactMob />
           <InquiryManagemaentMob />
           <InquiryLastMob />
-          {/* <TemporaryPage/> */}
           <FooterMov />
         </InquiryPageComponent_Mob>
       )}

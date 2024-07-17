@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import img1 from "../../../assets/img/서핑데이1.png";
 import img2 from "../../../assets/img/서핑데이2.png";
 import img3 from "../../../assets/img/서핑데이3.png";

@@ -4,10 +4,6 @@ import AboutFrame_Down from "../../../assets/img/AboutFrame_Down.png";
 import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButtonWeb";
 
 function AboutLast() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-
   return (
     <Div>
       <PartDiv>

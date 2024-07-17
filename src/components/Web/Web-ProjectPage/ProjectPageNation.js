@@ -1,4 +1,3 @@
-// src/components/ProjectGrid.js
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { dbService } from "../../../fbase";

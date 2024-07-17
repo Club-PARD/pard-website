@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { FaBars } from "react-icons/fa";
 import { theme } from "../styles/theme";
 import { Link } from "react-router-dom";
 import MenuBar_white from "../assets/img/MenuBar_white.png";
@@ -61,12 +60,6 @@ const NavBarMob_Home = () => {
 export default NavBarMob_Home;
 
 const Nav = styled.nav`
-  /* background-color: ${(props) =>
-    props.isOpen
-      ? props.scrollPosition <= 10000
-        ? "#1A1A1A"
-        : "rgba(26, 26, 26, 0.8)"
-      : "rgba(0,0,0,0)"}; */
   background-color: ${({ isOpen, scrollPosition }) =>
     isOpen
       ? "rgba(26, 26, 26, 0.8)"
