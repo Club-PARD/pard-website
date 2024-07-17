@@ -101,7 +101,6 @@ const Header7 = styled.div`
   font-family: "NanumSquare Neo";
   padding-top: 30px;
   white-space: pre-line;
-  /* padding-left: 18px; */
   margin-right: 100px;
 `;
 
@@ -112,7 +111,6 @@ const Subtitle3 = styled.div`
   font-family: "NanumSquare Neo";
   white-space: pre-line;
   padding-top: 30px;
-  /* padding-left: 18px; */
 `;
 
 const DisquietImage1 = styled.img`

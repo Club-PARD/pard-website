@@ -15,6 +15,7 @@ function AboutProgram_Mob() {
       id: 1,
       listNum: "01",
       listCon: "세미나 & 연합세미나",
+      // TODO: theme
       border_color: "#FF5C00",
       imgsrc: AboutSeminarImage,
       selected: true,

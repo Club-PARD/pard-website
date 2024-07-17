@@ -203,9 +203,3 @@ const Verticalline3 = styled.div`
   margin-bottom: 43px;
   margin-top: -15px;
 `;
-
-const Textbox1 = styled.div`
-  display: flex;
-  height: 44px;
-  width: 229px;
-`;

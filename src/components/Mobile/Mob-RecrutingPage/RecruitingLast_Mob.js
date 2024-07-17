@@ -3,10 +3,6 @@ import { theme } from "../../../styles/theme";
 import { RecruitmentStatusButtonMob } from "../Components/RecruitmentStatusButtonMob";
 
 function RecruitingLastMob() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
-
   return (
     <Div>
       <PartDiv>

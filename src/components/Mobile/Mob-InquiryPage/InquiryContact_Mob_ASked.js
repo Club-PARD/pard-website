@@ -94,8 +94,6 @@ const Margin = styled.div`
 const Askstyledd = styled.div`
   white-space: nowrap;
   margin-top: 140px; //3기 리쿠르팅용
-  /* margin-top: 110px; //간격 좀 내림 */
-
   margin-left: 8px;
   width: 273px;
   height: 84px;
@@ -105,7 +103,6 @@ const Askstyledd = styled.div`
   font-size: ${(props) => props.theme.Mob_fontSizes.Header8};
   line-height: 140%;
   /* or 42px */
-
   color: #ffffff;
 `;
 
@@ -139,11 +136,6 @@ const Informbox1 = styled.div`
   cursor: pointer;
   color: ${(props) => (props.clicked ? "#5262f5" : "#ffffff")};
 `;
-
-const handleInformbox1Click = () => {
-  const mailtoLink = "mailto:official@we-pard.com";
-  window.open(mailtoLink, "_blank");
-};
 
 const Mail = styled.div`
   white-space: nowrap;

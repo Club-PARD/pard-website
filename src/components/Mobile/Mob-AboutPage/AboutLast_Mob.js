@@ -2,13 +2,9 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import AboutFrame from "../../../assets/img/About_Mob_Bar_Last.png";
 import React from "react";
-import { pardDATA } from "../../../utils/data.constant";
 import { RecruitmentStatusButtonMob } from "../Components/RecruitmentStatusButtonMob";
 
 function AboutLast_Mob() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
   return (
     <Div>
       <PartDiv>

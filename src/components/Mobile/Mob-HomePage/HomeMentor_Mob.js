@@ -1,10 +1,8 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-// import PlanerImage from '../../../assets/img/Planner_parts.png';
 import 하조은 from "../../../assets/img/하조은.png";
 import 주영민 from "../../../assets/img/주영민.png";
 import 김강학 from "../../../assets/img/김강학.png";
-import 김선엽 from "../../../assets/img/김선엽.png";
 
 function MentorCard(props) {
   return (

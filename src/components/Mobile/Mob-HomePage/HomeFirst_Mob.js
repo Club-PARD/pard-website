@@ -1,6 +1,6 @@
 import styled, { css, keyframes, ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { detect } from "detect-browser";
 
 const browser = detect();
@@ -20,13 +20,9 @@ const HomeVideoMob = () => {
   const [isChrome, setIsChrome] = useState(false); // 사파리인지 아닌지 구분
 
   const position = useScrollPosition();
-  const stopPosition = 1200;
 
   useEffect(() => {
     const absPosition = Math.abs(position);
-    // var userAgent = navigator.userAgent.toLowerCase();
-    const userAgent = window.navigator.userAgent;
-    // const isSafariBrowser = /^((?!chrome|android).)*safari/i.test(userAgent);
     const isChromeBrowser =
       browser.name === "chrome" || browser.name === "ios" ? true : false;
 
@@ -86,7 +82,6 @@ const HomeVideoMob = () => {
       setText3("Y it FORWA");
       setIsFixed(true);
       setIsVisible(true);
-
       setbackcolor(true);
       setIsAnimation(true);
       setText("실천하는 IT 협업 동아리");
@@ -114,13 +109,6 @@ const HomeVideoMob = () => {
       setbackcolor(true);
     }
   }, [position, isVisible]);
-
-  /*
-  if (position >= 750 && position < 1200 && isVisible) {
-    setIsAnimation(true);
-    setIsVisible(true);
-  } }, [position,isVisible]);
-  */
 
   return (
     <>
@@ -192,20 +180,7 @@ const HomeVideoMob = () => {
                       </Text2>
                     </SplitTextContainer>
                   </>
-                ) : /*
-                      :changed==='bc' ?  
-                      <>
-                      
-                      <SplitTextContainer isVisible={isVisible}>
-                      <Text1 style={{ transform: `translateX(-${position-250}px)` }}>{text1}</Text1>
-                      <Text2 isAnimation={isAnimation}>{text2}</Text2>
-                      <MovedText isAnimation={isAnimation}>{text3}</MovedText> 
-                      </SplitTextContainer>
-                      
-                      </>
-                      */
-
-                changed === "c" ? (
+                ) : changed === "c" ? (
                   <>
                     <SplitTextContainer isVisible={isVisible}>
                       <Text1 style={{ transform: `translateX(-${121}px)` }}>
@@ -215,15 +190,6 @@ const HomeVideoMob = () => {
                         {text2}
                       </Text2>
                     </SplitTextContainer>
-                    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
-
-                    {/*isSplitTextVisible && (
-        <TextContainer2 isVisible={isVisible}>
-        <Textchanged1 isAnimation={isAnimation} isExpanded={isExpanded}>
-        {text}
-        </Textchanged1>
-        </TextContainer2>
-        )*/}
                   </>
                 ) : changed === "cd" ? (
                   <>
@@ -241,7 +207,6 @@ const HomeVideoMob = () => {
                         {text3}
                       </MovedText>
                     </SplitTextContainer>
-                    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
                   </>
                 ) : changed === "cdd" ? (
                   <>
@@ -268,18 +233,6 @@ const HomeVideoMob = () => {
                         </Textchanged1>
                       </TextContainer2>
                     </SplitTextContainer>
-                    {/* 스크롤 지점에 한번 더 이걸 두니까 고정이 된다*/}
-
-                    {/*위에 컴포넌트 그전 스크롤에서 나타난것들 고정되게 하고 스크롤 내리면 딱 animation으로 나타난다*/}
-
-                    {/*  <TextContainer2   isVisible={isVisible}>
-        <Textchanged1 isAnimation={isSplitTextVisible} isExpanded={isExpanded}>
-        {text}
-        </Textchanged1>
-      </TextContainer2>*/}
-                    {/*컴포넌트를 감싸는 조건문으로 설정하니까 animation이 안먹었음
-        근데 애초에 택스트에 애니메이션을 걸어놔야 되는 것 같기도 하고
-        그래서 Textchanged1에 애니메이션 넣음*/}
                   </>
                 ) : changed === "d" ? (
                   <TextContainer3 isVisible={isVisible}>
@@ -301,7 +254,6 @@ const HomeVideoMob = () => {
                     ></TextContainer1>
                   )
                 )}
-
                 <BackgroundOverlay backcolor={backcolor} />
               </>
             )}
@@ -315,12 +267,10 @@ const HomeVideoMob = () => {
 export default HomeVideoMob;
 
 const VideoContainer = styled.div`
-  /* position:${({ isFixed }) => (isFixed ? "sticky" : "relative")}; */
   position: sticky;
   top: 0;
   width: 100%;
   height: 110vh;
-  //min-width: 420px; // 아무리 줄여도 1440px로 유지됨
   margin: 0 auto;
   overflow: hidden;
   background-color: ${({ isColor }) =>
@@ -357,12 +307,6 @@ const expandAnimation = keyframes`
     opacity: 0;
     letter-spacing: 0;
   }
-  /*
-  50% {
-    opacity: 1;
-    letter-spacing: 0;
-  }
- */ 
   100% {
     opacity: 1;
     letter-spacing: 0;
@@ -462,15 +406,7 @@ const Text1 = styled.p`
   font-size: 42px;
   line-height: 140%;
   color: white;
-
   transition: transform 6s ease-in-out forwards;
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveLeft} 1s ease-in-out forwards
-        `
-      : "none"}; */
-  // forwards로 벌리고 난 뒤에 고정
 `;
 
 const Text2 = styled(Text)`
@@ -481,13 +417,6 @@ const Text2 = styled(Text)`
   line-height: 140%;
   color: white;
   transition: transform 0.5s ease-in-out forwards;
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveRight} 1s ease-in-out forwards
-        `
-      : "none"}; */
-  // forwards로 벌리고 난 뒤에 고정
 `;
 const Textchanged1 = styled.p`
   font-family: "NanumSquare Neo";
@@ -495,8 +424,6 @@ const Textchanged1 = styled.p`
   font-weight: ${(props) => props.theme.fontWeights.Header8};
   font-size: ${(props) => props.theme.Mob_fontSizes.Header8};
   line-height: 140%;
-  /* identical to box height, or 84px */
-
   text-align: center;
   color: #ffffff;
   animation: ${({ isAnimation }) =>
@@ -524,8 +451,6 @@ const Textchanged2 = styled.p`
         ${expandAnimation} 0.5s ease-in-out
       `}
     `};
-
-  //letter-spacing: ${({ isExpanded }) => (isExpanded ? "0.5em" : "0")};
 `;
 
 const BackgroundOverlay = styled.div`
@@ -554,26 +479,6 @@ const LogoDiv = styled.div`
   z-index: 0;
 `;
 
-const moveLeft = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-300px); // adjust this value to control the distance of expansion
-  }
-`;
-// 왼쪽으로 움직이는거 PA가
-
-const moveRight = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(400px); // adjust this value to control the distance of expansion
-  }
-`;
-//// 오른쪽으로 움직이는거 RD가
-
 const moveUp = keyframes`
   from {
     transform: translateY(50%); // adjust this value to control the distance of movement
@@ -584,6 +489,7 @@ const moveUp = keyframes`
     opacity: 1;
   }
 `; // Y if FORWA가 올라가는 위치 조정, opacity로 보이는 거 조절
+
 const MovedText = styled.div`
   display: flex;
   width: 306px;
@@ -600,12 +506,6 @@ const MovedText = styled.div`
       `}//2초만에 나타나서 고정이 된다
       // forwards
     `};
-  /* animation: ${({ isAnimation }) =>
-    isAnimation
-      ? css`
-          ${moveUp} 1s ease-in-out both 0.5s
-        `
-      : "none"}; */
   //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다.
   // forwards 0.5s는 added 0.5s delay
   // 위에 태그들 즉 Text1,Text2 가 끝나고 0.5s뒤에 실행

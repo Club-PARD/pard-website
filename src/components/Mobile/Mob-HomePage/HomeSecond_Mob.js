@@ -266,8 +266,6 @@ const Text1 = styled.div`
 
   opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
   transition: opacity 0.5s ease-in;
-
-  /* transform */
 `;
 const Div = styled.div`
   margin: ${request1 ? "0px auto" : ""};

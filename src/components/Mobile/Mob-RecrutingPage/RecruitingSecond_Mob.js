@@ -1,8 +1,6 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-import Vec from "../../../assets/img/vector.png";
 import React from "react";
-import { FaArrowLeft } from "react-icons/fa";
 
 function RecruitingSecond() {
   const handleClick = () => {

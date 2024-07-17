@@ -12,6 +12,7 @@ function AboutPart_Mob() {
     {
       id: 1,
       part: "서비스 기획",
+      // TODO: theme
       border_color: "#5262F5",
       imgsrc: PM,
       selected: true,

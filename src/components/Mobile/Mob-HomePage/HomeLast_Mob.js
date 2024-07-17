@@ -3,9 +3,6 @@ import { theme } from "../../../styles/theme";
 import { RecruitmentStatusButtonMob } from "../Components/RecruitmentStatusButtonMob";
 
 function HomeLastMob() {
-  const handleClick = () => {
-    window.open("https://pard-notice.oopy.io", "_blank");
-  };
   return (
     <Div>
       <PartDiv>
@@ -75,7 +72,6 @@ const Shape1 = styled.div`
 `;
 
 const Div = styled.div`
-  //정해진 width를 또 가운데 정렬
   display: flex;
   flex-direction: column;
   align-items: center;

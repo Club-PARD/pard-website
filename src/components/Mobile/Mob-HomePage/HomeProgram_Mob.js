@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import ProgramSeminar_Mob from "../Mob-ProjectPage/ProgramSeminar_Mob";
 import ProgramStudy_Mob from "../Mob-ProjectPage/ProgramStudy_Mob";

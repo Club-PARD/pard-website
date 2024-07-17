@@ -194,7 +194,6 @@ const PartContents = styled.div`
   position: relative;
   align-items: center;
   padding-left: 25px;
-  //margin-left: 24px;
 `;
 
 const Button1 = styled.button`
