@@ -24,7 +24,7 @@ const ProjectGrid = () => {
     fetchProjects();
   }, []);
 
-  const pages = Math.ceil(projects.length / 9);
+  const pages = Math.ceil(projects.length / PROJECT_GRID);
 
   // 현재 페이지의 프로젝트 목록을 계산합니다.
   const startIndex = (currentPage - 1) * PROJECT_GRID;
