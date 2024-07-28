@@ -5,7 +5,7 @@ import ProgramFrame from "../../../assets/img/ProgramFrame.png";
 import React from "react";
 import { pardDATA } from "../../../utils/data.constant";
 
-function Projectirst() {
+function ProjectFirst() {
   return (
     <Div>
       <PartDiv>
@@ -32,7 +32,7 @@ function Projectirst() {
   );
 }
 
-export default Projectirst;
+export default ProjectFirst;
 
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};

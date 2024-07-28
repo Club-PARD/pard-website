@@ -3,3 +3,5 @@ export const pardDATA = {
   displayBanner: false,
   isRecruiting: false,
 };
+
+export const PROJECT_GRID = 9;

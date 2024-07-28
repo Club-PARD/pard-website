@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { dbService } from "../../../fbase";
 import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import { PROJECT_GRID } from "../../../utils/data.constant";
 
-const PAGE_SIZE = 9;
 const ProjectGrid = () => {
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,17 +24,19 @@ const ProjectGrid = () => {
     fetchProjects();
   }, []);
 
+  const pages = Math.ceil(projects.length / 9);
+
   // 현재 페이지의 프로젝트 목록을 계산합니다.
-  const startIndex = (currentPage - 1) * PAGE_SIZE;
-  const endIndex = startIndex + PAGE_SIZE;
+  const startIndex = (currentPage - 1) * PROJECT_GRID;
+  const endIndex = startIndex + PROJECT_GRID;
   const currentProjects = projects.slice(startIndex, endIndex);
 
   // 페이지 변경 함수
   const handlePageChange = (newPage) => {
     if (newPage === 0) {
       setCurrentPage(1);
-    } else if (newPage === 3) {
-      setCurrentPage(2);
+    } else if (newPage === pages + 1) {
+      setCurrentPage(pages);
     } else {
       setCurrentPage(newPage);
     }
@@ -77,18 +79,17 @@ const ProjectGrid = () => {
           onClick={() => handlePageChange(currentPage - 1)}
           alt="arrowButton"
         />
-        <NumButtonDiv
-          active={currentPage === 1}
-          onClick={() => handlePageChange(1)}
-        >
-          1
-        </NumButtonDiv>
-        <NumButtonDiv
-          active={currentPage === 2}
-          onClick={() => handlePageChange(2)}
-        >
-          2
-        </NumButtonDiv>
+        {Array(pages)
+          .fill(0)
+          .map((_, index) => (
+            <NumButtonDiv
+              key={index}
+              active={currentPage === index + 1}
+              onClick={() => handlePageChange(index + 1)}
+            >
+              {index + 1}
+            </NumButtonDiv>
+          ))}
         <ArrowButtonDiv
           src={require("../../../assets/img/ProjectPageimg/RightArrow.png")}
           marginleft={"30px"}
