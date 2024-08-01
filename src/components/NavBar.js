@@ -1,9 +1,8 @@
 import React from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { theme } from "../styles/theme";
 import styled, { ThemeProvider } from "styled-components";
 import { useState, useEffect } from "react";
-import backgroundImg from "../assets/img/BannerImg/BannerImg.png";
 import { BannerWeb } from "./Web/Components/BannerWeb";
 import { pardDATA } from "../utils/data.constant";
 

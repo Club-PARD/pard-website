@@ -1,19 +1,19 @@
-import KKI from "../assets/img/김광일.png";
-import KGS from "../assets/img/김진서.png";
-import KHR from "../assets/img/김하람.png";
-import KCR from "../assets/img/김채린.png";
-import KSJ from "../assets/img/김성준.png";
-import KHSS from "../assets/img/김현승.png";
-import PMJ from "../assets/img/박민지.png";
-import CJH from "../assets/img/천주현.png";
-import LJE from "../assets/img/이지은.png";
-import LJA from "../assets/img/이지애.png";
-import SGS from "../assets/img/신지수.png";
-import CYJ from "../assets/img/최영준.png";
-import JSJ from "../assets/img/진세진.png";
-import JSH from "../assets/img/조세희.png";
-import JH from "../assets/img/조환.png";
-import PYY from "../assets/img/백예은.png";
+import KKI from "../assets/img/headers/김광일.png";
+import KGS from "../assets/img/headers/김진서.png";
+import KHR from "../assets/img/headers/김하람.png";
+import KCR from "../assets/img/headers/김채린.png";
+import KSJ from "../assets/img/headers/김성준.png";
+import KHSS from "../assets/img/headers/김현승.png";
+import PMJ from "../assets/img/headers/박민지.png";
+import CJH from "../assets/img/headers/천주현.png";
+import LJE from "../assets/img/headers/이지은.png";
+import LJA from "../assets/img/headers/이지애.png";
+import SGS from "../assets/img/headers/신지수.png";
+import CYJ from "../assets/img/headers/최영준.png";
+import JSJ from "../assets/img/headers/진세진.png";
+import JSH from "../assets/img/headers/조세희.png";
+import JH from "../assets/img/headers/조환.png";
+import PYY from "../assets/img/headers/백예은.png";
 
 export const managerData = [
   {
