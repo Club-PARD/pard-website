@@ -1,229 +1,295 @@
-import KKI from "../assets/img/headers/김광일.png";
-import KGS from "../assets/img/headers/김진서.png";
-import KHR from "../assets/img/headers/김하람.png";
-import KCR from "../assets/img/headers/김채린.png";
-import KSJ from "../assets/img/headers/김성준.png";
-import KHSS from "../assets/img/headers/김현승.png";
-import PMJ from "../assets/img/headers/박민지.png";
-import CJH from "../assets/img/headers/천주현.png";
-import LJE from "../assets/img/headers/이지은.png";
-import LJA from "../assets/img/headers/이지애.png";
-import SGS from "../assets/img/headers/신지수.png";
-import CYJ from "../assets/img/headers/최영준.png";
-import JSJ from "../assets/img/headers/진세진.png";
-import JSH from "../assets/img/headers/조세희.png";
-import JH from "../assets/img/headers/조환.png";
 import PYY from "../assets/img/headers/백예은.png";
+import LJE from "../assets/img/headers/이지은.png";
+import KHSS from "../assets/img/headers/김현승.png";
+import LMG from "../assets/img/headers/이민규.png";
+import KSA from "../assets/img/headers/김수아.png";
+import KMH from "../assets/img/headers/김민혁.png";
+import KHJ from "../assets/img/headers/김현중.png";
+import YJH from "../assets/img/headers/유재혁.png";
+import KKI from "../assets/img/headers/김광일.png";
+import KCE from "../assets/img/headers/권채은.png";
+import CJH from "../assets/img/headers/천주현.png";
+import KGY from "../assets/img/headers/김기영.png";
+import KYC from "../assets/img/headers/김영채.png";
+import KYJ from "../assets/img/headers/김예정.png";
+import PSH from "../assets/img/headers/박성현.png";
+import LJH from "../assets/img/headers/이주향.png";
 
 export const managerData = [
   {
     id: 1,
-    imgsrc: JSH,
-    name: "조세희(회장)",
+    imgsrc: PYY,
+    name: "백예은(회장)",
     position: "Operator",
     site: [
       {
         name: "linkedin",
-        link: "https://www.linkedin.com/in/sayjo2/",
+        link: "https://www.linkedin.com/in/예은-백-794b8a249/",
       },
-      { name: "instagram", link: "https://www.instagram.com/say_chee2se/" },
-      { name: "disquiet", link: "https://disquiet.io/@sehijo" },
+      { name: "instagram", 
+        link: "https://www.instagram.com/100yeah._.e/" 
+      },
+      { name: "disquiet", 
+        link: "https://disquiet.io/@313dpdms" 
+      },
     ],
   },
   {
     id: 2,
-    imgsrc: JH,
-    name: "조환(부회장)",
+    imgsrc: LJE,
+    name: "이지은(부회장)",
     position: "Operator",
     site: [
       {
         name: "linkedin",
-        link: "https://www.linkedin.com/in/hwan-jho-조환-70491b200/",
+        link: "https://www.linkedin.com/in/ezn/",
       },
-      { name: "instagram", link: "https://www.instagram.com/hwanjho__75/" },
+      { name: "instagram", 
+        link: "https://www.instagram.com/ana_jieun/" 
+      },
       {
         name: "disquiet",
-        link: "https://disquiet.io/@jhohwan",
+        link: "https://disquiet.io/@twins24j",
       },
     ],
   },
 
   {
     id: 3,
-    imgsrc: KGS,
-    name: "김진서",
+    imgsrc: KHSS,
+    name: "김현승(부회장)",
     position: "Operator",
     site: [
       {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/jinseo-kim-51b575262/",
+        name: "instargram",
+        link: "https://www.instagram.com/hyunseung_99/",
       },
-      { name: "disquiet", link: "https://disquiet.io/@eunoia_" },
-      { name: "github", link: "https://github.com/eunoia-jason" },
+      { name: "github", 
+        link: "https://github.com/KimRPG" 
+      },
     ],
   },
   {
     id: 4,
-    imgsrc: LJA,
-    name: "이지애",
+    imgsrc: LMG,
+    name: "이민규",
     position: "Operator",
-    site: [{ name: "instagram", link: "https://www.instagram.com/ana_jiae/" }],
+    site: [
+      { 
+        name: "instagram", 
+        link: "https://www.instagram.com/_lmingyu0115?igsh=MXBpY3dxeHVyNWRyNA%3D%3D&utm_source=qr" 
+      },
+      { 
+        name: "github", 
+        link: "https://github.com/livingdavid" 
+      },
+      { 
+        name: "disquiet", 
+        link: "https://disquiet.io/@livingdavid" 
+      },
+    ],
   },
   {
     id: 5,
-    imgsrc: KCR,
-    name: "김채린",
+    imgsrc: KSA,
+    name: "김수아",
     position: "Operator",
     site: [
-      { name: "instagram", link: "https://www.instagram.com/rlacofls_/" },
-      { name: "disquiet", link: "https://disquiet.io/@rlacofls" },
-      { name: "github", link: "https://github.com/seizethedaylyn" },
+      { 
+        name: "instagram", 
+        link: "https://www.instagram.com/_.uneteclair?igsh=bmRkZGtrczV3aXI0&utm_source=qr" 
+      },
     ],
   },
   {
     id: 6,
-    imgsrc: KSJ,
-    name: "김성준",
+    imgsrc: KMH,
+    name: "김민혁",
     position: "Operator",
     site: [
-      { name: "instagram", link: "https://www.instagram.com/__lakewood_/" },
+      { 
+        name: "instagram", 
+        link: "https://www.instagram.com/alsgur._.rla/" 
+      },
+      {
+        name: "github",
+        link: "https://github.com/Kim-Min-Hyeok",
+      },
+      {
+        name: "disquiet",
+        link: "https://disquiet.io/@alsgur",
+      },
     ],
   },
   {
     id: 7,
-    imgsrc: KHR,
-    name: "김하람",
+    imgsrc: KHJ,
+    name: "김현중",
     position: "Developer",
     site: [
-      {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/하람-김-482773263/",
+      { 
+        name: "instagram", 
+        link: "https://www.instagram.com/bbin_guuuu/" 
       },
-      { name: "instagram", link: "https://www.instagram.com/ram2__dev/" },
-      { name: "github", link: "https://github.com/haram22" },
+      {
+        name: "github",
+        link: "https://github.com/hjkim0905",
+      },
+      {
+        name: "disquiet",
+        link: "https://disquiet.io/@eax9952",
+      },
     ],
   },
   {
     id: 8,
-    imgsrc: JSJ,
-    name: "진세진",
+    imgsrc: YJH,
+    name: "유재혁",
     position: "Developer",
     site: [
-      {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/세진-진-309b11266/",
+      { 
+        name: "instagram", 
+        link: "https://www.instagram.com/jaehyxxk_?igsh=bWRiZmRlYnZsOGV0&utm_source=qr" 
       },
-      { name: "instagram", link: "https://www.instagram.com/jinsejin2/" },
-      { name: "github", link: "https://github.com/jinsejin" },
+      {
+        name: "github",
+        link: "https://github.com/yoojh5685",
+      },
     ],
   },
   {
     id: 9,
-    imgsrc: PMJ,
-    name: "박민지",
-    position: "Developer",
-    site: [
-      {
-        name: "instagram",
-        link: "https://www.instagram.com/__min.zzi/",
-      },
-      { name: "disquiet", link: "https://disquiet.io/@minzzi0068" },
-      { name: "github", link: "https://github.com/minzziPark" },
-    ],
-  },
-  {
-    id: 10,
     imgsrc: KKI,
     name: "김광일",
     position: "Developer",
     site: [
-      {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/kwangil-kim-79822a2aa",
+      { 
+        name: "linkedin", 
+        link: "https://www.linkedin.com/in/kwangil-kim-79822a2aa" 
       },
-      { name: "disquiet", link: "https://disquiet.io/@oksk6689" },
-      { name: "github", link: "https://github.com/pangil5634" },
+      {
+        name: "github",
+        link: "https://github.com/pangil5634",
+      },
+      {
+        name: "disquiet",
+        link: "https://disquiet.io/@oksk6689",
+      },
+    ],
+  },
+  {
+    id: 10,
+    imgsrc: KCE,
+    name: "권채은",
+    position: "Developer",
+    site: [
+      { 
+        name: "instagram", 
+        link: "https://www.instagram.com/codms_rnjs/" 
+      },
+      {
+        name: "github",
+        link: "https://github.com/codms0201",
+      },
+      {
+        name: "disquiet",
+        link: "https://disquiet.io/@chenlover0615",
+      },
     ],
   },
   {
     id: 11,
-    imgsrc: KHSS,
-    name: "김현승",
-    position: "Developer",
-    site: [
-      { name: "instagram", link: "https://www.instagram.com/hyunseung_99/" },
-      { name: "github", link: "https://github.com/KimRPG" },
-    ],
-  },
-  {
-    id: 12,
     imgsrc: CJH,
     name: "천주현",
     position: "Developer",
     site: [
-      {
-        name: "instagram",
-        link: "https://www.instagram.com/zoohyxnn/",
+      { 
+        name: "instagram", 
+        link: "https://www.instagram.com/zoohyxnn/" 
       },
-      { name: "github", link: "https://github.com/millejuice" },
+      {
+        name: "github",
+        link: "https://github.com/millejuice",
+      },
+    ],
+  },
+  {
+    id: 12,
+    imgsrc: KGY,
+    name: "김기영",
+    position: "Developer",
+    site: [
+      { 
+        name: "instagram", 
+        link: "https://www.instagram.com/giyou_ul?igsh=MWRsY3RuanIxaWhkMw==" 
+      },
+      {
+        name: "github",
+        link: "https://github.com/Giyoul",
+      },
     ],
   },
   {
     id: 13,
-    imgsrc: SGS,
-    name: "신지수",
+    imgsrc: KYC,
+    name: "김영채",
     position: "Designer",
     site: [
       {
         name: "linkedin",
-        link: "https://www.linkedin.com/in/지수-신-a443b7219/",
+        link: "https://www.linkedin.com/in/youngchae-kim-420526315",
       },
-      { name: "instagram", link: "https://www.instagram.com/s.jisu001/" },
-      { name: "disquiet", link: "https://disquiet.io/@shinji0609" },
+      { name: "instagram", 
+        link: "https://www.instagram.com/147ck_?igsh=MXVlOHMyZms4MXhw&utm_source=qr" 
+      },
+      { name: "disquiet", 
+        link: "https://disquiet.io/@kycskekfk" 
+      },
     ],
   },
   {
     id: 14,
-    imgsrc: CYJ,
-    name: "최영준",
+    imgsrc: KYJ,
+    name: "김예정",
     position: "Designer",
     site: [
-      {
-        name: "instagram",
-        link: "https://www.instagram.com/iam_grit___._?igsh=MXRnMDA4MHlncjlzNA%3D%3D&utm_source=qr",
+      { name: "instagram", 
+        link: "https://www.instagram.com/jo.__.my?igsh=MXRmaXpzNjI0YWdicw%3D%3D&utm_source=qr" 
       },
-      { name: "disquiet", link: "https://disquiet.io/@cyj7230" },
+      { name: "disquiet", 
+        link: "https://disquiet.io/@yejomee22" 
+      },
     ],
   },
   {
     id: 15,
-    imgsrc: PYY,
-    name: "백예은",
+    imgsrc: PSH,
+    name: "박성현",
     position: "Product Manager",
     site: [
-      {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/예은-백-794b8a249/",
+      { name: "instagram", 
+        link: "https://www.instagram.com/oh_hi__oh_hi/" 
       },
-      { name: "instagram", link: "https://www.instagram.com/100yeah._.e/" },
-      { name: "disquiet", link: "https://disquiet.io/@313dpdms" },
+      { name: "disquiet", 
+        link: "https://disquiet.io/@seonghyeon_608" 
+      },
     ],
   },
   {
-    id: 17,
-    imgsrc: LJE,
-    name: "이지은",
+    id: 16,
+    imgsrc: LJH,
+    name: "이주향",
     position: "Product Manager",
     site: [
-      {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/ezn/",
+      { name: "instagram", 
+        link: "https://www.instagram.com/2corinthians__418/" 
       },
-      {
-        name: "instagram",
-        link: "https://www.instagram.com/ana_jieun/",
+      { name: "disquiet", 
+        link: "https://disquiet.io/@133435" 
       },
-      { name: "disquiet", link: "https://disquiet.io/@twins24j" },
+      { name: "web", 
+        link: "https://blog.naver.com/neulsasa" 
+      },
     ],
   },
 ];
