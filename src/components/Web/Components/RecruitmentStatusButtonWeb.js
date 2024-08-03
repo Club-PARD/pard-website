@@ -7,7 +7,7 @@ import {
 
 export const RecruitmentStatusButtonWeb = ({ theme, backgroundColor }) => {
   const content = pardDATA.recruitingReady
-    ? `${pardDATA.currentGeneration}기 모집이 곧 시작됩니다`
+    ? `${pardDATA.currentGeneration}기 리크루팅 알림 신청`
     : pardDATA.isRecruiting
     ? `지금 바로 ${pardDATA.currentGeneration}기 지원하기`
     : `${pardDATA.currentGeneration}기 모집이 완료되었습니다`;
