@@ -1,13 +1,29 @@
 import styled from "styled-components";
-import { pardDATA } from "../../../utils/data.constant";
+import {
+  APPLY_FORM_URL,
+  EARLY_FORM_URL,
+  pardDATA,
+} from "../../../utils/data.constant";
 
 export const RecruitmentStatusButtonWeb = ({ theme, backgroundColor }) => {
-  const content = pardDATA.isRecruiting
+  const content = pardDATA.recruitingReady
+    ? `${pardDATA.currentGeneration}기 모집이 곧 시작됩니다`
+    : pardDATA.isRecruiting
     ? `지금 바로 ${pardDATA.currentGeneration}기 지원하기`
     : `${pardDATA.currentGeneration}기 모집이 완료되었습니다`;
 
-  return pardDATA.isRecruiting ? (
-    <EnrollmentOpenButton theme={theme} backgroundColor={backgroundColor}>
+  const handleClick = () => {
+    pardDATA.recruitingReady
+      ? window.open(EARLY_FORM_URL, "_blank")
+      : window.open(APPLY_FORM_URL, "_blank");
+  };
+
+  return pardDATA.isRecruiting || pardDATA.recruitingReady ? (
+    <EnrollmentOpenButton
+      theme={theme}
+      backgroundColor={backgroundColor}
+      onClick={handleClick}
+    >
       {content}
     </EnrollmentOpenButton>
   ) : (

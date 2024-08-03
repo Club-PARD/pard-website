@@ -109,7 +109,7 @@ const HomeFirst = () => {
   document.documentElement.style.overflowX = "hidden";
   return (
     <>
-      <DIVVVV>
+      <Container>
         <VideoContainer isColor={backcolor} isFixed={isFixed}>
           {isSafari ? (
             <VideoBackgroundImg
@@ -243,7 +243,7 @@ const HomeFirst = () => {
             </>
           )}
         </VideoContainer>
-      </DIVVVV>
+      </Container>
     </>
   );
 };
@@ -262,7 +262,7 @@ const VideoContainer = styled.div`
 `;
 
 //inline-block으로 stickybox를 위로 올리는 역할을한다.
-const DIVVVV = styled.div`
+const Container = styled.div`
   display: inline-block;
   height: 11000px;
   width: 100%;
@@ -407,7 +407,6 @@ const Textchanged1 = styled.p`
   font-weight: 800;
   font-size: 60px;
   line-height: 140%;
-  /* identical to box height, or 84px */
 
   text-align: center;
   color: #ffffff;
@@ -463,16 +462,6 @@ const LogoDiv = styled.div`
   z-index: 0;
 `;
 
-const moveUp = keyframes`
-  from {
-    transform: translateY(50%); // adjust this value to control the distance of movement
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`; // Y if FORWA가 올라가는 위치 조정, opacity로 보이는 거 조절
 const MovedText = styled.div`
   display: flex;
   width: 1000px;
@@ -489,9 +478,7 @@ const MovedText = styled.div`
       `}//2초만에 나타나서 고정이 된다
       // forwards
     `};
-  //추가되어 애니메이션이 시작되기 전에 첫 번째 keyframe의 스타일이 적용되고, 애니메이션이 끝나면 마지막 keyframe의 스타일이 유지됩니다.
-  // forwards 0.5s는 added 0.5s delay
-  // 위에 태그들 즉 Text1,Text2 가 끝나고 0.5s뒤에 실행
+
   font-family: "NanumSquare Neo";
   font-style: normal;
   z-index: 4;
