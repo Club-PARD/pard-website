@@ -9,7 +9,7 @@ import AsanImg from "../../../assets/img/ASANImg.png";
 import MobitImg from "../../../assets/img/MobitImg.png";
 import PickPly from "../../../assets/img/Pickply_Img.png";
 import NextChallengeImg from "../../../assets/img/NextChallengeImg.png";
-import dCamp from "../../../assets/img/dCamp.PNG";
+import dCamp from "../../../assets/img/dCamp.png";
 import AWS from "../../../assets/img/AWS_logo.PNG";
 
 function HomePartner() {
