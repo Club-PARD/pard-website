@@ -1,8 +1,8 @@
 export const pardDATA = {
   currentGeneration: 4,
   displayBanner: false,
-  isRecruiting: false,
-  recruitingReady: true,
+  // ready : 모집전 | progress : 모집중 | done : 모집완료
+  recruitStatus: "ready",
 };
 
 // 사전 알림 구글 폼 URL

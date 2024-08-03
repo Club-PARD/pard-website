@@ -6,19 +6,21 @@ import {
 } from "../../../utils/data.constant";
 
 export const RecruitmentStatusButtonWeb = ({ theme, backgroundColor }) => {
-  const content = pardDATA.recruitingReady
-    ? `${pardDATA.currentGeneration}기 리크루팅 알림 신청`
-    : pardDATA.isRecruiting
-    ? `지금 바로 ${pardDATA.currentGeneration}기 지원하기`
-    : `${pardDATA.currentGeneration}기 모집이 완료되었습니다`;
+  const content =
+    pardDATA.recruitStatus === "ready"
+      ? `${pardDATA.currentGeneration}기 리크루팅 알림 신청`
+      : pardDATA.recruitStatus === "progress"
+      ? `지금 바로 ${pardDATA.currentGeneration}기 지원하기`
+      : `${pardDATA.currentGeneration}기 모집이 완료되었습니다`;
 
   const handleClick = () => {
-    pardDATA.recruitingReady
+    pardDATA.recruitStatus === "ready"
       ? window.open(EARLY_FORM_URL, "_blank")
       : window.open(APPLY_FORM_URL, "_blank");
   };
 
-  return pardDATA.isRecruiting || pardDATA.recruitingReady ? (
+  return pardDATA.recruitStatus === "ready" ||
+    pardDATA.recruitStatus === "progress" ? (
     <EnrollmentOpenButton
       theme={theme}
       backgroundColor={backgroundColor}
