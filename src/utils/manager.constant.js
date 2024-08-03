@@ -24,7 +24,7 @@ export const managerData = [
     site: [
       {
         name: "linkedin",
-        link: "https://www.linkedin.com/in/예은-백-794b8a249/",
+        link: "https://www.linkedin.com/in/yeeunbaek00/",
       },
       { name: "instagram", 
         link: "https://www.instagram.com/100yeah._.e/" 
@@ -61,7 +61,7 @@ export const managerData = [
     position: "Operator",
     site: [
       {
-        name: "instargram",
+        name: "instagram",
         link: "https://www.instagram.com/hyunseung_99/",
       },
       { name: "github", 
