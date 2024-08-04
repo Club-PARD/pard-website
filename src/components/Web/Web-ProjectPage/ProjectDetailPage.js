@@ -53,36 +53,40 @@ function ProjectDetail() {
                   </TitleText>
                   {detailProjects.tool && (
                     <>
-                      <PartText marginTop={"35px"}>
-                        <CommonText color="white" align="start">
-                          기획
-                        </CommonText>
-                        {detailProjects.tool.planner.map((tool, index) => (
-                          <PartTool key={index}>{tool} </PartTool>
-                        ))}
-                      </PartText>
-                      <PartText marginTop={"10px"}>
-                        <CommonText color="white" align="start">
-                          디자인
-                        </CommonText>
-                        {detailProjects.tool.designer.map((tool, index) => (
-                          <PartTool key={index} color={"#7B3FEF"}>
-                            {tool}
-                          </PartTool>
-                        ))}
-                      </PartText>
-                      <PartText marginTop={"10px"}>
-                        <CommonText color="white" align="start">
-                          개발
-                        </CommonText>
-                        <Container>
-                          {detailProjects.tool.developer.map((tool, index) => (
-                            <PartTool key={index} color={"#FF5C00"}>
+                      <ToolContainer>
+                        <PartText marginTop={"35px"}>
+                          <CommonText color="white" align="start">
+                            기획
+                          </CommonText>
+                          {detailProjects.tool.planner.map((tool, index) => (
+                            <PartTool key={index}>{tool} </PartTool>
+                          ))}
+                        </PartText>
+                        <PartText marginTop={"10px"}>
+                          <CommonText color="white" align="start">
+                            디자인
+                          </CommonText>
+                          {detailProjects.tool.designer.map((tool, index) => (
+                            <PartTool key={index} color={"#7B3FEF"}>
                               {tool}
                             </PartTool>
                           ))}
-                        </Container>
-                      </PartText>
+                        </PartText>
+                        <PartText marginTop={"10px"}>
+                          <CommonText color="white" align="start">
+                            개발
+                          </CommonText>
+                          <Container>
+                            {detailProjects.tool.developer.map(
+                              (tool, index) => (
+                                <PartTool key={index} color={"#FF5C00"}>
+                                  {tool}
+                                </PartTool>
+                              )
+                            )}
+                          </Container>
+                        </PartText>
+                      </ToolContainer>
                       <TitleText marginTop={"86px"}>
                         <Header8>Team |</Header8>
                         <Header7>{detailProjects.teamName}</Header7>
@@ -237,6 +241,10 @@ function ProjectDetail() {
 }
 
 export default ProjectDetail;
+
+const ToolContainer = styled.div`
+  padding-bottom: 20px;
+`;
 
 const CommonText = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header6};

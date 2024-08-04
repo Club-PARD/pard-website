@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { dbService } from "../../../fbase";
 import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import { pardDATA } from "../../../utils/data.constant";
 
 function ProjectLast_Mob() {
   const [projects, setProjects] = useState([]);
@@ -36,7 +37,8 @@ function ProjectLast_Mob() {
           <Container>
             {projects.map((project) => (
               <React.Fragment key={project.id}>
-                {project.generation == "2기" || more ? (
+                {project.generation === `${pardDATA.currentGeneration - 1}기` ||
+                more ? (
                   <>
                     <Link to={`/Project/${project.id}`} key={project.id}>
                       <Column key={project.id}>
