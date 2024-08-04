@@ -357,16 +357,7 @@ const TitleText = styled.div`
 
 const Container = styled.div`
   display: grid;
-  /* height: 45px; */
-  /* background-color: red; */
-  grid-template-columns: repeat(
-    ${(props) => props.numOfColumns || 2},
-    1fr
-  ); /* prop으로 전달된 값 사용 */
-  /* row-gap: 10px; */
-  /* column-gap: 1.5px; */
-  /* margin-bottom: 22px; */
-  /* margin-top: ${(props) => props.marginTop || "18px"}; */
+  grid-template-columns: repeat(2, auto);
 `;
 
 const PartText = styled.div`

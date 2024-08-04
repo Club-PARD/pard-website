@@ -38,12 +38,12 @@ function ProjectDetail() {
               alt={detailProjects.teamName}
             />
             <MainDiv>
-              <Body3
+              <CommonText
                 style={{ marginTop: "34px", width: "100%" }}
                 align="center"
               >
                 {detailProjects.batch}
-              </Body3>
+              </CommonText>
               <HR />
               <ContentsDiv>
                 <RightContent>
@@ -54,17 +54,17 @@ function ProjectDetail() {
                   {detailProjects.tool && (
                     <>
                       <PartText marginTop={"35px"}>
-                        <Body3 color="white" align="start">
+                        <CommonText color="white" align="start">
                           기획
-                        </Body3>
+                        </CommonText>
                         {detailProjects.tool.planner.map((tool, index) => (
                           <PartTool key={index}>{tool} </PartTool>
                         ))}
                       </PartText>
                       <PartText marginTop={"10px"}>
-                        <Body3 color="white" align="start">
+                        <CommonText color="white" align="start">
                           디자인
-                        </Body3>
+                        </CommonText>
                         {detailProjects.tool.designer.map((tool, index) => (
                           <PartTool key={index} color={"#7B3FEF"}>
                             {tool}
@@ -72,9 +72,9 @@ function ProjectDetail() {
                         ))}
                       </PartText>
                       <PartText marginTop={"10px"}>
-                        <Body3 color="white" align="start">
+                        <CommonText color="white" align="start">
                           개발
-                        </Body3>
+                        </CommonText>
                         <Container>
                           {detailProjects.tool.developer.map((tool, index) => (
                             <PartTool key={index} color={"#FF5C00"}>
@@ -88,39 +88,42 @@ function ProjectDetail() {
                         <Header7>{detailProjects.teamName}</Header7>
                       </TitleText>
                       <PartText marginTop={"35px"}>
-                        <Body3 color="white" align="start">
+                        <CommonText color="white" align="start">
                           기획
-                        </Body3>
+                        </CommonText>
                         {detailProjects.member.planner.map((tool, index) => (
-                          <Body3 key={index} style={{ width: "auto" }}>
+                          <MemberText
+                            key={index}
+                            style={{ width: "auto", marginRight: "15px" }}
+                          >
                             {tool}{" "}
-                          </Body3>
+                          </MemberText>
                         ))}
                       </PartText>
                       <PartText marginTop={"20px"}>
-                        <Body3 color="white" align="start">
+                        <CommonText color="white" align="start">
                           디자인
-                        </Body3>
+                        </CommonText>
                         {detailProjects.member.designer.map((tool, index) => (
-                          <Body3
+                          <MemberText
                             key={index}
                             style={{ width: "auto", marginRight: "15px" }}
                           >
                             {tool}
-                          </Body3>
+                          </MemberText>
                         ))}
                       </PartText>
                       <PartText marginTop={"20px"}>
-                        <Body3 color="white" align="start">
+                        <CommonText color="white" align="start">
                           개발
-                        </Body3>
+                        </CommonText>
                         {detailProjects.member.developer.map((tool, index) => (
-                          <Body3
+                          <MemberText
                             key={index}
                             style={{ width: "auto", marginRight: "15px" }}
                           >
                             {tool}
-                          </Body3>
+                          </MemberText>
                         ))}
                       </PartText>
                     </>
@@ -235,8 +238,20 @@ function ProjectDetail() {
 
 export default ProjectDetail;
 
-const Body3 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Body3};
+const CommonText = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Body1};
+  color: ${(props) => props.color || "white"};
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: ${(props) => props.align};
+  margin-top: ${(props) => props.marginTop};
+  margin-right: ${(props) => props.marginright};
+  width: 100px;
+`;
+
+const MemberText = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
   font-weight: ${(props) => props.theme.fontWeights.Body3};
   color: ${(props) => props.color || "white"};
   font-family: "NanumSquare Neo";
@@ -259,12 +274,12 @@ const Header5 = styled.div`
 
 const Header6 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
+  font-weight: ${(props) => props.theme.fontWeights.Header4};
   margin-top: ${(props) => props.marginTop};
   color: white;
   font-family: "NanumSquare Neo";
   line-height: 160%;
-  white-space: pre-line;
+  white-space: nowrap;
   text-align: start;
   width: 590px;
 `;
@@ -377,7 +392,7 @@ const PartTool = styled.div`
   border-radius: 15px;
   background-color: ${(props) => props.color || "#5262F5"};
   font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.Body3};
+  font-weight: ${(props) => props.theme.fontWeights.CommonText};
   color: white;
   margin: 5px 15px 5px 0px;
 `;
@@ -436,8 +451,9 @@ const Icon = styled.img`
 const Container = styled.div`
   display: grid;
   height: 36px;
-  /* background-color: red; */
-  grid-template-columns: repeat(${(props) => props.numOfColumns || 3}, 1fr);
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(5, auto);
+  grid-auto-flow: column-dense;
 `;
 
 const ContainerTeam = styled.div`
