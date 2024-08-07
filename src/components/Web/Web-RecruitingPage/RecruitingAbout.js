@@ -30,7 +30,7 @@ function RecruitingAbout() {
           quest: "Q. 지원 조건이 어떻게 되나요?",
           answer: (
             <>
-              A. 3기 기준 2024년도 상반기 포항시에 거주하는 만 18세에서 만
+              A. 4기 기준 2024년도 포항시에 거주하는 만 18세에서 만
               30세이면 지원 가능합니다.
             </>
           ),
@@ -43,10 +43,10 @@ function RecruitingAbout() {
             <>
               A. 다양한 분야로 관심이 많으신 예비 지원자님 정말 멋지십니다!
               <br />
-              &nbsp; &nbsp; &nbsp;하지만 아쉽게도 중복 지원은 어렵습니다. 3기는
+              &nbsp; &nbsp; &nbsp;하지만 아쉽게도 중복 지원은 어렵습니다. 4기는
               먼저 배우고 싶은 파트를,
               <br />
-              &nbsp; &nbsp; &nbsp;4기에는 다른 파트에 지원해 보시는 건 어떨까요?
+              &nbsp; &nbsp; &nbsp;5기에는 다른 파트에 지원해 보시는 건 어떨까요?
             </>
           ),
           select: false,
@@ -76,6 +76,9 @@ function RecruitingAbout() {
               <br />
               &nbsp; &nbsp; &nbsp;OB와 YB가 함께하는 프로그램과 OB만의
               프로그램들이 준비되어 있습니다.
+              <br />
+              ex) 기획 파트 YB 수료 후 디자인 파트로 지원시 
+              - 기획 OB / 디자인 YB 입니다.
             </>
           ),
           select: false,
@@ -93,10 +96,10 @@ function RecruitingAbout() {
           answer: (
             <>
               A. 활동 멤버 분들이 속한 구성원 분들의 수가 많은 곳에서 주요
-              활동을 진행하고 있습니다. 3기는 한동대학교에서
+              활동을 진행하고 있습니다. 4기는 한동대학교에서
               <br />
               &nbsp; &nbsp; &nbsp;모일 예정입니다. 교통이 불편한 포항 여건 상,
-              파드는 포항시에 소재한 한동대학교 외 3기 분들에게는 매주 <br />
+              파드는 포항시에 소재한 한동대학교 외 4기 분들에게는 매주 <br />
               &nbsp; &nbsp; &nbsp;교통비(택시비)를 일부 지원해드릴 예정입니다!
               많은 지원 부탁드릴게요:) &nbsp; &nbsp; &nbsp;
             </>
@@ -112,7 +115,7 @@ function RecruitingAbout() {
               숏커톤, 롱커톤과 같은 정규 일정을
               <br />
               &nbsp; &nbsp; &nbsp;모두 참여하셔야 수료 가능합니다. (출석체크
-              진행)
+              진행 및 내부 점수제도 운영)
             </>
           ),
           select: false,
@@ -150,7 +153,7 @@ function RecruitingAbout() {
           id: 5,
           quest: "Q. 앱(iOS) 개발 시 어떤 프로그래밍 언어를 사용하나요?",
           answer:
-            "A. 3기 기준 iOS 앱 개발을 위한 Swift UIkit를 사용하고 있습니다.",
+            "A. 4기 기준 iOS 앱 개발을 위한 Swift UIkit를 사용하고 있습니다.",
           select: false,
         },
       ],
@@ -172,9 +175,11 @@ function RecruitingAbout() {
           answer: (
             <>
               A. 활동 인원의 대부분이 대학생인 관계로, 중간/기말고사를 준비할 수
-              있도록
+              있도록 시험기간에는 세미나를 진행하지 않습니다!
               <br />
-              &nbsp; &nbsp; &nbsp;시험기간에는 세미나를 진행하지 않습니다!
+              &nbsp; &nbsp; &nbsp;그 외의 토요일 일정은 모두 비워져 있어야 합니다. 
+              <br />
+              &nbsp; &nbsp; &nbsp;(개인사정으로 결석하는 횟수는 2회 이내로 제한하고 있습니다.)
             </>
           ),
           select: false,
