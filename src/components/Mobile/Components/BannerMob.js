@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { pardDATA } from "../../../utils/data.constant";
+import { APPLY_FORM_URL, pardDATA } from "../../../utils/data.constant";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const BannerMob = () => {
+  const navigate = useNavigate();
   const [bannerImg, setBannerImg] = useState(null);
 
   useEffect(() => {
@@ -19,8 +21,14 @@ export const BannerMob = () => {
       });
   }, []);
 
+  const handleClick = () => {
+    pardDATA.recruitStatus === "ready"
+      ? navigate("/Recruiting")
+      : window.open(APPLY_FORM_URL);
+  };
+
   return (
-    <BannerImg onClick={() => window.open("https://pard-notice.oopy.io")}>
+    <BannerImg onClick={handleClick}>
       <img src={bannerImg} alt="banner"></img>
     </BannerImg>
   );
