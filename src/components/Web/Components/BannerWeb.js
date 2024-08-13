@@ -1,7 +1,23 @@
 import styled from "styled-components";
-import bannerImg from "../../../assets/img/web_banner_3기.png";
+import { pardDATA } from "../../../utils/data.constant";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export const BannerWeb = () => {
+  const [bannerImg, setBannerImg] = useState(null);
+
+  useEffect(() => {
+    import(
+      `../../../assets/img/banner/web_banner_${pardDATA.currentGeneration}기.png`
+    )
+      .then((image) => {
+        setBannerImg(image.default);
+      })
+      .catch((err) => {
+        console.error("Error loading image:", err);
+      });
+  }, []);
+
   return (
     <BannerImg>
       <img src={bannerImg} alt="banner"></img>

@@ -1,6 +1,6 @@
 export const pardDATA = {
   currentGeneration: 4,
-  displayBanner: false,
+  displayBanner: true,
   // ready : 모집전 | progress : 모집중 | done : 모집완료
   recruitStatus: "ready",
 };

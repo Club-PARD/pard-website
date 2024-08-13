@@ -94,7 +94,6 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 0;
   left: 0;
   right: 0;
   height: 69px;
