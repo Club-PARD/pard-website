@@ -8,7 +8,7 @@ import Cat from "../../../assets/img/CatPic.png";
 function RecruitingIdeal() {
   const handleClick = () => {
     window.open(
-      "https://pardhgu.notion.site/ed2bc564ebf341eab08cfd8a24afe472",
+      "https://we-pard.notion.site/2b49a6131f114a83b411b010906ab785?pvs=4",
       "_blank"
     );
   };
