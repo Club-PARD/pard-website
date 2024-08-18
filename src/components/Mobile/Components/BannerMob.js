@@ -35,10 +35,11 @@ export const BannerMob = () => {
 };
 
 const BannerImg = styled.div`
-  width: 100%;
+  width: 100vw;
 
   img {
     width: 100%;
+    height: 100px;
     object-fit: cover;
     text-align: center;
   }
