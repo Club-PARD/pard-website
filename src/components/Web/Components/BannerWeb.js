@@ -35,7 +35,6 @@ export const BannerWeb = () => {
 
 const BannerImg = styled.div`
   width: 100vw;
-  /* height: 100px; */
 
   img {
     width: 100%;
