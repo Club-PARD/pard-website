@@ -58,7 +58,7 @@ function RecruitingSecond() {
                 </Icon2B>
               </IconWrap>
               <Box2>서류 합격 발표</Box2>
-              <BoxText>9/5(목) 오전 중</BoxText>
+              <BoxText>9/5(목) 오전</BoxText>
             </Box>
             <Box style={{ border: "2px solid rgba(100, 197, 154, 0.7)" }}>
               <IconWrap>
@@ -92,7 +92,7 @@ function RecruitingSecond() {
                 </Icon4B>
               </IconWrap>
               <Box4>최종합격 발표</Box4>
-              <BoxText>9/6(금) 24시 전</BoxText>
+              <BoxText>9/7(토) 00시 전</BoxText>
             </Box>
           </Container>
           <Plus onClick={handleClick}>

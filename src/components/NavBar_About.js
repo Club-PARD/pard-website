@@ -75,7 +75,7 @@ const NavBar_About = () => {
                     active={pathname === "/Recruiting"}
                     isScrolled={scrollPosition >= animatedPosition}
                   >
-                    리쿠르팅
+                    리크루팅
                   </Subtitle1>
                 </Link>
               </NavItem>

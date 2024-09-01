@@ -55,7 +55,7 @@ const NavBar = () => {
               <NavItem>
                 <Link to="/Recruiting" style={{ textDecoration: "none" }}>
                   <Subtitle1 active={pathname === "/Recruiting"}>
-                    리쿠르팅
+                    리크루팅
                   </Subtitle1>
                 </Link>
               </NavItem>

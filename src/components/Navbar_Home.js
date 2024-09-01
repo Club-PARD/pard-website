@@ -51,7 +51,7 @@ const NavBar_Home = () => {
               </NavItem>
               <NavItem>
                 <Link to="/Recruiting" style={{ textDecoration: "none" }}>
-                  <Subtitle1>리쿠르팅</Subtitle1>
+                  <Subtitle1>리크루팅</Subtitle1>
                 </Link>
               </NavItem>
               <NavItem>

@@ -105,7 +105,7 @@ const buttons = [
     hoverColor: "#5262F5",
     vectorImage: ServiceVector,
     selectedImage: SelectedVector,
-    showButton: true,
+    showButton: false,
     buttonText: "사전과제",
     showButton2: false,
     buttonText2: "",

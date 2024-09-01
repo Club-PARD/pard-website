@@ -46,7 +46,7 @@ const NavBarMov = () => {
             </Link>
             <Hr />
             <Link to="/Recruiting" style={{ textDecoration: "none" }}>
-              <Subtitle2>리쿠르팅</Subtitle2>
+              <Subtitle2>리크루팅</Subtitle2>
             </Link>
             <Hr />
             <Link to="/news" style={{ textDecoration: "none" }}>
