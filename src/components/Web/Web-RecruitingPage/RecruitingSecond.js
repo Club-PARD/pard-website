@@ -34,7 +34,7 @@ function RecruitingSecond() {
                 </Icon1B>
               </IconWrap>
               <Box1>서류접수</Box1>
-              <BoxText>8/15(목) ~ 8/27(화)</BoxText>
+              <BoxText>8/31(토) ~ 9/4(수)</BoxText>
             </Box>
             <Box style={{ border: "2px solid rgba(100, 197, 154, 0.4)" }}>
               <IconWrap>
@@ -58,7 +58,7 @@ function RecruitingSecond() {
                 </Icon2B>
               </IconWrap>
               <Box2>서류 합격 발표</Box2>
-              <BoxText>8/28(수) 중</BoxText>
+              <BoxText>9/5(목) 오전 중</BoxText>
             </Box>
             <Box style={{ border: "2px solid rgba(100, 197, 154, 0.7)" }}>
               <IconWrap>
@@ -70,7 +70,7 @@ function RecruitingSecond() {
                 </Icon3>
               </IconWrap>
               <Box3>면접</Box3>
-              <BoxText>8/30(금) ~ 8/31(토)</BoxText>
+              <BoxText>9/5(목) ~ 9/6(금)</BoxText>
             </Box>
             <Box style={{ border: "2px solid rgba(100, 197, 154, 1.0)" }}>
               <IconWrap>
@@ -92,7 +92,7 @@ function RecruitingSecond() {
                 </Icon4B>
               </IconWrap>
               <Box4>최종합격 발표</Box4>
-              <BoxText>9/1(일) 중</BoxText>
+              <BoxText>9/6(금) 24시 전</BoxText>
             </Box>
           </Container>
           <Plus onClick={handleClick}>
