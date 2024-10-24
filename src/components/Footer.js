@@ -14,7 +14,7 @@ function Footer() {
                   <img src={require("../assets/img/Logo.png")} alt="Logo" />
                 </PardLogo>
                 <Rules
-                  href="https://pardhgu.notion.site/PARD-v1-7c576d9d8d42441790ad10c23b35c1e3"
+                  href="https://www.notion.so/we-pard/PARD-V4-3209913797ea4fd8b01baaf4ffb3bd70"
                   target="_blank"
                 >
                   회칙{" >"}
