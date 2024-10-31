@@ -29,7 +29,7 @@ function AboutPart_Mob() {
           <br />
           사용되는 기획 산출물을 작성하고 산출물을 기반으로
           <br />
-          디자이너/개발자와소통합니다.
+          디자이너/개발자와 소통합니다.
           <br />
           <br />
           이 모든 과정을 통해 문제 정의, 데이터 기반 솔루션 도출,
@@ -41,7 +41,7 @@ function AboutPart_Mob() {
           PM의 역량을 쌓을 수 있습니다.
         </>
       ),
-      homework: "서비스 화면 설계서 작성",
+      homework: "문제발견 및 문제정의",
     },
     {
       id: 2,
@@ -70,7 +70,7 @@ function AboutPart_Mob() {
           기르고 궁극적으로 협업에 강한 디자이너로 성장합니다.
         </>
       ),
-      homework: "서비스 리디자인 프로젝트",
+      homework: "롱커톤 디자인 산출물",
     },
     {
       id: 3,
@@ -131,7 +131,7 @@ function AboutPart_Mob() {
           성장합니다.
         </>
       ),
-      homework: "Instagram 웹 클론 코딩",
+      homework: "오늘의 집 웹 클론 코딩",
     },
     {
       id: 5,
