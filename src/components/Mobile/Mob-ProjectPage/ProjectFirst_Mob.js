@@ -1,8 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React from "react";
-import AboutImage from "../../../assets/img/AboutLogo.png";
-import ProgramFrame from "../../../assets/img/Program_Mob_Bar.png";
+import AboutImage from "../../../assets/img/AboutLogo_gray.png";
 import { pardDATA } from "../../../utils/data.constant";
 
 function ProjectFirst_Mob() {
@@ -12,21 +11,11 @@ function ProjectFirst_Mob() {
         <ThemeProvider theme={theme}>
           <AboutLogo src={AboutImage} alt="AboutLogo" />
           <Header8>
-            PARD가
+            PARD가 진행한
             <br />
-            진행한 프로젝트를
-            <br />
-            보여드릴게요
+            프로젝트를 보여드릴게요
           </Header8>
-          <ButtonText1>
-            PARD는 기획자・디자이너・개발자 간<br />
-            협업을 바탕으로 독창적이면서도 <br />
-            사용자의 문제를 효과적으로 해결할 수 있는 <br />
-            다양한 프로젝트들을 선보이고 있습니다.
-            <br />
-          </ButtonText1>
         </ThemeProvider>
-        <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
       </PartDiv>
     </Div>
   );
@@ -50,23 +39,8 @@ const Header8 = styled.div`
   top: 20%;
 `;
 
-const ButtonText1 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 140%;
-  color: white;
-  text-align: center;
-  position: absolute;
-  top: 40%;
-`;
-
 const PartDiv = styled.div`
-  /* height: 500px; */
-  height: 100vh;
+  height: 200px;
   margin-top: ${pardDATA.displayBanner ? "200px" : "100px"};
   position: relative;
   width: 100%;
@@ -92,15 +66,4 @@ const AboutLogo = styled.img`
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-`;
-
-const ProgramFrame1 = styled.img`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  position: absolute;
-  width: 100%;
-  height: 40px;
-  left: 0px;
-  bottom: 0px;
 `;

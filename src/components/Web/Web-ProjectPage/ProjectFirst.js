@@ -1,7 +1,6 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-import AboutImage from "../../../assets/img/AboutLogo.png";
-import ProgramFrame from "../../../assets/img/ProgramFrame.png";
+import AboutImage from "../../../assets/img/AboutLogo_gray.png";
 import React from "react";
 import { pardDATA } from "../../../utils/data.constant";
 
@@ -17,16 +16,8 @@ function ProjectFirst() {
               <br />
               프로젝트를 보여드릴게요
             </Header2>
-            <Header5>
-              PARD는 기획자・디자이너・개발자 간 협업을 바탕으로
-              <br />
-              독창적이면서도 사용자의 문제를 효과적으로 해결할 수 있는
-              <br />
-              다양한 프로젝트들을 선보이고 있습니다.
-            </Header5>
           </TextContainer>
         </ThemeProvider>
-        <ProgramFrame1 src={ProgramFrame} alt="AboutFrame" />
       </PartDiv>
     </Div>
   );
@@ -35,11 +26,11 @@ function ProjectFirst() {
 export default ProjectFirst;
 
 const Header2 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header2};
+  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
   font-weight: ${(props) => props.theme.fontWeights.Header2};
   color: white;
   font-family: "NanumSquare Neo";
-  line-height: 84px;
+  line-height: 140%;
   margin-bottom: 43px;
   white-space: pre-line;
   text-align: center;
@@ -53,10 +44,8 @@ const PartDiv = styled.div`
   position: relative;
   padding-left: 268px;
   padding-right: 268px;
-  padding-bottom: ${pardDATA.displayBanner ? "230px" : "130px"};
   padding-top: 230px;
-  /* height: 390px; */
-  height: 48vh;
+  height: 390px;
   display: flex;
   justify-content: center;
 
@@ -73,6 +62,7 @@ const AboutLogo = styled.img`
   margin-top: ${pardDATA.displayBanner ? "240px" : "140px"};
   transform: translate(-50%, -50%);
   opacity: 1;
+  object-fit: contain;
 `;
 
 const Div = styled.div`
@@ -80,17 +70,7 @@ const Div = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 100%;
-`;
-
-const ProgramFrame1 = styled.img`
-  position: absolute;
-  height: 40px;
-  width: 100%;
-  /* margin-top: 550px; */
-  bottom: 0%;
-  border-radius: 0px;
-  padding: 0px 30px;
+  height: 460px;
 `;
 
 const TextContainer = styled.div`
@@ -98,18 +78,4 @@ const TextContainer = styled.div`
   top: ${pardDATA.displayBanner ? "475px" : "375px"};
   left: 50%;
   transform: translate(-50%, -50%);
-`;
-
-const Header5 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header5};
-  font-weight: ${(props) => props.theme.fontWeights.Header5};
-  color: white;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 140%;
-  /* or 34px */
-
-  text-align: center;
 `;

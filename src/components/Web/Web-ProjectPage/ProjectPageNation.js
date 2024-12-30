@@ -3,39 +3,46 @@ import styled from "styled-components";
 import { dbService } from "../../../fbase";
 import { collection, getDocs } from "firebase/firestore";
 import { Link } from "react-router-dom";
-import { PROJECT_GRID } from "../../../utils/data.constant";
+import FilterBtn from "../Components/FilterBtn";
+
+const PROJECT_GRID = 9; // 한 페이지에 보여줄 프로젝트 수
 
 const ProjectGrid = () => {
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [part, setPart] = useState("all"); // 기본 필터: "all"
+  const parts = ["ALL", "WEB", "APP"]; // 필터 버튼 항목
+
+  const handleFilterChange = (newPart) => {
+    setPart(newPart);
+    setCurrentPage(1); // 필터를 변경할 때 페이지를 1로 초기화
+  };
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const data = await getDocs(collection(dbService, "Project"));
         const newData = data.docs.map((doc) => ({ ...doc.data() }));
+        console.log(newData); // 데이터 구조 확인
         const sortedItems = newData.sort((a, b) => b.order - a.order);
         setProjects(sortedItems);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
     };
-
+  
     fetchProjects();
   }, []);
 
-  const pages = Math.ceil(projects.length / PROJECT_GRID);
-
-  // 현재 페이지의 프로젝트 목록을 계산합니다.
-  const startIndex = (currentPage - 1) * PROJECT_GRID;
-  const endIndex = startIndex + PROJECT_GRID;
-  const currentProjects = projects.slice(startIndex, endIndex);
-
-  // 페이지 변경 함수
   const handlePageChange = (newPage) => {
-    if (newPage === 0) {
+    const pages = Math.ceil(
+      projects.filter((project) =>
+        part === "all" || project.part.toLowerCase() === part.toLowerCase()
+      ).length / PROJECT_GRID
+    );
+    if (newPage < 1) {
       setCurrentPage(1);
-    } else if (newPage === pages + 1) {
+    } else if (newPage > pages) {
       setCurrentPage(pages);
     } else {
       setCurrentPage(newPage);
@@ -44,27 +51,47 @@ const ProjectGrid = () => {
 
   return (
     <>
+      <FilterContainer>
+        {parts.map((filterPart) => (
+        <FilterBtn
+          key={filterPart}
+          part={filterPart}
+          setPart={handleFilterChange} // 필터 변경 함수 사용
+          selected={part}
+        />
+        ))}
+      </FilterContainer>
       <Container>
-        {currentProjects.map((project) => (
+        {projects
+        .filter((project) => {
+          if (part.toLowerCase() === "all") return true; // "ALL" 선택 시 모든 프로젝트 표시
+          if (!project.part) return false; 
+          return project.part.toLowerCase() === part.toLowerCase(); // 선택된 part와 일치하는 경우만 표시
+        })
+        .slice(
+          (currentPage - 1) * PROJECT_GRID, // 시작 인덱스 계산
+          (currentPage - 1) * PROJECT_GRID + PROJECT_GRID // 끝 인덱스 계산
+        )
+        .map((project) => (
           <Link to={`/Project/${project.id}`} key={project.id}>
-            <Column key={project.id}>
-              <ContentDiv key={project.id}>
-                <MainImg src={project.mainImg} alt={project.serviceName} />
+          <Column>
+            <ContentDiv>
+              <MainImg src={project.mainImg} alt={project.serviceName} />
                 <TextDiv>
                   <ContentsWrap>
-                    <ContentTextDiv>
-                      <Header6>
-                        {project.generation} | {project.part}
-                      </Header6>
-                    </ContentTextDiv>
-                    <Header7 style={{ marginBottom: "10px" }}>
+                    <Header8 style={{ marginBottom: "6px" }}>
                       {project.serviceName}
-                    </Header7>
+                    </Header8>
                     {project.mobTitle.map((title, index) => (
                       <Body2 key={index} style={{ marginTop: "0px" }}>
                         {title}
                       </Body2>
                     ))}
+                    <ContentTextDiv>
+                      <Body2>
+                        #{project.generation} #{project.part}
+                      </Body2>
+                    </ContentTextDiv>
                   </ContentsWrap>
                 </TextDiv>
               </ContentDiv>
@@ -79,13 +106,19 @@ const ProjectGrid = () => {
           onClick={() => handlePageChange(currentPage - 1)}
           alt="arrowButton"
         />
-        {Array(pages)
+        {Array(
+          Math.ceil(
+            projects.filter((project) =>
+              part === "all" || project.part.toLowerCase() === part.toLowerCase()
+            ).length / PROJECT_GRID
+          )
+        )
           .fill(0)
           .map((_, index) => (
             <NumButtonDiv
               key={index}
               active={currentPage === index + 1}
-              onClick={() => handlePageChange(index + 1)}
+              onClick={() => setCurrentPage(index + 1)}
             >
               {index + 1}
             </NumButtonDiv>
@@ -103,26 +136,15 @@ const ProjectGrid = () => {
 
 export default ProjectGrid;
 
-const Header6 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header6};
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  text-align: center;
-  line-height: 140%;
-  margin-left: 2px;
-`;
-
-const Header7 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header7};
-  font-weight: ${(props) => props.theme.fontWeights.Header7};
+const Header8 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header8};
+  font-weight: ${(props) => props.theme.fontWeights.Header8};
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
   text-align: start;
   line-height: 140%;
-  margin-top: 3px;
+  margin-top: 15px;
 `;
 
 const Body2 = styled.div`
@@ -134,71 +156,59 @@ const Body2 = styled.div`
   text-align: start;
   line-height: 140%;
   /* width: 200px; */
-  margin-top: 25px;
 `;
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
+  width: 1246px;
+  gap: 32px;
 `;
 
 const Column = styled.div`
   position: relative;
-  max-width: 333px;
+  max-width: 384px;
 `;
 
 const TextDiv = styled.div`
   position: absolute;
-  width: 320px;
-  height: 0%;
-  top: 100%;
-  border-radius: 20px;
-  transition: 0.3s;
+  width: 384px;
+  height: 134px; /* 높이를 0%에서 적절히 변경 */
+  bottom: 0; /* 시작 위치를 변경 */
+  background: rgba(0, 0, 0, 0.68); /* 투명한 검은색 배경 */
+  box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 0 0 14px 14px;
+  transition: 0.3s ease-in-out; /* 부드러운 전환 */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 1; /* 다른 요소보다 위에 표시 */
 `;
 
 const ContentDiv = styled.div`
-  width: 320px;
-  height: 400px;
+  width: 384px;
+  height: 405px;
   display: block;
   cursor: pointer;
-
-  &:hover {
-    ${TextDiv} {
-      width: 320px;
-      height: 400px;
-      top: 0%;
-      border-radius: 20px;
-      background: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.2) 0%,
-          rgba(0, 0, 0, 0.2) 100%
-        ),
-        linear-gradient(180deg, rgba(42, 42, 42, 0) 0%, #2a2a2a 100%);
-    }
-  }
 `;
 const ContentsWrap = styled.div`
-  display: none;
-  ${ContentDiv}:hover & {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
+  width: 384px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 21px;
 `;
 
 const MainImg = styled.img`
-  width: 320px;
-  height: 400px;
+  width: 384px;
+  height: 405px;
+  object-fit: cover;
 `;
 
 const ContentTextDiv = styled.div`
   display: flex;
-  margin-top: 210px;
-  margin-right: 188px;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+  margin-right: 21px;
 `;
 
 const ButtonDiv = styled.div`
@@ -236,4 +246,14 @@ const ArrowButtonDiv = styled.img`
   cursor: pointer;
   margin-right: 50px;
   margin-left: 50px;
+`;
+
+const FilterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 2000px;
+  width: fit-content;
+  margin-bottom: 100px;
 `;

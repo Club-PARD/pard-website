@@ -162,7 +162,7 @@ const HomeFirst = () => {
                     <Text2
                       style={{
                         transform: `translateX(${Math.min(
-                          (position - 650) / 5,
+                          (position - 650) / 6,
                           360
                         )}px)`,
                       }}
@@ -313,7 +313,7 @@ const VideoBackgroundImg = styled.img`
 
 const SplitTextContainer = styled.div`
   position: absolute;
-  width: 1040px;
+  width: 860px;
   height: 112px;
   top: 30%;
   left: 50%;
