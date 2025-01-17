@@ -39,7 +39,7 @@ function RecruitingAbout() {
           quest: <>Q.&nbsp; 지원 조건이 어떻게 되나요?</>,
           answer: (
             <>
-              A. 4기 기준 2024년도 포항시에 거주하는
+              A. 4기 기준 2024년도
               <br />
               &nbsp; &nbsp; &nbsp;만 18세에서 만 30세이면 지원 가능합니다.
             </>
