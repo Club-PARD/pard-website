@@ -8,7 +8,7 @@ import Cat from "../../../assets/img/CatPic.png";
 function RecruitingIdealMob() {
   const handleLinkClick = () => {
     window.location.href =
-      "https://we-pard.notion.site/2b49a6131f114a83b411b010906ab785?pvs=4";
+      "https://drive.google.com/drive/folders/1jFbQt0j6Ojxf2YkMc-rmHQXaaM24Cqqs";
   };
   return (
     <Div>
