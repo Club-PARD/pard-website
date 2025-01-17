@@ -8,12 +8,6 @@ function FooterMov() {
         <PardLogo>
           <img src={require("../assets/img/Logo.png")} alt="Logo" />
         </PardLogo>
-        <Rules
-          href="https://www.notion.so/we-pard/PARD-V4-3209913797ea4fd8b01baaf4ffb3bd70"
-          target="_blank"
-        >
-          회칙{" >"}
-        </Rules>
       </TopComponent>
       <Information>
         PARD (파드, Pay it forward를 실천하는 IT협업 동아리) ⓒPARD. 2024.All
