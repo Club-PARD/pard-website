@@ -14,7 +14,7 @@ import figmalogo from "../../../assets/img/figmalogo.png";
 import Modal1 from "./WebModal";
 import Modal2 from "./AppModal";
 
-function Test1() {
+function ProjectDetail() {
   const [data, setData] = useState(null);
   const [id, setId] = useState(null); // id를 state로 관리
   const location = useLocation();
@@ -232,7 +232,7 @@ function Test1() {
   );
 }
 
-export default Test1;
+export default ProjectDetail;
 
 const Container = styled.div`
   display: flex;

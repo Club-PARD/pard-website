@@ -11,7 +11,7 @@ import TagManager from "react-gtm-module";
 import React, { useEffect } from "react";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import NewsPage from "./pages/NewsPage";
-import TestPage from "./components/Web/Web-ProjectPage/test4"
+import TestPage from "./components/Web/Web-ProjectPage/ProjectPagination"
 
 function App() {
   const tagManagerArgs = {

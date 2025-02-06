@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { getAllProjectList, getWebProjectList, getAppProjectList } from "../../../utils/api";
 import FilterBtn from "../Components/FilterBtn";
 
-function Test4() {
+function ProjectPagination() {
   const [projects, setProjects] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // UI에서는 1부터 시작
   const [totalPages, setTotalPages] = useState(1);
@@ -72,7 +72,7 @@ function Test4() {
           <ProjectList>
             {projects.map((project) => (
               <ProjectContainer key={project.id}>
-              <Link to={`/test/${project.id}`}>
+              <Link to={`/Project/${project.id}`}>
                 <ImageWrapper>
                   <img src={project.thumbnailUrl} alt="프로젝트 썸네일" loading="lazy" />
                   <Overlay>
@@ -124,7 +124,7 @@ function Test4() {
   );
 }
 
-export default Test4;
+export default ProjectPagination;
 
 const Container = styled.div`
   width: 1216px;
@@ -133,6 +133,7 @@ const Container = styled.div`
   justify-content: center;
   color: white;
   margin: 0 auto;
+  margin-bottom: 148px;
   display: flex;
 `;
 
