@@ -35,15 +35,15 @@ const ProjectGrid = () => {
   }, []);
 
   const handlePageChange = (newPage) => {
-    const pages = Math.ceil(
-      projects.filter((project) =>
-        part === "all" || project.part.toLowerCase() === part.toLowerCase()
-      ).length / PROJECT_GRID
+    const filteredProjects = projects.filter((project) =>
+      part === "all" || project.part.toLowerCase() === part.toLowerCase()
     );
+    const totalPages = Math.ceil(filteredProjects.length / PROJECT_GRID);
+  
     if (newPage < 1) {
       setCurrentPage(1);
-    } else if (newPage > pages) {
-      setCurrentPage(pages);
+    } else if (newPage > totalPages) {
+      setCurrentPage(totalPages);
     } else {
       setCurrentPage(newPage);
     }
@@ -62,43 +62,39 @@ const ProjectGrid = () => {
         ))}
       </FilterContainer>
       <Container>
-        {projects
-        .filter((project) => {
-          if (part.toLowerCase() === "all") return true; // "ALL" 선택 시 모든 프로젝트 표시
-          if (!project.part) return false; 
-          return project.part.toLowerCase() === part.toLowerCase(); // 선택된 part와 일치하는 경우만 표시
-        })
-        .slice(
-          (currentPage - 1) * PROJECT_GRID, // 시작 인덱스 계산
-          (currentPage - 1) * PROJECT_GRID + PROJECT_GRID // 끝 인덱스 계산
-        )
-        .map((project) => (
-          <Link to={`/Project/${project.id}`} key={project.id}>
-          <Column>
-            <ContentDiv>
-              <MainImg src={project.mainImg} alt={project.serviceName} />
-                <TextDiv>
-                  <ContentsWrap>
-                    <Header8 style={{ marginBottom: "6px" }}>
-                      {project.serviceName}
-                    </Header8>
-                    {project.mobTitle.map((title, index) => (
-                      <Body2 key={index} style={{ marginTop: "0px" }}>
-                        {title}
-                      </Body2>
-                    ))}
-                    <ContentTextDiv>
-                      <Body2>
-                        #{project.generation} #{project.part}
-                      </Body2>
-                    </ContentTextDiv>
-                  </ContentsWrap>
-                </TextDiv>
-              </ContentDiv>
-            </Column>
-          </Link>
-        ))}
-      </Container>
+  {projects
+    .filter((project) => {
+      if (part.toLowerCase() === "all") return true;
+      if (!project.part) return false;
+      return project.part.toLowerCase() === part.toLowerCase();
+    })
+    .slice(
+      (currentPage - 1) * PROJECT_GRID, 
+      currentPage * PROJECT_GRID 
+    )
+    .map((project) => (
+      <Link to={`/Project/${project.id}`} key={project.id}>
+        <Column>
+          <ContentDiv>
+            <MainImg src={project.mainImg} alt={project.serviceName} />
+            <TextDiv>
+              <ContentsWrap>
+                <Header8>{project.serviceName}</Header8>
+                {project.mobTitle.map((title, index) => (
+                  <Body2 key={index}>{title}</Body2>
+                ))}
+                <ContentTextDiv>
+                  <Body2>
+                    #{project.generation} #{project.part}
+                  </Body2>
+                </ContentTextDiv>
+              </ContentsWrap>
+            </TextDiv>
+          </ContentDiv>
+        </Column>
+      </Link>
+    ))}
+</Container>
       <ButtonDiv>
         <ArrowButtonDiv
           src={require("../../../assets/img/ProjectPageimg/LeftArrow.png")}

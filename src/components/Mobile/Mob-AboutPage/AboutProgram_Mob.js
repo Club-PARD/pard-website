@@ -6,7 +6,6 @@ import AboutStudyImage from "../../../assets/img/AboutStudy.png";
 import AboutSurfingImage from "../../../assets/img/AboutSurfing.png";
 import AboutShortImage from "../../../assets/img/AboutShort.png";
 import AboutLongImage from "../../../assets/img/AboutLong.png";
-import AboutProjectImage from "../../../assets/img/AboutProject.png";
 
 function AboutProgram_Mob() {
   const [part, setPart] = useState([
@@ -123,26 +122,6 @@ function AboutProgram_Mob() {
           각 파트별 실무자들의 멘토링을 받고 피드백을 <br />
           받으며 완성도를 높이고 데모데이를 통해 <br />
           IT 협업 과정과 결과물에 대한 평가를 받습니다.
-        </>
-      ),
-    },
-    {
-      id: 6,
-      listNum: "06",
-      listCon: "기업 연계 프로젝트",
-      border_color: "#FF5C00",
-      imgsrc: AboutProjectImage,
-      selected: false,
-      context: (
-        <>
-          공모전과 같은 일회성 프로젝트가 아닌, <br />
-          ‘문제 해결 공동 프로젝트’ 형태로 서비스 개선 및<br />
-          신규 아이디어를 발굴하며 실무 역량을 향상합니다.
-          <br />
-          UX/UI 컨설팅펌과 함께하여 아이디어 도출 과정과
-          <br />
-          시장에 필요로 한 서비스를 만드는 데 있어 <br />
-          전문성을 확보하고 있습니다.
         </>
       ),
     },

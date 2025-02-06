@@ -115,8 +115,7 @@ const Logo = styled.div`
     height: 45px;
     width: 140px;
   }
-  /* margin-left: 100px; */
-  /* margin-right: 500px; */
+  margin-right: 200px;
 `;
 
 const NavLinks = styled.ul`
