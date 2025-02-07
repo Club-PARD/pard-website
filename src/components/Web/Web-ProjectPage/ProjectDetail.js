@@ -10,9 +10,13 @@ import design_mark from "../../../assets/img/design_mark.png";
 import linklogo from "../../../assets/img/linklogo.png";
 import gitlogo from "../../../assets/img/gitlogo.png";
 import figmalogo from "../../../assets/img/figmalogo.png";
+import firstbadge from "../../../assets/img/1st_mark.png";
+import secondbadge from "../../../assets/img/2nd_mark.png";
+import thirdbadge from "../../../assets/img/3rd_mark.png";
 
 import Modal1 from "./WebModal";
 import Modal2 from "./AppModal";
+import Modal3 from "./IpadModal";
 
 function ProjectDetail() {
   const [data, setData] = useState(null);
@@ -50,11 +54,13 @@ function ProjectDetail() {
   }
 
   const logoImage = data.images?.[0]?.url || null;
+  const p_id = data.id || "데이터 없음";
   const oneSentence = data.contents?.oneSentence?.[0]?.content || "데이터 없음";
   const descriptionArray = data.contents?.description?.slice(0, ) || [];
   const description = descriptionArray.map(item => item.content).join("\n") || "데이터 없음";
   const generation = data.generation || "데이터 없음";
   const platform = data.platform || "데이터 없음";
+  const awardgrade = data.awardGrade || "데이터 없음";  
   const award = data.award || "데이터 없음";
   const overviewArray = data.contents?.overview?.slice(0, ) || [];
   const overview = overviewArray.map(item => item.content).join("\n") || "데이터 없음";
@@ -120,10 +126,20 @@ function ProjectDetail() {
           </HashContainer>
         </IntroWrapper>
         {/*모달*/}
-        {platform === "WEB" ? <Modal1 /> : platform === "APP" ? <Modal2 /> : null}
+        {platform === "WEB" ? (
+          <Modal1 />
+          ) : platform === "APP" ? (
+          p_id === 15 ? <Modal3 /> : <Modal2 />
+          ) : null}
         {/*가운데 정렬 하는 박스 만들기*/}
         {/*몇기 롱커톤인지*/}
         <AwardContainer>
+          {
+          awardgrade === 1 ? <img src={firstbadge} alt="대상" style={{'width': '53px', 'height': '62.137px'}}/> :
+          awardgrade === 2 ? <img src={secondbadge} alt="최우수상" style={{'width': '53px', 'height': '62.137px'}}/> :
+          awardgrade === 3 ? <img src={thirdbadge} alt="우수상" style={{'width': '53px', 'height': '62.137px'}}/> :
+          null
+          }
           <Award>{award}</Award>
         </AwardContainer>
         {/*밑줄*/}
@@ -313,6 +329,7 @@ const AwardContainer = styled.div`
   width: 100%;
   height: 100%;
   margin-top: 138px;
+  gap: 11px;
 `;
 
 const Award = styled.p`
@@ -476,11 +493,13 @@ const EtcContainerBox2 = styled.div`
 
 const EtcNameContainer = styled.div`
   display: flex;
+  width: 310px;
   align-items: center;
   gap: 33px;
 `;
 
-const EtcName = styled.p`
+const EtcName = styled.div`
+  width: 58px;
   color: #FFF;
   font-family: "NanumSquare Neo";
   font-size: 16px;
@@ -491,9 +510,11 @@ const EtcName = styled.p`
 `;
 
 const EtcContentContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
+display: flex;
+align-items: center;
+gap: 10px; /* Decrease gap between items */
+flex-wrap: wrap;
+width: 100%;
 `;
 
 const EtcContent = styled.p`

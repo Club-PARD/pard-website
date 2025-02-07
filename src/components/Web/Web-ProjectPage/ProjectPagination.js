@@ -39,6 +39,8 @@ function ProjectPagination() {
     fetchProjects();
   }, [part, currentPage]);
 
+  console.log(projects);
+
   const renderPagination = () => {
     const pageButtons = [];
     for (let i = 0; i < totalPages; i++) {

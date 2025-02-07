@@ -27,13 +27,13 @@ function HomePage() {
       {isDesktopOrMobile !== true ? (
         <div>
           <NavBarHome />
-          <HomeFirst />
+          {/* <HomeFirst /> */}
           <HomeSecond />
           <HomePartWeb />
           <ProgramsTrain />
           <HomeMentorWeb />
-          <HomePartnerWeb />
           <HomeLastWeb />
+          <HomePartnerWeb />
           <Footer />
         </div>
       ) : (

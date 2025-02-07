@@ -1,8 +1,6 @@
 import styled, { ThemeProvider } from "styled-components";
 import { Link } from "react-router-dom";
 import { theme } from "../../../styles/theme";
-import Vec from "../../../assets/img/vector.png";
-import Vec_p from "../../../assets/img/vector_purple.png";
 import Email_Logo from "../../../assets/img/email_vector.png";
 import Instargram_Logo from "../../../assets/img/instargram_vector.png";
 import Youtube_Logo from "../../../assets/img/youtube_vector.png";
