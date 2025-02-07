@@ -2,11 +2,36 @@ import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButtonWeb";
 import { pardDATA } from "../../../utils/data.constant";
+import { useState, useEffect, useRef } from "react";
 
 function HomeLast() {
   const generation = pardDATA.currentGeneration;
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 } // 50% 이상 보이면 실행
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <Div>
+    <Div ref={sectionRef}>
       <PartDiv>
         <ThemeProvider theme={theme}>
           <Header2>매번 다른 파도와 함께</Header2>
@@ -16,17 +41,22 @@ function HomeLast() {
             협업하며 혁신적인 서비스를 만들어갑니다.
           </M3Header>
           <InfoWrap>
+            {/* ✅ 애니메이션 없이 고정된 숫자 */}
             <InfoBox>
               <InfoContent>런칭 서비스</InfoContent>
-              <InfoNum>20개</InfoNum>
+              <InfoNumStatic>20개</InfoNumStatic>
             </InfoBox>
             <InfoBox>
               <InfoContent>운영 기수</InfoContent>
-              <InfoNum>{generation}기</InfoNum>
+              <InfoNumStatic>{generation}기</InfoNumStatic>
             </InfoBox>
+            {/* ✅ 애니메이션 적용 (누적 활동 인원 - 숫자만) */}
             <InfoBox>
               <InfoContent>누적 활동 인원</InfoContent>
-              <InfoNum>134명</InfoNum>
+              <InfoNumContainer>
+                <InfoNumAnimated targetNumber={134} isVisible={isVisible} />
+                <span>명</span>
+              </InfoNumContainer>
             </InfoBox>
           </InfoWrap>
           <Line>
@@ -50,6 +80,59 @@ function HomeLast() {
 }
 
 export default HomeLast;
+
+// ✅ 숫자 애니메이션 적용 (누적 활동 인원)
+const InfoNumAnimated = ({ targetNumber, isVisible }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 1;
+      setCount(current);
+      if (current >= targetNumber) {
+        clearInterval(interval);
+      }
+    }, 20); // 20ms마다 증가
+
+    return () => clearInterval(interval);
+  }, [isVisible, targetNumber]);
+
+  return <span>{count}</span>;
+};
+
+// ✅ 정적인 숫자 컴포넌트 (운영 기수 & 런칭 서비스)
+const InfoNumStatic = styled.div`
+  color: #FFF;
+  text-align: center;
+  font-family: "NanumSquare Neo";
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 140%;
+  margin-top: 20px;
+`;
+
+// ✅ 스타일링
+const InfoNumContainer = styled.div`
+  color: #FFF;
+  text-align: center;
+  font-family: "NanumSquare Neo";
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 140%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+
+  span {
+    font-size: 60px;
+    font-weight: 800;
+  }
+`;
 
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
@@ -80,7 +163,7 @@ const M3Header = styled.div`
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
-  line-height: 36px; /* 128.571% */;
+  line-height: 36px;
 `;
 
 const Div = styled.div`
@@ -97,6 +180,7 @@ const PartDiv = styled.div`
   width: 1330px;
   justify-content: center;
   padding-bottom: 100px;
+  margin-bottom: 208px;
 `;
 
 const Subtitle2 = styled.div`
@@ -146,6 +230,8 @@ const InfoWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 72px;
+  gap: 30px;
 `;
 
 const InfoBox = styled.div`
@@ -155,24 +241,12 @@ const InfoBox = styled.div`
   background: rgba(255, 255, 255, 0.05);
 `;
 
-const InfoContent = styled.p`
+const InfoContent = styled.div`
   color: #F5F5F5;
   text-align: center;
-  /* M3/headline/medium */
   font-family: "NanumSquare Neo";
   font-size: 28px;
-  font-style: normal;
   font-weight: 400;
-  line-height: 36px; /* 128.571% */
-`;
-
-const InfoNum = styled.p`
-  color: #FFF;
-  text-align: center;
-  /* Header/H2 - EB 60 */
-  font-family: "NanumSquare Neo";
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 140%; /* 84px */
+  line-height: 36px;
+  padding-top: 78px;
 `;
