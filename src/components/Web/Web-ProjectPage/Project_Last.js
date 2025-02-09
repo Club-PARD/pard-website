@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import React from "react";
-import ProjectGrid from "./ProjectPageNation";
+import ProjectGrid from "./ProjectPagination";
 
 function ProjectLast() {
   return (

@@ -1,20 +1,72 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import { RecruitmentStatusButtonWeb } from "../Components/RecruitmentStatusButtonWeb";
+import { pardDATA } from "../../../utils/data.constant";
+import { useState, useEffect, useRef } from "react";
 
 function HomeLast() {
+  const generation = pardDATA.currentGeneration;
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.5 } // 50% 이상 보이면 실행
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <Div>
+    <Div ref={sectionRef}>
       <PartDiv>
         <ThemeProvider theme={theme}>
-          <Header2>진짜 협업을 경험하고 싶다면</Header2>
+          <Header2>매번 다른 파도와 함께</Header2>
+          <M3Header>
+            파드는 매번 새로운 파디들과 함께 아이디어를 나누고,
+            <br></br> 
+            협업하며 혁신적인 서비스를 만들어갑니다.
+          </M3Header>
+          <InfoWrap>
+            {/* ✅ 애니메이션 없이 고정된 숫자 */}
+            <InfoBox>
+              <InfoContent>런칭 서비스</InfoContent>
+              <InfoNumStatic>20개</InfoNumStatic>
+            </InfoBox>
+            <InfoBox>
+              <InfoContent>운영 기수</InfoContent>
+              <InfoNumStatic>{generation}기</InfoNumStatic>
+            </InfoBox>
+            {/* ✅ 애니메이션 적용 (누적 활동 인원 - 숫자만) */}
+            <InfoBox>
+              <InfoContent>누적 활동 인원</InfoContent>
+              <InfoNumContainer>
+                <InfoNumAnimated targetNumber={134} isVisible={isVisible} />
+                <span>명</span>
+              </InfoNumContainer>
+            </InfoBox>
+          </InfoWrap>
           <Line>
             <Shape1>"</Shape1>
             <Shape2>"</Shape2>
           </Line>
           <Header4>
-            똑같은 파도는 다시 오지 않아요<br></br>좋은 파도를 고르는 것 자체도
-            선수들의 역량이에요
+            똑같은 파도는 다시 오지 않아요
+            <br></br>
+            좋은 파도를 고르는 것 자체도 선수들의 역량이에요
           </Header4>
           <Subtitle2>송민 KBS 서핑 해설위원</Subtitle2>
           <RecruitmentStatusButtonWeb
@@ -29,16 +81,68 @@ function HomeLast() {
 
 export default HomeLast;
 
+// ✅ 숫자 애니메이션 적용 (누적 활동 인원)
+const InfoNumAnimated = ({ targetNumber, isVisible }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let current = 0;
+    const interval = setInterval(() => {
+      current += 1;
+      setCount(current);
+      if (current >= targetNumber) {
+        clearInterval(interval);
+      }
+    }, 20); // 20ms마다 증가
+
+    return () => clearInterval(interval);
+  }, [isVisible, targetNumber]);
+
+  return <span>{count}</span>;
+};
+
+// ✅ 정적인 숫자 컴포넌트 (운영 기수 & 런칭 서비스)
+const InfoNumStatic = styled.div`
+  color: #FFF;
+  text-align: center;
+  font-family: "NanumSquare Neo";
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 140%;
+  margin-top: 20px;
+`;
+
+// ✅ 스타일링
+const InfoNumContainer = styled.div`
+  color: #FFF;
+  text-align: center;
+  font-family: "NanumSquare Neo";
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 140%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+
+  span {
+    font-size: 60px;
+    font-weight: 800;
+  }
+`;
+
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
   font-weight: ${(props) => props.theme.fontWeights.Header2};
   color: #ffffff;
   font-family: "NanumSquare Neo";
-  margin-bottom: 70px;
+  margin-bottom: 36px;
   margin-top: 100px;
   white-space: pre-line;
   display: flex;
-  margin-top: 217-70px;
 `;
 
 const Header4 = styled.div`
@@ -50,6 +154,16 @@ const Header4 = styled.div`
   white-space: pre-line;
   margin-bottom: 18px;
   line-height: 140%;
+`;
+
+const M3Header = styled.div`
+  color: #FFF;
+  text-align: center;
+  font-family: "NanumSquare Neo";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
 `;
 
 const Div = styled.div`
@@ -66,6 +180,7 @@ const PartDiv = styled.div`
   width: 1330px;
   justify-content: center;
   padding-bottom: 100px;
+  margin-bottom: 208px;
 `;
 
 const Subtitle2 = styled.div`
@@ -106,4 +221,32 @@ const Line = styled.div`
   justify-content: space-between;
   margin-left: 55px;
   margin-right: 37px;
+  margin-top: 186px;
+`;
+
+const InfoWrap = styled.div`
+  width: 996px;
+  height: 280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 72px;
+  gap: 30px;
+`;
+
+const InfoBox = styled.div`
+  width: 312px;
+  height: 280px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+`;
+
+const InfoContent = styled.div`
+  color: #F5F5F5;
+  text-align: center;
+  font-family: "NanumSquare Neo";
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  padding-top: 78px;
 `;

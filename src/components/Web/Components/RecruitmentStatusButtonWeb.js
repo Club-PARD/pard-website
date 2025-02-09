@@ -41,8 +41,12 @@ const ButtonStyles = styled.button`
   display: flex;
   align-items: center;
   line-height: 34px;
-  width: 479px;
-  height: 64px;
+  width: auto;
+  height: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 120px;
+  padding-left: 120px;
   justify-content: center;
   border-radius: 10px;
   border: none;

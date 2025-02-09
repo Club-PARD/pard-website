@@ -1,79 +1,56 @@
 import styled, { ThemeProvider } from "styled-components";
-import { useState, useEffect } from "react";
 import { theme } from "../../../styles/theme";
-import { gsap } from "gsap/all";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import ProgramsTrain2 from "./ProgramsTrain2";
+import { useState } from "react";
+import ProgramSeminar from "./ProgramSeminar";
+import ProgramStudy from "./ProgramStudy";
+import ProgramSurfing from "./ProgramSurfing";
+import ProgramShort from "./ProgramShort";
+import ProgramLong from "./ProgramLong";
 
-gsap.registerPlugin(ScrollTrigger);
+const programComponents = {
+  1: <ProgramSeminar />, 
+  2: <ProgramStudy />, 
+  3: <ProgramSurfing />, 
+  4: <ProgramShort />, 
+  5: <ProgramLong />,
+};
+
+const buttonColors = {
+  1: "#64C59A",
+  2: "#5262F5",
+  3: "#FF5C00",
+  4: "#7B3FEF",
+  5: "#7B3FEF",
+};
 
 function ProgramsTrain() {
-  const Headers2 = ["세미나", "스터디", "서핑데이", "숏커톤", "롱커톤"];
-  const [Header2Index, setHeader2Index] = useState(0);
-  const [isHeaderFixed, setIsHeaderFixed] = useState(true);
-
-  useEffect(() => {
-    const horizontalScrollAnimation = gsap.to(".div1", {
-      x: () =>
-        -(
-          document.querySelector(".div1").scrollWidth -
-          document.querySelector(".div1").clientWidth
-        ),
-      scrollTrigger: {
-        trigger: ".div1",
-        start: "top+=50 center",
-        end: () => `+=${document.querySelector(".div1").scrollWidth}`,
-        scrub: 0.4,
-        // markers: true,
-        pin: true,
-        anticipatePin: 0,
-        onUpdate: ({ progress }) => {
-          setIsHeaderFixed(progress < 1);
-
-          let newIndex = 0;
-          if (progress < 0.085) {
-            newIndex = 0;
-          } else if (progress >= 0.085 && progress < 0.23) {
-            newIndex = 1;
-          } else if (progress >= 0.23 && progress < 0.4) {
-            newIndex = 2;
-          } else if (progress >= 0.4 && progress < 0.7) {
-            newIndex = 3;
-          } else if (progress >= 0.7) {
-            newIndex = 4;
-          }
-          setHeader2Index(newIndex);
-        },
-      },
-    });
-
-    return () => {
-      horizontalScrollAnimation.kill();
-      ScrollTrigger.getAll().forEach((trigger) => {
-        trigger.kill(true);
-      });
-    };
-  }, []);
-
-  const Header2Text = Headers2[Header2Index];
+  const [selectedProgram, setSelectedProgram] = useState(1);
 
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <HeaderDiv className={isHeaderFixed ? "" : "unfixed"}>
-          <HeaderDiv2>
-            <Header2_1>PROGRAMS</Header2_1>
-            <Header2 visible={isHeaderFixed}>{Header2Text}</Header2>
-          </HeaderDiv2>
-        </HeaderDiv>
-        <Div1 className="div1">
-          <ProgramsTrain2 />
-        </Div1>
+        <Header2>PROGRAMS</Header2>
+        <ButtonContainer>
+          {[1, 2, 3, 4, 5].map((num) => (
+          <button
+            key={num}
+            onClick={() => setSelectedProgram(num)}
+            className={selectedProgram === num ? "active" : ""}
+            style={{ backgroundColor: selectedProgram === num ? buttonColors[num] : "#1A1A1A" }}
+          >
+            {num === 1 ? "세미나" : num === 2 ? "스터디" : num === 3 ? "서핑데이" : num === 4 ? "숏커톤" : "롱커톤"}
+          </button>
+          ))}
+        </ButtonContainer>
+        <Container>
+          <ScrollContainer>
+            <Div>{programComponents[selectedProgram]}</Div>
+          </ScrollContainer>
+        </Container>
       </ThemeProvider>
     </div>
   );
 }
-
 export default ProgramsTrain;
 
 const Header2 = styled.div`
@@ -82,47 +59,62 @@ const Header2 = styled.div`
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  margin-bottom: 50px;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  transition: opacity 0.5s ease-in-out;
+  padding-right: 40px;
+  padding-left: 125px;
 `;
 
-const Header2_1 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header2};
-  font-weight: ${(props) => props.theme.fontWeights.Header2};
-  color: #ffffff;
-  font-family: "NanumSquare Neo";
-  white-space: pre-line;
-  margin-bottom: 90px;
-`;
-
-const HeaderDiv = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
-  position: sticky;
-  top: 15%;
-  // background-color: blue;
-  &.unfixed {
-    position: relative;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 368px;
+  //padding-right: 40px;
+  padding-left: 125px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-right: 40px;
+  padding-left: 125px;
+
+  button {
+    width: auto;
+    height: auto;
+    padding-top: 7.76px;
+    padding-bottom: 7.76px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #1A1A1A;
+    color: white;
+    font-family: "NanumSquare Neo";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    cursor: pointer;
+    border-radius: 1551.402px;
+    border: 1px solid #FFF;
+  }
+
+  button.active {
+    border: none;
   }
 `;
 
-const Div1 = styled.div`
+const ScrollContainer = styled.div`
+  width: 100%;
+  max-width: 1802px;
+  overflow-x: auto;
   display: flex;
-  flex-direction: column;
-  scroll-behavior: smooth;
-  margin-bottom: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1080px;
-
-  // background-color: green;
+  justify-content: flex-start;
 `;
 
-const HeaderDiv2 = styled.div`
+const Div = styled.div`
   display: flex;
-  flex-direction: column;
-  margin: 0px auto;
-  width: 1080px;
-  // background-color: red;
+  flex-direction: row;
+  margin-top: 92px;
 `;
