@@ -78,7 +78,7 @@ function HomeMentor() {
     <Div>
       <ThemeProvider theme={theme}>
         <Header2>멘토 추천사</Header2>
-        <Header4>당신이 PARD와 함께 해야 하는 이유</Header4>
+        <HeadlineM3>당신이 PARD와 함께 해야 하는 이유</HeadlineM3>
         <PartContents>
           {contentsData.map((content) => (
             <PartWrapper key={content.id}>
@@ -101,20 +101,17 @@ const Header2 = styled.div`
   text-align: center;
   margin-bottom: 25px;
   white-space: pre-line;
-  padding-right: 40px;
-  padding-left: 125px;
 `;
 
-const Header4 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Header4};
-  font-weight: ${(props) => props.theme.fontWeights.Header4};
-  color: #ffffff;
+const HeadlineM3 = styled.div`
+  color: #fff;
   font-family: "NanumSquare Neo";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
   text-align: center;
-  margin-bottom: 54px;
-  white-space: pre-line;
-  padding-right: 40px;
-  padding-left: 125px;
+  margin-bottom: 40px;
 `;
 
 const Header6 = styled.div`
@@ -220,4 +217,5 @@ const Div = styled.div`
   height: 850px;
   justify-content: center;
   width: 1330px;
+  margin-bottom: 233px;
 `;

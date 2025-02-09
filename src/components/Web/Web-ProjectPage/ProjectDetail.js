@@ -69,30 +69,57 @@ function ProjectDetail() {
   const sol2Array = data.solutions?.solution2 || [];
   const sol3Array = data.solutions?.solution3 || [];
   const teamname = data.teamName || "데이터 없음";
-  const developer = data.team?.[0]?.members?.slice(0, ) || [];
-  const DeveloperList = developer.map((item, index) => (
-    <EtcContent key={index}>{item}</EtcContent>
-  ));
-  const designer = data.team?.[1]?.members?.slice(0, ) || [];
-  const DesignerList = designer.map((item, index) => (
-    <EtcContent key={index}>{item}</EtcContent>
-  ));
-  const pm = data.team?.[2]?.members?.slice(0, ) || [];
-  const PMList = pm.map((item, index) => (
-    <EtcContent key={index}>{item}</EtcContent>
-  ));
-  const developertool = data.team?.[0]?.techStacks?.slice(0, ) || [];
-  const DeveloperToolList = developertool.map((item, index) => (
-    <EtcContent key={index}>{item}</EtcContent>
-  ));
-  const designertool = data.team?.[1]?.techStacks?.slice(0, ) || [];
-  const DesignerToolList = designertool.map((item, index) => (
-    <EtcContent key={index}>{item}</EtcContent>
-  ));
-  const pmtool = data.team?.[2]?.techStacks?.slice(0, ) || [];
-  const PMToolList = pmtool.map((item, index) => (
-    <EtcContent key={index}>{item}</EtcContent>
-  ));
+
+  const getMembersList = (teamIndex, n) => {
+    // members[1]과 members[2] 가져오기
+    const firstSet = data.team?.[teamIndex]?.members?.[1] || [];
+    const secondSet = data.team?.[teamIndex]?.members?.[2] || [];
+  
+    return (
+      <>
+        {Array.isArray(firstSet) &&
+          firstSet.slice(0, n).map((item, index) => (
+            <EtcContent key={`${teamIndex}-first-${index}`}>{item}</EtcContent>
+          ))}
+        <br /> {/* 줄바꿈 추가 */}
+        {Array.isArray(secondSet) &&
+          secondSet.slice(0, n).map((item, index) => (
+            <EtcContent key={`${teamIndex}-second-${index}`}>{item}</EtcContent>
+          ))}
+      </>
+    );
+  };
+  
+  const getTechStacksList = (teamIndex, n) => {
+    const firstSet = data.team?.[teamIndex]?.techStacks?.[1] || [];
+    const secondSet = data.team?.[teamIndex]?.techStacks?.[2] || [];
+  
+    return (
+      <>
+        {Array.isArray(firstSet) &&
+          firstSet.slice(0, n).map((item, index) => (
+            <EtcContent key={`${teamIndex}-first-${index}`}>{item}</EtcContent>
+          ))}
+        <br /> {/* 줄바꿈 추가 */}
+        {Array.isArray(secondSet) &&
+          secondSet.slice(0, n).map((item, index) => (
+            <EtcContent key={`${teamIndex}-second-${index}`}>{item}</EtcContent>
+          ))}
+      </>
+    );
+  };
+  
+  // 개발자, 디자이너, PM 리스트 생성
+  const DeveloperList = getMembersList(0, 4);
+  const DesignerList = getMembersList(1, 3);
+  const PMList = getMembersList(2, 3);  
+  console.log(DeveloperList);
+  
+  // 개발자, 디자이너, PM 도구 리스트 생성
+  const DeveloperToolList = getTechStacksList(0, 4);
+  const DesignerToolList = getTechStacksList(1, 3);
+  const PMToolList = getTechStacksList(2, 3);
+
   const figmaurl = data.links?.[0]?.url || [];
   const githuburl = data.links?.[1]?.url || [];
   const serviceurl = data.links?.[2]?.url || [];
@@ -206,19 +233,19 @@ function ProjectDetail() {
           <EtcContainer>
             <EtcTitle>Tech Stack</EtcTitle>
             <EtcContainerBox>
-              <EtcNameContainer>
-                <EtcName>기획</EtcName>
-                <EtcContentContainer>{PMToolList}</EtcContentContainer>
-              </EtcNameContainer>
-              <EtcNameContainer>
-                <EtcName>디자인</EtcName>
-                <EtcContentContainer>{DesignerToolList}</EtcContentContainer>
-              </EtcNameContainer>
-              <EtcNameContainer>
-                <EtcName>개발</EtcName>
-                <EtcContentContainer>{DeveloperToolList}</EtcContentContainer>
-              </EtcNameContainer>
-            </EtcContainerBox>
+  <EtcNameContainer2 id={p_id}>
+    <EtcName>기획</EtcName>
+    <EtcContentContainer>{PMToolList}</EtcContentContainer>
+  </EtcNameContainer2>
+  <EtcNameContainer2 id={p_id}>
+    <EtcName>디자인</EtcName>
+    <EtcContentContainer>{DesignerToolList}</EtcContentContainer>
+  </EtcNameContainer2>
+  <EtcNameContainer2 id={p_id}>
+    <EtcName>개발</EtcName>
+    <EtcContentContainer>{DeveloperToolList}</EtcContentContainer>
+  </EtcNameContainer2>
+</EtcContainerBox>
           </EtcContainer>
           <EtcContainer>
             <EtcTitle>Open Link</EtcTitle>
@@ -352,6 +379,7 @@ const DetailExplainContainer = styled.div`
   width: 1108px;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 84px;
 `;
 
 const ExplainContainer = styled.div`
@@ -451,7 +479,7 @@ const AllEtcContainer = styled.footer`
   justify-content: center;
   width: 100%;
   height: 353px;
-  padding-bottom: 103px;
+  padding-bottom: 61px;
   padding-left: 70px;
   gap: 150px;
 `;
@@ -463,6 +491,7 @@ const EtcContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   gap: 9px;
+  margin-top: -55px;
 `;
 
 const EtcTitle = styled.p`
@@ -480,6 +509,7 @@ const EtcContainerBox = styled.div`
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
+  width: 500px;
 `;
 
 const EtcContainerBox2 = styled.div`
@@ -496,10 +526,19 @@ const EtcNameContainer = styled.div`
   width: 310px;
   align-items: center;
   gap: 33px;
+  margin-bottom: 20px;
+`;
+
+const EtcNameContainer2 = styled.div`
+  display: flex;
+  width: ${props => props.id === 6 || props.id === 12 ? '365px' : '310px'};
+  align-items: center;
+  gap: 33px;
+  margin-bottom: 20px;
 `;
 
 const EtcName = styled.div`
-  width: 58px;
+  width: 72px;
   color: #FFF;
   font-family: "NanumSquare Neo";
   font-size: 16px;
@@ -514,7 +553,9 @@ display: flex;
 align-items: center;
 gap: 10px; /* Decrease gap between items */
 flex-wrap: wrap;
-width: 100%;
+width: 400px;
+height: 36px;
+line-height: 160%;
 `;
 
 const EtcContent = styled.p`
@@ -523,7 +564,8 @@ const EtcContent = styled.p`
   font-size: 16px;
   font-style: normal;
   font-weight: 800;
-  line-height: 160%;
+  line-height: 10%; /* 여기에 적절한 라인 높이를 설정 */
+  white-space: pre-line; /* 줄바꿈을 적용하려면 이 속성을 유지 */
 `;
 
 const LogoBtn = styled.button`

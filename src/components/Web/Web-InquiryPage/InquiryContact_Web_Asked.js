@@ -1,60 +1,73 @@
 import styled, { ThemeProvider } from "styled-components";
-import { Link } from "react-router-dom";
 import { theme } from "../../../styles/theme";
+import { useState } from "react";
 import Email_Logo from "../../../assets/img/email_vector.png";
 import Instargram_Logo from "../../../assets/img/instargram_vector.png";
 import Youtube_Logo from "../../../assets/img/youtube_vector.png";
 import Disquiet_Logo from "../../../assets/img/disquiet_vector.png";
+import Email_b_Logo from "../../../assets/img/email_blue_vector.png";
+import Instargram_b_Logo from "../../../assets/img/instargram_blue_vector.png";
+import Youtube_b_Logo from "../../../assets/img/youtube_blue_vector.png";
+import Disquiet_b_Logo from "../../../assets/img/disquiet_blue_vector.png";
 
 const Ask = () => {
+  const [active, setActive] = useState(null);
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
-      <Margin>
-        <Askedstyled>
-          PARD에 대해
-          <br />
-          무엇이든 물어보세요!
-        </Askedstyled>   
-      </Margin>
-      <AskContainer>
-        <AskBox>
-          <img 
-            src={Email_Logo} 
-            alt="이메일" 
-            style={{ width: "46.979px", height: "37.583px" }}
-            onClick={() => {
-              navigator.clipboard.writeText("official@we-pard.com");
-              alert("이메일이 복사되었습니다!");
-            }} 
-          />
-          <p>메일</p>
-        </AskBox>
-        <AskBox>
-          <a href="https://www.instagram.com/official_pard_/">
-            <img src={Instargram_Logo} alt="인스타그램" style={{ width: "37.583px", height: "37.583px" }} />
-          </a>
-          <p>인스타그램</p>
-        </AskBox>
-        <AskBox>
-          <a href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA">
-            <img src={Youtube_Logo} alt="유튜브" style={{ width: "53.344px", height: "37.583px" }} />
-          </a>
-          <p>유튜브</p>
-        </AskBox>
-        <AskBox>
-          <a href="https://disquiet.io/club/pard">
-            <img src={Disquiet_Logo} alt="디스콰이엇" style={{ width: "49.089px", height: "38.001px" }} />
-          </a>
-          <p>디스콰이엇</p>
-        </AskBox>
-      </AskContainer>
-      <LogoDiv>
-        <DownLogo
-          src={require("../../../assets/img/DownScrollLogo.png")}
-          alt="downLogo"
-        />
-      </LogoDiv>
+        <Margin>
+          <Askedstyled>
+            PARD에 대해
+            <br />
+            무엇이든 물어보세요!
+          </Askedstyled>
+        </Margin>
+        <AskContainer>
+          <AskBox onClick={() => setActive("email")}>
+            <a href="mailto:official@we-pard.com">
+              <img
+                src={active === "email" ? Email_b_Logo : Email_Logo}
+                alt="이메일"
+                style={{ width: "46.979px", height: "37.583px" }}
+              />
+            </a>
+            <p className={active === "email" ? "active" : ""}>메일</p>
+          </AskBox>
+          <AskBox onClick={() => setActive("instagram")}> 
+            <a href="https://www.instagram.com/official_pard_/" target="_blank" rel="noopener noreferrer">
+              <img
+                src={active === "instagram" ? Instargram_b_Logo : Instargram_Logo}
+                alt="인스타그램"
+                style={{ width: "37.583px", height: "37.583px" }}
+              />
+            </a>
+            <p className={active === "instagram" ? "active" : ""}>인스타그램</p>
+          </AskBox>
+          <AskBox onClick={() => setActive("youtube")}> 
+            <a href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA" target="_blank" rel="noopener noreferrer">
+              <img
+                src={active === "youtube" ? Youtube_b_Logo : Youtube_Logo}
+                alt="유튜브"
+                style={{ width: "53.344px", height: "37.583px" }}
+              />
+            </a>
+            <p className={active === "youtube" ? "active" : ""}>유튜브</p>
+          </AskBox>
+          <AskBox onClick={() => setActive("disquiet")}> 
+            <a href="https://disquiet.io/club/pard" target="_blank" rel="noopener noreferrer">
+              <img
+                src={active === "disquiet" ? Disquiet_b_Logo : Disquiet_Logo}
+                alt="디스콰이엇"
+                style={{ width: "49.089px", height: "38.001px" }}
+              />
+            </a>
+            <p className={active === "disquiet" ? "active" : ""}>디스콰이엇</p>
+          </AskBox>
+        </AskContainer>
+        <LogoDiv>
+          <DownLogo src={require("../../../assets/img/DownScrollLogo.png")} alt="downLogo" />
+        </LogoDiv>
       </Container>
     </ThemeProvider>
   );
@@ -87,17 +100,20 @@ const AskBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 
   p {
-    color: #FFF;
+    color: #fff;
     text-align: center;
-
-    /* Header/H6 - B 20 */
     font-family: "NanumSquare Neo";
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 30px */
+  }
+
+  p.active {
+    color: #5262F5;
   }
 `;
 
@@ -119,10 +135,7 @@ const Askedstyled = styled.div`
   font-family: "NanumSquare Neo";
   font-style: normal;
   font-weight: ${(props) => props.theme.fontWeights.Header2};
-  color: "white";
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
   line-height: 140%;
-  /* or 84px */
-
   color: #ffffff;
 `;

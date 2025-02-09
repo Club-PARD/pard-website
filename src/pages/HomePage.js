@@ -18,6 +18,7 @@ import FooterMov from "../components/FooterMov";
 import HomeSecondMob from "../components/Mobile/Mob-HomePage/HomeSecond_Mob";
 import ProgramsTrain from "../components/Web/Web-ProjectPage/ProgramsTrain";
 import NavBarMob_Home from "../components/NavBarMob_Home";
+import HomeProject from "../components/Web/Web-HomePage/HomeProject";
 
 function HomePage() {
   const isDesktopOrMobile = useMediaQuery({ query: "(max-width:768px)" }); // 758px 이하일 때는 모바일 뷰로 바뀐다.
@@ -27,10 +28,11 @@ function HomePage() {
       {isDesktopOrMobile !== true ? (
         <div>
           <NavBarHome />
-          {/* <HomeFirst /> */}
+          <HomeFirst />
           <HomeSecond />
           <HomePartWeb />
           <ProgramsTrain />
+          <HomeProject />
           <HomeMentorWeb />
           <HomeLastWeb />
           <HomePartnerWeb />
