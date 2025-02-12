@@ -1,25 +1,25 @@
-import PYY from "../assets/img/headers/백예은.png";
-import LJE from "../assets/img/headers/이지은.png";
-import KHSS from "../assets/img/headers/김현승.png";
-import LMG from "../assets/img/headers/이민규.png";
-import KSA from "../assets/img/headers/김수아.png";
-import KMH from "../assets/img/headers/김민혁.png";
-import KHJ from "../assets/img/headers/김현중.png";
-import YJH from "../assets/img/headers/유재혁.png";
-import KKI from "../assets/img/headers/김광일.png";
-import KCE from "../assets/img/headers/권채은.png";
-import CJH from "../assets/img/headers/천주현.png";
-import KGY from "../assets/img/headers/김기영.png";
-import KYC from "../assets/img/headers/김영채.png";
-import KYJ from "../assets/img/headers/김예정.png";
-import PSH from "../assets/img/headers/박성현.png";
-import LJH from "../assets/img/headers/이주향.png";
+import PSH from "../assets/img/headers/PSH.png";
+import KGY from "../assets/img/headers/KGY.png";
+import KDW from "../assets/img/headers/KDW.png";
+import PIK from "../assets/img/headers/PIK.png";
+import LJI from "../assets/img/headers/LJI.png";
+import SJH from "../assets/img/headers/SJH.png";
+import CSW from "../assets/img/headers/CSW.png";
+import KHM from "../assets/img/headers/KHM.png";
+import KYJ from "../assets/img/headers/KYJ.png";
+import LYS from "../assets/img/headers/LYS.png";
+import KCE from "../assets/img/headers/KCE.png";
+import KWH from "../assets/img/headers/KWH.png";
+import YJH from "../assets/img/headers/YJH.png";
+import LYH from "../assets/img/headers/LYH.png";
+import KNI from "../assets/img/headers/KNI.png";
+import KMG from "../assets/img/headers/KMG.png";
 
 export const managerData = [
   {
     id: 1,
-    imgsrc: PYY,
-    name: "백예은(회장)",
+    imgsrc: PSH,
+    name: "박성현",
     position: "Operator",
     position_k: "회장",
     site: [
@@ -30,264 +30,182 @@ export const managerData = [
   },
   {
     id: 2,
-    imgsrc: LJE,
-    name: "이지은(부회장)",
+    imgsrc: KGY,
+    name: "김기영",
     position: "Operator",
     position_k: "부회장",
     site: [
-      {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/ezn/",
-      },
-      { name: "instagram", 
-        link: "https://www.instagram.com/ana_jieun/" 
-      },
-      {
-        name: "disquiet",
-        link: "https://disquiet.io/@twins24j",
+      { name: "email", 
+        link: "cla12093@gmail.com" 
       },
     ],
   },
 
   {
     id: 3,
-    imgsrc: KHSS,
-    name: "김현승(부회장)",
+    imgsrc: KDW,
+    name: "김도원",
     position: "Operator",
-    position_k: "부회장",
+    position_k: "운영진",
     site: [
-      {
-        name: "instagram",
-        link: "https://www.instagram.com/hyunseung_99/",
-      },
-      { name: "github", 
-        link: "https://github.com/KimRPG" 
+      { name: "email", 
+        link: "hooked0135@gmail.com" 
       },
     ],
   },
   {
     id: 4,
-    imgsrc: LMG,
-    name: "이민규",
-    position: "Operator",position_k: "운영팀",
+    imgsrc: PIK,
+    name: "박인권",
+    position: "Operator",
+    position_k: "운영진",
     site: [
-      { 
-        name: "instagram", 
-        link: "https://www.instagram.com/_lmingyu0115?igsh=MXBpY3dxeHVyNWRyNA%3D%3D&utm_source=qr" 
-      },
-      { 
-        name: "github", 
-        link: "https://github.com/livingdavid" 
-      },
-      { 
-        name: "disquiet", 
-        link: "https://disquiet.io/@livingdavid" 
+      { name: "email", 
+        link: "22100290@handong.ac.kr" 
       },
     ],
   },
   {
     id: 5,
-    imgsrc: KSA,
-    name: "김수아",
+    imgsrc: LJI,
+    name: "이지인",
     position: "Operator",
-    position_k: "운영팀",
+    position_k: "운영진",
     site: [
-      { 
-        name: "instagram", 
-        link: "https://www.instagram.com/_.uneteclair?igsh=bmRkZGtrczV3aXI0&utm_source=qr" 
+      { name: "email", 
+        link: "jiin1129@handong.ac.kr" 
       },
     ],
   },
   {
     id: 6,
-    imgsrc: KMH,
-    name: "김민혁",
+    imgsrc: SJH,
+    name: "손주하",
     position: "Operator",
-    position_k: "운영팀",
+    position_k: "BX 디자이너",
     site: [
-      { 
-        name: "instagram", 
-        link: "https://www.instagram.com/alsgur._.rla/" 
-      },
-      {
-        name: "github",
-        link: "https://github.com/Kim-Min-Hyeok",
-      },
-      {
-        name: "disquiet",
-        link: "https://disquiet.io/@alsgur",
+      { name: "email", 
+        link: "juhason6625@gmail.com" 
       },
     ],
   },
   {
     id: 7,
-    imgsrc: KHJ,
-    name: "김현중",
-    position: "Developer",
-    position_k: "파트장",
+    imgsrc: CSW,
+    name: "김수원",
+    position: "ProductManager",
+    position_k: "기획 파트장",
     site: [
-      { 
-        name: "instagram", 
-        link: "https://www.instagram.com/bbin_guuuu/" 
-      },
-      {
-        name: "github",
-        link: "https://github.com/hjkim0905",
-      },
-      {
-        name: "disquiet",
-        link: "https://disquiet.io/@eax9952",
+      { name: "email", 
+        link: "tndnjsc03@gmail.com" 
       },
     ],
   },
   {
     id: 8,
-    imgsrc: YJH,
-    name: "유재혁",
-    position: "Developer",position_k: "iOS 부파트장",
+    imgsrc: KHM,
+    name: "김희민",
+    position: "ProductManager",
+    position_k: "기획 부파트장",
     site: [
-      { 
-        name: "instagram", 
-        link: "https://www.instagram.com/jaehyxxk_?igsh=bWRiZmRlYnZsOGV0&utm_source=qr" 
-      },
-      {
-        name: "github",
-        link: "https://github.com/yoojh5685",
+      { name: "email", 
+        link: "22100243@handong.ac.kr" 
       },
     ],
   },
   {
     id: 9,
-    imgsrc: KKI,
-    name: "김광일",
-    position: "Developer",position_k: "디자인 부파트장",
+    imgsrc: KYJ,
+    name: "김예정",
+    position: "Designer",
+    position_k: "디자인 파트장",
     site: [
-      { 
-        name: "linkedin", 
-        link: "https://www.linkedin.com/in/kwangil-kim-79822a2aa" 
-      },
-      {
-        name: "github",
-        link: "https://github.com/pangil5634",
-      },
-      {
-        name: "disquiet",
-        link: "https://disquiet.io/@oksk6689",
+      { name: "email", 
+        link: "yejomee22@gmail.com" 
       },
     ],
   },
   {
     id: 10,
-    imgsrc: KCE,
-    name: "권채은",
-    position: "Developer",position_k: "파트장",
+    imgsrc: LYS,
+    name: "이윤서",
+    position: "Designer",
+    position_k: "디자인 부파트장",
     site: [
-      { 
-        name: "instagram", 
-        link: "https://www.instagram.com/codms_rnjs/" 
-      },
-      {
-        name: "github",
-        link: "https://github.com/codms0201",
-      },
-      {
-        name: "disquiet",
-        link: "https://disquiet.io/@chenlover0615",
+      { name: "email", 
+        link: "ckcunice@gmail.com" 
       },
     ],
   },
   {
     id: 11,
-    imgsrc: CJH,
-    name: "천주현",
-    position: "Developer",position_k: "파트장",
+    imgsrc: KCE,
+    name: "권채은",
+    position: "Developer",
+    position_k: "웹 파트장",
     site: [
-      { 
-        name: "instagram", 
-        link: "https://www.instagram.com/zoohyxnn/" 
-      },
-      {
-        name: "github",
-        link: "https://github.com/millejuice",
+      { name: "email", 
+        link: "chenlover0615@gmail.com" 
       },
     ],
   },
   {
     id: 12,
-    imgsrc: KGY,
-    name: "김기영",
-    position: "Developer",position_k: "파트장",
+    imgsrc: KWH,
+    name: "김우현",
+    position: "Developer",
+    position_k: "웹 부파트장",
     site: [
-      { 
-        name: "instagram", 
-        link: "https://www.instagram.com/giyou_ul?igsh=MWRsY3RuanIxaWhkMw==" 
-      },
-      {
-        name: "github",
-        link: "https://github.com/Giyoul",
+      { name: "email", 
+        link: "kwh77974481@gmail.com" 
       },
     ],
   },
   {
     id: 13,
-    imgsrc: KYC,
-    name: "김영채",
-    position: "Designer",position_k: "파트장",
+    imgsrc: YJH,
+    name: "유재혁",
+    position: "Developer",
+    position_k: "iOS 파트장",
     site: [
-      {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/youngchae-kim-420526315",
-      },
-      { name: "instagram", 
-        link: "https://www.instagram.com/147ck_?igsh=MXVlOHMyZms4MXhw&utm_source=qr" 
-      },
-      { name: "disquiet", 
-        link: "https://disquiet.io/@kycskekfk" 
+      { name: "email", 
+        link: "yoojh5685@gmail.com" 
       },
     ],
   },
   {
     id: 14,
-    imgsrc: KYJ,
-    name: "김예정",
-    position: "Designer",position_k: "파트장",
+    imgsrc: LYH,
+    name: "이유현",
+    position: "Developer",
+    position_k: "iOS 부파트장",
     site: [
-      { name: "instagram", 
-        link: "https://www.instagram.com/jo.__.my?igsh=MXRmaXpzNjI0YWdicw%3D%3D&utm_source=qr" 
-      },
-      { name: "disquiet", 
-        link: "https://disquiet.io/@yejomee22" 
+      { name: "email", 
+        link: "youhyeon071@gmail.com" 
       },
     ],
   },
   {
     id: 15,
-    imgsrc: PSH,
-    name: "박성현",
-    position: "Product Manager",position_k: "파트장",
+    imgsrc: KNI,
+    name: "김나임",
+    position: "Developer",
+    position_k: "서버 파트장",
     site: [
-      { name: "instagram", 
-        link: "https://www.instagram.com/oh_hi__oh_hi/" 
-      },
-      { name: "disquiet", 
-        link: "https://disquiet.io/@seonghyeon_608" 
+      { name: "email", 
+        link: "naimk5451@gmail.com" 
       },
     ],
   },
   {
     id: 16,
-    imgsrc: LJH,
-    name: "이주향",
-    position: "Product Manager",position_k: "파트장",
+    imgsrc: KMG,
+    name: "김민규",
+    position: "Developer",
+    position_k: "서버 부파트장",
     site: [
-      { name: "instagram", 
-        link: "https://www.instagram.com/2corinthians__418/" 
-      },
-      { name: "disquiet", 
-        link: "https://disquiet.io/@133435" 
-      },
-      { name: "web", 
-        link: "https://blog.naver.com/neulsasa" 
+      { name: "email", 
+        link: "22000071@handong.ac.kr" 
       },
     ],
   },

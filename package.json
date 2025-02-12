@@ -35,7 +35,7 @@
     "recoil": "^0.7.7",
     "styled-components": "^5.3.10",
     "swipe-core": "^0.1.13",
-    "swiper": "^9.3.2",
+    "swiper": "^9.4.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

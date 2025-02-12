@@ -1,41 +1,29 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
 import DisquietImage from "../../../assets/img/Disquiet-partner.png";
-import LincImage from "../../../assets/img/Linc-partner.png";
 import ImpactCampusImage from "../../../assets/img/ImpactCampus-partner.png";
 import SImage from "../../../assets/img/S-partner.png";
 import SpackImg from "../../../assets/img/SpackLab.png";
 import AsanImg from "../../../assets/img/ASANImg.png";
-import MobitImg from "../../../assets/img/MobitImg.png";
-import PickPly from "../../../assets/img/Pickply_Img.png";
 import NextChallengeImg from "../../../assets/img/NextChallengeImg.png";
 import dCamp from "../../../assets/img/dCamp.png";
 import AWS from "../../../assets/img/AWS_logo.PNG";
 
 function HomePartner() {
   const handleClickSpark = () => {
-    window.open("https://sparklabs.co.kr/lb/index.php", "_blank");
+    window.open("https://sparklabs.co.kr/kr/", "_blank");
   };
   const handleClickDiquiet = () => {
     window.open("https://disquiet.io/", "_blank");
   };
   const handleClickImpactCampus = () => {
-    window.open("https://impact.career/", "_blank");
-  };
-  const handleClickLink = () => {
-    window.open("https://linc30.handong.edu/", "_blank");
+    window.open("https://matching.impact.career/", "_blank");
   };
   const handleClickSwyg = () => {
-    window.open("https://www.swygbro.com", "_blank");
+    window.open("https://www.swygbro.com/", "_blank");
   };
   const handleClickAsan = () => {
     window.open("https://asan-nanum.org/", "_blank");
-  };
-  const handleClickMobit = () => {
-    window.open("https://www.momit.co.kr", "_blank");
-  };
-  const handleClickPickPly = () => {
-    window.open("https://pickply.com/company ", "_blank");
   };
   const handleClickNextChallenge = () => {
     window.open("https://www.ncf.or.kr/", "_blank");
@@ -45,6 +33,10 @@ function HomePartner() {
   };
   const handleClickAWS = () => {
     window.open("https://aws.amazon.com/ko/?nc2=h_lg", "_blank");
+  };
+
+  const handleClick = () => {
+    window.location.href = "mailto:official@we-pard.com";
   };
 
   return (
@@ -60,33 +52,31 @@ function HomePartner() {
             alt="NextChallenge"
           />
           <SpackImgDiv onClick={handleClickSpark} src={SpackImg} alt="S" />
+        </ContentWrapper>
+        <ContentWrapper2>
           <ImpactCampusImage3
             onClick={handleClickImpactCampus}
             src={ImpactCampusImage}
             alt="Impact Campus"
           />
-        </ContentWrapper>
-        <ContentWrapper2>
           <DisquietImage1
             onClick={handleClickDiquiet}
             src={DisquietImage}
             alt="Disquiet"
           />
           <SImage4 onClick={handleClickSwyg} src={SImage} alt="S" />
-          <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
-          <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
-          {/* <LincImage2 onClick={handleClickLink} src={LincImage} alt="Linc" />
-          <MobitDiv onClick={handleClickMobit} src={MobitImg} alt="Mobit" /> */}
         </ContentWrapper2>
-        {/* <ContentWrapper3>
-          <PickPlyDiv
-            onClick={handleClickPickPly}
-            src={PickPly}
-            alt="PickPly"
-          />
+        <ContentWrapper3>
           <Dcamp onClick={handleClickDcamp} src={dCamp} alt="dCamp" />
           <AWSImg onClick={handleClickAWS} src={AWS} alt="AWS" />
-        </ContentWrapper3> */}
+        </ContentWrapper3>
+        <ButtonDiv>
+          <div style={{ width: "360px" }}>
+            <DMButton>
+              <Header5 onClick={handleClick}>후원 문의하기</Header5>
+            </DMButton>
+          </div>
+        </ButtonDiv>
       </ThemeProvider>
     </PartDiv>
   );
@@ -101,7 +91,7 @@ const Header2 = styled.div`
   font-family: "NanumSquare Neo";
   margin-bottom: 25px;
   white-space: pre-line;
-  padding-left: 125px;
+  text-align: center;
 `;
 
 const Header4 = styled.div`
@@ -110,8 +100,7 @@ const Header4 = styled.div`
   color: #ffffff;
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  padding-left: 125px;
-  padding-right: 80px;
+  text-align: center;
 `;
 
 const PartDiv = styled.div`
@@ -119,6 +108,7 @@ const PartDiv = styled.div`
   height: 700px;
   justify-content: center;
   width: 1330px;
+  margin-bottom: 265px;
 `;
 
 const DisquietImage1 = styled.img`
@@ -128,24 +118,16 @@ const DisquietImage1 = styled.img`
   cursor: pointer;
 `;
 
-const LincImage2 = styled.img`
-  width: 150px;
-  height: 50px;
-  padding-left: 90px;
-  cursor: pointer;
-`;
-
 const AWSImg = styled.img`
   width: 140px;
   height: auto;
-  padding-left: 90px;
+  margin-left: 30px;
   cursor: pointer;
 `;
 
 const Dcamp = styled.img`
   width: 180px;
   height: 7%;
-  padding-left: 90px;
   cursor: pointer;
 `;
 
@@ -171,7 +153,6 @@ const NextChallenge1Img = styled.img`
 const SpackImgDiv = styled.img`
   width: 217px;
   height: 60px;
-  margin-right: 65px;
   cursor: pointer;
 `;
 
@@ -182,20 +163,6 @@ const AsanImgDiv = styled.img`
   cursor: pointer;
 `;
 
-const MobitDiv = styled.img`
-  width: 167px;
-  height: 50px;
-  margin-left: 65px;
-  cursor: pointer;
-`;
-
-const PickPlyDiv = styled.img`
-  width: 180px;
-  height: 55px;
-  margin-left: 65px;
-  cursor: pointer;
-`;
-
 const ContentWrapper = styled.div`
   flex: 1;
   display: flex;
@@ -203,6 +170,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   margin-top: 120px;
   justify-content: center;
+  gap: 85px;
 `;
 
 const ContentWrapper2 = styled.div`
@@ -212,6 +180,7 @@ const ContentWrapper2 = styled.div`
   align-items: center;
   margin-top: 50px;
   justify-content: center;
+  gap: 76px;
 `;
 const ContentWrapper3 = styled.div`
   flex: 1;
@@ -220,4 +189,37 @@ const ContentWrapper3 = styled.div`
   align-items: center;
   margin-top: 30px;
   justify-content: center;
+  gap: 200px;
+`;
+
+const Header5 = styled.div`
+  font-size: ${(props) => props.theme.Web_fontSizes.Header5};
+  font-weight: ${(props) => props.theme.fontWeights.Header5};
+  color: #ffffff;
+  font-family: "NanumSquare Neo";
+  white-space: pre-line;
+  text-align: left;
+  line-height: 140%;
+  align-items: flex-start;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+`;
+
+const DMButton = styled.div`
+  align-items: center;
+  display: flex;
+  background-color: #5262F5;
+  height: "57px";
+  justify-content: center;
+  width: "360px";
+  border-radius: 10px;
+  margin-top: 70px;
+`;
+
+const ButtonDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: "75px";
 `;
