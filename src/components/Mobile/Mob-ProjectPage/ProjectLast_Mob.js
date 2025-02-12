@@ -1,49 +1,87 @@
 import styled, { ThemeProvider } from "styled-components";
-import { theme } from "../../../styles/theme";
 import React, { useEffect, useState } from "react";
-import { dbService } from "../../../fbase";
-import { collection, getDocs } from "firebase/firestore";
+import { theme } from "../../../styles/theme";
 import { Link } from "react-router-dom";
-import { pardDATA } from "../../../utils/data.constant";
+import {
+  getAllProjectList_Mob,
+  getWebProjectList_Mob,
+  getAppProjectList_Mob,
+} from "../../../utils/api";
 import FilterBtn from "../Components/FilterBtn";
 
 function ProjectLast_Mob() {
   const [projects, setProjects] = useState([]);
   const [more, setMore] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
   const [part, setPart] = useState("all"); // 기본 필터: "all"
+  const [totalPages, setTotalPages] = useState(1);
   const parts = ["ALL", "WEB", "APP"]; // 필터 버튼 항목
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const data = await getDocs(collection(dbService, "Project"));
-        const newData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-        const sortedItems = newData.sort((a, b) => b.order - a.order);
+        let response;
+        if (part === "web") {
+          response = await getWebProjectList_Mob(0);
+        } else if (part === "app") {
+          response = await getAppProjectList_Mob(0);
+        } else {
+          response = await getAllProjectList_Mob(0);
+        }
+
+        const sortedItems = response.content.sort((a, b) => a.orderNumber - b.orderNumber);
         setProjects(sortedItems);
+        setTotalPages(response.totalPages || 1); // 전체 페이지 수 저장
       } catch (error) {
-        console.error("Error fetching projects:", error);
+        console.error("Failed to fetch projects", error);
       }
     };
 
     fetchProjects();
-  }, []);
+  }, [part]);
 
+  // 필터 변경 시 실행
   const handleFilterChange = (newPart) => {
-    setPart(newPart);
-    setCurrentPage(1); // 필터 변경 시 페이지 초기화
+    setPart(newPart.toLowerCase());
+    setMore(false); // 필터 변경 시 기본 5개만 보이도록 초기화
   };
 
-  const filteredProjects = projects.filter((project) => {
-    return part === "all" || project.part.toLowerCase() === part.toLowerCase();
-  });
+  // "더보기" 버튼 클릭 시 추가 데이터 불러오기
+  const loadMoreProjects = async () => {
+    try {
+      let allProjects = [...projects];
 
-  const visibleProjects = filteredProjects.slice(0, more ? filteredProjects.length : 5);
+      for (let page = 1; page < totalPages; page++) {
+        let response;
+        if (part === "web") {
+          response = await getWebProjectList_Mob(page);
+        } else if (part === "app") {
+          response = await getAppProjectList_Mob(page);
+        } else {
+          response = await getAllProjectList_Mob(page);
+        }
+
+        if (response.content.length > 0) {
+          allProjects = [...allProjects, ...response.content];
+        }
+      }
+
+      // 중복 제거 (ID 기반)
+      const uniqueProjects = Array.from(new Map(allProjects.map((item) => [item.id, item])).values());
+
+      setProjects(uniqueProjects);
+      setMore(true);
+    } catch (error) {
+      console.error("Error loading more projects:", error);
+    }
+  };
+
+  // `more` 상태에 따라 표시할 프로젝트 개수 조정
+  const visibleProjects = more ? projects : projects.slice(0, 5);
 
   return (
     <Div>
-      <PartDiv>
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <PartDiv>
           <FilterContainer>
             {parts.map((filterPart) => (
               <FilterBtn
@@ -56,46 +94,42 @@ function ProjectLast_Mob() {
           </FilterContainer>
           <Container>
             {visibleProjects.map((project) => (
-              <React.Fragment key={project.id}>
-                {(project.generation === `${pardDATA.currentGeneration - 1}기` || more) && (
-                  <Link to={`/Project/${project.id}`}>
-                    <Column>
-                      <ContentDiv>
-                        <MainImg
-                          src={project.mainImg}
-                          alt={project.serviceName}
-                        />
-                        <TextDiv>
-                          <ContentsWrap>
-                            <Subtitle1>{project.serviceName}</Subtitle1>
-                            <TitleTectDiv>
-                              {project.mobTitle?.map((title, index) => (
-                                <Body2 key={index}>{title}</Body2>
-                              ))}
-                            </TitleTectDiv>
-                            <ContentTextDiv>
-                              <Body2>
-                                #{project.generation} #{project.part}
-                              </Body2>
-                            </ContentTextDiv>
-                          </ContentsWrap>
-                        </TextDiv>
-                      </ContentDiv>
-                    </Column>
-                  </Link>
-                )}
-              </React.Fragment>
+              <Link key={project.id} to={`/Project/${project.id}`}>
+                <Column>
+                  <ContentDiv>
+                    <MainImg
+                      src={project.thumbnailUrl}
+                      alt={project.serviceName}
+                    />
+                    <TextDiv>
+                      <ContentsWrap>
+                        <Subtitle1>{project.serviceName}</Subtitle1>
+                        <TitleTextDiv>
+                          {project.sentence?.map((sentence, index) => (
+                            <Body2 key={index}>{sentence.content}</Body2>
+                          ))}
+                        </TitleTextDiv>
+                        <ContentTextDiv>
+                          <Body2>
+                            #{project.generation} #{project.platform}
+                          </Body2>
+                        </ContentTextDiv>
+                      </ContentsWrap>
+                    </TextDiv>
+                  </ContentDiv>
+                </Column>
+              </Link>
             ))}
           </Container>
-        </ThemeProvider>
-        {!more && (
-          <DownLogo
-            src={require("../../../assets/img/moreButton.png")}
-            onClick={() => setMore(true)}
-            alt="downLogo"
-          />
-        )}
-      </PartDiv>
+          {!more && (
+            <DownLogo
+              src={require("../../../assets/img/moreButton.png")}
+              onClick={loadMoreProjects}
+              alt="downLogo"
+            />
+          )}
+        </PartDiv>
+      </ThemeProvider>
     </Div>
   );
 }
@@ -107,10 +141,9 @@ const Subtitle1 = styled.div`
   font-weight: ${(props) => props.theme.fontWeights.Subtitle1};
   color: #ffffff;
   font-family: "NanumSquare Neo";
-  font-style: normal;
   text-align: start;
   margin-top: 10px;
-  margin-left: 15.78px;
+  margin-left: 15px;
 `;
 
 const Body2 = styled.div`
@@ -123,10 +156,7 @@ const Body2 = styled.div`
 `;
 
 const PartDiv = styled.div`
-  position: relative;
   width: 100%;
-  /* height: 2660px; */
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,21 +183,20 @@ const Column = styled.div`
 const TextDiv = styled.div`
   position: absolute;
   width: 303px;
-  height: 105.734px;
+  height: 105px;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.68); /* 투명한 검은색 배경 */
+  background: rgba(0, 0, 0, 0.68);
   box-shadow: 0px -1px 15px 0px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(5px);
   border-radius: 0 0 14px 14px;
-  transition: 0.3s;
   display: flex;
   align-items: center;
   justify-content: start;
 `;
 
-const TitleTectDiv = styled.div`
+const TitleTextDiv = styled.div`
   margin-top: 5px;
-  margin-left: 15.78px;
+  margin-left: 15px;
 `;
 
 const ContentDiv = styled.div`
@@ -180,7 +209,6 @@ const ContentDiv = styled.div`
 const ContentsWrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 `;
 
 const MainImg = styled.img`
@@ -193,14 +221,14 @@ const ContentTextDiv = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
-  text-align: left;
-  margin-left: -15.78px;
+  margin-left: -15px;
 `;
 
 const DownLogo = styled.img`
   width: 46px;
   height: 49px;
   margin: 120px 0px 60px 0px;
+  cursor: pointer;
 `;
 
 const FilterContainer = styled.div`

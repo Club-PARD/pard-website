@@ -4,6 +4,7 @@ import { theme } from "../../../styles/theme";
 import { managerData } from "../../../utils/manager.constant";
 import disquiet from "../../../assets/img/disquiet.png";
 import WebLogo from "../../../assets/img/WebLogo.png";
+import EmailLogo from "../../../assets/img/EmailLogo.png";
 import { pardDATA } from "../../../utils/data.constant";
 
 function InquiryManagemaentMob() {
@@ -26,8 +27,8 @@ function InquiryManagemaentMob() {
               <Column key={content.id} even={index % 2 === 1}>
                 <Image src={content.imgsrc} alt={`Image ${content.id}`}></Image>
                 <TextWrap position={content.position}>
-                  <Subtitle1>{content.name}</Subtitle1>
-                  <Caption>{content.position}</Caption>
+                  <PositionDiv>{content.position_k}</PositionDiv>
+                  <NameDiv>{content.name}</NameDiv>
                   <IconWrapper>
                     {content.site.map((site) => (
                       <IconBackground key={site.name}>
@@ -44,7 +45,7 @@ function InquiryManagemaentMob() {
                               alt="Web Logo"
                               style={{ width: "16px", height: "16px" }}
                             />
-                          ) : (
+                          ) : site.name === "disquiet" ? (
                             <img
                               src={disquiet}
                               alt="Disquiet Logo"
@@ -54,7 +55,17 @@ function InquiryManagemaentMob() {
                                 marginLeft: "3.0px",
                               }}
                             />
-                          )}
+                          ) : (
+                            <img
+                              src={EmailLogo}
+                              alt="Email Logo"
+                              style={{
+                                width: "16.5px",
+                                height: "13.2px",
+                              }}
+                            />
+                          )
+                          }
                         </Icon>
                       </IconBackground>
                     ))}
@@ -124,33 +135,35 @@ const TextWrap = styled.div`
     height: ${({ position }) => (position ? "190px" : "initial")};
   }
 `;
-const Subtitle1 = styled.div`
+const NameDiv = styled.div`
   font-size: 16px;
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle1};
+  font-weight: 800;
   color: #ffffff;
   font-family: "NanumSquare Neo";
   position: absolute;
-  bottom: 26px;
-  left: 61%;
+  bottom: 11px;
   width: 100%;
-  transform: translate(-50%, -50%);
+  left: 50%;
+  line-height: 160%;
+  transform: translate(-50%);
   margin-bottom: 1px;
   white-space: pre-line;
-  text-align: left;
+  text-align: center;
 `;
-const Caption = styled.div`
+const PositionDiv = styled.div`
   font-size: 12px;
-  font-weight: ${(props) => props.theme.fontWeights.Caption};
+  font-weight: 700;
   color: #ffffff;
   font-family: "NanumSquare Neo";
   position: absolute;
-  bottom: 6px;
-  left: 61%;
+  bottom: 35px;
+  left: 50%;
   width: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   margin-bottom: 3px;
   white-space: pre-line;
-  text-align: left;
+  text-align: center;
+  /* line-height: 160%; */
 `;
 
 const PartDiv = styled.div`
