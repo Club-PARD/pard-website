@@ -5,9 +5,8 @@ import AboutSeminarImage from "../../../assets/img/AboutSeminar.png";
 import AboutStudyImage from "../../../assets/img/AboutStudy.png";
 import AboutSurfingImage from "../../../assets/img/AboutSurfing.png";
 import AboutShortImage from "../../../assets/img/AboutShort.png";
-import AboutIdeaImage from "../../../assets/img/AboutIdea.png";
 import AboutLongImage from "../../../assets/img/AboutLong.png";
-import AboutDemoImage from "../../../assets/img/AboutDemo.png";
+import AboutProjectImage from "../../../assets/img/AboutProject.png";
 
 function AboutProgram_Mob() {
   const [part, setPart] = useState([
@@ -49,14 +48,15 @@ function AboutProgram_Mob() {
       selected: false,
       context: (
         <>
-          파드는 새로운 것을 배우는 것에 있어
-          주저하지 <br /> 않습니다.
-          배우고 싶은 내용이 있다면 직군, <br /> 관심 분야와 
-          관계없이 누구나 자유롭게 함께 주체적 
+          파드는 새로운 것을 배우는 것에 있어 <br />
+          주저하지 않습니다.
           <br />
-          으로 학습할 사람을 모으고, 서로 정한 기간에 따라
+          직군, 관심 분야와 관계없이 누구나 자유롭게 배우고
+          <br /> 싶은 내용이 있다면 함께 학습할 사람을 모으고,
           <br />
-          전문 지식을 쌓아가고 이를 공유합니다.
+          서로 정한 기간에 따라 전문 지식을 쌓아가고
+          <br />
+          이를 공유합니다.
         </>
       ),
     },
@@ -69,14 +69,14 @@ function AboutProgram_Mob() {
       selected: false,
       context: (
         <>
-          ‘협업’을 주제로 열리는 파드만의 캠프로, 다양한 <br />
-          활동을 통해 ‘좋은 협업이란 무엇인가?’에 대해 <br />
-          공부하고 고민하는 시간을 갖습니다
+          1박 2일간 일상에서 벗어나 서로 함께 알아가고 <br />
+          즐기며, 다른 직군과 함께 일 할 때 가장 필요한 <br />
+          협업 커뮤니케이션 및 방법론을 학습합니다.
           <br />
-          1박 2일간 일상에서 벗어나 서로 더 깊게 함께 알아
+          조직 문화 및 커뮤니케이션 컨설팅사의 검수를 받은
           <br />
-          가고 즐기며, 다른 직군과 함께 일할 때 가장 필요한<br />
-          협업 커뮤니케이션 및 방법론을 학습합니다. <br />
+          자체 개발 프로그램을 보유하여 보다 전문성 있는 <br />
+          협업을 습득합니다.
         </>
       ),
     },
@@ -89,78 +89,60 @@ function AboutProgram_Mob() {
       selected: false,
       context: (
         <>
-          제시된 주제에 따라 18시간 동안 기획자, 디자이너,<br />
-          개발자가 한 팀이 되어서MVP(Minimum Value
+          제시된 주제에 따라 18시간 동안 <br />
+          기획자, 디자이너, 개발자가 한 팀이 되어서
           <br />
-          roduct) 수준의 앱/웹 서비스를 개발합니다.
+          MVP(Minimum Value Product) 수준의
+          <br />
+          앱/웹 서비스를 개발합니다.
           <br />
           제한된 리소스 내에서 서비스의 임팩트를
           <br />
-          극대화할 수 있는 방법을 모색하고, 혁신적인 <br />
-          아이디어를 어떻게 매력적으로 풀어낼 것인지
+          극대화할 수 있는 방법을 모색하고, <br />
+          혁신적인 아이디어를 어떻게 매력적으로
           <br />
-          고민하고 실행합니다.
+          풀어낼 것인지 고민하고 실행합니다.
         </>
       ),
     },
     {
       id: 5,
       listNum: "05",
-      listCon: "아이디어 피칭",
+      listCon: "롱커톤 / 데모데이",
       border_color: "#FF5C00",
-      imgsrc: AboutIdeaImage,
+      imgsrc: AboutLongImage,
       selected: false,
       context: (
         <>
-          기획, 개발, 디자인 파트와 무관하게 <br />
-          아이디어 피칭에 지원하여 자신이 구현하고 싶은
+          파트 상관 없이 누구나 아이디어 경선을 통해 <br />
+          팀을 구성합니다.
           <br />
-          서비스의 기획안을 제안합니다. 기획안에 대한 <br />
-          청중 Q&A 시간을 가진 후, 투표를 통하여 기획안을<br />
-          선정합니다. 선정된 기획안의 기획자는 팀빌딩을 
+          3주간 기획, 디자인, 개발 파트가 협업하여 배포 <br />
+          가능한 웹/앱 서비스를 만듭니다.
           <br />
-          통해 3주간의 해커톤인 롱커톤을 시작할 준비를 
-          <br /> 마칩니다.
+          각 파트별 실무자들의 멘토링을 받고 피드백을 <br />
+          받으며 완성도를 높이고 데모데이를 통해 <br />
+          IT 협업 과정과 결과물에 대한 평가를 받습니다.
         </>
       ),
     },
     {
       id: 6,
       listNum: "06",
-      listCon: "롱커톤",
+      listCon: "기업 연계 프로젝트",
       border_color: "#FF5C00",
-      imgsrc: AboutLongImage,
+      imgsrc: AboutProjectImage,
       selected: false,
       context: (
         <>
-          3주동안 진행되는 내부 해커톤으로, 1명의 라이브한<br />
-          사용자가 있는,  배포가능한 수준의 서비스를 <br />
-          구현합니다. 각 파트는 3주에 걸쳐 기획-디자인-<br />\
-          개발의 실제 IT서비스 구현 프로세스를 경험합니다.
+          공모전과 같은 일회성 프로젝트가 아닌, <br />
+          ‘문제 해결 공동 프로젝트’ 형태로 서비스 개선 및<br />
+          신규 아이디어를 발굴하며 실무 역량을 향상합니다.
           <br />
-          이 과정에서 각 직군의 현업자 멘토진으로부터 <br />
-          멘토링을 받으며 서비스를 발전시킵니다. 구현된 <br />
-          서비스는 데모데이를 통해 최종적으로 공개됩니다.
-        </>
-      ),
-    },
-    {
-      id: 7,
-      listNum: "07",
-      listCon: "데모데이",
-      border_color: "#FF5C00",
-      imgsrc: AboutDemoImage,
-      selected: false,
-      context: (
-        <>
-          3주간의 해커톤을 통하여 구현한 서비스를  <br />
-          데모데이를 통해 공개합니다. 서비스 발표, 서비스 <br />
-          부스를 통해 심사위원 및 청중에게 구현한 서비스를 <br />
-          전달합니다.
+          UX/UI 컨설팅펌과 함께하여 아이디어 도출 과정과
           <br />
-          현업 심사위원에게 서비스에 대한 심사평을 듣고
-          <br />
-          최종 수상팀이 선정됩니다.
+          시장에 필요로 한 서비스를 만드는 데 있어 <br />
+          전문성을 확보하고 있습니다.
         </>
       ),
     },
@@ -245,7 +227,7 @@ const Body2 = styled.div`
   position: absolute;
   font-family: "NanumSquare Neo";
   color: #000000;
-  width: 303px;
+  width: 320px;
   margin-top: 46px;
   line-height: 140%;
   opacity: ${(props) => (props.selected ? "1" : "0")};
@@ -292,7 +274,7 @@ const ButtonText1 = styled.div`
 const Image = styled.img`
   position: absolute;
   width: 303px;
-  height: 308px;
+  height: 280px;
   padding-top: 256px;
   opacity: ${(props) => (props.selected ? "1" : "0")};
 `;

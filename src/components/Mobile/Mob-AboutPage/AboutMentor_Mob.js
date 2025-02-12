@@ -10,7 +10,7 @@ function AboutMentor() {
     <PartDiv>
       <ThemeProvider theme={theme}>
         <TextDiv>
-          <Header8>파드와 함께하는 멘토진</Header8>
+          <Header8>파드와 함께한 멘토진</Header8>
         </TextDiv>
         <VerticalGap height={"110px"}></VerticalGap>
         <CardsList cardsData={metorDb} />

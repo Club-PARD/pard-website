@@ -20,7 +20,6 @@ const PartDiv = styled.div`
   flex-direction: column;
 
   margin: 0px auto;
-  padding-right: 6px;
   padding-top: ${pardDATA.displayBanner ? "145px" : "45px"};
   height: 800px;
 `;

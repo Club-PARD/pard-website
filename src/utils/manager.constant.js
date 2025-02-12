@@ -21,16 +21,10 @@ export const managerData = [
     imgsrc: PYY,
     name: "백예은(회장)",
     position: "Operator",
+    position_k: "회장",
     site: [
-      {
-        name: "linkedin",
-        link: "https://www.linkedin.com/in/yeeunbaek00/",
-      },
-      { name: "instagram", 
-        link: "https://www.instagram.com/100yeah._.e/" 
-      },
-      { name: "disquiet", 
-        link: "https://disquiet.io/@313dpdms" 
+      { name: "email", 
+        link: "seonghyeonbag39@gmail.com" 
       },
     ],
   },
@@ -39,6 +33,7 @@ export const managerData = [
     imgsrc: LJE,
     name: "이지은(부회장)",
     position: "Operator",
+    position_k: "부회장",
     site: [
       {
         name: "linkedin",
@@ -59,6 +54,7 @@ export const managerData = [
     imgsrc: KHSS,
     name: "김현승(부회장)",
     position: "Operator",
+    position_k: "부회장",
     site: [
       {
         name: "instagram",
@@ -73,7 +69,7 @@ export const managerData = [
     id: 4,
     imgsrc: LMG,
     name: "이민규",
-    position: "Operator",
+    position: "Operator",position_k: "운영팀",
     site: [
       { 
         name: "instagram", 
@@ -94,6 +90,7 @@ export const managerData = [
     imgsrc: KSA,
     name: "김수아",
     position: "Operator",
+    position_k: "운영팀",
     site: [
       { 
         name: "instagram", 
@@ -106,6 +103,7 @@ export const managerData = [
     imgsrc: KMH,
     name: "김민혁",
     position: "Operator",
+    position_k: "운영팀",
     site: [
       { 
         name: "instagram", 
@@ -126,6 +124,7 @@ export const managerData = [
     imgsrc: KHJ,
     name: "김현중",
     position: "Developer",
+    position_k: "파트장",
     site: [
       { 
         name: "instagram", 
@@ -145,7 +144,7 @@ export const managerData = [
     id: 8,
     imgsrc: YJH,
     name: "유재혁",
-    position: "Developer",
+    position: "Developer",position_k: "iOS 부파트장",
     site: [
       { 
         name: "instagram", 
@@ -161,7 +160,7 @@ export const managerData = [
     id: 9,
     imgsrc: KKI,
     name: "김광일",
-    position: "Developer",
+    position: "Developer",position_k: "디자인 부파트장",
     site: [
       { 
         name: "linkedin", 
@@ -181,7 +180,7 @@ export const managerData = [
     id: 10,
     imgsrc: KCE,
     name: "권채은",
-    position: "Developer",
+    position: "Developer",position_k: "파트장",
     site: [
       { 
         name: "instagram", 
@@ -201,7 +200,7 @@ export const managerData = [
     id: 11,
     imgsrc: CJH,
     name: "천주현",
-    position: "Developer",
+    position: "Developer",position_k: "파트장",
     site: [
       { 
         name: "instagram", 
@@ -217,7 +216,7 @@ export const managerData = [
     id: 12,
     imgsrc: KGY,
     name: "김기영",
-    position: "Developer",
+    position: "Developer",position_k: "파트장",
     site: [
       { 
         name: "instagram", 
@@ -233,7 +232,7 @@ export const managerData = [
     id: 13,
     imgsrc: KYC,
     name: "김영채",
-    position: "Designer",
+    position: "Designer",position_k: "파트장",
     site: [
       {
         name: "linkedin",
@@ -251,7 +250,7 @@ export const managerData = [
     id: 14,
     imgsrc: KYJ,
     name: "김예정",
-    position: "Designer",
+    position: "Designer",position_k: "파트장",
     site: [
       { name: "instagram", 
         link: "https://www.instagram.com/jo.__.my?igsh=MXRmaXpzNjI0YWdicw%3D%3D&utm_source=qr" 
@@ -265,7 +264,7 @@ export const managerData = [
     id: 15,
     imgsrc: PSH,
     name: "박성현",
-    position: "Product Manager",
+    position: "Product Manager",position_k: "파트장",
     site: [
       { name: "instagram", 
         link: "https://www.instagram.com/oh_hi__oh_hi/" 
@@ -279,7 +278,7 @@ export const managerData = [
     id: 16,
     imgsrc: LJH,
     name: "이주향",
-    position: "Product Manager",
+    position: "Product Manager",position_k: "파트장",
     site: [
       { name: "instagram", 
         link: "https://www.instagram.com/2corinthians__418/" 

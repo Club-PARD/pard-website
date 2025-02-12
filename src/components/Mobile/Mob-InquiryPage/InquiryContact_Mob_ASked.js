@@ -4,6 +4,14 @@ import { useState } from "react";
 import { theme } from "../../../styles/theme";
 import Vec from "../../../assets/img/vector.png";
 import Vec_p from "../../../assets/img/vector_purple.png";
+import Email from "../../../assets/img/EmailLogo_white.png";
+import Email_p from "../../../assets/img/EmailLogo_purple.png";
+import Insta from "../../../assets/img/InstaLogo.png";
+import Insta_p from "../../../assets/img/InstaLogo_purple.png";
+import Youtube from "../../../assets/img/YoutubeLogo.png";
+import Youtube_p from "../../../assets/img/YoutubeLogo_purple.png";
+import Disquiet from "../../../assets/img/DisQuietLogo.png";
+import Disquiet_p from "../../../assets/img/DisquietLogo_purple.png";
 
 const Askmobile = () => {
   const [informbox1Hovered, setInformbox1Hovered] = useState();
@@ -22,6 +30,27 @@ const Askmobile = () => {
     setBusinessHoveredHovered(isHovered);
   };
 
+  const [emailboxHovered, setEmailboxHovered] = useState();
+  const [instaboxHovered, setInstaboxHovered] = useState();
+  const [youtubeboxHovered, setYoutubeboxHovered] = useState();
+  const [disquietboxHovered, setDisquietboxHovered] = useState();
+
+  const handleEmailboxHover = (isHovered) => {
+    setEmailboxHovered(isHovered);
+  };
+
+  const handleInstaboxHover = (isHovered) => {
+    setInstaboxHovered(isHovered);
+  };
+
+  const handleYoutubeboxHover = (isHovered) => {
+    setYoutubeboxHovered(isHovered);
+  };
+
+  const handleDisquietboxHover = (isHovered) => {
+    setDisquietboxHovered(isHovered);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Margin>
@@ -30,45 +59,37 @@ const Askmobile = () => {
           <br />
           무엇이든 물어보세요!
         </Askstyledd>
-        <Informbox>
-          <Lineup />
-          <Informbox1
-            href="mailto:official@we-pard.com"
-            onMouseEnter={() => handleInformbox1Hover(true)}
-            onMouseLeave={() => handleInformbox1Hover()}
-          >
-            <Mail hovered={informbox1Hovered}>메일</Mail>
-            <EMail hovered={informbox1Hovered}>official@we-pard.com</EMail>
-            <Vectorbox1>
-              <Vector src={informbox1Hovered ? Vec_p : Vec} alt="vector" />
-            </Vectorbox1>
-          </Informbox1>
-          <Informbox2
-            href="https://www.instagram.com/official_pard_/"
-            target="_blank"
-            onMouseEnter={() => handleInformbox2Hover(true)}
-            onMouseLeave={() => handleInformbox2Hover()}
-            hovered={informbox2Hovered}
-          >
-            <Instagram hovered={informbox2Hovered}>인스타그램</Instagram>
-            <Instaid hovered={informbox2Hovered}>@official_pard_</Instaid>
-            <Vectorbox2>
-              <Vector src={informbox2Hovered ? Vec_p : Vec} alt="vector" />
-            </Vectorbox2>
-          </Informbox2>
-          <Linedown />
-        </Informbox>
-
-        <Business
-          onMouseEnter={() => BusinessHoveredHover(true)}
-          onMouseLeave={() => BusinessHoveredHover()}
-          hovered={BusinessHovered}
-        >
-          비즈니스 문의는 &nbsp;
-          <Here href="mailto:official@we-pard.com" hovered={informbox2Hovered}>
-            여기로
-          </Here>
-        </Business>
+        <Links>
+        <Linkbox href="mailto:official@we-pard.com"
+            onMouseEnter={() => handleEmailboxHover(true)}
+            onMouseLeave={() => handleEmailboxHover()}
+            hovered={emailboxHovered}>
+          <Vector src={emailboxHovered ? Email_p : Email} alt="Email" />
+          메일 
+        </Linkbox>
+        <Linkbox href="https://www.instagram.com/official_pard_/"
+            onMouseEnter={() => handleInstaboxHover(true)}
+            onMouseLeave={() => handleInstaboxHover()}
+            hovered={instaboxHovered}>
+          <Vector src={instaboxHovered ? Insta_p : Insta} alt="Insta" />
+          인스타그램
+        </Linkbox>
+        <Linkbox
+          href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA"
+            onMouseEnter={() => handleYoutubeboxHover(true)}
+            onMouseLeave={() => handleYoutubeboxHover()}
+            hovered={youtubeboxHovered}>
+          <Vector src={youtubeboxHovered ? Youtube_p : Youtube} alt="Youtube" />
+          유튜브
+        </Linkbox>
+        <Linkbox href="https://disquiet.io/club/pard" 
+        onMouseEnter={() => handleDisquietboxHover(true)}
+        onMouseLeave={() => handleDisquietboxHover()}
+        hovered={disquietboxHovered}>
+      <Vector src={disquietboxHovered ? Disquiet_p : Disquiet} alt="Disquiet" />
+      디스콰이엇
+        </Linkbox>
+      </Links>
       </Margin>
       <LogoDiv>
         <DownLogo
@@ -93,9 +114,7 @@ const Margin = styled.div`
 
 const Askstyledd = styled.div`
   white-space: nowrap;
-  margin-top: 140px; //3기 리쿠르팅용
-  margin-left: 8px;
-  width: 273px;
+  margin-top: 110px;
   height: 84px;
   font-family: "NanumSquare Neo";
   font-style: normal;
@@ -104,164 +123,13 @@ const Askstyledd = styled.div`
   line-height: 140%;
   /* or 42px */
   color: #ffffff;
+  text-align: center;
+  justify-content: center;
 `;
 
-const Informbox = styled.form`
-  margin-left: 9px;
-  margin-top: 90px;
-  width: 327px;
-  height: 126px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`;
-
-const Lineup = styled.div`
-  margin-top: 0px;
-  left: 0px;
-
-  width: 327px;
-
-  border: 1px solid #5262f5;
-`;
-
-const Informbox1 = styled.div`
-  text-decoration: none;
-  display: flex;
-  width: 326px;
-  height: 28px;
-  margin-top: 20px;
-  margin-left: 0px;
-  align-items: center;
-  cursor: pointer;
-  color: ${(props) => (props.clicked ? "#5262f5" : "#ffffff")};
-`;
-
-const Mail = styled.div`
-  white-space: nowrap;
-  width: 38px;
-  height: 28px;
-  margin-top: 0px;
-  margin-left: 0px;
-
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-size: ${(props) => props.theme.Mob_fontSizes.Header6};
-  line-height: 140%;
-  /* identical to box height, or 28px */
-
-  color: ${(props) => (props.hovered ? "#5262f5" : "#ffffff")};
-`;
-
-const EMail = styled.div`
-  white-space: nowrap;
-  margin-top: 0px; // 전체 informbox div기준으로는 top0px,
-  margin-left: 87px; // 바로 위에 Mail 기준으로는 margin-left 87px
-
-  width: 177px;
-  height: 22px;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
-  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
-  line-height: 18px;
-  /* identical to box height */
-
-  color: ${(props) => (props.hovered ? "#5262f5" : "#ffffff")};
-`;
 const Vector = styled.img`
-  max-width: 10px;
-  width: 10px;
-  height: auto;
-`;
-
-const Vectorbox1 = styled.div`
-  margin-top: 0px;
-
-  margin-left: 14px;
-`;
-
-const Informbox2 = styled.a`
-  display: flex;
-  width: 326px;
-  height: 28px;
-  margin-top: 31px;
-  margin-left: 0px;
-  align-items: center;
-  text-decoration: none;
-  cursor: pointer;
-  color: ${(props) => (props.hovered ? "#5262f5" : "#ffffff")};
-`;
-const Instagram = styled.div`
-  white-space: nowrap;
-  margin-top: 0px;
-  margin-left: 0px;
-  height: 28px;
-  width: 95px; //widht 2vw높임
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-size: ${(props) => props.theme.Mob_fontSizes.Header6};
-  line-height: 140%;
-  /* identical to box height, or 28px */
-
-  color: ${(props) => (props.hovered ? "#5262f5" : "#ffffff")};
-`;
-const Instaid = styled.div`
-  margin-left: 84px;
-  margin-top: 0px;
-
-  width: 123px;
-  height: 22px;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
-  font-size: ${(props) => props.theme.Mob_fontSizes.ButtonText1};
-  line-height: 18px;
-  /* identical to box height */
-
-  text-align: right;
-
-  color: ${(props) => (props.hovered ? "#5262f5" : "#ffffff")};
-`;
-
-const Vectorbox2 = styled.div`
-  margin-top: 0px;
-
-  margin-left: 14px;
-`;
-const Linedown = styled.div`
-  margin-top: 20px;
-  left: 0px;
-
-  width: 327px;
-
-  border: 1px solid #5262f5;
-`;
-const Business = styled.div`
-  white-space: nowrap;
-  margin-top: 20px;
-  margin-left: 8px;
-
-  width: 206px; //원래보다 vw6높임
-  height: 28px;
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-size: ${(props) => props.theme.Mob_fontSizes.Header6};
-  line-height: 140%;
-  /* identical to box height, or 28px */
-
-  color: ${(props) => (props.hovered ? "#5262f5" : "#ffffff")};
-`;
-const Here = styled(Link)`
-  font-family: "NanumSquare Neo";
-  font-style: normal;
-  font-weight: ${(props) => props.theme.fontWeights.Header6};
-  font-size: ${(props) => props.theme.Mob_fontSizes.Header6};
-  line-height: 140%;
-  color: #5262f5;
+  max-height: 24.3px;
+  width: auto;
 `;
 
 const DownLogo = styled.img`
@@ -273,5 +141,35 @@ const LogoDiv = styled.div`
   width: 100%;
   justify-content: center;
   display: flex;
-  margin-top: 79px;
+  margin-top: 180px;
+`;
+
+const Links = styled.div`
+  display: flex;
+  margin-top: 60px;
+  width: 303px;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #FFF;
+  text-align: center;
+  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
+  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
+  font-family: "NanumSquare Neo";
+  line-height: 140%;
+  margin-top: ${(props) => props.marginTop};
+  margin-right: ${(props) => props.marginright};
+`;
+const Linkbox = styled.a`
+  /* EMAIL */
+  height: 54px;
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  justify-content: space-between; /* 양쪽 끝 배치 */
+  align-items: center; /* 가운데 정렬 */
+
+  /* Text/White */
+
+  color: ${(props) => (props.hovered ? "#5262f5" : "#ffffff")};
+  text-decoration: none;
 `;
