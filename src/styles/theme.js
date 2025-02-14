@@ -85,7 +85,7 @@ export const theme = {
     Body3: "12px",
     ButtonText1: "16px",
     Caption1: "12px",
-    Caption: "12px",
+    Caption: "16px",
   },
   fontWeights: {
     Header0: "800",
@@ -97,7 +97,7 @@ export const theme = {
     Header6: "700",
     Header7: "800",
     Header8: "800",
-    Subtitle1: "800",
+    Subtitle1: "700",
     Subtitle2: "700",
     Subtitle3: "400",
     Body1: "350",
@@ -105,7 +105,7 @@ export const theme = {
     Body3: "100",
     ButtonText1: "700",
     Caption1: "400",
-    Caption: "400",
+    Caption: "800",
   },
   Mob_fontSizes: {
     Header0: "96px",

@@ -281,7 +281,7 @@ const textPaddingLofic = (textInfo) => {
       return "0px";
     case 3:
     case 4:
-      return "0px 200px";
+      return "0px";
     default:
       return null;
   }
@@ -294,7 +294,7 @@ const textAlignLogic = (textInfo) => {
       return "center";
     case 3:
     case 4:
-      return "start";
+      return "center";
     default:
       return null;
   }

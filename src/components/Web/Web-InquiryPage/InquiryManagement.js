@@ -1,9 +1,6 @@
 import styled, { ThemeProvider } from "styled-components";
-import { FaInstagram, FaGithub } from "react-icons/fa";
 import { theme } from "../../../styles/theme";
-import disquiet from "../../../assets/img/disquiet.png";
-import LinkedIn from "../../../assets/img/LinkedInLogo.png";
-import WebLogo from "../../../assets/img/WebLogo.png";
+import EmailLogo from "../../../assets/img/email.png";
 import { pardDATA } from "../../../utils/data.constant";
 import { managerData } from "../../../utils/manager.constant";
 
@@ -12,8 +9,7 @@ function InquiryManagement() {
     <PartDiv>
       <ThemeProvider theme={theme}>
         <Header7>
-          거친 파도를 뚫고 나가는<br></br>파드 {pardDATA.currentGeneration}기
-          운영진을 소개합니다.
+          거친 파도를 뚫고 나가는<br></br>파드 {pardDATA.currentGeneration}기 운영진을 소개합니다.
         </Header7>
         <Subtitle3>
           함께 했을 때 더 큰 일을<br></br>이룰 수 있음을 강하게 믿고 있어요.
@@ -24,63 +20,29 @@ function InquiryManagement() {
               <ImageWrapper>
                 <Image src={content.imgsrc} alt={`Image ${content.id}`}></Image>
                 <TextWrap position={content.position}>
+                  <Caption>{content.position_k}</Caption>
                   <Subtitle1>{content.name}</Subtitle1>
-                  <Caption>{content.position}</Caption>
                   <IconWrapper>
-                    {content.site.map((site) => (
-                      <IconBackground
-                        key={site.name}
-                        href={site.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Icon
-                          href={site.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {site.name === "instagram" ? (
-                            <FaInstagram
-                              style={{
-                                color: "black",
-                                width: "22px",
-                                height: "22px",
-                              }}
-                            />
-                          ) : site.name === "linkedin" ? (
-                            <img
-                              src={LinkedIn}
-                              alt="LinkedIn Logo"
-                              style={{ width: "20px", height: "20px" }}
-                            />
-                          ) : site.name === "github" ? (
-                            <FaGithub
-                              style={{
-                                color: "black",
-                                width: "24px",
-                                height: "24px",
-                              }}
-                            />
-                          ) : site.name === "web" ? (
-                            <img
-                              src={WebLogo}
-                              alt="Web Logo"
-                              style={{ width: "24px", height: "24px" }}
-                            />
-                          ) : (
-                            <img
-                              src={disquiet}
-                              alt="Disquiet Logo"
-                              style={{
-                                width: "22px",
-                                height: "17px",
-                                marginLeft: "4.5px",
-                              }}
-                            />
-                          )}
-                        </Icon>
-                      </IconBackground>
-                    ))}
+                    {content.site.map(
+                      (site) =>
+                        site.name === "email" && (
+                          <IconBackground
+                            key={site.name}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              navigator.clipboard.writeText(site.link);
+                              alert("이메일이 복사되었습니다!");
+                            }}
+                          >
+                          <img
+                            src={EmailLogo}
+                            alt="Email Icon"
+                            style={{ width: "40px", height: "40px" }}
+                          />
+                        </IconBackground>
+                      )
+                    )}
                   </IconWrapper>
                 </TextWrap>
               </ImageWrapper>
@@ -117,18 +79,19 @@ const Subtitle3 = styled.div`
 `;
 
 const Subtitle1 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Subtitle1};
-  font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
   color: #ffffff;
   font-family: "NanumSquare Neo";
   position: absolute;
   bottom: 38px;
-  left: 58%;
+  left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
-  margin-bottom: -10px;
+  margin-bottom: -14px;
   white-space: pre-line;
-  text-align: left;
+  text-align: center;
 `;
 const Caption = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Caption};
@@ -137,12 +100,12 @@ const Caption = styled.div`
   font-family: "NanumSquare Neo";
   position: absolute;
   bottom: 0%;
-  left: 58%;
+  left: 50%;
   width: 100%;
   transform: translate(-50%, -50%);
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   white-space: pre-line;
-  text-align: left;
+  text-align: center;
 `;
 
 const PartDiv = styled.div`

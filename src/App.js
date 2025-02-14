@@ -9,8 +9,9 @@ import ErrorPage from "./pages/ErrorPage";
 import ReactGA from "react-ga";
 import TagManager from "react-gtm-module";
 import React, { useEffect } from "react";
-import ProjectDetailPage from "./pages/ProjectDetail";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
 import NewsPage from "./pages/NewsPage";
+import TestPage from "./components/Web/Web-HomePage/HomeTest";
 
 function App() {
   const tagManagerArgs = {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/Project/:projectId" element={<ProjectDetailPage />} />
         <Route path="/pard-website" element={<HomePage />} />
         <Route path="/news" element={<NewsPage />} />
+        <Route path="/test" element={<TestPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>

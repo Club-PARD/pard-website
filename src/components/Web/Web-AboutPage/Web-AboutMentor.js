@@ -27,7 +27,7 @@ function AboutMentor() {
     <Div>
       <PartDiv>
         <ThemeProvider theme={theme}>
-          <Header7>파드와 함께하는 멘토진</Header7>
+          <Header7>파드와 함께한 멘토진</Header7>
           <CardsList cardsData={metorDb} />
         </ThemeProvider>
       </PartDiv>
