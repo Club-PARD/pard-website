@@ -92,7 +92,7 @@ function RecruitingSecond() {
                 </Icon4B>
               </IconWrap>
               <Box4>최종합격 발표</Box4>
-              <BoxText>3/9(일) 00시 전</BoxText>
+              <BoxText>3/11(화) 00시 전</BoxText>
             </Box>
           </Container>
           <Plus onClick={handleClick}>
