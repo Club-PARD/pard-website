@@ -21,7 +21,7 @@ export default function NewsMain() {
                     기사 원문 확인하기
                   </a>
                   <a className="arrow" href={item.url}>
-                    <img src={arrow} alt="arrow" />
+                    <img src={arrow} alt="arrow" style={{marginBottom: "4px"}}/>
                   </a>
                 </UrlContainer>
               </LeftContent>

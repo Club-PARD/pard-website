@@ -9,27 +9,6 @@ function HomeLast() {
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.5 } // 50% 이상 보이면 실행
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
     <Div ref={sectionRef}>
       <PartDiv>
@@ -50,13 +29,9 @@ function HomeLast() {
               <InfoContent>운영 기수</InfoContent>
               <InfoNumStatic>{generation}기</InfoNumStatic>
             </InfoBox>
-            {/* ✅ 애니메이션 적용 (누적 활동 인원 - 숫자만) */}
             <InfoBox>
               <InfoContent>누적 활동 인원</InfoContent>
-              <InfoNumContainer>
-                <InfoNumAnimated targetNumber={134} isVisible={isVisible} />
-                <span>명</span>
-              </InfoNumContainer>
+              <InfoNumStatic>134명</InfoNumStatic>
             </InfoBox>
           </InfoWrap>
           <Line>
@@ -112,26 +87,6 @@ const InfoNumStatic = styled.div`
   font-weight: 800;
   line-height: 140%;
   margin-top: 20px;
-`;
-
-// ✅ 스타일링
-const InfoNumContainer = styled.div`
-  color: #FFF;
-  text-align: center;
-  font-family: "NanumSquare Neo";
-  font-size: 60px;
-  font-weight: 800;
-  line-height: 140%;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 5px;
-
-  span {
-    font-size: 60px;
-    font-weight: 800;
-  }
 `;
 
 const Header2 = styled.div`

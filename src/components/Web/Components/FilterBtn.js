@@ -8,7 +8,7 @@ function FilterBtn({ part, setPart, selected }) {
       selected={selected}
       onClick={() => setPart(part.toLowerCase())}
     >
-      {part}
+      <p>{part}</p>
     </Button>
   );
 }
@@ -30,6 +30,9 @@ const Button = styled.button`
       ? "#7B3FEF"
       : "#fff"};
   cursor: pointer;
+  p {
+    margin-top: 16px;
+  }
 `;
 
 export default FilterBtn;

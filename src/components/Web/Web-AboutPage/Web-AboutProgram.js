@@ -243,15 +243,16 @@ const Body1 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Body1};
   font-weight: ${(props) => props.theme.fontWeights.Body1};
   position: absolute;
+  bottom: -200px; /* 하단 정렬 */
   font-family: "NanumSquare Neo";
   color: #000000;
   width: 448px;
-  margin-top: 30px;
   line-height: 160%;
   opacity: ${(props) => (props.selected ? "1" : "0")};
 `;
 
 const StyledWrap = styled.ul`
+position: relative;
   padding-top: 97px;
   padding-left: 0;
   padding-inline-start: 0px;
@@ -280,6 +281,7 @@ const Header6Number = styled.div`
   font-family: "NanumSquare Neo";
   color: ${(props) => (props.selected ? "#fff" : "#000")};
   padding-left: 20px;
+  margin-top: 2px;
 `;
 
 const Header6 = styled.div`
@@ -289,6 +291,7 @@ const Header6 = styled.div`
   font-family: "NanumSquare Neo";
   color: ${(props) => (props.selected ? "#fff" : "#000")};
   padding-left: 96px;
+  margin-top: 2px;
 `;
 
 const Image = styled.img`

@@ -301,7 +301,9 @@ const List = styled.li`
   white-space: pre-line;
   display: inline-block;
   color: ${(props) => (props.selected ? "#fff" : "#000")};
+  margin-top: 2px;
 `;
+
 const ListButton = styled.button`
   width: 20%;
   border: none;

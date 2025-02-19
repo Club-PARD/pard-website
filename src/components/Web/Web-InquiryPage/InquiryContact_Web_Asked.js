@@ -1,6 +1,5 @@
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../../styles/theme";
-import { useState } from "react";
 import Email_Logo from "../../../assets/img/email_vector.png";
 import Instargram_Logo from "../../../assets/img/instargram_vector.png";
 import Youtube_Logo from "../../../assets/img/youtube_vector.png";
@@ -11,8 +10,6 @@ import Youtube_b_Logo from "../../../assets/img/youtube_blue_vector.png";
 import Disquiet_b_Logo from "../../../assets/img/disquiet_blue_vector.png";
 
 const Ask = () => {
-  const [active, setActive] = useState(null);
-
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -24,45 +21,29 @@ const Ask = () => {
           </Askedstyled>
         </Margin>
         <AskContainer>
-          <AskBox onClick={() => setActive("email")}>
+          <AskBox>
             <a href="mailto:official@we-pard.com">
-              <img
-                src={active === "email" ? Email_b_Logo : Email_Logo}
-                alt="이메일"
-                style={{ width: "46.979px", height: "37.583px" }}
-              />
+              <img className="email" src={Email_Logo} alt="이메일" />
             </a>
-            <p className={active === "email" ? "active" : ""}>메일</p>
+            <p className="email-text">메일</p>
           </AskBox>
-          <AskBox onClick={() => setActive("instagram")}> 
+          <AskBox>
             <a href="https://www.instagram.com/official_pard_/" target="_blank" rel="noopener noreferrer">
-              <img
-                src={active === "instagram" ? Instargram_b_Logo : Instargram_Logo}
-                alt="인스타그램"
-                style={{ width: "37.583px", height: "37.583px" }}
-              />
+              <img className="instagram" src={Instargram_Logo} alt="인스타그램" />
             </a>
-            <p className={active === "instagram" ? "active" : ""}>인스타그램</p>
+            <p className="instagram-text">인스타그램</p>
           </AskBox>
-          <AskBox onClick={() => setActive("youtube")}> 
+          <AskBox>
             <a href="https://www.youtube.com/channel/UCXZwffckReELqgFjKLNFBDA" target="_blank" rel="noopener noreferrer">
-              <img
-                src={active === "youtube" ? Youtube_b_Logo : Youtube_Logo}
-                alt="유튜브"
-                style={{ width: "53.344px", height: "37.583px" }}
-              />
+              <img className="youtube" src={Youtube_Logo} alt="유튜브" />
             </a>
-            <p className={active === "youtube" ? "active" : ""}>유튜브</p>
+            <p className="youtube-text">유튜브</p>
           </AskBox>
-          <AskBox onClick={() => setActive("disquiet")}> 
+          <AskBox>
             <a href="https://disquiet.io/club/pard" target="_blank" rel="noopener noreferrer">
-              <img
-                src={active === "disquiet" ? Disquiet_b_Logo : Disquiet_Logo}
-                alt="디스콰이엇"
-                style={{ width: "49.089px", height: "38.001px" }}
-              />
+              <img className="disquiet" src={Disquiet_Logo} alt="디스콰이엇" />
             </a>
-            <p className={active === "disquiet" ? "active" : ""}>디스콰이엇</p>
+            <p className="disquiet-text">디스콰이엇</p>
           </AskBox>
         </AskContainer>
         <LogoDiv>
@@ -102,6 +83,22 @@ const AskBox = styled.div`
   align-items: center;
   cursor: pointer;
 
+  img {
+    width: auto;
+    height: 37.583px;
+    transition: content 0.3s ease;
+  }
+
+  .email { width: 46.979px; }
+  .instagram { width: 37.583px; }
+  .youtube { width: 53.344px; }
+  .disquiet { width: 49.089px; }
+
+  &:hover .email { content: url(${Email_b_Logo}); }
+  &:hover .instagram { content: url(${Instargram_b_Logo}); }
+  &:hover .youtube { content: url(${Youtube_b_Logo}); }
+  &:hover .disquiet { content: url(${Disquiet_b_Logo}); }
+
   p {
     color: #fff;
     text-align: center;
@@ -109,10 +106,14 @@ const AskBox = styled.div`
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%; /* 30px */
+    line-height: 150%;
+    transition: color 0.1s ease;
   }
 
-  p.active {
+  &:hover .email-text,
+  &:hover .instagram-text,
+  &:hover .youtube-text,
+  &:hover .disquiet-text {
     color: #5262F5;
   }
 `;

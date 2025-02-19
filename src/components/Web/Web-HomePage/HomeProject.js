@@ -80,11 +80,9 @@ export default function App() {
           </StyledSwiper>
         </AppContainer>
         <ButtonDiv>
-          <div style={{ width: "360px" }}>
             <LearnMoreButton>
               <Header5 onClick={handleClick}>프로젝트 더보기</Header5>
             </LearnMoreButton>
-          </div>
         </ButtonDiv>
       </ThemeProvider>
     </Div>
@@ -92,15 +90,16 @@ export default function App() {
 }
 
 const Div = styled.div`
-  display: flex;
-  flex-direction: column;
+  margin: 0px auto;
+  height: 850px;
   justify-content: center;
-  align-items: center;
+  width: 1330px;
+  margin-bottom: 233px;
 `;
 
 const AppContainer = styled.div`
   display: flex;
-  width: 1700px;
+  width: 1330px;
   height: 453px;
   background: #1a1a1a;
   margin: 0;
@@ -143,7 +142,7 @@ const LearnMoreButton = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #7b3fef;
-  height: 57px;
+  height: 64px;
   width: 360px;
   border-radius: 10px;
   margin-top: 10px;
@@ -153,6 +152,9 @@ const LearnMoreButton = styled.div`
 const ButtonDiv = styled.div`
   display: flex;
   justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Header2 = styled.div`

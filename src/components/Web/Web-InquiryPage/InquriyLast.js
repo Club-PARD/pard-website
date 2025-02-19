@@ -80,4 +80,5 @@ const Header5 = styled.div`
   white-space: pre-line;
   text-align: center;
   white-space: nowrap;
+  margin-top: 4px;
 `;

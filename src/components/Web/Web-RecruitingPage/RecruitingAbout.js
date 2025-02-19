@@ -43,10 +43,10 @@ function RecruitingAbout() {
             <>
               A. 다양한 분야로 관심이 많으신 예비 지원자님 정말 멋지십니다!
               <br />
-              &nbsp; &nbsp; &nbsp;하지만 아쉽게도 중복 지원은 어렵습니다. 4기는
+              &nbsp; &nbsp; &nbsp;하지만 아쉽게도 중복 지원은 어렵습니다. 5기는
               먼저 배우고 싶은 파트를,
               <br />
-              &nbsp; &nbsp; &nbsp;5기에는 다른 파트에 지원해 보시는 건 어떨까요?
+              &nbsp; &nbsp; &nbsp;6기에는 다른 파트에 지원해 보시는 건 어떨까요?
             </>
           ),
           select: false,
@@ -96,10 +96,10 @@ function RecruitingAbout() {
           answer: (
             <>
               A. 활동 멤버 분들이 속한 구성원 분들의 수가 많은 곳에서 주요
-              활동을 진행하고 있습니다. 4기는 한동대학교에서
+              활동을 진행하고 있습니다. 5기는 한동대학교에서
               <br />
               &nbsp; &nbsp; &nbsp;모일 예정입니다. 교통이 불편한 포항 여건 상,
-              파드는 포항시에 소재한 한동대학교 외 4기 분들에게는 매주 <br />
+              파드는 포항시에 소재한 한동대학교 외 5기 분들에게는 매주 <br />
               &nbsp; &nbsp; &nbsp;교통비(택시비)를 일부 지원해드릴 예정입니다!
               많은 지원 부탁드릴게요:) &nbsp; &nbsp; &nbsp;
             </>
@@ -153,7 +153,7 @@ function RecruitingAbout() {
           id: 5,
           quest: "Q. 앱(iOS) 개발 시 어떤 프로그래밍 언어를 사용하나요?",
           answer:
-            "A. 4기 기준 iOS 앱 개발을 위한 Swift UIkit를 사용하고 있습니다.",
+            "A. 5기 기준 iOS 앱 개발을 위한 Swift UI를 사용하고 있습니다.",
           select: false,
         },
       ],
@@ -231,22 +231,20 @@ function RecruitingAbout() {
       })
     );
   };
-  const handleQuestionClick = (itemId, index) => {
-    const updatedQuestions = question.map((item) => {
-      if (item.id === itemId) {
-        const updatedQuestion = item.question.map((q, i) => {
-          if (i === index) {
-            return { ...q, select: !q.select };
-          } else {
-            return { ...q, select: false };
-          }
-        });
-        return { ...item, question: updatedQuestion };
-      }
-      return item;
-    });
 
-    setQuestion(updatedQuestions);
+  const handleQuestionClick = (itemId, index) => {
+    setQuestion((prevQuestions) =>
+      prevQuestions.map((item) => {
+        if (item.id === itemId) {
+          const updatedQuestions = item.question.map((q, i) => ({
+            ...q,
+            select: i === index ? !q.select : false, // 클릭된 항목은 유지, 나머지는 해제
+          }));
+          return { ...item, question: updatedQuestions };
+        }
+        return item;
+      })
+    );
   };
 
   const handleClick = () => {
@@ -269,11 +267,13 @@ function RecruitingAbout() {
                   <Vector
                     src={item.selected ? selectVector : vector}
                     alt="vector"
+                    style={{marginBottom: "4px"}}
                   ></Vector>
                   {item.item}
                 </QuestionItem>
               ))}
-              <Button onClick={handleClick}>조금 더 물어볼래요</Button>
+              <Button onClick={handleClick}>
+                <p>조금 더 물어볼래요</p></Button>
               <Body2>
                 찾으시는 내용이 없으신가요?
                 <br />
@@ -289,8 +289,9 @@ function RecruitingAbout() {
                         <React.Fragment key={index}>
                           <Question
                             onClick={() => handleQuestionClick(item.id, index)}
+                            selected={question.select}
                           >
-                            {question.quest}
+                            <p>{question.quest}</p>
                           </Question>
                           {question.select && (
                             <Answer>{question.answer}</Answer>
@@ -345,15 +346,16 @@ const QuestionItem = styled.div`
   align-items: center;
   margin-right: 100px;
 `;
+
 const Question = styled.div`
   width: 832px;
   height: 30px;
   padding: 13px 0px 13px 40px;
   line-height: 28px;
   font-size: 20px;
-  font-weight: ${(props) => props.theme.fontWeights.Body3};
+  font-weight: ${(props) => (props.selected ? "bold" : props.theme.fontWeights.Body3)};
   font-family: "NanumSquare Neo";
-  background-color: white;
+  background-color: ${(props) => (props.selected ? "#64c59a" : "white")};
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -361,25 +363,29 @@ const Question = styled.div`
   z-index: 3;
   position: relative;
   cursor: pointer;
-  :hover {
+  transition: background-color 0.3s ease-in-out; /* 클릭 시 부드럽게 변경 */
+
+  &:hover {
+    background-color: #64c59a;
     font-weight: bold;
-    color: #64c59a;
   }
 `;
+
 const Vector = styled.img`
   height: 25px;
   width: 18px;
   margin-right: 32px;
 `;
+
 const Answer = styled.div`
-  background-color: #64c59a;
-  margin-top: -40px;
+  background-color: white;
+  margin-top: -25px;
   margin-bottom: 30px;
   padding: 13px 0px 4px 35px;
   height: 92px;
   display: flex;
   align-items: center;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px;
   font-size: ${(props) => props.theme.Web_fontSizes.ButtonText1};
   font-weight: ${(props) => props.theme.fontWeights.ButtonText1};
   font-family: "NanumSquare Neo";
@@ -387,11 +393,14 @@ const Answer = styled.div`
   z-index: -1;
   color: #1f1f1f;
   white-space: pre-wrap;
+  border: 2px solid #64c59a;
 `;
+
 const Button = styled.div`
   width: 184px;
   height: 42px;
   background-color: #64c59a;
+  color: white;
   margin-top: 143px;
   display: flex;
   align-items: center;
@@ -401,6 +410,10 @@ const Button = styled.div`
   font-family: "NanumSquare Neo";
   border-radius: 10px;
   cursor: pointer;
+
+  p {
+    margin-top: 18px;
+  }
 `;
 const Body2 = styled.div`
   margin-top: 12px;

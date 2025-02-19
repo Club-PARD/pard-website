@@ -27,7 +27,7 @@ function HomePart() {
       imageSrc: APPImage,
       title: "앱(iOS)",
       description:
-        "사용자를 위한 어플리케이션 \nUI를 설계하고 swift Uikit 기반 \niOS 앱 서비스를 개발합니다.",
+        "사용자를 위한 어플리케이션 \nUI를 설계하고 Swift Ui 기반 \niOS 앱 서비스를 개발합니다.",
     },
     {
       id: 4,
@@ -68,11 +68,9 @@ function HomePart() {
           ))}
         </PartContents>
         <ButtonDiv>
-          <div style={{ width: "360px" }}>
-            <LearnMoreButton>
-              <Header5 onClick={handleClick}>더 알아보기</Header5>
-            </LearnMoreButton>
-          </div>
+          <LearnMoreButton>
+            <Header5 onClick={handleClick}>더 알아보기</Header5>
+          </LearnMoreButton>
         </ButtonDiv>
       </ThemeProvider>
     </Div>
@@ -155,9 +153,9 @@ const LearnMoreButton = styled.div`
   align-items: center;
   display: flex;
   background-color: #7b3fef;
-  height: "57px";
+  height: 64px;
   justify-content: center;
-  width: "360px";
+  width: 360px;
   border-radius: 10px;
   margin-top: 70px;
 `;

@@ -97,6 +97,8 @@ const NavBarWrapper = styled.nav`
   border-right: none;
   margin-top: ${pardDATA.displayBanner ? "100px" : "none"};
   position: relative;
+  min-width: 1280px;  // 📌 최소 너비 지정 (반응형 줄어들지 않도록)
+  overflow-x: auto; 
 `;
 
 const NavDiv = styled.div`
@@ -104,6 +106,7 @@ const NavDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  min-width: 1280px; 
 `;
 
 const Subtitle1 = styled.p`
@@ -133,4 +136,5 @@ const NavLinks = styled.ul`
 
 const NavItem = styled.li`
   margin-left: 50px;
+  flex-shrink: 0; 
 `;

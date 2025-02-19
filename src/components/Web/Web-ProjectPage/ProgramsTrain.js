@@ -27,19 +27,19 @@ function ProgramsTrain() {
   const [selectedProgram, setSelectedProgram] = useState(1);
 
   return (
-    <div>
+    <DivContainer>
       <ThemeProvider theme={theme}>
         <Header2>PROGRAMS</Header2>
         <ButtonContainer>
           {[1, 2, 3, 4, 5].map((num) => (
-          <button
-            key={num}
-            onClick={() => setSelectedProgram(num)}
-            className={selectedProgram === num ? "active" : ""}
-            style={{ backgroundColor: selectedProgram === num ? buttonColors[num] : "#1A1A1A" }}
-          >
-            {num === 1 ? "세미나" : num === 2 ? "스터디" : num === 3 ? "서핑데이" : num === 4 ? "숏커톤" : "롱커톤"}
-          </button>
+            <button
+              key={num}
+              onClick={() => setSelectedProgram(num)}
+              className={selectedProgram === num ? "active" : ""}
+              style={{ backgroundColor: selectedProgram === num ? buttonColors[num] : "#1A1A1A" }}
+            >
+              {num === 1 ? "세미나" : num === 2 ? "스터디" : num === 3 ? "서핑데이" : num === 4 ? "숏커톤" : "롱커톤"}
+            </button>
           ))}
         </ButtonContainer>
         <Container>
@@ -48,10 +48,18 @@ function ProgramsTrain() {
           </ScrollContainer>
         </Container>
       </ThemeProvider>
-    </div>
+    </DivContainer>
   );
 }
 export default ProgramsTrain;
+
+const DivContainer = styled.div`
+  margin: 0px auto;
+  height: 850px;
+  justify-content: center;
+  width: 1330px;
+  margin-bottom: 233px;
+`;
 
 const Header2 = styled.div`
   font-size: ${(props) => props.theme.Web_fontSizes.Header2};
@@ -69,7 +77,6 @@ const Container = styled.div`
   align-items: center;
   overflow: hidden;
   margin-bottom: 368px;
-  //padding-right: 40px;
   padding-left: 125px;
 `;
 
@@ -108,9 +115,10 @@ const ButtonContainer = styled.div`
 const ScrollContainer = styled.div`
   width: 100%;
   max-width: 1802px;
-  overflow-x: auto;
+  overflow-x: hidden;
   display: flex;
   justify-content: flex-start;
+  animation: scroll 15s linear infinite; /* 15초마다 스크롤이 자동으로 반복됨 */
 `;
 
 const Div = styled.div`

@@ -50,7 +50,7 @@ function ProjectPagination() {
           active={currentPage === i + 1}
           onClick={() => setCurrentPage(i + 1)}
         >
-          {i + 1}
+          <p>{i + 1}</p>
         </NumButtonDiv>
       );
     }
@@ -80,9 +80,8 @@ function ProjectPagination() {
                   <Overlay>
                     <ProjectTitle>{project.serviceName}</ProjectTitle>
                     <ProjectOncentence>
-                      {project.sentence?.[0]?.content}
-                      {<br />}
-                      {project.sentence?.[1]?.content}
+                      <p>{project.sentence?.[0]?.content}</p>
+                      <p>{project.sentence?.[1]?.content}</p>
                     </ProjectOncentence>
                     <ProjectInfo>
                       #{project.generation} #{project.platform}
@@ -146,6 +145,7 @@ const FilterContainer = styled.div`
   background-color: #fff;
   border-radius: 2000px;
   width: fit-content;
+  margin-top: 50px; //배너 내리고 비활성화
 `;
 
 const ProjectList = styled.ul`
@@ -204,6 +204,7 @@ const ProjectTitle = styled.p`
   line-height: 140%;
   margin-left: 21px;
   margin-top: 16px;
+  margin-bottom: 40px;
 `;
 
 const ProjectOncentence = styled.div`
@@ -213,6 +214,10 @@ const ProjectOncentence = styled.div`
   opacity: 0.8;
   margin-top: -30px;
   margin-left: 21px;
+
+  p {
+    line-height: 60%;
+  }
 `;
 
 const ProjectInfo = styled.div`
@@ -251,4 +256,8 @@ const NumButtonDiv = styled.div`
   line-height: 140%;
   font-family: "NanumSquare Neo";
   cursor: pointer;
+
+  p {
+    margin-top: 16px;
+  }
 `;

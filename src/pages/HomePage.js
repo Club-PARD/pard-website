@@ -28,7 +28,7 @@ function HomePage() {
   return (
     <HomePageComponent>
       {isDesktopOrMobile !== true ? (
-        <div>
+        <HomePageComponent_Web>
           <NavBarHome />
           <HomeFirst />
           <HomeSecond />
@@ -39,7 +39,7 @@ function HomePage() {
           <HomeLastWeb />
           <HomePartnerWeb />
           <Footer />
-        </div>
+        </HomePageComponent_Web>
       ) : (
         <HomePageComponent_Mob>
           <NavBarMob_Home />
@@ -61,7 +61,15 @@ function HomePage() {
 
 export default HomePage;
 
-const HomePageComponent = styled.div``;
+const HomePageComponent = styled.div`
+`;
+
+const HomePageComponent_Web = styled.div`
+  justify-content: center;
+  width: 100%;
+  min-width: 1440px;
+`;
+
 const HomePageComponent_Mob = styled.div`
   width: 100%;
 `;

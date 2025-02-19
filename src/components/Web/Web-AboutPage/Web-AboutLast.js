@@ -46,7 +46,7 @@ const AboutFrame1 = styled.img`
   height: 40px;
   width: 100%;
   border-radius: 0px;
-  margin-top: 160px;
+  margin-top: 164.8px;
 `;
 
 const Div = styled.div`

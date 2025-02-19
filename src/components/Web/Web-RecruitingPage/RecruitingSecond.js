@@ -4,7 +4,7 @@ import React from "react";
 
 function RecruitingSecond() {
   const handleClick = () => {
-    window.open("https://www.notion.so/we-pard/PARD-4-1bfdeffe72f94a99b12821c2fab17714", "_blank");
+    window.open("https://we-pard.notion.site/PARD-5-1939fe7667e680cc9180df982a19753c", "_blank");
   };
   return (
     <Div>
@@ -13,7 +13,7 @@ function RecruitingSecond() {
           <Header7>파드와 함께하는 여정을 소개해요.</Header7>
 
           <Header61>
-            2024년도 9월부터 1월까지 활동할 4기 멤버들을 모집합니다
+            2025년도 3월부터 7월까지 활동할 5기 멤버들을 모집합니다
             <br></br>* 일부 일정 변동 가능
           </Header61>
 
@@ -34,7 +34,7 @@ function RecruitingSecond() {
                 </Icon1B>
               </IconWrap>
               <Box1>서류접수</Box1>
-              <BoxText>8/31(토) ~ 9/4(수)</BoxText>
+              <BoxText>2/20(목) ~ 3/4(화)</BoxText>
             </Box>
             <Box style={{ border: "2px solid rgba(100, 197, 154, 0.4)" }}>
               <IconWrap>
@@ -58,7 +58,7 @@ function RecruitingSecond() {
                 </Icon2B>
               </IconWrap>
               <Box2>서류 합격 발표</Box2>
-              <BoxText>9/5(목) 오전</BoxText>
+              <BoxText>3/5(수) 오전</BoxText>
             </Box>
             <Box style={{ border: "2px solid rgba(100, 197, 154, 0.7)" }}>
               <IconWrap>
@@ -70,7 +70,7 @@ function RecruitingSecond() {
                 </Icon3>
               </IconWrap>
               <Box3>면접</Box3>
-              <BoxText>9/5(목) ~ 9/6(금)</BoxText>
+              <BoxText>3/7(금) ~ 3/8(토)</BoxText>
             </Box>
             <Box style={{ border: "2px solid rgba(100, 197, 154, 1.0)" }}>
               <IconWrap>
@@ -92,7 +92,7 @@ function RecruitingSecond() {
                 </Icon4B>
               </IconWrap>
               <Box4>최종합격 발표</Box4>
-              <BoxText>9/7(토) 00시 전</BoxText>
+              <BoxText>3/9(일) 00시 전</BoxText>
             </Box>
           </Container>
           <Plus onClick={handleClick}>

@@ -28,12 +28,8 @@ function InquiryManagement() {
                         site.name === "email" && (
                           <IconBackground
                             key={site.name}
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              navigator.clipboard.writeText(site.link);
-                              alert("이메일이 복사되었습니다!");
-                            }}
+                            href={`mailto:${site.link}`}
+                            onClick={(e) => e.stopPropagation()}
                           >
                           <img
                             src={EmailLogo}

@@ -26,10 +26,10 @@ export const RecruitmentStatusButtonWeb = ({ theme, backgroundColor }) => {
       backgroundColor={backgroundColor}
       onClick={handleClick}
     >
-      {content}
+      <p>{content}</p>
     </EnrollmentOpenButton>
   ) : (
-    <EnrollmentClosedButton theme={theme}>{content}</EnrollmentClosedButton>
+    <EnrollmentClosedButton theme={theme}><p>{content}</p></EnrollmentClosedButton>
   );
 };
 
@@ -42,9 +42,7 @@ const ButtonStyles = styled.button`
   align-items: center;
   line-height: 34px;
   width: auto;
-  height: auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  height: 64px;
   padding-right: 120px;
   padding-left: 120px;
   justify-content: center;
@@ -56,10 +54,16 @@ const EnrollmentOpenButton = styled(ButtonStyles)`
   background-color: ${(props) => props.backgroundColor};
   color: #ffffff;
   cursor: pointer;
+  p {
+    margin-top: 26px;
+  }
 `;
 
 const EnrollmentClosedButton = styled(ButtonStyles)`
   background-color: #d3d1d8;
   color: #ffffff;
   cursor: not-allowed;
+  p {
+    margin-top: 26px;
+  }
 `;

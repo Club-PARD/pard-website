@@ -43,7 +43,7 @@ function HomePartner() {
     <PartDiv>
       <ThemeProvider theme={theme}>
         <Header2>PARTNERS</Header2>
-        <Header4>함께하는 성장을 돕는 후원사</Header4>
+        <Header4>파드와 함께 해주신 후원사</Header4>
         <ContentWrapper>
           <AsanImgDiv onClick={handleClickAsan} src={AsanImg} alt="Asan" />
           <NextChallenge1Img
@@ -114,7 +114,7 @@ const PartDiv = styled.div`
 const DisquietImage1 = styled.img`
   width: 241px;
   height: 50px;
-  padding-right: 65px;
+  margin-left: 100px;
   cursor: pointer;
 `;
 
@@ -134,12 +134,14 @@ const Dcamp = styled.img`
 const ImpactCampusImage3 = styled.img`
   width: 366px;
   height: 50px;
+  margin-left: -140px;
   cursor: pointer;
 `;
 
 const SImage4 = styled.img`
   width: 240px;
   height: 70px;
+  margin-left: 150px;
   cursor: pointer;
 `;
 
@@ -179,15 +181,17 @@ const ContentWrapper2 = styled.div`
   flex-direction: row;
   align-items: center;
   margin-top: 50px;
+  margin-left: 80px;
   justify-content: center;
-  gap: 76px;
 `;
+
 const ContentWrapper3 = styled.div`
   flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 70px;
+  margin-right: 20px;
   justify-content: center;
   gap: 200px;
 `;

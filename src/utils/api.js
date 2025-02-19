@@ -4,7 +4,7 @@ const API_URL = process.env.REACT_APP_API_URL
 
 export const getProjectWebData = async (projectId) => {
   try {
-    const response = await axios.get(`${API_URL}/api/archive/${projectId}`); //env에 넣기
+    const response = await axios.get(`${API_URL}/api/archive/${projectId}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching project data:", error);
@@ -25,7 +25,6 @@ export const getAllProjectList = async (pageId) => {
 export const getWebProjectList = async (pageId) => {
   try {
     const response = await axios.get(`${API_URL}/api/archive/projects/web?page=${pageId}`);
-    console(response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching project data:", error);

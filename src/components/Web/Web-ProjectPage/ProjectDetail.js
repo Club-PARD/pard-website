@@ -64,7 +64,8 @@ function ProjectDetail() {
   const award = data.award || "데이터 없음";
   const overviewArray = data.contents?.overview?.slice(0, ) || [];
   const overview = overviewArray.map(item => item.content).join("\n") || "데이터 없음";
-  const defination = data.contents?.definition?.[0]?.content || "데이터 없음";
+  const definationArray = data.contents?.definition?.slice(0, ) || [];
+  const defination = definationArray.map(item => item.content).join("\n") || "데이터 없음";
   const sol1Array = data.solutions?.solution1 || [];
   const sol2Array = data.solutions?.solution2 || [];
   const sol3Array = data.solutions?.solution3 || [];
@@ -139,7 +140,8 @@ function ProjectDetail() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-      <IntroWrapper>
+        <IntroContainer isApp={platform === "APP"}>
+          <IntroWrapper>
         {/*Logo image*/}
         <img src={logoImage} alt="logo" style={{'height': '100px'}} />
         {/*한 줄 소개*/}
@@ -148,16 +150,23 @@ function ProjectDetail() {
           <Description>{description}</Description>
         {/*기수, 파트 여기서 파트에 따라 모달 위치 달라짐*/}
           <HashContainer>
-            <Hash>{generation}</Hash>
-            <Hash>{platform}</Hash>
+            <Hash><p>{generation}</p></Hash>
+            <Hash><p>{platform}</p></Hash>
           </HashContainer>
         </IntroWrapper>
-        {/*모달*/}
-        {platform === "WEB" ? (
-          <Modal1 />
-          ) : platform === "APP" ? (
-          p_id === 15 ? <Modal3 /> : <Modal2 />
-          ) : null}
+        {/* APP일 경우만 모달 컨테이너 표시 */}
+        {(platform === "APP" || p_id === 4) && p_id !== 15 && (
+  <ModalContainer>
+    <Modal2 />
+  </ModalContainer>
+)}
+</IntroContainer>
+{/*모달*/}
+{p_id === 15 ? (
+  <Modal3 />
+) : platform === "WEB" && p_id !== 4 ? (
+  <Modal1 />
+) : null}
         {/*가운데 정렬 하는 박스 만들기*/}
         {/*몇기 롱커톤인지*/}
         <AwardContainer>
@@ -197,15 +206,15 @@ function ProjectDetail() {
             </ExplainTitleBox>
             <SolutionBoxContainer>
               <SolutionBox>
-                <SolutionTitle>SOLUTION 1</SolutionTitle>
+                <SolutionTitle><p>SOLUTION 1</p></SolutionTitle>
                 {sol1}
               </SolutionBox>
               <SolutionBox>
-                <SolutionTitle>SOLUTION 2</SolutionTitle>
+                <SolutionTitle><p>SOLUTION 2</p></SolutionTitle>
                 {sol2}
               </SolutionBox>
               <SolutionBox>
-                <SolutionTitle>SOLUTION 3</SolutionTitle>
+                <SolutionTitle><p>SOLUTION 3</p></SolutionTitle>
                 {sol3}
               </SolutionBox>
             </SolutionBoxContainer>
@@ -248,27 +257,34 @@ function ProjectDetail() {
 </EtcContainerBox>
           </EtcContainer>
           <EtcContainer>
-            <EtcTitle>Open Link</EtcTitle>
-            <EtcContainerBox2>
-            <a href={serviceurl} target="_blank" rel="noopener noreferrer">
-        <LogoBtn>
-          <img src={linklogo} alt="Link Logo" width="52" height="52" />
-        </LogoBtn>
-      </a>
+  <EtcTitle>Open Link</EtcTitle>
+  <EtcContainerBox2>
+    {data.links?.map((link, index) => {
+      const { linkType, url } = link;
 
-      <a href={githuburl} target="_blank" rel="noopener noreferrer">
-        <LogoBtn>
-          <img src={gitlogo} alt="Git Logo" width="52" height="52" />
-        </LogoBtn>
-      </a>
+      // linkType에 따라 표시할 로고를 결정
+      let logo;
+      if (linkType === "FIGMA") {
+        logo = figmalogo;
+      } else if (linkType === "GITHUB_BACK" || linkType === "GITHUB_FRONT") {
+        logo = gitlogo;
+      } else if (linkType === "SERVICE") {
+        logo = linklogo;
+      }
 
-      <a href={figmaurl} target="_blank" rel="noopener noreferrer">
-        <LogoBtn>
-          <img src={figmalogo} alt="Figma Logo" width="52" height="52" />
-        </LogoBtn>
-      </a>
-            </EtcContainerBox2>
-          </EtcContainer>
+      // linkType에 맞는 로고를 표시하는 부분
+      return (
+        logo && (
+          <a key={index} href={url} target="_blank" rel="noopener noreferrer">
+            <LogoBtn>
+              <img src={logo} alt={`${linkType} Logo`} width="52" height="52" />
+            </LogoBtn>
+          </a>
+        )
+      );
+    })}
+  </EtcContainerBox2>
+</EtcContainer>
         </AllEtcContainer>
       </Container>
     </ThemeProvider>
@@ -284,14 +300,6 @@ const Container = styled.div`
   gap: 15px;
   background: #1A1A1A;
   margin-top: 162px;
-`;
-
-const IntroWrapper = styled.div`
-  display: flex;
-  width: 1108px;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 126px;
 `;
 
 const LoadingText = styled.p`
@@ -341,12 +349,15 @@ const Hash = styled.div`
   border: 0.776px solid #FFF;
   background: rgba(255, 255, 255, 0.32);
 
-  color: #FFF;
+  p {
+    color: #FFF;
   font-family: "NanumSquare Neo";
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
+  margin-top: 22px;
+  }
 `;
 
 const AwardContainer = styled.div`
@@ -460,14 +471,17 @@ const SolutionTitle = styled.div`
   border-radius: 13px;
   background: #7B3FEF;
 
-  color: #FFF;
+  p {
+    color: #FFF;
   text-align: center;
   font-family: "NanumSquare Neo";
   font-size: 14.545px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-
+  margin-top: 16px;
+  }
+  
   align-self: center;
 `;
 
@@ -582,4 +596,30 @@ const LogoBtn = styled.button`
   &:hover {
     opacity: 0.8;
   }
+`;
+
+const IntroContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 1110px;
+
+  ${({ isApp }) => isApp && `
+    flex-direction: row;
+    align-items: flex-start;
+  `}
+`;
+
+const ModalContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 300px;
+`;
+
+const IntroWrapper = styled.div`
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 126px;
 `;

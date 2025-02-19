@@ -83,9 +83,6 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center; 
-  position: absolute;
-  top: 14%;
-  right: 15%;
 `;
 
 const Desktop = styled.div`

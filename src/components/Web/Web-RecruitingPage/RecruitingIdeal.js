@@ -26,6 +26,7 @@ function RecruitingIdeal() {
                     alt="Arrow_Ideal.png"
                     width="16px"
                     height="25px"
+                    style={{marginBottom: "4px"}}
                   />
                   <Header5>01</Header5>
                 </Vector>
@@ -48,6 +49,7 @@ function RecruitingIdeal() {
                     alt="Arrow_Ideal.png"
                     width="16px"
                     height="25px"
+                    style={{marginBottom: "4px"}}
                   />
                   <Header5>02</Header5>
                 </Vector>
@@ -66,6 +68,7 @@ function RecruitingIdeal() {
                     alt="Arrow_Ideal.png"
                     width="16px"
                     height="25px"
+                    style={{marginBottom: "4px"}}
                   />
                   <Header5>03</Header5>
                 </Vector>
@@ -91,6 +94,7 @@ function RecruitingIdeal() {
                     alt="Arrow_Ideal.png"
                     width="16px"
                     height="25px"
+                    style={{marginBottom: "4px"}}
                   />
                   <Header5>04</Header5>
                 </Vector>
@@ -109,6 +113,7 @@ function RecruitingIdeal() {
                     alt="Arrow_Ideal.png"
                     width="16px"
                     height="25px"
+                    style={{marginBottom: "4px"}}
                   />
                   <Header5>05</Header5>
                 </Vector>
@@ -127,6 +132,7 @@ function RecruitingIdeal() {
                     alt="OrangeVector.png"
                     width="16px"
                     height="25px"
+                    style={{marginBottom: "4px"}}
                   />
                   <Header5>AND...</Header5>
                 </Vector>
