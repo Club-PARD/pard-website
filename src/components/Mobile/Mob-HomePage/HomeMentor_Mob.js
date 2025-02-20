@@ -55,7 +55,7 @@ function HomeMentor() {
       title:
         "스펙 쌓기용이 아닌,\n정말 문제를 해결하고\n싶은 사람들이 모여\n함께 몰입하고 있습니다",
       mentor_name: "김강학",
-      mentor_from: "토스페이먼츠 TPO",
+      mentor_from: "토스 Product Owner",
       color: "#64C59A",
     },
     {
@@ -138,17 +138,16 @@ const Header3 = styled.div`
 `;
 
 const Body2 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Body2};
-  font-weight: ${(props) => props.theme.fontWeights.Body2};
+  font-size: ${(props) => props.isname ?  props.theme.Web_fontSizes.Subtitle2: "12px"};
+  font-weight: ${(props) => props.isname ? props.theme.fontWeights.Subtitle2 : "400"};
   color: rgba(255, 255, 255, 0.4);
   font-family: "NanumSquare Neo";
   white-space: pre-line;
-  line-height: ${(props) =>
-    props.id === 1 ? "160%" : props.isname ? "140%" : "140%"};
+  line-height: ${(props) =>props.isname ? "140%" : "180%"};
   display: flex;
   text-align: right;
   position: absolute;
-  bottom: ${(props) => (props.isname ? "9vw" : "4.267vw")};
+  bottom: ${(props) => (props.isname ? "37px" : "16px")};
   right: 20px;
 `;
 

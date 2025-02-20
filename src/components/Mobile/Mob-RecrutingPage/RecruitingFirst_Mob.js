@@ -74,5 +74,5 @@ const ButtonDiv = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 110px;
+  margin-top: 66px;
 `;

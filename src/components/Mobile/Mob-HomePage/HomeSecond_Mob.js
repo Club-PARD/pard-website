@@ -143,15 +143,15 @@ const textDB = [
     text: "PARD는 기획자, 디자이너, 개발자가 모여\n Pay it Forward를 실천하는 \n대학생 IT 협업동아리입니다.",
     breakPoint: secondScrollPoint + period2,
     period: period2 + period3,
-    posX: "45%",
+    posX: "43%",
     posY: "-30%",
   },
   {
     id: 4,
-    text: "\n대가를 바라지 않고 남을 돕는 행위를\n기꺼이 즐기는 것.\n홀로 성장하는 것을 넘어 \n함께 성장하는 법을 배워나가는 조직.\n\nPARD를 소개합니다. ",
+    text: "\n대가를 바라지 않고\n남을 돕는 행위를 기꺼이 즐기는 것.\n\n홀로 성장하는 것을 넘어 \n함께 성장하는 법을 배워나가는 조직.\n\nPARD를 소개합니다. ",
     breakPoint: secondScrollPoint + period2 + period3,
     period: period2,
-    posX: "48%",
+    posX: "40%",
     posY: "-40%",
   },
 ];
@@ -305,9 +305,9 @@ const textFontSizeLogic = (textInfo, theme) => {
     case 2:
       return theme.Mob_fontSizes.Header2;
     case 3:
-      return theme.Mob_fontSizes.Subtitle1;
+      return theme.Mob_fontSizes.Header5;
     case 4:
-      return theme.Mob_fontSizes.Subtitle2;
+      return theme.Web_fontSizes.Header6;
     default:
       return null;
   }
@@ -319,9 +319,9 @@ const textFontWeightLogic = (textInfo, theme) => {
     case 2:
       return theme.fontWeights.Header2;
     case 3:
-      return theme.fontWeights.Subtitle1;
+      return theme.fontWeights.Header5;
     case 4:
-      return theme.fontWeights.Subtitle2;
+      return theme.fontWeights.Body2;
     default:
       return null;
   }
@@ -337,7 +337,7 @@ const translate3d = (x, y, z) => {
 const textTransformLogic = (textInfo, position) => {
   var offset = position - (textInfo.breakPoint + textInfo.period * 0.8);
   if (textInfo.id == 3) {
-    const change = 37;
+    const change = 130;
     var x = position - (textInfo.breakPoint + 1000 - change);
     if (x >= 0 && x < change) {
       return translate3d(0, x * -1, 0);

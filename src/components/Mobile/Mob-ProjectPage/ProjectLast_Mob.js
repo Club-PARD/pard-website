@@ -201,7 +201,7 @@ const TitleTextDiv = styled.div`
 
 const ContentDiv = styled.div`
   width: 303px;
-  height: 379px;
+  height: 320px;
   display: block;
   cursor: pointer;
 `;
@@ -213,7 +213,7 @@ const ContentsWrap = styled.div`
 
 const MainImg = styled.img`
   width: 303px;
-  height: 379px;
+  height: 320px;
 `;
 
 const ContentTextDiv = styled.div`

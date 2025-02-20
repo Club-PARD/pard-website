@@ -76,19 +76,19 @@ export default RecruitingPart_Mob;
 const buttons = [
   {
     title: "서비스 기획",
-    link: "https://we-pard.notion.site/d960e09540f645eebbcc8b6f5b7ae7b9",
+    link: "https://we-pard.notion.site/1939fe7667e68135ac55db64e95d91a0?pvs=4",
     textColor: "#000000",
     hoverColor: "#5262F5",
     vectorImage: ServiceVector,
     selectedImage: SelectedVector,
-    showButton: false,
+    showButton: true,
     buttonText: "사전과제",
     showButton2: false,
     buttonText2: "",
   },
   {
     title: "디자인",
-    link: "https://we-pard.notion.site/UX-UI-d34d536124a64cdc9d5b390e4802ba93",
+    link: "https://we-pard.notion.site/UX-UI-1939fe7667e68176b076f4828e3facba?pvs=4",
     textColor: "#000000",
     hoverColor: "#7B3FEF",
     vectorImage: DesignVector,
@@ -100,21 +100,15 @@ const buttons = [
   },
   {
     title: "APP(iOS)",
-    link: "https://we-pard.notion.site/App-iOS-bf92547625eb4964a11bbde95d7946b6",
+    link: "https://we-pard.notion.site/App-iOS-1939fe7667e6810b9a85eaf018435060?pvs=4",
     textColor: "#000000",
     hoverColor: "#FF5C00",
     vectorImage: DevelopVector,
     selectedImage: SelectedVector,
-    /*
-		showButton: true,
-		buttonText: "사전과제!",
-*/
-    // showButton2: true,
-    // buttonText2: "New!",
   },
   {
     title: "WEB",
-    link: "https://we-pard.notion.site/React-340ed65391864368b91637c5fc691362",
+    link: "https://we-pard.notion.site/1939fe7667e681e4b419e83e21d87a61?pvs=4",
     textColor: "#000000",
     hoverColor: "#FF5C00",
     vectorImage: DevelopVector,
@@ -126,7 +120,7 @@ const buttons = [
   },
   {
     title: "SERVER",
-    link: "https://we-pard.notion.site/Spring-ce04e584482a40c385a980e9ca91cbcc",
+    link: "https://we-pard.notion.site/Spring-1939fe7667e6814aa1abd928c1aeb3df?pvs=4",
     textColor: "#000000",
     hoverColor: "#FF5C00",
     vectorImage: DevelopVector,
