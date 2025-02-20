@@ -356,6 +356,7 @@ const Question = styled.div`
   font-weight: ${(props) => (props.selected ? "bold" : props.theme.fontWeights.Body3)};
   font-family: "NanumSquare Neo";
   background-color: ${(props) => (props.selected ? "#64c59a" : "white")};
+  color: ${(props) => props.selected ? "white" : "black"};
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -368,6 +369,7 @@ const Question = styled.div`
   &:hover {
     background-color: #64c59a;
     font-weight: bold;
+    color: white;
   }
 `;
 

@@ -156,6 +156,12 @@ function RecruitingReviewMob() {
                 </BTNR>
               )}
             </Wrapper>
+            <Button
+                        href="https://disquiet.io/club/pard"
+                        target="_blank"
+                      >
+                        조금 더 들어볼래요!
+            </Button>
           </Container>
         </ThemeProvider>
       </PartDiv>
@@ -270,4 +276,23 @@ const BTNR = styled.div`
   font-size: 3.3rem;
   color: gray;
   margin-left: 16px;
+`;
+
+
+const Button = styled.a`
+  cursor: pointer;
+  color: white;
+  text-decoration-line: none;
+  width: 194px;
+  height: 52px;
+  background-color: #64c59a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "NanumSquare Neo";
+  border-radius: 10px;
+  margin-top: 50px;
+  line-height: 140%; /* 22.4px */
 `;

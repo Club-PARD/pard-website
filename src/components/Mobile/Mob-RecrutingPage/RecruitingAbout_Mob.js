@@ -445,6 +445,7 @@ const Question = styled.div`
   line-height: 25.6px;
   font-size: 16px;
   font-weight: ${(props) => props.selected ? "bold" : props.theme.fontWeights.Body1};
+  color: ${(props) => props.selected ? "white" : "black"};
   font-family: "NanumSquare Neo";
   background-color: ${(props) => (props.selected ? "#64c59a" : "white")};
   border-radius: 10px;
@@ -458,6 +459,7 @@ const Question = styled.div`
 
   &:hover {
     background-color: #64c59a;
+    color: white;
     font-weight: bold;
   }
 `;
@@ -486,7 +488,7 @@ const Answer = styled.div`
 `;
 const Button = styled.a`
   cursor: pointer;
-  color: black;
+  color: white;
   text-decoration-line: none;
   width: 138px;
   height: 40px;
