@@ -15,62 +15,65 @@ function RecruitingReviewMob() {
     {
       id: 1,
       src: review1Image,
-      title: "2기 서버파트 유채우님의 회고",
-      link: "https://disquiet.io/@turbstructor/makerlog/%EC%B6%94%EC%9A%B4-%EA%B2%A8%EC%9A%B8%EC%9D%B4%EB%9D%BC%EA%B3%A0-%EB%B6%88%EC%9D%B4-%EC%95%88-%EB%9C%A8%EA%B2%81%EC%A7%80-%EC%95%8A%EC%9D%84-%ED%85%90%EB%8D%B0",
+      title: "PARD 3,4기 디자인 파트 김규희님의 회고",
+      link: "https://disquiet.io/@kim9001/makerlog/%EC%95%88%EB%85%95%ED%95%98%EC%8B%9C%EC%86%8C-%ED%98%91%EC%97%85%EA%B2%BD%ED%97%98-1%EB%8F%84-%EC%97%86%EB%8D%98-%EB%82%B4%EA%B0%80-2025%EB%85%84%EC%97%90%EB%8A%94-%ED%98%91%EC%97%85%EC%99%95",
       word: (
         <>
-          “제가 가진 문제점들을 실감하고 그걸 해결하기 위한
+          “3기는 끝났지만 기존 롱커톤 팀원들과 연락해가며 해당 
           <br />
-          생각들을 해볼 수 있었음에 감사합니다. 약 반년, 그런
+          프로덕트인 메모러블을 다양한 공모전에 내서 수상도  
           <br />
-          경험들을 만들어준 모든 사람들에게 감사드립니다.”
+          해보고, 결국 배포까지 할 수 있었어요.
+          <br/>
+          진짜 진지하게.. 파드 안들어왔으면... 못했을듯!!”
         </>
       ),
     },
     {
       id: 2,
       src: review2Image,
-      title: "2기 기획파트 전예람님의 팀빌딩 방법론",
-      link: "https://disquiet.io/@magniv/makerlog/%EB%82%A8%EC%9E%90-6%EB%AA%85%EC%9D%B4-%EC%82%AC%EC%9A%B0%EB%82%98-%EA%B0%80%EC%84%9C-%ED%8C%80-%EB%B9%8C%EB%94%A9%ED%95%9C-%EC%9D%B4%EC%95%BC%EA%B8%B0",
+      title: "4기 서버 파트 김민규님의 롱커톤 회고",
+      link: "https://disquiet.io/@min999/makerlog/%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94-1734652120055",
       word: (
         <>
-          “말보다 숫자로 표현하는 것이 더 쉽기 때문에 소통의
+          “이번 주차를 통해 저는 단순히 개발만 잘하는 것이 아니라,
           <br />
-          물꼬를 트기에 굉장히 유용하기 때문이에요!”
+          팀원들과의 소통과 얼라인(Align)이 얼마나 중요한지
+          <br />
+          정말 몸소 깨닫게 되었습니다."
         </>
       ),
     },
     {
       id: 3,
       src: review3Image,
-      title: "2기 iOS파트 김형진의 숏커톤 회고",
-      link: "https://disquiet.io/@hyungjin015/makerlog/%EC%9D%B8%EC%83%9D-%EC%B2%AB-%EB%9E%A8%EC%88%98%EB%A9%B4-%EC%8D%B0-%ED%92%80%EC%96%B4%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4-%EC%88%8F%EC%BB%A4%ED%86%A4-%ED%9A%8C%EA%B3%A0",
+      title: "4기 기획 파트 최수원님의 회고",
+      link: "https://disquiet.io/@tndnjsc/makerlog/%EB%A1%B1%EC%BB%A4%ED%86%A4-2%EC%A3%BC%EC%B0%A8%EB%A5%BC-%EB%A7%9E%EC%9D%B4%ED%95%98%EB%A9%B0-%E3%84%B1-%EA%B0%80%EC%A1%B1%EC%9D%B4-%EB%90%98%EC%96%B4%EC%A3%BC%EB%9D%BC",
       word: (
         <>
-          “우승조건은 함께 만들어가는 서비스에 있다는 것을
-          <br />
-          느꼈고, 숲을 보지 못한 나의 모습에 반성하게 됐다.
-          <br />
-          애초에 파드에 협업하러 오지 않았었나..? 협업의
-          <br />
-          대한 회고를 한번 더 하게 되는 소중한 경험이었다.”
+          “저는 기획자로서 이번 롱커톤을 통해 정말 많은 것을
+          <br />배우고 있습니다. 특히 각자의 역할이 다르더라도 목표를
+          <br />위해 함께 나아가는 팀워크의 중요성을 깊이 느꼈고, 빠른
+          <br />피드백과 유연한 대응이 얼마나 중요한지도 깨달았습니다.”
         </>
       ),
     },
     {
       id: 4,
       src: review4Image,
-      title: "2기 웹파트 김용현님의 번아웃 극복기",
-      link: "https://disquiet.io/@cocomongif/makerlog/%EC%9D%B4%EA%B1%B8-%EC%96%B4%EC%A9%8C%EC%A7%80",
+      title: "4기 서버 파트 김하진님의 회고",
+      link: "https://disquiet.io/@hajink_14/makerlog/%ED%95%A8%EA%BB%98-%EC%9D%BC%ED%95%98%EA%B3%A0-%EC%8B%B6%EC%9D%80-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EB%90%98%EA%B3%A0-%EC%8B%B6%EC%96%B4%EC%A1%8C%EB%8B%A4",
       word: (
         <>
-          “사소한 부분이라도 내 생각이 들어가고, 그렇지
+          “저는 ‘배운 언어를 가장 효율적인 코드를 짜는 개발자’도
           <br />
-          못한다 하더라도 기획한사람과 말을 섞으니 그제서야
+          좋겠지만 이보다 ‘해결하고자 하는 문제를 같이 고민하고 그 
           <br />
-          "내 일"이 이 된 기분이었습니다. 또 이 즈음부터는
+          해결을 구현해주는 개발자’가 되고 싶은 것 같습니다.
           <br />
-          집중하면 일이 조금 손에 잡히기도 했습니다.”
+          같이 일하고 싶은 좋은 개발자가 되기 위해서는
+          <br />
+          함께 문제를 알아야할 지도 모르겠다는 생각이 들었어요.”
         </>
       ),
     },
@@ -153,6 +156,12 @@ function RecruitingReviewMob() {
                 </BTNR>
               )}
             </Wrapper>
+            <Button
+                        href="https://disquiet.io/club/pard"
+                        target="_blank"
+                      >
+                        조금 더 들어볼래요!
+            </Button>
           </Container>
         </ThemeProvider>
       </PartDiv>
@@ -192,8 +201,8 @@ const Caption1 = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  margin-top: 7px;
+  /* margin-bottom: 40px; */
   line-height: 180%;
 `;
 const Container = styled.div`
@@ -207,14 +216,17 @@ const Slide = styled.div`
 `;
 const Window = styled.div`
   width: 350px;
-  height: 650px;
+  height: 670px;
   overflow: hidden;
 `;
 const Image = styled.div`
-  width: 273px;
-  height: 155px;
-  margin-top: 40px;
+  width: 283px;
+height: 160px;
+  margin-top: 45px;
   margin-bottom: 13px;
+  border-radius: 30px;
+border: 1px solid var(--Primary-Green, #64C59A);
+background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 52.5%, #FFF 99.5%);
   background-size: contain;
   background-repeat: no-repeat;
 `;
@@ -240,6 +252,7 @@ const PartDiv = styled.div`
 const FlexBox = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-left: 10px;
   justify-content: space-between;
 `;
 const CardDiv = styled.div`
@@ -263,4 +276,23 @@ const BTNR = styled.div`
   font-size: 3.3rem;
   color: gray;
   margin-left: 16px;
+`;
+
+
+const Button = styled.a`
+  cursor: pointer;
+  color: white;
+  text-decoration-line: none;
+  width: 194px;
+  height: 52px;
+  background-color: #64c59a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "NanumSquare Neo";
+  border-radius: 10px;
+  margin-top: 50px;
+  line-height: 140%; /* 22.4px */
 `;

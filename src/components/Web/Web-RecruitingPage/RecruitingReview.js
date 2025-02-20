@@ -267,7 +267,7 @@ const Button = styled.button`
   height: 48px;
   background-color: #64c59a;
   justify-content: center;
-  color: #000000;
+  color: white;
   border-radius: 10px;
   border: none;
   margin-top: 70px;

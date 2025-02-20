@@ -102,7 +102,7 @@ function ProjectDetail_Mob() {
           firstSet.slice(0, n).map((item, index) => (
             <Subtitle1 key={`${teamIndex}-first-${index}`}>{item}</Subtitle1>
           ))}
-        <br /> {/* 줄바꿈 추가 */}
+        {/* <br /> 줄바꿈 추가 */}
         {Array.isArray(secondSet) &&
           secondSet.slice(0, n).map((item, index) => (
             <Subtitle1 key={`${teamIndex}-second-${index}`}>{item}</Subtitle1>
@@ -174,7 +174,7 @@ function ProjectDetail_Mob() {
             {/*모달*/}
         {platform === "WEB" ? (
           <Modal1 />
-          ) : platform === "APP" ? (
+          ) :(platform === "APP" || p_id === 4) ? (
           p_id === 15 ? <Modal3 /> : <Modal2 />
           ) : null}
             <AwardContainer marginTop={"30px"} >{
@@ -431,7 +431,7 @@ const PartDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 75px;
+  margin-top: 175px;
 `;
 
 const Div = styled.div`

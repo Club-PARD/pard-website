@@ -32,7 +32,7 @@ function InquiryManagemaentMob() {
                   <IconWrapper>
                     {content.site.map((site) => (
                       <IconBackground key={site.name}>
-                        <Icon href={site.link}>
+                        <Icon href={`mailto:${site.link}`}>
                           {site.name === "instagram" ? (
                             <FaInstagram style={{ color: "black" }} />
                           ) : site.name === "linkedin" ? (

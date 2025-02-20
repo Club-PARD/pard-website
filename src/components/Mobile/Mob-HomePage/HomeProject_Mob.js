@@ -106,6 +106,7 @@ const AppContainer = styled.div`
 const StyledSwiper = styled(Swiper)`
   width: 303px;
   height: 320px;
+  border-radius: 17.5px;
   padding-bottom: 50px;
   position: relative;
 `;
@@ -126,10 +127,11 @@ const StyledSwiperSlide = styled(SwiperSlide)`
 
 const Image = styled.img`
   width: 314px;
-  height: auto;
+  height: 319px;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
   margin-top: 5px;
+  border-radius: 17.5px;
 `;
 
 const LearnMoreButton = styled.div`
@@ -185,8 +187,8 @@ const Header5 = styled.div`
 
 const Overlay = styled.div`
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -10px;
+  left: 0px;
   width: 100.4%;
   height: 135px;
   background-color: rgba(0, 0, 0, 0.6);

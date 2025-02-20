@@ -39,7 +39,7 @@ function RecruitingAbout() {
           quest: <>Q.&nbsp; 지원 조건이 어떻게 되나요?</>,
           answer: (
             <>
-              A. 4기 기준 2024년도
+              A. 5기 기준 2025년도
               <br />
               &nbsp; &nbsp; &nbsp;만 18세에서 만 30세이면 지원 가능합니다.
             </>
@@ -62,9 +62,9 @@ function RecruitingAbout() {
               &nbsp; &nbsp; &nbsp;예비 지원자님 정말 멋지십니다!
               <br />
               &nbsp; &nbsp; &nbsp;하지만 아쉽게도 중복 지원은 어렵습니다. <br />
-              &nbsp; &nbsp; &nbsp;4기는 먼저 배우고 싶은 파트를,
+              &nbsp; &nbsp; &nbsp;5기는 먼저 배우고 싶은 파트를,
               <br />
-              &nbsp; &nbsp; &nbsp;5기에는 다른 파트에 지원해 보시는 <br />
+              &nbsp; &nbsp; &nbsp;6기에는 다른 파트에 지원해 보시는 <br />
               &nbsp; &nbsp; &nbsp;건 어떨까요?
             </>
           ),
@@ -76,7 +76,7 @@ function RecruitingAbout() {
             <>
               Q.&nbsp; 비슷한 동아리들이 있는데
               <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;PARD만의 차별점은 무엇인가요?
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PARD만의 차별점은 무엇인가요?
             </>
           ),
           answer: (
@@ -109,7 +109,7 @@ function RecruitingAbout() {
               <br />
               ex) 기획 파트 YB 수료 후 디자인 파트로 지원시 
               <br />
-              기획 OB / 디자인 YB 입니다.
+              &nbsp; &nbsp; &nbsp;기획 OB / 디자인 YB 입니다.
             </>
           ),
           select: false,
@@ -125,8 +125,8 @@ function RecruitingAbout() {
           id: 1,
           quest: (
             <>
-              Q. 교통이 불편한데, 어디서 모여 활동하나 <br />
-              &nbsp; &nbsp; &nbsp;요?
+              Q. 교통이 불편한데, <br />
+              &nbsp; &nbsp; &nbsp;어디서 모여 활동하나요?
             </>
           ),
           answer: (
@@ -134,10 +134,10 @@ function RecruitingAbout() {
               A. 활동 멤버 분들이 속한 구성원 분들의 수가 <br />
               &nbsp; &nbsp; &nbsp;많은 곳에서 주요 활동을 진행하고 있습니다.{" "}
               <br />
-              &nbsp; &nbsp; &nbsp;4기는 한동대학교에서 모일 예정입니다. <br />
+              &nbsp; &nbsp; &nbsp;5기는 한동대학교에서 모일 예정입니다. <br />
               &nbsp; &nbsp; &nbsp;교통이 불편한 포항 여건 상, 파드는 포항시에{" "}
               <br />
-              &nbsp; &nbsp; &nbsp;소재한 한동대학교 외 4기 분들에게는 매주
+              &nbsp; &nbsp; &nbsp;소재한 한동대학교 외 5기 분들에게는 매주
               <br />
               &nbsp; &nbsp; &nbsp;교통비(택시비)를 일부 지원해드릴 예정입니다!{" "}
               <br />
@@ -188,8 +188,7 @@ function RecruitingAbout() {
           id: 4,
           quest: (
             <>
-              Q. 해커톤의 주제는 어떻게 <br />
-              &nbsp; &nbsp; &nbsp;정하나요?
+              Q. 해커톤의 주제는 어떻게 정하나요?<br />
             </>
           ),
           answer: (
@@ -213,8 +212,8 @@ function RecruitingAbout() {
           ),
           answer: (
             <>
-              A. 4기 기준 iOS 앱 개발을 위한 <br />
-              &nbsp; &nbsp; &nbsp;Swift UIKit를 사용하고 있습니다.
+              A. 5기 기준 iOS 앱 개발을 위한 <br />
+              &nbsp; &nbsp; &nbsp;Swift UI를 사용하고 있습니다.
             </>
           ),
           select: false,
@@ -326,21 +325,18 @@ function RecruitingAbout() {
     );
   };
   const handleQuestionClick = (itemId, index) => {
-    const updatedQuestions = question.map((item) => {
-      if (item.id === itemId) {
-        const updatedQuestion = item.question.map((q, i) => {
-          if (i === index) {
-            return { ...q, select: !q.select };
-          } else {
-            return { ...q, select: false };
-          }
-        });
-        return { ...item, question: updatedQuestion };
-      }
-      return item;
-    });
-
-    setQuestion(updatedQuestions);
+    setQuestion((prevQuestions) =>
+      prevQuestions.map((item) => {
+        if (item.id === itemId) {
+          const updatedQuestions = item.question.map((q, i) => ({
+            ...q,
+            select: i === index ? !q.select : false, // 클릭된 항목은 유지, 나머지는 해제
+          }));
+          return { ...item, question: updatedQuestions };
+        }
+        return item;
+      })
+    );
   };
 
   return (
@@ -374,6 +370,7 @@ function RecruitingAbout() {
                       <React.Fragment key={index}>
                         <Question
                           onClick={() => handleQuestionClick(item.id, index)}
+                          selected={question.select}
                         >
                           {question.quest}
                         </Question>
@@ -387,13 +384,15 @@ function RecruitingAbout() {
                         <br />
                         익명으로 편하게 물어보세요!
                       </Body2>
+                    
                       <Button
                         href="https://pard.channel.io/lounge"
                         target="_blank"
                       >
                         조금 더 물어볼래요
                       </Button>
-                    </Extra>
+                      </Extra>
+                    
                   </React.Fragment>
                 )
             )}
@@ -445,9 +444,10 @@ const Question = styled.div`
   padding: 13px 0px 13px 29px;
   line-height: 25.6px;
   font-size: 16px;
-  font-weight: ${(props) => props.theme.fontWeights.Body1};
+  font-weight: ${(props) => props.selected ? "bold" : props.theme.fontWeights.Body1};
+  color: ${(props) => props.selected ? "white" : "black"};
   font-family: "NanumSquare Neo";
-  background-color: white;
+  background-color: ${(props) => (props.selected ? "#64c59a" : "white")};
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -455,9 +455,12 @@ const Question = styled.div`
   z-index: 3;
   position: relative;
   cursor: pointer;
-  :hover {
+  transition: background-color 0.3s ease-in-out; /* 클릭 시 부드럽게 변경 */
+
+  &:hover {
+    background-color: #64c59a;
+    color: white;
     font-weight: bold;
-    color: #64c59a;
   }
 `;
 const Vector = styled.img`
@@ -466,14 +469,14 @@ const Vector = styled.img`
   margin-right: 10px;
 `;
 const Answer = styled.div`
-  background-color: #64c59a;
-  margin-top: -40px;
+  background-color: white;
+  margin-top: -25px;
   margin-bottom: 30px;
   padding: 20px 0px 15px 29px;
   width: 303px;
   display: flex;
   align-items: center;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 10px;
   font-size: ${(props) => props.theme.Web_fontSizes.Subtitle2};
   font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
   font-family: "NanumSquare Neo";
@@ -485,10 +488,10 @@ const Answer = styled.div`
 `;
 const Button = styled.a`
   cursor: pointer;
-  color: black;
+  color: white;
   text-decoration-line: none;
   width: 138px;
-  height: 42px;
+  height: 40px;
   background-color: #64c59a;
   display: flex;
   align-items: center;
@@ -497,21 +500,25 @@ const Button = styled.a`
   font-weight: ${(props) => props.theme.fontWeights.Subtitle2};
   font-family: "NanumSquare Neo";
   border-radius: 10px;
+  margin-top: 20px;
 `;
 const Body2 = styled.div`
-  font-size: ${(props) => props.theme.Web_fontSizes.Caption};
-  font-weight: ${(props) => props.theme.fontWeights.Caption};
+  font-size: 14px;
+  font-weight: 400;
   font-family: "NanumSquare Neo";
   color: white;
   line-height: 140%;
   display: flex;
   align-items: center;
-  margin-right: 16px;
-  width: 178px;
+  width: auto;
+  margin-top: 20px;
 `;
 const Extra = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* 추가 */
+  text-align: center; /* 텍스트도 중앙 정렬 */
 `;
 const QuestionWrap = styled.div`
   display: flex;

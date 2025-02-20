@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider, keyframes } from "styled-components";
 import { theme } from "../../../styles/theme";
 import { useState, useRef, useEffect } from "react";
 import ProgramSeminar from "./ProgramSeminar";
@@ -25,14 +25,14 @@ const buttonColors = {
 
 function ProgramsTrain() {
   const [selectedProgram, setSelectedProgram] = useState(1);
-  const scrollRef = useRef(null);
+  // const scrollRef = useRef(null);
 
-  useEffect(() => {
-    // selectedProgram이 변경될 때 스크롤 위치를 초기화
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft = 0;
-    }
-  }, [selectedProgram]);
+  // useEffect(() => {
+  //   // selectedProgram이 변경될 때 스크롤 위치를 초기화
+  //   if (scrollRef.current) {
+  //     scrollRef.current.scrollLeft = 0;
+  //   }
+  // }, [selectedProgram]);
 
   return (
     <Div>
@@ -63,7 +63,7 @@ function ProgramsTrain() {
           ))}
         </ButtonContainer>
         <Container>
-          <ScrollContainer ref={scrollRef}>
+          <ScrollContainer>
             <ContentDiv>{programComponents[selectedProgram]}</ContentDiv>
           </ScrollContainer>
         </Container>
@@ -136,11 +136,21 @@ const ButtonContainer = styled.div`
   }
 `;
 
+const scrollAnimation = keyframes`
+  0% {
+    transform: translateX(110%);
+  }
+  100% {
+    transform: translateX(-410%);
+  }
+`;
+
 const ScrollContainer = styled.div`
   width: 100%;
-  overflow-x: auto;
+  max-width: 1380px;
   display: flex;
   justify-content: flex-start;
+  animation: ${scrollAnimation} 15s linear infinite;
 `;
 
 const ContentDiv = styled.div`
