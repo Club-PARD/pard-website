@@ -8,10 +8,10 @@ import ProgramShort from "./ProgramShort";
 import ProgramLong from "./ProgramLong";
 
 const programComponents = {
-  1: <ProgramSeminar />, 
-  2: <ProgramStudy />, 
-  3: <ProgramSurfing />, 
-  4: <ProgramShort />, 
+  1: <ProgramSeminar />,
+  2: <ProgramStudy />,
+  3: <ProgramSurfing />,
+  4: <ProgramShort />,
   5: <ProgramLong />,
 };
 
@@ -25,50 +25,51 @@ const buttonColors = {
 
 function ProgramsTrain() {
   const [selectedProgram, setSelectedProgram] = useState(1);
-  // const scrollRef = useRef(null);
+  const scrollRef = useRef(null);
 
-  // useEffect(() => {
-  //   // selectedProgram이 변경될 때 스크롤 위치를 초기화
-  //   if (scrollRef.current) {
-  //     scrollRef.current.scrollLeft = 0;
-  //   }
-  // }, [selectedProgram]);
+  useEffect(() => {
+    // 선택된 프로그램이 변경될 때 스크롤 위치를 초기화
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = 0;
+    }
+  }, [selectedProgram]);
 
   return (
     <Div>
-    <Wrapper>
-      <ThemeProvider theme={theme}>
-        <Header7>PROGRAMS</Header7>
-        <ButtonContainer>
-          {[1, 2, 3, 4, 5].map((num) => (
-            <button
-              key={num}
-              onClick={() => setSelectedProgram(num)}
-              className={selectedProgram === num ? "active" : ""}
-              style={{
-                backgroundColor:
-                  selectedProgram === num ? buttonColors[num] : "#1A1A1A",
-              }}
-            >
-              {num === 1
-                ? "세미나"
-                : num === 2
-                ? "스터디"
-                : num === 3
-                ? "서핑데이"
-                : num === 4
-                ? "숏커톤"
-                : "롱커톤"}
-            </button>
-          ))}
-        </ButtonContainer>
-        <Container>
-          <ScrollContainer>
-            <ContentDiv>{programComponents[selectedProgram]}</ContentDiv>
-          </ScrollContainer>
-        </Container>
-      </ThemeProvider>
-    </Wrapper>
+      <Wrapper>
+        <ThemeProvider theme={theme}>
+          <Header7>PROGRAMS</Header7>
+          <ButtonContainer>
+            {[1, 2, 3, 4, 5].map((num) => (
+              <button
+                key={num}
+                onClick={() => setSelectedProgram(num)}
+                className={selectedProgram === num ? "active" : ""}
+                style={{
+                  backgroundColor:
+                    selectedProgram === num ? buttonColors[num] : "#1A1A1A",
+                }}
+              >
+                {num === 1
+                  ? "세미나"
+                  : num === 2
+                  ? "스터디"
+                  : num === 3
+                  ? "서핑데이"
+                  : num === 4
+                  ? "숏커톤"
+                  : "롱커톤"}
+              </button>
+            ))}
+          </ButtonContainer>
+          <Container>
+            {/* key 값에 selectedProgram을 포함하여 컴포넌트를 재마운트 시킵니다 */}
+            <ScrollContainer key={`scroll-${selectedProgram}`} ref={scrollRef}>
+              <ContentDiv>{programComponents[selectedProgram]}</ContentDiv>
+            </ScrollContainer>
+          </Container>
+        </ThemeProvider>
+      </Wrapper>
     </Div>
   );
 }
@@ -109,7 +110,6 @@ const ButtonContainer = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 22px;
-  /* justify-content: center; */
   justify-content: flex-start;
   overflow-x: auto;
   white-space: nowrap;
@@ -150,7 +150,7 @@ const ScrollContainer = styled.div`
   max-width: 1380px;
   display: flex;
   justify-content: flex-start;
-  animation: ${scrollAnimation} 15s linear infinite;
+  animation: ${scrollAnimation} 30s linear infinite;
 `;
 
 const ContentDiv = styled.div`
